@@ -1,18 +1,51 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import Link from 'next/link';
-import heroImage from '../public/hero_daytona.JPG'
+import Link from 'next/link'
 
 export default function Home() {
   return (
     <main className={styles.main}>
-    <Image className={styles.heroImage} 
-      src={heroImage} 
-      width={1680} 
-      height={1120} 
-      layout='responsive' 
-      alt={'hero image'} 
-      quality={100} />
-    </main> 
+
+    {/* Hero Section */}
+      {/* Mobile Hero */}
+      <Image
+        className={styles.heroImageMobile}
+        src={'/hero_daytona.JPG'}
+        width={1680}
+        height={1120}
+        layout="responsive"
+        alt={'hero image'}
+        quality={100}
+      />
+
+      {/* Desktop Hero */}
+      <Image
+        className={styles.heroImageDesktop}
+        src={'/hero_daytona_desktop.jpg'}
+        width={3246}
+        height={1014}
+        layout="responsive"
+        alt={'hero image'}
+        quality={100}
+      />
+
+      {/* CTA */}
+      <div className={styles.contactBTNContainer}>
+        <Image src={"/call.png"} width={25} height={25} alt={'phone icon'} quality={100} /> 
+        <Link href="tel:07976753254" className={styles.contactBTNLink}>Contact</Link>
+      </div>
+
+      
+      {/* Category Section */}
+      <section>
+          <div className={styles.titleCategory}>CATEGORIES</div>
+
+          <div className={styles.imageCategoryContainer}>
+            <Image src={'/126231datejust1.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} layout='responsive' />
+            <div className={styles.titleCategoryWatch}>Rolex</div>
+          </div>
+      </section>
+
+    </main>
   )
 }

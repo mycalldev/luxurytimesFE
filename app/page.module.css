@@ -1,0 +1,63 @@
+.heroImageDesktop {
+  display: none;
+}
+
+
+/* CTA BUTTONS */
+.contactBTNContainer {
+  margin: 30px auto;
+  padding: 13px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  max-width: 200px;
+  border-radius: 22px;
+  background: #91c0dc;
+}
+
+.contactBTNLink {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+
+/* CATEGORY SECTION */
+.titleCategory {
+  margin: 60px auto 20px auto;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.imageCategoryContainer {
+  margin: 20px;
+}
+
+.imageCategory {
+  border-radius: 22px;
+}
+
+.titleCategoryWatch {
+  margin: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media(min-width:768px) {
+  .heroImageMobile {
+    display: none
+  }
+
+  .heroImageDesktop {
+    display: block;
+  }
+
+  /* CATEGORIES */
+
+  .titleCategory {
+    margin: 50px;
+    font-size: 2rem;
+  }
+}
