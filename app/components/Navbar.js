@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../_styles/Navbar.module.css'
+import styles from './Navbar.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 
