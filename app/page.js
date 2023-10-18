@@ -41,8 +41,18 @@ export default function Home() {
           <div className={styles.titleCategory}>CATEGORIES</div>
 
           <div className={styles.imageCategoryContainer}>
-            <Image src={'/126231datejust1.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} layout='responsive' />
             <div className={styles.titleCategoryWatch}>Rolex</div>
+            <Image src={'/126231datejust1.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} layout='responsive' />
+          </div>
+
+          <div className={styles.imageCategoryContainer}>
+            <div className={styles.titleCategoryWatch}>Rolex</div>
+            <Image src={'/126231datejust1.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} layout='responsive' />
+          </div>
+
+          <div className={styles.imageCategoryContainer}>
+            <div className={styles.titleCategoryWatch}>Rolex</div>
+            <Image src={'/126231datejust1.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} layout='responsive' />
           </div>
       </section>
 

@@ -31,7 +31,8 @@
 }
 
 .imageCategoryContainer {
-  margin: 20px;
+  margin: 30px;
+  cursor: pointer;
 }
 
 .imageCategory {
