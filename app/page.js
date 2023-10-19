@@ -13,7 +13,7 @@ export default function Home() {
         src={'/hero_daytona.JPG'}
         width={1680}
         height={1120}
-        layout="responsive"
+        // layout="responsive"
         alt={'hero image'}
         quality={100}
       />
@@ -24,7 +24,7 @@ export default function Home() {
         src={'/hero_daytona_desktop.jpg'}
         width={3246}
         height={1014}
-        layout="responsive"
+        // layout="responsive"
         alt={'hero image'}
         quality={100}
       />
@@ -42,18 +42,29 @@ export default function Home() {
 
           <div className={styles.imageCategoryContainer}>
             <div className={styles.titleCategoryWatch}>Rolex</div>
-            <Image src={'/126231datejust1.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} layout='responsive' />
+            <Image src={'/category/hulk_category.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100}  />
           </div>
 
           <div className={styles.imageCategoryContainer}>
             <div className={styles.titleCategoryWatch}>Rolex</div>
-            <Image src={'/126231datejust1.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} layout='responsive' />
+            <Image src={'/category/hulk_category.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
           </div>
 
           <div className={styles.imageCategoryContainer}>
             <div className={styles.titleCategoryWatch}>Rolex</div>
-            <Image src={'/126231datejust1.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} layout='responsive' />
+            <Image src={'/category/hulk_category.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
           </div>
+      </section>
+
+      {/* Guides #section */}
+      <section>
+        <div className={styles.titleGuides}>GUIDES</div>
+        <div className={styles.tagGuides}>Check out our latest guides</div>
+        <div className={styles.imageGuidesContainer}>
+          <Image src={'/cogs.jpg'} className={styles.imageGuides} width={1456} height={816} alt={'cogs for watch background'} quality={100} />
+        <div className={styles.guiedsBTN}>Veiw</div>
+      </div>
+        
       </section>
 
     </main>
