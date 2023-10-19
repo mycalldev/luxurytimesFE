@@ -46,13 +46,13 @@ export default function Home() {
           </div>
 
           <div className={styles.imageCategoryContainer}>
-            <div className={styles.titleCategoryWatch}>Rolex</div>
-            <Image src={'/category/hulk_category.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
+            <div className={styles.titleCategoryWatch}>Patek Phillipe</div>
+            <Image src={'/category/pp.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
           </div>
 
           <div className={styles.imageCategoryContainer}>
-            <div className={styles.titleCategoryWatch}>Rolex</div>
-            <Image src={'/category/hulk_category.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
+            <div className={styles.titleCategoryWatch}>Audemars Piguet</div>
+            <Image src={'/category/ap.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
           </div>
       </section>
 
@@ -62,9 +62,20 @@ export default function Home() {
         <div className={styles.tagGuides}>Check out our latest guides</div>
         <div className={styles.imageGuidesContainer}>
           <Image src={'/cogs.jpg'} className={styles.imageGuides} width={1456} height={816} alt={'cogs for watch background'} quality={100} />
-        <div className={styles.guiedsBTN}>Veiw</div>
-      </div>
-        
+          <div className={styles.guiedsBTN}>Veiw</div>
+        </div>
+      </section>
+
+      {/* Highlight Section */}
+      <section>
+        <div className={styles.titleHighlights}>HIGHLIGHTS</div>
+        <Image src={'/highlight.JPG'} width={840} height={560} className={styles.imageHighlights} alt={'image of Sky-dweller'} quality={100} />
+        <div className={styles.contentHighlightsContainer}>
+          <div className={styles.conenttitleHighlights}>Rolex</div>
+          <div className={styles.contentSubTitleHighlights}>Sky Dweller</div>
+          <div className={styles.paragraphHighlights1}>Introducing the Rolex Sky-Dweller! Where elegance meets precsion.... With its iconic design, dual time zones, and....</div>
+        </div> 
+        <div className={styles.highlightsBTN}>Read More</div>
       </section>
 
     </main>
