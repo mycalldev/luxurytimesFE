@@ -1,3 +1,8 @@
+.heroImageMobile {
+  width: 100%;
+  height: auto;
+}
+
 .heroImageDesktop {
   display: none;
 }
@@ -6,9 +11,9 @@
 /* CTA BUTTONS */
 .contactBTNContainer {
   margin: 30px auto;
-  padding: 13px;
+  padding: 10px;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
   max-width: 200px;
   border-radius: 22px;
@@ -28,22 +33,63 @@
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
+  color: #323232;
 }
 
 .imageCategoryContainer {
-  margin: 30px;
+  margin: 30px 50px;
   cursor: pointer;
 }
 
 .imageCategory {
+  width: 100%;
+  height: auto;
   border-radius: 22px;
 }
 
 .titleCategoryWatch {
   margin: 10px;
   font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  color: #2e2e2e;
+}
+
+/* GUIDES SECTION */
+.titleGuides {
+  margin: 40px auto 20px auto;
+  font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
+  color: #323232;
+}
+
+.imageGuidesContainer {
+  position: relative;
+}
+
+.imageGuides {
+  width: 100%;
+  height: auto;
+}
+
+.tagGuides {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #717171;
+}
+
+.guiedsBTN {
+  margin: 30px auto;
+  padding: 10px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+  max-width: 200px;
+  border-radius: 22px;
+  background: #91c0dc;
+  color: #fff;
 }
 
 @media(min-width:768px) {
@@ -53,6 +99,8 @@
 
   .heroImageDesktop {
     display: block;
+    width: 100%;
+    height: auto;
   }
 
   /* CATEGORIES */
