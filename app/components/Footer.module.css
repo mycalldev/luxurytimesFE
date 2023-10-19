@@ -1,0 +1,30 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap'); */
+
+.imageFooter {
+    width: 100%;
+    height: auto;
+}
+
+.addressContainer {
+    margin: 10px 30px;
+    text-align: center;
+}
+
+.addressTitle {
+    margin: 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #323232;
+}
+
+.addressContent {
+  margin: 10px;
+  font-size: 1.1rem;
+  color: #717171;
+}
+
+.addressCountry {
+  margin-bottom: 20px;  
+  font-size: 1.3rem;
+  color: #717171;
+}
