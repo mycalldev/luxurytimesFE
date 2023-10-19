@@ -78,6 +78,13 @@ export default function Home() {
         <div className={styles.highlightsBTN}>Read More</div>
       </section>
 
+      {/* Blog */}
+      <section>
+      <div className={styles.titleBlogs}>BLOGS</div>
+      <Image src={'/blingToBullion.jpeg'} width={840} height={560} className={styles.imageBlogs} alt={'image of Sky-dweller'} quality={100} />
+      <div className={styles.tagBlogs}>Keep Up-To-Date with the latest gossip in horology</div>
+      <div className={styles.blogsBTN}>Read More</div>
+      </section>
     </main>
   )
 }
