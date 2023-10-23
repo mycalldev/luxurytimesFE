@@ -1,4 +1,6 @@
 
+import WatchDetailsClient from '../WatchDetailsClient';
+
 
 async function getWatch(id) {
     const uniqueID = id.toString()
@@ -14,12 +16,13 @@ async function getWatch(id) {
 }
 
 export default async function WatchDetails({ params }) {
-const watch = await getWatch(params.id)  
+const watch = await getWatch(params.id) 
+const watchArr = Array.from(watch.imageAmount) 
 
 return (
     <>
     <main>
-        <div>{watch.title}</div> 
+        <WatchDetailsClient watchArr={watchArr} watch={watch} />
     </main>
     </>
   )
