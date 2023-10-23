@@ -1,25 +1,32 @@
 import Image from "next/image"
 import styles from './Allwatches.module.css'
+import Link from 'next/link'
+
 
 async function getWatches() {
+    
     const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watches', {
         next: {
             revalidate: 30
         }
     })
-
-    return res.json()
+    const data = await res.json()
+    
+    return data
 }
 
-export default  async function Allwatches() {
-
+export default async function Allwatches() {
+  
   const watches = await getWatches()
+  
   return (
     <>
     {watches.map((watch) => (
         <div key={watch._id}>
-            <div className={styles.titleWatch}>{watch.title}</div>
-            
+          <div className={styles.titleWatch}>
+            {watch.title}
+          </div>
+          <Link href={`/watches/${watch._id}`} >
             <div>
               <Image
                 src={`/watches/${watch.model}/${watch.model}${watch.ref}${watch.strap}${watch.dial}/${watch.ref}${watch.model}1.JPG`}
@@ -30,8 +37,9 @@ export default  async function Allwatches() {
                 quality={100}
               />
             </div>
+          </Link>
+
         </div>
-        
     ))}
     </>
   )
