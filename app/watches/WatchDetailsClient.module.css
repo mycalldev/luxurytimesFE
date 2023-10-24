@@ -2,7 +2,8 @@
     margin: 20px;
     text-align: center;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
+    color:#222222;
 }
 
 .imageWatch {
@@ -34,12 +35,12 @@
 }
 
 .description {
-    margin: 0px 30px 10px 30px;
+    margin: 0px 30px 10px 40px;
     color: #717171;
 }
 
 .contactBTN {
-  margin: 10px auto 20px auto;
+  margin: 10px auto 0px auto;
   padding: 10px;
   color: #fff;
   font-size: 1.5rem;
@@ -54,4 +55,42 @@
     margin: 0 10px;
     text-decoration: none;
     color: #fff;
+  }
+
+  /* DETAILS SECTION */
+
+  .sectionDetails {
+    padding-top: 10px;
+    background: #eeeeee;
+  }
+
+  .titleDetails {
+    margin: 20px auto 20px auto;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #323232;
+  }
+
+  .detailsGrid {
+    margin: 0 40px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-items: center;
+  }
+
+  .specGrid {
+    margin: 10px;
+    color: #323232;
+    display: grid;
+  }
+
+  .titleSpec {
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .titleValue {
+    text-align: center;
+    margin-bottom: 10px;
   }

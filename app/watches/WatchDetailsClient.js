@@ -40,14 +40,39 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
               ))}
             </div>
           </Swiper>
-          <div className={styles.availableContainer}>
-            <p className={styles.dot}></p>
-            <div className={styles.available}>Available Now</div>
-          </div>
-          <div className={styles.description}>{watch.description}</div>
-          <Link href={'/'} className={styles.contactBTNLink}>
-          <div className={styles.contactBTN}>Contact</div>
-          </Link>
+
+          {/* DESCRIPTION CONTENT */}
+          <section>
+            <div className={styles.availableContainer}>
+              <p className={styles.dot}> </p>
+              <div className={styles.available}>Available Now</div>
+            </div>
+            <div className={styles.description}>{watch.description}</div>
+            <Link href={'/'} className={styles.contactBTNLink}>
+            <div className={styles.contactBTN}>Contact</div>
+            </Link>
+          </section>
+          
+          {/* DETAILS SECTION */}
+          <section className={styles.sectionDetails}>
+            <div className={styles.titleDetails}>DETAILS</div>
+
+            <div className={styles.detailsGrid}>
+              <div className={styles.specGrid}>
+                <div className={styles.titleSpec}>Box</div>
+                <div className={styles.titleValue}>Yes</div>
+              </div>
+              <div className={styles.specGrid}>
+                <div className={styles.titleSpec}>Card</div>
+                <div className={styles.titleValue}>{watch.boxAndPapers}</div>
+              </div>
+              <div className={styles.specGrid}>
+                <div className={styles.titleSpec}>Condition</div>
+                <div className={styles.titleValue}>{watch.condition}</div>
+              </div>
+            </div>
+              
+          </section>
 
 
         </div>

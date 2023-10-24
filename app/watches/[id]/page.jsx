@@ -7,7 +7,7 @@ async function getWatch(id) {
     const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watch/'+ id, {
     
         next: {
-            revalidate: 60,
+            revalidate: 30,
         }
     })
     const data = await res.json()
