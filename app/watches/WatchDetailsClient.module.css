@@ -87,10 +87,16 @@
 
   .titleSpec {
     margin-bottom: 10px;
+    font-size: 1.1rem;
     font-weight: 700;
   }
 
   .titleValue {
     text-align: center;
+    font-size: 1.1rem;
     margin-bottom: 10px;
+  }
+
+  @media (min-width: 768px) {
+    
   }
