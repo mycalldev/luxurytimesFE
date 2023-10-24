@@ -1,3 +1,15 @@
+
+.backBTN {
+  margin: 20px 30px;
+  cursor: pointer;
+}
+
+.linkBTN {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.1rem;
+}
+
 .titleMain {
     margin: 20px;
     text-align: center;
@@ -51,11 +63,11 @@
   background: #91c0dc;
 }
 
-.contactBTNLink {
+.BTNLink {
     margin: 0 10px;
     text-decoration: none;
     color: #fff;
-  }
+}
 
   /* DETAILS SECTION */
 

@@ -26,6 +26,26 @@
   color: #fff;
 }
 
+.viewDetailsBTN{
+  width: 50%;
+  height: auto;
+  border: solid 2px #91c0dc;
+  border-radius: 22px;
+  padding: 10px 30px;
+  margin: 10px auto 50px auto;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #91c0dc;
+  letter-spacing: 3px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.viewBTNContainer {
+  text-decoration: none;
+}
+
 
 /* CATEGORY SECTION */
 .titleCategory {

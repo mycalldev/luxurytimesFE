@@ -13,7 +13,11 @@ import "swiper/css/navigation";
 export default function WatchDetailsClient( {watchArr, watch} ) {
   return (
     <div className={styles.imageContainer}>
-        <div className={styles.titleMain}>{watch.title}</div> 
+      <Link href={'/watches'} className={styles.linkBTN}>
+        <div className={styles.backBTN}>{`< BACK`}</div>
+      </Link>
+
+      <div className={styles.titleMain}>{watch.title}</div> 
 
           <Swiper
             pagination={true}
@@ -48,7 +52,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
               <div className={styles.available}>Available Now</div>
             </div>
             <div className={styles.description}>{watch.description}</div>
-            <Link href={'/'} className={styles.contactBTNLink}>
+            <Link href={'/'} className={styles.BTNLink}>
             <div className={styles.contactBTN}>Contact</div>
             </Link>
           </section>
@@ -64,7 +68,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
               </div>
               <div className={styles.specGrid}>
                 <div className={styles.titleSpec}>Card</div>
-                <div className={styles.titleValue}>{watch.boxAndPapers}</div>
+                <div className={styles.titleValue}>{watch.box}</div>
               </div>
               <div className={styles.specGrid}>
                 <div className={styles.titleSpec}>Condition</div>
