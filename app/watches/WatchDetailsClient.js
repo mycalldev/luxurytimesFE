@@ -53,7 +53,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
             </Link>
           </section>
           
-          {/* DETAILS SECTION */}
+          {/* DETAILS MAIN SECTION */}
           <section className={styles.sectionDetails}>
             <div className={styles.titleDetails}>DETAILS</div>
 
@@ -71,8 +71,15 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                 <div className={styles.titleValue}>{watch.condition}</div>
               </div>
             </div>
-              
+            <div className={styles.titleShare}>SHARE THIS WATCH</div>
+            <Link href={'/'} >
+              <div className={styles.imageWhatsapp}>
+                <Image src={'/whatsapp.png'} width={64} height={64} quality={100} alt='whatsapp icon' />
+              </div>
+            </Link>
           </section>
+
+          {/* SHARE SECTION */}
 
 
         </div>
