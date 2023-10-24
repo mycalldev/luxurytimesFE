@@ -38,7 +38,6 @@ export default async function Allwatches() {
               />
             </div>
           </Link>
-
         </div>
     ))}
     </>

@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './WatchDetailsClient.module.css'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
@@ -39,6 +40,16 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
               ))}
             </div>
           </Swiper>
+          <div className={styles.availableContainer}>
+            <p className={styles.dot}></p>
+            <div className={styles.available}>Available Now</div>
+          </div>
+          <div className={styles.description}>{watch.description}</div>
+          <Link href={'/'} className={styles.contactBTNLink}>
+          <div className={styles.contactBTN}>Contact</div>
+          </Link>
+
+
         </div>
   )
 }
