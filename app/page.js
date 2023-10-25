@@ -32,7 +32,7 @@ export default function Home() {
       {/* CTA */}
       <div className={styles.contactBTNContainer}>
         <Image src={"/call.png"} width={25} height={25} alt={'phone icon'} quality={100} /> 
-        <Link href="tel:07976753254" className={styles.contactBTNLink}>Contact</Link>
+        <Link href="tel:07976753254" className={styles.linkBTN}>Contact</Link>
       </div>
 
       
@@ -84,13 +84,18 @@ export default function Home() {
       {/* Highlight Section */}
       <section>
         <div className={styles.titleHighlights}>HIGHLIGHTS</div>
+
         <Image src={'/highlight.JPG'} width={840} height={560} className={styles.imageHighlights} alt={'image of Sky-dweller'} quality={100} />
+        
         <div className={styles.contentHighlightsContainer}>
           <div className={styles.conenttitleHighlights}>Rolex</div>
           <div className={styles.contentSubTitleHighlights}>Sky Dweller</div>
           <div className={styles.paragraphHighlights1}>Introducing the Rolex Sky-Dweller! Where elegance meets precsion.... With its iconic design, dual time zones, and....</div>
         </div> 
-        <div className={styles.highlightsBTN}>Read More</div>
+        <Link href={'/landing/SkyDweller'} className={styles.linkBTN} >
+         <div className={styles.highlightsBTN}>Read More</div>
+        </Link>
+
       </section>
 
       {/* Blog */}
