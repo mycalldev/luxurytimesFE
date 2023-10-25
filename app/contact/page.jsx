@@ -7,7 +7,7 @@ export default function Contact() {
     <div>
       {/* <Meta /> */}
       <div>
-        <h1 className={styles.headerTitle}>ROB DIAMOND CONTACT</h1>
+        <h1 className={styles.headerTitle}>LUXURY TIMES CONTACT</h1>
       </div>
 
       {/* BTN */}
