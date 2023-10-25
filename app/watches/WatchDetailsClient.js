@@ -29,7 +29,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
               {watchArr.map((item, index) => (
                 <SwiperSlide className={styles.swiperSlide} key={index}>
                   <Image
-                    src={`/watches/${watch.model}/${watch.model}${watch.ref}${
+                    src={`/watches/${watch.brand}/${watch.model}/${watch.model}${watch.ref}${
                       watch.strap
                     }${watch.dial}/${watch.ref}${watch.model}${
                       index + 1
