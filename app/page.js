@@ -6,25 +6,23 @@ export default function Home() {
   return (
     <main className={styles.main}>
 
-    {/* Hero Section */}
-      {/* Mobile Hero */}
+    {/* HERO SECTION */}
+      {/* MOBILE HERO */}
       <Image
         className={styles.heroImageMobile}
         src={'/hero_daytona.JPG'}
         width={1680}
         height={1120}
-        // layout="responsive"
         alt={'hero image'}
         quality={100}
       />
 
-      {/* Desktop Hero */}
+      {/* DESKTOP HERO */}
       <Image
         className={styles.heroImageDesktop}
         src={'/hero_daytona_desktop.jpg'}
         width={3246}
         height={1014}
-        // layout="responsive"
         alt={'hero image'}
         quality={100}
       />
@@ -36,7 +34,7 @@ export default function Home() {
       </div>
 
       
-      {/* Category Section */}
+      {/* CATEGORY SECTION */}
       <section>
           <div className={styles.titleCategory}>CATEGORIES</div>
 
@@ -71,17 +69,19 @@ export default function Home() {
           </div>
       </section>
 
-      {/* Guides #section */}
+      {/* GUIDES SECTION */}
       <section>
         <div className={styles.titleGuides}>GUIDES</div>
         <div className={styles.tagGuides}>Check out our latest guides</div>
         <div className={styles.imageGuidesContainer}>
           <Image src={'/cogs.jpg'} className={styles.imageGuides} width={1456} height={816} alt={'cogs for watch background'} quality={100} />
-          <div className={styles.guiedsBTN}>Veiw</div>
+          <Link href={'/guide'} className={styles.viewBTNContainer}>
+            <div className={styles.guiedsBTN}>Veiw</div>
+          </Link>
         </div>
       </section>
 
-      {/* Highlight Section */}
+      {/* HIGHLIGHT SECTION */}
       <section>
         <div className={styles.titleHighlights}>HIGHLIGHTS</div>
 
@@ -98,12 +98,14 @@ export default function Home() {
 
       </section>
 
-      {/* Blog */}
+      {/* BLOG SECTION */}
       <section>
-      <div className={styles.titleBlogs}>BLOGS</div>
-      <Image src={'/blingToBullion.jpeg'} width={840} height={560} className={styles.imageBlogs} alt={'image of Sky-dweller'} quality={100} />
-      <div className={styles.tagBlogs}>Keep Up-To-Date with the latest gossip in horology</div>
-      <div className={styles.blogsBTN}>Read More</div>
+        <div className={styles.titleBlogs}>BLOGS</div>
+        <Image src={'/blingToBullion.jpeg'} width={840} height={560} className={styles.imageBlogs} alt={'image of Sky-dweller'} quality={100} />
+        <div className={styles.tagBlogs}>Keep Up-To-Date with the latest gossip in horology</div>
+        <Link href={'/landing/SkyDweller'} className={styles.linkBTN} >
+          <div className={styles.blogsBTN}>Read More</div>
+        </Link>
       </section>
     </main>
   )

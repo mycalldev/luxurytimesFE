@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from './introBlog.module.css';
-import Footer from '../components/Footer';
 
 export default function introBlog() {
   return (
