@@ -17,21 +17,20 @@
 .contactBTNContainer {
   margin: 30px auto;
   padding: 10px;
+  max-width: 200px;
   font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
-  max-width: 200px;
   border-radius: 22px;
   background: #91c0dc;
 }
 
 .viewDetailsBTN{
-  width: 50%;
-  height: auto;
+  margin: 10px auto 50px auto;
+  padding: 10px 30px;
+  max-width: 150px;
   border: solid 2px #91c0dc;
   border-radius: 22px;
-  padding: 10px 30px;
-  margin: 10px auto 50px auto;
   font-size: 1rem;
   font-weight: 500;
   color: #fff;
