@@ -14,7 +14,7 @@ export default function RolexCategories() {
           <Link href={'/'} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/watches/datejust/datejust126331jubileewimbledon/126331datejust1.JPG`}
+                      src={`/watches/datejust/rolex/datejust126331jubileewimbledon/126331datejust1.JPG`}
                       width={840}
                       height={560}
                       alt='datejust thumbnail'
