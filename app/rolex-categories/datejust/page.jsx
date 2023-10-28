@@ -21,6 +21,34 @@ const watches = await getDatejust()
 
   return (
     <div>
+        <div>
+          <Image
+            src={"/categoryBanner/datejustCatBanner.JPG"}
+            width={2181}
+            height={591}
+            alt='Rolex DateJust Hero Banner'
+            className={styles.imageCatHero}
+            quality={100}
+
+          />
+        </div>
+
+        <h1 className={styles.titleMain}>DATEJUST</h1>
+
+        <div className={styles.contentTopContainer}>
+          <p className={styles.catDescription}>
+            The Rolex Datejust 41mm, a timeless classic that blends elegance with
+            functionality. An exceptional watch that never goes out of style.
+            Available with both Oyster and Jubilee bracelets and renowned for its
+            popularity among watch enthusiasts and collectors.
+          </p>
+          
+          {/* CTA  */}
+          <div className={styles.viewDetailsBTN}>
+            <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
+          </div>
+        </div>
+
         <main className={styles.mainContainer}>
         {watches.map((watch) => (
           <div
@@ -39,7 +67,7 @@ const watches = await getDatejust()
               />
             </div>
             
-            <Link href={`/watches/all-watches/${watch._id}`} className={styles.viewBTNContainer}> 
+            <Link href={`/watches/all-watches/${watch._id}`} className={styles.linkBTN}> 
             <div className={styles.viewDetailsBTN}>
                 <h4>VIEW</h4>
             </div>

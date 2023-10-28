@@ -125,6 +125,49 @@
     cursor: pointer;
   }
 
+  .titleSpecMain {
+    margin: 30px 30px 20px 30px;
+    text-align: start;
+  }
+
+  .titleDialMain {
+    text-align: center;
+  }
+
+  .specContainer {
+    margin: 5px 20px 5px 20px;
+    border-top: 1px solid #c4c4c4;
+  }
+
+  .specGridContainer {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    justify-items: center;
+  }
+
+  .itemGridKey {
+    margin: 20px;
+  }
+
+  .itemGridValue {
+    margin: 20px;
+  }
+
+  .listItemKey {
+    margin: 5px 0 5px 10px;
+    list-style: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .listItemValue {
+    margin: 0 10px;
+    list-style: none;
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-transform: capitalize;
+  }
+
   @media (min-width: 768px) {
     
   }

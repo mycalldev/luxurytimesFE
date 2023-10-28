@@ -1,3 +1,16 @@
+.linkBTN {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+  }
+
+.titleMain {
+    margin: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
 .titleWatch {
     margin: 20px;
     text-align: center;
@@ -5,11 +18,35 @@
     font-weight: 600;
 }
 
+.imageCatHero {
+    width: 100%;
+    height: auto;
+}
+
 .imageWatch {
     width: 100%;
     height: auto;
 } 
 
-.viewDetailsBTN {
-    text-align: center;
+.catDescription {
+    margin: 20px 40px 30px 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
 }
+
+.viewDetailsBTN {
+    margin: 10px auto 50px auto;
+    padding: 10px 30px;
+    max-width: 150px;
+    border: solid 2px #91c0dc;
+    border-radius: 22px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #91c0dc;
+    letter-spacing: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+      

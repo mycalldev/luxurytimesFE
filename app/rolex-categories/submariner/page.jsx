@@ -20,7 +20,40 @@ export default async function Submariner() {
 const watches = await getSubmariner()
 
   return (
-    <div><main className={styles.mainContainer}>
+
+    <div>
+
+        <div>
+          <Image
+            src={"/categoryBanner/submarinerCatBanner.JPG"}
+            width={2181}
+            height={591}
+            alt='Rolex Submariner Hero Banner'
+            className={styles.imageCatHero}
+            quality={100}
+
+          />
+        </div>
+
+        <h1 className={styles.titleMain}>SUBMARINER</h1>
+
+        <div className={styles.contentTopContainer}>
+          <p className={styles.catDescription}>
+            Discover the iconic Rolex Submariner, the quintessential dive watch
+            designed for adventurers. Available only in Oyster Steel bracelet,
+            this watch is a timeless masterpiece. Highly popular among watch
+            enthusiasts and collectors, the Submariner is a symbol of style and
+            precision.
+          </p>
+          
+          {/* CTA  */}
+          <div className={styles.viewDetailsBTN}>
+            <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
+          </div>
+        </div>
+
+      
+    <main className={styles.mainContainer}>
     {watches.map((watch) => (
       <div
         className={styles.productContainer}
