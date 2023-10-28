@@ -5,8 +5,20 @@
     height: auto;
 }
 
+
+.containerFlex {
+  padding: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #c6c6c6;
+}
+
 .addressContainer {
-    margin: 10px 30px;
+    margin: 10px 30px 40px 30px;
     text-align: center;
 }
 
