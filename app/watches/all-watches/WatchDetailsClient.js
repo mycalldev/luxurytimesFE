@@ -84,7 +84,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
 
             {/* <div className={styles.specGrid}> */}
               <div className={styles.titleSpecMain}>
-                <h2>Specification</h2>
+                <h2>Main</h2>
               </div>
 
               <div className={styles.specContainer}>
@@ -101,7 +101,8 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                 <div className={styles.listItemKey}>Model</div>
                 <div className={styles.listItemValue}>{watch.model}</div>
               </div>
-
+              
+              {/* DIAL */}
               <div className={styles.titleSpecMain}>
                 <h2>Dial</h2>
               </div>
@@ -118,12 +119,101 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
 
               <div className={styles.specContainer}>
                 <div className={styles.listItemKey}>Number Markers</div>
-                <div className={styles.listItemValue}>Roman Numerals</div>
+                <div className={styles.listItemValue}>Roman Numerals + Glow Lumes</div>
               </div>
 
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Hands</div>
+                <div className={styles.listItemValue}>OysterSteel + Glow Lumes</div>
+              </div>
 
+              {/* BEZEL */}
+              <div className={styles.titleSpecMain}>
+                <h2>Bezel</h2>
+              </div>
 
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Style</div>
+                <div className={styles.listItemValue}>Fluted</div>
+              </div>
 
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Directional</div>
+                <div className={styles.listItemValue}>N/A</div>
+              </div>
+
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Material</div>
+                <div className={styles.listItemValue}>{watch.bezel}</div>
+              </div> 
+              
+              {/* BRACELET */}
+              <div className={styles.titleSpecMain}>
+                <h2>Bracelet</h2>
+              </div>
+
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Style</div>
+                <div className={styles.listItemValue}>{watch.strap}</div>
+              </div>
+
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Material</div>
+                <div className={styles.listItemValue}>{watch.braceletMaterial}</div>
+              </div>
+
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Colour</div>
+                <div className={styles.listItemValue}>Rose Gold + OysterSteel</div>
+              </div>
+
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Clasp</div>
+                <div className={styles.listItemValue}>Fold Clasp / Gluide Lock</div>
+              </div>
+
+              {/* CALIBER */}
+              <div className={styles.titleSpecMain}>
+                <h2>Caliber</h2>
+              </div>
+
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Movement</div>
+                <div className={styles.listItemValue}>{watch.movement}</div>
+              </div>
+
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Caliber</div>
+                <div className={styles.listItemValue}>{watch.caliber}</div>
+              </div>
+
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Power Reserve</div>
+                <div className={styles.listItemValue}>{watch.powerReserve}</div>
+              </div>
+
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Number of Jewels</div>
+                <div className={styles.listItemValue}>31</div>
+              </div>
+
+              {/* SUPPLEMENTARY */}
+              <div className={styles.titleSpecMain}>
+                <h2>Supplementary</h2>
+              </div>
+
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Crystal</div>
+                <div className={styles.listItemValue}>Sapphire Crystal</div>
+              </div>
+
+              <div className={styles.specContainer}>
+                <div className={styles.listItemKey}>Case Material</div>
+                <div className={styles.listItemValue}>{watch.caseMaterial}</div>
+              </div>
+
+             
+            
               {/* SPECIFICATION GRID */}
               {/* <div className={styles.specGridContainer}>
 
