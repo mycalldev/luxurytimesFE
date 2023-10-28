@@ -1,0 +1,15 @@
+.titleWatch {
+    margin: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.imageWatch {
+    width: 100%;
+    height: auto;
+} 
+
+.viewDetailsBTN {
+    text-align: center;
+}

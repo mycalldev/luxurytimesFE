@@ -28,7 +28,7 @@ export default function RolexCategories() {
             <div className={styles.modelTitle}>DateJust</div>
           </div>
           <div className={styles.heroBtn}>
-            <Link href="tel:07976753254" className={styles.linkBTN}>View</Link>
+            <Link href={"rolex-categories/datejust"} className={styles.linkBTN}>View</Link>
           </div>
         </div>
 
