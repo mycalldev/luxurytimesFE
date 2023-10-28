@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './RolexCategories.module.css'
@@ -11,7 +11,7 @@ export default function RolexCategories() {
       <div className={styles.containerGrid}>
         {/* DATEJUST */}
         <div className={styles.containerItem}>
-          <Link href={'/'} > 
+          <Link href={'/rolex-categories/datejust'} > 
               <div className={styles.imageContainer}>
                   <Image
                       src={`/watches/rolex/datejust/datejust126331jubileewimbledon/126331datejust1.JPG`}
@@ -28,13 +28,13 @@ export default function RolexCategories() {
             <div className={styles.modelTitle}>DateJust</div>
           </div>
           <div className={styles.heroBtn}>
-            <Link href={"rolex-categories/datejust"} className={styles.linkBTN}>View</Link>
+            <Link href={"/rolex-categories/datejust"} className={styles.linkBTN}>View</Link>
           </div>
         </div>
 
         {/* SUBMARINER */}
         <div className={styles.containerItem}>
-          <Link href={'/'} > 
+          <Link href={'/rolex-categories/submariner'} > 
               <div className={styles.imageContainer}>
                   <Image
                       src={`/watches/rolex/submariner/submariner116610LVoystergreen/116610LVsubmariner1.JPG`}
@@ -51,7 +51,7 @@ export default function RolexCategories() {
             <div className={styles.modelTitle}>Submariner</div>
           </div>
           <div className={styles.heroBtn}>
-            <Link href="tel:07976753254" className={styles.linkBTN}>View</Link>
+            <Link href={"/rolex-categories/submariner"} className={styles.linkBTN}>View</Link>
           </div>
         </div>
 
