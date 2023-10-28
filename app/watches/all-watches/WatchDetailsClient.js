@@ -55,6 +55,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
             <Link href={'/'} className={styles.BTNLink}>
             <div className={styles.contactBTN}>Contact</div>
             </Link>
+            
           </section>
           
           {/* DETAILS MAIN SECTION */}
@@ -64,17 +65,20 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
             <div className={styles.detailsGrid}>
               <div className={styles.specGrid}>
                 <div className={styles.titleSpec}>Box</div>
-                <div className={styles.titleValue}>Yes</div>
+                <div className={styles.titleValue}>{watch.box}</div>
               </div>
               <div className={styles.specGrid}>
                 <div className={styles.titleSpec}>Card</div>
-                <div className={styles.titleValue}>{watch.box}</div>
+                <div className={styles.titleValue}>Yes</div>
               </div>
               <div className={styles.specGrid}>
                 <div className={styles.titleSpec}>Condition</div>
                 <div className={styles.titleValue}>{watch.condition}</div>
               </div>
             </div>
+
+            
+
             <div className={styles.titleShare}>SHARE THIS WATCH</div>
             <Link href={'/'} >
               <div className={styles.imageWhatsapp}>
@@ -134,7 +138,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
 
               <div className={styles.specContainer}>
                 <div className={styles.listItemKey}>Style</div>
-                <div className={styles.listItemValue}>Fluted</div>
+                <div className={styles.listItemValue}>{watch.bezel}</div>
               </div>
 
               <div className={styles.specContainer}>
@@ -197,9 +201,9 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                 <div className={styles.listItemValue}>31</div>
               </div>
 
-              {/* SUPPLEMENTARY */}
+              {/* SPECIFICS */}
               <div className={styles.titleSpecMain}>
-                <h2>Supplementary</h2>
+                <h2>Specifics</h2>
               </div>
 
               <div className={styles.specContainer}>
