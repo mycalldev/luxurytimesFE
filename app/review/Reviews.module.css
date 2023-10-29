@@ -3,3 +3,63 @@
     text-align: center;
     font-weight: 600;
 }
+
+.containerMain {
+    margin: 40px 30px;
+    padding: 20px 30px;
+    background: #eeeeee;
+}
+
+.ratingMainContainer {
+    display: flex;
+    align-items: center;
+}
+
+
+.imageStar {
+ margin: 0 5px;
+}
+
+.ratingGrid {
+    margin: 20px 40px;
+    display: grid;
+    max-width: 300px;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.rating {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.containerGrid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.nameKey {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.nameValue {
+    font-size: 1.1rem;
+}
+
+.dateKey {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.dateValue {
+    font-size: 1.1rem;
+}
+
+
+.review {
+    margin: 20px 0;
+    font-size: 1.1rem;
+}
