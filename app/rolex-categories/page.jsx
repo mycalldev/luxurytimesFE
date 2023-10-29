@@ -27,9 +27,13 @@ export default function RolexCategories() {
             <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>DateJust</div>
           </div>
-          <div className={styles.heroBtn}>
-            <Link href={"/rolex-categories/datejust"} className={styles.linkBTN}>View</Link>
-          </div>
+          <Link href={"/rolex-categories/datejust"} prefetch={true} className={styles.linkBTN}>
+            <div className={styles.heroBtn}>
+              View
+            </div>
+          </Link>
+
+          
         </div>
 
         {/* SUBMARINER */}
@@ -50,9 +54,11 @@ export default function RolexCategories() {
             <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>Submariner</div>
           </div>
-          <div className={styles.heroBtn}>
-            <Link href={"/rolex-categories/submariner"} className={styles.linkBTN}>View</Link>
-          </div>
+          <Link href={"/rolex-categories/submariner"} prefetch={true} className={styles.linkBTN}>
+            <div className={styles.heroBtn}>
+              View
+            </div>
+          </Link>
         </div>
 
         {/* GMT MASTER II */}
@@ -63,7 +69,7 @@ export default function RolexCategories() {
                       src={`/watches/rolex/gmtmasterii/gmtmasterii126710BLNRoysterblack/126710BLNRgmtmasterii1.JPG`}
                       width={840}
                       height={560}
-                      alt='gmt master ii thumbnail'
+                      alt='gmt-master ii thumbnail'
                       className={styles.imageCategory}
                       quality={100}
                   />
@@ -73,9 +79,11 @@ export default function RolexCategories() {
             <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>GMT Master II</div>
           </div>
-          <div className={styles.heroBtn}>
-            <Link href="tel:07976753254" className={styles.linkBTN}>View</Link>
-          </div>
+          <Link href={"/rolex-categories/gmt-master-ii"} prefetch={true} className={styles.linkBTN}>
+            <div className={styles.heroBtn}>
+              View
+            </div>
+          </Link>
         </div>
 
         {/* SKY-DWELLER */}
@@ -96,9 +104,11 @@ export default function RolexCategories() {
             <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>Sky-Dweller</div>
           </div>
-          <div className={styles.heroBtn}>
-            <Link href="tel:07976753254" className={styles.linkBTN}>View</Link>
-          </div>
+          <Link href={"/rolex-categories/sky-dweller"} prefetch={true} className={styles.linkBTN}>
+            <div className={styles.heroBtn}>
+              View
+            </div>
+          </Link>
         </div>
 
         {/* DAYTONA */}
@@ -119,9 +129,11 @@ export default function RolexCategories() {
             <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>Daytona</div>
           </div>
-          <div className={styles.heroBtn}>
-            <Link href="tel:07976753254" className={styles.linkBTN}>View</Link>
-          </div>
+          <Link href={"/rolex-categories/daytona"} prefetch={true} className={styles.linkBTN}>
+            <div className={styles.heroBtn}>
+              View
+            </div>
+          </Link>
         </div>
 
         {/* DAYDATE */}
@@ -142,9 +154,11 @@ export default function RolexCategories() {
             <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>DayDate</div>
           </div>
-          <div className={styles.heroBtn}>
-            <Link href="tel:07976753254" className={styles.linkBTN}>View</Link>
-          </div>
+          <Link href={"/rolex-categories/daydate"} prefetch={true} className={styles.linkBTN}>
+            <div className={styles.heroBtn}>
+              View
+            </div>
+          </Link>
         </div>
       </div>
     </div>

@@ -71,7 +71,7 @@ const watches = await getSubmariner()
           />
         </div>
         
-        <Link href={`/watches/all-watches/${watch._id}`} className={styles.viewBTNContainer}> 
+        <Link href={`/watches/all-watches/${watch._id}`} prefetch={true} className={styles.viewBTNContainer}> 
         <div className={styles.viewDetailsBTN}>
             <h4>VIEW</h4>
         </div>

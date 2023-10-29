@@ -1,11 +1,10 @@
-
 import Image from "next/image"
-import Link from "next/link"
+import Link from 'next/link'
 import styles from '../SubCategory.module.css'
 
-async function getDayDate() {
+async function getGmtMasterII() {
     
-    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelDayDate', {
+    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelGMT-MasterII', {
         next: {
             revalidate: 30
         }
@@ -16,33 +15,32 @@ async function getDayDate() {
 }
 
 
-export default async function DayDate() {
+export default async function GMTMasterII() {
 
-const watches = await getDayDate()
+const watches = await getGmtMasterII()
 
   return (
     <div>
         <div>
           <Image
-            src={"/categoryBanner/daydateCatBanner.JPG"}
+            src={"/categoryBanner/gmtMasterIICatBanner.JPG"}
             width={2181}
             height={591}
-            alt='Rolex DayDate Hero Banner'
+            alt='Rolex GMT-Master II Hero Banner'
             className={styles.imageCatHero}
             quality={100}
 
           />
         </div>
 
-        <h1 className={styles.titleMain}>DAYDATE</h1>
+        <h1 className={styles.titleMain}>GMT-MASTER II</h1>
 
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
-            The Rolex Day-Date, the ultimate luxury watch. 
-            Available with Oyster and Jubilee bracelets, 
-            this watch exudes sophistication and prestige. 
+            The Rolex GMT-Master II 42mm. With Oyster and Jubilee bracelets available, 
+            this watch is a perfect blend of luxury and functionality. 
             Highly sought-after by watch enthusiasts and collectors, 
-            the Day-Date is a true icon of the Rolex brand.
+            the GMT-Master II 42mm is a true icon of the Rolex brand.
           </p>
           
           {/* CTA  */}
@@ -69,10 +67,10 @@ const watches = await getDayDate()
               />
             </div>
             
-            <Link href={`/watches/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN}> 
-              <div className={styles.viewDetailsBTN}>
-                  <h4>View</h4>
-              </div>
+            <Link href={`/watches/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN} >
+                <div className={styles.viewDetailsBTN}>
+                    <h4>VIEW</h4>
+                </div>
             </Link>
           </div>
         ))}
@@ -80,3 +78,4 @@ const watches = await getDayDate()
     </div>
   )
 }
+

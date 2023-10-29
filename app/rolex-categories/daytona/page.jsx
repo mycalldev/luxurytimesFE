@@ -26,7 +26,7 @@ const watches = await getDaytona()
             src={"/categoryBanner/daytonaCatBanner.JPG"}
             width={2181}
             height={591}
-            alt='Rolex DateJust Hero Banner'
+            alt='Rolex Daytona Hero Banner'
             className={styles.imageCatHero}
             quality={100}
 
@@ -68,7 +68,7 @@ const watches = await getDaytona()
               />
             </div>
             
-            <Link href={`/watches/all-watches/${watch._id}`} className={styles.linkBTN}> 
+            <Link href={`/watches/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN} >
                 <div className={styles.viewDetailsBTN}>
                     <h4>VIEW</h4>
                 </div>

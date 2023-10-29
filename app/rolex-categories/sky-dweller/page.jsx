@@ -1,11 +1,10 @@
-
 import Image from "next/image"
-import Link from "next/link"
+import Link from 'next/link'
 import styles from '../SubCategory.module.css'
 
-async function getDayDate() {
+async function getSkyDweller() {
     
-    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelDayDate', {
+    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelSkyDweller', {
         next: {
             revalidate: 30
         }
@@ -16,33 +15,31 @@ async function getDayDate() {
 }
 
 
-export default async function DayDate() {
+export default async function SkyDweller() {
 
-const watches = await getDayDate()
+const watches = await getSkyDweller()
 
   return (
     <div>
         <div>
           <Image
-            src={"/categoryBanner/daydateCatBanner.JPG"}
+            src={"/categoryBanner/SkyDwellerCatBanner.JPG"}
             width={2181}
             height={591}
-            alt='Rolex DayDate Hero Banner'
+            alt='Rolex Sky-Dweller Hero Banner'
             className={styles.imageCatHero}
             quality={100}
 
           />
         </div>
 
-        <h1 className={styles.titleMain}>DAYDATE</h1>
+        <h1 className={styles.titleMain}>Sky_Dweller</h1>
 
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
-            The Rolex Day-Date, the ultimate luxury watch. 
-            Available with Oyster and Jubilee bracelets, 
-            this watch exudes sophistication and prestige. 
-            Highly sought-after by watch enthusiasts and collectors, 
-            the Day-Date is a true icon of the Rolex brand.
+            The Sky-Dweller is considered one of Rolex's most complex watches, 
+            with a combination of an annual calendar, 
+            a dual time zone display, and a 24-hour display.
           </p>
           
           {/* CTA  */}
@@ -69,10 +66,10 @@ const watches = await getDayDate()
               />
             </div>
             
-            <Link href={`/watches/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN}> 
-              <div className={styles.viewDetailsBTN}>
-                  <h4>View</h4>
-              </div>
+            <Link href={`/watches/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN} >
+                <div className={styles.viewDetailsBTN}>
+                    <h4>VIEW</h4>
+                </div>
             </Link>
           </div>
         ))}
@@ -80,3 +77,4 @@ const watches = await getDayDate()
     </div>
   )
 }
+

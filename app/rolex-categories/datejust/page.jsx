@@ -67,7 +67,7 @@ const watches = await getDatejust()
               />
             </div>
             
-            <Link href={`/watches/all-watches/${watch._id}`} className={styles.linkBTN}> 
+            <Link href={`/watches/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN}> 
             <div className={styles.viewDetailsBTN}>
                 <h4>VIEW</h4>
             </div>
