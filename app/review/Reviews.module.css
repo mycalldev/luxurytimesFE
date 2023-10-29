@@ -1,3 +1,24 @@
+.linkBTN {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+  }
+
+.viewDetailsBTN {
+    margin: 10px auto 50px auto;
+    padding: 10px 30px;
+    max-width: 150px;
+    border: solid 2px #91c0dc;
+    border-radius: 22px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #91c0dc;
+    letter-spacing: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+
 .titleMain {
     margin: 20px;
     text-align: center;
@@ -62,4 +83,12 @@
 .review {
     margin: 20px 0;
     font-size: 1.1rem;
+}
+
+.titleReviews {
+  margin: 20px auto -10px auto;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #323232;
 }

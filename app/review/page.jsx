@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from './Reviews.module.css'
 
 async function getReviews() {
@@ -16,42 +17,40 @@ async function getReviews() {
 
 export default async function Reviews() {
 
-    const FAQs = await getReviews()
+    const reviews = await getReviews()
     
   return (
     <main>
         <div>
             <h1 className={styles.titleMain}>REVIEWS</h1>
+            <div className={styles.viewDetailsBTN}>
+             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
+            </div>
         </div>
-        {FAQs.map((FAQ) => (
+        {reviews.map((review) => (
             
-            <div key={FAQ._id}>
-        <div className={styles.containerMain}>
-                
+        <div key={review._id}>
+            <div className={styles.containerMain}> 
                 <div className={styles.containerGrid}>
                     <div className={styles.nameKey}>Name:</div>
-                    <div className={styles.nameValue}>{FAQ.name}</div>
+                    <div className={styles.nameValue}>{review.name}</div>
                 </div>
                 <div className={styles.containerGrid}>
                     <div className={styles.dateKey}>Date:</div>
-                    <div className={styles.dateValue}>{FAQ.date}</div>
+                    <div className={styles.dateValue}>{review.date}</div>
                 </div>
-            
-            
-            <div className={styles.review}>{FAQ.comment}</div>
-
+            <div className={styles.review}>{review.comment}</div>
             <div className={styles.ratingMainContainer}>
                 <div className={styles.rating}>Rating:</div>
-
                 <div>
-                {FAQ.rating == 3 &&
+                {review.rating == 3 &&
                   <div className={styles.ratingGrid}>
                     <Image src={'/star.png'} width={16} height={16} className={styles.imageStar} alt='image of star' quality={100} />
                     <Image src={'/star.png'} width={16} height={16} className={styles.imageStar} alt='image of star' quality={100} />
                     <Image src={'/star.png'} width={16} height={16} className={styles.imageStar} alt='image of star' quality={100} />
                   </div> 
                 }
-                {FAQ.rating == 4 &&
+                {review.rating == 4 &&
                   <div className={styles.ratingGrid}>
                     <Image src={'/star.png'} width={16} height={16} className={styles.imageStar} alt='image of star' quality={100} />
                     <Image src={'/star.png'} width={16} height={16} className={styles.imageStar} alt='image of star' quality={100} />
@@ -59,7 +58,7 @@ export default async function Reviews() {
                     <Image src={'/star.png'} width={16} height={16} className={styles.imageStar} alt='image of star' quality={100} />
                   </div> 
                 }
-                {FAQ.rating == 5 &&
+                {review.rating == 5 &&
                    <div className={styles.ratingGrid}>
                     <Image src={'/star.png'} width={16} height={16} className={styles.imageStar} alt='image of star' quality={100} />
                     <Image src={'/star.png'} width={16} height={16} className={styles.imageStar} alt='image of star' quality={100} />
