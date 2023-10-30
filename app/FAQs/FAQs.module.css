@@ -1,0 +1,37 @@
+.titleMain {
+    margin: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.faqsContainer {
+    margin: 20px;
+    padding: 20px;
+    font-size: 1.1rem;
+    background: #eeeeee;
+}
+
+.questionGrid {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titleQuestion {
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.question {
+ margin: 10px;
+}
+
+.titleAnswer {
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.answer {
+    margin: 10px;
+}
