@@ -86,43 +86,53 @@ export default async function Home() {
       </section>
 
       {/* GUIDES SECTION */}
-      <section>
-        <div className={styles.titleGuides}>GUIDES</div>
-        <div className={styles.tagGuides}>Check out our latest guides</div>
-        <div className={styles.imageGuidesContainer}>
-          <Image src={'/cogs.jpg'} className={styles.imageGuides} width={1456} height={816} alt={'cogs for watch background'} quality={100} />
-          <Link href={'/guide'} className={styles.viewBTNContainer}>
-            <div className={styles.guiedsBTN}>Veiw</div>
-          </Link>
-        </div>
-      </section>
+      <section className={styles.guideHighlightGrid}>
+       
+          <div className={styles.titleGuides}>GUIDES</div>
 
+          <div className={styles.imageGuidesContainer}>
+            <Image src={'/cogs.jpg'} className={styles.imageGuides} width={1456} height={816} alt={'cogs for watch background'} quality={100} />
+            <div className={styles.tagGuides}>Check out our latest guides</div>
+            <div className={styles.paragraphGuides}>Introducing our latest guides! We're thrilled to present a collection of expertly crafted resources designed to empower and inform you.</div>
+            <Link href={'/guide'} className={styles.viewBTNContainer}>
+              <div className={styles.guiedsBTN}>Veiw</div>
+            </Link>
+          </div>
+        </section>
+       
+      
       {/* HIGHLIGHT SECTION */}
-      <section>
-        <div className={styles.titleHighlights}>HIGHLIGHTS</div>
+      <div className={styles.blogHighlightGrid}>
+       <section>
+          <div className={styles.titleHighlights}>HIGHLIGHTS</div>
 
-        <Image src={'/highlight.JPG'} width={840} height={560} className={styles.imageHighlights} alt={'image of Sky-dweller'} quality={100} />
-        
-        <div className={styles.contentHighlightsContainer}>
-          <div className={styles.conenttitleHighlights}>Rolex</div>
-          <div className={styles.contentSubTitleHighlights}>Sky Dweller</div>
-          <div className={styles.paragraphHighlights1}>Introducing the Rolex Sky-Dweller! Where elegance meets precsion.... With its iconic design, dual time zones, and....</div>
-        </div> 
-        <Link href={'/landing/SkyDweller'} className={styles.linkBTN} >
-         <div className={styles.highlightsBTN}>Read More</div>
-        </Link>
-
+          <Image src={'/highlight.JPG'} width={840} height={560} className={styles.imageHighlights} alt={'image of Sky-dweller'} quality={100} />
+          
+          <div className={styles.contentHighlightsContainer}>
+            <div className={styles.conenttitleHighlights}>Rolex</div>
+            <div className={styles.contentSubTitleHighlights}>Sky Dweller</div>
+            <div className={styles.paragraphHighlights1}>Introducing the Rolex Sky-Dweller! Where elegance meets precsion.... With its iconic design, dual time zones, and....</div>
+          </div> 
+          <Link href={'/landing/SkyDweller'} className={styles.linkBTN} >
+          <div className={styles.highlightsBTN}>Read More</div>
+          </Link>
       </section>
 
       {/* BLOG SECTION */}
       <section>
         <div className={styles.titleBlogs}>BLOGS</div>
         <Image src={'/blingToBullion.jpeg'} width={840} height={560} className={styles.imageBlogs} alt={'image of Sky-dweller'} quality={100} />
-        <div className={styles.tagBlogs}>Keep Up-To-Date with the latest gossip in horology</div>
+        <div className={styles.contentHighlightsContainer}>
+            <div className={styles.conenttitleHighlights}>Watches</div>
+            <div className={styles.contentSubTitleHighlights}>Time Investment</div>
+            <div className={styles.paragraphHighlights1}>Investing in time.... Investing in your future! The Watch world has geneated a ton of interest in recent times and for good....</div>
+          </div> 
+        {/* <div className={styles.tagBlogs}>Keep Up-To-Date with the latest gossip in horology</div> */}
         <Link href={'/landing/SkyDweller'} className={styles.linkBTN} >
           <div className={styles.blogsBTN}>Read More</div>
         </Link>
       </section>
+      </div>
 
       <ReviewSwiper review={review}/>
     </main>

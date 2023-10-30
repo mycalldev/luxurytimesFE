@@ -86,19 +86,24 @@
 }
 
 .imageGuides {
+  display: block;
   width: 100%;
   height: auto;
 }
 
 .tagGuides {
-  margin-bottom: 20px;
+  margin: 20px 20px 10px 20px;
   font-size: 1.3rem;
   text-align: center;
   color: #717171;
 }
 
+.paragraphGuides {
+  display: none;
+}
+
 .guiedsBTN {
-  margin: 30px auto;
+  margin: 10px auto 30px auto;
   padding: 10px;
   font-size: 1.3rem;
   font-weight: 500;
@@ -275,4 +280,42 @@
   .tagBlogs {
     margin: 15px 30px 0 30px;
   }
+}
+
+@media(min-width: 1024px) {
+  .blogHighlightGrid {
+    margin: 0 30px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .imageGuidesDesktop {
+    display: block;
+    margin: auto;
+    width: 90%;
+  }
+
+  .titleGuides {
+    margin: 40px 20px 20px 20px;
+  }
+
+  .tagGuides {
+    margin-top: 20px;
+    color: #2e2e2e;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .paragraphGuides {
+    display: block;
+    margin: 10px 200px 0 200px;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #717171;
+  }
+
+  .titleHighlights {
+    margin: 20px auto 20px auto;
+  }
+
 }

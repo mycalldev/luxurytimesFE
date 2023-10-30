@@ -92,3 +92,9 @@
   text-align: center;
   color: #323232;
 }
+
+@media(min-width: 1024px) {
+    .containerMain {
+        margin: 30px 60px;
+    }
+}
