@@ -190,6 +190,35 @@
 }
 
 @media(min-width:768px) {
+
+  /* BUTTONS */
+  .viewDetailsBTN{
+    margin: 10px auto 10px auto;
+    padding: 5px 30px;
+    max-width: 150px;
+    border: solid 2px #91c0dc;
+    border-radius: 22px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #91c0dc;
+    letter-spacing: 3px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .blogsBTN {
+    margin: 0px auto 10px auto;
+    padding: 10px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    max-width: 200px;
+    border-radius: 22px;
+    background: #91c0dc;
+    color: #fff;
+  }
+
   .heroImageMobile {
     display: none
   }
@@ -201,9 +230,49 @@
   }
 
   /* CATEGORIES */
-
   .titleCategory {
-    margin: 50px;
+    margin: 50px auto 10px auto;
     font-size: 2rem;
+  }
+
+  .categoryContainerGrid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+  }
+
+  /* GUIDES */
+  .titleGuides {
+    margin: 20px auto 5px auto;
+  }
+
+  .imageGuides {
+    display: block;
+    margin: auto;
+    width: 90%;
+  }
+
+  .guiedsBTN {
+    margin: 15px auto 30px auto;
+  }
+
+  /* HIGHLIGHTS */
+  .imageHighlights {
+    display: block;
+    margin: auto;
+    width: 90%;
+  }
+  .paragraphHighlights1 {
+    margin: 10px 70px 0 70px;
+  }
+
+  /* BLOGS */
+  .imageBlogs {
+    display: block;
+    margin: auto;
+    width: 90%;
+  }
+
+  .tagBlogs {
+    margin: 15px 30px 0 30px;
   }
 }

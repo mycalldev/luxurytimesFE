@@ -51,8 +51,8 @@ export default async function Home() {
 
       
       {/* CATEGORY SECTION */}
-      <section>
           <div className={styles.titleCategory}>CATEGORIES</div>
+      <section className={styles.categoryContainerGrid}>
 
           <div className={styles.imageCategoryContainer}>
             <Image src={'/category/hulk_category.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100}  />
