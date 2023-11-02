@@ -77,7 +77,7 @@ export default async function Home() {
           <div className={styles.imageCategoryContainer}>
             <Image src={'/category/APiguet.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
             <div className={styles.titleCategoryWatch}>Audemars Piguet</div>
-            <Link href={`/`} className={styles.viewBTNContainer}> 
+            <Link href={`/audemars-piguet-categories`} className={styles.viewBTNContainer}> 
               <div className={styles.viewDetailsBTN}>
                   <h4>VIEW</h4>
               </div>
