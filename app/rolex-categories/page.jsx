@@ -6,7 +6,7 @@ import styles from './RolexCategories.module.css'
 export default function RolexCategories() {
   return (
     <div>
-      <div className={styles.titleCategory}>ROLEX CATEGORIES</div>
+      <div className={styles.titleCategory}>ROLEX COLLLECTIONS</div>
       
       <div className={styles.containerGrid}>
         {/* DATEJUST */}

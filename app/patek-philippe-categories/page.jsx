@@ -6,7 +6,7 @@ import styles from './PatekPhilippeCategories.module.css'
 export default function PatekPhilippeCategories() {
   return (
     <div>
-      <div className={styles.titleCategory}>PATEK PHILIPPE MODELS</div>
+      <div className={styles.titleCategory}>PATEK PHILIPPE COLLECTIONS</div>
       
       <div className={styles.containerGrid}>
         {/* AQUANAUT */}
