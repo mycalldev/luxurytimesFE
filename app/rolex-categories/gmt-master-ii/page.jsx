@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from 'next/link'
-import styles from '../SubCategory.module.css'
+import styles from '../../styles/SubCategory.module.css'
 
 async function getGmtMasterII() {
     
