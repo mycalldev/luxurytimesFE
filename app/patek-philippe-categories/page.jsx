@@ -39,7 +39,7 @@ export default function PatekPhilippeCategories() {
           <Link href={'/patek-philippe-categories/nautilus'} prefetch={true} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/coming_soon.jpg`}
+                      src={`/watches/patek philippe/nautilus/nautilus71181Asteelmetalwhite/71181Anautilus1.JPG`}
                       width={840}
                       height={560}
                       alt='nautilus thumbnail'
