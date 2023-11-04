@@ -17,12 +17,11 @@ export default function Navbar() {
     <main>
       <div className={styles.navContainer}>
         <div className={styles.containerFlex}>
-          <div className={styles.imageBurger}>
+          <div className={styles.imageBurger} onClick={() => handleToggle()}>
             <Image
             src={'/hamburger.png'}
             width={32}
             height={32}
-            onClick={() => handleToggle()}
             alt={'menu bar'}
             quality={100}
             />
