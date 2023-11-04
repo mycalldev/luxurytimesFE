@@ -161,7 +161,7 @@ export default function RolexCategories() {
           </Link>
         </div>
 
-        {/* YACHT MASTER */}
+        {/* YACHT-MASTER */}
         <div className={styles.containerItem}>
           <Link href={'/rolex/rolex-categories/yachtmaster'} > 
               <div className={styles.imageContainer}>
@@ -177,7 +177,7 @@ export default function RolexCategories() {
           </Link>
           <div className={styles.contentContainer}>
             <div className={styles.rolexTitle}>Rolex</div>
-            <div className={styles.modelTitle}>Yacht Master</div>
+            <div className={styles.modelTitle}>Yacht-Master</div>
           </div>
           <Link href={"/rolex/rolex-categories/yachtmaster"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.heroBtn}>

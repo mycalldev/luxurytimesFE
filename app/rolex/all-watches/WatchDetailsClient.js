@@ -68,7 +68,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
               </div>
               <div className={styles.specGrid}>
                 <div className={styles.titleSpec}>Card</div>
-                <div className={styles.titleValue}>Yes</div>
+                <div className={styles.titleValue}>{watch.card}</div>
               </div>
               <div className={styles.specGrid}>
                 <div className={styles.titleSpec}>Condition</div>
@@ -76,7 +76,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
               </div>
             </div>
 
-            
+            {/* SHARE SECTION */}
 
             <div className={styles.titleShare}>SHARE THIS WATCH</div>
             <Link href={'/'} >
@@ -117,17 +117,17 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
 
               <div className={styles.specContainer}>
                 <div className={styles.listItemKey}>Size</div>
-                <div className={styles.listItemValue}>41mm</div>
+                <div className={styles.listItemValue}>{watch.dialSize}</div>
               </div>
 
               <div className={styles.specContainer}>
                 <div className={styles.listItemKey}>Number Markers</div>
-                <div className={styles.listItemValue}>Roman Numerals + Glow Lumes</div>
+                <div className={styles.listItemValue}>{watch.numberMarkers}</div>
               </div>
 
               <div className={styles.specContainer}>
                 <div className={styles.listItemKey}>Hands</div>
-                <div className={styles.listItemValue}>OysterSteel + Glow Lumes</div>
+                <div className={styles.listItemValue}>{watch.hands}</div>
               </div>
 
               {/* BEZEL */}
@@ -142,7 +142,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
 
               <div className={styles.specContainer}>
                 <div className={styles.listItemKey}>Directional</div>
-                <div className={styles.listItemValue}>N/A</div>
+                <div className={styles.listItemValue}>{watch.bezelDirection}</div>
               </div>
 
               <div className={styles.specContainer}>
@@ -167,12 +167,12 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
 
               <div className={styles.specContainer}>
                 <div className={styles.listItemKey}>Colour</div>
-                <div className={styles.listItemValue}>Rose Gold + OysterSteel</div>
+                <div className={styles.listItemValue}>{watch.strapColour}</div>
               </div>
 
               <div className={styles.specContainer}>
                 <div className={styles.listItemKey}>Clasp</div>
-                <div className={styles.listItemValue}>Fold Clasp / Gluide Lock</div>
+                <div className={styles.listItemValue}>{watch.strapClasp}</div>
               </div>
 
               {/* CALIBER */}
@@ -197,7 +197,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
 
               <div className={styles.specContainer}>
                 <div className={styles.listItemKey}>Number of Jewels</div>
-                <div className={styles.listItemValue}>31</div>
+                <div className={styles.listItemValue}>{watch.numberOfJewels}</div>
               </div>
 
               {/* SPECIFICS */}
@@ -207,67 +207,14 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
 
               <div className={styles.specContainer}>
                 <div className={styles.listItemKey}>Crystal</div>
-                <div className={styles.listItemValue}>Sapphire Crystal</div>
+                <div className={styles.listItemValue}>{watch.crystal}</div>
               </div>
 
               <div className={styles.specContainer}>
                 <div className={styles.listItemKey}>Case Material</div>
                 <div className={styles.listItemValue}>{watch.caseMaterial}</div>
               </div>
-
-             
-            
-              {/* SPECIFICATION GRID */}
-              {/* <div className={styles.specGridContainer}>
-
-                <div className={styles.itemGridKey}>
-                  <ul>
-                    <li className={styles.listItemKey}>Reference:</li>
-                    <li className={styles.listItemKey}>Brand:</li>
-                    <li className={styles.listItemKey}>Model:</li>
-                    <li className={styles.listItemKey}>Movement:</li>
-                  </ul>  
-                </div>
-
-                <div className={styles.itemGridValue}>
-                  <ul>
-                    <li className={styles.listItemValue}>{watch.ref}</li>
-                    <li className={styles.listItemValue}>{watch.brand}</li>
-                    <li className={styles.listItemValue}>{watch.model}</li>
-                    <li className={styles.listItemValue}>{watch.movement}</li>
-                  </ul>
-                </div>
-                
-              </div> */}
-            {/* </div> */}
-            
-            {/* <div className={styles.titleDialMain}>
-                <h2>Dial</h2>
-            </div>
-
-            <div className={styles.specGridContainer}>
-
-                <div className={styles.itemGridKey}>
-                  <ul>
-                    <li className={styles.listItemKey}>Style:</li>
-                    <li className={styles.listItemKey}>Number Markers:</li>
-
-                  </ul>  
-                </div>
-
-                <div className={styles.itemGridValue}>
-                  <ul>
-                    <li className={styles.listItemValue}>{watch.dial}</li>
-                    <li className={styles.listItemValue}>Roman</li>
-                  </ul>
-                </div>
-                
-              </div> */}
           </section>
-
-          {/* SHARE SECTION */}
-
-
         </div>
   )
 }
