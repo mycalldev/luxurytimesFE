@@ -7,6 +7,10 @@
   color: #fff;
 }
 
+.navContainer {
+  margin-bottom: 70px;
+}
+
 .containerFlex {
   position: fixed;
   top: 0;
