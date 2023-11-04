@@ -68,7 +68,7 @@ const watches = await getDaytona()
               />
             </div>
             
-            <Link href={`/watches/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN} >
+            <Link href={`/rolex/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN} >
                 <div className={styles.viewDetailsBTN}>
                     <h4>VIEW</h4>
                 </div>

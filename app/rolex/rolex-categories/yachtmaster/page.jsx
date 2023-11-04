@@ -22,7 +22,6 @@ const watches = await getYachtMaster()
   return (
 
     <div>
-
         <div>
           <Image
             src={"/categoryBanner/yachtmasterCatBanner.JPG"}
@@ -31,7 +30,6 @@ const watches = await getYachtMaster()
             alt='Rolex Yacht Master Hero Banner'
             className={styles.imageCatHero}
             quality={100}
-
           />
         </div>
 
@@ -71,7 +69,7 @@ const watches = await getYachtMaster()
           />
         </div>
         
-        <Link href={`/watches/all-watches/${watch._id}`} prefetch={true} className={styles.viewBTNContainer}> 
+        <Link href={`/rolex/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN}> 
         <div className={styles.viewDetailsBTN}>
             <h4>VIEW</h4>
         </div>
