@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className={styles.navContainer}>
         <div className={styles.containerFlex}>
           
-          <div className={styles.imageBurger} onClick={() => handleToggle()}>
+          <div className={styles.imageBurger}>
             <Image
               src={'/hamburger.png'}
               width={32}
@@ -30,7 +30,7 @@ export default function Navbar() {
           
           <div>
             <Link href="/#" className={styles.undreline}>
-              <div className={styles.titleMain}>LUXURY TIMES</div>
+              <div className={styles.titleMain} onClick={() => handleToggle()}>LUXURY TIMES</div>
             </Link>
           </div>
 
