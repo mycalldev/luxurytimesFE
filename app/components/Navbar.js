@@ -18,11 +18,12 @@ export default function Navbar() {
       <div className={styles.navContainer}>
         <div className={styles.containerFlex}>
           
-          <div className={styles.imageBurger}>
+          <div>
             <Image
               src={'/hamburger.png'}
               width={32}
               height={32}
+              className={styles.imageBurger}
               alt={'menu bar'}
               quality={100}
             />
