@@ -17,15 +17,18 @@ export default function Navbar() {
     <main>
       <div className={styles.navContainer}>
         <div className={styles.containerFlex}>
-          <div className={styles.imageBurger} onClick={() => handleToggle()}>
-            <Image
-            src={'/hamburger.png'}
-            width={32}
-            height={32}
-            alt={'menu bar'}
-            quality={100}
-            />
+          <div onClick={() => handleToggle()}>
+            <div className={styles.imageBurger} >
+              <Image
+                src={'/hamburger.png'}
+                width={32}
+                height={32}
+                alt={'menu bar'}
+                quality={100}
+              />
+            </div>
           </div>
+          
           
           <div>
             <Link href="/#" className={styles.undreline}>
@@ -44,7 +47,7 @@ export default function Navbar() {
               />
             </Link>
           </div>
-      </div>
+        </div>
     </div>
     {toggle ? <nav className={styles.navOpen}>
       <ul className={styles.unorderedList}>
