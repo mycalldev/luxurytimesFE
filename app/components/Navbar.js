@@ -1,9 +1,9 @@
 'use client'
+
 import React, {useState} from 'react'
-import styles from './Navbar.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
-import BurgerMenu from './BurgerMenu'
+import styles from './Navbar.module.css'
 
 export default function Navbar() {
 
@@ -17,12 +17,12 @@ export default function Navbar() {
     <main>
       <div className={styles.navContainer}>
         <div className={styles.containerFlex}>
-          <div>
+          <div onClick={() => handleToggle()}>
             <Image
             src={'/hamburger.png'}
             width={32}
             height={32}
-            className={styles.imageBurger} onClick={() => handleToggle()}
+            className={styles.imageBurger}
             alt={'menu bar'}
             quality={100}
             />
