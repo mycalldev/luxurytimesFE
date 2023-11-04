@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Link from 'next/link'
-import styles from '../../styles/SubCategory.module.css'
+import styles from '../../../styles/SubCategory.module.css'
 
-async function getGmtMasterII() {
+async function getDaytona() {
     
-    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelGMT-MasterII', {
+    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelDaytona', {
         next: {
             revalidate: 30
         }
@@ -15,32 +15,33 @@ async function getGmtMasterII() {
 }
 
 
-export default async function GMTMasterII() {
+export default async function Daytona() {
 
-const watches = await getGmtMasterII()
+const watches = await getDaytona()
 
   return (
     <div>
         <div>
           <Image
-            src={"/categoryBanner/gmtMasterIICatBanner.JPG"}
+            src={"/categoryBanner/daytonaCatBanner.JPG"}
             width={2181}
             height={591}
-            alt='Rolex GMT-Master II Hero Banner'
+            alt='Rolex Daytona Hero Banner'
             className={styles.imageCatHero}
             quality={100}
 
           />
         </div>
 
-        <h1 className={styles.titleMain}>GMT-MASTER II</h1>
+        <h1 className={styles.titleMain}>DAYTONA</h1>
 
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
-            The Rolex GMT-Master II 42mm. With Oyster and Jubilee bracelets available, 
-            this watch is a perfect blend of luxury and functionality. 
-            Highly sought-after by watch enthusiasts and collectors, 
-            the GMT-Master II 42mm is a true icon of the Rolex brand.
+            Rolex Daytona is a line of luxury watches produced by Rolex, 
+            a Swiss watch manufacturer. It was first introduced in 1963 
+            and was designed specifically for professional racing drivers. 
+            The watch is named after the Daytona International Speedway, 
+            a renowned race track in Florida, USA.
           </p>
           
           {/* CTA  */}

@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Link from 'next/link'
-import styles from '../../styles/SubCategory.module.css'
+import styles from '../../../styles/SubCategory.module.css'
 
-async function getSkyDweller() {
+async function getDatejust() {
     
-    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelSkyDweller', {
+    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelDateJust', {
         next: {
             revalidate: 30
         }
@@ -15,31 +15,32 @@ async function getSkyDweller() {
 }
 
 
-export default async function SkyDweller() {
+export default async function DateJust() {
 
-const watches = await getSkyDweller()
+const watches = await getDatejust()
 
   return (
     <div>
         <div>
           <Image
-            src={"/categoryBanner/SkyDwellerCatBanner.JPG"}
+            src={"/categoryBanner/datejustCatBanner.JPG"}
             width={2181}
             height={591}
-            alt='Rolex Sky-Dweller Hero Banner'
+            alt='Rolex DateJust Hero Banner'
             className={styles.imageCatHero}
             quality={100}
 
           />
         </div>
 
-        <h1 className={styles.titleMain}>Sky_Dweller</h1>
+        <h1 className={styles.titleMain}>DATEJUST</h1>
 
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
-            The Sky-Dweller is considered one of Rolex's most complex watches, 
-            with a combination of an annual calendar, 
-            a dual time zone display, and a 24-hour display.
+            The Rolex Datejust 41mm, a timeless classic that blends elegance with
+            functionality. An exceptional watch that never goes out of style.
+            Available with both Oyster and Jubilee bracelets and renowned for its
+            popularity among watch enthusiasts and collectors.
           </p>
           
           {/* CTA  */}
@@ -66,10 +67,10 @@ const watches = await getSkyDweller()
               />
             </div>
             
-            <Link href={`/watches/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN} >
-                <div className={styles.viewDetailsBTN}>
-                    <h4>VIEW</h4>
-                </div>
+            <Link href={`../all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN}> 
+            <div className={styles.viewDetailsBTN}>
+                <h4>VIEW</h4>
+            </div>
             </Link>
           </div>
         ))}
@@ -77,4 +78,3 @@ const watches = await getSkyDweller()
     </div>
   )
 }
-

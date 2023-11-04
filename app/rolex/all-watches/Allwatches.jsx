@@ -5,7 +5,7 @@ import styles from './Allwatches.module.css'
 
 async function getWatches() {
     
-    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watches', {
+    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/rolex-watches', {
         next: {
             revalidate: 30
         }

@@ -4,7 +4,7 @@ import WatchDetailsClient from '../WatchDetailsClient';
 
 async function getWatch(id) {
     const uniqueID = id.toString()
-    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watch/'+ id, {
+    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/rolex/'+ id, {
     
         next: {
             revalidate: 30,

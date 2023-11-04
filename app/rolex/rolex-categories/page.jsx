@@ -11,7 +11,7 @@ export default function RolexCategories() {
       <div className={styles.containerGrid}>
         {/* DATEJUST */}
         <div className={styles.containerItem}>
-          <Link href={'/rolex-categories/datejust'} > 
+          <Link href={'/rolex/rolex-categories/datejust'} > 
               <div className={styles.imageContainer}>
                   <Image
                       src={`/watches/rolex/datejust/datejust126331jubileewimbledon/126331datejust1.JPG`}
@@ -27,7 +27,7 @@ export default function RolexCategories() {
             <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>DateJust</div>
           </div>
-          <Link href={"/rolex-categories/datejust"} prefetch={true} className={styles.linkBTN}>
+          <Link href={"/rolex/rolex-categories/datejust"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.heroBtn}>
               View
             </div>
@@ -38,7 +38,7 @@ export default function RolexCategories() {
 
         {/* SUBMARINER */}
         <div className={styles.containerItem}>
-          <Link href={'/rolex-categories/submariner'} > 
+          <Link href={'/rolex/rolex-categories/submariner'} > 
               <div className={styles.imageContainer}>
                   <Image
                       src={`/watches/rolex/submariner/submariner116610LVoystergreen/116610LVsubmariner1.JPG`}
@@ -54,7 +54,7 @@ export default function RolexCategories() {
             <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>Submariner</div>
           </div>
-          <Link href={"/rolex-categories/submariner"} prefetch={true} className={styles.linkBTN}>
+          <Link href={"/rolex/rolex-categories/submariner"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.heroBtn}>
               View
             </div>
@@ -63,7 +63,7 @@ export default function RolexCategories() {
 
         {/* GMT MASTER II */}
         <div className={styles.containerItem}>
-          <Link href={'/'} > 
+          <Link href={'/rolex/rolex-categories/gmt-master-ii'} > 
               <div className={styles.imageContainer}>
                   <Image
                       src={`/watches/rolex/gmtmasterii/gmtmasterii126710BLNRoysterblack/126710BLNRgmtmasterii1.JPG`}
@@ -79,7 +79,7 @@ export default function RolexCategories() {
             <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>GMT Master II</div>
           </div>
-          <Link href={"/rolex-categories/gmt-master-ii"} prefetch={true} className={styles.linkBTN}>
+          <Link href={"/rolex/rolex-categories/gmt-master-ii"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.heroBtn}>
               View
             </div>
@@ -88,7 +88,7 @@ export default function RolexCategories() {
 
         {/* SKY-DWELLER */}
         <div className={styles.containerItem}>
-          <Link href={'/'} > 
+          <Link href={'/rolex/rolex-categories/sky-dweller'} > 
               <div className={styles.imageContainer}>
                   <Image
                       src={`/watches/rolex/skydweller/skydweller326933oysterchampagne/326933skydweller1.JPG`}
@@ -104,7 +104,7 @@ export default function RolexCategories() {
             <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>Sky-Dweller</div>
           </div>
-          <Link href={"/rolex-categories/sky-dweller"} prefetch={true} className={styles.linkBTN}>
+          <Link href={"/rolex/rolex-categories/sky-dweller"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.heroBtn}>
               View
             </div>
@@ -113,7 +113,7 @@ export default function RolexCategories() {
 
         {/* DAYTONA */}
         <div className={styles.containerItem}>
-          <Link href={'/'} > 
+          <Link href={'/rolex/rolex-categories/daytona'} > 
               <div className={styles.imageContainer}>
                   <Image
                       src={`/watches/rolex/daytona/daytona116500LNoysterpanda/116500LNdaytona1.JPG`}
@@ -129,7 +129,7 @@ export default function RolexCategories() {
             <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>Daytona</div>
           </div>
-          <Link href={"/rolex-categories/daytona"} prefetch={true} className={styles.linkBTN}>
+          <Link href={"/rolex/rolex-categories/daytona"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.heroBtn}>
               View
             </div>
@@ -138,7 +138,7 @@ export default function RolexCategories() {
 
         {/* DAYDATE */}
         <div className={styles.containerItem}>
-          <Link href={'/'} > 
+          <Link href={'/rolex/rolex-categories/daydate'} > 
               <div className={styles.imageContainer}>
                   <Image
                       src={`/watches/rolex/daydate/daydate228349RBRpresidentialolive/228349RBRdaydate1.JPG`}
@@ -154,7 +154,32 @@ export default function RolexCategories() {
             <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>DayDate</div>
           </div>
-          <Link href={"/rolex-categories/daydate"} prefetch={true} className={styles.linkBTN}>
+          <Link href={"/rolex/rolex-categories/daydate"} prefetch={true} className={styles.linkBTN}>
+            <div className={styles.heroBtn}>
+              View
+            </div>
+          </Link>
+        </div>
+
+        {/* YACHT MASTER */}
+        <div className={styles.containerItem}>
+          <Link href={'/rolex/rolex-categories/yachtmaster'} > 
+              <div className={styles.imageContainer}>
+                  <Image
+                      src={`/watches/rolex/yachtmaster/yachtmaster126621oysterchocolate/126621yachtmaster1.JPG`}
+                      width={840}
+                      height={560}
+                      alt='yacht master thumbnail'
+                      className={styles.imageCategory}
+                      quality={100}
+                  />
+              </div>
+          </Link>
+          <div className={styles.contentContainer}>
+            <div className={styles.rolexTitle}>Rolex</div>
+            <div className={styles.modelTitle}>Yacht Master</div>
+          </div>
+          <Link href={"/rolex/rolex-categories/yachtmaster"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.heroBtn}>
               View
             </div>

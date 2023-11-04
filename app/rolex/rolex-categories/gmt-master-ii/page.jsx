@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Link from 'next/link'
-import styles from '../../styles/SubCategory.module.css'
+import styles from '../../../styles/SubCategory.module.css'
 
-async function getDaytona() {
+async function getGmtMasterII() {
     
-    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelDaytona', {
+    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelGMT-MasterII', {
         next: {
             revalidate: 30
         }
@@ -15,33 +15,32 @@ async function getDaytona() {
 }
 
 
-export default async function Daytona() {
+export default async function GMTMasterII() {
 
-const watches = await getDaytona()
+const watches = await getGmtMasterII()
 
   return (
     <div>
         <div>
           <Image
-            src={"/categoryBanner/daytonaCatBanner.JPG"}
+            src={"/categoryBanner/gmtMasterIICatBanner.JPG"}
             width={2181}
             height={591}
-            alt='Rolex Daytona Hero Banner'
+            alt='Rolex GMT-Master II Hero Banner'
             className={styles.imageCatHero}
             quality={100}
 
           />
         </div>
 
-        <h1 className={styles.titleMain}>DAYTONA</h1>
+        <h1 className={styles.titleMain}>GMT-MASTER II</h1>
 
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
-            Rolex Daytona is a line of luxury watches produced by Rolex, 
-            a Swiss watch manufacturer. It was first introduced in 1963 
-            and was designed specifically for professional racing drivers. 
-            The watch is named after the Daytona International Speedway, 
-            a renowned race track in Florida, USA.
+            The Rolex GMT-Master II 42mm. With Oyster and Jubilee bracelets available, 
+            this watch is a perfect blend of luxury and functionality. 
+            Highly sought-after by watch enthusiasts and collectors, 
+            the GMT-Master II 42mm is a true icon of the Rolex brand.
           </p>
           
           {/* CTA  */}
