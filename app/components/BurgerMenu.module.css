@@ -1,0 +1,9 @@
+.imageBurger {
+    cursor: pointer;
+}
+
+.navOpen {
+    width: 100vw;
+    height: 100vh;
+    background: #9c9c9c;
+}

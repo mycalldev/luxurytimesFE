@@ -1,9 +1,27 @@
+.displayNone {
+  display: none;
+}
+
+.linkBTN {
+  text-decoration: none;
+  color: #fff;
+}
+
 .containerFlex {
-  margin: 30px 5px;
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: grid;
-  grid-template-columns: 20% 60% 20%;
-  justify-items: center;
+  grid-template-columns: 10% 70% 20%;
+  justify-content: space-around;
   align-items: center;
+  background: #fff;
+  padding: 20px;
+}
+
+.imageBurger {
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .undreline {
@@ -11,6 +29,7 @@
 }
 
 .titleMain {
+  text-align: center;
   text-decoration: none;
   font-size: 1.3rem;
   font-weight: 700;
@@ -23,5 +42,36 @@
 }
 
 .contactIcon {
+  cursor: pointer;
+}
+
+.navOpen {
+  padding: 40px 20px 20px 0px;
+  width: 100vw;
+  background: #eee;
+}
+
+.unorderedList {
+  list-style-type: none;
+}
+
+.listItemContainer {
+  border-bottom: 1px solid #ffffff;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.listItem {
+  padding: 15px 10px 15px 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #323232;
+}
+
+.closeMenu {
+  margin: 40px auto 30px auto;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
   cursor: pointer;
 }
