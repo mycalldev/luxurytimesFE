@@ -18,7 +18,7 @@ export default function Navbar() {
 
       <div className={styles.navContainer}>
         <div className={styles.containerFlex}>
-          <Link href={`#burger`} className={styles.linkBTN}>
+          <Link href={`#Home`} className={styles.linkBTN}>
             <div onClick={() => handleToggle()}>
               <Image
                 src={'/hamburger.png'}
@@ -53,7 +53,7 @@ export default function Navbar() {
 
     {toggle ? 
                 
-    <nav className={styles.navOpen} id='burger'>
+    <nav className={styles.navOpen} id='Home'>
       <ul className={styles.unorderedList}>
         <Link href={'/rolex/rolex-categories'} className={styles.linkBTN}>
           <div className={styles.listItemContainer} onClick={() => handleToggle()}>
