@@ -11,14 +11,13 @@ export default function Navbar() {
 
   const handleToggle = () => {
       setToggle(!toggle)
-      
   }
 
   return (
     <main >
-
       <div className={styles.navContainer}>
-        <div className={styles.containerFlex}>
+        <div className={styles.containerGrid}>
+          
           <Link href={`/#`} className={styles.linkBTN} onClick={() => handleToggle()}>
             <div>
               <Image
@@ -51,48 +50,86 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      {toggle ? 
+            <nav className={styles.navOpen}>
+              <ul className={styles.unorderedList}>
+                <Link href={'/rolex/rolex-categories'} className={styles.linkBTN} prefetch={true}>
+                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
+                    <li className={styles.listItem}>Rolex</li>
+                  </div>
+                </Link>
+                <Link href={'/patek-philippe-categories'} className={styles.linkBTN}>
+                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
+                    <li className={styles.listItem}>Patek Philippe</li>
+                  </div>
+                </Link>
+                <Link href={'/audemars-piguet-categories'} className={styles.linkBTN}>
+                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
+                    <li className={styles.listItem}>Audemars Piguet</li>
+                  </div>
+                </Link>
+                <Link href={'/guide'} className={styles.linkBTN}>
+                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
+                    <li className={styles.listItem}>Guides</li>
+                  </div>
+                </Link>
+                <Link href={'/blog'} className={styles.linkBTN}>
+                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
+                    <li className={styles.listItem}>Blogs</li>
+                  </div>
+                </Link>
+                <Link href={'/contact'} className={styles.linkBTN}>
+                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
+                    <li className={styles.listItem}>Contact</li>
+                  </div>
+                </Link>
+              </ul>
+            <div className={styles.closeMenu} onClick={() => handleToggle()}>Close Menu</div>
+          </nav> 
+            : 
+          <div></div>
+          }
 
-    {toggle ? 
-     
-    <nav className={styles.navOpen}>
-      <ul className={styles.unorderedList}>
-          <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-            <Link href={'/rolex/rolex-categories'} className={styles.linkBTN} prefetch={true}>
-                <li className={styles.listItem}>Rolex</li>
-            </Link>
-          </div>
-        <Link href={'/patek-philippe-categories'} className={styles.linkBTN}>
-          <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-            <li className={styles.listItem}>Patek Philippe</li>
-          </div>
-        </Link>
-        <Link href={'/audemars-piguet-categories'} className={styles.linkBTN}>
-          <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-            <li className={styles.listItem}>Audemars Piguet</li>
-          </div>
-        </Link>
-        <Link href={'/guide'} className={styles.linkBTN}>
-          <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-            <li className={styles.listItem}>Guides</li>
-          </div>
-        </Link>
-        <Link href={'/blog'} className={styles.linkBTN}>
-          <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-            <li className={styles.listItem}>Blogs</li>
-          </div>
-        </Link>
-        <Link href={'/contact'} className={styles.linkBTN}>
-          <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-            <li className={styles.listItem}>Contact</li>
-          </div>
-        </Link>
-      </ul>
-      <div className={styles.closeMenu} onClick={() => handleToggle()}>Close Menu</div>
-    </nav>
-     : 
-    <div className={styles.menuClosed}></div>
-    }
-    
+
+          {/* DESKTOP NAV */}
+          <Link href="/#" className={styles.undreline}>
+            <div className={styles.titleMainDesktop}>LUXURY TIMES</div>
+          </Link>
+            <nav className={styles.navContainerGrid}>
+              <ul className={styles.navDesktopGrid}>
+                <Link href={'/rolex/rolex-categories'} className={styles.linkBTN} prefetch={true}>
+                    <div className={styles.listItemContainer}>
+                      <li className={styles.listItem}>Rolex</li>
+                    </div>
+                </Link>
+                <Link href={'/patek-philippe-categories'} className={styles.linkBTN}>
+                    <div className={styles.listItemContainer}>
+                      <li className={styles.listItem}>Patek Philippe</li>
+                    </div>
+                  </Link>
+                  <Link href={'/audemars-piguet-categories'} className={styles.linkBTN}>
+                    <div className={styles.listItemContainer}>
+                      <li className={styles.listItem}>Audemars Piguet</li>
+                    </div>
+                  </Link>
+                  <Link href={'/guide'} className={styles.linkBTN}>
+                    <div className={styles.listItemContainer}>
+                      <li className={styles.listItem}>Guides</li>
+                    </div>
+                  </Link>
+                  <Link href={'/blog'} className={styles.linkBTN}>
+                    <div className={styles.listItemContainer}>
+                      <li className={styles.listItem}>Blogs</li>
+                    </div>
+                  </Link>
+                  <Link href={'/contact'} className={styles.linkBTN}>
+                    <div className={styles.listItemContainer}>
+                      <li className={styles.listItem}>Contact</li>
+                    </div>
+                  </Link>
+              </ul>
+            </nav>
+      
     </main>
   )
 }

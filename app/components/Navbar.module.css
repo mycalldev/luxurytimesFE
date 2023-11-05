@@ -7,11 +7,15 @@
   color: #fff;
 }
 
+.navDesktopGrid {
+  display: none;
+}
+
 .navContainer {
   padding-bottom: 70px;
 }
 
-.containerFlex {
+.containerGrid {
   position: fixed;
   top: 0;
   width: 100%;
@@ -41,6 +45,10 @@
   cursor: pointer;
 }
 
+.titleMainDesktop {
+  display: none;
+}
+
 .title {
   text-decoration: none;
 }
@@ -53,10 +61,6 @@
   padding: 90px 20px 20px 0px;
   width: 100vw;
   background: #eee;
-}
-
-.menuClosed {
- /* padding-top: 20px; */
 }
 
 .unorderedList {
@@ -84,4 +88,49 @@
   font-size: 1.3rem;
   font-weight: 600;
   cursor: pointer;
+}
+
+@media(min-width: 768px) {
+
+  .navContainer {
+    padding: 0;
+  }
+
+  .titleMainDesktop {
+    display: block;
+    margin: 30px auto 30px auto;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(57, 57, 57);
+    cursor: pointer;
+  }
+
+  .containerGrid {
+    display: none;
+  }
+
+  .navContainerGrid {
+    background: #eee;
+  }
+
+  .navDesktopGrid {
+    margin: 0 10px;
+    display: grid;
+    grid-template-columns: 14% 22% 22% 14% 14% 14%;
+    justify-items: center;
+    align-items: center;
+  } 
+
+  .unordredListDesktop {
+    display: block;
+  }
+
+  .listItem {
+    margin: 11px 0 11px 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    list-style-type: none;
+  }
 }
