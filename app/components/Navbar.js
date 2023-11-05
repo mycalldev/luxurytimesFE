@@ -11,6 +11,7 @@ export default function Navbar() {
 
   const handleToggle = () => {
       setToggle(!toggle)
+      
   }
 
   return (
@@ -18,8 +19,8 @@ export default function Navbar() {
 
       <div className={styles.navContainer}>
         <div className={styles.containerFlex}>
-          <Link href={`#Home`} className={styles.linkBTN}>
-            <div onClick={() => handleToggle()}>
+          <Link href={`/#`} className={styles.linkBTN} onClick={() => handleToggle()}>
+            <div>
               <Image
                 src={'/hamburger.png'}
                 width={32}
@@ -52,14 +53,14 @@ export default function Navbar() {
       </div>
 
     {toggle ? 
-                
-    <nav className={styles.navOpen} id='Home'>
+     
+    <nav className={styles.navOpen}>
       <ul className={styles.unorderedList}>
-        <Link href={'/rolex/rolex-categories'} className={styles.linkBTN}>
           <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-            <li className={styles.listItem}>Rolex</li>
+            <Link href={'/rolex/rolex-categories'} className={styles.linkBTN} prefetch={true}>
+                <li className={styles.listItem}>Rolex</li>
+            </Link>
           </div>
-        </Link>
         <Link href={'/patek-philippe-categories'} className={styles.linkBTN}>
           <div className={styles.listItemContainer} onClick={() => handleToggle()}>
             <li className={styles.listItem}>Patek Philippe</li>

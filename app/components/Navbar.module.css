@@ -24,8 +24,6 @@
 }
 
 .imageBurger {
-  /* width: 100%;
-  height: 100%; */
   margin-left: 10px;
   cursor: pointer;
 }
@@ -58,11 +56,13 @@
 }
 
 .menuClosed {
-
+ /* padding-top: 20px; */
 }
 
 .unorderedList {
   list-style-type: none;
+  width: 100%;
+  height: 100%;
 }
 
 .listItemContainer {
