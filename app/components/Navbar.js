@@ -14,19 +14,22 @@ export default function Navbar() {
   }
 
   return (
-    <main>
+    <main >
+
       <div className={styles.navContainer}>
         <div className={styles.containerFlex}>
-          
-          <div className={styles.imageBurger} onClick={() => handleToggle()}>
-            <Image
-              src={'/hamburger.png'}
-              width={32}
-              height={32}
-              alt={'menu bar'}
-              quality={100}
-            />
-          </div>
+          <Link href={`#burger`} className={styles.linkBTN}>
+            <div onClick={() => handleToggle()}>
+              <Image
+                src={'/hamburger.png'}
+                width={32}
+                height={32}
+                className={styles.imageBurger}
+                alt={'menu bar'}
+                quality={100}
+              />
+            </div>
+          </Link>
           
           <div>
             <Link href="/#" className={styles.undreline}>
@@ -46,8 +49,11 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-    </div>
-    {toggle ? <nav className={styles.navOpen}>
+      </div>
+
+    {toggle ? 
+                
+    <nav className={styles.navOpen} id='burger'>
       <ul className={styles.unorderedList}>
         <Link href={'/rolex/rolex-categories'} className={styles.linkBTN}>
           <div className={styles.listItemContainer} onClick={() => handleToggle()}>
@@ -81,8 +87,9 @@ export default function Navbar() {
         </Link>
       </ul>
       <div className={styles.closeMenu} onClick={() => handleToggle()}>Close Menu</div>
-    </nav> : 
-    <div></div>
+    </nav>
+     : 
+    <div className={styles.menuClosed}></div>
     }
     
     </main>

@@ -8,7 +8,7 @@
 }
 
 .navContainer {
-  margin-bottom: 70px;
+  padding-bottom: 70px;
 }
 
 .containerFlex {
@@ -50,9 +50,13 @@
 }
 
 .navOpen {
-  padding: 40px 20px 20px 0px;
+  padding: 90px 20px 20px 0px;
   width: 100vw;
   background: #eee;
+}
+
+.menuClosed {
+
 }
 
 .unorderedList {

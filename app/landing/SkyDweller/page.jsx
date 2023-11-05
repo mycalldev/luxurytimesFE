@@ -80,6 +80,8 @@ export default function SkyDweller() {
                     width={1680}
                     height={1120}
                     className={styles.imageSwiper}
+                    alt='image of sky dweller'
+                    quality={100}
                   />
                 </SwiperSlide>
               ))}
