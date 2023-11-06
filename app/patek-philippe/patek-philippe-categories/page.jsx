@@ -11,7 +11,7 @@ export default function PatekPhilippeCategories() {
       <div className={styles.containerGrid}>
         {/* AQUANAUT */}
         <div className={styles.containerItem}>
-          <Link href={'/patek-philippe-categories/aquanaut'} prefetch={true} > 
+          <Link href={'/patek-philippe/patek-philippe-categories/aquanaut'} prefetch={true} > 
               <div className={styles.imageContainer}>
                   <Image
                       src={`/coming_soon.jpg`}
@@ -27,7 +27,7 @@ export default function PatekPhilippeCategories() {
             <div className={styles.rolexTitle}>Patek Philippe</div>
             <div className={styles.modelTitle}>Aquanaut</div>
           </div>
-          <Link href={"/patek-philippe-categories/aquanaut"} prefetch={true} className={styles.linkBTN}>
+          <Link href={"/patek-philippe/patek-philippe-categories/aquanaut"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.heroBtn}>
               View
             </div>
@@ -36,10 +36,10 @@ export default function PatekPhilippeCategories() {
 
         {/* NAUTILUS */}
         <div className={styles.containerItem}>
-          <Link href={'/patek-philippe-categories/nautilus'} prefetch={true} > 
+          <Link href={'/patek-philippe/patek-philippe-categories/nautilus'} prefetch={true} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/watches/patek philippe/nautilus/nautilus71181Asteelmetalwhite/71181Anautilus1.JPG`}
+                      src={`/watches/patekphilippe/nautilus/nautilus71181Asteelmetalwhite/71181Anautilus1.JPG`}
                       width={840}
                       height={560}
                       alt='nautilus thumbnail'
@@ -52,7 +52,7 @@ export default function PatekPhilippeCategories() {
             <div className={styles.rolexTitle}>Patek Philippe</div>
             <div className={styles.modelTitle}>Nautilus</div>
           </div>
-          <Link href={"/patek-philippe-categories/nautilus"} prefetch={true} className={styles.linkBTN}>
+          <Link href={"/patek-philippe/patek-philippe-categories/nautilus"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.heroBtn}>
               View
             </div>
@@ -61,7 +61,7 @@ export default function PatekPhilippeCategories() {
 
         {/* GRAND COMPLICATION */}
         <div className={styles.containerItem}>
-          <Link href={'/patek-philippe-categories/grand-complication'} prefetch={true} > 
+          <Link href={'/patek-philippe/patek-philippe-categories/grand-complication'} prefetch={true} > 
               <div className={styles.imageContainer}>
                   <Image
                       src={`/coming_soon.jpg`}
@@ -77,7 +77,7 @@ export default function PatekPhilippeCategories() {
             <div className={styles.rolexTitle}>Patek Philippe</div>
             <div className={styles.modelTitle}>Grand Complication</div>
           </div>
-          <Link href={"/patek-philippe-categories/grand-complication"} prefetch={true} className={styles.linkBTN}>
+          <Link href={"/patek-philippe/patek-philippe-categories/grand-complication"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.heroBtn}>
               View
             </div>

@@ -2,9 +2,9 @@ import Image from "next/image"
 import Link from 'next/link'
 import styles from '../../../styles/SubCategory.module.css'
 
-async function getRoyaloak() {
+async function getNautilus() {
     
-    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelRoyaloak', {
+    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelNautilus', {
         next: {
             revalidate: 30
         }
@@ -15,9 +15,9 @@ async function getRoyaloak() {
 }
 
 
-export default async function Royaloak() {
+export default async function Nautilus() {
 
-const watches = await getRoyaloak()
+const watches = await getNautilus()
 console.log(watches)
 
   return (
@@ -27,7 +27,7 @@ console.log(watches)
             src={"/categoryBanner/royaloakCatBanner.JPG"}
             width={2181}
             height={591}
-            alt='Royaloak Hero Banner'
+            alt='Nautilus Hero Banner'
             className={styles.imageCatHero}
             quality={100}
 
@@ -70,7 +70,7 @@ console.log(watches)
               />
             </div>
             
-            <Link href={`/audemars-piguet/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN}> 
+            <Link href={`/patek-philippe/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN}> 
             <div className={styles.viewDetailsBTN}>
                 <h4>VIEW</h4>
             </div>

@@ -5,7 +5,7 @@ import styles from './Allwatches.module.css'
 
 async function getWatches() {
     
-    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/audemars-piguet-watches', {
+    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/patek-philippe-watches', {
         next: {
             revalidate: 30
         }
@@ -25,7 +25,7 @@ export default async function Allwatches() {
     {watches.map((watch) => (
         <div key={watch._id}>
           
-          <Link href={`/audemars-piguet/all-watches/${watch._id}`} >
+          <Link href={`/patek-philippe/all-watches/${watch._id}`} >
             <div className={styles.imageContainer}>
               <Image
                 src={`/watches/${watch.brand}/${watch.model}/${watch.model}${watch.ref}${watch.strapColour}${watch.strap}${watch.dial}/${watch.ref}${watch.model}1.JPG`}
@@ -41,7 +41,7 @@ export default async function Allwatches() {
           <div className={styles.titleWatch}>
             {watch.title}
           </div>
-          <Link href={`/audemars-piguet/all-watches/${watch._id}`} className={styles.viewBTNContainer}> 
+          <Link href={`/patek-philippe/all-watches/${watch._id}`} className={styles.viewBTNContainer}> 
             <div className={styles.viewDetailsBTN}>
                 <h4>VIEW</h4>
             </div>
