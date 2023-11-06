@@ -4,7 +4,7 @@ import styles from '../../../styles/SubCategory.module.css'
 
 async function getNautilus() {
     
-    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelNautilus', {
+    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelsNautilus', {
         next: {
             revalidate: 30
         }
@@ -18,13 +18,12 @@ async function getNautilus() {
 export default async function Nautilus() {
 
 const watches = await getNautilus()
-console.log(watches)
 
   return (
     <div>
         <div>
           <Image
-            src={"/categoryBanner/royaloakCatBanner.JPG"}
+            src={"/categoryBanner/nautilusCatBanner.JPG"}
             width={2181}
             height={591}
             alt='Nautilus Hero Banner'
@@ -34,16 +33,15 @@ console.log(watches)
           />
         </div>
 
-        <h1 className={styles.titleMain}>ROYAL OAK</h1>
+        <h1 className={styles.titleMain}>NAUTILUS</h1>
 
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
-          The Audemars Piguet Royal Oak is a legendary luxury 
-          watch that has become an icon in the world of horology. 
-          Designed by the renowned Swiss watch designer Gérald Genta in 1972, 
-          the Royal Oak is celebrated for its 
-          distinctive and revolutionary octagonal case shape, 
-          integrated bracelet, and intricate detailing.
+            The Patek Philippe Nautilus is a revered luxury watch collection 
+            that epitomizes elegance and style. 
+            Introduced in 1976, it was designed by renowned Swiss watch designer 
+            Gérald Genta and is celebrated for its distinctive porthole-inspired 
+            case shape and integrated bracelet. 
           </p>
           
           {/* CTA  */}

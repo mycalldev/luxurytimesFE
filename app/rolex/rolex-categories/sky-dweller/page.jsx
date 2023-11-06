@@ -33,7 +33,7 @@ const watches = await getSkyDweller()
           />
         </div>
 
-        <h1 className={styles.titleMain}>Sky_Dweller</h1>
+        <h1 className={styles.titleMain}>Sky-Dweller</h1>
 
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>

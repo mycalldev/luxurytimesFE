@@ -18,7 +18,6 @@ async function getRoyaloak() {
 export default async function Royaloak() {
 
 const watches = await getRoyaloak()
-console.log(watches)
 
   return (
     <div>

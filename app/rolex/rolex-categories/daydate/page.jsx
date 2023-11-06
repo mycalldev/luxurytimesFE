@@ -19,6 +19,7 @@ async function getDayDate() {
 export default async function DayDate() {
 
 const watches = await getDayDate()
+console.log(watches)
 
   return (
     <div>
