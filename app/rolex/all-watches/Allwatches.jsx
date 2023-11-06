@@ -25,7 +25,7 @@ export default async function Allwatches() {
     {watches.map((watch) => (
         <div key={watch._id}>
           
-          <Link href={`/watches/all-watches/${watch._id}`} >
+          <Link href={`/rolex/all-watches/${watch._id}`} >
             <div className={styles.imageContainer}>
               <Image
                 src={`/watches/${watch.brand}/${watch.model}/${watch.model}${watch.ref}${watch.strap}${watch.dial}/${watch.ref}${watch.model}1.JPG`}
@@ -41,7 +41,7 @@ export default async function Allwatches() {
           <div className={styles.titleWatch}>
             {watch.title}
           </div>
-          <Link href={`/watches/all-watches/${watch._id}`} className={styles.viewBTNContainer}> 
+          <Link href={`/rolex/all-watches/${watch._id}`} className={styles.viewBTNContainer}> 
             <div className={styles.viewDetailsBTN}>
                 <h4>VIEW</h4>
             </div>

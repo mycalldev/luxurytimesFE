@@ -12,9 +12,9 @@ import "swiper/css/navigation";
 export default function WatchDetailsClient( {watchArr, watch} ) {
   return (
     <div className={styles.imageContainer}>
-      <Link href={'/rolex/all-watches'} className={styles.linkBTN}>
+      {/* <Link href={'/rolex/all-watches'} className={styles.linkBTN}>
         <div className={styles.backBTN}>{`< BACK`}</div>
-      </Link>
+      </Link> */}
 
       <div className={styles.titleMain}>{watch.title}</div> 
 
@@ -51,8 +51,8 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
               <div className={styles.available}>Available Now</div>
             </div>
             <div className={styles.description}>{watch.description}</div>
-            <Link href={'/'} className={styles.BTNLink}>
-            <div className={styles.contactBTN}>Contact</div>
+            <Link href='href="tel:07976753254' className={styles.BTNLink}>
+              <div className={styles.contactBTN}>Contact</div>
             </Link>
             
           </section>

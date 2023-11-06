@@ -1,0 +1,50 @@
+.linkBTN {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.titleCategory {
+    margin: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #323232;
+  }
+
+.heroBtn {
+  margin: -15px 10px 30px 10px;
+  padding: 7px;
+  max-width: 200px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 22px;
+  background: #91c0dc;
+  cursor: pointer;
+}
+
+.containerGrid {
+    margin: 15px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.imageContainer {
+    margin: 5px;
+}
+
+.imageCategory {
+    width: 100%;
+    height: auto;
+    border-radius: 11px;
+}
+
+.contentContainer {
+    text-align: center;
+}
+
+.modelTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
