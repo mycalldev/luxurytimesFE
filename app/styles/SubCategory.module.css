@@ -29,13 +29,15 @@
 } 
 
 .catDescription {
-    margin: 20px 40px 30px 40px;
+    width: 80%;
+    margin: 20px auto 30px auto;
+    text-align: center;
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.5;
 }
 
-.viewDetailsBTN {
+.viewDetailsBTNMobile {
     margin: 10px auto 50px auto;
     padding: 10px 30px;
     max-width: 150px;
@@ -49,4 +51,55 @@
     text-align: center;
     cursor: pointer;
 }
+
+.viewDetailsBTNDesktop {
+    display: none;
+}
       
+.arrivingSoonBTN {
+    margin: 10px auto 50px auto;
+    padding: 10px 30px;
+    max-width: 250px;
+    border: solid 2px #91c0dc;
+    border-radius: 22px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #1a4964;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+@media(min-width: 768px) {
+
+    .viewDetailsBTNMobile {
+        display: none;
+    }
+
+    .viewDetailsBTNDesktop {
+        display: block;
+        margin: 10px auto 50px auto;
+        padding: 10px 30px;
+        max-width: 250px;
+        border: solid 2px #91c0dc;
+        border-radius: 22px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #fff;
+        background-color: #91c0dc;
+        letter-spacing: 3px;
+        text-align: center;
+    }
+    .catDescription {
+            width: 80%;
+            margin: 20px auto 50px auto;
+            font-size: 1.3rem;
+            font-weight: 500;
+            line-height: 1.5;
+    }
+
+    .titleMain {
+        margin: 40px;
+        font-size: 2rem;
+    }
+}

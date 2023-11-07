@@ -150,11 +150,8 @@
         padding: 0 20px;
     }
 
-    .rolexTitle {
-        font-size: 1.5rem;
-    }
-
     .modelTitle {
+        margin-top: 20px;
         font-size: 2rem;
     }
 }

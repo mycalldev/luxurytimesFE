@@ -23,7 +23,7 @@ const watches = await getAquanaut()
     <div>
         <div>
           <Image
-            src={"/categoryBanner/royaloakCatBanner.JPG"}
+            src={"/categoryBanner/aquanautCatBanner.JPG"}
             width={2181}
             height={591}
             alt='Aquanaut Hero Banner'
@@ -33,7 +33,7 @@ const watches = await getAquanaut()
           />
         </div>
 
-        <h1 className={styles.titleMain}>ROYAL OAK</h1>
+        <h1 className={styles.titleMain}>AQUANAUT</h1>
 
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
@@ -48,6 +48,10 @@ const watches = await getAquanaut()
           {/* CTA  */}
           <div className={styles.viewDetailsBTN}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
+          </div>
+          <div className={styles.viewDetailsBTNDesktop}>
+            <h3 className={styles.contactReview}>CONTACT</h3>
+            <div>07976 753 254</div>
           </div>
         </div>
 
@@ -70,7 +74,7 @@ const watches = await getAquanaut()
             </div>
             
             <Link href={`/patek-philippe/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN}> 
-            <div className={styles.viewDetailsBTN}>
+            <div className={styles.viewDetailsBTNDesktop}>
                 <h4>VIEW</h4>
             </div>
             </Link>

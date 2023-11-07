@@ -23,7 +23,7 @@ const watches = await getGrandcomplication()
     <div>
         <div>
           <Image
-            src={"/categoryBanner/nautilusCatBanner.JPG"}
+            src={"/categoryBanner/grandcomplicationCatBanner.JPG"}
             width={2181}
             height={591}
             alt='Grandcomplication Hero Banner'
@@ -33,21 +33,23 @@ const watches = await getGrandcomplication()
           />
         </div>
 
-        <h1 className={styles.titleMain}>NAUTILUS</h1>
+        <h1 className={styles.titleMain}>GRAND COMPLICATION</h1>
 
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
             The Patek Philippe Grand Complication is the pinnacle of watchmaking artistry 
             and technical achievement. These timepieces represent the epitome of luxury 
             and craftsmanship, featuring an array of intricate complications that go far 
-            beyond basic timekeeping. Patek Philippe, a prestigious Swiss watchmaker, 
-            is renowned for producing some of the world's most complex 
-            and meticulously crafted watches.
+            beyond basic timekeeping.
           </p>
           
           {/* CTA  */}
-          <div className={styles.viewDetailsBTN}>
+          <div className={styles.viewDetailsBTNMobile}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
+          </div>
+          <div className={styles.viewDetailsBTNDesktop}>
+            <h3 className={styles.contactReview}>CONTACT</h3>
+            <div>07976 753 254</div>
           </div>
         </div>
 
@@ -76,6 +78,10 @@ const watches = await getGrandcomplication()
             </Link>
           </div>
         ))}
+
+            <div className={styles.arrivingSoonBTN}>
+                <h4>ARRIVING SOON</h4>
+            </div>
       </main>
     </div>
   )

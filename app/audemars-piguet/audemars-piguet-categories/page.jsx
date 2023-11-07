@@ -42,7 +42,6 @@ export default function AudemarsPiguetCategories() {
               </div>
           </Link>
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Audemars Piguet</div>
             <div className={styles.modelTitle}>Royal Oak</div>
           </div>
           <Link href={"/audemars-piguet/audemars-piguet-categories/royal-oak"} prefetch={true} className={styles.linkBTN}>
@@ -67,7 +66,6 @@ export default function AudemarsPiguetCategories() {
               </div>
           {/* </Link> */}
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Audemars Piguet</div>
             <div className={styles.modelTitle}>Royal Oak Offshore</div>
           </div>
           {/* <Link href={"/audemars-piguet/audemars-piguet-categories/royal-oak-offshore"} prefetch={true} className={styles.linkBTN}> */}
@@ -92,7 +90,6 @@ export default function AudemarsPiguetCategories() {
               </div>
           {/* </Link> */}
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Audemars Piguet</div>
             <div className={styles.modelTitle}>Royal Oak Concept</div>
           </div>
           {/* <Link href={"/audemars-piguet/audemars-piguet-categories/royal-oak-concept"} prefetch={true} className={styles.linkBTN}> */}
@@ -117,7 +114,6 @@ export default function AudemarsPiguetCategories() {
               </div>
           {/* </Link> */}
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Audemars Piguet</div>
             <div className={styles.modelTitle}>Code 1159</div>
           </div>
           {/* <Link href={"/audemars-piguet/audemars-piguet-categories/code-1159"} prefetch={true} className={styles.linkBTN}> */}

@@ -42,7 +42,6 @@ export default function PatekPhilippeCategories() {
               </div>
           </Link>
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Patek Philippe</div>
             <div className={styles.modelTitle}>Aquanaut</div>
           </div>
           <Link href={"/patek-philippe/patek-philippe-categories/aquanaut"} prefetch={true} className={styles.linkBTN}>
@@ -67,7 +66,6 @@ export default function PatekPhilippeCategories() {
               </div>
           </Link>
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Patek Philippe</div>
             <div className={styles.modelTitle}>Nautilus</div>
           </div>
           <Link href={"/patek-philippe/patek-philippe-categories/nautilus"} prefetch={true} className={styles.linkBTN}>
@@ -92,15 +90,39 @@ export default function PatekPhilippeCategories() {
               </div>
           </Link>
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Patek Philippe</div>
             <div className={styles.modelTitle}>Grand Complication</div>
           </div>
           <Link href={"/patek-philippe/patek-philippe-categories/grand-complication"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.viewBTN}>
-              View
+              Coming Soon
             </div>
           </Link>
         </div>
+
+        {/* COMPLICATION */}
+        <div className={styles.containerItem}>
+          <Link href={'/patek-philippe/patek-philippe-categories/grand-complication'} prefetch={true} > 
+              <div className={styles.imageContainer}>
+                  <Image
+                      src={`/complication_test.JPG`}
+                      width={840}
+                      height={560}
+                      alt='complication thumbnail'
+                      className={styles.imageCategory}
+                      quality={100}
+                  />
+              </div>
+          </Link>
+          <div className={styles.contentContainer}>
+            <div className={styles.modelTitle}>Complication</div>
+          </div>
+          <Link href={"/patek-philippe/patek-philippe-categories/complication"} prefetch={true} className={styles.linkBTN}>
+            <div className={styles.viewBTN}>
+              Coming Soon
+            </div>
+          </Link>
+        </div>
+
 
         </div>
     </div>

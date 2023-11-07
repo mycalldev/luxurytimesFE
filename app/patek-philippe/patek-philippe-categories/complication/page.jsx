@@ -2,9 +2,9 @@ import Image from "next/image"
 import Link from 'next/link'
 import styles from '../../../styles/SubCategory.module.css'
 
-async function getNautilus() {
+async function getComplication() {
     
-    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelsNautilus', {
+    const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/watchesModelComplication', {
         next: {
             revalidate: 30
         }
@@ -15,38 +15,41 @@ async function getNautilus() {
 }
 
 
-export default async function Nautilus() {
+export default async function Complication() {
 
-const watches = await getNautilus()
+const watches = await getComplication()
 
   return (
     <div>
         <div>
           <Image
-            src={"/categoryBanner/nautilusCatBanner.JPG"}
+            src={"/categoryBanner/complicationCatBanner.JPG"}
             width={2181}
             height={591}
-            alt='Nautilus Hero Banner'
+            alt='Complication Hero Banner'
             className={styles.imageCatHero}
             quality={100}
 
           />
         </div>
 
-        <h1 className={styles.titleMain}>NAUTILUS</h1>
+        <h1 className={styles.titleMain}>COMPLICATION</h1>
 
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
-            The Patek Philippe Nautilus is a revered luxury watch collection 
-            that epitomizes elegance and style. 
-            Introduced in 1976, it was designed by renowned Swiss watch designer 
-            Gérald Genta and is celebrated for its distinctive porthole-inspired 
-            case shape and integrated bracelet. 
+            The Patek Philippe Complication Watch is a masterpiece of horological artistry, 
+            a timeless creation that seamlessly blends precision engineering with elegant aesthetics. 
+            Renowned for its rich heritage dating back to 1839, Patek Philippe has consistently upheld 
+            its reputation as a pioneer in haute horlogerie.
           </p>
           
           {/* CTA  */}
-          <div className={styles.viewDetailsBTN}>
+          <div className={styles.viewDetailsBTNMobile}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
+          </div>
+          <div className={styles.viewDetailsBTNDesktop}>
+            <h3 className={styles.contactReview}>CONTACT</h3>
+            <div>07976 753 254</div>
           </div>
         </div>
 
@@ -75,6 +78,9 @@ const watches = await getNautilus()
             </Link>
           </div>
         ))}
+            <div className={styles.arrivingSoonBTN}>
+                <h4>ARRIVING SOON</h4>
+            </div>
       </main>
     </div>
   )
