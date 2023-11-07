@@ -49,7 +49,7 @@ const watches = await getAquanaut()
           <div className={styles.viewDetailsBTN}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
           </div>
-          <div className={styles.viewDetailsBTNDesktop}>
+          <div className={styles.contactBTNDesktop}>
             <h3 className={styles.contactReview}>CONTACT</h3>
             <div>07976 753 254</div>
           </div>
@@ -74,7 +74,7 @@ const watches = await getAquanaut()
             </div>
             
             <Link href={`/patek-philippe/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN}> 
-            <div className={styles.viewDetailsBTNDesktop}>
+            <div className={styles.viewDetailsBTNMobile}>
                 <h4>VIEW</h4>
             </div>
             </Link>

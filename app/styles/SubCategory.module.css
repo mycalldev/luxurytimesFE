@@ -12,7 +12,7 @@
 }
 
 .titleWatch {
-    margin: 20px;
+    margin: 20px auto 10px auto;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;
@@ -23,9 +23,15 @@
     height: auto;
 }
 
+.imageContainer {
+    width: 87%;
+    margin: auto;
+}
+
 .imageWatch {
     width: 100%;
     height: auto;
+    border-radius: 11px;
 } 
 
 .catDescription {
@@ -38,7 +44,7 @@
 }
 
 .viewDetailsBTNMobile {
-    margin: 10px auto 50px auto;
+    margin: 0px auto 20px auto;
     padding: 10px 30px;
     max-width: 150px;
     border: solid 2px #91c0dc;
@@ -52,7 +58,7 @@
     cursor: pointer;
 }
 
-.viewDetailsBTNDesktop {
+.contactBTNDesktop {
     display: none;
 }
       
@@ -73,10 +79,11 @@
 @media(min-width: 768px) {
 
     .viewDetailsBTNMobile {
-        display: none;
+        font-size: 1rem;
+        margin-bottom: 60px;
     }
 
-    .viewDetailsBTNDesktop {
+    .contactBTNDesktop {
         display: block;
         margin: 10px auto 50px auto;
         padding: 10px 30px;
@@ -101,5 +108,15 @@
     .titleMain {
         margin: 40px;
         font-size: 2rem;
+    }
+
+    .titleWatch {
+        margin-bottom: 20px;
+        font-size: 2rem;
+    }
+
+    .imageContainer {
+        width: 70%;
+        margin: auto;
     }
 }

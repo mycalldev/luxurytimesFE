@@ -37,17 +37,21 @@ const watches = await getRoyaloak()
 
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
-          The Audemars Piguet Royal Oak is a legendary luxury 
-          watch that has become an icon in the world of horology. 
-          Designed by the renowned Swiss watch designer Gérald Genta in 1972, 
-          the Royal Oak is celebrated for its 
-          distinctive and revolutionary octagonal case shape, 
-          integrated bracelet, and intricate detailing.
+            The Audemars Piguet Royal Oak is a legendary luxury 
+            watch that has become an icon in the world of horology. 
+            Designed by the renowned Swiss watch designer Gérald Genta in 1972, 
+            the Royal Oak is celebrated for its 
+            distinctive and revolutionary octagonal case shape, 
+            integrated bracelet, and intricate detailing.
           </p>
           
           {/* CTA  */}
           <div className={styles.viewDetailsBTN}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
+          </div>
+          <div className={styles.contactBTNDesktop}>
+            <h3 className={styles.contactReview}>CONTACT</h3>
+            <div>07976 753 254</div>
           </div>
         </div>
 
@@ -70,7 +74,7 @@ const watches = await getRoyaloak()
             </div>
             
             <Link href={`/audemars-piguet/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN}> 
-            <div className={styles.viewDetailsBTN}>
+            <div className={styles.viewDetailsBTNMobile}>
                 <h4>VIEW</h4>
             </div>
             </Link>

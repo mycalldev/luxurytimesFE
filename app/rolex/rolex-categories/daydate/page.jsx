@@ -49,6 +49,10 @@ const watches = await getDayDate()
           <div className={styles.viewDetailsBTN}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
           </div>
+          <div className={styles.contactBTNDesktop}>
+            <h3 className={styles.contactReview}>CONTACT</h3>
+            <div>07976 753 254</div>
+          </div>
         </div>
 
         <main className={styles.mainContainer}>
@@ -70,7 +74,7 @@ const watches = await getDayDate()
             </div>
             
             <Link href={`/rolex/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN}> 
-              <div className={styles.viewDetailsBTN}>
+              <div className={styles.viewDetailsBTNMobile}>
                   <h4>View</h4>
               </div>
             </Link>

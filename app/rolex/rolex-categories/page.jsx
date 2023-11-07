@@ -42,7 +42,6 @@ export default function RolexCategories() {
               </div>
           </Link>
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>DateJust</div>
           </div>
           <Link href={"/rolex/rolex-categories/datejust"} prefetch={true} className={styles.linkBTN}>
@@ -67,7 +66,6 @@ export default function RolexCategories() {
               </div>
           </Link>
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>Submariner</div>
           </div>
           <Link href={"/rolex/rolex-categories/submariner"} prefetch={true} className={styles.linkBTN}>
@@ -92,8 +90,7 @@ export default function RolexCategories() {
               </div>
           </Link>
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Rolex</div>
-            <div className={styles.modelTitle}>GMT Master II</div>
+            <div className={styles.modelTitle}>GMT-Master II</div>
           </div>
           <Link href={"/rolex/rolex-categories/gmt-master-ii"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.viewBTN}>
@@ -117,7 +114,6 @@ export default function RolexCategories() {
               </div>
           </Link>
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>Sky-Dweller</div>
           </div>
           <Link href={"/rolex/rolex-categories/sky-dweller"} prefetch={true} className={styles.linkBTN}>
@@ -142,7 +138,6 @@ export default function RolexCategories() {
               </div>
           </Link>
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>Daytona</div>
           </div>
           <Link href={"/rolex/rolex-categories/daytona"} prefetch={true} className={styles.linkBTN}>
@@ -167,7 +162,6 @@ export default function RolexCategories() {
               </div>
           </Link>
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>Day-Date</div>
           </div>
           <Link href={"/rolex/rolex-categories/daydate"} prefetch={true} className={styles.linkBTN}>
@@ -192,7 +186,6 @@ export default function RolexCategories() {
               </div>
           </Link>
           <div className={styles.contentContainer}>
-            <div className={styles.rolexTitle}>Rolex</div>
             <div className={styles.modelTitle}>Yacht-Master</div>
           </div>
           <Link href={"/rolex/rolex-categories/yachtmaster"} prefetch={true} className={styles.linkBTN}>

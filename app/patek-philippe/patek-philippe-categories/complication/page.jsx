@@ -47,7 +47,7 @@ const watches = await getComplication()
           <div className={styles.viewDetailsBTNMobile}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
           </div>
-          <div className={styles.viewDetailsBTNDesktop}>
+          <div className={styles.contactBTNDesktop}>
             <h3 className={styles.contactReview}>CONTACT</h3>
             <div>07976 753 254</div>
           </div>
