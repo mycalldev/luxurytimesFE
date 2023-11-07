@@ -199,11 +199,11 @@
   /* BUTTONS */
   .viewDetailsBTN{
     margin: 10px auto 10px auto;
-    padding: 5px 30px;
+    padding: 7px 30px;
     max-width: 150px;
     border: solid 2px #91c0dc;
     border-radius: 22px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: #fff;
     background-color: #91c0dc;
@@ -240,9 +240,15 @@
     font-size: 2rem;
   }
 
+  .titleCategoryWatch {
+    font-size: 1.5rem;
+  }
+
   .categoryContainerGrid {
     display: grid;
     grid-template-columns: 33% 33% 33%;
+    max-width: 90%;
+    margin: auto;
   }
 
   /* GUIDES */
