@@ -18,6 +18,9 @@ export default function Footer() {
           <Link href={'/review'} className={styles.linkBTN}>
             <div className={styles.itemFlex}>REVIEWS</div>
           </Link>
+          <Link href={'/return'} className={styles.linkBTN}>
+            <div className={styles.itemFlex}>RETURN</div>
+          </Link>
         </div>
         
         <div className={styles.addressContainer}>
