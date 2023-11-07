@@ -40,7 +40,7 @@ const watches = await getGmtMasterII()
             The Rolex GMT-Master II 42mm. With Oyster and Jubilee bracelets available, 
             this watch is a perfect blend of luxury and functionality. 
             Highly sought-after by watch enthusiasts and collectors, 
-            the GMT-Master II 42mm is a true icon of the Rolex brand.
+            the GMT-Master II 45mm is a true icon of the Rolex brand.
           </p>
           
           {/* CTA  */}

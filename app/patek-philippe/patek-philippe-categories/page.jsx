@@ -82,7 +82,7 @@ export default function PatekPhilippeCategories() {
           <Link href={'/patek-philippe/patek-philippe-categories/grand-complication'} prefetch={true} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/coming_soon.jpg`}
+                      src={`/category/patekphilippe.JPG`}
                       width={840}
                       height={560}
                       alt='grand complication thumbnail'

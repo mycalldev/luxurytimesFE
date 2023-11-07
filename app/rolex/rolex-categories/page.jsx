@@ -6,7 +6,7 @@ import styles from './RolexCategories.module.css'
 export default function RolexCategories() {
   return (
     <div>
-      <div className={styles.titleCategory}>ROLEX COLLLECTIONS</div>
+      <div className={styles.titleCategory}>ROLEX COLLECTIONS</div>
       <div className={styles.introContent}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 

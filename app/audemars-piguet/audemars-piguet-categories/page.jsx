@@ -7,6 +7,24 @@ export default function AudemarsPiguetCategories() {
   return (
     <div>
       <div className={styles.titleCategory}>AUDEMARS PIGUET COLLECTION</div>
+      <div className={styles.introContent}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+        nisi ut aliquip ex ea commodo consequat.
+      </div>
+
+      {/* MOBILE CONTACT */}
+      <div className={styles.contactBTNContainerMobile}>
+        <Link href="tel:07976753254" className={styles.linkBTN} >
+            <div className={styles.contactBTN}>CONTACT</div>
+        </Link>
+      </div>
+
+      {/* CONTACT DESKTOP */}
+      <div className={styles.contactBTNContainerDesktop}>
+        <div className={styles.titleContactDesktop}>CONTACT</div>
+            <div className={styles.contactBTN}>07976 753 254</div>
+      </div>
       
       <div className={styles.containerGrid}>
         {/* ROYAL OAK */}
@@ -28,7 +46,7 @@ export default function AudemarsPiguetCategories() {
             <div className={styles.modelTitle}>Royal Oak</div>
           </div>
           <Link href={"/audemars-piguet/audemars-piguet-categories/royal-oak"} prefetch={true} className={styles.linkBTN}>
-            <div className={styles.heroBtn}>
+            <div className={styles.viewBTN}>
               View
             </div>
           </Link>
@@ -36,10 +54,10 @@ export default function AudemarsPiguetCategories() {
 
         {/* ROYAL OAK OFFSHORE */}
         <div className={styles.containerItem}>
-          <Link href={'/audemars-piguet/audemars-piguet-categories/royal-oak-offshore'} prefetch={true} > 
+          {/* <Link href={'/audemars-piguet/audemars-piguet-categories/royal-oak-offshore'} prefetch={true}>  */}
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/coming_soon.jpg`}
+                      src={`/royaloakoffshore_temp.JPG`}
                       width={840}
                       height={560}
                       alt='royal oak offshore thumbnail'
@@ -47,24 +65,24 @@ export default function AudemarsPiguetCategories() {
                       quality={100}
                   />
               </div>
-          </Link>
+          {/* </Link> */}
           <div className={styles.contentContainer}>
             <div className={styles.rolexTitle}>Audemars Piguet</div>
             <div className={styles.modelTitle}>Royal Oak Offshore</div>
           </div>
-          <Link href={"/audemars-piguet/audemars-piguet-categories/royal-oak-offshore"} prefetch={true} className={styles.linkBTN}>
-            <div className={styles.heroBtn}>
-              View
+          {/* <Link href={"/audemars-piguet/audemars-piguet-categories/royal-oak-offshore"} prefetch={true} className={styles.linkBTN}> */}
+            <div className={styles.comingsoonBTN}>
+              Coming Soon
             </div>
-          </Link>
+          {/* </Link> */}
         </div>
 
         {/* ROYAL OAK CONCEPT */}
         <div className={styles.containerItem}>
-          <Link href={'/audemars-piguet/audemars-piguet-categories/royal-oak-concept'} prefetch={true} > 
+          {/* <Link href={'/audemars-piguet/audemars-piguet-categories/royal-oak-concept'} prefetch={true}>  */}
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/coming_soon.jpg`}
+                      src={`/royaloakconcept_temp.JPG`}
                       width={840}
                       height={560}
                       alt='royal oak concept thumbnail'
@@ -72,24 +90,24 @@ export default function AudemarsPiguetCategories() {
                       quality={100}
                   />
               </div>
-          </Link>
+          {/* </Link> */}
           <div className={styles.contentContainer}>
             <div className={styles.rolexTitle}>Audemars Piguet</div>
             <div className={styles.modelTitle}>Royal Oak Concept</div>
           </div>
-          <Link href={"/audemars-piguet/audemars-piguet-categories/royal-oak-concept"} prefetch={true} className={styles.linkBTN}>
-            <div className={styles.heroBtn}>
-              View
+          {/* <Link href={"/audemars-piguet/audemars-piguet-categories/royal-oak-concept"} prefetch={true} className={styles.linkBTN}> */}
+            <div className={styles.comingsoonBTN}>
+              Coming Soon
             </div>
-          </Link>
+          {/* </Link> */}
         </div>
 
          {/* CODE 1159 */}
          <div className={styles.containerItem}>
-          <Link href={'/audemars-piguet/audemars-piguet-categories/code1159'} prefetch={true} > 
+          {/* <Link href={'/audemars-piguet/audemars-piguet-categories/code1159'} prefetch={true}>  */}
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/coming_soon.jpg`}
+                      src={`/code1159_temp.JPG`}
                       width={840}
                       height={560}
                       alt='code1159 thumbnail'
@@ -97,16 +115,16 @@ export default function AudemarsPiguetCategories() {
                       quality={100}
                   />
               </div>
-          </Link>
+          {/* </Link> */}
           <div className={styles.contentContainer}>
             <div className={styles.rolexTitle}>Audemars Piguet</div>
             <div className={styles.modelTitle}>Code 1159</div>
           </div>
-          <Link href={"/audemars-piguet/audemars-piguet-categories/code-1159"} prefetch={true} className={styles.linkBTN}>
-            <div className={styles.heroBtn}>
-              View
+          {/* <Link href={"/audemars-piguet/audemars-piguet-categories/code-1159"} prefetch={true} className={styles.linkBTN}> */}
+            <div className={styles.comingsoonBTN}>
+              Coming Soon
             </div>
-          </Link>
+          {/* </Link> */}
         </div>
 
         </div>
