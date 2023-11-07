@@ -58,12 +58,12 @@ export default function Navbar() {
                     <li className={styles.listItem}>Rolex</li>
                   </div>
                 </Link>
-                <Link href={'/patek-philippe-categories'} className={styles.linkBTN}>
+                <Link href={'/patek-philippe/patek-philippe-categories'} className={styles.linkBTN}>
                   <div className={styles.listItemContainer} onClick={() => handleToggle()}>
                     <li className={styles.listItem}>Patek Philippe</li>
                   </div>
                 </Link>
-                <Link href={'/audemars-piguet-categories'} className={styles.linkBTN}>
+                <Link href={'/audemars-piguet/audemars-piguet-categories'} className={styles.linkBTN}>
                   <div className={styles.listItemContainer} onClick={() => handleToggle()}>
                     <li className={styles.listItem}>Audemars Piguet</li>
                   </div>
@@ -102,12 +102,12 @@ export default function Navbar() {
                       <li className={styles.listItem}>Rolex</li>
                     </div>
                 </Link>
-                <Link href={'/patek-philippe-categories'} className={styles.linkBTN}>
+                <Link href={'/patek-philippe/patek-philippe-categories'} className={styles.linkBTN}>
                     <div className={styles.listItemContainer}>
                       <li className={styles.listItem}>Patek Philippe</li>
                     </div>
                   </Link>
-                  <Link href={'/audemars-piguet-categories'} className={styles.linkBTN}>
+                  <Link href={'/audemars-piguet/audemars-piguet-categories'} className={styles.linkBTN}>
                     <div className={styles.listItemContainer}>
                       <li className={styles.listItem}>Audemars Piguet</li>
                     </div>
