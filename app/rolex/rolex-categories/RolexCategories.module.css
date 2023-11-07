@@ -4,6 +4,15 @@
     color: #fff;
 }
 
+.linkBTNCategory {
+    text-decoration: none;
+    color: #000;
+}
+
+.contactBTNContainerDesktop {
+    display: none;
+}
+
 .titleCategory {
     margin: 20px;
     font-size: 1.5rem;
@@ -12,20 +21,43 @@
     color: #323232;
   }
 
-.heroBtn {
-  margin: -15px 10px 30px 10px;
-  padding: 7px;
-  max-width: 200px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-align: center;
-  border-radius: 22px;
-  background: #91c0dc;
-  cursor: pointer;
+.introContent {
+    margin: 30px auto 30px auto;
+    width: 80%;
+    text-align: center;
 }
 
+.contactBTNContainerMobile {
+    display: grid;
+    justify-content: center;
+}
+
+.contactBTN {
+    margin: 0px 10px 30px 10px;
+    padding: 7px 40px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    max-width: 200px;
+    border-radius: 22px;
+    background: #91c0dc;
+    color: #fff;
+}
+
+.viewBTN {
+    margin: 0px 10px 30px 10px;
+    padding: 7px 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    max-width: 200px;
+    border-radius: 22px;
+    background: #91c0dc;
+    color: #fff;
+  }
+
 .containerGrid {
-    margin: 15px;
+    margin: 15px 15px 0 15px;
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -47,4 +79,68 @@
 .modelTitle {
     font-size: 1.1rem;
     font-weight: 600;
+}
+
+@media(min-width: 768px) {
+
+    .contactBTNContainerMobile {
+        display: none;
+    }
+
+    .contactBTNContainerDesktop {
+        display: block;
+    }
+
+    .contactBTN {
+        width: 50%;
+        margin: 10px auto 30px auto;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .viewBTN {
+        width: 50%;
+        margin: 0 auto 40px auto;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .titleCategory {
+        margin-top: 40px;
+        font-size: 1.7rem;
+    }
+    .titleContactDesktop {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .introContent {
+        width: 70%;
+        margin: 30px auto;
+        max-width: 1200px;
+        font-size: 1.3rem;
+    }
+
+    .containerGrid {
+        padding: 20px 100px 10px 100px;
+    }
+
+    .containerItem {
+        /* margin: 10px 20px; */
+        /* padding: 40px; */
+    }
+
+    .imageContainer {
+        padding: 0 20px;
+    }
+
+    .rolexTitle {
+        font-size: 1.5rem;
+    }
+
+    .modelTitle {
+        font-size: 2rem;
+    }
 }
