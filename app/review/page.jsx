@@ -20,12 +20,17 @@ export default async function Reviews() {
     const reviews = await getReviews()
     
   return (
-    <main>
+    <main className={styles.containerReview}>
         <div>
-            <h1 className={styles.titleMain}>REVIEWS</h1>
-            <div className={styles.viewDetailsBTN}>
-             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
-            </div>
+          <h1 className={styles.titleMain}>REVIEWS</h1>
+          <div className={styles.viewDetailsBTNMobile}>
+            <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
+          </div>
+          <div className={styles.viewDetailsBTNDesktop}>
+            <h3 className={styles.contactReview}>CONTACT</h3>
+            <div>07976 753 254</div>
+          </div>
+          
         </div>
         {reviews.map((review) => (
             

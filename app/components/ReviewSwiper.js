@@ -13,7 +13,7 @@ export default function reviewSwiper( {review} ) {
   return (
     <div className={styles.imageContainer}>
 
-          <div className={styles.titleReviews}>REVIEWS</div>
+          <h1 className={styles.titleReviews}>REVIEWS</h1>
 
           <Swiper
             pagination={true}

@@ -6,7 +6,7 @@ import styles from './AudemarsPiguetCategories.module.css'
 export default function AudemarsPiguetCategories() {
   return (
     <div>
-      <div className={styles.titleCategory}>AUDEMARS PIGUET COLLECTION</div>
+      <div className={styles.titleCategory}>AUDEMARS PIGUET COLLECTIONS</div>
       <div className={styles.introContent}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 

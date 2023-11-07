@@ -45,7 +45,7 @@
 }
 
 /* CATEGORY SECTION */
-.titleCategory {
+.titleBrands {
   margin: 60px auto 20px auto;
   font-size: 1.5rem;
   font-weight: 700;
@@ -235,7 +235,7 @@
   }
 
   /* CATEGORIES */
-  .titleCategory {
+  .titleBrands {
     margin: 50px auto 10px auto;
     font-size: 2rem;
   }
@@ -254,6 +254,8 @@
   /* GUIDES */
   .titleGuides {
     margin: 20px auto 5px auto;
+    font-size: 2rem;
+
   }
 
   .imageGuides {
@@ -306,18 +308,20 @@
   }
 
   .tagGuides {
-    margin-top: 20px;
+    margin-top: 40px;
     color: #2e2e2e;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 600;
   }
 
   .paragraphGuides {
+    width: 50%;
     display: block;
-    margin: 10px 200px 0 200px;
+    margin: 10px auto 10px auto;
     font-size: 1.3rem;
     text-align: center;
     color: #717171;
+    /* max-width: 900px; */
   }
 
   .titleHighlights {

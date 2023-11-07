@@ -51,7 +51,7 @@ export default async function Home() {
 
       
       {/* CATEGORY SECTION */}
-          <div className={styles.titleCategory}>CATEGORIES</div>
+          <h1 className={styles.titleBrands}>WATCH BRANDS</h1>
       <section className={styles.categoryContainerGrid}>
 
           <div className={styles.imageCategoryContainer}>
@@ -88,11 +88,11 @@ export default async function Home() {
       {/* GUIDES SECTION */}
       <section className={styles.guideHighlightGrid}>
        
-          <div className={styles.titleGuides}>GUIDES</div>
+          <h1 className={styles.titleGuides}>GUIDES</h1>
 
           <div className={styles.imageGuidesContainer}>
             <Image src={'/cogs.jpg'} className={styles.imageGuides} width={1456} height={816} alt={'cogs for watch background'} quality={100} />
-            <div className={styles.tagGuides}>Check out our latest guides</div>
+            <div className={styles.tagGuides}>Check Out Our Latest Guides</div>
             <div className={styles.paragraphGuides}>Introducing our latest guides! We're thrilled to present a collection of expertly crafted resources designed to empower and inform you.</div>
             <Link href={'/guide'} className={styles.viewBTNContainer}>
               <div className={styles.guiedsBTN}>Veiw</div>
@@ -104,7 +104,7 @@ export default async function Home() {
       {/* HIGHLIGHT SECTION */}
       <div className={styles.blogHighlightGrid}>
        <section>
-          <div className={styles.titleHighlights}>HIGHLIGHTS</div>
+          <h1 className={styles.titleHighlights}>HIGHLIGHTS</h1>
 
           <Image src={'/highlight.JPG'} width={840} height={560} className={styles.imageHighlights} alt={'image of Sky-dweller'} quality={100} />
           
@@ -120,7 +120,7 @@ export default async function Home() {
 
       {/* BLOG SECTION */}
       <section>
-        <div className={styles.titleBlogs}>BLOGS</div>
+        <h1 className={styles.titleBlogs}>BLOGS</h1>
         <Image src={'/blingToBullion.jpeg'} width={840} height={560} className={styles.imageBlogs} alt={'image of Sky-dweller'} quality={100} />
         <div className={styles.contentHighlightsContainer}>
             <div className={styles.conenttitleHighlights}>Watches</div>
