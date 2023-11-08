@@ -134,3 +134,9 @@
     list-style-type: none;
   }
 }
+
+@media(min-width: 1024px) {
+  .listItem {
+    font-size: 1.3rem;
+  }
+}

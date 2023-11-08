@@ -163,13 +163,14 @@
         margin: 20px auto;
         text-align: start;
         color: #5a5a5a;
+        font-size: 1.3rem;
         font-weight: 500;
     }
 
     .luxuryContent {
         width: 80%;
         margin: 20px auto;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         line-height: 1.5;
         color: #242424;
     }

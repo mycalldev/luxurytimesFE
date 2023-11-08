@@ -11,7 +11,7 @@ export default function Contact() {
       </div>
 
       <div className={styles.contactText}>
-        We're here to help and answer any questions you might have. 
+        Luxury Times Ltd is a Family Run Business. We're here to help and answer any questions you might have. 
         Whether you have a query about our products or services, 
         want to provide feedback, or simply want to say hello, we'd love to hear from you. 
         Please feel free to reach out to us using the contact information below, 

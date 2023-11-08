@@ -36,9 +36,9 @@
 }
 
 .faqIntro {
-    width: 60%;
+    width: 70%;
     margin: 20px auto;
-    text-align: center;
+    text-align: center
 }
 
 .faqsContainer {
@@ -98,5 +98,18 @@
         width: 60%;
         margin: 30px auto;
         padding: 40px;
+    }
+
+    .welcomeTag {
+        text-align: center;
+        margin: 20px;
+        font-size: 1.7rem;
+    }
+
+    .faqIntro {
+        font-size: 1.3rem;
+        width: 80%;
+        margin: 20px auto 40px auto;
+        line-height: 1.5;
     }
 }
