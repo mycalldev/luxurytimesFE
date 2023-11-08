@@ -6,10 +6,13 @@
 
 .backLinkBTN {
     color: #000;
+    text-decoration: none;
+
 }
 
 .backNav {
-    margin: 20px;
+    margin: 20px 30px;
+    font-size: 1.1rem;
 }
 
 .titleMain {
@@ -100,6 +103,10 @@
 }
 
 @media(min-width: 768px) {
+
+    .backNav {
+        font-size: 1.5rem;
+    }
 
     .viewDetailsBTNMobile {
         font-size: 1rem;

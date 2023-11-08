@@ -8,7 +8,7 @@ export default function AudemarsPiguetCategories() {
     <div>
       <Link href={'/'} className={styles.backLinkBTN}>
       <div className={styles.backNav}>
-         Home
+         {'< Home'}
       </div>
       </Link>
       <div className={styles.titleCategory}>AUDEMARS PIGUET COLLECTIONS</div>

@@ -8,7 +8,7 @@ export default function PatekPhilippeCategories() {
     <div>
       <Link href={'/'} className={styles.backLinkBTN}>
       <div className={styles.backNav}>
-         Home
+         {'< Home'}
       </div>
       </Link>
       <div className={styles.titleCategory}>PATEK PHILIPPE COLLECTIONS</div>
