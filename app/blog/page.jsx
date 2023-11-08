@@ -18,7 +18,7 @@ export default function introBlog() {
     </div>
 
     <div className={styles.intro}>
-    Rob Diamond, based in the heart of Canary Wharf is a long time Jewellery and Watch expert. First dipping his toes in the water and becoming a Gemologist in his early 20’s, travelling across all parts of the globe to attain such knowledge and eminent qualification.
+    The CEO of Luxury Times Ltd: Rob Diamond, based in the heart of Canary Wharf is a long time Jewellery and Watch expert. First dipping his toes in the water and becoming a Gemologist in his early 20’s, travelling across all parts of the globe to attain such knowledge and eminent qualification.
     </div>
 
     <div className={styles.intro}>
@@ -74,9 +74,18 @@ export default function introBlog() {
     Certainly, the financial data from the previous couple of years shows how dominant Rolex are in terms of an investment acquisition. In conclusion, one could safely assume that the Rolex brand has supplied the best of both worlds for their clients insofar as ensuring an investable timepiece that can be adorned all the while retaining its value.
     </div>
 
-    <div className={styles.intro}>
-    Rob Diamond is available by appointment only. 
+    <div className={styles.luxuryContent}>
+          Luxury Times Ltd is available by appointment only. 
     </div>
+
+    {/* CTA  */}
+    <div className={styles.contactBTN}>
+            <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
+          </div>
+          <div className={styles.contactBTNDesktop}>
+            <h3 className={styles.contactReview}>CONTACT</h3>
+            <div>07976 753 254</div>
+          </div>
     </div>
   )
 }
