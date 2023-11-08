@@ -35,6 +35,13 @@ const watches = await getYachtMaster()
 
         <h1 className={styles.titleMain}>YACHT-MASTER</h1>
 
+        <Link href={'/rolex/rolex-categories'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              Rolex Collections
+          </div>
+        </Link>
+
+
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
           The Rolex Yacht-Master is a prestigious and highly regarded 
@@ -45,7 +52,7 @@ const watches = await getYachtMaster()
           </p>
           
           {/* CTA  */}
-          <div className={styles.viewDetailsBTN}>
+          <div className={styles.contactBTN}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
           </div>
           <div className={styles.contactBTNDesktop}>

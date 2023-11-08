@@ -35,6 +35,13 @@ const watches = await getGmtMasterII()
 
         <h1 className={styles.titleMain}>GMT-MASTER II</h1>
 
+        <Link href={'/rolex/rolex-categories'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              Rolex Collections
+          </div>
+        </Link>
+
+
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
             The Rolex GMT-Master II 42mm. With Oyster and Jubilee bracelets available, 

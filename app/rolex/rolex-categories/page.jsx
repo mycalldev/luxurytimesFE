@@ -6,6 +6,11 @@ import styles from './RolexCategories.module.css'
 export default function RolexCategories() {
   return (
     <div>
+      <Link href={'/'} className={styles.backLinkBTN}>
+      <div className={styles.backNav}>
+         Home
+      </div>
+      </Link>
       <div className={styles.titleCategory}>ROLEX COLLECTIONS</div>
       <div className={styles.introContent}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -77,7 +82,7 @@ export default function RolexCategories() {
 
         {/* GMT MASTER II */}
         <div className={styles.containerItem}>
-          <Link href={'/rolex/rolex-categories/gmt-master-ii'} > 
+          <Link href={'/rolex/rolex-categories/gmtmasterii'} > 
               <div className={styles.imageContainer}>
                   <Image
                       src={`/watches/rolex/gmtmasterii/gmtmasterii126710BLNRoysterblack/126710BLNRgmtmasterii1.JPG`}
@@ -92,7 +97,7 @@ export default function RolexCategories() {
           <div className={styles.contentContainer}>
             <div className={styles.modelTitle}>GMT-Master II</div>
           </div>
-          <Link href={"/rolex/rolex-categories/gmt-master-ii"} prefetch={true} className={styles.linkBTN}>
+          <Link href={"/rolex/rolex-categories/gmtmasterii"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.viewBTN}>
               View
             </div>
@@ -101,7 +106,7 @@ export default function RolexCategories() {
 
         {/* SKY-DWELLER */}
         <div className={styles.containerItem}>
-          <Link href={'/rolex/rolex-categories/sky-dweller'} > 
+          <Link href={'/rolex/rolex-categories/skydweller'} > 
               <div className={styles.imageContainer}>
                   <Image
                       src={`/watches/rolex/skydweller/skydweller326933oysterchampagne/326933skydweller1.JPG`}
@@ -116,7 +121,7 @@ export default function RolexCategories() {
           <div className={styles.contentContainer}>
             <div className={styles.modelTitle}>Sky-Dweller</div>
           </div>
-          <Link href={"/rolex/rolex-categories/sky-dweller"} prefetch={true} className={styles.linkBTN}>
+          <Link href={"/rolex/rolex-categories/skydweller"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.viewBTN}>
               View
             </div>

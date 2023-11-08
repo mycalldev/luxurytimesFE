@@ -35,6 +35,13 @@ const watches = await getDaytona()
 
         <h1 className={styles.titleMain}>DAYTONA</h1>
 
+        <Link href={'/rolex/rolex-categories'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              Rolex Collections
+          </div>
+        </Link>
+
+
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
             Rolex Daytona is a line of luxury watches produced by Rolex, 

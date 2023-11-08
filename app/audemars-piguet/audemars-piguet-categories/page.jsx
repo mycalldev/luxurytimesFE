@@ -6,6 +6,11 @@ import styles from './AudemarsPiguetCategories.module.css'
 export default function AudemarsPiguetCategories() {
   return (
     <div>
+      <Link href={'/'} className={styles.backLinkBTN}>
+      <div className={styles.backNav}>
+         Home
+      </div>
+      </Link>
       <div className={styles.titleCategory}>AUDEMARS PIGUET COLLECTIONS</div>
       <div className={styles.introContent}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 

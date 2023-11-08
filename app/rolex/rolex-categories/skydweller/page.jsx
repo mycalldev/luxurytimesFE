@@ -35,6 +35,13 @@ const watches = await getSkyDweller()
 
         <h1 className={styles.titleMain}>Sky-Dweller</h1>
 
+        <Link href={'/rolex/rolex-categories'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              Rolex Collections
+          </div>
+        </Link>
+
+
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
             The Sky-Dweller is considered one of Rolex's most complex watches, 

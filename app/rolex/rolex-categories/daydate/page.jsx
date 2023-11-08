@@ -36,6 +36,13 @@ const watches = await getDayDate()
 
         <h1 className={styles.titleMain}>DAYDATE</h1>
 
+        <Link href={'/rolex/rolex-categories'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              Rolex Collections
+          </div>
+        </Link>
+
+
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
             The Rolex Day-Date, the ultimate luxury watch. 

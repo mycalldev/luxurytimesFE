@@ -6,6 +6,11 @@ import styles from './PatekPhilippeCategories.module.css'
 export default function PatekPhilippeCategories() {
   return (
     <div>
+      <Link href={'/'} className={styles.backLinkBTN}>
+      <div className={styles.backNav}>
+         Home
+      </div>
+      </Link>
       <div className={styles.titleCategory}>PATEK PHILIPPE COLLECTIONS</div>
       <div className={styles.introContent}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 

@@ -37,6 +37,13 @@ const watches = await getSubmariner()
 
         <h1 className={styles.titleMain}>SUBMARINER</h1>
 
+        <Link href={'/rolex/rolex-categories'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              Rolex Collections
+          </div>
+        </Link>
+
+
         <div className={styles.contentTopContainer}>
           <p className={styles.catDescription}>
             Discover the iconic Rolex Submariner, the quintessential dive watch

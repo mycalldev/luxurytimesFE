@@ -33,6 +33,12 @@ const watches = await getDatejust()
           />
         </div>
 
+      <Link href={'/rolex/rolex-categories'} className={styles.backLinkBTN}>
+      <div className={styles.backNav}>
+          Rolex Collections
+      </div>
+      </Link>
+
         <h1 className={styles.titleMain}>DATEJUST</h1>
 
         <div className={styles.contentTopContainer}>

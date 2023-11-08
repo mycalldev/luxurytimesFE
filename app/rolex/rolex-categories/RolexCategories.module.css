@@ -4,6 +4,14 @@
     color: #fff;
 }
 
+.backLinkBTN {
+    color: #000;
+}
+
+.backNav {
+    margin: 20px;
+}
+
 .linkBTNCategory {
     text-decoration: none;
     color: #000;
