@@ -138,7 +138,8 @@
     }
 
     .watchesGold {
-        padding: 40px 80px 40px 80px;
+        width: 70%;
+        margin: 40px auto;
     }
 
     .listItem {
