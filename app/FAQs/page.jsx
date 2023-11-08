@@ -1,5 +1,6 @@
 
 import styles from './FAQs.module.css'
+import Link from 'next/link'
 
 async function getFAQs() {
     
@@ -21,6 +22,13 @@ export default async function FAQs() {
   return (
     <div>
         <h1 className={styles.titleMain}>FAQs</h1>
+        <div className={styles.viewDetailsBTNMobile}>
+            <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
+          </div>
+          <div className={styles.viewDetailsBTNDesktop}>
+            <h3 className={styles.contactReview}>CONTACT</h3>
+            <div>07976 753 254</div>
+          </div>
         {FAQs.map((FAQ) => (
             <div key={FAQ._id}>
                 <div className={styles.faqsContainer}>

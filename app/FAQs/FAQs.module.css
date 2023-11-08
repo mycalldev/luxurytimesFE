@@ -1,12 +1,37 @@
+.linkBTN {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+  }
+
 .titleMain {
     margin: 20px;
     text-align: center;
     font-weight: 600;
 }
 
+.viewDetailsBTNMobile {
+    margin: 10px auto 50px auto;
+    padding: 10px 30px;
+    max-width: 150px;
+    border: solid 2px #91c0dc;
+    border-radius: 22px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #91c0dc;
+    letter-spacing: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.viewDetailsBTNDesktop {
+    display: none;
+}
+
 .faqsContainer {
-    margin: 20px;
-    padding: 20px;
+    margin: 40px 30px;
+    padding: 20px 30px;
     font-size: 1.1rem;
     background: #eeeeee;
 }
@@ -34,4 +59,32 @@
 
 .answer {
     margin: 10px;
+}
+
+@media(min-width: 768px) {
+    .viewDetailsBTNMobile {
+        display: none;
+    }
+
+    .viewDetailsBTNDesktop {
+        display: block;
+        margin: 10px auto 50px auto;
+        padding: 10px 30px;
+        max-width: 250px;
+        border: solid 2px #91c0dc;
+        border-radius: 22px;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: #fff;
+        background-color: #91c0dc;
+        letter-spacing: 3px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .faqsContainer {
+        width: 60%;
+        margin: 30px auto;
+        padding: 40px;
+    }
 }
