@@ -58,27 +58,27 @@ export default function Navbar() {
                     <li className={styles.listItem}>Rolex</li>
                   </div>
                 </Link>
-                <Link href={'/patek-philippe/patek-philippe-categories'} className={styles.linkBTN}>
+                <Link href={'/patek-philippe/patek-philippe-categories'} className={styles.linkBTN} prefetch={true}>
                   <div className={styles.listItemContainer} onClick={() => handleToggle()}>
                     <li className={styles.listItem}>Patek Philippe</li>
                   </div>
                 </Link>
-                <Link href={'/audemars-piguet/audemars-piguet-categories'} className={styles.linkBTN}>
+                <Link href={'/audemars-piguet/audemars-piguet-categories'} className={styles.linkBTN} prefetch={true}>
                   <div className={styles.listItemContainer} onClick={() => handleToggle()}>
                     <li className={styles.listItem}>Audemars Piguet</li>
                   </div>
                 </Link>
-                <Link href={'/guide'} className={styles.linkBTN}>
+                <Link href={'/guide'} className={styles.linkBTN} prefetch={true}>
                   <div className={styles.listItemContainer} onClick={() => handleToggle()}>
                     <li className={styles.listItem}>Guides</li>
                   </div>
                 </Link>
-                <Link href={'/blog'} className={styles.linkBTN}>
+                <Link href={'/blog'} className={styles.linkBTN} prefetch={true}>
                   <div className={styles.listItemContainer} onClick={() => handleToggle()}>
                     <li className={styles.listItem}>Blogs</li>
                   </div>
                 </Link>
-                <Link href={'/contact'} className={styles.linkBTN}>
+                <Link href={'/contact'} className={styles.linkBTN} prefetch={true}>
                   <div className={styles.listItemContainer} onClick={() => handleToggle()}>
                     <li className={styles.listItem}>Contact</li>
                   </div>
