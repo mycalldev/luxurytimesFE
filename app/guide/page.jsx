@@ -103,8 +103,8 @@ export default function BuyingRolex() {
         To summarise, I think it would be fair to give praise to Rolex for their engineering. They are truly the masters of their world. The automatic movement (72 hour power reserve) and all the intricate mechanical details such as the ParaChrom Hairspring, Chronergy Escapement, Paraflex shock absorber that cohesively amalgamate to deliver a concept of time keeping that Rolex make look easy….
         </div>
 
-        <div className={styles.intro}>
-          Luxury Diamond is available by appointment only. 
+        <div className={styles.luxuryContent}>
+          Luxury Times Ltd is available by appointment only. 
         </div>
 
     
