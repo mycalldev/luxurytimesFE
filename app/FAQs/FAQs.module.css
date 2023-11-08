@@ -29,6 +29,18 @@
     display: none;
 }
 
+.welcomeTag {
+    text-align: center;
+    margin: 20px;
+    font-size: 1.3rem;
+}
+
+.faqIntro {
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+}
+
 .faqsContainer {
     margin: 40px 30px;
     padding: 20px 30px;

@@ -29,6 +29,14 @@ export default async function FAQs() {
             <h3 className={styles.contactReview}>CONTACT</h3>
             <div>07976 753 254</div>
           </div>
+          <h3 className={styles.welcomeTag}>Welcome To Our Frequently Asked Questions Page</h3>
+          <p className={styles.faqIntro}>
+            Have questions? You're in the right place! 
+            We understand that when you're exploring a new service or product, 
+            you might have some inquiries. That's why we've created this comprehensive 
+            Frequently Asked Questions (FAQ) page to provide you 
+            with the information you need.
+          </p>
         {FAQs.map((FAQ) => (
             <div key={FAQ._id}>
                 <div className={styles.faqsContainer}>
