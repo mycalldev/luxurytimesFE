@@ -105,32 +105,33 @@ export default async function Home() {
       <div className={styles.blogHighlightGrid}>
        <section>
           <h1 className={styles.titleHighlights}>HIGHLIGHTS</h1>
-
-          <Image src={'/highlight.JPG'} width={840} height={560} className={styles.imageHighlights} alt={'image of Sky-dweller'} quality={100} />
-          
+          <Link href={'/landing/SkyDweller'} className={styles.linkBTN} prefetch={true}>
+            <Image src={'/highlight.JPG'} width={840} height={560} className={styles.imageHighlights} alt={'image of Sky-dweller'} quality={100} />
+          </Link>
           <div className={styles.contentHighlightsContainer}>
             <div className={styles.conenttitleHighlights}>Rolex</div>
             <div className={styles.contentSubTitleHighlights}>Sky Dweller</div>
             <div className={styles.paragraphHighlights1}>Introducing the Rolex Sky-Dweller! Where elegance meets precsion.... With its iconic design, dual time zones, and....</div>
           </div> 
-          <Link href={'/landing/SkyDweller'} className={styles.linkBTN} >
-          <div className={styles.highlightsBTN}>Read More</div>
+          <Link href={'/landing/SkyDweller'} className={styles.linkBTN} prefetch={true}>
+            <div className={styles.highlightsBTN}>Read More</div>
           </Link>
       </section>
 
       {/* BLOG SECTION */}
       <section>
-        <h1 className={styles.titleBlogs}>BLOGS</h1>
-        <Image src={'/blingToBullion.jpeg'} width={840} height={560} className={styles.imageBlogs} alt={'image of Sky-dweller'} quality={100} />
-        <div className={styles.contentHighlightsContainer}>
-            <div className={styles.conenttitleHighlights}>Watches</div>
-            <div className={styles.contentSubTitleHighlights}>Time Investment</div>
-            <div className={styles.paragraphHighlights1}>Investing in time.... Investing in your future! The Watch world has geneated a ton of interest in recent times and for good....</div>
-          </div> 
-        {/* <div className={styles.tagBlogs}>Keep Up-To-Date with the latest gossip in horology</div> */}
-        <Link href={'/landing/SkyDweller'} className={styles.linkBTN} >
-          <div className={styles.blogsBTN}>Read More</div>
-        </Link>
+         <h1 className={styles.titleBlogs}>BLOGS</h1>
+         <Link href={'/landing/SkyDweller'} className={styles.linkBTN} prefetch={true}>
+            <Image src={'/blingToBullion.jpeg'} width={840} height={560} className={styles.imageBlogs} alt={'image of Sky-dweller'} quality={100} />
+          </Link>
+            <div className={styles.contentHighlightsContainer}>
+              <div className={styles.conenttitleHighlights}>Watches</div>
+              <div className={styles.contentSubTitleHighlights}>Time Investment</div>
+              <div className={styles.paragraphHighlights1}>Investing in time.... Investing in your future! The Watch world has geneated a ton of interest in recent times and for good....</div>
+            </div> 
+          <Link href={'/landing/SkyDweller'} className={styles.linkBTN} prefetch={true}>
+            <div className={styles.blogsBTN}>Read More</div>
+          </Link>
       </section>
       </div>
 

@@ -291,6 +291,11 @@
 }
 
 @media(min-width: 1024px) {
+
+  .blogContainer {
+    cursor: pointer;
+  }
+
   .blogHighlightGrid {
     margin: 0 30px;
     display: grid;
