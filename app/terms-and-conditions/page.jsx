@@ -5,20 +5,18 @@ import styles from './TermsAndConditions.module.css'
 export default function TermsAndConditions() {
 
   return (
-    <div>
-      <h1 className={styles.titleMain}>T&Cs</h1>
-
-      
+    <div className={styles.containerMain}>
+    
 
       <div className={styles.titleTerms}> 
-        <h3>TERMS & CONDITIONS</h3>
+        <h1>TERMS & CONDITIONS</h1>
       </div>
 
       <div>
         <ol className={styles.orderedList}>
           <h3 className={styles.listItem}>Introduction:</h3>
           <li className={styles.listItem}>Welcome to Luxury Times Ltd, the online store for pre-owned Rolex watches. These terms and conditions govern your use of Luxury Times Ltd, our website, and your purchase of our products. By accessing or using Luxury Times Ltd website, you agree to be bound by these terms and conditions. If you do not agree to Luxury Times Ltd terms and conditions, please do not use our website.</li>
-          <li className={styles.listItem}>We sell pre-owned Rolex watches that have been carefully inspected and authenticated by Luxury Times Ltd team of experts. While we make every effort to accurately describe our products, there may be variations due to the age and condition of the watch. All our watches come with a guarantee of authenticity.</li>
+          <li className={styles.listItem}>We sell luxury pre-owned watches that have been carefully inspected and authenticated by Luxury Times Ltd team of experts. While we make every effort to accurately describe our products, there may be variations due to the age and condition of the watch. All our watches come with a guarantee of authenticity.</li>
           <h3 className={styles.listItem}>Orders:</h3>
           <li className={styles.listItem}>When you place an order with Luxury Times Ltd you are making an offer to purchase the product(s) in your order. We reserve the right to refuse or cancel any order for any reason, including but not limited to availability, pricing errors, or suspected fraud. We may also require additional verification or information before accepting an order.</li>
           <h3 className={styles.listItem}>Pricing and Payment:</h3>
@@ -39,7 +37,7 @@ export default function TermsAndConditions() {
       </div>
 
       <div className={styles.privacyNotice}>
-        <h3>Privacy Notice for luxurytimesltd Website Pre-Owned Rolex Watches: www.luxurytimesltd.co.uk</h3>
+        <h3>Privacy Notice for luxurytimesltd Website Pre-Owned Luxury Watches: www.luxurytimesltd.co.uk</h3>
       </div>
 
       <div className={styles.additional}>

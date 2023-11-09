@@ -182,7 +182,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
 
                 <div className={styles.specContainer}>
                   <div className={styles.listItemKey}>Material</div>
-                  <div className={styles.listItemValue}>{watch.braceletMaterial}</div>
+                  <div className={styles.listItemValue}>{watch.strapMaterial}</div>
                 </div>
 
                 <div className={styles.specContainer}>

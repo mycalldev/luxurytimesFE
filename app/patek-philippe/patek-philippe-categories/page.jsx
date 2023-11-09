@@ -12,10 +12,10 @@ export default function PatekPhilippeCategories() {
       </div>
       </Link>
       <div className={styles.titleCategory}>PATEK PHILIPPE COLLECTIONS</div>
-      <div className={styles.introContent}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat.
+      <div className={styles.introContent}>
+        Discover the world of Patek Philippe watches, where Aqaunaut, 
+        Nautilus, Grand Complication and Complication collections converge in a symphony of luxury,
+        innovation, precision and timeless elegance. 
       </div>
 
       {/* MOBILE CONTACT */}

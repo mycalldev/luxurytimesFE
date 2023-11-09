@@ -55,9 +55,9 @@ export default async function Home() {
       <section className={styles.categoryContainerGrid}>
 
           <div className={styles.imageCategoryContainer}>
-            <Image src={'/category/hulk_category.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100}  />
-            <div className={styles.titleCategoryWatch}>Rolex</div>
             <Link href={`/rolex/rolex-categories`} prefetch={true} className={styles.viewBTNContainer}> 
+              <Image src={'/category/hulk_category.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100}  />
+            <div className={styles.titleCategoryWatch}>Rolex</div>
               <div className={styles.viewDetailsBTN}>
                   <h4>VIEW</h4>
               </div>
@@ -65,9 +65,9 @@ export default async function Home() {
           </div>
 
           <div className={styles.imageCategoryContainer}>
-            <Image src={'/category/patekphilippe.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
-            <div className={styles.titleCategoryWatch}>Patek Phillipe</div>
             <Link href={`/patek-philippe/patek-philippe-categories`} prefetch={true} className={styles.viewBTNContainer}> 
+              <Image src={'/category/patekphilippe.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
+            <div className={styles.titleCategoryWatch}>Patek Phillipe</div>
               <div className={styles.viewDetailsBTN}>
                   <h4>VIEW</h4>
               </div>
@@ -75,9 +75,9 @@ export default async function Home() {
           </div>
 
           <div className={styles.imageCategoryContainer}>
-            <Image src={'/category/APiguet.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
-            <div className={styles.titleCategoryWatch}>Audemars Piguet</div>
             <Link href={`/audemars-piguet/audemars-piguet-categories`} className={styles.viewBTNContainer}> 
+              <Image src={'/category/APiguet.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
+            <div className={styles.titleCategoryWatch}>Audemars Piguet</div>
               <div className={styles.viewDetailsBTN}>
                   <h4>VIEW</h4>
               </div>
