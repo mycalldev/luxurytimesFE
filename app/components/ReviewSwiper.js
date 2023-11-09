@@ -17,8 +17,8 @@ export default function reviewSwiper( {review} ) {
 
           <Swiper
             pagination={true}
-            // navigation={true}
-            modules={[Pagination]}
+            navigation={true}
+            modules={[Pagination, Navigation]}
             className={styles.swiper}
           >
             <div className={styles.swiperWrapper}>

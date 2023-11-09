@@ -28,3 +28,25 @@ h4 {
   padding: 0;
   margin: 0;
 }
+
+.swiper-button-prev {
+  display: none !important;
+}
+
+.swiper-button-next {
+  display: none !important;
+}
+
+@media(min-width: 768px) {
+  .swiper-button-prev {
+    display: block !important;
+    margin-left: 100px;
+  }
+  
+  .swiper-button-next {
+    display: block !important;
+    margin-right: 100px;
+  }
+
+
+}
