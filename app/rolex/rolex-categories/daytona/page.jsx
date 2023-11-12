@@ -37,7 +37,7 @@ const watches = await getDaytona()
 
         <Link href={'/rolex/rolex-categories'} className={styles.backLinkBTN}>
           <div className={styles.backNav}>
-              Rolex Collections
+              {'< Rolex Collections'}
           </div>
         </Link>
 

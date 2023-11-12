@@ -105,7 +105,7 @@ export default async function Home() {
       <div className={styles.blogHighlightGrid}>
        <section>
           <h1 className={styles.titleHighlights}>HIGHLIGHTS</h1>
-          <Link href={'/landing/SkyDweller'} className={styles.linkBTN} prefetch={true}>
+          <Link href={'/landing/SkyDweller'} prefetch={true}>
             <Image src={'/highlight.JPG'} width={840} height={560} className={styles.imageHighlights} alt={'image of Sky-dweller'} quality={100} />
           </Link>
           <div className={styles.contentHighlightsContainer}>
@@ -121,7 +121,7 @@ export default async function Home() {
       {/* BLOG SECTION */}
       <section>
          <h1 className={styles.titleBlogs}>BLOGS</h1>
-         <Link href={'/landing/SkyDweller'} className={styles.linkBTN} prefetch={true}>
+         <Link href={'/landing/SkyDweller'} prefetch={true}>
             <Image src={'/blingToBullion.jpeg'} width={840} height={560} className={styles.imageBlogs} alt={'image of Sky-dweller'} quality={100} />
           </Link>
             <div className={styles.contentHighlightsContainer}>

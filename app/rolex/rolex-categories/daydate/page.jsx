@@ -38,7 +38,7 @@ const watches = await getDayDate()
 
         <Link href={'/rolex/rolex-categories'} className={styles.backLinkBTN}>
           <div className={styles.backNav}>
-              Rolex Collections
+            {'< Rolex Collections'}
           </div>
         </Link>
 
@@ -70,14 +70,16 @@ const watches = await getDayDate()
           >
             <h2 className={styles.titleWatch}>{watch.title}</h2>
             <div className={styles.imageContainer}>
-              <Image
-                src={`/watches/${watch.brand}/${watch.model}/${watch.model}${watch.ref}${watch.strap}${watch.dial}/${watch.ref}${watch.model}1.JPG`}
-                width={840}
-                height={560}
-                alt={watch.title}
-                className={styles.imageWatch}
-                quality={100}
-              />
+              <Link href={`/rolex/all-watches/${watch._id}`} prefetch={true}> 
+                <Image
+                  src={`/watches/${watch.brand}/${watch.model}/${watch.model}${watch.ref}${watch.strap}${watch.dial}/${watch.ref}${watch.model}1.JPG`}
+                  width={840}
+                  height={560}
+                  alt={watch.title}
+                  className={styles.imageWatch}
+                  quality={100}
+                />
+              </Link>
             </div>
             
             <Link href={`/rolex/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN}> 
