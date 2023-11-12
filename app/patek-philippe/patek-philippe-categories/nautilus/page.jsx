@@ -18,6 +18,7 @@ async function getNautilus() {
 export default async function Nautilus() {
 
 const watches = await getNautilus()
+console.log(watches)
 
   return (
     <div>
