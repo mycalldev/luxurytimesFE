@@ -11,6 +11,7 @@ export default function PatekPhilippeCategories() {
          {'< Home'}
       </div>
       </Link>
+      
       <div className={styles.titleCategory}>PATEK PHILIPPE COLLECTIONS</div>
       <div className={styles.introContent}>
         Discover the world of Patek Philippe watches, where Aqaunaut, 
