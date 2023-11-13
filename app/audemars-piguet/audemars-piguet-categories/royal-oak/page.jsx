@@ -33,6 +33,12 @@ const watches = await getRoyaloak()
           />
         </div>
 
+        <Link href={'/audemars-piguet/audemars-piguet-categories'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              {'< Audemars Piguet Collections'}
+          </div>
+        </Link>
+
         <h1 className={styles.titleMain}>ROYAL OAK</h1>
 
         <div className={styles.contentTopContainer}>
@@ -46,7 +52,7 @@ const watches = await getRoyaloak()
           </p>
           
           {/* CTA  */}
-          <div className={styles.viewDetailsBTN}>
+          <div className={styles.contactDetailsBTNMobile}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
           </div>
           <div className={styles.contactBTNDesktop}>

@@ -52,7 +52,7 @@ const watches = await getYachtMaster()
           </p>
           
           {/* CTA  */}
-          <div className={styles.contactBTN}>
+          <div className={styles.contactDetailsBTNMobile}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
           </div>
           <div className={styles.contactBTNDesktop}>

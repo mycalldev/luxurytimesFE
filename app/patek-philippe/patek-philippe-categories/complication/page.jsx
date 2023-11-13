@@ -29,9 +29,14 @@ const watches = await getComplication()
             alt='Complication Hero Banner'
             className={styles.imageCatHero}
             quality={100}
-
           />
         </div>
+
+        <Link href={'/patek-philippe/patek-philippe-categories'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              {'< Patek Philippe Collections'}
+          </div>
+        </Link>
 
         <h1 className={styles.titleMain}>COMPLICATION</h1>
 
@@ -44,7 +49,7 @@ const watches = await getComplication()
           </p>
           
           {/* CTA  */}
-          <div className={styles.viewDetailsBTNMobile}>
+          <div className={styles.contactDetailsBTNMobile}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
           </div>
           <div className={styles.contactBTNDesktop}>

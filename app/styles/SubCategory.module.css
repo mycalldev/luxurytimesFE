@@ -69,11 +69,10 @@
     cursor: pointer;
 }
 
-/* .contactBTN {
-    display: block;
-    margin: 10px auto 50px auto;
+.contactDetailsBTNMobile {
+    margin: 0px auto 20px auto;
     padding: 10px 30px;
-    max-width: 250px;
+    max-width: 150px;
     border: solid 2px #91c0dc;
     border-radius: 22px;
     font-size: 1rem;
@@ -82,7 +81,8 @@
     background-color: #91c0dc;
     letter-spacing: 3px;
     text-align: center;
-} */
+    cursor: pointer;
+}
 
 .contactBTNDesktop {
     display: none;
@@ -106,6 +106,10 @@
 
     .backNav {
         font-size: 1.5rem;
+    }
+
+    .contactDetailsBTNMobile {
+        display: none;
     }
 
     .viewDetailsBTNMobile {

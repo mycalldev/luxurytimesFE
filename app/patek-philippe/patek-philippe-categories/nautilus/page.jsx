@@ -18,7 +18,6 @@ async function getNautilus() {
 export default async function Nautilus() {
 
 const watches = await getNautilus()
-console.log(watches)
 
   return (
     <div>
@@ -30,9 +29,14 @@ console.log(watches)
             alt='Nautilus Hero Banner'
             className={styles.imageCatHero}
             quality={100}
-
           />
         </div>
+
+        <Link href={'/patek-philippe/patek-philippe-categories'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              {'< Patek Philippe Collections'}
+          </div>
+        </Link>
 
         <h1 className={styles.titleMain}>NAUTILUS</h1>
 
@@ -46,7 +50,7 @@ console.log(watches)
           </p>
           
           {/* CTA  */}
-          <div className={styles.viewDetailsBTN}>
+          <div className={styles.contactDetailsBTNMobile}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
           </div>
           <div className={styles.contactBTNDesktop}>

@@ -33,6 +33,12 @@ const watches = await getGrandcomplication()
           />
         </div>
 
+        <Link href={'/patek-philippe/patek-philippe-categories'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              {'< Patek Philippe Collections'}
+          </div>
+        </Link>
+
         <h1 className={styles.titleMain}>GRAND COMPLICATION</h1>
 
         <div className={styles.contentTopContainer}>
@@ -44,7 +50,7 @@ const watches = await getGrandcomplication()
           </p>
           
           {/* CTA  */}
-          <div className={styles.viewDetailsBTNMobile}>
+          <div className={styles.contactDetailsBTNMobile}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
           </div>
           <div className={styles.contactBTNDesktop}>
