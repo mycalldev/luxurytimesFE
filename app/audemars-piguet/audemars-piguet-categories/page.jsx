@@ -12,10 +12,10 @@ export default function AudemarsPiguetCategories() {
       </div>
       </Link>
       <div className={styles.titleCategory}>AUDEMARS PIGUET COLLECTIONS</div>
-      <div className={styles.introContent}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat.
+      <div className={styles.introContent}>
+        Embark on a journey through Audemars Piguet's legendary timepieces. 
+        From the Royal Oak to the Royal Oak Offshore, each watch resonates 
+        with innovation, craftsmanship, and a rich heritage of horological excellence.
       </div>
 
       {/* MOBILE CONTACT */}

@@ -12,10 +12,10 @@ export default function RolexCategories() {
       </div>
       </Link>
       <div className={styles.titleCategory}>ROLEX COLLECTIONS</div>
-      <div className={styles.introContent}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat.
+      <div className={styles.introContent}>
+        Explore the iconic Rolex collection, 
+        a testament to precision and style. From the enduring Submariner to the distinguished Day-Date, 
+        each watch embodies Rolex's legacy of craftsmanship and sophistication.
       </div>
 
       {/* MOBILE CONTACT */}
