@@ -84,11 +84,10 @@ const watches = await getGrandcomplication()
             </Link>
           </div>
         ))}
-
-            <div className={styles.arrivingSoonBTN}>
-                <h4>ARRIVING SOON</h4>
-            </div>
       </main>
+      <div className={styles.arrivingSoonBTN}>
+        <h4>ARRIVING SOON</h4>
+      </div>
     </div>
   )
 }

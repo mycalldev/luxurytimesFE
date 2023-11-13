@@ -82,11 +82,11 @@ const watches = await getComplication()
             </div>
             </Link>
           </div>
-        ))}
-            <div className={styles.arrivingSoonBTN}>
-                <h4>ARRIVING SOON</h4>
-            </div>
+        ))}  
       </main>
+      <div className={styles.arrivingSoonBTN}>
+        <h4>ARRIVING SOON</h4>
+      </div>
     </div>
   )
 }

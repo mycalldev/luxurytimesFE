@@ -89,9 +89,10 @@
 }
       
 .arrivingSoonBTN {
+    width: 50%;
     margin: 10px auto 50px auto;
-    padding: 10px 30px;
-    max-width: 250px;
+    padding: 10px;
+    max-width: 300px;
     border: solid 2px #91c0dc;
     border-radius: 22px;
     font-size: 1rem;
@@ -106,6 +107,8 @@
 
     .backNav {
         font-size: 1.5rem;
+        margin: 20px 30px;
+
     }
 
     .contactDetailsBTNMobile {
