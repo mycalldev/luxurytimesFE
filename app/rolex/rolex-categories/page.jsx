@@ -14,7 +14,7 @@ export default function RolexCategories() {
       <div className={styles.titleCategory}>ROLEX COLLECTIONS</div>
       <div className={styles.introContent}>
         Explore the iconic Rolex collection, 
-        a testament to precision and style. From the enduring Submariner to the distinguished Day-Date, 
+        a testament to precision and style. From the Enduring Submariner to the distinguished Day-Date, 
         each watch embodies Rolex's legacy of craftsmanship and sophistication.
       </div>
 
