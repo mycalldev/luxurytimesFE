@@ -37,7 +37,7 @@ export default function AudemarsPiguetCategories() {
           <Link href={'/audemars-piguet/audemars-piguet-categories/royal-oak'} prefetch={true} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/watches/audemarspiguet/royaloak/royaloak26240STsteelsteelblack/26240STroyaloak1.JPG`}
+                      src={`/watches/audemarspiguet/royaloak/26240STOO1320ST06/royaloak1.JPG`}
                       width={840}
                       height={560}
                       alt='royal oak thumbnail'
