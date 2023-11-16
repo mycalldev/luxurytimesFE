@@ -13,7 +13,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
   
   return (
     <div className={styles.imageContainer}>
-      <Link href={`/audemars-piguet/audemars-piguet-categories/${watch.model}`} className={styles.linkBTN}>
+      <Link href={`/audemars-piguet/audemars-piguet-categories/${watch.modelBackend}`} className={styles.linkBTN}>
         <div className={styles.backBTN}>{`< Previous`}</div>
       </Link>
 

@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 export default function WatchDetailsClient( {watchArr, watch} ) {
   return (
     <div className={styles.imageContainer}>
-      <Link href={`/patek-philippe/patek-philippe-categories/${watch.model}`} className={styles.linkBTN}>
+      <Link href={`/patek-philippe/patek-philippe-categories/${watch.modelBackend}`} className={styles.linkBTN}>
         <div className={styles.backBTN}>{`< Previous`}</div>
       </Link>
 
