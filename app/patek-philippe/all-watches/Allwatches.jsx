@@ -28,7 +28,9 @@ export default async function Allwatches() {
           <Link href={`/patek-philippe/all-watches/${watch._id}`} >
             <div className={styles.imageContainer}>
               <Image
-                src={`/watches/${watch.brand}/${watch.model}/${watch.model}${watch.ref}${watch.strapColour}${watch.strap}${watch.dial}/${watch.ref}${watch.model}1.JPG`}
+                src={`/watches/${watch.brandBackend}/${watch.modelBackend}/${watch.uniqueWatchID}/${watch.modelBackend}${
+                  index + 1
+                }.JPG`}
                 width={840}
                 height={560}
                 alt={watch.title}

@@ -60,15 +60,17 @@ const watches = await getNautilus()
         </div>
 
         <main className={styles.mainContainer}>
-        {watches.map((watch) => (
+        {watches.map((watch, index) => (
           <div
             className={styles.productContainer}
-            key={watch._id}
+            key={index}
           >
             <h2 className={styles.titleWatch}>{watch.title}</h2>
             <div className={styles.imageContainer}>
               <Image
-                src={`/watches/${watch.brand}/${watch.model}/${watch.model}${watch.ref}${watch.strapColour}${watch.strap}${watch.dial}/${watch.ref}${watch.model}1.JPG`}
+                src={`/watches/${watch.brandBackend}/${watch.modelBackend}/${watch.uniqueWatchID}/${watch.modelBackend}${
+                  index + 1
+                }.JPG`}
                 width={840}
                 height={560}
                 alt={watch.title}

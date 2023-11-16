@@ -12,9 +12,9 @@ import "swiper/css/navigation";
 export default function WatchDetailsClient( {watchArr, watch} ) {
   return (
     <div className={styles.imageContainer}>
-      {/* <Link href={`/audemars-piguet/audemars-piguet-categories/`} className={styles.linkBTN}>
-        <div className={styles.backBTN}>{`< BACK`}</div>
-      </Link> */}
+      <Link href={`/patek-philippe/patek-philippe-categories/${watch.model}`} className={styles.linkBTN}>
+        <div className={styles.backBTN}>{`< Previous`}</div>
+      </Link>
 
       <div className={styles.titleMain}>{watch.title}</div> 
 
@@ -28,9 +28,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
               {watchArr.map((item, index) => (
                 <SwiperSlide className={styles.swiperSlide} key={index}>
                   <Image
-                    src={`/watches/${watch.brand}/${watch.model}/${watch.model}${watch.ref}${
-                      watch.strapColour
-                    }${watch.strap}${watch.dial}/${watch.ref}${watch.model}${
+                    src={`/watches/${watch.brandBackend}/${watch.modelBackend}/${watch.uniqueWatchID}/${watch.modelBackend}${
                       index + 1
                     }.JPG`}
                     width={1680}

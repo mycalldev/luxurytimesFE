@@ -13,9 +13,9 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
   
   return (
     <div className={styles.imageContainer}>
-      {/* <Link href={`/audemars-piguet/audemars-piguet-categories/`} className={styles.linkBTN}>
-        <div className={styles.backBTN}>{`< BACK`}</div>
-      </Link> */}
+      <Link href={`/audemars-piguet/audemars-piguet-categories/${watch.model}`} className={styles.linkBTN}>
+        <div className={styles.backBTN}>{`< Previous`}</div>
+      </Link>
 
       <div className={styles.titleMain}>{watch.title}</div> 
           <Swiper

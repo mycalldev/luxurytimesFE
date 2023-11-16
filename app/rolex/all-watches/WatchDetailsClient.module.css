@@ -202,6 +202,12 @@
       padding: 10px 20px;
     }
 
+    .backBTN {
+      margin: 30px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
     .titleMain {
       margin: 40px 0;
     } 
