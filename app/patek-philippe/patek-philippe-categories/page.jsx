@@ -38,7 +38,7 @@ export default function PatekPhilippeCategories() {
           <Link href={'/patek-philippe/patek-philippe-categories/aquanaut'} prefetch={true} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/watches/patekphilippe/aquanaut/aquanaut5267Ablackrubberblack/5267Aaquanaut1.JPG`}
+                      src={`/watches/patekphilippe/aquanaut/5269200R001/aquanaut1.JPG`}
                       width={840}
                       height={560}
                       alt='aquanaut thumbnail'
