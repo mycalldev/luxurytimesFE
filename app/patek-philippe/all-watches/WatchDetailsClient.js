@@ -309,7 +309,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                 </div>
 
                 <div className={watch.functions ? styles.specContainer : styles.displayNone}>
-                  <div className={styles.listItemKey}>Funtions</div>
+                  <div className={styles.listItemKey}>Functions</div>
                   <div className={styles.listItemValue}>{watch.functions}</div>
                 </div>
 
