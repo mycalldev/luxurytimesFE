@@ -128,46 +128,78 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                   <div className={styles.listItemValue}>{watch.dial}</div>
                 </div>
 
-                {/* <div className={styles.specContainer}>
+                <div className={watch.dialSize ? styles.specContainer : styles.displayNone}>
                   <div className={styles.listItemKey}>Size</div>
                   <div className={styles.listItemValue}>{watch.dialSize}</div>
-                </div> */}
+                </div>
 
                 <div className={watch.numberMarkers ? styles.specContainer : styles.displayNone}>
                   <div className={styles.listItemKey}>Number Markers</div>
                   <div className={styles.listItemValue}>{watch.numberMarkers}</div>
                 </div>
 
-                <div className={styles.specContainer}>
+                <div className={watch.hands ? styles.specContainer : styles.displayNone}>
                   <div className={styles.listItemKey}>Hands</div>
                   <div className={styles.listItemValue}>{watch.hands}</div>
                 </div>
               </div>
-              
 
-              {/* 3 BEZEL */}
+              {/* 3 CASE */}
+              <div>
+                <div className={styles.titleSpecMain}>
+                  <h2>Case</h2>
+                </div>
+
+                <div className={watch.case ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Case</div>
+                  <div className={styles.listItemValue}>{watch.case}</div>
+                </div>
+
+                <div className={watch.caseBack ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Case Back</div>
+                  <div className={styles.listItemValue}>{watch.caseBack}</div>
+                </div>
+
+                <div className={watch.caseMaterial ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Case Material</div>
+                  <div className={styles.listItemValue}>{watch.caseMaterial}</div>
+                </div>
+
+                <div className={watch.caseSize ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Case Size</div>
+                  <div className={styles.listItemValue}>{watch.caseSize}</div>
+                </div>
+
+                <div className={watch.caseThickness ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Case Thickness</div>
+                  <div className={styles.listItemValue}>{watch.caseThickness}</div>
+                </div>
+              </div>
+             
+
+              {/* 4 BEZEL */}
               <div>
                 <div className={styles.titleSpecMain}>
                   <h2>Bezel</h2>
                 </div>
 
-                <div className={styles.specContainer}>
+                <div className={watch.bezel ? styles.specContainer : styles.displayNone}>
                   <div className={styles.listItemKey}>Style</div>
                   <div className={styles.listItemValue}>{watch.bezel}</div>
                 </div>
 
-                <div className={styles.specContainer}>
-                  <div className={styles.listItemKey}>Directional</div>
-                  <div className={styles.listItemValue}>{watch.bezelDirection}</div>
-                </div>
-
-                <div className={styles.specContainer}>
+                <div className={watch.bezelMaterial ? styles.specContainer : styles.displayNone}>
                   <div className={styles.listItemKey}>Material</div>
-                  <div className={styles.listItemValue}>{watch.bezel}</div>
+                  <div className={styles.listItemValue}>{watch.bezelMaterial}</div>
+                </div>
+                
+                <div className={watch.bezelStyle ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Style</div>
+                  <div className={styles.listItemValue}>{watch.bezelStyle}</div>
                 </div> 
               </div>
               
-              {/* 4 BRACELET */}
+              {/* 5 BRACELET */}
               <div>
                 <div className={styles.titleSpecMain}>
                   <h2>Bracelet</h2>
@@ -178,40 +210,40 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                   <div className={styles.listItemValue}>{watch.strap}</div>
                 </div>
 
-                <div className={styles.specContainer}>
+                <div className={watch.strapMaterial ? styles.specContainer : styles.displayNone}>
                   <div className={styles.listItemKey}>Material</div>
                   <div className={styles.listItemValue}>{watch.strapMaterial}</div>
                 </div>
 
-                <div className={styles.specContainer}>
+                <div className={watch.strapColour ? styles.specContainer : styles.displayNone}>
                   <div className={styles.listItemKey}>Colour</div>
                   <div className={styles.listItemValue}>{watch.strapColour}</div>
                 </div>
 
-                <div className={styles.specContainer}>
+                <div className={watch.strapClasp ? styles.specContainer : styles.displayNone}>
                   <div className={styles.listItemKey}>Clasp</div>
                   <div className={styles.listItemValue}>{watch.strapClasp}</div>
                 </div>
               </div>
               
 
-              {/* 5 CALIBER */}
+              {/* 6 CALIBER */}
               <div>
                 <div className={styles.titleSpecMain}>
                   <h2>Caliber</h2>
                 </div>
 
-                <div className={styles.specContainer}>
+                <div className={watch.movement ? styles.specContainer : styles.displayNone}>
                   <div className={styles.listItemKey}>Movement</div>
                   <div className={styles.listItemValue}>{watch.movement}</div>
                 </div>
 
-                <div className={styles.specContainer}>
+                <div className={watch.caliber ? styles.specContainer : styles.displayNone}>
                   <div className={styles.listItemKey}>Caliber</div>
                   <div className={styles.listItemValue}>{watch.caliber}</div>
                 </div>
 
-                <div className={styles.specContainer}>
+                <div className={watch.powerReserve ? styles.specContainer : styles.displayNone}>
                   <div className={styles.listItemKey}>Power Reserve</div>
                   <div className={styles.listItemValue}>{watch.powerReserve}</div>
                 </div>
@@ -219,21 +251,18 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
               </div>
               
 
-              {/* 6 SPECIFICS */}
+              {/* 7 SPECIFICS */}
               <div>
                 <div className={styles.titleSpecMain}>
                   <h2>Specifics</h2>
                 </div>
 
-                <div className={styles.specContainer}>
+                <div className={watch.crystal ? styles.specContainer : styles.displayNone}>
                   <div className={styles.listItemKey}>Crystal</div>
                   <div className={styles.listItemValue}>{watch.crystal}</div>
                 </div>
 
-                <div className={styles.specContainer}>
-                  <div className={styles.listItemKey}>Case Material</div>
-                  <div className={styles.listItemValue}>{watch.caseMaterial}</div>
-                </div>
+                
               </div>
               
 
