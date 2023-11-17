@@ -10,56 +10,67 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 export default function WatchDetailsClient( {watchArr, watch} ) {
-  
   return (
     <div className={styles.imageContainer}>
-      <Link href={`/audemars-piguet/audemars-piguet-categories/${watch.modelBackend}`} className={styles.linkBTN}>
+      <Link href={`/audemars-piguet/audemrs-piguet-categories/${watch.model}`} className={styles.linkBTN}>
         <div className={styles.backBTN}>{`< Previous`}</div>
       </Link>
 
       <div className={styles.titleMain}>{watch.title}</div> 
-          <Swiper
-            pagination={true}
-            navigation={true}
-            modules={[Pagination, Navigation]}
-            className={styles.swiper}
-          >
-            <div className={styles.swiperWrapper}>
-              {watchArr.map((item, index) => (
-                <SwiperSlide className={styles.swiperSlide} key={index}>
-                  <Image
-                    src={`/watches/${watch.brandBackend}/${watch.modelBackend}/${watch.uniqueWatchID}/${watch.modelBackend}${
-                      index + 1
-                    }.JPG`}
-                    width={1680}
-                    height={1120}
-                    alt={`${watch.model}${watch.ref}`}
-                    quality={100}
-                    className={styles.imageWatch}
-                  />
-                </SwiperSlide>
-              ))}
-            </div>
-          </Swiper>
-
-          {/* DESCRIPTION CONTENT */}
-          <section>
-            <div className={styles.availableContainer}>
-              <p className={styles.dot}> </p>
-              <div className={styles.available}>Available Now</div>
-            </div>
-            <div className={styles.description}>{watch.description}</div>
-            <Link href='href="tel:07976753254' className={styles.BTNLink}>
-              <div className={styles.contactBTN}>Contact</div>
-            </Link>
-            
-          </section>
           
-          {/* DETAILS MAIN SECTION */}
-          <section className={styles.sectionDetails}>
-            <div className={styles.titleDetails}>DETAILS</div>
+          <div className={styles.containerTopGrid}>
+              <div className={styles.gridItemSwiper}>
+              <Swiper
+                pagination={true}
+                navigation={true}
+                modules={[Pagination, Navigation]}
+                className={styles.swiper}
+              >
+                <div className={styles.swiperWrapper}>
+                  {watchArr.map((item, index) => (
+                    <SwiperSlide className={styles.swiperSlide} key={index}>
+                      <Image
+                        src={`/watches/${watch.brandBackend}/${watch.modelBackend}/${watch.uniqueWatchID}/${watch.modelBackend}${
+                          index + 1
+                        }.JPG`}
+                        width={1680}
+                        height={1120}
+                        alt={`${watch.model}${watch.ref}`}
+                        quality={100}
+                        className={styles.imageWatch}
+                       />
+                    </SwiperSlide>
+                  ))}
+                </div>
+              </Swiper>
+            </div>
 
-            <div className={styles.detailsGrid}>
+            {/* AVAILABLE AND CONTACT */}
+            <section className={styles.gridItemContent}>
+              <div className={styles.contentContianerFlex}>
+                  {/* ITEM 1 */}
+                  <div className={styles.availableContainerItem}>
+                    <div className={styles.dotAvailableFlex}>
+                      <p className={styles.dotFlexItem}> </p>
+                      <div className={styles.availableFlexItem}>Available Now</div>
+                    </div>
+                    <div className={styles.watchDescriptionMobile}>{watch.description}</div>
+                  </div>
+
+                  {/* ITEM 2 */}
+                  <div className={styles.contactContainerItem}>
+                    <div className={styles.contactBTNDesktop}>07976 753 254</div>
+                    <div className={styles.mobileContactContainer}>
+                      <Link href='href="tel:07976753254' className={styles.BTNLink}>
+                      <div className={styles.contactBTNMobile}>Contact</div>
+                      </Link>
+                    </div>
+                  </div>
+              </div>
+
+              <div className={styles.watchDescriptionDesktop}>{watch.description}</div>
+              <h1 className={styles.titleDetailsMobile}>DETAILS</h1>
+              <div className={styles.detailsGrid}>
               <div className={styles.specGrid}>
                 <div className={styles.titleSpec}>Box</div>
                 <div className={styles.titleValue}>{watch.box}</div>
@@ -74,145 +85,160 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
               </div>
             </div>
 
-            {/* SHARE SECTION */}
+            </section>
+          </div>
+          
+          
+          {/* DETAILS MAIN SECTION */}
+          <section className={styles.sectionDetails}>
+           <h1 className={styles.titleDetailsDesktop}>DETAILS</h1>
 
-            <div className={styles.titleShare}>SHARE THIS WATCH</div>
-            <Link href={'/'} >
-              <div className={styles.imageWhatsapp}>
-                <Image src={'/whatsapp.png'} width={64} height={64} quality={100} alt='whatsapp icon' />
-              </div>
-            </Link>
+            <div className={styles.detailsGridMain}>
+              {/* 1 MAIN */}
+              <div>                 
+                <div className={styles.titleSpecMain}>
+                  <h2>Main</h2>
+                </div>
 
-            {/* <div className={styles.specGrid}> */}
-              <div className={styles.titleSpecMain}>
-                <h2>Main</h2>
-              </div>
+                
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Reference</div>
+                  <div className={styles.listItemValue}>{watch.ref}</div>
+                </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Reference</div>
-                <div className={styles.listItemValue}>{watch.ref}</div>
-              </div>
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Brand</div>
+                  <div className={styles.listItemValue}>{watch.brand}</div>
+                </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Brand</div>
-                <div className={styles.listItemValue}>{watch.brand}</div>
-              </div>
-
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Model</div>
-                <div className={styles.listItemValue}>{watch.model}</div>
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Model</div>
+                  <div className={styles.listItemValue}>{watch.model}</div>
+                </div>
               </div>
               
-              {/* DIAL */}
-              <div className={styles.titleSpecMain}>
-                <h2>Dial</h2>
-              </div>
+              {/* 2 DIAL */}
+              <div>
+                <div className={styles.titleSpecMain}>
+                  <h2>Dial</h2>
+                </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Style</div>
-                <div className={styles.listItemValue}>{watch.dial}</div>
-              </div>
+                <div className={watch.dial ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Style</div>
+                  <div className={styles.listItemValue}>{watch.dial}</div>
+                </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Size</div>
-                <div className={styles.listItemValue}>{watch.dialSize}</div>
-              </div>
+                {/* <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Size</div>
+                  <div className={styles.listItemValue}>{watch.dialSize}</div>
+                </div> */}
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Number Markers</div>
-                <div className={styles.listItemValue}>{watch.numberMarkers}</div>
-              </div>
+                <div className={watch.numberMarkers ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Number Markers</div>
+                  <div className={styles.listItemValue}>{watch.numberMarkers}</div>
+                </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Hands</div>
-                <div className={styles.listItemValue}>{watch.hands}</div>
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Hands</div>
+                  <div className={styles.listItemValue}>{watch.hands}</div>
+                </div>
               </div>
-
-              {/* BEZEL */}
-              <div className={styles.titleSpecMain}>
-                <h2>Bezel</h2>
-              </div>
-
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Style</div>
-                <div className={styles.listItemValue}>{watch.bezel}</div>
-              </div>
-
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Directional</div>
-                <div className={styles.listItemValue}>{watch.bezelDirection}</div>
-              </div>
-
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Material</div>
-                <div className={styles.listItemValue}>{watch.bezel}</div>
-              </div> 
               
-              {/* BRACELET */}
-              <div className={styles.titleSpecMain}>
-                <h2>Bracelet</h2>
-              </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Style</div>
-                <div className={styles.listItemValue}>{watch.strap}</div>
-              </div>
+              {/* 3 BEZEL */}
+              <div>
+                <div className={styles.titleSpecMain}>
+                  <h2>Bezel</h2>
+                </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Material</div>
-                <div className={styles.listItemValue}>{watch.braceletMaterial}</div>
-              </div>
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Style</div>
+                  <div className={styles.listItemValue}>{watch.bezel}</div>
+                </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Colour</div>
-                <div className={styles.listItemValue}>{watch.strapColour}</div>
-              </div>
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Directional</div>
+                  <div className={styles.listItemValue}>{watch.bezelDirection}</div>
+                </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Clasp</div>
-                <div className={styles.listItemValue}>{watch.strapClasp}</div>
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Material</div>
+                  <div className={styles.listItemValue}>{watch.bezel}</div>
+                </div> 
               </div>
+              
+              {/* 4 BRACELET */}
+              <div>
+                <div className={styles.titleSpecMain}>
+                  <h2>Bracelet</h2>
+                </div>
 
-              {/* CALIBER */}
-              <div className={styles.titleSpecMain}>
-                <h2>Caliber</h2>
-              </div>
+                <div className={watch.strap ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Style</div>
+                  <div className={styles.listItemValue}>{watch.strap}</div>
+                </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Movement</div>
-                <div className={styles.listItemValue}>{watch.movement}</div>
-              </div>
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Material</div>
+                  <div className={styles.listItemValue}>{watch.strapMaterial}</div>
+                </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Caliber</div>
-                <div className={styles.listItemValue}>{watch.caliber}</div>
-              </div>
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Colour</div>
+                  <div className={styles.listItemValue}>{watch.strapColour}</div>
+                </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Power Reserve</div>
-                <div className={styles.listItemValue}>{watch.powerReserve}</div>
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Clasp</div>
+                  <div className={styles.listItemValue}>{watch.strapClasp}</div>
+                </div>
               </div>
+              
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Number of Jewels</div>
-                <div className={styles.listItemValue}>{watch.numberOfJewels}</div>
-              </div>
+              {/* 5 CALIBER */}
+              <div>
+                <div className={styles.titleSpecMain}>
+                  <h2>Caliber</h2>
+                </div>
 
-              {/* SPECIFICS */}
-              <div className={styles.titleSpecMain}>
-                <h2>Specifics</h2>
-              </div>
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Movement</div>
+                  <div className={styles.listItemValue}>{watch.movement}</div>
+                </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Crystal</div>
-                <div className={styles.listItemValue}>{watch.crystal}</div>
-              </div>
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Caliber</div>
+                  <div className={styles.listItemValue}>{watch.caliber}</div>
+                </div>
 
-              <div className={styles.specContainer}>
-                <div className={styles.listItemKey}>Case Material</div>
-                <div className={styles.listItemValue}>{watch.caseMaterial}</div>
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Power Reserve</div>
+                  <div className={styles.listItemValue}>{watch.powerReserve}</div>
+                </div>
+
               </div>
+              
+
+              {/* 6 SPECIFICS */}
+              <div>
+                <div className={styles.titleSpecMain}>
+                  <h2>Specifics</h2>
+                </div>
+
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Crystal</div>
+                  <div className={styles.listItemValue}>{watch.crystal}</div>
+                </div>
+
+                <div className={styles.specContainer}>
+                  <div className={styles.listItemKey}>Case Material</div>
+                  <div className={styles.listItemValue}>{watch.caseMaterial}</div>
+                </div>
+              </div>
+              
+
+            </div>
           </section>
-        </div>
+      </div>
   )
 }
