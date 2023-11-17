@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 export default function WatchDetailsClient( {watchArr, watch} ) {
   return (
     <div className={styles.imageContainer}>
-      <Link href={`/audemars-piguet/audemrs-piguet-categories/${watch.model}`} className={styles.linkBTN}>
+      <Link href={`/audemars-piguet/audemars-piguet-categories/${watch.modelBackend}`} className={styles.linkBTN}>
         <div className={styles.backBTN}>{`< Previous`}</div>
       </Link>
 
@@ -52,36 +52,51 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                   <div className={styles.availableContainerItem}>
                     <div className={styles.dotAvailableFlex}>
                       <p className={styles.dotFlexItem}> </p>
-                      <div className={styles.availableFlexItem}>Available Now</div>
+                      <div className={styles.availableFlexItem}>Available <span>Now</span> With Warranty</div>
                     </div>
-                    <div className={styles.watchDescriptionMobile}>{watch.description}</div>
                   </div>
 
                   {/* ITEM 2 */}
-                  <div className={styles.contactContainerItem}>
-                    <div className={styles.contactBTNDesktop}>07976 753 254</div>
-                    <div className={styles.mobileContactContainer}>
-                      <Link href='href="tel:07976753254' className={styles.BTNLink}>
-                      <div className={styles.contactBTNMobile}>Contact</div>
-                      </Link>
-                    </div>
-                  </div>
+                  
               </div>
 
-              <div className={styles.watchDescriptionDesktop}>{watch.description}</div>
-              <h1 className={styles.titleDetailsMobile}>DETAILS</h1>
-              <div className={styles.detailsGrid}>
-              <div className={styles.specGrid}>
-                <div className={styles.titleSpec}>Box</div>
-                <div className={styles.titleValue}>{watch.box}</div>
+
+              <div className={styles.bgGREYDetails}>
+
+                <div className={styles.detailsGrid}>
+                <div className={styles.specGrid}>
+                  <div className={styles.titleBox}>Box</div>
+                  <div className={styles.titleBoxValue}>{watch.box}</div>
+                </div>
+                <div className={styles.specGrid}>
+                  <div className={styles.titleCard}>Card</div>
+                  <div className={styles.titleCardValue}>{watch.card}</div>
+                </div>
+                <div className={styles.specGrid}>
+                  <div className={styles.titleCondition}>Condition</div>
+                  <div className={styles.titleConditionValue}>{watch.condition}</div>
+                </div>
+                
               </div>
-              <div className={styles.specGrid}>
-                <div className={styles.titleSpec}>Card</div>
-                <div className={styles.titleValue}>{watch.card}</div>
+              
+            </div>
+            <div className={styles.descriptionMobile}>
+                {watch.descriptionMobile}
+            </div>
+
+            <div className={styles.descriptionDesktop}>
+              {watch.descriptionDesktop}
+            </div>
+
+            <div className={styles.contactContainerItem}> 
+              <div className={styles.contactDetailsBTNMobile}>
+                <Link href="tel:07976753254" className={styles.linkBTNContact}>
+                  CONTACT
+                </Link>
               </div>
-              <div className={styles.specGrid}>
-                <div className={styles.titleSpec}>Condition</div>
-                <div className={styles.titleValue}>{watch.condition}</div>
+              <div className={styles.contactBTNDesktop}>
+                <h3 className={styles.contactReview}>CONTACT</h3>
+                <div className={styles.number}>07976 753 254</div>
               </div>
             </div>
 
@@ -91,7 +106,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
           
           {/* DETAILS MAIN SECTION */}
           <section className={styles.sectionDetails}>
-           <h1 className={styles.titleDetailsDesktop}>DETAILS</h1>
+           <h1 className={styles.titleDetails}>DETAILS</h1>
 
             <div className={styles.detailsGridMain}>
               {/* 1 MAIN */}
@@ -142,6 +157,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                   <div className={styles.listItemKey}>Hands</div>
                   <div className={styles.listItemValue}>{watch.hands}</div>
                 </div>
+
               </div>
 
               {/* 3 CASE */}
@@ -174,6 +190,11 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                   <div className={styles.listItemKey}>Case Thickness</div>
                   <div className={styles.listItemValue}>{watch.caseThickness}</div>
                 </div>
+
+                <div className={watch.waterResistant ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Water Resistant</div>
+                  <div className={styles.listItemValue}>{watch.waterResistant}</div>
+                </div>
               </div>
              
 
@@ -184,7 +205,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                 </div>
 
                 <div className={watch.bezel ? styles.specContainer : styles.displayNone}>
-                  <div className={styles.listItemKey}>Style</div>
+                  <div className={styles.listItemKey}>Bezel</div>
                   <div className={styles.listItemValue}>{watch.bezel}</div>
                 </div>
 
@@ -197,6 +218,7 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                   <div className={styles.listItemKey}>Style</div>
                   <div className={styles.listItemValue}>{watch.bezelStyle}</div>
                 </div> 
+
               </div>
               
               {/* 5 BRACELET */}
@@ -248,6 +270,30 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                   <div className={styles.listItemValue}>{watch.powerReserve}</div>
                 </div>
 
+                <div className={watch.numberOfJewels ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Number of Jewels</div>
+                  <div className={styles.listItemValue}>{watch.numberOfJewels}</div>
+                </div>
+
+                <div className={watch.windingRotor ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Winding Rotor</div>
+                  <div className={styles.listItemValue}>{watch.windingRotor}</div>
+                </div>
+
+                <div className={watch.balanceSpring ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Balance Spring</div>
+                  <div className={styles.listItemValue}>{watch.balanceSpring}</div>
+                </div>
+
+                <div className={watch.bridges ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Bridges</div>
+                  <div className={styles.listItemValue}>{watch.bridges}</div>
+                </div>
+
+                <div className={watch.SemiOscillationHour ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Semi Ocsillation/Hour</div>
+                  <div className={styles.listItemValue}>{watch.SemiOscillationHour}</div>
+                </div>
               </div>
               
 
@@ -262,10 +308,53 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                   <div className={styles.listItemValue}>{watch.crystal}</div>
                 </div>
 
+                <div className={watch.functions ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Funtions</div>
+                  <div className={styles.listItemValue}>{watch.functions}</div>
+                </div>
+
+                <div className={watch.mechanism ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Mechanism</div>
+                  <div className={styles.listItemValue}>{watch.mechanism}</div>
+                </div>
+
+                <div className={watch.totalDiameter ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Total Diameter</div>
+                  <div className={styles.listItemValue}>{watch.totalDiameter}</div>
+                </div>
+
+                <div className={watch.frequency ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Frequency</div>
+                  <div className={styles.listItemValue}>{watch.frequency}</div>
+                </div>
+
+                <div className={watch.numberOfParts ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Number of Parts</div>
+                  <div className={styles.listItemValue}>{watch.numberOfParts}</div>
+                </div>
+
+                <div className={watch.thickness ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Thickness</div>
+                  <div className={styles.listItemValue}>{watch.thickness}</div>
+                </div>
+
+                <div className={watch.patent ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Patent</div>
+                  <div className={styles.listItemValue}>{watch.patent}</div>
+                </div>
+
+                <div className={watch.hallMark ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Hallmark</div>
+                  <div className={styles.listItemValue}>{watch.hallMark}</div>
+                </div>
+
+                <div className={watch.setting ? styles.specContainer : styles.displayNone}>
+                  <div className={styles.listItemKey}>Setting</div>
+                  <div className={styles.listItemValue}>{watch.setting}</div>
+                </div>
                 
               </div>
               
-
             </div>
           </section>
       </div>
