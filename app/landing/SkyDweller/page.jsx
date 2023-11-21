@@ -34,18 +34,11 @@ export default function SkyDweller() {
           />
         </div>
 
-        {/* HERO SECTION DESKTOP */}
-        {/* <div className={styles.heroDesktopContainer}>
-          <Image
-            src={"/sky_dweller_highlights_landing_trimmed.JPG"}
-            width={3330}
-            height={1089}
-            quality={100}
-            alt='hero image desktop'
-            className={styles.imageHeroDesktop}
-          />
-        </div> */}
-
+        <Link href={'/'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              {'< Home'}
+          </div>
+        </Link>     
         <div className={styles.contentMainHeroContainer}>
         <div className={styles.headlineContentMain}>
           Discover Time Mastery
@@ -60,10 +53,14 @@ export default function SkyDweller() {
       <div className={styles.titleSkyDweller}>The Rolex SkyDweller</div>
       <div className={styles.refSkyDweller}>Reference: 326934</div>
 
-      <div className={styles.contactBTNContainer}>
-        <Image src={"/call.png"} width={25} height={25} alt={'phone icon'} quality={100} /> 
-        <Link href="tel:07976753254" className={styles.linkBTN}>Contact</Link>
+      <div className={styles.contactBTN}>
+          <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
       </div>
+      <div className={styles.contactBTNDesktop}>
+        <h3 className={styles.contactReview}>CONTACT</h3>
+        <div>07976 753 254</div>
+      </div>
+      
 
       {/* SWIPER SECTION */}
       <Swiper
@@ -90,9 +87,9 @@ export default function SkyDweller() {
     </section>
 
     <section>
-      <div className={styles.titleContent}>
+      <h2 className={styles.titleContent}>
         Elevating Horological Excellence
-      </div>
+      </h2>
 
       <div className={styles.content}>
         One of the standout features of the Sky-Dweller is its dual time

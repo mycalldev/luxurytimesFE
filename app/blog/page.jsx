@@ -12,6 +12,12 @@ export default function introBlog() {
     <div>
       <Image src={'/intro_hero.jpg'} className={styles.image} width={2048} height={1090} alt='hero image' quality={100} />
     </div>
+
+    <Link href={'/'} className={styles.backLinkBTN}>
+      <div className={styles.backNav}>
+          {'< Home'}
+      </div>
+    </Link>
         <div className={styles.tagTitle}>
       <h1>The Time Keeper</h1>
       <h4>And Renowned Trusted Dealer</h4>

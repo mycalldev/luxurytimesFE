@@ -122,7 +122,7 @@ export default async function Home() {
       {/* BLOG SECTION */}
       <section>
          <h1 className={styles.titleBlogs}>BLOGS</h1>
-         <Link href={'/landing/SkyDweller'} prefetch={true}>
+         <Link href={'/blog'} prefetch={true}>
             <Image src={'/blingToBullion.jpeg'} width={840} height={560} className={styles.imageBlogs} alt={'image of Sky-dweller'} quality={100} />
           </Link>
             <div className={styles.contentHighlightsContainer}>
@@ -130,7 +130,7 @@ export default async function Home() {
               <div className={styles.contentSubTitleHighlights}>Time Investment</div>
               <div className={styles.paragraphHighlights1}>Investing in time.... Investing in your future! The Watch world has geneated a ton of interest in recent times and for good....</div>
             </div> 
-          <Link href={'/landing/SkyDweller'} className={styles.linkBTN} prefetch={true}>
+          <Link href={'/blog'} className={styles.linkBTN} prefetch={true}>
             <div className={styles.blogsBTN}>Read More</div>
           </Link>
       </section>

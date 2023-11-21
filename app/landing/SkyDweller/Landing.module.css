@@ -4,34 +4,37 @@
     text-decoration: none;
     color: #fff;
 }
+
+.backLinkBTN {
+    color: #000;
+    text-decoration: none;
+}
+
+.backNav {
+    margin: 20px 30px;
+    font-size: 1.1rem;
+}
 /* BTN SECTION */
-.contactBTNContainer {
-    margin: 30px auto;
-    padding: 10px;
-    font-size: 1.3rem;
-    font-weight: 500;
-    text-align: center;
-    max-width: 200px;
+.contactBTN {
+    margin: 20px auto 20px auto;
+    padding: 10px 30px;
+    max-width: 150px;
+    border: solid 2px #91c0dc;
     border-radius: 22px;
-    background: #91c0dc;
-  }
-
-/* TOP BAR SECTION */
-.topBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    background: #a09e9e;  
-}
-
-.topBarContent {
+    font-size: 1rem;
+    font-weight: 500;
     color: #fff;
+    background-color: #91c0dc;
+    letter-spacing: 3px;
+    text-align: center;
+    cursor: pointer;
 }
 
+.contactBTNDesktop {
+    display: none;
+}
 
 /* HERO SECTION */
-
 .contentMainHeroContainer {
     margin: 20px auto; 
  }
@@ -72,7 +75,7 @@
     margin: 20px 30px 20px 30px;
     text-align: start;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #777777;
 }
 
@@ -92,7 +95,7 @@
 .contentLuxury {
     text-align: start;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 20px 30px 20px 30px;
     color: #777777;
 }
@@ -102,186 +105,30 @@
     font-size: 1.3rem;
 }
 
-/* FOOTER SECTION */
-
-.footerContainer {
-    background: #a09e9e;
-}
-
-.footerContentContainerColumn {
-    color: #fff;
-    padding: 50px 50px 20px 50px;
-}
-
-.footerContentContainerRow {
-    display: flex;
-    color: #fff;
-    font-size: 12px;
-}
-
-.contentItemColumn {
-    margin: 0 auto 20px auto;
-    cursor: pointer;
-}
-
-.contentItemRow {
-    margin: 0 auto 20px auto;
-    cursor: pointer;
-}
-
-.instagramIcon {
-    padding: 0 0 20px 50px;
-    cursor: pointer;
-}
-
-.subscriptionTitle {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 700;
-    color: #000;
-    margin: 20px auto 10px auto;
-}
-
-.subscriptionContent {
-    text-align: center;
-    font-size: 12px;
-    font-weight: 400;
-    margin: 10px 20px;
-}
-
-.subscriptionContainer {
-    display: flex;
-    align-items: center;
-}
-
-.subscriptionEmailContent {
-    margin: 15px 0 15px 15px;
-    color: #323232;
-    width: 100vw;
-    border-radius: 9px 0 0 9px;
-    padding: 13px;
-    font-style: italic;
-    font-size: 14px;
-    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
-}
-
-.subscriptionArrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #91c0dc;
-    margin: 15px 15px 15px 0;
-    height: 47px;
-    width: 70px;
-    border-radius: 0 9px 9px 0;
-    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
-}
-
-/* SPEC  */
-.specTitle {
-    font-size: 28px;
-    text-align: center;
-    font-weight: 400;
-    color: #323232;
-    margin: 20px auto 10px auto;
-}
-
-.specContainer {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    justify-content: center;
-}
-
-.specKey {
-    margin: 20px;
-    line-height: 2.5;
-    letter-spacing: 1px;
-    color: #777777;
-    font-weight: 600;
-    font-size: 1rem;
-    justify-self: center;
-    text-transform: uppercase;
-}
-
-.specValue {
-    margin: 20px;
-    line-height: 2.5;
-    letter-spacing: 1px;
-    color: #777777;
-    font-weight: 600;
-    font-size: 1rem;
-    justify-self: center;
-}
-
-/* SUBSCRIPTION */
-.subscriptionTitle {
-    margin: 20px 0 10px 0;
-}
-
-.subscriptionContent {
-    text-align: start;
-    font-size: 1rem;
-    font-weight: 400;
-    margin: 10px 20px;
-    color: #323232;
-    max-width: 400px;
-}
-
-/* FOOTER */
-.footerContentContainerRow {
-    font-size: 1rem;
-    /* margin-bottom: 40px; */
-}
-
-.footerImage {
-    margin-top: 60px;
-  }
-  
-  .location {
-    margin: 3px 10px;
-    font-weight: 700;
-    text-align: center;
-  }
-  
-  .locationTitle {
-  margin: 20px auto 5px auto;
-  text-align: center;
-  font-size: 1.1rem;
-  }
-  
-  .locationAddress {
-  margin: 5px;
-  text-align: center;
-  color: #717171;
-  }
-  .locationUnited {
-  text-align: center;
-  color: #717171;
-  }
-  
-  .space {
-  height: 30px;
-  }
-
 @media (min-width: 768px) {
 
-    .gridContainerContactBTN {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
+    .backNav {
+        font-size: 1.5rem;
+        margin: 20px 30px;
     }
+
     .contactBTNDesktop {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #91c0dc;
+        display: block;
+        margin: 40px auto 40px auto;
+        padding: 10px 30px;
+        max-width: 250px;
+        border: solid 2px #91c0dc;
+        border-radius: 22px;
+        font-size: 1rem;
+        font-weight: 500;
         color: #fff;
-        font-size: 18px;
+        background-color: #91c0dc;
+        letter-spacing: 3px;
         text-align: center;
-        padding: 13px;
-        margin: 30px 30px 20px 30px;
-        border-radius: 11px;
-        cursor: pointer;
+    }
+
+    .contactBTN {
+        display: none;
     }
 
     .contactImage {
@@ -328,148 +175,33 @@
         text-align: center;
     }
 
+    .titleContent {
+        font-size: 1.5rem;
+    }
+
     .refSkyDweller {
         font-size: 24px;
         font-weight: 500;
         color: #323232;
-        /* margin: 30px; */
         text-align: center;
     }
 
+    .content {
+        width: 70%;
+        margin: auto;
+        font-size: 1.3rem;
+    }
+
+    .contentLuxury {
+        width: 70%;
+        margin: 20px auto 40px auto;
+        font-size: 1.3rem;
+    }
 
     /* SWIPER */
-    .swiperContainer {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        margin: 20px;
-    }
-    
-    .swiperImage {
-        border-radius: 11px;
-    }
-    .imageContainer {
-        margin: 20px;
-    }
-    
-    .detailsContainer {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+    .swiper {
+        width: 70%;
+        margin: auto;
     }
 
-    .titleSwiper {
-        font-size: 24px;
-        font-weight: 700;
-        color: #323232;
-        margin: 20px;
-        text-align: center;
-    }
-
-    .contentSwiper {
-        font-size: 16px;
-        margin: 20px;
-        text-align: start;
-        color: #323232;
-    }
-
-
-/* ROB DIAMOND CONTENT SECTION */
-    .contentRobDiamond {
-        margin: 40px 80px 60px 80px;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 1.7;
-        color: #323232;
-    }
-
-    .imageSpecContainer {
-        position: relative;
-        margin: 40px;
-        background-image: linear-gradient(180deg, rgb(87, 87, 87) 0.61%, rgba(0, 0, 0, 0.4) 100%);
-        border-radius: 11px;
-    }
-
-    .imageSpecBanner {
-        z-index: -1000;
-        border-radius: 11px;
-    }
-
-    .contentSpecContainer {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1000;
-        width: 80vw;
-        max-width: 700px;
-    }
-
-    .specTitle {
-        font-size: 28px;
-        text-align: center;
-        font-weight: 700;
-        color: #fff;
-    }
-    .specContainer {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        justify-content: center;
-    }
-
-    .specKey {
-        margin: 20px;
-        line-height: 2.5;
-        letter-spacing: 1.3px;
-        color: #fff;
-        font-weight: 700;
-        font-size: 1.1rem;
-        justify-self: center;
-    }
-
-    .specValue {
-        margin: 20px;
-        line-height: 2.5;
-        letter-spacing: 1.3px;
-        color: #fff;
-        font-weight: 700;
-        font-size: 1.1rem;
-        justify-self: center;
-    }
-
-    .gridContainerSubscription {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        justify-content: space-around;
-        align-items: center;
-        margin: 50px 40px;
-    }
-
-    .subscriptionTitle {
-        text-align: start;
-    }
-
-    .subscriptionContent {
-        text-align: start;
-        font-size: 1.1rem;
-        font-weight: 400;
-        margin: 10px 20px;
-        color: #323232;
-        max-width: 400px;
-    }
-
-    .subscriptionArrow {
-        width: 120px;
-        cursor: pointer;
-    }
-
-    /* FOOTER */
-    .footerContentContainerRow {
-        font-size: 1.3rem;
-        margin-bottom: 20px;
-    }
-
-    .footerContentContainerColumn {
-        font-size: 1.3rem;
-
-    }
 }

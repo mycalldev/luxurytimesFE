@@ -4,6 +4,17 @@
     color: #fff;
 }
 
+.backLinkBTN {
+    color: #000;
+    text-decoration: none;
+
+}
+
+.backNav {
+    margin: 20px 30px;
+    font-size: 1.1rem;
+}
+
 .image {
     width: 100%;
     height: auto;
@@ -36,13 +47,14 @@
 .intro {
     margin: 20px;
     color: #717171;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 }
 
 .quote {
     font-style: italic;
     margin: 20px;
     color: #717171;
+    font-size: 1.1rem;
 }
 
 .luxuryContent {
@@ -55,6 +67,12 @@
 }
 
 @media (min-width: 768px) {
+
+    .backNav {
+        font-size: 1.5rem;
+        margin: 20px 30px;
+
+    }
 
     .contactBTNDesktop {
         display: block;
