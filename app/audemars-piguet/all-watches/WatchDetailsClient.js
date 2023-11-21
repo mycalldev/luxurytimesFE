@@ -232,9 +232,9 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
                   <div className={styles.listItemValue}>{watch.strap}</div>
                 </div>
 
-                <div className={watch.strapMaterial ? styles.specContainer : styles.displayNone}>
+                <div className={watch.braceletMaterial ? styles.specContainer : styles.displayNone}>
                   <div className={styles.listItemKey}>Material</div>
-                  <div className={styles.listItemValue}>{watch.strapMaterial}</div>
+                  <div className={styles.listItemValue}>{watch.braceletMaterial}</div>
                 </div>
 
                 <div className={watch.strapColour ? styles.specContainer : styles.displayNone}>
