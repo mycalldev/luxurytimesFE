@@ -22,7 +22,9 @@ export default async function Blogs() {
     return (
         <main>
             <Image src={'/categoryBanner/blog_category_hero.jpg'} width={2912} height={1038} className={styles.imageHero} alt='hero image for blogs categroy' quality={100} />
+
             <h1 className={styles.titleMain}>BLOG COLLECTION</h1>
+
             
             {blogs.map((blog) => (
                 <div key={blog._id}>
