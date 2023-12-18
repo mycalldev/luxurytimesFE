@@ -14,6 +14,7 @@ async function getBlogs() {
     return data
 }
 
+
 export default async function Blogs() {
   
     const blogs = await getBlogs()
@@ -29,7 +30,9 @@ export default async function Blogs() {
             {blogs.map((blog) => (
                 <div key={blog._id}>
                     <div className={styles.imageThumbnailContainer}>
-                      <Image src={`/blogs/${blog.imageRef1}.JPG`} width={1680} height={1120} className={styles.imageThumbnail} alt='thumbnail of blog image' quality={100} />
+                    <Link href={`/blog-categories/${blog._id}`} prefetch={true}>
+                      <Image src={`/A-THUMBNAIL-IMAGES/${blog.imageThumbnail}.JPG`} width={1680} height={1120} className={styles.imageThumbnail} alt='thumbnail of blog image' quality={100} />
+                    </Link>
                     </div>
                     <div className={styles.contentContainer}>
                         
@@ -39,6 +42,11 @@ export default async function Blogs() {
                             <div className={styles.readTime}>Read Time:</div> 
                             <div>{blog.minuteRead} minutes</div>
                         </div>
+                        {/* <div>{blog._id}</div> */}
+                        {/* <div className={styles.flexCreatedAt}>
+                            <div className={styles.readTime}>Created At:</div> 
+                            <div>{blog.createdAt} </div>
+                        </div> */}
                        
                     </div>
                     
