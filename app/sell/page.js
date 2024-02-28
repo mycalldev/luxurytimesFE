@@ -26,7 +26,7 @@ export default function Sell() {
 
             <div className={styles.whatsappBtn}>
                 <Link
-                href={"https://wa.me/447976753254?text=Welcome%20to%20RobDiamond"} 
+                href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
                 className={styles.linkBTN}
                 >
                  WHATSAPP
