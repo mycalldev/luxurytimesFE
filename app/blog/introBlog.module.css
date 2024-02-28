@@ -45,16 +45,21 @@
 }
 
 .intro {
-    margin: 20px;
-    color: #717171;
-    font-size: 1.1rem;
+    width: 80%;
+    margin: 20px auto;
+    color: #323232;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
 }
 
 .quote {
-    font-style: italic;
-    margin: 20px;
-    color: #717171;
-    font-size: 1.1rem;
+    width: 80%;
+    margin: 20px auto;
+    color: #323232;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .luxuryContent {
@@ -70,8 +75,7 @@
 
     .backNav {
         font-size: 1.5rem;
-        margin: 20px 30px;
-
+        margin: 100px;
     }
 
     .contactBTNDesktop {
@@ -99,14 +103,14 @@
     }
 
     .intro {
-        width: 80%;
+        width: 70%;
         margin: 20px auto;
         font-size: 1.3rem;
         line-height: 1.5;
     }
 
     .quote {
-        width: 80%;
+        width: 70%;
         margin: 20px auto;
         font-size: 1.3rem;
         line-height: 1.5;
@@ -127,12 +131,11 @@
     }
 
     .luxuryContent {
-        width: 80%;
+        width: 70%;
         margin: 20px auto;
         font-size: 1.3rem;
         font-weight: 600;
         line-height: 1.5;
-        color: #242424;
     }
 
     

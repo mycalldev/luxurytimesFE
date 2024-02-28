@@ -108,8 +108,8 @@ export default function SkyDweller() {
     </section>
 
     <section>
-    <div className={styles.contentLuxury}>
-          <span>Luxury Times</span> is a renowned authority in the realm of horology,
+    <div className={styles.content}>
+          Luxury Times is a renowned authority in the realm of horology,
           with an exceptional focus on Rolex watches. Recognized as one of the
           leading experts in the field, their expertise and knowledge extend
           particularly to the iconic Rolex Sky-Dweller collection. With an

@@ -18,8 +18,8 @@ export default function BuyingRolex() {
         </Link> 
 
         <div className={styles.tagTitle}>
-            <h1>What to know when buying a Rolex</h1>
-            <h4>Chronological Masterpiece</h4>
+            <h1 className={styles.titleMain}>What to know when buying a Rolex</h1>
+            <h4 className={styles.titleSub}>Chronological Masterpiece</h4>
         </div>
 
         <div className={styles.intro}>
@@ -31,7 +31,7 @@ export default function BuyingRolex() {
         There are a myriad of Rolex models, all of which comprise different functional components and more obvious to the naked eye, the design features. However, for now we shall focus on the most important factor when making the purchase.... 
         </div>
         
-        <div className={styles.subTitle}>The Fitting of the Rolex</div>
+        <div className={styles.titleSub}>The Fitting of the Rolex</div>
 
         <div className={styles.wrist}>
           <Image src={'/wrist.JPG'} width={3360} height={2240} className={styles.imageWrist} alt='image of watch on wrist' quality={100} />
@@ -54,7 +54,7 @@ export default function BuyingRolex() {
         To summarise on the fitting of the bracelet and the size of the dial, it goes without saying that the larger the dial, the heavier the watch. Make sure the watch feels comfortable on the wrist in terms of weight, size of dial and fitting of the wrist bracelet.
         </div>
 
-        <div className={styles.subTitle}>The Fun Stuff</div>
+        <div className={styles.titleSub}>The Fun Stuff</div>
 
         <div className={styles.batmanGold}>
           <Image src={'/batman_gold.JPG'} width={3360} height={2240} className={styles.imageBatmanGold} alt='image of Rolex Batman and Gold' quality={100} />
@@ -82,7 +82,7 @@ export default function BuyingRolex() {
         </div>
 
         <div className={styles.quote}>
-        “Everything happens for a reason in the world of Rolex”
+        Everything happens for a reason in the &apos;World of Rolex&apos;
         </div>
 
         <div className={styles.intro}>
@@ -109,7 +109,7 @@ export default function BuyingRolex() {
         To summarise, I think it would be fair to give praise to Rolex for their engineering. They are truly the masters of their world. The automatic movement (72 hour power reserve) and all the intricate mechanical details such as the ParaChrom Hairspring, Chronergy Escapement, Paraflex shock absorber that cohesively amalgamate to deliver a concept of time keeping that Rolex make look easy….
         </div>
 
-        <div className={styles.luxuryContent}>
+        <div className={styles.intro}>
           Luxury Times Ltd is available by appointment only. 
         </div>
 

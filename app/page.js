@@ -94,7 +94,7 @@ export default async function Home() {
 
           <div className={styles.imageGuidesContainer}>
             <Image src={'/cogs.jpg'} className={styles.imageGuides} width={1456} height={816} alt={'cogs for watch background'} quality={100} />
-            <div className={styles.tagGuides}>Check Out Our Latest Guides</div>
+            <div className={styles.tagLine}>Check Out Our Latest Guides</div>
             <div className={styles.paragraphGuides}>Introducing our latest guides! We're thrilled to present a collection of expertly crafted resources designed to empower and inform you.</div>
             <Link href={'/guide'} className={styles.viewBTNContainer}>
               <div className={styles.guiedsBTN}>View</div>
