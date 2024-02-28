@@ -19,7 +19,7 @@ export default function introBlog() {
       </div>
     </Link>
         <div className={styles.tagTitle}>
-      <h1>The Time Keeper</h1>
+      <h1 className={styles.titleMain}>The Time Keeper</h1>
       <h4>And Renowned Trusted Dealer</h4>
     </div>
 

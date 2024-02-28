@@ -18,7 +18,7 @@ export default function BuyingRolex() {
         </Link> 
 
         <div className={styles.tagTitle}>
-            <h1 className={styles.titleMain}>What to know when buying a Rolex</h1>
+            <h1 className={styles.titleMain}>What to Know When Buying a Rolex</h1>
             <h4 className={styles.titleSub}>Chronological Masterpiece</h4>
         </div>
 

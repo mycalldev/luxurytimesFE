@@ -7,7 +7,6 @@
 .backLinkBTN {
     color: #000;
     text-decoration: none;
-
 }
 
 .backNav {
@@ -37,6 +36,11 @@
 
 .contactBTNDesktop {
     display: none;
+}
+
+.titleMain {
+    color: #323232;
+    margin-bottom: 10px;
 }
 
 .tagTitle {
@@ -137,6 +141,4 @@
         font-weight: 600;
         line-height: 1.5;
     }
-
-    
 }
