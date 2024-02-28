@@ -27,9 +27,9 @@ export default async function Home() {
       {/* MOBILE HERO */}
       <Image
         className={styles.heroImageMobile}
-        src={'/hero_daytona.JPG'}
-        width={1680}
-        height={1120}
+        src={'/paul_newman_hero.jpg'}
+        width={1920}
+        height={1130}
         alt={'hero image'}
         quality={100}
       />
@@ -37,16 +37,17 @@ export default async function Home() {
       {/* DESKTOP HERO */}
       <Image
         className={styles.heroImageDesktop}
-        src={'/hero_daytona_desktop.jpg'}
-        width={3246}
-        height={1014}
+        src={'/paul_newman_hero.jpg'}
+        width={1920}
+        height={1130}
         alt={'hero image'}
         quality={100}
       />
 
+      <div className={styles.tagLine}>Luxury Times Ltd.... The Official Watch Dealership</div>
+
       {/* CTA */}
       <div className={styles.contactBTNContainer}>
-        <Image src={"/call.png"} width={25} height={25} alt={'phone icon'} quality={100} /> 
         <Link href="tel:07976753254" className={styles.linkBTN}>Contact</Link>
       </div>
 
@@ -58,19 +59,19 @@ export default async function Home() {
           <div className={styles.imageCategoryContainer}>
             <Link href={`/rolex/rolex-categories`} prefetch={true} className={styles.viewBTNContainer}> 
               <Image src={'/category/hulk_category.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100}  />
-            <div className={styles.titleCategoryWatch}>Rolex</div>
+              <div className={styles.titleCategoryWatch}>Rolex</div>
               <div className={styles.viewDetailsBTN}>
-                  <h4>VIEW</h4>
+                  <h4>View All</h4>
               </div>
             </Link>
           </div>
 
           <div className={styles.imageCategoryContainer}>
             <Link href={`/patek-philippe/patek-philippe-categories`} prefetch={true} className={styles.viewBTNContainer}> 
-              <Image src={'/category/patekphilippe.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
-            <div className={styles.titleCategoryWatch}>Patek Phillipe</div>
+              <Image src={'/category/patek_category.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
+              <div className={styles.titleCategoryWatch}>Patek Phillipe</div>
               <div className={styles.viewDetailsBTN}>
-                  <h4>VIEW</h4>
+                  <h4>View All</h4>
               </div>
             </Link>
           </div>
@@ -78,9 +79,9 @@ export default async function Home() {
           <div className={styles.imageCategoryContainer}>
             <Link href={`/audemars-piguet/audemars-piguet-categories`} className={styles.viewBTNContainer}> 
               <Image src={'/category/APiguet.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
-            <div className={styles.titleCategoryWatch}>Audemars Piguet</div>
+              <div className={styles.titleCategoryWatch}>Audemars Piguet</div>
               <div className={styles.viewDetailsBTN}>
-                  <h4>VIEW</h4>
+                  <h4>View All</h4>
               </div>
             </Link>
           </div>
@@ -96,7 +97,7 @@ export default async function Home() {
             <div className={styles.tagGuides}>Check Out Our Latest Guides</div>
             <div className={styles.paragraphGuides}>Introducing our latest guides! We're thrilled to present a collection of expertly crafted resources designed to empower and inform you.</div>
             <Link href={'/guide'} className={styles.viewBTNContainer}>
-              <div className={styles.guiedsBTN}>Veiw</div>
+              <div className={styles.guiedsBTN}>View</div>
             </Link>
           </div>
         </section>

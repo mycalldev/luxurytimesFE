@@ -13,6 +13,15 @@
   display: none;
 }
 
+.tagLine {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #575757;
+  line-height: 1.3;
+}
+
 /* CTA BUTTONS */
 .contactBTNContainer {
   margin: 30px auto;
@@ -48,7 +57,7 @@
 .titleBrands {
   margin: 60px auto 20px auto;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
   color: #323232;
 }
@@ -60,12 +69,14 @@
 
 .imageCategory {
   width: 100%;
+  margin: auto;
   height: auto;
-  border-radius: 22px;
+  /* padding: 20px; */
+  border-radius: 11px;
 }
 
 .titleCategoryWatch {
-  margin: 10px;
+  margin: 15px;
   font-size: 1.1rem;
   font-weight: 500;
   text-align: center;
@@ -234,6 +245,11 @@
     height: auto;
   }
 
+  .tagLine {
+    margin: 40px auto;
+    font-size: 1.7rem;
+  }
+
   /* CATEGORIES */
   .titleBrands {
     margin: 50px auto 10px auto;
@@ -241,7 +257,7 @@
   }
 
   .titleCategoryWatch {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   .categoryContainerGrid {

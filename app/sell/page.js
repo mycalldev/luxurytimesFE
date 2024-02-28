@@ -17,26 +17,34 @@ export default function Sell() {
         </div>
         <div className={styles.container}>
             <div className={styles.titleMain}>
-                3 Easy Steps to Selling Your Watch....
+               The 3 Easy Steps to Selling Your Watch....
             </div>
 
-            <div className={styles.contactBTNContainer}>
-                <Image src={"/call.png"} width={25} height={25} alt={'phone icon'} quality={100} /> 
-                <Link href="tel:07976753254" className={styles.linkBTN}>Contact</Link>
+            <div className={styles.contactBTNContainer}> 
+                <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
+            </div>
+
+            <div className={styles.whatsappBtn}>
+                <Link
+                href={"https://wa.me/447976753254?text=Welcome%20to%20RobDiamond"} 
+                className={styles.linkBTN}
+                >
+                 WHATSAPP
+                </Link>
             </div>
 
             <div className={styles.contentNumberGrid}>
                 <div className={styles.numberContainer}>
                     <div className={styles.number}>1</div>
                 </div>
-                <div className={styles.contentNumer}>Contact Luxury Times Direct By Phone</div>
+                <div className={styles.contentNumer}>Contact Luxury Times Ltd direct via WhatsApp, letting us know the Details of your watch for an instant quote.</div>
             </div>
 
             <div className={styles.contentNumberGrid}>
                 <div className={styles.numberContainer}>
                     <div className={styles.number}>2</div>
                 </div>
-                <div className={styles.contentNumer}>Book a FREE no Obligation Consultation at our Showroom</div>
+                <div className={styles.contentNumer}>Book an appointment for a free consultation at our showroom.</div>
             </div>
 
             <div className={styles.contentNumberGrid}>
@@ -45,23 +53,51 @@ export default function Sell() {
                 </div>
                 <div className={styles.contentNumer}>Setup a Video Call to Discuss and Receive a Real-Time Evaluation....</div>
             </div>
-            <div className={styles.linkEvaluation}>
-                <Link href={'/'}>Find out More About our Evaluations</Link>
+
+            <div className={styles.titleSub}>The Process:</div>
+
+            <div className={styles.contentExtra}>
+                At Luxury Times Ltd, we streamline the process of selling your watch to ensure 
+                convenience 
+                and efficiency. When you decide to sell your watch, 
+                simply inform us of details about your timepiece, including its make, 
+                model, and condition. 
             </div>
 
-            <div>
-            <Image src={'/world_of_watches.png'} 
-                width={1456} 
-                height={816} 
-                className={styles.imageHero}
-                alt='sell hero image' 
-                quality={100} 
-            />
-        </div>
+            <div className={styles.containerImage}>
+                <Image src={'/world_of_watches.png'} 
+                    width={1456} 
+                    height={816} 
+                    className={styles.imageHero}
+                    alt='sell hero image' 
+                    quality={100} 
+                />
+            </div>
 
-            
+            <div className={styles.contentExtra}>
+                Once we receive your information, our team of experts will promptly assess your watch&apos;s 
+                value based on current market trends and its condition.
+            </div>
+            <div className={styles.contentExtra}>
+                We will then provide you with a competitive offer. 
+                If you accept, you can either ship your watch to us or visit or office for an in-person appraisal. 
+            </div>
+            <div className={styles.contentExtra}>
+                Upon verification of the watch's authenticity and condition, 
+                we'll promptly issue payment, ensuring a smooth transaction for you.
+            </div>
 
-            <div className={styles.contentExtra}>Luxury Times Ltd is a Family owned watch dealership that specialises in  the world of horology.</div>
+           <div className={styles.containerImage}>
+                <Image src={'/sell_filler_image.jpg'} 
+                    width={1456} 
+                    height={816} 
+                    className={styles.imageHero}
+                    alt='sell hero image' 
+                    quality={100} 
+                />
+            </div>
+
+            <div className={styles.contentExtraThick}>Luxury Times Ltd is a Family owned watch dealership that specialises in  the world of horology.</div>
         </div>
     </main>
   )

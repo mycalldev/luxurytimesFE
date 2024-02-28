@@ -4,11 +4,6 @@
     color: #fff;
 }
 
-.linkEvaluation {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 1.1rem;
-}
 .imageHero {
     width: 100%;
     height: auto;
@@ -20,21 +15,41 @@
 }
 
 .contactBTNContainer {
-    margin: 30px auto;
+    margin: 40px auto;
     padding: 10px;
     max-width: 200px;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 500;
     text-align: center;
     border-radius: 22px;
     background: #91c0dc;
+    cursor: pointer;
 }
+
+.whatsappBtn {
+    margin: 40px auto;
+    padding: 10px;
+    max-width: 200px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 22px;
+    background: #91c0dc;
+    cursor: pointer;
+  }
   
 .titleMain {
     text-align: center;
     margin: 40px;
     font-size: 1.5rem;
     font-weight: 300;
+    color: #323232;
+}
+
+.titleSub {
+    margin-top: 40px;
+    font-size: 1.3rem;
+    color: #323232;
 }
 
 .contentNumberGrid {
@@ -65,18 +80,60 @@
     font-size: 1.1rem;
     font-weight: 300;
     margin-left: 10px;
+    color: #575757;
+    line-height: 1.3;
 }
-
 
 .contentExtra {
     margin: 20px 0;
-    text-align: center;
+    text-align: start;
     font-size: 1.1rem;
     font-weight: 300;
+    color: #575757;
+    line-height: 1.3;
 }
+
+.contentExtraThick {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #575757;
+    line-height: 1.3;
+}
+
+
 @media(min-width: 768px) {
     .container {
         width: 60%;
+        margin: auto;
+    }
+
+    .contentNumer {
+        font-size: 1.3rem;
+    }
+
+    .titleMain {
+        font-size: 1.7rem;
+        font-weight: 300;
+    }
+
+    .titleSub {
+        font-size: 1.5rem;
+    }
+
+    .contentExtra {
+        font-size: 1.3rem;
+    }
+
+    .contentExtraThick {
+        width: 50%;
+        margin: 40px auto;
+        font-size: 1.3rem;
+    }
+
+    .containerImage {
+        width: 100%;
         margin: auto;
     }
 }

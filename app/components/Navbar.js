@@ -68,6 +68,11 @@ export default function Navbar() {
                     <li className={styles.listItem}>Audemars Piguet</li>
                   </div>
                 </Link>
+                <Link href={'/sell'} className={styles.linkBTN} prefetch={true}>
+                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
+                    <li className={styles.listItem}>Sell</li>
+                  </div>
+                </Link>
                 <Link href={'/guide'} className={styles.linkBTN} prefetch={true}>
                   <div className={styles.listItemContainer} onClick={() => handleToggle()}>
                     <li className={styles.listItem}>Guides</li>
@@ -110,6 +115,11 @@ export default function Navbar() {
                   <Link href={'/audemars-piguet/audemars-piguet-categories'} className={styles.linkBTN}>
                     <div className={styles.listItemContainer}>
                       <li className={styles.listItem}>Audemars Piguet</li>
+                    </div>
+                  </Link>
+                  <Link href={'/sell'} className={styles.linkBTN} prefetch={true}>
+                    <div className={styles.listItemContainer}>
+                      <li className={styles.listItem}>Sell</li>
                     </div>
                   </Link>
                   <Link href={'/guide'} className={styles.linkBTN}>
