@@ -11,6 +11,12 @@ export default function BuyingRolex() {
           <Image src={'/guide_hero_cropped1.jpg'} width={1680} height={902} className={styles.imageHero} alt='guide hero image' quality={100} />
         </div>
 
+        <Link href={'/'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              {'< Home'}
+          </div>
+        </Link> 
+
         <div className={styles.tagTitle}>
             <h1>What to know when buying a Rolex</h1>
             <h4>Chronological Masterpiece</h4>

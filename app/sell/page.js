@@ -15,6 +15,12 @@ export default function Sell() {
                 quality={100} 
             />
         </div>
+
+        <Link href={'/'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              {'< Home'}
+          </div>
+        </Link>
         <div className={styles.container}>
             <div className={styles.titleMain}>
                The 3 Easy Steps to Selling Your Watch....
@@ -37,7 +43,7 @@ export default function Sell() {
                 <div className={styles.numberContainer}>
                     <div className={styles.number}>1</div>
                 </div>
-                <div className={styles.contentNumer}>Contact Luxury Times Ltd direct via WhatsApp, letting us know the Details of your watch for an instant quote.</div>
+                <div className={styles.contentNumer}>Contact Luxury Times Ltd direct via WhatsApp, letting us know the details of your watch for an instant quote.</div>
             </div>
 
             <div className={styles.contentNumberGrid}>
@@ -51,7 +57,7 @@ export default function Sell() {
                 <div className={styles.numberContainer}>
                     <div className={styles.number}>3</div>
                 </div>
-                <div className={styles.contentNumer}>Setup a Video Call to Discuss and Receive a Real-Time Evaluation....</div>
+                <div className={styles.contentNumer}>Setup a video call to discuss and receive a real-time evaluation....</div>
             </div>
 
             <div className={styles.titleSub}>The Process:</div>
@@ -60,7 +66,7 @@ export default function Sell() {
                 At Luxury Times Ltd, we streamline the process of selling your watch to ensure 
                 convenience 
                 and efficiency. When you decide to sell your watch, 
-                simply inform us of details about your timepiece, including its make, 
+                simply inform us of the details about your timepiece, including its make, 
                 model, and condition. 
             </div>
 
