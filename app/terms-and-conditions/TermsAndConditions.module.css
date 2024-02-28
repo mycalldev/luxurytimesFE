@@ -4,6 +4,15 @@
     font-weight: 600;
 }
 
+.backLinkBTN {
+    color: #000;
+    text-decoration: none;
+}
+
+.backNav {
+    margin: 20px 30px;
+    font-size: 1.1rem;
+}
 
 .orderedList {
     padding: 0;
@@ -35,6 +44,11 @@
 }
 
 @media(min-width: 768px){
+    .backNav {
+        margin: 100px;
+        font-size: 1.5rem;
+    }
+
     .containerMain {
         width: 70%;
         margin: 20px auto;

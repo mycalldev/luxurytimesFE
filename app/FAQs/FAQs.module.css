@@ -2,7 +2,17 @@
     margin: 0 10px;
     text-decoration: none;
     color: #fff;
-  }
+}
+
+.backLinkBTN {
+    color: #000;
+    text-decoration: none;
+}
+
+.backNav {
+    margin: 20px 30px;
+    font-size: 1.1rem;
+}
 
 .titleMain {
     margin: 20px;
@@ -33,12 +43,16 @@
     text-align: center;
     margin: 20px;
     font-size: 1.3rem;
+    color: #323232;
 }
 
 .faqIntro {
     width: 70%;
     margin: 20px auto;
-    text-align: center
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
 }
 
 .faqsContainer {
@@ -71,9 +85,15 @@
 
 .answer {
     margin: 10px;
+    line-height: 1.5;
 }
 
 @media(min-width: 768px) {
+
+    .backNav {
+        margin: 100px;
+        font-size: 1.5rem;
+    }
     .viewDetailsBTNMobile {
         display: none;
     }
@@ -107,9 +127,9 @@
     }
 
     .faqIntro {
-        font-size: 1.3rem;
-        width: 80%;
+        width: 65%;
         margin: 20px auto 40px auto;
+        font-size: 1.3rem;
         line-height: 1.5;
     }
 }

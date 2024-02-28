@@ -1,8 +1,15 @@
-import styles from './Return.module.css'
+import Link from 'next/link';
+import styles from './Return.module.css';
 
 export default function Return() {
   return (
     <main>
+       
+        <Link href={'/'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              {'< Home'}
+          </div>
+        </Link>
         <div className={styles.titleReturns}>
         <h1>Returns Policy</h1>
       </div>

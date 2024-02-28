@@ -22,6 +22,11 @@ export default async function Reviews() {
   return (
     <main className={styles.containerReview}>
         <div>
+        <Link href={'/'} className={styles.backLinkBTN}>
+          <div className={styles.backNav}>
+              {'< Home'}
+          </div>
+        </Link>
           <h1 className={styles.titleMain}>REVIEWS</h1>
           <div className={styles.viewDetailsBTNMobile}>
             <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>

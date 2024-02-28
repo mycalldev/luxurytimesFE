@@ -1,4 +1,5 @@
-import styles from './TermsAndConditions.module.css'
+import Link from 'next/link';
+import styles from './TermsAndConditions.module.css';
 
 
 
@@ -6,7 +7,11 @@ export default function TermsAndConditions() {
 
   return (
     <div className={styles.containerMain}>
-    
+      <Link href={'/'} className={styles.backLinkBTN}>
+        <div className={styles.backNav}>
+            {'< Home'}
+        </div>
+      </Link>
 
       <div className={styles.titleTerms}> 
         <h1>TERMS & CONDITIONS</h1>
