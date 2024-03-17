@@ -30,6 +30,8 @@ export default function Sell() {
                 <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
             </div>
 
+            <div className={styles.contactBTNDesktop}>07976 753 254</div>
+
             <div className={styles.whatsappBtn}>
                 <Link
                 href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
@@ -43,7 +45,7 @@ export default function Sell() {
                 <div className={styles.numberContainer}>
                     <div className={styles.number}>1</div>
                 </div>
-                <div className={styles.contentNumer}>Contact Luxury Times Ltd direct via WhatsApp, letting us know the details of your watch for an instant quote.</div>
+                <div className={styles.contentNumer}>Contact Luxury Times Ltd direct, letting us know the details of your watch for an instant quote.</div>
             </div>
 
             <div className={styles.contentNumberGrid}>
