@@ -45,3 +45,10 @@
   margin-bottom: 20px;  
   font-size: 1.3rem;
 }
+
+.socialContainer {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  cursor: pointer;
+}

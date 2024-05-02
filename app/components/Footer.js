@@ -22,6 +22,11 @@ export default function Footer() {
             <div className={styles.itemFlex}>RETURN</div>
           </Link>
         </div>
+        <Link href={'https://www.youtube.com/@LuxuryTimesLondon'}>
+        <div className={styles.socialContainer}>
+          <Image src={'/youtube.png'} width={64} height={64} quality={100} alt='Youtube icon' />
+        </div>
+        </Link>
         
         <div className={styles.addressContainer}>
             <div className={styles.addressTitle}>ADDRESS</div>

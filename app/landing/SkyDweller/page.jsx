@@ -118,7 +118,6 @@ export default function SkyDweller() {
             <li className={styles.lItem}>Blue Dial</li>
           </ul>
     </div>
-      
 
       <Image
             src={"/skydweller_flowers.jpg"}
@@ -144,7 +143,7 @@ export default function SkyDweller() {
       </div>
 
       <Image
-            src={"/conor-sky3.jpeg"}
+            src={"/strap.jpeg"}
             width={2048}
             height={1380}
             quality={100}
@@ -172,15 +171,7 @@ export default function SkyDweller() {
       <div className={styles.expertBTN}>
           <Link href="tel:07718269994" className={styles.linkBTN}>EXPERT ADVICE</Link>
       </div>
-      
-
-      {/* 
-      <div className={styles.content}>
-        The watch incorporates an annual calendar complication, which
-        automatically adjusts for months with 30 and 31 days, requiring
-        adjustment only once a year.
-      </div> */}
-      {/*  */}
+    
     </section>
 
     
