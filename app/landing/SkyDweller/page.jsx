@@ -25,42 +25,35 @@ export default function SkyDweller() {
         {/* HERO SECTION MOBILE */}
         <div className={styles.heroMobileContainer}>
           <Image
-            src={"/hero_image_template.jpg"}
-            width={1200}
-            height={602}
+            src={"/skydweller-landing-hero.JPG"}
+            width={2304}
+            height={1536}
             quality={100}
             alt='hero image mobile'
             className={styles.imageHeroMobile}
           />
         </div>
 
-        <Link href={'/'} className={styles.backLinkBTN}>
+        {/* <Link href={'/'} className={styles.backLinkBTN}>
           <div className={styles.backNav}>
               {'< Home'}
           </div>
-        </Link>     
+        </Link>      */}
         <div className={styles.contentMainHeroContainer}>
-        <div className={styles.headlineContentMain}>
+        {/* <div className={styles.headlineContentMain}>
           Discover Time Mastery
-        </div>
-        <div className={styles.headlineContentSub}>
+        </div> */}
+        {/* <div className={styles.headlineContentSub}>
           Unleashing The Extrodinary
-        </div>
+        </div> */}
       </div>
     </section>
-
+    <h2 className={styles.titleContent}>
+        SALE OF THE MONTH
+      </h2>
     <section>
-      <div className={styles.titleSkyDweller}>The Rolex SkyDweller</div>
+      <div className={styles.titleSkyDweller}>Rolex Sky-Dweller</div>
       <div className={styles.refSkyDweller}>Reference: 326934</div>
-
-      <div className={styles.contactBTN}>
-          <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
-      </div>
-      <div className={styles.contactBTNDesktop}>
-        <h3 className={styles.contactReview}>CONTACT</h3>
-        <div>07976 753 254</div>
-      </div>
-      
 
       {/* SWIPER SECTION */}
       <Swiper
@@ -86,38 +79,111 @@ export default function SkyDweller() {
           </Swiper>
     </section>
 
+    <h2 className={styles.inStoreTitle}>
+        In Store Today
+    </h2>
+
+    <h2 className={styles.titleContent}>
+      Free Expert Advice
+    </h2>
+
+    <div className={styles.contactBTN}>
+          <Link href="tel:07718269994" className={styles.linkBTN}>CONTACT</Link>
+    </div>
+
+    <div className={styles.contactBTN}>
+    <Link
+          href={"https://wa.me/447718269994?text=Hi%20Luxury%20Times...."} 
+          className={styles.linkBTN}
+        >
+          WHATSAPP
+        </Link>
+    </div>
+      <div className={styles.contactBTNDesktop}>
+        <h3 className={styles.contactReview}>CONTACT</h3>
+        <div>07718 269 994</div>
+      </div>
+
     <section>
       <h2 className={styles.titleContent}>
-        Elevating Horological Excellence
+        Sophistication of the Sky-Dweller
+      </h2>
+    <div className={styles.UlistContainer}>
+          <ul className={styles.Ulist}>
+            <li className={styles.lItem}>White 18k Gold Bezel</li>
+            <li className={styles.lItem}>Jubilee Bracelet</li>
+            <li className={styles.lItem}>Dual Time Zone</li>
+            <li className={styles.lItem}>Annual Calendar</li>
+            <li className={styles.lItem}>GMT Functionality</li> 
+            <li className={styles.lItem}>Blue Dial</li>
+          </ul>
+    </div>
+      
+
+      <Image
+            src={"/skydweller_flowers.jpg"}
+            width={2048}
+            height={1380}
+            quality={100}
+            alt='hero image mobile'
+            className={styles.imageHeroMobile}
+      />
+
+      <h2 className={styles.titleContent}>
+        Quality Service and Best Price of the Month
       </h2>
 
+      <div className={styles.contactBTN}>
+          <Link href="tel:07718269994" className={styles.linkBTN}>CONTACT</Link>
+     </div>
+
       <div className={styles.content}>
-        One of the standout features of the Sky-Dweller is its dual time
+        One of the many standout features of the Sky-Dweller is its dual time
         zone function, allowing travelers to easily keep track of time in
         two different time zones simultaneously.
       </div>
+
+      <Image
+            src={"/conor-sky3.jpeg"}
+            width={2048}
+            height={1380}
+            quality={100}
+            alt='hero image mobile'
+            className={styles.imageHeroMobile}
+      />
+
+      <div className={styles.content}>
+        Powered by Rolex's Caliber 9001 movement, a self-winding
+        mechanical movement known for its precision and reliability.
+      </div>
+
+      <h2 className={styles.titleReviews}>
+        5 Star Reviews
+      </h2>
+      
+      <div className={styles.reviewContainer}>
+        <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+        <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+        <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+        <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+        <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+      </div>
+     
+      <div className={styles.expertBTN}>
+          <Link href="tel:07718269994" className={styles.linkBTN}>EXPERT ADVICE</Link>
+      </div>
+      
+
+      {/* 
       <div className={styles.content}>
         The watch incorporates an annual calendar complication, which
         automatically adjusts for months with 30 and 31 days, requiring
         adjustment only once a year.
-      </div>
-      <div className={styles.content}>
-        It is powered by Rolex's Caliber 9001 movement, a self-winding
-        mechanical movement known for its precision and reliability.
-      </div>
+      </div> */}
+      {/*  */}
     </section>
 
-    <section>
-    <div className={styles.content}>
-          Luxury Times is a renowned authority in the realm of horology,
-          with an exceptional focus on Rolex watches. Recognized as one of the
-          leading experts in the field, their expertise and knowledge extend
-          particularly to the iconic Rolex Sky-Dweller collection. With an
-          unwavering passion for horology and an insatiable curiosity, the team at
-          has dedicated countless hours to studying and dissecting every
-          intricate detail of the Rolex Sky-Dweller.
-        </div>
-    </section>
+    
   </div>
   )
 }

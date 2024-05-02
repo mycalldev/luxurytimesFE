@@ -6,7 +6,7 @@ import styles from './Footer.module.css'
 export default function Footer() {
   return (
     <main>
-        <Image src={'/canary_wharf_footer.jpg'} className={styles.imageFooter} width={1456} height={816} alt={'picture of canary wharf'} quality={100} />
+        <Image src={'/luxury_times_footer.jpg'} className={styles.imageFooter} width={1456} height={816} alt={'picture of canary wharf'} quality={100} />
 
         <div className={styles.containerFlex}>
           <Link href={'/FAQs'} className={styles.linkBTN}>

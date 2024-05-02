@@ -36,7 +36,7 @@ export default function Navbar() {
           </div>
 
           <div className={styles.contactIcon}>
-            <Link href="tel:07976753254">
+            <Link href="tel:07718269994">
               <Image
                 src={'/phone_icon.png'}
                 width={32}

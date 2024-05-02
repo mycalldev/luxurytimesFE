@@ -22,7 +22,7 @@
     border: solid 2px #91c0dc;
     border-radius: 22px;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #fff;
     background-color: #91c0dc;
     letter-spacing: 3px;
@@ -30,6 +30,20 @@
     cursor: pointer;
 }
 
+.expertBTN {
+    margin: 20px auto 20px auto;
+    padding: 10px 30px;
+    max-width: 180px;
+    border: solid 2px #91c0dc;
+    border-radius: 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #91c0dc;
+    letter-spacing: 3px;
+    text-align: center;
+    cursor: pointer;
+}
 .contactBTNDesktop {
     display: none;
 }
@@ -65,17 +79,19 @@
 }
 
 .titleContent {
+    width: 80%;
+    margin: 30px auto 30px auto;
     text-align: center;
-    font-weight: 400;
-    font-size: 1.3rem;
-    margin: 20px auto;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #212121;
 }
 
 .content {
     width: 80%;
-    margin: 20px auto;
+    margin: 30px auto;
     text-align: start;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 500;
     line-height: 1.5;
     color: #323232;
@@ -84,13 +100,14 @@
 .titleSkyDweller {
     text-align: center;
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-top: 5px;
 }
 
 .refSkyDweller {
+    margin: 10px auto 20px auto;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: #323232;
 }
 
@@ -99,6 +116,44 @@
     font-size: 1.3rem;
 }
 
+.captionTitle {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.UlistContainer {
+    width: 50%;
+    margin: 0 auto 40px auto;
+}
+.Ulist {
+    width: 80%;
+    margin: auto;
+    text-align: start;
+    /* list-style-type: none; */
+}
+
+.lItem {
+    margin: 10px 0;
+    font-size: 1.3rem;
+    color:#323232;
+} 
+
+.inStoreTitle {
+    margin: 40px auto -10px auto;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #212121;
+}
+
+.reviewContainer {
+    margin: 20px;
+    text-align: center;
+}
+
+.titleReviews {
+    text-align: center;
+    margin: 10px;
+}
 @media (min-width: 768px) {
 
     .backNav {
