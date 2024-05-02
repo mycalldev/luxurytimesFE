@@ -27,9 +27,9 @@ export default async function Home() {
       {/* MOBILE HERO */}
       <Image
         className={styles.heroImageMobile}
-        src={'/paul_newman_hero.jpg'}
-        width={1920}
-        height={1130}
+        src={'/skydweller-landing-hero.JPG'}
+        width={2304}
+        height={1536}
         alt={'hero image'}
         quality={100}
       />
@@ -37,9 +37,9 @@ export default async function Home() {
       {/* DESKTOP HERO */}
       <Image
         className={styles.heroImageDesktop}
-        src={'/paul_newman_hero.jpg'}
-        width={1920}
-        height={1130}
+        src={'/skydweller-landing-hero-desktop.jpeg'}
+        width={2304}
+        height={898}
         alt={'hero image'}
         quality={100}
       />
