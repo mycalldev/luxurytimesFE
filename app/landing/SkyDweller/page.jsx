@@ -25,9 +25,9 @@ export default function SkyDweller() {
         {/* HERO SECTION MOBILE */}
         <div className={styles.heroMobileContainer}>
           <Image
-            src={"/skydweller-landing-hero.JPG"}
-            width={2304}
-            height={1536}
+            src={"/sales_hero.jpg"}
+            width={1280}
+            height={720}
             quality={100}
             alt='hero image mobile'
             className={styles.imageHeroMobile}
@@ -52,7 +52,7 @@ export default function SkyDweller() {
         SALE OF THE MONTH
       </h2>
     <section>
-      <div className={styles.titleSkyDweller}>Rolex Sky-Dweller</div>
+      {/* <div className={styles.titleSkyDweller}>Rolex Sky-Dweller</div> */}
       <div className={styles.refSkyDweller}>Reference: 326934</div>
 
       {/* SWIPER SECTION */}
