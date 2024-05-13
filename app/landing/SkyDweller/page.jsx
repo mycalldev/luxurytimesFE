@@ -51,6 +51,10 @@ export default function SkyDweller() {
     <h2 className={styles.titleContent}>
         SALE OF THE MONTH
       </h2>
+
+      <div className={styles.contactBTN}>
+          <Link href="tel:07718269994" className={styles.linkBTN}>CONTACT</Link>
+    </div>
     <section>
       {/* <div className={styles.titleSkyDweller}>Rolex Sky-Dweller</div> */}
       <div className={styles.refSkyDweller}>Reference: 326934</div>
@@ -86,10 +90,6 @@ export default function SkyDweller() {
     <h2 className={styles.titleContent}>
       Free Expert Advice
     </h2>
-
-    <div className={styles.contactBTN}>
-          <Link href="tel:07718269994" className={styles.linkBTN}>CONTACT</Link>
-    </div>
 
     <div className={styles.contactBTN}>
     <Link
