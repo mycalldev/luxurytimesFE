@@ -3,7 +3,7 @@ import { Roboto } from 'next/font/google'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Script from 'next/script'
-import { GoogleTagManager } from '@next/third-parties/google' 
+// import { GoogleTagManager } from '@next/third-parties/google' 
 
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] })
