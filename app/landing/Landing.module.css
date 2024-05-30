@@ -46,8 +46,9 @@
 }
 
 .contactBTNenquire {
+    width: 80%;
     margin: 20px auto 40px auto;
-    padding: 10px 30px;
+    padding: 10px;
     max-width: 260px;
     border: solid 2px #91c0dc;
     border-radius: 22px;
@@ -60,11 +61,6 @@
     cursor: pointer;
 } 
 
-.CTAtext {
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
 .contactBTNDesktop {
     display: none;
 }

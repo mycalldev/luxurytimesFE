@@ -123,13 +123,11 @@ export default function Submariner() {
     </h2>
     <div className={styles.contactBTNenquire}>
     <Link
-          href={"https://wa.me/447718269994?text=Hi%20Luxury%20Times...."} 
-          className={styles.linkBTN}
-        >
-          <div className={styles.CTAtext}>
-           ENQUIRE VIA WHATSAPP
-          </div>
-        </Link>
+      href={"https://wa.me/447718269994?text=Hi%20Luxury%20Times...."} 
+      className={styles.linkBTN}
+    >
+      ENQUIRE TODAY
+    </Link>
     </div>
 
       <Image
