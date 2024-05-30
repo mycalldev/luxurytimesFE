@@ -111,10 +111,10 @@ export default function Submariner() {
             <li className={styles.lItem}>NEW REFERENCE 41mm</li>
             <li className={styles.lItem}>Water Resistant up to 1000 feet</li>
             <li className={styles.lItem}>TripLock Winding Crown</li>
-            <li className={styles.lItem}>Gluide Locking Clasp</li>
+            <li className={styles.lItem}>Glide Locking Clasp</li>
             <li className={styles.lItem}>Oyster Steel Bracelet</li>
             <li className={styles.lItem}>Date Functionality</li> 
-            <li className={styles.lItem}>ChromaLight Number Markers</li>
+            <li className={styles.lItem}>Chromalight Number Markers</li>
           </ul>
     </div>
 
@@ -164,7 +164,7 @@ export default function Submariner() {
 
       <div className={styles.content}>
         Powered by Rolex's Caliber 3235 movement, a self-winding
-        mechanical movement with a Chronenergy escapement offering greater effeciency and dependability....
+        mechanical movement with a Chronenergy escapement offering greater efficiency and dependability....
       </div>
 
       <h2 className={styles.titleReviews}>
