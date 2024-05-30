@@ -115,11 +115,10 @@ export default function Submariner() {
             <li className={styles.lItem}>Oyster Steel Bracelet</li>
             <li className={styles.lItem}>Date Functionality</li> 
             <li className={styles.lItem}>ChromaLight Number Markers</li>
-            {/* <li className={styles.lItem}>70 Hours Power Reserve</li> */}
           </ul>
     </div>
 
-    <h2 className={styles.titleContent}>
+    <h2 className={styles.titleContentPower}>
       70 Hours Power Reserve
     </h2>
     <div className={styles.contactBTNenquire}>
