@@ -126,7 +126,9 @@ export default function Submariner() {
           href={"https://wa.me/447718269994?text=Hi%20Luxury%20Times...."} 
           className={styles.linkBTN}
         >
-          ENQUIRE VIA WHATSAPP
+          <div className={styles.CTAtext}>
+           ENQUIRE VIA WHATSAPP
+          </div>
         </Link>
     </div>
 
