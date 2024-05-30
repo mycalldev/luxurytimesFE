@@ -48,6 +48,7 @@
 .contactBTNenquire {
     margin: 20px auto 40px auto;
     padding: 10px 30px;
+    text-align: center;
     max-width: 260px;
     border: solid 2px #91c0dc;
     border-radius: 22px;
