@@ -11,14 +11,13 @@ const roboto = Roboto({ weight: '400', subsets: ['latin'] })
 export const metadata = {
   title: 'Luxury Times Ltd',
   description: 'Pre-Owned Watch Dealers',
-  viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0 user-scalable=0",
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <Script 
+        {/* <Script 
           id='gtm'
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -28,7 +27,7 @@ export default function RootLayout({ children }) {
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-WLHSGJ8C');`
           }}>
-        </Script>
+        </Script> */}
         {/* <Script async src="https://www.googletagmanager.com/gtag/js?id=G-Y718E32WBX"></Script>
         <Script>
             window.dataLayer = window.dataLayer || [];
@@ -42,6 +41,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <GoogleTagManager gtmId="GTM-WLHSGJ8C" />
       </body>
     </html>
   )
