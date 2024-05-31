@@ -18,6 +18,7 @@ const submarinerImages = [
   "/submariner126610LN/sub4.jpg",
 ];
 
+
 export default function Submariner() {
   return (
     <div>
@@ -110,7 +111,7 @@ export default function Submariner() {
           <ul className={styles.Ulist}>
             <li className={styles.lItem}>NEW REFERENCE 41mm</li>
             <li className={styles.lItem}>Water Resistant up to 1000 feet</li>
-            <li className={styles.lItem}>TripLock Winding Crown</li>
+            <li className={styles.lItem}>Triplock Winding Crown</li>
             <li className={styles.lItem}>Glide Locking Clasp</li>
             <li className={styles.lItem}>Oyster Steel Bracelet</li>
             <li className={styles.lItem}>Date Functionality</li> 
@@ -154,9 +155,9 @@ export default function Submariner() {
       </div>
 
       <Image
-            src={"/landing/submariner126610LN/strap.JPG"}
-            width={1459}
-            height={944}
+            src={"/landing/submariner126610LN/strap.jpg"}
+            width={1650}
+            height={914}
             quality={100}
             alt='hero image mobile'
             className={styles.imageHeroMobile}
