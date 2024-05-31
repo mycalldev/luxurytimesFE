@@ -22,11 +22,14 @@ export default function Footer() {
             <div className={styles.itemFlex}>RETURN</div>
           </Link>
         </div>
-        <Link href={'https://www.youtube.com/@LuxuryTimesLondon'}>
         <div className={styles.socialContainer}>
-          <Image src={'/youtube.png'} width={64} height={64} quality={100} alt='Youtube icon' />
+          <Link href={'https://www.instagram.com/_luxurytimes_/'}>
+            <Image src={'/instagram.png'} width={64} height={64} quality={100} alt='Instagram icon' />
+          </Link>
+          <Link href={'https://www.youtube.com/@LuxuryTimesLondon'}>
+            <Image src={'/youtube.png'} width={64} height={64} quality={100} alt='Youtube icon' />
+          </Link>
         </div>
-        </Link>
         
         <div className={styles.addressContainer}>
             <div className={styles.addressTitle}>ADDRESS</div>
