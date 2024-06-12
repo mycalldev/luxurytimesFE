@@ -20,6 +20,7 @@ export default async function DateJust() {
 const watches = await getDatejust()
 
   return (
+    
     <div>
         <div>
           <Image
@@ -29,14 +30,13 @@ const watches = await getDatejust()
             alt='Rolex DateJust Hero Banner'
             className={styles.imageCatHero}
             quality={100}
-
           />
         </div>
 
       <Link href={'/rolex/rolex-categories'} className={styles.backLinkBTN}>
-      <div className={styles.backNav}>
-          {'< Rolex Collections'}
-      </div>
+        <div className={styles.backNav}>
+            {'< Rolex Collections'}
+        </div>
       </Link>
 
         <h1 className={styles.titleMain}>DATEJUST</h1>
@@ -51,11 +51,11 @@ const watches = await getDatejust()
           
           {/* CTA  */}
           <div className={styles.contactDetailsBTNMobile}>
-            <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
+            <Link href="tel:07718269994" className={styles.linkBTN}>CONTACT</Link>
           </div>
           <div className={styles.contactBTNDesktop}>
             <h3 className={styles.contactReview}>CONTACT</h3>
-            <div>07976 753 254</div>
+            <div>07718 269 994</div>
           </div>
         </div>
 
@@ -81,9 +81,9 @@ const watches = await getDatejust()
             
             
             <Link href={`/rolex/all-watches/${watch._id}`} prefetch={true} className={styles.linkBTN}> 
-            <div className={styles.viewDetailsBTNMobile}>
-                <h4>VIEW</h4>
-            </div>
+              <div className={styles.viewDetailsBTNMobile}>
+                  <h4>VIEW</h4>
+              </div>
             </Link>
           </div>
         ))}
