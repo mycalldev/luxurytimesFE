@@ -58,7 +58,7 @@ const rings = await getRings()
                   width={3320}
                   height={2213}
                   alt={ring.title}
-                  className={styles.imageWatch}
+                  className={styles.imageRing}
                   quality={100}
                 />
               {/* </Link> */}
@@ -72,6 +72,18 @@ const rings = await getRings()
             {/* </Link> */}
           </div>
         ))}
+
+            <video 
+            width={400} 
+            height={300} 
+            controls loop 
+            playsInline 
+            autoPlay 
+            muted
+            className={styles.video}
+            >
+              <source src={`/video1.mp4`} type="video/mp4" />
+            </video>
       </div>
         </main>
     )
