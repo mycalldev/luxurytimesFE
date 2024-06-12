@@ -66,6 +66,11 @@ export default function Navbar() {
                     <li className={styles.listItem}>Audemars Piguet</li>
                   </div>
                 </Link>
+                <Link href={'/rings'} className={styles.linkBTN} prefetch={true}>
+                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
+                    <li className={styles.listItem}>Rings</li>
+                  </div>
+                </Link>
                 <Link href={'/sell'} className={styles.linkBTN} prefetch={true}>
                   <div className={styles.listItemContainer} onClick={() => handleToggle()}>
                     <li className={styles.listItem}>Sell</li>
