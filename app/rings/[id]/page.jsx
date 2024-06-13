@@ -19,7 +19,6 @@ export default async function RingDetails({ params }) {
 
 const ring = await getRing(params.id) 
 const ringArr = Array.from(ring.imageAmount) 
-console.log(ringArr)
 
 return (
     <>

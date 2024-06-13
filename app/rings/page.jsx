@@ -45,7 +45,7 @@ const rings = await getRings()
           </div>
         </div>
 
-        <div className={styles.selectSizeContainer}>
+        {/* <div className={styles.selectSizeContainer}>
         <label htmlFor="cars">Choose Colour:
           <select
             name="Ring Colour"
@@ -58,14 +58,14 @@ const rings = await getRings()
             <option value="Rose">Rose</option>
             
 
-            {/* {product.itemSize.split(",").map((item) => (
+            {product.itemSize.split(",").map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>
-            ))} */}
+            ))}
           </select>
           </label>
-        </div>
+        </div> */}
 
         <div className={styles.mainContainer}>
         {rings.map((ring) => (
