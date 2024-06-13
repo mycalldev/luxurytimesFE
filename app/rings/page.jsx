@@ -95,18 +95,6 @@ const rings = await getRings()
             {/* </Link> */}
           </div>
         ))}
-
-            <video 
-            width={400} 
-            height={300} 
-            loop 
-            playsInline 
-            autoPlay 
-            muted
-            className={styles.video}
-            >
-              <source src={`/video1.mp4`} type="video/mp4" />
-            </video>
       </div>
         </main>
     )
