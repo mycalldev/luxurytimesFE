@@ -45,7 +45,7 @@ const rings = await getRings()
         </div>
 
         <div className={styles.selectSizeContainer}>
-        <label for="cars">Choose Colour:</label>
+        <label htmlFor="cars">Choose Colour:
           <select
             name="Ring Colour"
             className={styles.selectSize}
@@ -63,6 +63,7 @@ const rings = await getRings()
               </option>
             ))} */}
           </select>
+          </label>
         </div>
 
         <div className={styles.mainContainer}>
@@ -73,7 +74,7 @@ const rings = await getRings()
           >
             {/* <h2 className={styles.titleRing}>{ring.title}</h2> */}
             <div className={styles.imageContainer}>
-              {/* <Link href={`/rolex/all-watches/${watch._id}`} prefetch={true}>  */}
+              <Link href={`/rings/${ring._id}`} prefetch={true}> 
                 <Image
                   src={`/jewellery/rings/${ring.title}${ring.colour}1.jpg`}
                   width={3320}
@@ -82,7 +83,7 @@ const rings = await getRings()
                   className={styles.imageRing}
                   quality={100}
                 />
-              {/* </Link> */}
+              </Link>
             </div>
             
             
