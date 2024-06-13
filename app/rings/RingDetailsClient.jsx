@@ -29,14 +29,30 @@ export default function RingDetailsClient( {ringArr, ring} ) {
                 <div className={styles.swiperWrapper}>
                   {ringArr.map((item, index) => (
                     <SwiperSlide className={styles.swiperSlide} key={index}>
-                      <Image
-                        src={`/jewellery/rings/${ring.title}${ring.colour}${index + 1}.jpg`}
-                        width={1680}
-                        height={1120}
-                        alt={`${ring.title}`}
-                        quality={100}
-                        className={styles.imageWatch}
-                      />
+                      {index === 0 ? (
+                        <div>
+                          <video 
+                            width={1600} 
+                            height={1100} 
+                            loop 
+                            playsInline 
+                            autoPlay 
+                            muted
+                            className={styles.video}
+                          >
+                          <source src={`/video1.mp4`} type="video/mp4" />
+                          </video>
+                        </div>
+                      ) : (
+                        <Image
+                          src={`/jewellery/rings/${ring.title}${ring.colour}${index}.jpg`}
+                          width={1680}
+                          height={1120}
+                          alt={`${ring.title}`}
+                          quality={100}
+                          className={styles.imageWatch}
+                        />
+                      )}
                     </SwiperSlide>
                   ))}
                 </div>

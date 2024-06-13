@@ -1,3 +1,4 @@
+
 import Link from 'next/link' 
 import Image from 'next/image'
 import styles from './rings.module.css'
@@ -98,7 +99,7 @@ const rings = await getRings()
             <video 
             width={400} 
             height={300} 
-            controls loop 
+            loop 
             playsInline 
             autoPlay 
             muted
