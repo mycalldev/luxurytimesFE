@@ -1,5 +1,5 @@
 
-import RingDetailsClient from '../RingDetailsClient';
+import RingProductClient from './RingProductClient';
 
 
 async function getRing(id) {
@@ -15,7 +15,7 @@ async function getRing(id) {
 
 }
 
-export default async function RingDetails({ params }) {
+export default async function RingProduct({ params }) {
 
 const ring = await getRing(params.id) 
 const ringArr = Array.from(ring.imageAmount) 
@@ -23,7 +23,7 @@ const ringArr = Array.from(ring.imageAmount)
 return (
     <>
     <main>
-        <RingDetailsClient ringArr={ringArr} ring={ring} />
+        <RingProductClient ringArr={ringArr} ring={ring} />
     </main>
     </>
   )

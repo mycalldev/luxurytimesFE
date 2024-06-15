@@ -2,14 +2,14 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './RingDetailsClient.module.css'
+import styles from './RingProductClient.module.css'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default function RingDetailsClient( {ringArr, ring} ) {
+export default function RingProductClient( {ringArr, ring} ) {
   return (
     <div className={styles.imageContainer}>
       <Link href={`/rings`} className={styles.linkBTN}>
