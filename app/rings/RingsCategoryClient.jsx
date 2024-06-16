@@ -110,8 +110,6 @@ export default function RingsCategoryClient({ rings }){
            )        
         }
       </div>
-
-
     </main>
     )
 }

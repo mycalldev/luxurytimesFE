@@ -50,7 +50,7 @@ export default function Submariner() {
       </div>
     </section>
     <h2 className={styles.titleContentSub}>
-        SALE OF THE MONTH
+        EXCLUSIVE OFFER JUNE 2024
       </h2>
     <section>
       {/* <div className={styles.titleSkyDweller}>Rolex Sky-Dweller</div> */}
