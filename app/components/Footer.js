@@ -35,7 +35,7 @@ export default function Footer() {
             <div className={styles.addressTitle}>ADDRESS</div>
             <div className={styles.addressContent}>25 Cabot Square, Canary Wharf, London E14 4QZ</div>
             <div className={styles.addressCountry}>United Kingdom</div>
-            <div>Disclaimer: We are mot authorized Rolex dealers. Our watches are genuine, sourced from trusted suppliers.</div>
+            <div>Disclaimer: We are not authorized Rolex dealers. Our watches are genuine, sourced from trusted suppliers.</div>
         </div>
     </main>
   )
