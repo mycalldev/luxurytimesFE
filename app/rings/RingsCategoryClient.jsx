@@ -20,7 +20,7 @@ export default function RingsCategoryClient({ rings }){
 
     return (
         <main>
-            <Link href={'/'} className={styles.backLinkBTN}>
+            <Link href={'/'} className={styles.backLinkBTN} prefetch={true}>
                 <div className={styles.backNav}>
                     {'< Home'}
                 </div>
@@ -36,7 +36,7 @@ export default function RingsCategoryClient({ rings }){
             
             {/* CTA  */}
             <div className={styles.contactDetailsBTNMobile}>
-                <Link href="tel:07718269994" className={styles.linkBTN}>CONTACT</Link>
+                <Link href="tel:07718269994" className={styles.linkBTN} prefetch={true}>CONTACT</Link>
             </div>
             <div className={styles.contactBTNDesktop}>
                 <h3 className={styles.contactReview}>CONTACT</h3>

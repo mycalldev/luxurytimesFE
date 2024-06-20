@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 export default function WatchDetailsClient( {watchArr, watch} ) {
+
   return (
     <div className={styles.imageContainer}>
       <Link href={`/rolex/rolex-categories/${watch.model}`} className={styles.linkBTN}>

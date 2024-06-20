@@ -1,5 +1,5 @@
 
-import RingProductClient from './RingProductClient';
+import RingProductClient from '../RingProductClient';
 
 
 async function getRing(id) {

@@ -2,24 +2,24 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './RingProductClient.module.css'
+import styles from './RingProductClient.module.css';
+import axios from 'axios';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
-import axios from 'axios'
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 export default function RingProductClient( {ringArr, ring} ) {
 
-  const [price, setPrice] = useState(4400)
+  const [price, setPrice] = useState(3200)
   const [shape, setShape] = useState("Round")
-  const [size, setSize] = useState(0.8)
+  const [size, setSize] = useState(0.6)
   const [color, setColor] = useState("h")
   const [clarity, setClarity] = useState("if")
   
   const accessToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16aERRMFExTURFeVJqSTNRa0k0TTBGRVJUZzFNekUzTWtOQ09UTXhNREZDTVVZM1JURkNNZyJ9.eyJodHRwOi8vcmFwYXBvcnQuY29tL3VzZXIiOnsiYWNjb3VudElkIjoxMjY4ODh9LCJodHRwOi8vcmFwYXBvcnQuY29tL3Njb3BlIjpbIm1hbmFnZUxpc3RpbmdzIiwicHJpY2VMaXN0V2Vla2x5Il0sImh0dHA6Ly9yYXBhcG9ydC5jb20vYXBpa2V5Ijp7Imh0dHBzOi8vbWVkaWF1cGxvYWQucmFwbmV0YXBpcy5jb20iOiJGUTFMU25naWZxNzFFbGVpRzR4UGY2bkp4Z3VDWXBhVjVhUE9jVlpKIiwiaHR0cHM6Ly9wcmljZWxpc3QucmFwbmV0YXBpcy5jb20iOiIydHdxdFhKMEdYYTZxckVrTzBrVFkxblIwbmQydk9mMzV1Q0t4eHNkIiwiaHR0cHM6Ly91cGxvYWRsb3RzLnJhcG5ldGFwaXMuY29tIjoid0JzZFR1YUFNUXo1RVN2aTlYdVY2STF5WlNQdE5Nb0R4cnEyR2hpMCJ9LCJodHRwOi8vcmFwYXBvcnQuY29tL2F1ZGllbmNlIjpbImh0dHBzOi8vdXBsb2FkbG90cy5yYXBuZXRhcGlzLmNvbSIsImh0dHBzOi8vcHJpY2VsaXN0LnJhcG5ldGFwaXMuY29tIiwiaHR0cHM6Ly9tZWRpYXVwbG9hZC5yYXBuZXRhcGlzLmNvbSIsImh0dHBzOi8vYXBpZ2F0ZXdheS5yYXBuZXRhcGlzLmNvbSJdLCJodHRwOi8vcmFwYXBvcnQuY29tL3Blcm1pc3Npb25zIjp7InJhcG5ldGFwaXMtYXBpZ2F0ZXdheSI6WyJtZW1iZXJEaXJlY3RvcnkiLCJzZWFyY2giLCJpbnN0YW50SW52ZW50b3J5U2V0dXAiLCJtYW5hZ2VMaXN0aW5nc0ZpbGUiLCJidXlSZXF1ZXN0c0FkZCIsIml0ZW1TaGFyZWQiLCJ0cmFkZUNlbnRlciIsIm15Q29udGFjdHMiLCJtZW1iZXJSYXRpbmciLCJjaGF0IiwibWFuYWdlTGlzdGluZ3MiLCJwcmljZUxpc3RXZWVrbHkiLCJwcmljZUxpc3RNb250aGx5IiwicmFwbmV0UHJpY2VMaXN0V2Vla2x5IiwiYmFzaWMiLCJyYXBuZXRQcmljZUxpc3RNb250aGx5IiwicmFwbmV0SmV3ZWxlciIsImxlYWRzIiwiYWRtaW4iLCJidXlSZXF1ZXN0cyJdfSwiaXNzIjoiaHR0cHM6Ly9yYXBhcG9ydC5hdXRoMC5jb20vIiwic3ViIjoiYVJnc2JzNmJPMWo5dkM0NzZZVG5LMGNZM2NFYmhBSUhAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vYXBpZ2F0ZXdheS5yYXBuZXRhcGlzLmNvbSIsImlhdCI6MTcxODgxODkyOSwiZXhwIjoxNzE4OTA1MzI5LCJzY29wZSI6ImFwaUdhdGV3YXkiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMiLCJhenAiOiJhUmdzYnM2Yk8xajl2QzQ3NllUbkswY1kzY0ViaEFJSCJ9.kuZ-fXBdObqvI98YmeOfPRer5o7mOUMbijxVa4kPtJtvLuXm9rUYC4VshadXxoz3Fm1BKZM0gsI301Kh9BA1PHAgnYN0bq5bm-_QXcK79UM_zjT37_rVCuU4dF6V7YRqwH1ifmweeGdeO84-NXTb62XLeEnOoVSvWqZSkAH3HdCiEsCQVsQTD-gwh24sMCB81lR4XVMYmC9Nxb86tInUxBGAWxdbJE1WeCc7wEikwPjEmMzv5bOl6ywpOsIPMjjeFxrkJvsQHirOHrb8PPwPhefat1IbjTzhFn-JtRiypV1SJAVUsLh2uW-nsbrZBJEEfaSxpt9yJPmM750qgj5uqw" 
-  const url = `https://technet.rapnetapis.com/pricelist/api/Prices?shape=Round&size=${size}&color=h&clarity=if`
+  const url = `https://technet.rapnetapis.com/pricelist/api/Prices?shape=${shape}&size=${size}&color=${color}&clarity=${clarity}`
   useEffect(() => {
       axios.get(url, {
         headers: {
@@ -31,18 +31,32 @@ export default function RingProductClient( {ringArr, ring} ) {
         const price = res.data.caratprice
         const truncPrice = Math.trunc(price)
         setPrice(truncPrice)
+        console.log("this has ran")
       }).catch((err) => {
         console.log("this is the error" + err)
-      });
-  },[size])
+  });
+      
 
-  const handleChange = (event) => {
+  },[size, color, clarity, shape])
+
+  const handleChangeSize = (event) => {
     setSize(event)
   }
 
+  const handleChangeColor = (event => {
+    setColor(event)
+  })
+
+  const handleChangeClarity = (event) => {
+    setClarity(event)
+  }
+
+  const handleChangeShape = (event) => {
+    setShape(event)
+  }
   return (
     <div className={styles.imageContainer}>
-      <Link href={`/rings`} className={styles.linkBTN}>
+      <Link href={`/rings`} className={styles.linkBTN} prefetch={true}>
         <div className={styles.backBTN}>{`< Previous`}</div>
       </Link>
 
@@ -89,7 +103,7 @@ export default function RingProductClient( {ringArr, ring} ) {
               </Swiper>
             </div>
           </div> 
-          <div className={styles.price}>Price: £{price}</div>
+          <div className={styles.price}>Price: £{price * 0.79 / 2}</div>
           <div className={styles.ringSize}>We Offer Rings of All Sizes</div>
 
           <div className={styles.descriptionMobile}> 
@@ -100,8 +114,11 @@ export default function RingProductClient( {ringArr, ring} ) {
             <select
               name="carat size"
               className={styles.selectSize} 
-              onChange={(e) => handleChange(e.target.value)}
+              onChange={(e) => handleChangeSize(e.target.value)}
             >
+              <option value="">Select</option>
+              <option value="0.6">0.6</option>
+              <option value="0.7">0.7</option>
               <option value="0.8">0.8</option>
               <option value="0.9">0.9</option>
               <option value="1.00">1.00</option>
@@ -115,8 +132,6 @@ export default function RingProductClient( {ringArr, ring} ) {
               <option value="1.80">1.80</option>
               <option value="1.90">1.90</option>
               <option value="2.00">2.00</option>
-
-
             </select>
             </label>
         </div>
@@ -124,12 +139,14 @@ export default function RingProductClient( {ringArr, ring} ) {
             <label className={styles.label} htmlFor="cut">CUT:
             <select
               name="cut"
-              className={styles.selectSize} 
+              className={styles.selectSize}
+              onChange={(e) => handleChangeShape(e.target.value)}
             >
-              <option value="0.8">Princess</option>
-              <option value="0.9">Oval</option>
-              <option value="1.00">Emerald</option>
-              <option value="1.00">Round Brilliant</option>
+              <option value="">Select</option>
+              <option value={ring.shape}>Princess</option>
+              <option value={ring.shape}>Oval</option>
+              <option value={ring.shape}>Emerald</option>
+              <option value={ring.shape}>Round Brilliant</option>
             </select>
             </label>
         </div>
@@ -138,12 +155,14 @@ export default function RingProductClient( {ringArr, ring} ) {
             <select
               name="Clarity"
               className={styles.selectSize} 
+              onChange={(e) => handleChangeClarity(e.target.value)}
             >
-              <option value="D">Small Inclusions (SI2)</option>
-              <option value="E">Small Inclusions (SI1)</option>
-              <option value="F">Very Small Inclusions (VS2)</option>
-              <option value="G">Very Small Inclusions (VS1)</option>
-              <option value="H">Internally Flawless (IF)</option>
+              <option value="">Select</option>
+              <option value="vs2">Very Small Inclusions (VS2)</option>
+              <option value="vs1">Very Small Inclusions (VS1)</option>
+              <option value="vvs2">Very Very Small Inclusions (VVS2)</option>
+              <option value="vvs1">Very Very Small Inclusions (VVS1)</option>
+              <option value="if">Internally Flawless (IF)</option>
             </select>
             </label>
         </div>
@@ -152,12 +171,14 @@ export default function RingProductClient( {ringArr, ring} ) {
             <select
               name="Colour"
               className={styles.selectSize} 
+              onChange={(e) => handleChangeColor(e.target.value)}
             >
-              <option value="D">D</option>
-              <option value="E">E</option>
-              <option value="F">F</option>
-              <option value="G">G</option>
-              <option value="H">H</option>
+              <option value="">Select</option>
+              <option value="h">H</option>
+              <option value="g">G</option>
+              <option value="f">F</option>
+              <option value="e">E</option>
+              <option value="d">D</option>
             </select>
             </label>
         </div>
