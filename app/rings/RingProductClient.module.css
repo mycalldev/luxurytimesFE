@@ -36,45 +36,6 @@
       height: auto;
   }
   
-  .availableContianerGrid {
-    display: none;
-  }
-  
-  
-  .availableContainer {
-      margin: 10px 20px 0px 20px;
-      display: grid;
-      grid-template-columns: 10% 90%;
-      justify-content: center;
-      align-items: center;
-      max-width: 270px;
-  }
-  
-  .dotAvailableFlex {
-    margin: 30px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .dotFlexItem {
-      margin-left: 20px;
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background: #0d73cd;
-  }
-  
-  .availableFlexItem {
-      margin: 20px;
-      font-size: 1.1rem;
-      color: #222222;
-  }
-  
-  .availableFlexItem span {
-    font-weight: 600;
-    color: #000;
-  }
-  
   .description {
       margin: 0px 30px 10px 40px;
       color: #717171;
@@ -99,337 +60,179 @@
     display: none;
   }
   
-  .BTNLink {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #fff;
+  
+  .descriptionMobile {
+    width: 80%;
+    margin: 20px auto;
+    font-size: 1rem;
   }
-  
-    /* DETAILS SECTION */
-  
-    .descriptionMobile {
-      width: 80%;
-      margin: 0px auto 20px auto;
-      font-size: 1rem;
-      font-weight: 500;
-      line-height: 1.5;
+
+  .titleTag {
+    text-align: center;
+    font-weight: 1.3rem;
+  }
+
+  .selectDropDown {
+      text-align: start;
+      background-color: #f1f1f1;
+      border-radius: 2px;
+      width:80%;
+      padding: 20px;
+      margin: 10px auto 20px auto;
+      /* color: #000;
+      color: rgba(0,0,0,0);
+      text-shadow: 0 0 0 #000; */
+  }
+
+  .containerSelectLabel {
+    width: 100%;
+    margin: 0 40px;
+  }
+
+  .containerShape {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-size: 1.1rem;
+    width: 80%;
+    margin: 20px auto 0 auto;
+    padding: 20px;
+  }
+
+  .video {
+      width: 100%;
+      height: auto;
+  } 
+
+  .price {
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  @media (min-width: 1024px) {
+
+    .contactBTN {
+      margin: 10px auto 0px auto;
+      padding: 10px 20px;
     }
-  
-    .descriptionDesktop {
+
+    .contactDetailsBTNMobile {
+      display: none;
+  }
+
+    .backBTN {
+      margin: 30px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .titleMain {
+      font-size: 2rem;
+      margin: 40px 0;
+    } 
+
+    .availableContainerItem {
+      display: block;
+    }
+
+    .contactContainerItem {
+      display: block;
+      
+    } 
+
+    .mobileContactContainer {
       display: none;
     }
-  
-    .sectionDetails {
-      padding-top: 10px;
-      padding-bottom: 10px;
-      background: #eeeeee;
+
+    .watchDescriptionMobile {
+      display: none;
     }
-  
+
     .titleDetailsMobile {
+      display: none;
+    }
+
+    .descriptionMobile {
+      display: none;
+    }
+
+    .contactBTNDesktop {
+      display: block;
+      margin: 60px auto 50px auto;
+      padding: 10px 30px;
+      max-width: 250px;
+      border: solid 2px #91c0dc;
+      border-radius: 22px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #fff;
+      background-color: #91c0dc;
+      letter-spacing: 3px;
+      text-align: center;
+  }
+
+    .titleDetails {
       margin: 20px auto 20px auto;
       font-size: 1.5rem;
       font-weight: 700;
       text-align: center;
       color: #323232;
     }
-  
-    .titleDetails {
-        margin: 20px auto 20px auto;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-align: center;
-        color: #323232;
-    }
-  
-    .bgGREYDetails {
-        display: grid;
-        justify-items: start;
-        margin-bottom: 40px;
-        padding: 10px;
-        background: #91c0dc;
-    }
-  
-    .detailsGrid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        justify-items: center;
-    }
-  
-    .descriptionMobile {
+
+    .watchDescriptionDesktop {
+      display: block;
       width: 80%;
-      margin: 20px auto;
-      font-size: 1rem;
-    }
-  
-  
-    .titleBox {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #fff;
-    }
-  
-    .titleBoxValue {
-      text-align: center;
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-  
-    .titleCard {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #fff;
-    }
-  
-    .titleCardValue {
-      text-align: center;
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-  
-    .titleCondition {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #fff;
-    }
-  
-    .titleConditionValue {
-      text-align: center;
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-  
-    .titleSpec {
-      margin-bottom: 10px;
+      margin: 20px auto 20px auto;
       font-size: 1.1rem;
-      font-weight: 700;
     }
-  
-    .titleValue {
-      text-align: center;
-      font-size: 1.1rem;
-      margin-bottom: 10px;
+
+    .sectionDetails {
+      padding: 60px;
+      background: #eeeeee;
     }
-  
-    .imageWhatsapp {
-      margin: 20px;
-      text-align: center;
-      cursor: pointer;
-    }
-  
-    .titleSpecMain {
-      margin: 30px 30px 20px 30px;
-      text-align: start;
-    }
-  
-    .titleDialMain {
-      text-align: center;
-    }
-  
-    .specContainer {
-      margin: 5px 20px 5px 20px;
-      border-top: 1px solid #c4c4c4;
-    }
-  
-    .specGridContainer {
+
+    .bgGREYDetails {
       display: grid;
-      grid-template-rows: 50% 50%;
-      justify-items: center;
-    }
-  
-    .itemGridKey {
-      margin: 20px;
-    }
-  
-    .itemGridValue {
-      margin: 20px;
-    }
-  
-    .listItemKey {
-      margin: 5px 0 5px 10px;
-      list-style: none;
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-  
-    .listItemValue {
-      margin: 0 10px;
-      list-style: none;
-      font-size: 1.1rem;
-      font-weight: 300;
-      text-transform: capitalize;
+      justify-content: center;
+      margin-bottom: 40px;
+      padding: 10px;
+      background: #91c0dc;
+  }
+
+  .detailsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-self: center;
+  }
+
+  .detailsGridMain {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
     }
 
-    .selectSizeContainer {
-        text-align: center;
-        background-color: #f1f1f1;
-        border-radius: 2px;
-        border: 1px solid lightgrey;
-        width:80%;
-        margin: 10px auto;
-    }
-      
-    .selectSize {
-        margin: 10px;
-        padding: 10px;
-        background: #fff;
-        border-radius: 2px;
+    .containerTopGrid {
+      display: grid;
+      grid-template-columns: 50% 50%;
     }
 
-    .label {
-        color: #767676;
-        font-weight: 600;
-    }
-
-    .ringSize {
-        text-align: center;
-        font-size: 1.1rem;
-        margin-top: 10px;
-    }
-
-    .video {
-        width: 100%;
-        height: auto;
-    } 
-
-    .price {
-      margin: 20px auto;
-      text-align: center;
+    .availableFlexItem {
       font-size: 1.5rem;
-      font-weight: 600;
     }
-  
-    @media (min-width: 1024px) {
-  
-      .contactBTN {
-        margin: 10px auto 0px auto;
-        padding: 10px 20px;
-      }
-  
-      .contactDetailsBTNMobile {
-        display: none;
+
+    .dotAvailableFlex {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-  
-      .backBTN {
-        margin: 30px;
-        font-size: 1.5rem;
-        cursor: pointer;
-      }
-      
-      .titleMain {
-        font-size: 2rem;
-        margin: 40px 0;
-      } 
-  
-      .availableContainerItem {
-        display: block;
-      }
-  
-      .contactContainerItem {
-        display: block;
-        
-      } 
-  
-      .mobileContactContainer {
-        display: none;
-      }
-  
-      .watchDescriptionMobile {
-        display: none;
-      }
-  
-      .titleDetailsMobile {
-        display: none;
-      }
-  
-      .descriptionMobile {
-        display: none;
-      }
-  
-      .contactBTNDesktop {
-        display: block;
-        margin: 60px auto 50px auto;
-        padding: 10px 30px;
-        max-width: 250px;
-        border: solid 2px #91c0dc;
-        border-radius: 22px;
-        font-size: 1rem;
-        font-weight: 500;
-        color: #fff;
-        background-color: #91c0dc;
-        letter-spacing: 3px;
-        text-align: center;
+
+    .descriptionDesktop {
+      display: block;
+      width: 80%;
+      margin: 60px auto 20px auto;
+      font-size: 1.3rem;
+      line-height: 1.5;
     }
-  
-      .titleDetails {
-        margin: 20px auto 20px auto;
-        font-size: 1.5rem;
-        font-weight: 700;
-        text-align: center;
-        color: #323232;
-      }
-  
-      .watchDescriptionDesktop {
-        display: block;
-        width: 80%;
-        margin: 20px auto 20px auto;
-        font-size: 1.1rem;
-      }
-  
-      .sectionDetails {
-        padding: 60px;
-        background: #eeeeee;
-      }
-  
-      .bgGREYDetails {
-        display: grid;
-        justify-content: center;
-        margin-bottom: 40px;
-        padding: 10px;
-        background: #91c0dc;
-    }
-  
-      .detailsGrid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        justify-self: center;
-      }
-  
-      .detailsGridMain {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-      }
-  
-      .containerTopGrid {
-        display: grid;
-        grid-template-columns: 50% 50%;
-      }
-  
-      .availableFlexItem {
-        font-size: 1.5rem;
-      }
-  
-      .dotAvailableFlex {
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-  
-      .descriptionDesktop {
-        display: block;
-        width: 80%;
-        margin: 60px auto 20px auto;
-        font-size: 1.3rem;
-        line-height: 1.5;
-      }
-  
-    }
+
+  }
