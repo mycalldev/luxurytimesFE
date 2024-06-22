@@ -50,11 +50,10 @@ export default function RingsCategoryClient({ rings }){
                     className={styles.selectSize}
                     onChange={(e) => handleChange(e.target.value)}
                 >
-                    <option value='Select'>Select</option>
+                    <option value='All'>All</option>
                     <option value='Yellow'>Yellow</option>
                     <option value='Rose'>Rose</option>
                     <option value='White'>White</option>
-                    <option value='All'>All</option>
 
                 </select>
                 </label>
@@ -65,7 +64,6 @@ export default function RingsCategoryClient({ rings }){
             className={styles.productContainer}
             key={ring._id}
           >
-            <h2 className={styles.titleRing}>{ring.title}</h2>
             <div className={styles.imageContainer}>
               <Link href={`/rings/${ring._id}`} prefetch={true}> 
                 <Image
@@ -78,7 +76,7 @@ export default function RingsCategoryClient({ rings }){
                 />
               </Link>
             </div>
-            
+            <h2 className={styles.titleRing}>{ring.title}</h2>
             
             {/* <Link href={`/rolex/all-watches/${ring._id}`} prefetch={true} className={styles.linkBTN}>  */}
               {/* <div className={styles.viewDetailsBTNMobile}>
@@ -91,7 +89,6 @@ export default function RingsCategoryClient({ rings }){
             <div 
             key={ring._id}
             >
-            <h2 className={styles.titleRing}>{ring.title}</h2>
             <div className={styles.imageContainer}>
               <Link href={`/rings/${ring._id}`} prefetch={true}> 
                 <Image
@@ -104,6 +101,7 @@ export default function RingsCategoryClient({ rings }){
                 />
               </Link>
             </div>
+            <h2 className={styles.titleRing}>{ring.title}</h2>
             
             </div>
             ))

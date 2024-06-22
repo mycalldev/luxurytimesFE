@@ -41,9 +41,9 @@
 }
 
 .titleRing {
-    margin: 20px 10px 0px 10px;
+    margin: -10px 10px 20px 10px;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 100;
 }
 
