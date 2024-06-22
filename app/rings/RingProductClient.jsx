@@ -12,11 +12,11 @@ import "swiper/css/navigation";
 
 export default function RingProductClient( {ringArr, ring} ) {
 
-  const [price, setPrice] = useState(3200)
+  const [price, setPrice] = useState(1896)
   const [shape, setShape] = useState("Round")
   const [size, setSize] = useState(0.6)
   const [color, setColor] = useState("h")
-  const [clarity, setClarity] = useState("if")
+  const [clarity, setClarity] = useState("vs2")
   
   const accessToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16aERRMFExTURFeVJqSTNRa0k0TTBGRVJUZzFNekUzTWtOQ09UTXhNREZDTVVZM1JURkNNZyJ9.eyJodHRwOi8vcmFwYXBvcnQuY29tL3VzZXIiOnsiYWNjb3VudElkIjoxMjY4ODh9LCJodHRwOi8vcmFwYXBvcnQuY29tL3Njb3BlIjpbIm1hbmFnZUxpc3RpbmdzIiwicHJpY2VMaXN0V2Vla2x5Il0sImh0dHA6Ly9yYXBhcG9ydC5jb20vYXBpa2V5Ijp7Imh0dHBzOi8vbWVkaWF1cGxvYWQucmFwbmV0YXBpcy5jb20iOiJGUTFMU25naWZxNzFFbGVpRzR4UGY2bkp4Z3VDWXBhVjVhUE9jVlpKIiwiaHR0cHM6Ly9wcmljZWxpc3QucmFwbmV0YXBpcy5jb20iOiIydHdxdFhKMEdYYTZxckVrTzBrVFkxblIwbmQydk9mMzV1Q0t4eHNkIiwiaHR0cHM6Ly91cGxvYWRsb3RzLnJhcG5ldGFwaXMuY29tIjoid0JzZFR1YUFNUXo1RVN2aTlYdVY2STF5WlNQdE5Nb0R4cnEyR2hpMCJ9LCJodHRwOi8vcmFwYXBvcnQuY29tL2F1ZGllbmNlIjpbImh0dHBzOi8vdXBsb2FkbG90cy5yYXBuZXRhcGlzLmNvbSIsImh0dHBzOi8vcHJpY2VsaXN0LnJhcG5ldGFwaXMuY29tIiwiaHR0cHM6Ly9tZWRpYXVwbG9hZC5yYXBuZXRhcGlzLmNvbSIsImh0dHBzOi8vYXBpZ2F0ZXdheS5yYXBuZXRhcGlzLmNvbSJdLCJodHRwOi8vcmFwYXBvcnQuY29tL3Blcm1pc3Npb25zIjp7InJhcG5ldGFwaXMtYXBpZ2F0ZXdheSI6WyJtZW1iZXJEaXJlY3RvcnkiLCJzZWFyY2giLCJpbnN0YW50SW52ZW50b3J5U2V0dXAiLCJtYW5hZ2VMaXN0aW5nc0ZpbGUiLCJidXlSZXF1ZXN0c0FkZCIsIml0ZW1TaGFyZWQiLCJ0cmFkZUNlbnRlciIsIm15Q29udGFjdHMiLCJtZW1iZXJSYXRpbmciLCJjaGF0IiwibWFuYWdlTGlzdGluZ3MiLCJwcmljZUxpc3RXZWVrbHkiLCJwcmljZUxpc3RNb250aGx5IiwicmFwbmV0UHJpY2VMaXN0V2Vla2x5IiwiYmFzaWMiLCJyYXBuZXRQcmljZUxpc3RNb250aGx5IiwicmFwbmV0SmV3ZWxlciIsImxlYWRzIiwiYWRtaW4iLCJidXlSZXF1ZXN0cyJdfSwiaXNzIjoiaHR0cHM6Ly9yYXBhcG9ydC5hdXRoMC5jb20vIiwic3ViIjoiYVJnc2JzNmJPMWo5dkM0NzZZVG5LMGNZM2NFYmhBSUhAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vYXBpZ2F0ZXdheS5yYXBuZXRhcGlzLmNvbSIsImlhdCI6MTcxOTA1MDU0NSwiZXhwIjoxNzE5MTM2OTQ1LCJzY29wZSI6ImFwaUdhdGV3YXkiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMiLCJhenAiOiJhUmdzYnM2Yk8xajl2QzQ3NllUbkswY1kzY0ViaEFJSCJ9.MnYQ9TCYNNO1JhXVCQdkch15refmwdZf6vICcIgry8B4itqE73lX6DlX3ST57MfaRA5uw0uZdr2Zxsv5rz23GPoQpgXxTSzRYoWePJ2ubIT_2VqfCgmcs5BK8owhYfbJTiMkGBD80hKUZvaKyaimHvVE71XH-_aXbZu399RuIYXFED8LBNt5zT1GDT06MoPL7uhPp4BDeHd71q9f0z5Z8tFN_8xLMsQyHZeP7fGYWGdQlFK427oqZr0lR76tJOtUmBvYSP95I8p4nmx6bFAyTA4vbAa8GMrqWbwyz7KTGuCtiMiUlXiIe20gYc8e686r8GE-ZeWxJ2XNsyy6Hz02hw" 
   const url = `https://technet.rapnetapis.com/pricelist/api/Prices?shape=${shape}&size=${size}&color=${color}&clarity=${clarity}`
@@ -103,7 +103,7 @@ export default function RingProductClient( {ringArr, ring} ) {
               </Swiper>
             </div>
           </div> 
-          <div className={styles.price}>Price: £{price * 0.79 / 2}</div>
+          <div className={styles.price}>Price: £{price * 0.79}</div>
           <div className={styles.ringSize}>We Offer Rings of All Sizes</div>
 
           <div className={styles.descriptionMobile}> 
@@ -116,7 +116,6 @@ export default function RingProductClient( {ringArr, ring} ) {
               className={styles.selectSize} 
               onChange={(e) => handleChangeSize(e.target.value)}
             >
-              <option value="">Select</option>
               <option value="0.6">0.6</option>
               <option value="0.7">0.7</option>
               <option value="0.8">0.8</option>
@@ -142,11 +141,8 @@ export default function RingProductClient( {ringArr, ring} ) {
               className={styles.selectSize}
               onChange={(e) => handleChangeShape(e.target.value)}
             >
-              <option value="">Select</option>
-              <option value={ring.shape}>Princess</option>
-              <option value={ring.shape}>Oval</option>
-              <option value={ring.shape}>Emerald</option>
-              <option value={ring.shape}>Round Brilliant</option>
+              <option value={ring.shape}>{ring.shape}</option>
+              
             </select>
             </label>
         </div>
@@ -157,7 +153,6 @@ export default function RingProductClient( {ringArr, ring} ) {
               className={styles.selectSize} 
               onChange={(e) => handleChangeClarity(e.target.value)}
             >
-              <option value="">Select</option>
               <option value="vs2">Very Small Inclusions (VS2)</option>
               <option value="vs1">Very Small Inclusions (VS1)</option>
               <option value="vvs2">Very Very Small Inclusions (VVS2)</option>
@@ -173,7 +168,6 @@ export default function RingProductClient( {ringArr, ring} ) {
               className={styles.selectSize} 
               onChange={(e) => handleChangeColor(e.target.value)}
             >
-              <option value="">Select</option>
               <option value="h">H</option>
               <option value="g">G</option>
               <option value="f">F</option>
