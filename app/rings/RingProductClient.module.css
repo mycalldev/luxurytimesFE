@@ -35,6 +35,17 @@
       width: 100%;
       height: auto;
   }
+
+  /* .containerGIA {
+    width: 100%;
+    height: auto;
+  } */
+
+  .imageGIA {
+      width: 40%;
+      height: auto;
+      margin: 20px;
+  }
   
   .description {
       margin: 0px 30px 10px 40px;

@@ -13,7 +13,7 @@ import { colourClarityRound149, colourClarityRound199, colourClarityRound299 } f
 
 export default function RingProductClient( {ringArr, ring} ) {
 
-  const [price, setPrice] = useState(1896)
+  const [price, setPrice] = useState(5056)
   const [cut, setCut] = useState("Excellent")
   const [size, setSize] = useState(1.0)
   const [color, setColor] = useState("h")
@@ -122,11 +122,7 @@ export default function RingProductClient( {ringArr, ring} ) {
             </div>
           </div> 
           <div className={styles.price}>Price: £{price.toFixed(0)}</div>
-          <div className={styles.titleTag}>We Offer Rings of All Sizes</div>
-
-          <div className={styles.descriptionMobile}> 
-                {ring.descriptionMobile}
-          </div>  
+          <div className={styles.titleTag}>We Offer Rings of All Sizes</div>  
 
           <div className={styles.containerShape}>
             <div>Diamond Shape:</div>
@@ -196,6 +192,22 @@ export default function RingProductClient( {ringArr, ring} ) {
               <option value="d">D</option>
             </select>
         </div>
+
+        <div className={styles.descriptionMobile}>
+          {ring.descriptionMobile}
+        </div>
+
+        <div className={styles.containerGIA}>
+          <Image
+            src={`/GIA_Logo.png`}
+            width={500}
+            height={164.5}
+            alt={`GIA Logo`}
+            quality={100}
+            className={styles.imageGIA}
+          />
+        </div>
+        
       </div>
   )
 }
