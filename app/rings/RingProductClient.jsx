@@ -9,7 +9,7 @@ import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { colourClarityRound149, colourClarityRound199, colourClarityRound299 } from '../utils/calculator';
+import  { colourClarity } from '../utils/calculator';
 
 export default function RingProductClient( {ringArr, ring} ) {
 
@@ -41,22 +41,41 @@ export default function RingProductClient( {ringArr, ring} ) {
   // },[size, color, clarity, shape])
 
   useEffect(() => {
-    if(size == 1 && size < 1.5){
-      setPrice(colourClarityRound149[`${color}${clarity}`] * basePrice149 * size)
-    } else if(size == 1.5 && size < 2){
-      setPrice(colourClarityRound199[`${color}${clarity}`] * basePrice199 * size)
+    if(ring.shape === "Round"){
+      if(size == 1.00 || size < 1.50){
+        setPrice(colourClarity.Round149[`${color}${clarity}`] * roundBasePrice149 * size)
+        return
+      } else if(size == 1.5 || size < 2){
+        setPrice(colourClarity.Round199[`${color}${clarity}`] * roundBasePrice199 * size)
+        return
+      } else {
+        setPrice(colourClarity.Round299[`${color}${clarity}`] * roundBasePrice299 * size)
+      }
     } else {
-      setPrice(colourClarityRound299[`${color}${clarity}`] * basePrice299 * size)
+      if(size == 1.00 || size < 1.50){
+        setPrice(colourClarity.Pear149[`${color}${clarity}`] * pearBasePrice149 * size)
+        return
+      } else if(size == 1.5 || size < 2){
+        setPrice(colourClarity.Pear199[`${color}${clarity}`] * pearBasePrice199 * size)
+        return 
+      }
+        else {
+          setPrice(colourClarity.Pear299[`${color}${clarity}`] * pearBasePrice299 * size)
+        }
+      console.log("Pear Price")
     }
+   
   }, [color, size, clarity, cut])
 
   
-  const basePrice149 = 79
-  const basePrice199 = 55.300041
-  const basePrice299 = 55.3
+  const roundBasePrice149 = 79
+  const roundBasePrice199 = 55.300041
+  const roundBasePrice299 = 55.3
+  const pearBasePrice149 = 79
+  const pearBasePrice199 = 79
+  const pearBasePrice299 = 79
 
 
-  
   const handleChangeSize = (event) => {
     setSize(event)
   }
