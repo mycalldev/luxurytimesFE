@@ -20,15 +20,15 @@
   top: 0;
   width: 100%;
   display: grid;
-  grid-template-columns: 10% 70% 20%;
+  grid-template-columns: 15% 60% 15%;
   justify-content: space-around;
   align-items: center;
   background: #fff;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .imageBurger {
-  margin-left: 10px;
+  margin-left: 15px;
   cursor: pointer;
 }
 
@@ -53,8 +53,13 @@
   text-decoration: none;
 }
 
-.contactIcon {
+.logoIcon {
   cursor: pointer;
+}
+
+.navbarLogo {
+  width: 100%;
+  height: auto;
 }
 
 .navOpen {

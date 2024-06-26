@@ -31,16 +31,17 @@ export default function Navbar() {
           
           <div>
             <Link href="/#" className={styles.undreline}>
-              <div className={styles.titleMain}>LUXURY TIMES</div>
+              <div className={styles.titleMain}>LUXURY TIMES LTD</div>
             </Link>
           </div>
 
-          <div className={styles.contactIcon}>
+          <div className={styles.logoIcon}>
             <Link href="tel:07718269994">
               <Image
-                src={'/phone_icon.png'}
-                width={32}
-                height={32}
+                src={'/logo_lt.png'}
+                width={125}
+                height={125}
+                className={styles.navbarLogo}
                 alt={'contact button'}
                 quality={100}
               />
@@ -101,7 +102,7 @@ export default function Navbar() {
 
           {/* DESKTOP NAV */}
           <Link href="/#" className={styles.undreline}>
-            <div className={styles.titleMainDesktop}>LUXURY TIMES</div>
+            <div className={styles.titleMainDesktop}>LUXURY TIMES LTD</div>
           </Link>
             <nav className={styles.navContainerGrid}>
               <ul className={styles.navDesktopGrid}>

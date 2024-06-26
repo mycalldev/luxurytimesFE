@@ -6,7 +6,13 @@ import styles from './Footer.module.css'
 export default function Footer() {
   return (
     <main>
-        <Image src={'/footer_new.jpg'} className={styles.imageFooter} width={2233} height={1488} alt={'picture of canary wharf'} quality={100} />
+        <Image src={'/Lt_Footer.jpg'} 
+          className={styles.imageFooter} 
+          width={1552} 
+          height={1024} 
+          alt={'picture of canary wharf'} 
+          quality={100} 
+        />
 
         <div className={styles.containerFlex}>
           <Link href={'/FAQs'} className={styles.linkBTN}>
@@ -32,7 +38,6 @@ export default function Footer() {
         </div>
         
         <div className={styles.addressContainer}>
-            <div className={styles.addressTitle}>ADDRESS</div>
             <div className={styles.addressContent}>25 Cabot Square, Canary Wharf, London E14 4QZ</div>
             <div className={styles.addressCountry}>United Kingdom</div>
             <div>Disclaimer: We are not authorized Rolex dealers. Our watches are genuine, sourced from trusted suppliers.</div>

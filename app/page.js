@@ -43,8 +43,7 @@ export default async function Home() {
         alt={'hero image'}
         quality={100}
       />
-
-      <div className={styles.tagLine}>Luxury Times Ltd.... The Official Watch Dealership</div>
+      <div className={styles.tagLine}>London's Official Watch Dealership</div>
 
       {/* CTA */}
       <div className={styles.contactBTNContainer}>
@@ -58,7 +57,7 @@ export default async function Home() {
 
           <div className={styles.imageCategoryContainer}>
             <Link href={`/rolex/rolex-categories`} prefetch={true} className={styles.viewBTNContainer}> 
-              <Image src={'/category/hulk_category.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100}  />
+              <Image src={'/rolex_section2.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100}  />
               <div className={styles.titleCategoryWatch}>Rolex</div>
               <div className={styles.viewDetailsBTN}>
                   <h4>View All</h4>
@@ -93,7 +92,13 @@ export default async function Home() {
           <h1 className={styles.titleGuides}>GUIDES</h1>
 
           <div className={styles.imageGuidesContainer}>
-            <Image src={'/cogs.jpg'} className={styles.imageGuides} width={1456} height={816} alt={'cogs for watch background'} quality={100} />
+            <Image src={'/guides1.jpg'} 
+              className={styles.imageGuides} 
+              width={1110} 
+              height={720} 
+              alt={'image of watch'} 
+              quality={100} 
+            />
             <div className={styles.tagLine}>Check Out Our Latest Guides</div>
             <div className={styles.paragraphGuides}>Introducing our latest guides! We're thrilled to present a collection of expertly crafted resources designed to empower and inform you.</div>
             <Link href={'/guide'} className={styles.viewBTNContainer}>
