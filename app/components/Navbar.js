@@ -39,8 +39,8 @@ export default function Navbar() {
             <Link href="tel:07718269994">
               <Image
                 src={'/logo_lt.png'}
-                width={62.5}
-                height={62.5}
+                width={125}
+                height={125}
                 className={styles.navbarLogo}
                 alt={'contact button'}
                 quality={100}
