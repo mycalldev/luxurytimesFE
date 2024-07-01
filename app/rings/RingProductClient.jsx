@@ -121,7 +121,7 @@ export default function RingProductClient( {ringArr, ring} ) {
                             muted
                             className={styles.video}
                           >
-                          <source src={`/video1.mp4`} type="video/mp4" />
+                          <source src={`/jewellery/rings/celestialRose.mp4`} type="video/mp4" />
                           </video>
                         </div>
                       ) : (
