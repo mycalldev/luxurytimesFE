@@ -115,13 +115,13 @@ export default function RingProductClient( {ringArr, ring} ) {
                           <video 
                             width={1600} 
                             height={1200} 
-                            // loop 
+                            loop 
                             playsInline 
                             autoPlay 
                             muted
                             className={styles.video}
                           >
-                          <source src={`/jewellery/rings/example.mp4`} type="video/mp4" />
+                          <source src={`/jewellery/rings/example6.mp4`} type="video/mp4" />
                           </video>
                         </div>
                       ) : (
