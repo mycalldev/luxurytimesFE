@@ -21,7 +21,7 @@ export default function PatekPhilippeCategories() {
 
       {/* MOBILE CONTACT */}
       <div className={styles.contactBTNContainerMobile}>
-        <Link href="tel:07976753254" className={styles.linkBTN} >
+        <Link href="tel:07718269994" className={styles.linkBTN} >
             <div className={styles.contactBTN}>CONTACT</div>
         </Link>
       </div>
@@ -29,7 +29,7 @@ export default function PatekPhilippeCategories() {
       {/* CONTACT DESKTOP */}
       <div className={styles.contactBTNContainerDesktop}>
         <div className={styles.titleContactDesktop}>CONTACT</div>
-            <div className={styles.contactBTN}>07976 753 254</div>
+            <div className={styles.contactBTN}>07718 269 994</div>
       </div>
       
       <div className={styles.containerGrid}>

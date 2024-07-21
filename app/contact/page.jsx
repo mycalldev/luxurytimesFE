@@ -20,17 +20,17 @@ export default function Contact() {
 
       {/* BTN */}
       <div className={styles.heroBtn}>
-        <Link href="tel:07976753254" className={styles.linkBTN}>CALL NOW</Link>
+        <Link href="tel:07718269994" className={styles.linkBTN}>CALL NOW</Link>
       </div>
       <div className={styles.heroBtn}>
         <Link
-          href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
+          href={"https://wa.me/447718269994?text=Hi%20Luxury%20Times...."} 
           className={styles.linkBTN}
         >
           WHATSAPP
         </Link>
       </div>
-      <div className={styles.heroBtnDesktop}>07976 753 254</div>
+      <div className={styles.heroBtnDesktop}>07718 269 994</div>
     </div>
   )
 }

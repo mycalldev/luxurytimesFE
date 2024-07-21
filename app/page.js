@@ -27,7 +27,7 @@ export default async function Home() {
       {/* MOBILE HERO */}
       <Image
         className={styles.heroImageMobile}
-        src={'/skydweller-landing-hero.JPG'}
+        src={'/home-page-hero-mobile.JPG'}
         width={2304}
         height={1536}
         alt={'hero image'}
@@ -37,17 +37,25 @@ export default async function Home() {
       {/* DESKTOP HERO */}
       <Image
         className={styles.heroImageDesktop}
-        src={'/skydweller-landing-hero-desktop.jpeg'}
+        src={'/home-page-hero-desktop.jpeg'}
         width={2304}
-        height={898}
+        height={644}
         alt={'hero image'}
         quality={100}
       />
       <div className={styles.tagLine}>London's Official Watch Dealership</div>
 
-      {/* CTA */}
-      <div className={styles.contactBTNContainer}>
-        <Link href="tel:07976753254" className={styles.linkBTN}>Contact</Link>
+      {/* MOBILE CONTACT */}
+      <div className={styles.contactBTNContainerMobile}>
+        <Link href="tel:07718269994" className={styles.linkBTN} >
+            <div className={styles.contactBTN}>CONTACT</div>
+        </Link>
+      </div>
+
+      {/* CONTACT DESKTOP */}
+      <div className={styles.contactBTNContainerDesktop}>
+        <div className={styles.titleContactDesktop}>CONTACT</div>
+            <div className={styles.contactBTN}>07718 269 994</div>
       </div>
 
       
