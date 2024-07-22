@@ -35,18 +35,8 @@ export default function Submariner() {
           />
         </div>
 
-        {/* <Link href={'/'} className={styles.backLinkBTN}>
-          <div className={styles.backNav}>
-              {'< Home'}
-          </div>
-        </Link>      */}
         <div className={styles.contentMainHeroContainer}>
-        {/* <div className={styles.headlineContentMain}>
-          Discover Time Mastery
-        </div> */}
-        {/* <div className={styles.headlineContentSub}>
-          Unleashing The Extrodinary
-        </div> */}
+        
       </div>
     </section>
     <h2 className={styles.titleContentSub}>
@@ -54,7 +44,7 @@ export default function Submariner() {
       </h2>
     <section>
       {/* <div className={styles.titleSkyDweller}>Rolex Sky-Dweller</div> */}
-      <div className={styles.refSkyDweller}>Reference: 126610LN</div>
+      <div className={styles.ref}>Reference: 126610LN</div>
 
       {/* SWIPER SECTION */}
       <Swiper

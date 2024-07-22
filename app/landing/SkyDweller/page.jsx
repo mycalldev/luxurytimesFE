@@ -53,7 +53,7 @@ export default function SkyDweller() {
       </h2>
     <section>
       {/* <div className={styles.titleSkyDweller}>Rolex Sky-Dweller</div> */}
-      <div className={styles.refSkyDweller}>Reference: 326934</div>
+      <div className={styles.ref}>Reference: 326934</div>
 
       {/* SWIPER SECTION */}
       <Swiper
