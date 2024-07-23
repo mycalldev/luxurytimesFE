@@ -40,13 +40,13 @@ export default function Daytona() {
         </div>
 
         
-    <div className={styles.contentMainHeroContainer}>
+    {/* <div className={styles.contentMainHeroContainer}> */}
         <div className={styles.modelRefContainer}>
             <div className={styles.model}>2024 MODEL</div>
             <div className={styles.ref}>Reference: 126500LN</div>
         </div>
 
-      </div>
+      {/* </div> */}
     </section>
     
     <section>
