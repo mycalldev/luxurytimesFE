@@ -53,7 +53,7 @@ export default function Daytona() {
 
       <div className={styles.titleContentBackground}>
         <h2 className={styles.titleContentTop}>
-            The World's Most Recognisable Luxury Chronograph
+            Exclusive Offer July 2024
         </h2>
       </div>
 
@@ -147,14 +147,20 @@ export default function Daytona() {
     Rolex in a bid to become the official watch of NASA, hence its original name “Cosmograph.”
     </div>
 
-      <Image
-            src={"/panda_daytona/panda_filler.jpg"}
-            width={1660}
-            height={1106.5}
-            quality={100}
-            alt='image of daytona filler'
-            className={styles.imageHeroMobile}
-      />
+    <div className={styles.titleContentBackground}>
+        <h2 className={styles.titleContentTop}>
+            The World's Most Recognisable Luxury Chronograph
+        </h2>
+    </div>
+
+    <Image
+          src={"/panda_daytona/panda_filler.jpg"}
+          width={1660}
+          height={1106.5}
+          quality={100}
+          alt='image of daytona filler'
+          className={styles.imageHeroMobile}
+    />
 
       <h2 className={styles.titleContent}>
         Quality Service and Best Price of the Month
