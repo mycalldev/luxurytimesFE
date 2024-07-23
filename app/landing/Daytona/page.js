@@ -15,8 +15,6 @@ const pandaImages = [
   "panda1.jpg",
   "panda2.jpg",
   "panda3.jpg",
-  "panda4.jpg",
-  "panda5.jpg",
   "panda6.jpg",
   "panda7.jpg",
   "panda8.jpg",
