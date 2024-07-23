@@ -110,7 +110,7 @@ export default function Daytona() {
             <li className={styles.lItem}>Updated Bezel/ Oyster Steel Ring</li>
             <li className={styles.lItem}>Chromalight Number Markers</li>
             <li className={styles.lItem}>Symetrical Lugs</li>
-            <li className={styles.lItem}>Easy Link Adjustment with Thermal expansion half link</li>
+            <li className={styles.lItem}>Easy Link Adjustment with Thermal Expansion Half Link</li>
             <li className={styles.lItem}>72 Hours Power Reserve</li>
             <li className={styles.lItem}>Oyster Steel Bracelet</li>
           </ul>
