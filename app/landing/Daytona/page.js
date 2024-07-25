@@ -48,7 +48,7 @@ export default function Daytona() {
       <section>
         <div className={styles.titleContentBackground}>
           <h2 className={styles.titleContentTop}>
-              Exclusive Offer July 2024
+              1 in Stock! 2024 Model
           </h2>
         </div>
 
