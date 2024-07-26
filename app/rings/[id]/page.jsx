@@ -18,12 +18,12 @@ async function getRing(id) {
 export default async function RingProduct({ params }) {
 
 const ring = await getRing(params.id) 
-const ringArr = Array.from(ring.imageAmount) 
+// const ringArr = Array.from(ring.imageAmount) 
 
 return (
     <>
     <main>
-        <RingProductClient ringArr={ringArr} ring={ring} />
+        <RingProductClient ring={ring} />
     </main>
     </>
   )
