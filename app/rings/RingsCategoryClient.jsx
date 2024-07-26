@@ -67,7 +67,7 @@ export default function RingsCategoryClient({ rings }){
             <div className={styles.imageContainer}>
               <Link href={`/rings/${ring._id}`} prefetch={true}> 
                 <Image
-                  src={`/jewellery/rings/${ring.title}${ring.colour}1.jpg`}
+                  src={`/jewellery/rings/${ring.title}/${ring.title}${ring.colour}1.jpg`}
                   width={3320}
                   height={2213}
                   alt={ring.title}
