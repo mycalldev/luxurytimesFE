@@ -102,7 +102,7 @@ export default function RingProductClient({ ring }) {
                 <video 
                   width={1600} 
                   height={1200} 
-                  loop 
+                  // loop 
                   playsInline 
                   autoPlay 
                   muted
