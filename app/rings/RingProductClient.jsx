@@ -95,8 +95,8 @@ export default function RingProductClient({ ring }) {
         <div>Diamond Shape:</div>
         <div>{ring.shape}</div>
       </div>
-
-      <div className={styles.containerSelectLabel}>
+      
+      <div className={styles.containerSelectLabel} align={'center'}>
         <div>Carat Size:</div>
         <select
           name="carat size"
@@ -116,8 +116,9 @@ export default function RingProductClient({ ring }) {
           <option value="2.00">2.00 Carat</option>
         </select> 
       </div>
-{/*
-      <div className={styles.containerSelectLabel}>
+      
+
+      <div className={styles.containerSelectLabel} align={'center'}>
       <div>Cut:</div>
           <select
             name="cut"
@@ -130,7 +131,7 @@ export default function RingProductClient({ ring }) {
           </select>
       </div>
 
-      <div className={styles.containerSelectLabel}>
+      <div className={styles.containerSelectLabel} align={'center'}>
       <div>Clarity:</div>
           <select
             name="Clarity"
@@ -145,7 +146,7 @@ export default function RingProductClient({ ring }) {
           </select>   
       </div>
 
-      <div className={styles.containerSelectLabel}>
+      <div className={styles.containerSelectLabel} align={'center'}>
       <div>Colour:</div>  
           <select
             name="Colour"
@@ -162,7 +163,7 @@ export default function RingProductClient({ ring }) {
 
       <div className={styles.descriptionMobile}>
         {ring.descriptionMobile}
-      </div> */}
+      </div> 
 
       <div className={styles.containerGIA}>
         <Image
