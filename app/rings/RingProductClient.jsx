@@ -97,12 +97,12 @@ export default function RingProductClient({ ring }) {
 
       <div className={styles.titleMain}>{ring.title}</div> 
           
-          <div className={styles.containerTopGrid}>  
-              <div>
+        <div className={styles.containerTopGrid}>  
+              {/* <div>
                 <video 
                   width={1600} 
                   height={1200} 
-                  // loop 
+                  loop 
                   playsInline 
                   autoPlay 
                   muted
@@ -110,8 +110,8 @@ export default function RingProductClient({ ring }) {
                 >
                 <source src={`/jewellery/rings/${ring.title}/${ring.title}MP4/${ring.title}${ring.colour}.mp4`} type="video/mp4" />
                 </video>
-              </div>
-          </div> 
+              </div> */}
+        </div> 
           <div className={styles.price}>Price: £{price.toFixed(0)}</div>
           <div className={styles.titleTag}>We Offer Rings of All Sizes</div>  
 
