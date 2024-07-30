@@ -11,13 +11,7 @@
   display: none;
 }
 
-.navContainer {
-  /* padding-bottom: 80px; */
-}
-
 .containerGrid {
-  /* position: fixed;
-  top: 0; */
   width: 100%;
   display: grid;
   grid-template-columns: 15% 50% 15%;

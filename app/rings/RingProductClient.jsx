@@ -73,107 +73,108 @@ export default function RingProductClient({ ring }) {
 
       <div className={styles.titleMain}>{ring.title}</div> 
           
-       
-              {/* <div>
-                <video 
-                  width={1600} 
-                  height={1200} 
-                  loop 
-                  playsInline 
-                  autoPlay 
-                  muted
-                  className={styles.video}
-                >
-                <source src={`/jewellery/rings/${ring.title}/${ring.title}MP4/${ring.title}${ring.colour}.mp4`} type="video/mp4" />
-                </video>
-              </div> */}
-         
-          {/* <div className={styles.price}>Price: £{price.toFixed(0)}</div> */}
-          <div className={styles.titleTag}>We Offer Rings of All Sizes</div>  
-
-          <div className={styles.containerShape}>
-            <div>Diamond Shape:</div>
-            <div>{ring.shape}</div>
-          </div>
-          <div className={styles.containerSelectLabel}>
-            <div>Carat Size:</div>
-            <select
-              name="carat size"
-              className={styles.selectDropDown} 
-              onChange={(e) => handleChangeSize(e.target.value)}
-            >
-              <option value="1.00">1.00 Carat</option>
-              <option value="1.10">1.10 Carat</option>
-              <option value="1.20">1.20 Carat</option>
-              <option value="1.30">1.30 Carat</option>
-              <option value="1.40">1.40 Carat</option>
-              <option value="1.50">1.50 Carat</option>
-              <option value="1.60">1.60 Carat</option>
-              <option value="1.70">1.70 Carat</option>
-              <option value="1.80">1.80 Carat</option>
-              <option value="1.90">1.90 Carat</option>
-              <option value="2.00">2.00 Carat</option>
-            </select>
-            
-        </div>
-        <div className={styles.containerSelectLabel}>
-        <div>Cut:</div>
-            <select
-              name="cut"
-              className={styles.selectDropDown}
-              onChange={(e) => handleChangeCut(e.target.value)}
-            >
-              <option value="Excellent">Excellent</option>
-              <option value="Very Good">Very Good</option>
-              <option value="Good">Good</option>
-            </select>
-            
-        </div>
-        <div className={styles.containerSelectLabel}>
-        <div>Clarity:</div>
-            <select
-              name="Clarity"
-              className={styles.selectDropDown} 
-              onChange={(e) => handleChangeClarity(e.target.value)}
-            >
-              <option value="VS2">Very Small Inclusions (VS2)</option>
-              <option value="VS1">Very Small Inclusions (VS1)</option>
-              <option value="VVS2">Very Very Small Inclusions (VVS2)</option>
-              <option value="VVS1">Very Very Small Inclusions (VVS1)</option>
-              <option value="IF">Internally Flawless (IF)</option>
-            </select>   
-        </div>
-        <div className={styles.containerSelectLabel}>
-        <div>Colour:</div>  
-            <select
-              name="Colour"
-              className={styles.selectDropDown} 
-              onChange={(e) => handleChangeColor(e.target.value)}
-            >
-              <option value="h">H</option>
-              <option value="g">G</option>
-              <option value="f">F</option>
-              <option value="e">E</option>
-              <option value="d">D</option>
-            </select>
-        </div>
-
-        <div className={styles.descriptionMobile}>
-          {ring.descriptionMobile}
-        </div>
-
-        <div className={styles.containerGIA}>
-          <Image
-            src={`/GIA_Logo.png`}
-            width={500}
-            height={164.5}
-            alt={`GIA Logo`}
-            quality={100}
-            className={styles.imageGIA}
-          />
-        </div>
-        
+      <div>
+        <video 
+          width={1600} 
+          height={1200} 
+          loop 
+          playsInline 
+          autoPlay 
+          muted
+          className={styles.video}
+        >
+        <source src={`/jewellery/rings/${ring.title}/${ring.title}MP4/${ring.title}${ring.colour}.mp4`} type="video/mp4" />
+        </video>
       </div>
+         
+      <div className={styles.price}>Price: £{price.toFixed(0)}</div>
+      <div className={styles.titleTag}>We Offer Rings of All Sizes</div>  
+
+      <div className={styles.containerShape}>
+        <div>Diamond Shape:</div>
+        <div>{ring.shape}</div>
+      </div>
+
+      {/* <div className={styles.containerSelectLabel}>
+        <div>Carat Size:</div>
+        <select
+          name="carat size"
+          className={styles.selectDropDown} 
+          onChange={(e) => handleChangeSize(e.target.value)}
+        >
+          <option value="1.00">1.00 Carat</option>
+          <option value="1.10">1.10 Carat</option>
+          <option value="1.20">1.20 Carat</option>
+          <option value="1.30">1.30 Carat</option>
+          <option value="1.40">1.40 Carat</option>
+          <option value="1.50">1.50 Carat</option>
+          <option value="1.60">1.60 Carat</option>
+          <option value="1.70">1.70 Carat</option>
+          <option value="1.80">1.80 Carat</option>
+          <option value="1.90">1.90 Carat</option>
+          <option value="2.00">2.00 Carat</option>
+        </select> 
+      </div>
+
+      <div className={styles.containerSelectLabel}>
+      <div>Cut:</div>
+          <select
+            name="cut"
+            className={styles.selectDropDown}
+            onChange={(e) => handleChangeCut(e.target.value)}
+          >
+            <option value="Excellent">Excellent</option>
+            <option value="Very Good">Very Good</option>
+            <option value="Good">Good</option>
+          </select>
+      </div>
+
+      <div className={styles.containerSelectLabel}>
+      <div>Clarity:</div>
+          <select
+            name="Clarity"
+            className={styles.selectDropDown} 
+            onChange={(e) => handleChangeClarity(e.target.value)}
+          >
+            <option value="VS2">Very Small Inclusions (VS2)</option>
+            <option value="VS1">Very Small Inclusions (VS1)</option>
+            <option value="VVS2">Very Very Small Inclusions (VVS2)</option>
+            <option value="VVS1">Very Very Small Inclusions (VVS1)</option>
+            <option value="IF">Internally Flawless (IF)</option>
+          </select>   
+      </div>
+
+      <div className={styles.containerSelectLabel}>
+      <div>Colour:</div>  
+          <select
+            name="Colour"
+            className={styles.selectDropDown} 
+            onChange={(e) => handleChangeColor(e.target.value)}
+          >
+            <option value="h">H</option>
+            <option value="g">G</option>
+            <option value="f">F</option>
+            <option value="e">E</option>
+            <option value="d">D</option>
+          </select>
+      </div>
+
+      <div className={styles.descriptionMobile}>
+        {ring.descriptionMobile}
+      </div> */}
+
+      <div className={styles.containerGIA}>
+        <Image
+          src={`/GIA_Logo.png`}
+          width={500}
+          height={164.5}
+          alt={`GIA Logo`}
+          quality={100}
+          className={styles.imageGIA}
+        />
+      </div>
+        
+    </div>
   )
 }
 
