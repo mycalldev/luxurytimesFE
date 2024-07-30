@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import  { colourClarity } from '../utils/calculator';
 
-export default function RingProductClient( {ringArr, ring} ) {
+export default function RingProductClient({ ring }) {
 
   const [price, setPrice] = useState(5056)
   const [cut, setCut] = useState("Excellent")
@@ -67,14 +67,12 @@ export default function RingProductClient( {ringArr, ring} ) {
    
   }, [color, size, clarity, cut])
 
-  
   const roundBasePrice149 = 79
   const roundBasePrice199 = 55.300041
   const roundBasePrice299 = 55.3
   const pearBasePrice149 = 79
   const pearBasePrice199 = 79
   const pearBasePrice299 = 79
-
 
   const handleChangeSize = (event) => {
     setSize(event)
@@ -99,46 +97,20 @@ export default function RingProductClient( {ringArr, ring} ) {
 
       <div className={styles.titleMain}>{ring.title}</div> 
           
-          <div className={styles.containerTopGrid}>
-              <div className={styles.gridItemSwiper}>
-              <Swiper
-                pagination={true}
-                navigation={true}
-                modules={[Pagination, Navigation]}
-                className={styles.swiper}
-              >
-                <div className={styles.swiperWrapper}>
-                  {ringArr.map((item, index) => (
-                    <SwiperSlide className={styles.swiperSlide} key={index}>
-                      {index === 0 ? (
-                        <div>
-                          <video 
-                            width={1600} 
-                            height={1200} 
-                            loop 
-                            playsInline 
-                            autoPlay 
-                            muted
-                            className={styles.video}
-                          >
-                          <source src={`/jewellery/rings/ring5_yellow.mp4`} type="video/mp4" />
-                          </video>
-                        </div>
-                      ) : (
-                        <Image
-                          src={`/jewellery/rings/${ring.title}${ring.colour}${index}.jpg`}
-                          width={1680}
-                          height={1120}
-                          alt={`${ring.title}`}
-                          quality={100}
-                          className={styles.imageWatch}
-                        />
-                      )}
-                    </SwiperSlide>
-                  ))}
-                </div>
-              </Swiper>
-            </div>
+          <div className={styles.containerTopGrid}>  
+              <div>
+                <video 
+                  width={1600} 
+                  height={1200} 
+                  // loop 
+                  playsInline 
+                  autoPlay 
+                  muted
+                  className={styles.video}
+                >
+                <source src={`/jewellery/rings/${ring.title}/${ring.title}MP4/${ring.title}${ring.colour}.mp4`} type="video/mp4" />
+                </video>
+              </div>
           </div> 
           <div className={styles.price}>Price: £{price.toFixed(0)}</div>
           <div className={styles.titleTag}>We Offer Rings of All Sizes</div>  
