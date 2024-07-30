@@ -39,7 +39,6 @@ export default function RingProductClient({ ring }) {
         else {
           setPrice(colourClarity.Pear299[`${color}${clarity}`] * pearBasePrice299 * size)
         }
-      console.log("Pear Price")
     }
    
   }, [color, size, clarity, cut])
@@ -89,7 +88,7 @@ export default function RingProductClient({ ring }) {
                 </video>
               </div> */}
          
-          <div className={styles.price}>Price: £{price.toFixed(0)}</div>
+          {/* <div className={styles.price}>Price: £{price.toFixed(0)}</div> */}
           <div className={styles.titleTag}>We Offer Rings of All Sizes</div>  
 
           <div className={styles.containerShape}>
