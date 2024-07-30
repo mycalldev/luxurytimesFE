@@ -6,15 +6,14 @@
     display: none;
   }
   
-  .backBTN {
-    margin: 20px 30px;
-    cursor: pointer;
-  }
-  
   .linkBTN {
     text-decoration: none;
     color: #000;
-    font-size: 1.1rem;
+  }
+
+  .backNav {
+    margin: 20px 30px;
+    font-size: 0.9rem;
   }
   
   .linkBTNContact {
@@ -24,11 +23,19 @@
   }
   
   .titleMain {
-      margin: 20px;
+      margin: 20px 20px 10px 20px;
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       font-weight: 100;
       color:#222222;
+  }
+
+  .titleSubMain {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 100;
+    color:#222222;
   }
   
   .imageWatch {

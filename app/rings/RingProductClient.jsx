@@ -68,10 +68,11 @@ export default function RingProductClient({ ring }) {
   return (
     <div className={styles.imageContainer}>
       <Link href={`/rings`} className={styles.linkBTN} prefetch={true}>
-        <div className={styles.backBTN}>{`< Previous`}</div>
+        <div className={styles.backNav}>{`< Previous`}</div>
       </Link>
 
       <div className={styles.titleMain}>{ring.title}</div> 
+      <div className={styles.titleSubMain}>Natural Diamond</div>
           
       <div>
         <video 
@@ -95,7 +96,7 @@ export default function RingProductClient({ ring }) {
         <div>{ring.shape}</div>
       </div>
 
-      {/* <div className={styles.containerSelectLabel}>
+      <div className={styles.containerSelectLabel}>
         <div>Carat Size:</div>
         <select
           name="carat size"
@@ -115,7 +116,7 @@ export default function RingProductClient({ ring }) {
           <option value="2.00">2.00 Carat</option>
         </select> 
       </div>
-
+{/*
       <div className={styles.containerSelectLabel}>
       <div>Cut:</div>
           <select
