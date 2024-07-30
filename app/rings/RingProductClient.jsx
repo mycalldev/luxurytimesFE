@@ -3,9 +3,6 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './RingProductClient.module.css';
-import axios from 'axios';
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -19,26 +16,6 @@ export default function RingProductClient({ ring }) {
   const [color, setColor] = useState("h")
   const [clarity, setClarity] = useState("VS2")
   
-  // const accessToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16aERRMFExTURFeVJqSTNRa0k0TTBGRVJUZzFNekUzTWtOQ09UTXhNREZDTVVZM1JURkNNZyJ9.eyJodHRwOi8vcmFwYXBvcnQuY29tL3VzZXIiOnsiYWNjb3VudElkIjoxMjY4ODh9LCJodHRwOi8vcmFwYXBvcnQuY29tL3Njb3BlIjpbIm1hbmFnZUxpc3RpbmdzIiwicHJpY2VMaXN0V2Vla2x5Il0sImh0dHA6Ly9yYXBhcG9ydC5jb20vYXBpa2V5Ijp7Imh0dHBzOi8vbWVkaWF1cGxvYWQucmFwbmV0YXBpcy5jb20iOiJGUTFMU25naWZxNzFFbGVpRzR4UGY2bkp4Z3VDWXBhVjVhUE9jVlpKIiwiaHR0cHM6Ly9wcmljZWxpc3QucmFwbmV0YXBpcy5jb20iOiIydHdxdFhKMEdYYTZxckVrTzBrVFkxblIwbmQydk9mMzV1Q0t4eHNkIiwiaHR0cHM6Ly91cGxvYWRsb3RzLnJhcG5ldGFwaXMuY29tIjoid0JzZFR1YUFNUXo1RVN2aTlYdVY2STF5WlNQdE5Nb0R4cnEyR2hpMCJ9LCJodHRwOi8vcmFwYXBvcnQuY29tL2F1ZGllbmNlIjpbImh0dHBzOi8vdXBsb2FkbG90cy5yYXBuZXRhcGlzLmNvbSIsImh0dHBzOi8vcHJpY2VsaXN0LnJhcG5ldGFwaXMuY29tIiwiaHR0cHM6Ly9tZWRpYXVwbG9hZC5yYXBuZXRhcGlzLmNvbSIsImh0dHBzOi8vYXBpZ2F0ZXdheS5yYXBuZXRhcGlzLmNvbSJdLCJodHRwOi8vcmFwYXBvcnQuY29tL3Blcm1pc3Npb25zIjp7InJhcG5ldGFwaXMtYXBpZ2F0ZXdheSI6WyJtZW1iZXJEaXJlY3RvcnkiLCJzZWFyY2giLCJpbnN0YW50SW52ZW50b3J5U2V0dXAiLCJtYW5hZ2VMaXN0aW5nc0ZpbGUiLCJidXlSZXF1ZXN0c0FkZCIsIml0ZW1TaGFyZWQiLCJ0cmFkZUNlbnRlciIsIm15Q29udGFjdHMiLCJtZW1iZXJSYXRpbmciLCJjaGF0IiwibWFuYWdlTGlzdGluZ3MiLCJwcmljZUxpc3RXZWVrbHkiLCJwcmljZUxpc3RNb250aGx5IiwicmFwbmV0UHJpY2VMaXN0V2Vla2x5IiwiYmFzaWMiLCJyYXBuZXRQcmljZUxpc3RNb250aGx5IiwicmFwbmV0SmV3ZWxlciIsImxlYWRzIiwiYWRtaW4iLCJidXlSZXF1ZXN0cyJdfSwiaXNzIjoiaHR0cHM6Ly9yYXBhcG9ydC5hdXRoMC5jb20vIiwic3ViIjoiYVJnc2JzNmJPMWo5dkM0NzZZVG5LMGNZM2NFYmhBSUhAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vYXBpZ2F0ZXdheS5yYXBuZXRhcGlzLmNvbSIsImlhdCI6MTcxOTA1MDU0NSwiZXhwIjoxNzE5MTM2OTQ1LCJzY29wZSI6ImFwaUdhdGV3YXkiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMiLCJhenAiOiJhUmdzYnM2Yk8xajl2QzQ3NllUbkswY1kzY0ViaEFJSCJ9.MnYQ9TCYNNO1JhXVCQdkch15refmwdZf6vICcIgry8B4itqE73lX6DlX3ST57MfaRA5uw0uZdr2Zxsv5rz23GPoQpgXxTSzRYoWePJ2ubIT_2VqfCgmcs5BK8owhYfbJTiMkGBD80hKUZvaKyaimHvVE71XH-_aXbZu399RuIYXFED8LBNt5zT1GDT06MoPL7uhPp4BDeHd71q9f0z5Z8tFN_8xLMsQyHZeP7fGYWGdQlFK427oqZr0lR76tJOtUmBvYSP95I8p4nmx6bFAyTA4vbAa8GMrqWbwyz7KTGuCtiMiUlXiIe20gYc8e686r8GE-ZeWxJ2XNsyy6Hz02hw" 
-  // const url = `https://technet.rapnetapis.com/pricelist/api/Prices?shape=Round&size=${size}&color=${color}&clarity=${clarity}`
-  // useEffect(() => {
-  //     axios.get(url, {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         "Accept": "application/json",
-  //         "Authorization": `Bearer ${accessToken}`
-  //       }
-  //     }).then((res) => {
-  //       const price = res.data.caratprice
-  //       const truncPrice = Math.trunc(price)
-  //       setPrice(truncPrice)
-  //       console.log("this has ran")
-  //     }).catch((err) => {
-  //       console.log("this is the error" + err)
-  // });
-      
-
-  // },[size, color, clarity, shape])
 
   useEffect(() => {
     if(ring.shape === "Round"){
@@ -97,7 +74,7 @@ export default function RingProductClient({ ring }) {
 
       <div className={styles.titleMain}>{ring.title}</div> 
           
-        <div className={styles.containerTopGrid}>  
+       
               {/* <div>
                 <video 
                   width={1600} 
@@ -111,7 +88,7 @@ export default function RingProductClient({ ring }) {
                 <source src={`/jewellery/rings/${ring.title}/${ring.title}MP4/${ring.title}${ring.colour}.mp4`} type="video/mp4" />
                 </video>
               </div> */}
-        </div> 
+         
           <div className={styles.price}>Price: £{price.toFixed(0)}</div>
           <div className={styles.titleTag}>We Offer Rings of All Sizes</div>  
 
@@ -155,7 +132,6 @@ export default function RingProductClient({ ring }) {
         </div>
         <div className={styles.containerSelectLabel}>
         <div>Clarity:</div>
-            
             <select
               name="Clarity"
               className={styles.selectDropDown} 
@@ -166,8 +142,7 @@ export default function RingProductClient({ ring }) {
               <option value="VVS2">Very Very Small Inclusions (VVS2)</option>
               <option value="VVS1">Very Very Small Inclusions (VVS1)</option>
               <option value="IF">Internally Flawless (IF)</option>
-            </select>
-            
+            </select>   
         </div>
         <div className={styles.containerSelectLabel}>
         <div>Colour:</div>  
@@ -202,3 +177,24 @@ export default function RingProductClient({ ring }) {
       </div>
   )
 }
+
+// const accessToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16aERRMFExTURFeVJqSTNRa0k0TTBGRVJUZzFNekUzTWtOQ09UTXhNREZDTVVZM1JURkNNZyJ9.eyJodHRwOi8vcmFwYXBvcnQuY29tL3VzZXIiOnsiYWNjb3VudElkIjoxMjY4ODh9LCJodHRwOi8vcmFwYXBvcnQuY29tL3Njb3BlIjpbIm1hbmFnZUxpc3RpbmdzIiwicHJpY2VMaXN0V2Vla2x5Il0sImh0dHA6Ly9yYXBhcG9ydC5jb20vYXBpa2V5Ijp7Imh0dHBzOi8vbWVkaWF1cGxvYWQucmFwbmV0YXBpcy5jb20iOiJGUTFMU25naWZxNzFFbGVpRzR4UGY2bkp4Z3VDWXBhVjVhUE9jVlpKIiwiaHR0cHM6Ly9wcmljZWxpc3QucmFwbmV0YXBpcy5jb20iOiIydHdxdFhKMEdYYTZxckVrTzBrVFkxblIwbmQydk9mMzV1Q0t4eHNkIiwiaHR0cHM6Ly91cGxvYWRsb3RzLnJhcG5ldGFwaXMuY29tIjoid0JzZFR1YUFNUXo1RVN2aTlYdVY2STF5WlNQdE5Nb0R4cnEyR2hpMCJ9LCJodHRwOi8vcmFwYXBvcnQuY29tL2F1ZGllbmNlIjpbImh0dHBzOi8vdXBsb2FkbG90cy5yYXBuZXRhcGlzLmNvbSIsImh0dHBzOi8vcHJpY2VsaXN0LnJhcG5ldGFwaXMuY29tIiwiaHR0cHM6Ly9tZWRpYXVwbG9hZC5yYXBuZXRhcGlzLmNvbSIsImh0dHBzOi8vYXBpZ2F0ZXdheS5yYXBuZXRhcGlzLmNvbSJdLCJodHRwOi8vcmFwYXBvcnQuY29tL3Blcm1pc3Npb25zIjp7InJhcG5ldGFwaXMtYXBpZ2F0ZXdheSI6WyJtZW1iZXJEaXJlY3RvcnkiLCJzZWFyY2giLCJpbnN0YW50SW52ZW50b3J5U2V0dXAiLCJtYW5hZ2VMaXN0aW5nc0ZpbGUiLCJidXlSZXF1ZXN0c0FkZCIsIml0ZW1TaGFyZWQiLCJ0cmFkZUNlbnRlciIsIm15Q29udGFjdHMiLCJtZW1iZXJSYXRpbmciLCJjaGF0IiwibWFuYWdlTGlzdGluZ3MiLCJwcmljZUxpc3RXZWVrbHkiLCJwcmljZUxpc3RNb250aGx5IiwicmFwbmV0UHJpY2VMaXN0V2Vla2x5IiwiYmFzaWMiLCJyYXBuZXRQcmljZUxpc3RNb250aGx5IiwicmFwbmV0SmV3ZWxlciIsImxlYWRzIiwiYWRtaW4iLCJidXlSZXF1ZXN0cyJdfSwiaXNzIjoiaHR0cHM6Ly9yYXBhcG9ydC5hdXRoMC5jb20vIiwic3ViIjoiYVJnc2JzNmJPMWo5dkM0NzZZVG5LMGNZM2NFYmhBSUhAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vYXBpZ2F0ZXdheS5yYXBuZXRhcGlzLmNvbSIsImlhdCI6MTcxOTA1MDU0NSwiZXhwIjoxNzE5MTM2OTQ1LCJzY29wZSI6ImFwaUdhdGV3YXkiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMiLCJhenAiOiJhUmdzYnM2Yk8xajl2QzQ3NllUbkswY1kzY0ViaEFJSCJ9.MnYQ9TCYNNO1JhXVCQdkch15refmwdZf6vICcIgry8B4itqE73lX6DlX3ST57MfaRA5uw0uZdr2Zxsv5rz23GPoQpgXxTSzRYoWePJ2ubIT_2VqfCgmcs5BK8owhYfbJTiMkGBD80hKUZvaKyaimHvVE71XH-_aXbZu399RuIYXFED8LBNt5zT1GDT06MoPL7uhPp4BDeHd71q9f0z5Z8tFN_8xLMsQyHZeP7fGYWGdQlFK427oqZr0lR76tJOtUmBvYSP95I8p4nmx6bFAyTA4vbAa8GMrqWbwyz7KTGuCtiMiUlXiIe20gYc8e686r8GE-ZeWxJ2XNsyy6Hz02hw" 
+  // const url = `https://technet.rapnetapis.com/pricelist/api/Prices?shape=Round&size=${size}&color=${color}&clarity=${clarity}`
+  // useEffect(() => {
+  //     axios.get(url, {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "Accept": "application/json",
+  //         "Authorization": `Bearer ${accessToken}`
+  //       }
+  //     }).then((res) => {
+  //       const price = res.data.caratprice
+  //       const truncPrice = Math.trunc(price)
+  //       setPrice(truncPrice)
+  //       console.log("this has ran")
+  //     }).catch((err) => {
+  //       console.log("this is the error" + err)
+  // });
+      
+
+  // },[size, color, clarity, shape])
