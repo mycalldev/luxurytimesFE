@@ -196,6 +196,14 @@ export default function RingProductClient({ ring }) {
           quality={100}
           className={styles.imageGIA}
         />
+        <div className={styles.textGIA}>
+          The Gemological Institute of America (GIA) certification is the gold standard in the diamond industry, 
+          renowned for its meticulous and unbiased evaluation of diamonds. A GIA-certified diamond undergoes a rigorous assessment process, 
+          ensuring its quality, authenticity, and value. Each certified diamond is accompanied by a detailed grading 
+          report that outlines its key characteristics, including the 4Cs: cut, color, clarity, and carat weight. 
+          This certification provides buyers with confidence and peace of mind, knowing they are purchasing a diamond that meets 
+          the highest standards of integrity and excellence. 
+          Trust in GIA certification means investing in a gemstone of verified beauty and enduring value.</div>
       </div>
         
     </div>

@@ -28,7 +28,7 @@
     width: 80%;
     margin: auto;
     padding: 18px 0;
-    border: 1px solid #606060;
+    border: 1px solid #bababa;
     cursor: pointer;
   }
   
@@ -53,8 +53,14 @@
       height: auto;
   }
 
+  .containerGIA {
+    width: 80%;
+    margin: 40px auto;
+    border: 1px solid #bababa
+  }
+
   .imageGIA {
-      width: 40%;
+      width: 30%;
       height: auto;
       margin: 20px;
   }
@@ -152,9 +158,9 @@
     font-size: 0.9rem;
   }
 
-  /* .textRingShape {
-    color: #717171;
-  } */
+  .textGIA {
+    padding: 0 20px 20px 20px;
+  }
 
   @media (min-width: 1024px) {
 
