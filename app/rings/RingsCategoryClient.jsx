@@ -7,8 +7,8 @@ import styles from './rings.module.css'
 
 export default function RingsCategoryClient({ rings }){
 
-    const [filteredColour, setFilteredColour] = useState('')
-    const [toggle, setToggle] = useState(true)
+    const [filteredColour, setFilteredColour] = useState('White')
+    const [toggle, setToggle] = useState(false)
 
     const handleChange = (event) => {
         setFilteredColour(event)
@@ -50,10 +50,11 @@ export default function RingsCategoryClient({ rings }){
                     className={styles.selectSize}
                     onChange={(e) => handleChange(e.target.value)}
                 >
-                    <option value='All'>All</option>
+          
+                    <option value='White'>White</option>
                     <option value='Yellow'>Yellow</option>
                     <option value='Rose'>Rose</option>
-                    <option value='White'>White</option>
+                    <option value='All'>All</option>
 
                 </select>
                 </label>
@@ -78,11 +79,6 @@ export default function RingsCategoryClient({ rings }){
             </div>
             <h2 className={styles.titleRing}>{ring.title}</h2>
             
-            {/* <Link href={`/rolex/all-watches/${ring._id}`} prefetch={true} className={styles.linkBTN}>  */}
-              {/* <div className={styles.viewDetailsBTNMobile}>
-                  <h4>VIEW</h4>
-              </div> */}
-            {/* </Link> */}
           </div>
         )) : (
             rings.filter(ring => ring.colour == filteredColour).map((ring) => (
