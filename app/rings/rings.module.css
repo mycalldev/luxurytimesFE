@@ -41,10 +41,12 @@
 }
 
 .titleRing {
-    margin: -10px 10px 20px 10px;
+    margin: 50px 10px -20px 10px;
     text-align: center;
     font-size: 1.1rem;
-    font-weight: 100;
+    font-weight: 300;
+    z-index: 1000;
+    position: relative;
 }
 
 .catDescription {
@@ -139,7 +141,7 @@
         display: grid;
         grid-template-columns: 50% 50%;
         justify-content: center;
-        width: 100%;
+        width: 60%;
         margin: auto;
     }
 }

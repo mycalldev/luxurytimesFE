@@ -44,7 +44,7 @@ export default function RingsCategoryClient({ rings }){
             </div>
             </div>
             <div className={styles.selectSizeContainer}>
-                <label htmlFor="Colour">Colour:
+                <label htmlFor="Colour">Select Colour:
                 <select
                     name="Ring Colour"
                     className={styles.selectSize}
@@ -86,6 +86,8 @@ export default function RingsCategoryClient({ rings }){
             key={ring._id}
             >
             <div className={styles.imageContainer}>
+            <h2 className={styles.titleRing}>{ring.title}</h2>
+
               <Link href={`/rings/${ring._id}`} prefetch={true}> 
                 <Image
                   src={`/jewellery/rings/${ring.title}/${ring.title}${ring.colour}1.jpg`}
@@ -97,7 +99,6 @@ export default function RingsCategoryClient({ rings }){
                 />
               </Link>
             </div>
-            <h2 className={styles.titleRing}>{ring.title}</h2>
             
             </div>
             ))
