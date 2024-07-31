@@ -98,11 +98,11 @@ export default function RingProductClient({ ring }) {
       
       <div className={styles.textDropdown}>Select from the drop-down menu to update the price:</div>
       
-      <div className={styles.headerDropdown}>CARAT SIZE</div>
-      <div className={styles.containerSelectLabel} align={'center'}>
+      <div className={styles.textLabel}>CARAT SIZE</div>
+      <div className={styles.selectionContainer} align={'center'}>
         <select
           name="carat size"
-          className={styles.selectDropDown} 
+          className={styles.dropdown} 
           onChange={(e) => handleChangeSize(e.target.value)}
         >
           <option value="1.00">1.00 Carat</option>
@@ -120,11 +120,11 @@ export default function RingProductClient({ ring }) {
       </div>
       
 
-      <div className={styles.headerDropdown}>CUT</div>
-      <div className={styles.containerSelectLabel} align={'center'}>
+      <div className={styles.textLabel}>CUT</div>
+      <div className={styles.selectionContainer} align={'center'}>
           <select
             name="cut"
-            className={styles.selectDropDown}
+            className={styles.dropdown}
             onChange={(e) => handleChangeCut(e.target.value)}
           >
             <option value="Excellent">Excellent</option>
@@ -133,11 +133,11 @@ export default function RingProductClient({ ring }) {
           </select>
       </div>
 
-      <div className={styles.headerDropdown}>CLARITY</div>
-      <div className={styles.containerSelectLabel} align={'center'}>
+      <div className={styles.textLabel}>CLARITY</div>
+      <div className={styles.selectionContainer} align={'center'}>
           <select
             name="Clarity"
-            className={styles.selectDropDown} 
+            className={styles.dropdown} 
             onChange={(e) => handleChangeClarity(e.target.value)}
           >
             <option value="VS2">Very Small Inclusions (VS2)</option>
@@ -148,27 +148,38 @@ export default function RingProductClient({ ring }) {
           </select>   
       </div>
 
-      <div className={styles.headerDropdown}>COLOUR</div>  
-      <div className={styles.containerSelectLabel} align={'center'}>
-          <select
-            name="Colour"
-            className={styles.selectDropDown} 
-            onChange={(e) => handleChangeColor(e.target.value)}
-          >
-            <option value="h">H</option>
-            <option value="g">G</option>
-            <option value="f">F</option>
-            <option value="e">E</option>
-            <option value="d">D</option>
-          </select>
+      
+      <div className={styles.textLabel}>COLOUR</div> 
+
+      <div className={styles.selectionContainer} align={'center'}>
+        <select
+              name="Colour"
+              className={styles.dropdown} 
+              onChange={(e) => handleChangeColor(e.target.value)}
+            >
+              <option value="h">H</option>
+              <option value="g">G</option>
+              <option value="f">F</option>
+              <option value="e">E</option>
+              <option value="d">D</option>
+        </select>
+        <Image
+          src={`/down-arrow.png`}
+          width={32}
+          height={32}
+          alt={`GIA Logo`}
+          quality={100}
+          className={styles.arrow}
+        />
+        {/* <div className={styles.arrow}></div> */}
       </div>
 
 
-      <div className={styles.headerDropdown}>METAL TYPE</div>  
-      <div className={styles.containerSelectLabel} align={'center'}>
+      <div className={styles.textLabel}>METAL TYPE</div>  
+      <div className={styles.selectionContainer} align={'center'}>
           <select
             name="Metal Type"
-            className={styles.selectDropDown} 
+            className={styles.dropdown} 
             onChange={(e) => handleChangeColor(e.target.value)}
           >
             <option value="">{ring.metal}</option>
@@ -205,7 +216,6 @@ export default function RingProductClient({ ring }) {
           the highest standards of integrity and excellence. 
           Trust in GIA certification means investing in a gemstone of verified beauty and enduring value.</div>
       </div>
-        
     </div>
   )
 }
