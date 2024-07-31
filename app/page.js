@@ -95,14 +95,16 @@ export default async function Home() {
       </section>
 
       <section>
-        <Image
-          src={`/jewellery/engagement.jpg`}
-          width={3320}
-          height={2213}
-          alt={'hero image of rings'}
-          className={styles.imageRing}
-          quality={100}
-        />
+        <Link href={"/rings"} prefetch={true}>
+          <Image
+            src={`/jewellery/engagement.jpg`}
+            width={3320}
+            height={2213}
+            alt={'hero image of rings'}
+            className={styles.imageRing}
+            quality={100}
+          />
+        </Link>
       </section>
             
 
