@@ -117,6 +117,14 @@ export default function RingProductClient({ ring }) {
           <option value="1.90">1.90 Carat</option>
           <option value="2.00">2.00 Carat</option>
         </select> 
+        <Image
+          src={`/down-arrow.png`}
+          width={32}
+          height={32}
+          alt={`GIA Logo`}
+          quality={100}
+          className={styles.arrow}
+        />
       </div>
       
 
@@ -131,6 +139,14 @@ export default function RingProductClient({ ring }) {
             <option value="Very Good">Very Good</option>
             <option value="Good">Good</option>
           </select>
+          <Image
+            src={`/down-arrow.png`}
+            width={32}
+            height={32}
+            alt={`GIA Logo`}
+            quality={100}
+            className={styles.arrow}
+          />
       </div>
 
       <div className={styles.textLabel}>CLARITY</div>
@@ -145,7 +161,15 @@ export default function RingProductClient({ ring }) {
             <option value="VVS2">Very Very Small Inclusions (VVS2)</option>
             <option value="VVS1">Very Very Small Inclusions (VVS1)</option>
             <option value="IF">Internally Flawless (IF)</option>
-          </select>   
+          </select> 
+          <Image
+            src={`/down-arrow.png`}
+            width={32}
+            height={32}
+            alt={`GIA Logo`}
+            quality={100}
+            className={styles.arrow}
+          />  
       </div>
 
       
@@ -171,9 +195,7 @@ export default function RingProductClient({ ring }) {
           quality={100}
           className={styles.arrow}
         />
-        {/* <div className={styles.arrow}></div> */}
       </div>
-
 
       <div className={styles.textLabel}>METAL TYPE</div>  
       <div className={styles.selectionContainer} align={'center'}>
@@ -185,6 +207,14 @@ export default function RingProductClient({ ring }) {
             <option value="">{ring.metal}</option>
             
           </select>
+          <Image
+            src={`/down-arrow.png`}
+            width={32}
+            height={32}
+            alt={`GIA Logo`}
+            quality={100}
+            className={styles.arrow}
+          />
       </div>
 
       <div className={styles.descriptionMobile}>
