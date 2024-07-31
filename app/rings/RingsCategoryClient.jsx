@@ -31,22 +31,15 @@ export default function RingsCategoryClient({ rings }){
               width={3320}
               height={2213}
               alt={'hero image of rings'}
-              className={styles.imageRing}
+              className={styles.imageRingHero}
               quality={100}
             />
 
             {/* <h1 className={styles.titleMain}>ENGAGEMENT RING COLLECTION</h1> */}
 
             <div className={styles.contentTopContainer}>
-            <p className={styles.catDescription}>
-                A beautiful collection of bespoke Gold and Platinum 
-                engagement rings for the perfect moment
-            </p>
             
-            {/* CTA  */}
-            <div className={styles.contactDetailsBTNMobile}>
-                <Link href="tel:07718269994" className={styles.linkBTN} prefetch={true}>CONTACT</Link>
-            </div>
+            
             <div className={styles.contactBTNDesktop}>
                 <h3 className={styles.contactReview}>CONTACT</h3>
                 <div>07718 269 994</div>
@@ -113,6 +106,18 @@ export default function RingsCategoryClient({ rings }){
             ))
            )        
         }
+      </div>
+      {/* CTA  */}
+      <div className={styles.contactDetailsBTNMobile}>
+        <Link href="tel:07976753254" className={styles.linkBTN} prefetch={true}>CONTACT</Link>
+      </div>
+      <div className={styles.heroBtn}>
+        <Link
+          href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
+          className={styles.linkBTN}
+        >
+          WHATSAPP
+        </Link>
       </div>
     </main>
     )

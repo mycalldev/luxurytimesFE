@@ -183,7 +183,7 @@ export default function RingProductClient({ ring }) {
       <div className={styles.priceAdditional}>£{price.toFixed(0)}</div>
       <div className={styles.textDropdown}>The price is inclusive of VAT and delivery</div>
       
-      <Link href="tel:07718269994" className={styles.linkBTN}>
+      <Link href="tel:07976753254" className={styles.linkBTN}>
        <div className={styles.BTNappointment} align="center">Request an Appointment</div>
       </Link>
 
