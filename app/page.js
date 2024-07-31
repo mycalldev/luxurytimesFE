@@ -93,7 +93,9 @@ export default async function Home() {
             </Link>
           </div>
       </section>
-
+      
+      
+      {/* RINGS SECTION
       <section>
         <Link href={"/rings"} prefetch={true}>
           <Image
@@ -105,7 +107,7 @@ export default async function Home() {
             quality={100}
           />
         </Link>
-      </section>
+      </section> */}
             
 
       {/* GUIDES SECTION */}

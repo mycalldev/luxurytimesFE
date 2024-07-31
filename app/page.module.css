@@ -380,6 +380,12 @@
     grid-template-columns: 50% 50%;
   }
 
+  .imageRing {
+   width: 80%;
+   height: auto;
+   padding: 40px;
+  }
+
   .imageGuidesDesktop {
     display: block;
     margin: auto;
