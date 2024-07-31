@@ -108,18 +108,13 @@
       width:80%;
       padding: 20px;
       margin: 10px auto 20px auto;
+      -webkit-appearance: none;
   }
 
   /* .containerSelectLabel {
     
   } */
-  .select {
-    -webkit-appearance: none;
-  }
 
-  .option {
-    -webkit-appearance: none;
-  }
 
   .containerShape {
     display: grid;
