@@ -20,18 +20,27 @@ export default function RingsCategoryClient({ rings }){
 
     return (
         <main>
-            <Link href={'/'} className={styles.backLinkBTN} prefetch={true}>
+            {/* <Link href={'/'} className={styles.backLinkBTN} prefetch={true}>
                 <div className={styles.backNav}>
                     {'< Home'}
                 </div>
-            </Link>
+            </Link> */}
 
-            <h1 className={styles.titleMain}>ENGAGEMENT RINGS COLLECTION</h1>
+            <Image
+              src={`/jewellery/engagement.jpg`}
+              width={3320}
+              height={2213}
+              alt={'hero image of rings'}
+              className={styles.imageRing}
+              quality={100}
+            />
+
+            {/* <h1 className={styles.titleMain}>ENGAGEMENT RING COLLECTION</h1> */}
 
             <div className={styles.contentTopContainer}>
             <p className={styles.catDescription}>
-                A Beautiful Collection of Bespoke Gold and Platinum 
-                Engagement Rings for the Perfect Moment in Time
+                A beautiful collection of bespoke Gold and Platinum 
+                engagement rings for the perfect moment
             </p>
             
             {/* CTA  */}
