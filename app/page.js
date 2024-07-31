@@ -47,7 +47,7 @@ export default async function Home() {
 
       {/* MOBILE CONTACT */}
       <div className={styles.contactBTNContainerMobile}>
-        <Link href="tel:07718269994" className={styles.linkBTN} >
+        <Link href="tel:07718269994" className={styles.linkBTN}>
             <div className={styles.contactBTN}>CONTACT</div>
         </Link>
       </div>

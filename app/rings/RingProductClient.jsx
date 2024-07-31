@@ -88,16 +88,18 @@ export default function RingProductClient({ ring }) {
         </video>
       </div>
          
-      <div className={styles.price}>Price: £{price.toFixed(0)}</div>
-      <div className={styles.titleTag}>We Offer Rings of All Sizes</div>  
+      <div className={styles.price}>TOTAL PRICE: <span>£{price.toFixed(0)}</span></div>
+      {/* <div className={styles.titleTag}>We Offer Rings of All Sizes</div>   */}
 
-      <div className={styles.containerShape}>
+      {/* <div className={styles.containerShape}>
         <div>Diamond Shape:</div>
-        <div>{ring.shape}</div>
-      </div>
+        <div className={styles.textRingShape}>{ring.shape}</div>
+      </div> */}
       
+      <div className={styles.textDropdown}>Select from the drop-down menu to update the price:</div>
+      
+      <div className={styles.headerDropdown}>CARAT SIZE</div>
       <div className={styles.containerSelectLabel} align={'center'}>
-        <div>Carat Size:</div>
         <select
           name="carat size"
           className={styles.selectDropDown} 
@@ -118,8 +120,8 @@ export default function RingProductClient({ ring }) {
       </div>
       
 
+      <div className={styles.headerDropdown}>CUT</div>
       <div className={styles.containerSelectLabel} align={'center'}>
-      <div>Cut:</div>
           <select
             name="cut"
             className={styles.selectDropDown}
@@ -131,8 +133,8 @@ export default function RingProductClient({ ring }) {
           </select>
       </div>
 
+      <div className={styles.headerDropdown}>CLARITY</div>
       <div className={styles.containerSelectLabel} align={'center'}>
-      <div>Clarity:</div>
           <select
             name="Clarity"
             className={styles.selectDropDown} 
@@ -146,8 +148,8 @@ export default function RingProductClient({ ring }) {
           </select>   
       </div>
 
+      <div className={styles.headerDropdown}>COLOUR</div>  
       <div className={styles.containerSelectLabel} align={'center'}>
-      <div>Colour:</div>  
           <select
             name="Colour"
             className={styles.selectDropDown} 
@@ -161,9 +163,29 @@ export default function RingProductClient({ ring }) {
           </select>
       </div>
 
+
+      <div className={styles.headerDropdown}>METAL TYPE</div>  
+      <div className={styles.containerSelectLabel} align={'center'}>
+          <select
+            name="Metal Type"
+            className={styles.selectDropDown} 
+            onChange={(e) => handleChangeColor(e.target.value)}
+          >
+            <option value="">{ring.metal}</option>
+            
+          </select>
+      </div>
+
       <div className={styles.descriptionMobile}>
         {ring.descriptionMobile}
       </div> 
+
+      <div className={styles.priceAdditional}>£{price.toFixed(0)}</div>
+      <div className={styles.textDropdown}>The price is inclusive of VAT and delivery</div>
+      
+      <Link href="tel:07718269994" className={styles.linkBTN}>
+       <div className={styles.BTNappointment} align="center">Request an Appointment</div>
+      </Link>
 
       <div className={styles.containerGIA}>
         <Image
