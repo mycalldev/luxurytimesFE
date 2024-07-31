@@ -94,7 +94,7 @@ export default async function Home() {
           </div>
       </section>
       
-      <section>
+      {/* <section>
         <Link href={"/rings"} prefetch={true}>
           <Image
             src={`/jewellery/engagement.jpg`}
@@ -105,7 +105,7 @@ export default async function Home() {
             quality={100}
           />
         </Link>
-      </section>
+      </section> */}
             
 
       {/* GUIDES SECTION */}
