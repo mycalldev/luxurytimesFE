@@ -113,6 +113,13 @@
   /* .containerSelectLabel {
     
   } */
+  .select {
+    -webkit-appearance: none;
+  }
+
+  .option {
+    -webkit-appearance: none;
+  }
 
   .containerShape {
     display: grid;
