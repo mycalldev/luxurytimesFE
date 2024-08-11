@@ -47,6 +47,14 @@
     font-weight: 100;
     color:#222222;
   }
+
+  .titleSub {
+    margin: 20px 20px 10px 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 100;
+    color:#222222;
+  }
   
   .imageWatch {
       width: 100%;
@@ -64,6 +72,12 @@
       height: auto;
       margin: 20px;
   }
+
+  .imageBourse {
+    width: 50%;
+    height: auto;
+    margin: 20px;
+}
   
   .description {
       margin: 0px 30px 10px 40px;
@@ -101,7 +115,41 @@
     font-weight: 1.3rem;
   }
 
-  
+  .containerGridDropdown {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    padding: 0 20px;
+  }
+
+  .containerModal {
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    background-color: #eeeeee;
+  }
+
+  .titleModal {
+    text-align: center;
+    margin: 20px;
+    font-size: 1.5rem;
+    color:#3b8ab8;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+  }
+
+  .contentModel {
+    text-align: start;
+    padding: 20px 20px 40px 20px;
+    color: #222222;
+    line-height: 1.3;
+  }
+
+  .modal {
+    background-color: #dcdcdc;
+    color: #fff;
+    z-index: 1000;
+  }
+
   .selectionContainer {
     position: relative;
     width: 100%;
@@ -111,7 +159,7 @@
     text-align: start;
     background-color: #f1f1f1;
     border-radius: 2px;
-    width:80%;
+    width:90%;
     padding: 20px;
     margin: 10px auto 20px auto;
     -webkit-appearance: none;
@@ -119,15 +167,22 @@
   
   .arrow {
     position: absolute;
-    z-index: 1000;
+    z-index: 900;
     top: 35px;
-    left: 300px;
+    left: 220px;
     margin-bottom: -3px;
     height: 0;
     width: 0;
     border-top: 6px solid black;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
+  }
+
+  .containerLetterI {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
   }
 
   .containerShape {

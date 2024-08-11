@@ -43,7 +43,7 @@ export default function BuyingRolex() {
         </div>
 
         <div className={styles.intro}>
-        It’s pertinent to note that in the older versions of Rolex models you needed to remove the bracelet links if you wanted to adjust the size to accommodate a smaller wrist. Times have moved on and Rolex first introduced a Glide Lock Clasp feature in 2008 to allow for a fitted timepiece without the requirement of missing links. Therefore, if you are purchasing a newer model Rolex, ensure that there are no missing links. 
+        It&apos;s pertinent to note that in the older versions of Rolex models you needed to remove the bracelet links if you wanted to adjust the size to accommodate a smaller wrist. Times have moved on and Rolex first introduced a Glide Lock Clasp feature in 2008 to allow for a fitted timepiece without the requirement of missing links. Therefore, if you are purchasing a newer model Rolex, ensure that there are no missing links. 
         </div>
 
         <div className={styles.braceletJubilee}>
@@ -64,8 +64,8 @@ export default function BuyingRolex() {
 
         <div className={styles.intro}>
         With the most important factor covered we shall now move on to the fun stuff….
-        In most recent times, Rolex have focused their efforts on the Bezel. Rolex now comprise their very own ‘in house’ material called Cerachrom to manufacture the bezel. Cerachrom is unique to the watch market and carries many advantages. 
-        On face value you may notice an array of differing colours accompanied with a particular Rolex model’s Bezel. Colour is a great way to catch the eye of a passer by or indeed, exude vibrance. Rolex recognised this attribute as fundamental to their brand and have implemented a multitude of models to follow suit with their attention grabbing marketing plan.
+        In most recent times, Rolex have focused their efforts on the Bezel. Rolex now comprise their very own &apos;in house&apos; material called Cerachrom to manufacture the bezel. Cerachrom is unique to the watch market and carries many advantages. 
+        On face value you may notice an array of differing colours accompanied with a particular Rolex model&apos;s Bezel. Colour is a great way to catch the eye of a passer by or indeed, exude vibrance. Rolex recognised this attribute as fundamental to their brand and have implemented a multitude of models to follow suit with their attention grabbing marketing plan.
 
         </div>
 
@@ -78,7 +78,7 @@ export default function BuyingRolex() {
         </div>
 
         <div className={styles.intro}>
-        In Addition to the colour variety, Rolex have added functional use cases to the bezel. For instance, the Submariner model’s bezel is unidirectional. Meaning that the bezel can only be rotated in 1 direction (anti-clockwise). This is a diver’s watch and the reason for the single anti-clockwise rotation is a safety mechanism built in to protect the diver. I find this to be very intuitive on behalf of Rolex and offers an insight into their attention to detail. Additionally, other Rolex models such as the GMT-Master II  comprise a bi-directinal bezel, rotating in both anti-clockwise and clockwise. Again, there is a good reason for this…. 
+        In Addition to the colour variety, Rolex have added functional use cases to the bezel. For instance, the Submariner model&apos;s bezel is unidirectional. Meaning that the bezel can only be rotated in 1 direction (anti-clockwise). This is a diver’s watch and the reason for the single anti-clockwise rotation is a safety mechanism built in to protect the diver. I find this to be very intuitive on behalf of Rolex and offers an insight into their attention to detail. Additionally, other Rolex models such as the GMT-Master II  comprise a bi-directinal bezel, rotating in both anti-clockwise and clockwise. Again, there is a good reason for this…. 
         </div>
 
         <div className={styles.quote}>
