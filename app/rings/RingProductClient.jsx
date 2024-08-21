@@ -78,94 +78,203 @@ export default function RingProductClient({ ring }) {
       <Link href={`/rings`} className={styles.linkBTN} prefetch={true}>
         <div className={styles.backNav}>{`< Previous`}</div>
       </Link>
-
-      <div className={styles.titleMain}>{ring.title}</div> 
-      <div className={styles.titleSubMain}>Natural Diamond</div>
-          
-      <div>
-        <video 
-          width={1600} 
-          height={1200} 
-          loop 
-          playsInline 
-          autoPlay 
-          muted
-          className={styles.video}
-        >
-        <source src={`/jewellery/rings/${ring.title}/${ring.title}MP4/${ring.title}${ring.colour}.mp4`} type="video/mp4" />
-        </video>
-      </div>
-         
-      <div className={styles.price}>TOTAL PRICE: <span>£{price.toFixed(0)}</span></div>
-      
-      <div className={styles.textDropdown}>Select from the drop-down menu to update the price:</div>
-      
-
-      {/* DIAMOND CARAT */}
-      <div className={styles.textLabel}>CARAT SIZE</div>
-      <div className={styles.containerGridDropdown}>
-        <div className={styles.selectionContainer} align={'center'}>
-          <select
-            name="carat size"
-            className={styles.dropdown} 
-            onChange={(e) => handleChangeSize(e.target.value)}
-          >
-            <option value="1.00">1.00 Carat</option>
-            <option value="1.10">1.10 Carat</option>
-            <option value="1.20">1.20 Carat</option>
-            <option value="1.30">1.30 Carat</option>
-            <option value="1.40">1.40 Carat</option>
-            <option value="1.50">1.50 Carat</option>
-            <option value="1.60">1.60 Carat</option>
-            <option value="1.70">1.70 Carat</option>
-            <option value="1.80">1.80 Carat</option>
-            <option value="1.90">1.90 Carat</option>
-            <option value="2.00">2.00 Carat</option>
-          </select> 
-          <Image
-            src={`/down-arrow.png`}
-            width={32}
-            height={32}
-            alt={`GIA Logo`}
-            quality={100}
-            className={styles.arrow}
-          />
+      <div className={styles.containerDesktopGrid}>
+        <div className={styles.videoGrid}>
+          <div className={styles.titleMain}>{ring.title}</div> 
+          <div className={styles.titleSubMain}>Natural Diamond</div>
+              
+          <div>
+            <video 
+              width={1600} 
+              height={1200}
+              loop 
+              playsInline 
+              autoPlay 
+              muted
+              className={styles.video}
+            >
+            <source src={`/jewellery/rings/${ring.title}/${ring.title}MP4/${ring.title}${ring.colour}.mp4`} type="video/mp4" />
+            </video>
+          </div>
         </div>
-        <div className={styles.containerLetterI} onClick={(e) => setToggleCarat(!toggleCarat)}>
-          <Image
-              src={`/letter-i.png`}
+        <div className={styles.videoGrid}>
+          
+        <div className={styles.price}>TOTAL PRICE: <span>£{price.toFixed(0)}</span></div>
+        
+        <div className={styles.textDropdown}>Select from the drop-down menu to update the price:</div>
+        
+
+        {/* DIAMOND CARAT */}
+        <div className={styles.textLabel}>CARAT SIZE</div>
+        <div className={styles.containerGridDropdown}>
+          <div className={styles.selectionContainer} align={'center'}>
+            <select
+              name="carat size"
+              className={styles.dropdown} 
+              onChange={(e) => handleChangeSize(e.target.value)}
+            >
+              <option value="1.00">1.00 Carat</option>
+              <option value="1.10">1.10 Carat</option>
+              <option value="1.20">1.20 Carat</option>
+              <option value="1.30">1.30 Carat</option>
+              <option value="1.40">1.40 Carat</option>
+              <option value="1.50">1.50 Carat</option>
+              <option value="1.60">1.60 Carat</option>
+              <option value="1.70">1.70 Carat</option>
+              <option value="1.80">1.80 Carat</option>
+              <option value="1.90">1.90 Carat</option>
+              <option value="2.00">2.00 Carat</option>
+              <option value="2.10">2.10 Carat</option>
+              <option value="2.20">2.20 Carat</option>
+              <option value="2.30">2.30 Carat</option>
+              <option value="2.40">2.40 Carat</option>
+              <option value="2.50">2.50 Carat</option>
+              <option value="2.60">2.60 Carat</option>
+              <option value="2.70">2.70 Carat</option>
+              <option value="2.80">2.80 Carat</option>
+              <option value="2.90">2.90 Carat</option>
+              
+            </select> 
+            <Image
+              src={`/down-arrow.png`}
               width={32}
               height={32}
-              alt={`information icon`}
+              alt={`GIA Logo`}
               quality={100}
-              className={styles.letterI}
-          />
+              className={styles.arrow}
+            />
+          </div>
+          <div className={styles.containerLetterI} onClick={(e) => setToggleCarat(!toggleCarat)}>
+            <Image
+                src={`/letter-i.png`}
+                width={32}
+                height={32}
+                alt={`information icon`}
+                quality={100}
+                className={styles.letterI}
+            />
+          </div>
+          <div className={toggleCarat ? styles.containerModal : styles.displayNone}> 
+            <div className={styles.titleModal}>
+              CARAT WEIGHT
+            </div> 
+            <div className={styles.contentModel}>
+              When diamonds are mined, large gems are discovered much less frequently than small ones. 
+              This makes large diamonds much rarer and therefore much more valuable. 
+              In fact, because of the rarity, diamond prices rise exponentially with carat weight.
+              This means, for example, that a 1 carat diamond of a given quality will always be worth significantly more than two 0.5 carat diamonds of the same quality.
+            </div>
+          </div> 
+        </div>  
+
+        {/* DIAMOND CUT */}
+        <div className={styles.textLabel}>CUT</div>
+        <div className={styles.containerGridDropdown}>
+        <div className={styles.selectionContainer} align={'center'}>
+            <select
+              name="cut"
+              className={styles.dropdown}
+              onChange={(e) => handleChangeCut(e.target.value)}
+            >
+              <option value="Excellent">Excellent</option>
+              <option value="Very Good">Very Good</option>
+              <option value="Good">Good</option>
+            </select>
+            <Image
+              src={`/down-arrow.png`}
+              width={32}
+              height={32}
+              alt={`GIA Logo`}
+              quality={100}
+              className={styles.arrow}
+            />
         </div>
-        <div className={toggleCarat ? styles.containerModal : styles.displayNone}> 
+        <div className={styles.containerLetterI} onClick={(e) => setToggleCut(!toggleCut)}>
+            <Image
+                src={`/letter-i.png`}
+                width={32}
+                height={32}
+                alt={`information icon`}
+                quality={100}
+                className={styles.letterI}
+            />
+        </div>
+        <div className={toggleCut ? styles.containerModal : styles.displayNone}> 
           <div className={styles.titleModal}>
-            CARAT WEIGHT
+            DIAMOND CUT
           </div> 
           <div className={styles.contentModel}>
-            When diamonds are mined, large gems are discovered much less frequently than small ones. 
-            This makes large diamonds much rarer and therefore much more valuable. 
-            In fact, because of the rarity, diamond prices rise exponentially with carat weight.
-            This means, for example, that a 1 carat diamond of a given quality will always be worth significantly more than two 0.5 carat diamonds of the same quality.
+          The cut of a diamond is the most crucial factor in determining its brilliance and overall beauty. 
+          Unlike shape, which refers to the outline of the diamond, the cut refers to how well the diamond's 
+          facets interact with light. A well-cut diamond will capture and reflect light to create a stunning display of brightness, fire, 
+          and scintillation. These aspects are what make a diamond sparkle, as light enters the stone, bounces within it, 
+          and exits in a captivating dance of light. 
+          The precision of the cut, from the angles of the facets to the symmetry and polish, can dramatically impact the diamond&apos;s value, making it a key consideration for those seeking a truly radiant gem.
           </div>
         </div> 
-      </div>  
+        </div>
 
-      {/* DIAMOND CUT */}
-      <div className={styles.textLabel}>CUT</div>
-      <div className={styles.containerGridDropdown}>
-      <div className={styles.selectionContainer} align={'center'}>
+        {/* DIAMOND CLARITY */}
+        <div className={styles.textLabel}>CLARITY</div>
+        <div className={styles.containerGridDropdown}>
+        <div className={styles.selectionContainer} align={'center'}>
+            <select
+              name="Clarity"
+              className={styles.dropdown} 
+              onChange={(e) => handleChangeClarity(e.target.value)}
+            >
+              <option value="VS2">VS2</option>
+              <option value="VS1">VS1</option>
+              <option value="VVS2">VVS2</option>
+              <option value="VVS1">VVS1</option>
+              <option value="IF">IF</option>
+            </select> 
+            <Image
+              src={`/down-arrow.png`}
+              width={32}
+              height={32}
+              alt={`GIA Logo`}
+              quality={100}
+              className={styles.arrow}
+            />  
+        </div>
+        <div className={styles.containerLetterI} onClick={(e) => setToggleClarity(!toggleClarity)}>
+            <Image
+                src={`/letter-i.png`}
+                width={32}
+                height={32}
+                alt={`information icon`}
+                quality={100}
+                className={styles.letterI}
+            />
+        </div>
+        <div className={toggleClarity ? styles.containerModal : styles.displayNone}> 
+          <div className={styles.titleModal}>
+            DIAMOND CLARITY
+          </div> 
+          <div className={styles.contentModel}>
+            Diamond clarity refers to the purity and cleanliness of a diamond, encompassing the presence or absence of internal inclusions and external blemishes. 
+            These natural imperfections, often microscopic, can affect how light passes through the diamond, potentially diminishing its brilliance. 
+            Clarity is graded on a scale from Flawless, indicating no visible inclusions or blemishes under 10x magnification, to Included, where imperfections are more noticeable. While inclusions are typically invisible to the naked eye in higher clarity grades, they play a significant role in determining the diamond&apos;s overall quality and value. 
+            A diamond with high clarity exudes a sense of purity and elegance, enhancing its visual appeal and making it a prized possession.
+          </div>
+        </div> 
+        </div>
+  
+        {/* DIAMOND COLOUR */}
+        <div className={styles.textLabel}>COLOUR</div> 
+        <div className={styles.containerGridDropdown}>
+        <div className={styles.selectionContainer} align={'center'}>
           <select
-            name="cut"
-            className={styles.dropdown}
-            onChange={(e) => handleChangeCut(e.target.value)}
-          >
-            <option value="Excellent">Excellent</option>
-            <option value="Very Good">Very Good</option>
-            <option value="Good">Good</option>
+                name="Colour"
+                className={styles.dropdown} 
+                onChange={(e) => handleChangeColor(e.target.value)}
+              >
+                <option value="h">H</option>
+                <option value="g">G</option>
+                <option value="f">F</option>
+                <option value="e">E</option>
+                <option value="d">D</option>
           </select>
           <Image
             src={`/down-arrow.png`}
@@ -175,174 +284,80 @@ export default function RingProductClient({ ring }) {
             quality={100}
             className={styles.arrow}
           />
-      </div>
-      <div className={styles.containerLetterI} onClick={(e) => setToggleCut(!toggleCut)}>
-          <Image
-              src={`/letter-i.png`}
-              width={32}
-              height={32}
-              alt={`information icon`}
-              quality={100}
-              className={styles.letterI}
-          />
-      </div>
-      <div className={toggleCut ? styles.containerModal : styles.displayNone}> 
-        <div className={styles.titleModal}>
-          DIAMOND CUT
-        </div> 
-        <div className={styles.contentModel}>
-        The cut of a diamond is the most crucial factor in determining its brilliance and overall beauty. 
-        Unlike shape, which refers to the outline of the diamond, the cut refers to how well the diamond's 
-        facets interact with light. A well-cut diamond will capture and reflect light to create a stunning display of brightness, fire, 
-        and scintillation. These aspects are what make a diamond sparkle, as light enters the stone, bounces within it, 
-        and exits in a captivating dance of light. 
-        The precision of the cut, from the angles of the facets to the symmetry and polish, can dramatically impact the diamond&apos;s value, making it a key consideration for those seeking a truly radiant gem.
         </div>
-      </div> 
-      </div>
+        <div className={styles.containerLetterI} onClick={(e) => setToggleColour(!toggleColour)}>
+            <Image
+                src={`/letter-i.png`}
+                width={32}
+                height={32}
+                alt={`information icon`}
+                quality={100}
+                className={styles.letterI}
+            />
+        </div>
+        <div className={toggleColour ? styles.containerModal : styles.displayNone}> 
+          <div className={styles.titleModal}>
+            DIAMOND COLOUR
+          </div> 
+          <div className={styles.contentModel}>
+            Diamond color refers to the subtle variations in tone that can affect a diamond&apos;s overall appearance and value. 
+            While most diamonds may appear colorless at first glance, they often contain slight traces of color, usually yellow or brown, which can influence their brilliance. 
+            The Gemological Institute of America (GIA) grades diamond color on a scale from D (completely colorless) to Z (noticeably colored), with colorless diamonds being the most rare and highly prized. 
+            A diamond&apos;s color, or lack thereof, is essential in determining its beauty, as a purer, less colored diamond allows more light to pass through and reflect, creating a bright and radiant look. 
+            The finest diamonds, those closest to colorless, are cherished for their pure, icy brilliance that adds to their timeless allure.
+          </div>
+        </div> 
+        </div>
 
-      {/* DIAMOND CLARITY */}
-      <div className={styles.textLabel}>CLARITY</div>
-      <div className={styles.containerGridDropdown}>
-      <div className={styles.selectionContainer} align={'center'}>
-          <select
-            name="Clarity"
-            className={styles.dropdown} 
-            onChange={(e) => handleChangeClarity(e.target.value)}
-          >
-            <option value="VS2">Very Small Inclusions (VS2)</option>
-            <option value="VS1">Very Small Inclusions (VS1)</option>
-            <option value="VVS2">Very Very Small Inclusions (VVS2)</option>
-            <option value="VVS1">Very Very Small Inclusions (VVS1)</option>
-            <option value="IF">Internally Flawless (IF)</option>
-          </select> 
-          <Image
-            src={`/down-arrow.png`}
-            width={32}
-            height={32}
-            alt={`GIA Logo`}
-            quality={100}
-            className={styles.arrow}
-          />  
-      </div>
-      <div className={styles.containerLetterI} onClick={(e) => setToggleClarity(!toggleClarity)}>
-          <Image
-              src={`/letter-i.png`}
-              width={32}
-              height={32}
-              alt={`information icon`}
-              quality={100}
-              className={styles.letterI}
-          />
-      </div>
-      <div className={toggleClarity ? styles.containerModal : styles.displayNone}> 
-        <div className={styles.titleModal}>
-          DIAMOND CLARITY
-        </div> 
-        <div className={styles.contentModel}>
-          Diamond clarity refers to the purity and cleanliness of a diamond, encompassing the presence or absence of internal inclusions and external blemishes. 
-          These natural imperfections, often microscopic, can affect how light passes through the diamond, potentially diminishing its brilliance. 
-          Clarity is graded on a scale from Flawless, indicating no visible inclusions or blemishes under 10x magnification, to Included, where imperfections are more noticeable. While inclusions are typically invisible to the naked eye in higher clarity grades, they play a significant role in determining the diamond&apos;s overall quality and value. 
-          A diamond with high clarity exudes a sense of purity and elegance, enhancing its visual appeal and making it a prized possession.
-        </div>
-      </div> 
-      </div>
- 
-      {/* DIAMOND COLOUR */}
-      <div className={styles.textLabel}>COLOUR</div> 
-      <div className={styles.containerGridDropdown}>
-      <div className={styles.selectionContainer} align={'center'}>
-        <select
-              name="Colour"
+
+        {/* METAL TYPE */}
+        <div className={styles.textLabel}>METAL TYPE</div>  
+        <div className={styles.containerGridDropdown}>
+        <div className={styles.selectionContainer} align={'center'}>
+            <select
+              name="Metal Type"
               className={styles.dropdown} 
               onChange={(e) => handleChangeColor(e.target.value)}
             >
-              <option value="h">H</option>
-              <option value="g">G</option>
-              <option value="f">F</option>
-              <option value="e">E</option>
-              <option value="d">D</option>
-        </select>
-        <Image
-          src={`/down-arrow.png`}
-          width={32}
-          height={32}
-          alt={`GIA Logo`}
-          quality={100}
-          className={styles.arrow}
-        />
-      </div>
-      <div className={styles.containerLetterI} onClick={(e) => setToggleColour(!toggleColour)}>
-          <Image
-              src={`/letter-i.png`}
+              <option value="">{ring.metal}</option>
+              
+            </select>
+            <Image
+              src={`/down-arrow.png`}
               width={32}
               height={32}
-              alt={`information icon`}
+              alt={`GIA Logo`}
               quality={100}
-              className={styles.letterI}
-          />
-      </div>
-      <div className={toggleColour ? styles.containerModal : styles.displayNone}> 
-        <div className={styles.titleModal}>
-          DIAMOND COLOUR
-        </div> 
-        <div className={styles.contentModel}>
-          Diamond color refers to the subtle variations in tone that can affect a diamond&apos;s overall appearance and value. 
-          While most diamonds may appear colorless at first glance, they often contain slight traces of color, usually yellow or brown, which can influence their brilliance. 
-          The Gemological Institute of America (GIA) grades diamond color on a scale from D (completely colorless) to Z (noticeably colored), with colorless diamonds being the most rare and highly prized. 
-          A diamond&apos;s color, or lack thereof, is essential in determining its beauty, as a purer, less colored diamond allows more light to pass through and reflect, creating a bright and radiant look. 
-          The finest diamonds, those closest to colorless, are cherished for their pure, icy brilliance that adds to their timeless allure.
+              className={styles.arrow}
+            />
         </div>
-      </div> 
-      </div>
-
-
-      {/* METAL TYPE */}
-      <div className={styles.textLabel}>METAL TYPE</div>  
-      <div className={styles.containerGridDropdown}>
-      <div className={styles.selectionContainer} align={'center'}>
-          <select
-            name="Metal Type"
-            className={styles.dropdown} 
-            onChange={(e) => handleChangeColor(e.target.value)}
-          >
-            <option value="">{ring.metal}</option>
-            
-          </select>
-          <Image
-            src={`/down-arrow.png`}
-            width={32}
-            height={32}
-            alt={`GIA Logo`}
-            quality={100}
-            className={styles.arrow}
-          />
-      </div>
-      <div className={styles.containerLetterI} onClick={(e) => setToggleMetal(!toggleMetal)}>
-          <Image
-              src={`/letter-i.png`}
-              width={32}
-              height={32}
-              alt={`information icon`}
-              quality={100}
-              className={styles.letterI}
-          />
-      </div>
-      <div className={toggleMetal ? styles.containerModal : styles.displayNone}> 
-        <div className={styles.titleModal}>
-          METAL TYPE
-        </div> 
-        <div className={styles.contentModel}>
-          The metal type of a diamond ring plays a crucial role in both its aesthetic appeal and durability, complementing the brilliance of the diamond while ensuring the ring&apos;s longevity. 
-          Commonly used metals include platinum, white gold, yellow gold, and rose gold, each offering a distinct look and feel. 
-          Platinum, known for its strength and hypoallergenic properties, provides a sleek, modern backdrop that enhances the diamond&apos;s sparkle. 
-          White gold, with its bright, silvery hue, is a popular choice for its versatility and classic elegance. 
-          Yellow gold exudes warmth and tradition, creating a striking contrast that highlights the diamond's clarity and fire. 
-          Rose gold, with its romantic pinkish tint, adds a touch of vintage charm and uniqueness to the ring. 
-          The choice of metal not only reflects personal style but also affects the ring&apos;s durability, maintenance, 
-          and how the diamond is perceived, making it a key factor in the overall design of the diamond ring.
+        <div className={styles.containerLetterI} onClick={(e) => setToggleMetal(!toggleMetal)}>
+            <Image
+                src={`/letter-i.png`}
+                width={32}
+                height={32}
+                alt={`information icon`}
+                quality={100}
+                className={styles.letterI}
+            />
         </div>
-      </div> 
+        <div className={toggleMetal ? styles.containerModal : styles.displayNone}> 
+          <div className={styles.titleModal}>
+            METAL TYPE
+          </div> 
+          <div className={styles.contentModel}>
+            The metal type of a diamond ring plays a crucial role in both its aesthetic appeal and durability, complementing the brilliance of the diamond while ensuring the ring&apos;s longevity. 
+            Commonly used metals include platinum, white gold, yellow gold, and rose gold, each offering a distinct look and feel. 
+            Platinum, known for its strength and hypoallergenic properties, provides a sleek, modern backdrop that enhances the diamond&apos;s sparkle. 
+            White gold, with its bright, silvery hue, is a popular choice for its versatility and classic elegance. 
+            Yellow gold exudes warmth and tradition, creating a striking contrast that highlights the diamond's clarity and fire. 
+            Rose gold, with its romantic pinkish tint, adds a touch of vintage charm and uniqueness to the ring. 
+            The choice of metal not only reflects personal style but also affects the ring&apos;s durability, maintenance, 
+            and how the diamond is perceived, making it a key factor in the overall design of the diamond ring.
+          </div>
+        </div> 
+        </div>
+        </div>
       </div>
 
       <div className={styles.titleSub}>{ring.title}</div>
