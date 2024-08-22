@@ -53,11 +53,11 @@ const watches = await getRoyaloak()
           
           {/* CTA  */}
           <div className={styles.contactDetailsBTNMobile}>
-            <Link href="tel:07976753254" className={styles.linkBTN}>CONTACT</Link>
+            <Link href="tel:07718269994" className={styles.linkBTN}>CONTACT</Link>
           </div>
           <div className={styles.contactBTNDesktop}>
             <h3 className={styles.contactReview}>CONTACT</h3>
-            <div>07976 753 254</div>
+            <div>07718 269 994</div>
           </div>
         </div>
 

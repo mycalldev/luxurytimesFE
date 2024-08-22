@@ -88,10 +88,7 @@ export default function Submariner() {
           WHATSAPP
         </Link>
     </div>
-      {/* <div className={styles.contactBTNDesktop}>
-        <h3 className={styles.contactReview}>CONTACT</h3>
-        <div>07718 269 994</div>
-      </div> */}
+      
 
     <section>
       <h2 className={styles.titleContent}>
@@ -175,7 +172,6 @@ export default function Submariner() {
       </div>
     
     </section>
-
     
   </div>
   )

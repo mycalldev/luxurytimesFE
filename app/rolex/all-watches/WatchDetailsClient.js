@@ -93,13 +93,13 @@ export default function WatchDetailsClient( {watchArr, watch} ) {
 
             <div className={styles.contactContainerItem}> 
               <div className={styles.contactDetailsBTNMobile}>
-                <Link href="tel:07976753254" className={styles.linkBTNContact}>
+                <Link href="tel:07718269994" className={styles.linkBTNContact}>
                   CONTACT
                 </Link>
               </div>
               <div className={styles.contactBTNDesktop}>
                 <h3 className={styles.contactReview}>CONTACT</h3>
-                <div className={styles.number}>07976 753 254</div>
+                <div className={styles.number}>07718 269 994</div>
               </div>
             </div>
 
