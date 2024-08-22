@@ -307,6 +307,9 @@ export default function Solitaire() {
               className={styles.dropdown} 
               onChange={(e) => handleChangeClarity(e.target.value)}
             >
+              <option value="SI3">SI3</option>
+              <option value="SI2">SI2</option>
+              <option value="SI1">SI1</option>
               <option value="VS2">VS2</option>
               <option value="VS1">VS1</option>
               <option value="VVS2">VVS2</option>
