@@ -611,7 +611,7 @@ export const colourClarity = {
         "mSI3": 33
     },
 
-    "Round299": {
+    Round299: {
         "dIF": 350,
         "eIF": 285,
         "fIF": 260,

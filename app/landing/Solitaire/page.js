@@ -46,12 +46,12 @@ export default function Solitaire() {
           setPrice(colourClarity.Round149[`${color}${clarity}`] * roundBasePrice149 * size + mount * cut)
           return
       } else if(size == 1.50 || size < 2.00){
-        setPrice(colourClarity.Round199[`${color}${clarity}`] * roundBasePrice199 * size + mount * cut)
+        setPrice(colourClarity.Round199[`${color}${clarity}`] * roundBasePrice199 * size * cut)
         return
-      } else if (size == 2.00 < 3.00) {
-        setPrice(colourClarity.Round299[`${color}${clarity}`] * roundBasePrice299 * size + mount * cut)
+      } else if (size == 2.00 || size < 3.00) {
+        setPrice(colourClarity.Round299[`${color}${clarity}`] * roundBasePrice299 * size * cut)
       } else {
-        setPrice(colourClarity.Round399[`${color}${clarity}`] * roundBasePrice399 * size + mount * cut)
+        setPrice(colourClarity.Round399[`${color}${clarity}`] * roundBasePrice399 * size * cut)
       }
    
   }, [color, size, clarity, cut])
