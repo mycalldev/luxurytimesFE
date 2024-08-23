@@ -9,7 +9,7 @@ const roboto = Roboto({ weight: '400', subsets: ['latin'] })
 
 export const metadata = {
   title: 'Luxury Times Ltd',
-  description: 'Pre-Owned Watch Dealers',
+  description: 'Everything Luxury',
 }
 
 export default function RootLayout({ children }) {
