@@ -13,7 +13,7 @@ import  { colourClarity } from '../../utils/calculator';
 export default function Solitaire() {
 
   const [price, setPrice] = useState(1216)
-  const [cut, setCut] = useState("Excellent")
+  const [cut, setCut] = useState("1")
   const [size, setSize] = useState(.30)
   const [color, setColor] = useState("h")
   const [clarity, setClarity] = useState("VS2")
@@ -28,30 +28,30 @@ export default function Solitaire() {
   useEffect(() => {
     
       if(size == 0.30 || size < 0.40){
-        setPrice(colourClarity.Round39[`${color}${clarity}`] * roundBasePrice39 * size + mount)
+        setPrice(colourClarity.Round39[`${color}${clarity}`] * roundBasePrice39 * size + mount * cut)
         return
       } else if(size == 0.40 || size < 0.50){
-        setPrice(colourClarity.Round49[`${color}${clarity}`] * roundBasePrice49 * size + mount)
+        setPrice(colourClarity.Round49[`${color}${clarity}`] * roundBasePrice49 * size + mount * cut)
         return
       } else if(size == 0.50 || size < 0.70){
-        setPrice(colourClarity.Round69[`${color}${clarity}`] * roundBasePrice69 * size + mount)
+        setPrice(colourClarity.Round69[`${color}${clarity}`] * roundBasePrice69 * size + mount * cut)
         return 
       } else if(size == 0.70 || size < 0.90){
-        setPrice(colourClarity.Round89[`${color}${clarity}`] * roundBasePrice89 * size + mount)
+        setPrice(colourClarity.Round89[`${color}${clarity}`] * roundBasePrice89 * size + mount * cut)
         return 
       } else if(size == 0.90 || size < 1.00){
-        setPrice(colourClarity.Round99[`${color}${clarity}`] * roundBasePrice99 * size + mount)
+        setPrice(colourClarity.Round99[`${color}${clarity}`] * roundBasePrice99 * size + mount * cut)
         return 
       } else if(size == 1.00 || size < 1.49){
-          setPrice(colourClarity.Round149[`${color}${clarity}`] * roundBasePrice149 * size + mount)
+          setPrice(colourClarity.Round149[`${color}${clarity}`] * roundBasePrice149 * size + mount * cut)
           return
       } else if(size == 1.50 || size < 2.00){
-        setPrice(colourClarity.Round199[`${color}${clarity}`] * roundBasePrice199 * size + mount)
+        setPrice(colourClarity.Round199[`${color}${clarity}`] * roundBasePrice199 * size + mount * cut)
         return
       } else if (size == 2.00 < 3.00) {
-        setPrice(colourClarity.Round299[`${color}${clarity}`] * roundBasePrice299 * size + mount)
+        setPrice(colourClarity.Round299[`${color}${clarity}`] * roundBasePrice299 * size + mount * cut)
       } else {
-        setPrice(colourClarity.Round399[`${color}${clarity}`] * roundBasePrice399 * size + mount)
+        setPrice(colourClarity.Round399[`${color}${clarity}`] * roundBasePrice399 * size + mount * cut)
       }
    
   }, [color, size, clarity, cut])
@@ -66,39 +66,7 @@ export default function Solitaire() {
   let roundBasePrice299 = 76
   let roundBasePrice399 = 76
 
-  // if(cut == 'Excellent'){
-  //    roundBasePrice39 = 76
-  //    roundBasePrice49 = 76
-  //    roundBasePrice69 = 76
-  //    roundBasePrice89 = 76
-  //    roundBasePrice99 = 76
-  //    roundBasePrice149 = 76
-  //    roundBasePrice199 = 76
-  //    roundBasePrice299 = 76
-  //    roundBasePrice399 = 76
-  //   return 
-  // } else if (cut == 'Very Good') {
-  //    roundBasePrice39 = 76 * 0.2
-  //   roundBasePrice49 = 76 * 0.2
-  //   roundBasePrice69 = 76 * 0.2
-  //   roundBasePrice89 = 76 * 0.2
-  //   roundBasePrice99 = 76 * 0.2
-  //   roundBasePrice149 = 76 * 0.2
-  //   roundBasePrice199 = 76 * 0.2
-  //   roundBasePrice299 = 76 * 0.2
-  //   roundBasePrice399 = 76 * 0.2
-  //   return
-  // } else {
-  //    roundBasePrice39 = 76 * 0.5
-  //    roundBasePrice49 = 76 * 0.5
-  //    roundBasePrice69 = 76 * 0.5
-  //    roundBasePrice89 = 76 * 0.5
-  //    roundBasePrice99 = 76 * 0.5
-  //    roundBasePrice149 = 76 * 0.5
-  //    roundBasePrice199 = 76 * 0.5
-  //    roundBasePrice299 = 76 * 0.5
-  //    roundBasePrice399 = 76 * 0.5
-  // }
+  
 
   const handleChangeSize = (event) => {
     setSize(event)
@@ -260,9 +228,9 @@ export default function Solitaire() {
               className={styles.dropdown}
               onChange={(e) => handleChangeCut(e.target.value)}
             >
-              <option value="Excellent">Excellent</option>
-              <option value="Very Good">Very Good</option>
-              <option value="Good">Good</option>
+              <option value="1.00">Excellent</option>
+              <option value="0.75">Very Good</option>
+              <option value="0.30">Good</option>
             </select>
             <Image
               src={`/down-arrow.png`}
