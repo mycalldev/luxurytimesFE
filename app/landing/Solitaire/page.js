@@ -40,18 +40,18 @@ export default function Solitaire() {
         setPrice(colourClarity.Round89[`${color}${clarity}`] * roundBasePrice89 * size + mount * cut)
         return 
       } else if(size == 0.90 || size < 1.00){
-        setPrice(colourClarity.Round99[`${color}${clarity}`] * roundBasePrice99 * size + mount * cut)
+        setPrice(colourClarity.Round99[`${color}${clarity}`] * roundBasePrice99 * size * cut)
         return 
       } else if(size == 1.00 || size < 1.49){
-          setPrice(colourClarity.Round149[`${color}${clarity}`] * roundBasePrice149 * size + mount * cut)
+          setPrice(colourClarity.Round149[`${color}${clarity}`] * roundBasePrice149 * size * cut * 0.80)
           return
       } else if(size == 1.50 || size < 2.00){
-        setPrice(colourClarity.Round199[`${color}${clarity}`] * roundBasePrice199 * size * cut)
+        setPrice(colourClarity.Round199[`${color}${clarity}`] * roundBasePrice199 * size * cut * 0.70)
         return
       } else if (size == 2.00 || size < 3.00) {
-        setPrice(colourClarity.Round299[`${color}${clarity}`] * roundBasePrice299 * size * cut)
+        setPrice(colourClarity.Round299[`${color}${clarity}`] * roundBasePrice299 * size * cut * 0.70)
       } else {
-        setPrice(colourClarity.Round399[`${color}${clarity}`] * roundBasePrice399 * size * cut)
+        setPrice(colourClarity.Round399[`${color}${clarity}`] * roundBasePrice399 * size * cut * 0.65)
       }
    
   }, [color, size, clarity, cut])
