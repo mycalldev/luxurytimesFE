@@ -36,7 +36,6 @@ export default function rings() {
           />
         </div>
 
-        
       </section>
       <div>
         <h2 className={styles.titleMain}>
@@ -54,14 +53,6 @@ export default function rings() {
               <div className={styles.swiperWrapper}>
                 {imagesRing.map((item, index) => (
                   <SwiperSlide className={styles.swiperSlide} key={index}>
-                    {/* <Image
-                      src={`/panda_daytona/${item}`}
-                      width={1660}
-                      height={1106.5}
-                      className={styles.imageSwiper}
-                      alt='image of ring'
-                      quality={100}
-                    /> */}
                     <div>
                         <video 
                         width={1600} 
@@ -81,8 +72,6 @@ export default function rings() {
             </Swiper>
       </section>
 
-      
-
       <h4 className={styles.titleContent}>
         GIA Certified Natural Diamond Engagement Rings set in 18k White, Yellow or Rose Gold....
       </h4>
@@ -92,7 +81,7 @@ export default function rings() {
       </div>
       <div className={styles.contactBTN}>
         <Link
-          href={"https://wa.me/07976753254?text=Hi%20Luxury%20Times...."} 
+          href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
           className={styles.linkBTN}
         >
           WHATSAPP
@@ -123,7 +112,7 @@ export default function rings() {
 
         <div className={styles.contactBTNenquire}>
           <Link
-            href={"https://wa.me/07976753254?text=Hi%20Luxury%20Times...."} 
+            href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
             className={styles.linkBTN}
           >
             ENQUIRE TODAY
@@ -290,7 +279,7 @@ export default function rings() {
 
         <div className={styles.contactBTN}>
           <Link
-          href={"https://wa.me/07976753254?text=Hi%20Luxury%20Times...."} 
+          href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
           className={styles.linkBTN}
           >
             WHATSAPP

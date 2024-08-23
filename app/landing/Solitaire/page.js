@@ -430,20 +430,13 @@ export default function Solitaire() {
 
       <div className={styles.priceAdditional}>£{price.toFixed(0)}</div>
       <div className={styles.textDropdown}>The price is inclusive of VAT and delivery</div>
-      {/* <Image
-          src={"/jewellery/rings/solitaire_box.png"}
-          width={1456}
-          height={816}
-          quality={100}
-          alt='ring in a box'
-          className={styles.imageBox}
-      /> */}
+      
       <Link href="tel:07976753254" className={styles.linkBTN}>
        <div className={styles.BTNcontact} align="center">CONTACT</div>
       </Link>
 
       <Link
-      href={"https://wa.me/07976753254?text=Hi%20Luxury%20Times...."} 
+      href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
       className={styles.linkBTN}
       >
       <div className={styles.BTNcontact} align="center">
