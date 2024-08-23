@@ -6,10 +6,10 @@ import styles from './Footer.module.css'
 export default function Footer() {
   return (
     <main>
-        <Image src={'/Lt_Footer.jpg'} 
+        <Image src={'/footer_option.png'} 
           className={styles.imageFooter} 
-          width={1552} 
-          height={1024} 
+          width={1456} 
+          height={816} 
           alt={'picture of canary wharf'} 
           quality={100} 
         />
