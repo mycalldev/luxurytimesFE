@@ -58,7 +58,7 @@ export default function Solitaire() {
         setPrice(colourClarity.Round69[`${color}${clarity}`] * roundBasePrice69 * size * cut + mount + addOn)
         return 
       } else if(size == 0.70 || size < 0.90){
-        setPrice(colourClarity.Round89[`${color}${clarity}`] * roundBasePrice89 * size * cut + mount + addOn)
+        setPrice(colourClarity.Round89[`${color}${clarity}`] * roundBasePrice89 * size * cut + mount)
         return 
       } else if(size == 0.90 || size < 1.00){
         setPrice(colourClarity.Round99[`${color}${clarity}`] * roundBasePrice99 * size * cut + smallMount)
