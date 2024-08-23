@@ -21,7 +21,7 @@ export default function Solitaire() {
   const [toggleCut, setToggleCut] = useState(false)
   const [toggleClarity, setToggleClarity] = useState(false)
   const [toggleColour, setToggleColour] = useState(false)
-  const [toggleMetal, setToggleMetal] = useState(false)
+  // const [toggleMetal, setToggleMetal] = useState(false)
 
   const mount = 1000
 
@@ -366,38 +366,38 @@ export default function Solitaire() {
 
 
         {/* METAL TYPE */}
-        <div className={styles.textLabel}>METAL TYPE</div>  
-        <div className={styles.containerGridDropdown}>
-        <div className={styles.selectionContainer} align={'center'}>
-            <select
-              name="Metal Type"
-              className={styles.dropdown} 
-              // onChange={(e) => handleChangeColor(e.target.value)}
-            >
-              <option value="">{'White'}</option>
-              <option value="">{'Yellow'}</option>
-              <option value="">{'Rose'}</option>
-              
-            </select>
-            <Image
-              src={`/down-arrow.png`}
-              width={32}
-              height={32}
-              alt={`GIA Logo`}
-              quality={100}
-              className={styles.arrow}
-            />
-        </div>
-        <div className={styles.containerLetterI} onClick={(e) => setToggleMetal(!toggleMetal)}>
-            <Image
-                src={`/letter-i.png`}
+       {/* <div className={styles.textLabel}>METAL TYPE</div>   */}
+        {/* <div className={styles.containerGridDropdown}>
+          <div className={styles.selectionContainer} align={'center'}>
+              <select
+                name="Metal Type"
+                className={styles.dropdown} 
+                // onChange={(e) => handleChangeColor(e.target.value)}
+              >
+                <option value="">{'White'}</option>
+                <option value="">{'Yellow'}</option>
+                <option value="">{'Rose'}</option>
+                
+              </select>
+              <Image
+                src={`/down-arrow.png`}
                 width={32}
                 height={32}
-                alt={`information icon`}
+                alt={`GIA Logo`}
                 quality={100}
-                className={styles.letterI}
-            />
-        </div>
+                className={styles.arrow}
+              />
+          </div>
+          <div className={styles.containerLetterI} onClick={(e) => setToggleMetal(!toggleMetal)}>
+              <Image
+                  src={`/letter-i.png`}
+                  width={32}
+                  height={32}
+                  alt={`information icon`}
+                  quality={100}
+                  className={styles.letterI}
+              />
+          </div>
         <div className={toggleMetal ? styles.containerModal : styles.displayNone}> 
           <div className={styles.titleModal}>
             METAL TYPE
@@ -413,8 +413,8 @@ export default function Solitaire() {
             and how the diamond is perceived, making it a key factor in the overall design of the diamond ring.
           </div>
         </div> 
-        </div>
-        </div>
+        </div> */}
+         </div> 
       </div>
 
       <div className={styles.titleSub}>Enchanting</div>
@@ -430,10 +430,38 @@ export default function Solitaire() {
 
       <div className={styles.priceAdditional}>£{price.toFixed(0)}</div>
       <div className={styles.textDropdown}>The price is inclusive of VAT and delivery</div>
-      
+      {/* <Image
+          src={"/jewellery/rings/solitaire_box.png"}
+          width={1456}
+          height={816}
+          quality={100}
+          alt='ring in a box'
+          className={styles.imageBox}
+      /> */}
       <Link href="tel:07976753254" className={styles.linkBTN}>
-       <div className={styles.BTNappointment} align="center">Request an Appointment</div>
+       <div className={styles.BTNcontact} align="center">CONTACT</div>
       </Link>
+
+      <Link
+      href={"https://wa.me/07976753254?text=Hi%20Luxury%20Times...."} 
+      className={styles.linkBTN}
+      >
+      <div className={styles.BTNcontact} align="center">
+        WHATSAPP
+      </div>
+      </Link>
+
+      <h2 className={styles.titleReviews}>
+        5 Star Reviews
+      </h2>
+      
+      <div className={styles.containerReview}>
+        <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+        <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+        <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+        <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+        <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+      </div>
 
       <div className={styles.containerGIA}>
         <Image
@@ -444,10 +472,24 @@ export default function Solitaire() {
           quality={100}
           className={styles.imageGIA}
         />
-        <div className={styles.textGIA}>
+        <div className={styles.content}>
           The Gemological Institute of America (GIA) certification is the gold standard in the diamond industry, 
           renowned for its meticulous and unbiased evaluation of diamonds. A GIA-certified diamond undergoes a rigorous assessment process, 
           ensuring its quality, authenticity, and value.</div>
+      </div>
+
+      <div className={styles.containerGIA}>
+        <Image
+          src={`/fga.png`}
+          width={454}
+          height={223}
+          alt={`GIA Logo`}
+          quality={100}
+          className={styles.imageGIA}
+        />
+        <div className={styles.content}>
+          FGA, or Fellowship of the Gemmological Association, is a prestigious designation awarded by the Gemmological Association of Great Britain (Gem-A).
+        </div>
       </div>
 
       <div className={styles.containerGIA}>
@@ -459,12 +501,16 @@ export default function Solitaire() {
           quality={100}
           className={styles.imageBourse}
         />
-        <div className={styles.textGIA}>
+        <div className={styles.content}>
           The London Diamond Bourse is a prestigious trade organization and marketplace at the heart of London&apos;s diamond industry. 
           Established to support the trade of diamonds, gemstones, and jewellery, it provides a secure and professional environment for members to conduct business. 
           The Bourse is renowned for upholding the highest standards of integrity and expertise, connecting international buyers and sellers while ensuring ethical practices within the diamond trade.
         </div>
       </div>
+      <Link href="tel:07976753254" className={styles.linkBTN}>
+       <div className={styles.BTNappointment} align="center">Request an Appointment</div>
+      </Link>
+      
     </div>
     </div>
   )

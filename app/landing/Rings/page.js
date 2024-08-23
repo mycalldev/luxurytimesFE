@@ -233,7 +233,7 @@ export default function rings() {
           5 Star Reviews
         </h2>
       
-        <div className={styles.reviewContainer}>
+        <div className={styles.containerReview}>
           <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
           <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
           <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
@@ -253,6 +253,23 @@ export default function rings() {
         <div className={styles.content}>
           The Gemological Institute of America (GIA) certification is the gold standard in the diamond industry, 
           renowned for its meticulous and unbiased evaluation of diamonds.
+        </div>
+        </div>
+
+        <div className={styles.containerGIA}>
+        <Image
+          src={`/fga.png`}
+          width={454}
+          height={223}
+          alt={`GIA Logo`}
+          quality={100}
+          className={styles.imageGIA}
+        />
+        <div className={styles.content}>
+          FGA, or Fellowship of the Gemmological Association, is a prestigious designation awarded by the 
+          Gemmological Association of Great Britain (Gem-A). This title is granted to individuals who have 
+          successfully completed rigorous studies and examinations in gemology, 
+          demonstrating a deep understanding of gemstones, their properties, identification, and evaluation.
         </div>
         </div>
 

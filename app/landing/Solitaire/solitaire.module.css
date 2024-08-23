@@ -1,4 +1,4 @@
-.displayNone {
+  .displayNone {
     display: none;
   }
   
@@ -7,9 +7,10 @@
   }
   
   .linkBTN {
+    margin: 0 10px;
     text-decoration: none;
-    color: #000;
-  }
+    color: #fff;
+}
 
   .backNav {
     margin: 20px 30px;
@@ -22,11 +23,21 @@
     color: #fff;
   }
 
+  .BTNcontact {
+    background-color: #91c0dc;
+    color: #fff;
+    width: 80%;
+    margin: 10px auto;
+    padding: 18px 0;
+    border: 1px solid #bababa;
+    cursor: pointer;
+  }
+
   .BTNappointment {
     background-color: #91c0dc;
     color: #fff;
     width: 80%;
-    margin: auto;
+    margin: 10px auto 40px auto;
     padding: 18px 0;
     border: 1px solid #bababa;
     cursor: pointer;
@@ -66,6 +77,12 @@
     height: auto;
   }
 
+  .imageBox {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
   .containerGIA {
     width: 80%;
     margin: 40px auto;
@@ -87,21 +104,6 @@
   .description {
       margin: 0px 30px 10px 40px;
       color: #717171;
-  }
-  
-  .contactDetailsBTNMobile {
-    margin: 40px auto 40px auto;
-    padding: 10px 30px;
-    max-width: 150px;
-    border: solid 2px #91c0dc;
-    border-radius: 22px;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #fff;
-    background-color: #91c0dc;
-    letter-spacing: 3px;
-    text-align: center;
-    cursor: pointer;
   }
   
   .contactBTNDesktop {
@@ -224,7 +226,7 @@
 
   .textDropdown {
     width: 80%;
-    margin: 20px auto 40px auto;
+    margin: 20px auto;
     text-align: start;
   }
 
@@ -236,7 +238,18 @@
 
   .textGIA {
     padding: 0 20px 20px 20px;
+    line-height: 1.5;
   }
+
+  .content {
+    width: 80%;
+    margin: 30px auto;
+    text-align: start;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #212121;
+}
 
   .titleContent {
     width: 80%;
@@ -244,8 +257,21 @@
     text-align: start;
     font-weight: 300;
     font-size: 1.1rem;
+    line-height: 1.5;
     color: #212121;
   } 
+
+  .titleReviews {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 300;
+    font-size: 1.3rem;
+  }
+
+  .containerReview {
+    margin: 20px auto 40px auto;
+    text-align: center;
+  }
 
   @media (min-width: 1024px) {
 
