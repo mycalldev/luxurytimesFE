@@ -422,7 +422,9 @@ export default function Solitaire() {
       <div className={styles.titleContent}>
         The Enchanting ring features a timeless, solitaire design that exudes modern elegance and understated luxury. 
         The center piece is a brilliant-cut diamond, meticulously set in a sleek, 
-        polished band of premium white gold, designed to showcase the stone's radiant sparkle. 
+        polished band of premium white gold, designed to showcase the stone's radiant sparkle.
+      </div>
+      <div className={styles.titleContent}>
         Its minimalist yet sophisticated aesthetic makes it an ideal choice for those who appreciate refined simplicity with a touch of contemporary style. Perfect for marking life's most significant moments, 
         this ring seamlessly blends classic craftsmanship with modern flair, 
         making it a standout symbol of everlasting love and commitment.
