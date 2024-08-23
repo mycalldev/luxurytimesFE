@@ -13,60 +13,15 @@ import  { colourClarity } from '../../utils/calculator';
 export default function Solitaire() {
 
   const [price, setPrice] = useState(1216)
-  const [cut, setCut] = useState("1")
+  const [cut, setCut] = useState("0.82")
   const [size, setSize] = useState(.30)
   const [color, setColor] = useState("h")
-  const [clarity, setClarity] = useState("VS2")
+  const [clarity, setClarity] = useState("SI2")
   const [toggleCarat, setToggleCarat] = useState(false)
   const [toggleCut, setToggleCut] = useState(false)
   const [toggleClarity, setToggleClarity] = useState(false)
   const [toggleColour, setToggleColour] = useState(false)
   // const [toggleMetal, setToggleMetal] = useState(false)
-
-  const mount = 1000
-
-  useEffect(() => {
-    
-      if(size == 0.30 || size < 0.40){
-        setPrice(colourClarity.Round39[`${color}${clarity}`] * roundBasePrice39 * size + mount * cut)
-        return
-      } else if(size == 0.40 || size < 0.50){
-        setPrice(colourClarity.Round49[`${color}${clarity}`] * roundBasePrice49 * size + mount * cut)
-        return
-      } else if(size == 0.50 || size < 0.70){
-        setPrice(colourClarity.Round69[`${color}${clarity}`] * roundBasePrice69 * size + mount * cut)
-        return 
-      } else if(size == 0.70 || size < 0.90){
-        setPrice(colourClarity.Round89[`${color}${clarity}`] * roundBasePrice89 * size + mount * cut)
-        return 
-      } else if(size == 0.90 || size < 1.00){
-        setPrice(colourClarity.Round99[`${color}${clarity}`] * roundBasePrice99 * size + mount * cut * 0.80)
-        return 
-      } else if(size == 1.00 || size < 1.49){
-          setPrice(colourClarity.Round149[`${color}${clarity}`] * roundBasePrice149 * size * cut * 0.80)
-          return
-      } else if(size == 1.50 || size < 2.00){
-        setPrice(colourClarity.Round199[`${color}${clarity}`] * roundBasePrice199 * size * cut * 0.75)
-        return
-      } else if (size == 2.00 || size < 3.00) {
-        setPrice(colourClarity.Round299[`${color}${clarity}`] * roundBasePrice299 * size * cut * 0.75)
-      } else {
-        setPrice(colourClarity.Round399[`${color}${clarity}`] * roundBasePrice399 * size * cut * 0.75)
-      }
-   
-  }, [color, size, clarity, cut])
-
-  let roundBasePrice39 = 76
-  let roundBasePrice49 = 76
-  let roundBasePrice69 = 76
-  let roundBasePrice89 = 76
-  let roundBasePrice99 = 76
-  let roundBasePrice149 = 76
-  let roundBasePrice199 = 76
-  let roundBasePrice299 = 76
-  let roundBasePrice399 = 76
-
-  
 
   const handleChangeSize = (event) => {
     setSize(event)
@@ -83,6 +38,54 @@ export default function Solitaire() {
   const handleChangeCut = (event) => {
     setCut(event)
   }
+
+
+  const mount = 1000
+  const smallMount = 300
+  const rap = 0.60
+  const middleRap = 1.3
+  const addOn = 500
+
+  useEffect(() => {
+    
+      if(size == 0.30 || size < 0.40){
+        setPrice(colourClarity.Round39[`${color}${clarity}`] * roundBasePrice39 * size * cut + mount)
+        return
+      } else if(size == 0.40 || size < 0.50){
+        setPrice(colourClarity.Round49[`${color}${clarity}`] * roundBasePrice49 * size * cut + mount)
+        return
+      } else if(size == 0.50 || size < 0.70){
+        setPrice(colourClarity.Round69[`${color}${clarity}`] * roundBasePrice69 * size * cut + mount + addOn)
+        return 
+      } else if(size == 0.70 || size < 0.90){
+        setPrice(colourClarity.Round89[`${color}${clarity}`] * roundBasePrice89 * size * cut + mount + addOn)
+        return 
+      } else if(size == 0.90 || size < 1.00){
+        setPrice(colourClarity.Round99[`${color}${clarity}`] * roundBasePrice99 * size * cut + smallMount * rap)
+        return 
+      } else if(size == 1.00 || size < 1.49){
+          setPrice(colourClarity.Round149[`${color}${clarity}`] * roundBasePrice149 * size * cut + smallMount * middleRap)
+          return
+      } else if(size == 1.50 || size < 2.00){
+        setPrice(colourClarity.Round199[`${color}${clarity}`] * roundBasePrice199 * size * cut * rap)
+        return
+      } else if (size == 2.00 || size < 3.00) {
+        setPrice(colourClarity.Round299[`${color}${clarity}`] * roundBasePrice299 * size * cut * rap)
+      } else {
+        setPrice(colourClarity.Round399[`${color}${clarity}`] * roundBasePrice399 * size * cut * rap)
+      }
+   
+  }, [color, size, clarity, cut])
+
+  let roundBasePrice39 = 76
+  let roundBasePrice49 = 76
+  let roundBasePrice69 = 76
+  let roundBasePrice89 = 76
+  let roundBasePrice99 = 76
+  let roundBasePrice149 = 76
+  let roundBasePrice199 = 76
+  let roundBasePrice299 = 76
+  let roundBasePrice399 = 76
 
   const imagesRing = [
     `jewellery/rings/Enchanting/EnchantingMP4/EnchantingWhite.mp4`,
@@ -228,9 +231,9 @@ export default function Solitaire() {
               className={styles.dropdown}
               onChange={(e) => handleChangeCut(e.target.value)}
             >
+              <option value="0.70">Good</option>
+              <option value="0.82">Very Good</option>
               <option value="1.00">Excellent</option>
-              <option value="0.75">Very Good</option>
-              <option value="0.30">Good</option>
             </select>
             <Image
               src={`/down-arrow.png`}
@@ -275,7 +278,6 @@ export default function Solitaire() {
               className={styles.dropdown} 
               onChange={(e) => handleChangeClarity(e.target.value)}
             >
-              <option value="SI3">SI3</option>
               <option value="SI2">SI2</option>
               <option value="SI1">SI1</option>
               <option value="VS2">VS2</option>
