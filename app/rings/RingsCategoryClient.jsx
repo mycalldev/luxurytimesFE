@@ -20,11 +20,11 @@ export default function RingsCategoryClient({ rings }){
 
     return (
         <main>
-            {/* <Link href={'/'} className={styles.backLinkBTN} prefetch={true}>
+            <Link href={'/'} className={styles.backLinkBTN} prefetch={true}>
                 <div className={styles.backNav}>
                     {'< Home'}
                 </div>
-            </Link> */}
+            </Link>
 
             <Image
               src={`/jewellery/engagement.jpg`}
@@ -35,14 +35,11 @@ export default function RingsCategoryClient({ rings }){
               quality={100}
             />
 
-            {/* <h1 className={styles.titleMain}>ENGAGEMENT RING COLLECTION</h1> */}
-
             <div className={styles.contentTopContainer}>
-            
             
             <div className={styles.contactBTNDesktop}>
                 <h3 className={styles.contactReview}>CONTACT</h3>
-                <div>07718 269 994</div>
+                <div>07976 753 254</div>
             </div>
             </div>
             <div className={styles.selectSizeContainer}>
@@ -56,7 +53,6 @@ export default function RingsCategoryClient({ rings }){
                     <option value='White'>White</option>
                     <option value='Yellow'>Yellow</option>
                     <option value='Rose'>Rose</option>
-                    <option value='All'>All</option>
 
                 </select>
                 </label>
@@ -107,11 +103,13 @@ export default function RingsCategoryClient({ rings }){
            )        
         }
       </div>
+
       {/* CTA  */}
       <div className={styles.contactDetailsBTNMobile}>
         <Link href="tel:07976753254" className={styles.linkBTN} prefetch={true}>CONTACT</Link>
       </div>
-      <div className={styles.heroBtn}>
+
+      <div className={styles.contactDetailsBTNMobile}>
         <Link
           href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
           className={styles.linkBTN}
@@ -119,6 +117,7 @@ export default function RingsCategoryClient({ rings }){
           WHATSAPP
         </Link>
       </div>
+      
     </main>
     )
 }

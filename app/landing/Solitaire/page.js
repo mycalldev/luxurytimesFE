@@ -114,7 +114,6 @@ export default function Solitaire() {
           <div className={styles.titleMain}>Enchanting</div> 
           <div className={styles.titleSubMain}>Natural Diamond</div>
               
-      
         <section>
         {/* SWIPER SECTION */}
         <Swiper

@@ -14,18 +14,6 @@
     font-size: 1.1rem;
 }
 
-.heroBtn {
-    margin: 40px auto;
-    padding: 10px;
-    max-width: 200px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-align: center;
-    border-radius: 22px;
-    background: #91c0dc;
-    cursor: pointer;
-  }
-
 .contactDetailsBTNMobile {
     margin: 20px auto 20px auto;
     padding: 10px 30px;
@@ -89,27 +77,6 @@
     margin-bottom: 50px;
 }
 
-.video {
-    width: 100%;
-    height: auto;
-} 
-
-.input {
-    padding-top: 15px;
-    font-size: 20px;
-}
-  
-.input input {
-    min-height: 50px;
-    border: 2px solid #dadada;
-    width: 100%;
-    padding-left: 20px;
-}
-  
-.input input:focus {
-    outline: none;
-    border-color: pink;
-}
 .selectSizeContainer {
     text-align: center;
 }

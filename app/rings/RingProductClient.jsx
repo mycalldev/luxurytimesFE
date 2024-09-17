@@ -1,76 +1,113 @@
 'use client'
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './RingProductClient.module.css';
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import  { colourClarity } from '../utils/calculator';
+// import  { colourClarity } from '../utils/calculator';
 
 export default function RingProductClient({ ring }) {
 
-  const [price, setPrice] = useState(5056)
-  const [cut, setCut] = useState("Excellent")
-  const [size, setSize] = useState(1.0)
-  const [color, setColor] = useState("h")
-  const [clarity, setClarity] = useState("VS2")
-  const [toggleCarat, setToggleCarat] = useState(false)
-  const [toggleCut, setToggleCut] = useState(false)
-  const [toggleClarity, setToggleClarity] = useState(false)
-  const [toggleColour, setToggleColour] = useState(false)
-  const [toggleMetal, setToggleMetal] = useState(false)
+  // const [price, setPrice] = useState(0)
+  // const [cut, setCut] = useState("0.75")
+  // const [size, setSize] = useState(.30)
+  // const [color, setColor] = useState("h")
+  // const [clarity, setClarity] = useState("SI2")
+  // const [toggleCarat, setToggleCarat] = useState(false)
+  // const [toggleCut, setToggleCut] = useState(false)
+  // const [toggleClarity, setToggleClarity] = useState(false)
+  // const [toggleColour, setToggleColour] = useState(false)
+  // const [toggleMetal, setToggleMetal] = useState(false)
+
+  // const mount = 1000
+
+  // Split the middle on VAT
+  // const SplitTheMiddle = 1.1
+
+  // Rap of -45%
+  // const rap = 0.55
+
+//   useEffect(() => {
+//     if(ring.shape == 'Round'){
+//       if(size == 0.30 || size < 0.40){
+//         setPrice(colourClarity.Round39[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//         return
+//       } else if(size == 0.40 || size < 0.50){
+//         setPrice(colourClarity.Round49[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//         return
+//       } else if(size == 0.50 || size < 0.70){
+//         setPrice(colourClarity.Round69[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//         return 
+//       } else if(size == 0.70 || size < 0.90){
+//         setPrice(colourClarity.Round89[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//         return 
+//       } else if(size == 0.90 || size < 1.00){
+//         setPrice(colourClarity.Round99[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//         return 
+//       } else if(size == 1.00 || size < 1.49){
+//           setPrice(colourClarity.Round149[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//           return
+//       } else if(size == 1.50 || size < 2.00){
+//         setPrice(colourClarity.Round199[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//         return
+//       } else if (size == 2.00 || size < 3.00) {
+//         setPrice(colourClarity.Round299[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//       } else {
+//         setPrice(colourClarity.Round399[`${color}${clarity}`] * exchangeRate * size * SplitTheMiddle * cut + mount)
+//       }
+//     } else {
+//       if(size == 0.30 || size < 0.40){
+//         setPrice(colourClarity.Pear39[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//         return
+//       } else if(size == 0.40 || size < 0.50){
+//         setPrice(colourClarity.Pear49[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//         return
+//       } else if(size == 0.50 || size < 0.70){
+//         setPrice(colourClarity.Pear69[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//         return 
+//       } else if(size == 0.70 || size < 0.90){
+//         setPrice(colourClarity.Pear89[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//         return 
+//       } else if(size == 0.90 || size < 1.00){
+//         setPrice(colourClarity.Pear99[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//         return 
+//       } else if(size == 1.00 || size < 1.49){
+//           setPrice(colourClarity.Pear149[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//           return
+//       } else if(size == 1.50 || size < 2.00){
+//         setPrice(colourClarity.Pear199[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//         return
+//       } else if (size == 2.00 || size < 3.00) {
+//         setPrice(colourClarity.Pear299[`${color}${clarity}`] * exchangeRate * size * rap * SplitTheMiddle * cut + mount)
+//       } else {
+//         setPrice(colourClarity.Pear399[`${color}${clarity}`] * exchangeRate * size * SplitTheMiddle * cut + mount)
+//       }
+//     }
+    
+// }, [color, size, clarity, cut])
 
 
+// THIS COULD/SHOULD BE DYNAMIC FROM AN API
+  // let exchangeRate = 76
+ 
 
-  useEffect(() => {
-    if(ring.shape === "Round"){
-      if(size == 1.00 || size < 1.50){
-        setPrice(colourClarity.Round149[`${color}${clarity}`] * roundBasePrice149 * size)
-        return
-      } else if(size == 1.5 || size < 2){
-        setPrice(colourClarity.Round199[`${color}${clarity}`] * roundBasePrice199 * size)
-        return
-      } else {
-        setPrice(colourClarity.Round299[`${color}${clarity}`] * roundBasePrice299 * size)
-      }
-    } else {
-      if(size == 1.00 || size < 1.50){
-        setPrice(colourClarity.Pear149[`${color}${clarity}`] * pearBasePrice149 * size)
-        return
-      } else if(size == 1.5 || size < 2){
-        setPrice(colourClarity.Pear199[`${color}${clarity}`] * pearBasePrice199 * size)
-        return 
-      }
-        else {
-          setPrice(colourClarity.Pear299[`${color}${clarity}`] * pearBasePrice299 * size)
-        }
-    }
-   
-  }, [color, size, clarity, cut])
+  // const handleChangeSize = (event) => {
+  //   setSize(event)
+  // }
 
-  const roundBasePrice149 = 79
-  const roundBasePrice199 = 55.300041
-  const roundBasePrice299 = 55.3
-  const pearBasePrice149 = 79
-  const pearBasePrice199 = 79
-  const pearBasePrice299 = 79
+  // const handleChangeColor = (event => {
+  //   setColor(event)
+  // })
 
-  const handleChangeSize = (event) => {
-    setSize(event)
-  }
+  // const handleChangeClarity = (event) => {
+  //   setClarity(event)
+  // }
 
-  const handleChangeColor = (event => {
-    setColor(event)
-  })
-
-  const handleChangeClarity = (event) => {
-    setClarity(event)
-  }
-
-  const handleChangeCut = (event) => {
-    setCut(event)
-  }
+  // const handleChangeCut = (event) => {
+  //   setCut(event)
+  // }
 
 
   return (
@@ -78,11 +115,10 @@ export default function RingProductClient({ ring }) {
       <Link href={`/rings`} className={styles.linkBTN} prefetch={true}>
         <div className={styles.backNav}>{`< Previous`}</div>
       </Link>
-      <div className={styles.containerDesktopGrid}>
-        <div className={styles.videoGrid}>
           <div className={styles.titleMain}>{ring.title}</div> 
           <div className={styles.titleSubMain}>Natural Diamond</div>
-              
+      <div className={styles.containerDesktopGrid}>
+        <div className={styles.videoGrid}>  
           <div>
             <video 
               width={1600} 
@@ -97,15 +133,15 @@ export default function RingProductClient({ ring }) {
             </video>
           </div>
         </div>
-        <div className={styles.videoGrid}>
+        {/* <div className={styles.videoGrid}> */}
           
-        <div className={styles.price}>TOTAL PRICE: <span>£{price.toFixed(0)}</span></div>
+        {/* <div className={styles.price}>TOTAL PRICE: <span>£{price.toFixed(0)}</span></div> */}
         
-        <div className={styles.textDropdown}>Select from the drop-down menu to update the price:</div>
+        {/* <div className={styles.textDropdown}>Select from the drop-down menu to update the price:</div> */}
         
 
         {/* DIAMOND CARAT */}
-        <div className={styles.textLabel}>CARAT SIZE</div>
+        {/* <div className={styles.textLabel}>CARAT SIZE</div>
         <div className={styles.containerGridDropdown}>
           <div className={styles.selectionContainer} align={'center'}>
             <select
@@ -113,6 +149,13 @@ export default function RingProductClient({ ring }) {
               className={styles.dropdown} 
               onChange={(e) => handleChangeSize(e.target.value)}
             >
+              <option value="0.30">0.30 Carat</option>
+              <option value="0.40">0.40 Carat</option>
+              <option value="0.50">0.50 Carat</option>
+              <option value="0.60">0.60 Carat</option>
+              <option value="0.70">0.70 Carat</option>
+              <option value="0.80">0.80 Carat</option>
+              <option value="0.90">0.90 Carat</option>
               <option value="1.00">1.00 Carat</option>
               <option value="1.10">1.10 Carat</option>
               <option value="1.20">1.20 Carat</option>
@@ -133,7 +176,7 @@ export default function RingProductClient({ ring }) {
               <option value="2.70">2.70 Carat</option>
               <option value="2.80">2.80 Carat</option>
               <option value="2.90">2.90 Carat</option>
-              
+              <option value="3.00">3.00 Carat</option>
             </select> 
             <Image
               src={`/down-arrow.png`}
@@ -165,10 +208,10 @@ export default function RingProductClient({ ring }) {
               This means, for example, that a 1 carat diamond of a given quality will always be worth significantly more than two 0.5 carat diamonds of the same quality.
             </div>
           </div> 
-        </div>  
+        </div>   */}
 
         {/* DIAMOND CUT */}
-        <div className={styles.textLabel}>CUT</div>
+        {/* <div className={styles.textLabel}>CUT</div>
         <div className={styles.containerGridDropdown}>
         <div className={styles.selectionContainer} align={'center'}>
             <select
@@ -176,9 +219,9 @@ export default function RingProductClient({ ring }) {
               className={styles.dropdown}
               onChange={(e) => handleChangeCut(e.target.value)}
             >
-              <option value="Excellent">Excellent</option>
-              <option value="Very Good">Very Good</option>
-              <option value="Good">Good</option>
+              <option value="0.75">Good</option>
+              <option value="0.90">Very Good</option>
+              <option value="1.00">Excellent</option>
             </select>
             <Image
               src={`/down-arrow.png`}
@@ -212,10 +255,10 @@ export default function RingProductClient({ ring }) {
           The precision of the cut, from the angles of the facets to the symmetry and polish, can dramatically impact the diamond&apos;s value, making it a key consideration for those seeking a truly radiant gem.
           </div>
         </div> 
-        </div>
+        </div> */}
 
         {/* DIAMOND CLARITY */}
-        <div className={styles.textLabel}>CLARITY</div>
+        {/* <div className={styles.textLabel}>CLARITY</div>
         <div className={styles.containerGridDropdown}>
         <div className={styles.selectionContainer} align={'center'}>
             <select
@@ -223,6 +266,8 @@ export default function RingProductClient({ ring }) {
               className={styles.dropdown} 
               onChange={(e) => handleChangeClarity(e.target.value)}
             >
+              <option value="SI2">SI2</option>
+              <option value="SI1">SI1</option>
               <option value="VS2">VS2</option>
               <option value="VS1">VS1</option>
               <option value="VVS2">VVS2</option>
@@ -260,9 +305,9 @@ export default function RingProductClient({ ring }) {
           </div>
         </div> 
         </div>
-  
+   */}
         {/* DIAMOND COLOUR */}
-        <div className={styles.textLabel}>COLOUR</div> 
+        {/* <div className={styles.textLabel}>COLOUR</div> 
         <div className={styles.containerGridDropdown}>
         <div className={styles.selectionContainer} align={'center'}>
           <select
@@ -307,12 +352,12 @@ export default function RingProductClient({ ring }) {
             The finest diamonds, those closest to colorless, are cherished for their pure, icy brilliance that adds to their timeless allure.
           </div>
         </div> 
-        </div>
+        </div> */}
 
 
         {/* METAL TYPE */}
-        <div className={styles.textLabel}>METAL TYPE</div>  
-        <div className={styles.containerGridDropdown}>
+        {/* <div className={styles.textLabel}>METAL TYPE</div>   */}
+        {/* <div className={styles.containerGridDropdown}>
         <div className={styles.selectionContainer} align={'center'}>
             <select
               name="Metal Type"
@@ -356,53 +401,79 @@ export default function RingProductClient({ ring }) {
             and how the diamond is perceived, making it a key factor in the overall design of the diamond ring.
           </div>
         </div> 
+        </div> */}
+        {/* </div> */}
+        <div>
+
+          <div className={styles.descriptionMobile}>
+            {ring.descriptionMobile}
+          </div>
+          <Link href="tel:07976753254" className={styles.linkBTN}>
+            <div className={styles.BTNappointment} align="center">Request an Appointment</div>
+          </Link>
+          <h2 className={styles.titleReviews}>
+              5 Star Reviews
+          </h2>
+          <div className={styles.containerReview}>
+            <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+            <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+            <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+            <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+            <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
+          </div>
         </div>
-        </div>
+       
       </div>
 
-      <div className={styles.titleSub}>{ring.title}</div>
-
-      <div className={styles.descriptionMobile}>
-        {ring.descriptionMobile}
-      </div> 
-
-      <div className={styles.priceAdditional}>£{price.toFixed(0)}</div>
-      <div className={styles.textDropdown}>The price is inclusive of VAT and delivery</div>
-      
-      <Link href="tel:07976753254" className={styles.linkBTN}>
-       <div className={styles.BTNappointment} align="center">Request an Appointment</div>
-      </Link>
-
-      <div className={styles.containerGIA}>
-        <Image
-          src={`/GIA_Logo.png`}
-          width={500}
-          height={164.5}
-          alt={`GIA Logo`}
-          quality={100}
-          className={styles.imageGIA}
-        />
-        <div className={styles.textGIA}>
-          The Gemological Institute of America (GIA) certification is the gold standard in the diamond industry, 
-          renowned for its meticulous and unbiased evaluation of diamonds. A GIA-certified diamond undergoes a rigorous assessment process, 
-          ensuring its quality, authenticity, and value.</div>
-      </div>
-
-      <div className={styles.containerGIA}>
-        <Image
-          src={`/bourse_logo.jpg`}
-          width={320}
-          height={140}
-          alt={`Diamond Bourse Logo`}
-          quality={100}
-          className={styles.imageBourse}
-        />
-        <div className={styles.textGIA}>
-          The London Diamond Bourse is a prestigious trade organization and marketplace at the heart of London&apos;s diamond industry. 
-          Established to support the trade of diamonds, gemstones, and jewellery, it provides a secure and professional environment for members to conduct business. 
-          The Bourse is renowned for upholding the highest standards of integrity and expertise, connecting international buyers and sellers while ensuring ethical practices within the diamond trade.
+      {/* <div className={styles.titleSub}>{ring.title}</div> */}
+      {/* <div className={styles.priceAdditional}>£{price.toFixed(0)}</div> */}
+      {/* <div className={styles.textDropdown}>The price is inclusive of VAT and delivery</div> */}
+      <div className={styles.containerGIAGrid}>
+        <div className={styles.containerGIA}>
+          <Image
+            src={`/GIA_Logo.png`}
+            width={500}
+            height={164.5}
+            alt={`GIA Logo`}
+            quality={100}
+            className={styles.imageGIA}
+          />
+          <div className={styles.textGIA}>
+            The Gemological Institute of America (GIA) certification is the gold standard in the diamond industry, 
+            renowned for its meticulous and unbiased evaluation of diamonds. A GIA-certified diamond undergoes a rigorous assessment process, 
+            ensuring its quality, authenticity, and value.
+          </div>
         </div>
-      </div>
+
+        <div className={styles.containerGIA}>
+          <Image
+            src={`/fga.png`}
+            width={454}
+            height={223}
+            alt={`GIA Logo`}
+            quality={100}
+            className={styles.imageGIA}
+          />
+          <div className={styles.textGIA}>
+            FGA, or Fellowship of the Gemmological Association, is a prestigious designation awarded by the Gemmological Association of Great Britain (Gem-A).
+          </div>
+        </div>
+
+        <div className={styles.containerGIA}>
+          <Image
+            src={`/bourse_logo.jpg`}
+            width={320}
+            height={140}
+            alt={`Diamond Bourse Logo`}
+            quality={100}
+            className={styles.imageBourse}
+          />
+          <div className={styles.textGIA}>
+            The London Diamond Bourse is a prestigious trade organization and marketplace at the heart of London&apos;s diamond industry. 
+            Established to support the trade of diamonds, gemstones, and jewellery, it provides a secure and professional environment for members to conduct business.
+          </div>
+        </div>
+      </div>  
     </div>
   )
 }
