@@ -19,21 +19,31 @@ export default function RingsCategoryClient({ rings }){
     }
 
     return (
-        <main>
-            <Link href={'/'} className={styles.backLinkBTN} prefetch={true}>
-                <div className={styles.backNav}>
-                    {'< Home'}
-                </div>
-            </Link>
-
+        <main className={styles.containerMain}>
+           
             <Image
-              src={`/jewellery/engagement.jpg`}
-              width={3320}
-              height={2213}
+              src={`/jewellery/rings/solitaire_hero.png`}
+              width={1455}
+              height={816}
               alt={'hero image of rings'}
-              className={styles.imageRingHero}
+              className={styles.imageRingHeroMobile}
               quality={100}
             />
+ 
+            <Image
+              src={`/jewellery/rings/solitaire_hero_desktop.png`}
+              width={1456}
+              height={480}
+              alt={'hero image of rings desktop'}
+              className={styles.imageRingHeroDesktop}
+              quality={100}
+            />
+
+            <Link href={'/Jewellery'} className={styles.backLinkBTN} prefetch={true}>
+                <div className={styles.backNav}>
+                    {'< Jewellery'}
+                </div>
+            </Link>
 
             <div className={styles.contentTopContainer}>
             
@@ -43,7 +53,7 @@ export default function RingsCategoryClient({ rings }){
             </div>
             </div>
             <div className={styles.selectSizeContainer}>
-                <label htmlFor="Colour">Select Colour:
+                <label htmlFor="Colour" className={styles.labelText}>Select Colour:
                 <select
                     name="Ring Colour"
                     className={styles.selectSize}
