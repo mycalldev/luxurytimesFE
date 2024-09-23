@@ -43,13 +43,20 @@ export default async function Home() {
         alt={'hero image'}
         quality={100}
       />
-      <div className={styles.tagLine}>London's Official Watch Dealership</div>
 
       {/* MOBILE CONTACT */}
       <div className={styles.contactBTNContainerMobile}>
         <Link href="tel:07718269994" className={styles.linkBTN}>
             <div className={styles.contactBTN}>CONTACT</div>
         </Link>
+        <div className={styles.whatsAppBTN}>
+        <Link
+          href={"https://wa.me/447718269994?text=Hi%20Luxury%20Times...."} 
+          className={styles.linkBTN}
+        >
+          WHATSAPP
+        </Link>
+      </div>
       </div>
 
       {/* CONTACT DESKTOP */}
@@ -60,7 +67,6 @@ export default async function Home() {
 
       
       {/* CATEGORY SECTION */}
-          <h1 className={styles.titleBrands}>WATCH BRANDS</h1>
       <section className={styles.categoryContainerGrid}>
 
           <div className={styles.imageCategoryContainer}>
@@ -68,7 +74,7 @@ export default async function Home() {
               <Image src={'/rolex_section2.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100}  />
               <div className={styles.titleCategoryWatch}>Rolex</div>
               <div className={styles.viewDetailsBTN}>
-                  <h4>View All</h4>
+                  <h4>View</h4>
               </div>
             </Link>
           </div>
@@ -78,34 +84,42 @@ export default async function Home() {
               <Image src={'/category/patek_category.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
               <div className={styles.titleCategoryWatch}>Patek Phillipe</div>
               <div className={styles.viewDetailsBTN}>
-                  <h4>View All</h4>
+                  <h4>View</h4>
               </div>
             </Link>
           </div>
 
           <div className={styles.imageCategoryContainer}>
-            <Link href={`/audemars-piguet/audemars-piguet-categories`} className={styles.viewBTNContainer}> 
+            <Link href={`/audemars-piguet/audemars-piguet-categories`} className={styles.viewBTNContainer} prefetch={true}> 
               <Image src={'/category/APiguet.JPG'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
               <div className={styles.titleCategoryWatch}>Audemars Piguet</div>
               <div className={styles.viewDetailsBTN}>
-                  <h4>View All</h4>
+                  <h4>View</h4>
               </div>
             </Link>
           </div>
       </section>
       
-      {/* <section>
-        <Link href={"/rings"} prefetch={true}>
-          <Image
-            src={`/jewellery/engagement.jpg`}
-            width={3320}
-            height={2213}
-            alt={'hero image of rings'}
-            className={styles.imageRing}
-            quality={100}
-          />
-        </Link>
-      </section> */}
+      <section>
+        <div className={styles.imageCategoryContainer}>
+          <Link href={"/Jewellery"} prefetch={true} className={styles.viewBTNContainer}>
+            <Image
+              src={`/jewellery/rings/image_hero_rings.png`}
+              width={1456}
+              height={816}
+              alt={'hero image of rings'}
+              className={styles.imageCategoryJewellery}
+              quality={100}
+            />
+            <div className={styles.titleCategoryWatch}>Jewellery Collection</div>
+            <div className={styles.viewDetailsBTN}>
+                <h4>View</h4>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      <div className={styles.spaceDesktop}></div>
             
 
       {/* GUIDES SECTION */}
@@ -138,7 +152,7 @@ export default async function Home() {
             <Image src={'/highlight.JPG'} width={840} height={560} className={styles.imageHighlights} alt={'image of Sky-dweller'} quality={100} />
           </Link>
           <div className={styles.contentHighlightsContainer}>
-            <div className={styles.conenttitleHighlights}>Rolex</div>
+            {/* <div className={styles.conenttitleHighlights}>Rolex</div> */}
             <div className={styles.contentSubTitleHighlights}>Sky Dweller</div>
             <div className={styles.paragraphHighlights1}>Introducing the Rolex Sky-Dweller! Where elegance meets precsion.... With its iconic design, dual time zones, and....</div>
           </div> 
@@ -154,7 +168,7 @@ export default async function Home() {
             <Image src={'/blingToBullion.jpeg'} width={840} height={560} className={styles.imageBlogs} alt={'image of Sky-dweller'} quality={100} />
           </Link>
             <div className={styles.contentHighlightsContainer}>
-              <div className={styles.conenttitleHighlights}>Watches</div>
+              {/* <div className={styles.conenttitleHighlights}>Watches</div> */}
               <div className={styles.contentSubTitleHighlights}>Time Investment</div>
               <div className={styles.paragraphHighlights1}>Investing in time.... Investing in your future! The Watch world has geneated a ton of interest in recent times and for good....</div>
             </div> 

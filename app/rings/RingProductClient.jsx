@@ -455,7 +455,7 @@ export default function RingProductClient({ ring }) {
             className={styles.imageGIA}
           />
           <div className={styles.textGIA}>
-            FGA, or Fellowship of the Gemmological Association, is a prestigious designation awarded by the Gemmological Association of Great Britain (Gem-A).
+          The FGA (Fellowship of the Gemmological Association) is a prestigious designation awarded by the Gemmological Association of Great Britain (Gem-A). It represents the highest level of professional certification in gemology, demonstrating advanced expertise in the identification, grading, and evaluation of gemstones. 
           </div>
         </div>
 

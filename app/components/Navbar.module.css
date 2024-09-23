@@ -117,7 +117,7 @@
   .navDesktopGrid {
     margin: 0 10px;
     display: grid;
-    grid-template-columns: 12% 20% 20% 12% 12% 12% 12%;
+    grid-template-columns: 12% 14% 14% 12% 12% 12% 12% 12%;
     justify-items: center;
     align-items: center;
   } 

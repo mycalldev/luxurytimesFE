@@ -26,9 +26,10 @@
 }
 
 .addressContainer {
-    margin: 10px 30px 40px 30px;
+    padding: 20px;
     text-align: center;
-    color:#323232;
+    color:#fff;
+    background-color: #c6c6c6;
 }
 
 .addressTitle {
@@ -41,14 +42,14 @@
   margin: 40px 20px 20px 20px;
   text-align: start;
   font-size: 1.3rem;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .addressContent {
   text-align: start;
   margin: 20px;
   font-size: 1.1rem;
-  color: #474747;
+  color: #fff;
 }
 
 .addressCountry {

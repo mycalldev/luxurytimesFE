@@ -36,6 +36,12 @@ export default function rings() {
           />
         </div>
 
+        <Link href={'/Jewellery'} className={styles.backLinkBTN} prefetch={true}>
+                <div className={styles.backNav}>
+                    {'< Jewellery'}
+                </div>
+        </Link>
+
       </section>
       <div>
         <h2 className={styles.titleMain}>

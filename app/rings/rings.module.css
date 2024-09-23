@@ -71,10 +71,14 @@
     height: auto;
 } 
 
-.imageRingHero {
+.imageRingHeroMobile {
+    display: block;
     width: 100%;
     height: auto;
-    margin-bottom: 50px;
+}
+
+.imageRingHeroDesktop {
+    display: none;
 }
 
 .selectSizeContainer {
@@ -89,6 +93,10 @@
 }
 
 @media(min-width: 768px) {
+
+    .containerMain {
+        /* padding: 100px; */
+    }
 
     .backNav {
         font-size: 1.5rem;
@@ -112,6 +120,24 @@
         background-color: #91c0dc;
         letter-spacing: 3px;
         text-align: center;
+    }
+
+    .imageRingHeroMobile {
+        display: none;
+    }
+
+    .imageRingHeroDesktop {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .labelText {
+        font-size: 1.3rem;
+    }
+
+    .titleRing {
+        font-size: 1.3rem;
     }
 
     .catDescription {
