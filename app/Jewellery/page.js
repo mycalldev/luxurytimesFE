@@ -46,10 +46,23 @@ export default async function Jewellery() {
         </Link>
 
         <div className={styles.tagline}>Luxury Times Jewellery</div>
+        {/* BTN */}
+        <div className={styles.heroBtn}>
+                <Link href="tel:07976 753 254" className={styles.linkBTN}>CALL NOW</Link>
+            </div>
+            <div className={styles.heroBtn}>
+                <Link
+                href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
+                className={styles.linkBTN}
+                >
+                WHATSAPP
+                </Link>
+            </div>
+            <div className={styles.heroBtnDesktop}>07976 753 254</div>
 
         <div className={styles.containerGrid}>
         <div className={styles.itemGrid}>
-          <Link href={'/rings'} className={styles.linkBTN} prefetch={true}>
+          <Link href={'/rings'} className={styles.linkBTNDark} prefetch={true}>
             <div className={styles.containerImage}>
               <Image
                 src={"/jewellery/rings/solitaire_hero.png"}
@@ -65,7 +78,7 @@ export default async function Jewellery() {
           </div>
 
           <div className={styles.itemGrid}>
-          <Link href={'/Jewellery/Diamonds'} className={styles.linkBTN} prefetch={true}>
+          <Link href={'/Jewellery/Diamonds'} className={styles.linkBTNDark} prefetch={true}>
             <div className={styles.containerImage}>
               <Image
                 src={"/jewellery/rings/natural_diamond.png"}
@@ -81,7 +94,7 @@ export default async function Jewellery() {
           </div>
 
           <div className={styles.itemGrid}>
-          <Link href={'/Jewellery/NaturalLab'} className={styles.linkBTN} prefetch={true}>
+          <Link href={'/Jewellery/NaturalLab'} className={styles.linkBTNDark} prefetch={true}>
           <div className={styles.containerImage}>
               <Image
                 src={"/jewellery/rings/natural_vs_lab.png"}
@@ -96,7 +109,7 @@ export default async function Jewellery() {
             </Link>
           </div>
           <div className={styles.itemGrid}>
-          <Link href={'/Jewellery/Rings'} className={styles.linkBTN} prefetch={true}>
+          <Link href={'/Jewellery/Rings'} className={styles.linkBTNDark} prefetch={true}>
           <div className={styles.containerImage}>
               <Image
                 src={"/jewellery/rings/image_hero_rings.png"}
