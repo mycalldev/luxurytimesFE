@@ -23,6 +23,21 @@
     height: auto;
 }
 
+.viewDetailsBTNMobile {
+    margin: 0px auto 20px auto;
+    padding: 8px 10px;
+    max-width: 120px;
+    border: solid 2px #91c0dc;
+    border-radius: 22px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #91c0dc;
+    letter-spacing: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+
 .heroBtnDesktop {
     display: none;
 }

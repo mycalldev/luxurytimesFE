@@ -53,9 +53,9 @@ export default function RingsCategoryClient({ rings }){
             </div>
             </div>
             <div className={styles.selectSizeContainer}>
-                <label htmlFor="Colour" className={styles.labelText}>Select Colour:
+                <label htmlFor="Colour" className={styles.labelText}>Metal Type:
                 <select
-                    name="Ring Colour"
+                    name="Metal Type"
                     className={styles.selectSize}
                     onChange={(e) => handleChange(e.target.value)}
                 >

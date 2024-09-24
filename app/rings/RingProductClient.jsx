@@ -408,9 +408,22 @@ export default function RingProductClient({ ring }) {
           <div className={styles.descriptionMobile}>
             {ring.descriptionMobile}
           </div>
-          <Link href="tel:07976753254" className={styles.linkBTN}>
+          {/* <Link href="tel:07976753254" className={styles.linkBTN}>
             <div className={styles.BTNappointment} align="center">Request an Appointment</div>
-          </Link>
+          </Link> */}
+          {/* BTN */}
+        <div className={styles.heroBtn}>
+            <Link href="tel:07976 753 254" className={styles.linkBTN}>CALL NOW</Link>
+        </div>
+        <div className={styles.heroBtn}>
+            <Link
+            href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
+            className={styles.linkBTN}
+            >
+            WHATSAPP
+            </Link>
+        </div>
+        <div className={styles.heroBtnDesktop}>07976 753 254</div>
           <h2 className={styles.titleReviews}>
               5 Star Reviews
           </h2>

@@ -81,6 +81,10 @@
     display: none;
 }
 
+.labelText {
+    font-size: 1.3rem;
+}
+
 .selectSizeContainer {
     text-align: center;
 }
@@ -90,6 +94,7 @@
     padding: 10px;
     background: #fff;
     border-radius: 2px;
+    font-size: 1.3rem;
 }
 
 @media(min-width: 768px) {
@@ -133,7 +138,7 @@
     }
 
     .labelText {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     .titleRing {

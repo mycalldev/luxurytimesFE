@@ -73,8 +73,14 @@ export default async function Jewellery() {
                 className={styles.imageGrid}
               />
             </div>
+            </Link>
             <div className={styles.titleSubCat}>Engagement Collection</div>
-          </Link>
+            <Link href={`/rings`} prefetch={true} className={styles.linkBTN}> 
+              <div className={styles.viewDetailsBTNMobile}>
+                  <h4>VIEW</h4>
+              </div>
+            </Link>
+          
           </div>
 
           <div className={styles.itemGrid}>
@@ -89,8 +95,13 @@ export default async function Jewellery() {
                 className={styles.imageGrid}
               />
             </div>
-            <div className={styles.titleSubCat}>Diamonds</div>
           </Link>
+            <div className={styles.titleSubCat}>Diamonds</div>
+            <Link href={`/Jewellery/Diamonds`} prefetch={true} className={styles.linkBTN}> 
+              <div className={styles.viewDetailsBTNMobile}>
+                  <h4>VIEW</h4>
+              </div>
+            </Link>
           </div>
 
           <div className={styles.itemGrid}>
@@ -105,7 +116,12 @@ export default async function Jewellery() {
                 className={styles.imageGrid}
               />
             </div>
+            </Link>
             <div className={styles.titleSubCat}>Natural Vs Lab</div>
+            <Link href={`/Jewellery/NaturalLab`} prefetch={true} className={styles.linkBTN}> 
+              <div className={styles.viewDetailsBTNMobile}>
+                  <h4>VIEW</h4>
+              </div>
             </Link>
           </div>
           <div className={styles.itemGrid}>
@@ -120,7 +136,12 @@ export default async function Jewellery() {
                 className={styles.imageGrid}
               />
             </div>
+            </Link>
             <div className={styles.titleSubCat}>Rings Guide</div>
+            <Link href={`/Jewellery/Rings`} prefetch={true} className={styles.linkBTN}> 
+              <div className={styles.viewDetailsBTNMobile}>
+                  <h4>VIEW</h4>
+              </div>
             </Link>
           </div>
           
