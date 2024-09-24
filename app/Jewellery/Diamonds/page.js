@@ -32,7 +32,7 @@ export default async function Jewellery() {
           Natural diamonds have captivated the human imagination for centuries, representing wealth, 
           love, and timeless beauty. Formed deep within the Earth under immense heat and pressure, 
           natural diamonds are prized for their rarity and brilliant sparkle. When purchasing a diamond, 
-          the quality and value are assessed based on the "4 C's: Cut, Color, Clarity, and Carat weight. 
+          the quality and value are assessed based on the "4 C's: Cut, Colour, Clarity, and Carat weight. 
           These four factors significantly influence the diamond's appearance and price. 
           Let&apos;s dive deeper into these characteristics to understand how they define a diamond&apos;s worth.
           </div>
@@ -72,18 +72,18 @@ export default async function Jewellery() {
           <li className={styles.itemList}>
             The Colour
             <div className={styles.contentList}>
-                Diamonds come in a variety of colors, ranging from colorless (the most valuable) to yellow or brown. 
-                The less color a diamond has, the higher its value. 
-                The GIA color grading scale ranges from D (completely colorless) to Z (light yellow or brown).
+                Diamonds come in a variety of colours, ranging from colourless (the most valuable) to yellow or brown. 
+                The less colour a diamond has, the higher its value. 
+                The GIA colour grading scale ranges from D (completely colourless) to Z (light yellow or brown).
             </div>
             <ul>
-                <li className={styles.itemListUL}><span>D-F:</span> Completely colorless and very rare.</li>
-                <li className={styles.itemListUL}><span>G-J:</span> Near-colorless, offering a good balance of value and appearance.</li>
+                <li className={styles.itemListUL}><span>D-F:</span> Completely colourless and very rare.</li>
+                <li className={styles.itemListUL}><span>G-J:</span> Near-colourless, offering a good balance of value and appearance.</li>
                 <li className={styles.itemListUL}><span>K-M:</span> Faint yellow, noticeable to the naked eye.</li>
                 <li className={styles.itemListUL}><span>N-Z:</span> Very light to light yellow, less expensive but with a visible hue.</li>
             </ul>
             <div className={styles.contentList}>
-                Although most people strive for a colorless diamond, some diamonds with intense and rare colors, 
+                Although most people strive for a colourless diamond, some diamonds with intense and rare colours, 
                 like pink, blue, or green (also known as fancy diamonds), 
                 can be even more valuable due to their rarity.
             </div>
@@ -144,7 +144,7 @@ export default async function Jewellery() {
             A diamond with a perfect cut but poor clarity or color will not be as valuable or visually stunning 
             as a diamond that balances these elements. Depending on your budget, it&apos;s 
             often recommended to prioritize cut quality to ensure the best sparkle, 
-            followed by carat size, and then color and clarity based on personal preferences.
+            followed by carat size, and then colour and clarity based on personal preferences.
           </div>
 
           <div className={styles.tagline2}>
@@ -158,7 +158,7 @@ export default async function Jewellery() {
             <span>Don&apos;t Overpay for Clarity:</span> Inclusions are often invisible to the naked eye, so consider diamonds with VS or SI grades to get more value.
             </li> 
             <li className={styles.itemListUL}>
-            <span>Consider Near-Colorless Diamonds:</span>Consider Near-Colorless Diamonds: G-J diamonds are often indistinguishable from higher-graded diamonds in terms of color, offering better value.
+            <span>Consider Near-Colourless Diamonds:</span>Consider Near-Colourless Diamonds: G-J diamonds are often indistinguishable from higher-graded diamonds in terms of colour, offering better value.
             </li> 
             <li className={styles.itemListUL}>
             <span>Balance Carat with Quality:</span> A larger diamond isn&apos;t always better; focus on a balance of size and quality.
