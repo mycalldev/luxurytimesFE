@@ -71,7 +71,7 @@ export default async function Home() {
 
           <div className={styles.imageCategoryContainer}>
             <Link href={`/rolex/rolex-categories`} prefetch={true} className={styles.viewBTNContainer}> 
-              <Image src={'/rolex_section2.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100}  />
+              <Image src={'/Rolex_thumb.JPG'} className={styles.imageCategory} width={3272.5} height={2181.5} alt={'rolex datejust'} quality={100}  />
               <div className={styles.titleCategoryWatch}>Rolex</div>
               <div className={styles.viewDetailsBTN}>
                   <h4>View</h4>
@@ -81,7 +81,7 @@ export default async function Home() {
 
           <div className={styles.imageCategoryContainer}>
             <Link href={`/patek-philippe/patek-philippe-categories`} prefetch={true} className={styles.viewBTNContainer}> 
-              <Image src={'/category/patek_category.jpg'} className={styles.imageCategory} width={840} height={560} alt={'rolex datejust'} quality={100} />
+              <Image src={'/PP_thumb.JPG'} className={styles.imageCategory} width={3272.5} height={2181.5} alt={'Patek Pillipe'} quality={100} />
               <div className={styles.titleCategoryWatch}>Patek Phillipe</div>
               <div className={styles.viewDetailsBTN}>
                   <h4>View</h4>
