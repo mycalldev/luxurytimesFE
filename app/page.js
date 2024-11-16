@@ -82,7 +82,7 @@ export default async function Home() {
           <div className={styles.imageCategoryContainer}>
             <Link href={`/patek-philippe/patek-philippe-categories`} prefetch={true} className={styles.viewBTNContainer}> 
               <Image src={'/PP_thumb.JPG'} className={styles.imageCategory} width={3272.5} height={2181.5} alt={'Patek Pillipe'} quality={100} />
-              <div className={styles.titleCategoryWatch}>Patek Phillipe</div>
+              <div className={styles.titleCategoryWatch}>Patek Philippe</div>
               <div className={styles.viewDetailsBTN}>
                   <h4>View</h4>
               </div>
