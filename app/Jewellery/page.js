@@ -27,12 +27,21 @@ export default async function Jewellery() {
     <div>
       
         {/* HERO SECTION MOBILE */}
-
         <div className={styles.heroMobileContainer}>
           <Image
             src={"/jewellery/rings/natural_diamond.png"}
             width={1456}
             height={816}
+            quality={100}
+            alt='hero image mobile'
+            className={styles.imageHeroMobile}
+          />
+        </div>
+        <div className={styles.heroDesktopContainer}>
+          <Image
+            src={"/jewellery/rings/natural_diamond_desktop.png"}
+            width={1456}
+            height={491}
             quality={100}
             alt='hero image mobile'
             className={styles.imageHeroMobile}
@@ -46,18 +55,20 @@ export default async function Jewellery() {
         </Link>
 
         <div className={styles.tagline}>Luxury Times Jewellery</div>
+        
         {/* BTN */}
         <div className={styles.heroBtn}>
                 <Link href="tel:07976 753 254" className={styles.linkBTN}>CALL NOW</Link>
-            </div>
-            <div className={styles.heroBtn}>
-                <Link
-                href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
-                className={styles.linkBTN}
-                >
-                WHATSAPP
-                </Link>
-            </div>
+        </div>
+
+        <div className={styles.whatsappBTN}>
+            <Link
+            href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
+            className={styles.linkBTN}
+            >
+            WHATSAPP
+            </Link>
+        </div>
             <div className={styles.heroBtnDesktop}>07976 753 254</div>
 
         <div className={styles.containerGrid}>
