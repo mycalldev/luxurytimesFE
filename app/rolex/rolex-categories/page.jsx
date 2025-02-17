@@ -199,6 +199,30 @@ export default function RolexCategories() {
             </div>
           </Link>
         </div>
+
+        {/* YACHT-MASTER */}
+        <div className={styles.containerItem}>
+          <Link href={'/rolex/rolex-categories/yachtmaster'} > 
+              <div className={styles.imageContainer}>
+                  <Image
+                      src={`/watches/rolex/yachtmaster/yatchmaster_cropped_square.jpg`}
+                      width={1005}
+                      height={1005}
+                      alt='yacht master square'
+                      className={styles.imageCategory}
+                      quality={100}
+                  />
+              </div>
+          </Link>
+          <div className={styles.contentContainer}>
+            <div className={styles.modelTitle}>Yacht-Master</div>
+          </div>
+          <Link href={"/rolex/rolex-categories/yachtmaster"} prefetch={true} className={styles.linkBTN}>
+            <div className={styles.viewBTN}>
+              View
+            </div>
+          </Link>
+        </div>
       </div>
 
       
