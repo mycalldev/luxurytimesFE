@@ -181,9 +181,9 @@ export default function RolexCategories() {
           <Link href={'/rolex/rolex-categories/yachtmaster'} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/watches/rolex/yachtmaster/yachtmaster126621oysterchocolate/126621yachtmaster1.JPG`}
-                      width={840}
-                      height={560}
+                      src={`/watches/rolex/yachtmaster/dull.jpg`}
+                      width={1005}
+                      height={1005}
                       alt='yacht master thumbnail'
                       className={styles.imageCategory}
                       quality={100}
