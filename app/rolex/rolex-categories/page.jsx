@@ -205,7 +205,7 @@ export default function RolexCategories() {
           <Link href={'/rolex/rolex-categories/yachtmaster'} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/watches/rolex/yachtmaster/yatchmaster_cropped_square.jpg`}
+                      src={`/watches/rolex/yachtmaster/Vinto_Edited.jpg`}
                       width={1005}
                       height={1005}
                       alt='yacht master square'
