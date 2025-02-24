@@ -38,4 +38,13 @@
 
 .fadeOut {
     opacity: 0;
+}
+
+/* Add desktop styles */
+@media (min-width: 768px) {
+    .carousel {
+        width: 80%; /* Reduce width on desktop */
+        max-width: 1200px; /* Maximum width to prevent getting too wide */
+        margin: 40px auto; /* Add vertical and horizontal margin */
+    }
 } 

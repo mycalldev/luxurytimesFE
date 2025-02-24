@@ -7,14 +7,14 @@ export default function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     
     const images = [
-        { src: '/HeroImages/image1.JPG', alt: 'Hero Image 1' },
-        { src: '/HeroImages/image2.JPG', alt: 'Hero Image 2' },
-        { src: '/HeroImages/image3.JPG', alt: 'Hero Image 3' },
-        { src: '/HeroImages/image4.JPG', alt: 'Hero Image 4' },
-        { src: '/HeroImages/image5.JPG', alt: 'Hero Image 5' },
-        { src: '/HeroImages/image6.JPG', alt: 'Hero Image 6' },
-        { src: '/HeroImages/image7.JPG', alt: 'Hero Image 7' },
-        { src: '/HeroImages/image8.JPG', alt: 'Hero Image 8' },
+        { src: '/HeroImages/image1.jpg', alt: 'Hero Image 1' },
+        { src: '/HeroImages/image2.jpg', alt: 'Hero Image 2' },
+        { src: '/HeroImages/image3.jpg', alt: 'Hero Image 3' },
+        { src: '/HeroImages/image4.jpg', alt: 'Hero Image 4' },
+        { src: '/HeroImages/image5.jpg', alt: 'Hero Image 5' },
+        { src: '/HeroImages/image6.jpg', alt: 'Hero Image 6' },
+        { src: '/HeroImages/image7.jpg', alt: 'Hero Image 7' },
+        { src: '/HeroImages/image8.jpg', alt: 'Hero Image 8' },
     ];
 
     useEffect(() => {
