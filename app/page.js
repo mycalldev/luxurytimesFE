@@ -3,6 +3,7 @@ import Link from 'next/link'
 import styles from './page.module.css'
 import ReviewSwiper from './components/ReviewSwiper'
 import Carousel from './components/Carousel'
+import Head from 'next/head'
 
 async function getReview() {
   
@@ -21,7 +22,18 @@ export default async function Home() {
 
   const review = await getReview();
   return (
-    <main className={styles.main}>
+    <>
+      <Head>
+        <title>Your Page Title</title>
+        <meta property="og:title" content="Your Page Title" />
+        <meta property="og:description" content="Luxury Times Watch Dealership." />
+        <meta property="og:image" content="/favicon.ico" />
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:height" content="500" />
+        {/* <meta property="og:url" content="https://example.com/your-page-url" /> */}
+        <meta property="og:type" content="website" />
+      </Head>
+      <main className={styles.main}>
 
     {/* HERO SECTION */}
       {/* MOBILE HERO */}
@@ -180,5 +192,6 @@ export default async function Home() {
 
       <ReviewSwiper review={review}/>
     </main>
+    </>
   )
 }
