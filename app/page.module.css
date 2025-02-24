@@ -23,7 +23,7 @@
   text-align: center;
   font-size: 1.3rem;
   font-weight: 600;
-  color: #323232;
+  color: #333333;
   line-height: 1.3;
 }
 
@@ -32,7 +32,7 @@
   margin: 20px auto;
   text-align: center;
   font-size: 1.3rem;
-  color: #323232;
+  color: #333333;
   line-height: 1.3;
 }
 
@@ -50,7 +50,7 @@
   text-align: center;
   max-width: 200px;
   border-radius: 22px;
-  background: #91c0dc;
+  background: #333333;
   color: #fff;
 }
 
@@ -62,12 +62,12 @@
   margin: 10px auto 50px auto;
   padding: 10px 30px;
   max-width: 150px;
-  border: solid 2px #91c0dc;
+  border: solid 2px #333333;
   border-radius: 22px;
   font-size: 1rem;
   font-weight: 500;
   color: #fff;
-  background-color: #91c0dc;
+  background-color: #333333;
   letter-spacing: 3px;
   text-align: center;
   cursor: pointer;
@@ -81,7 +81,7 @@
   text-align: center;
   max-width: 200px;
   border-radius: 22px;
-  background: #91c0dc;
+  background: #333333;
   color: #fff;
 }
 
@@ -95,7 +95,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
-  color: #323232;
+  color: #333333;
 }
 
 .imageCategoryContainer {
@@ -121,7 +121,7 @@
   font-size: 1.1rem;
   font-weight: 500;
   text-align: center;
-  color: #2e2e2e;
+  color: #333333;
 }
 
 .imageRing {
@@ -135,7 +135,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
-  color: #323232;
+  color: #333333;
 }
 
 .imageGuidesContainer {
@@ -160,7 +160,7 @@
   text-align: center;
   max-width: 200px;
   border-radius: 22px;
-  background: #91c0dc;
+  background: #333333;
   color: #fff;
 }
 
@@ -170,7 +170,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
-  color: #323232;
+  color: #333333;
 }
 
 .imageHighlights {
@@ -211,7 +211,7 @@
   text-align: center;
   max-width: 200px;
   border-radius: 22px;
-  background: #91c0dc;
+  background: #333333;
   color: #fff;
 }
 
@@ -221,7 +221,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
-  color: #323232;
+  color: #333333;
 }
 
 .imageBlogs {
@@ -237,7 +237,7 @@
   text-align: center;
   max-width: 200px;
   border-radius: 22px;
-  background: #91c0dc;
+  background: #333333;
   color: #fff;
 }
 
@@ -267,15 +267,15 @@
 
   /* BUTTONS */
   .viewDetailsBTN{
-    margin: 10px auto 10px auto;
+    margin: 10px auto 50px auto;
     padding: 7px 30px;
     max-width: 150px;
-    border: solid 2px #91c0dc;
+    border: solid 2px #333333;
     border-radius: 22px;
     font-size: 1.1rem;
     font-weight: 500;
     color: #fff;
-    background-color: #91c0dc;
+    background-color: #333333;
     letter-spacing: 3px;
     text-align: center;
     cursor: pointer;
@@ -316,7 +316,7 @@
     text-align: center;
     max-width: 200px;
     border-radius: 22px;
-    background: #91c0dc;
+    background: #333333;
     color: #fff;
   }
 
@@ -336,7 +336,6 @@
   }
 
   /* CATEGORIES */
-
   .spaceDesktop {
     height: 30px;
   }
@@ -358,6 +357,9 @@
   }
 
   .categoryContainerGrid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    width: 80%;
     margin: 60px auto;
     gap: 30px;
   }
@@ -476,7 +478,7 @@
 
   .tagLine {
     margin-top: 40px;
-    color: #2e2e2e;
+    color: #333333;
     font-size: 1.7rem;
     font-weight: 600;
   }
@@ -487,7 +489,7 @@
     margin: 10px auto 30px auto;
     font-size: 1.3rem;
     text-align: center;
-    color: #323232;
+    color: #333333;
   }
 
   .titleHighlights {

@@ -38,7 +38,7 @@ export default function Navbar() {
           <div className={styles.logoIcon}>
             <Link href="tel:07718269994">
               <Image
-                src={'/logo_lt.png'}
+                src={'/logo_it.png'}
                 width={125}
                 height={125}
                 className={styles.navbarLogo}

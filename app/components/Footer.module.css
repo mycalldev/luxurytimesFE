@@ -1,35 +1,49 @@
 .linkBTN {
-  margin: 0 10px;
+  margin: 0 15px;
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.linkBTN:hover {
+  color: #f0a500;
 }
 
 .imageFooter {
     width: 100%;
     height: auto;
     margin: auto;
+    border-radius: 0px;
 }
 
 .containerFlex {
-  padding: 20px;
-  margin-bottom: 40px;
-  display: flex;
+  padding: 30px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   justify-content: space-around;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-  background: #c6c6c6;
+  font-size: 1rem;
+  font-weight: 500;
+  background: #f1f1f1;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.containerFlex:hover {
+  transform: translateY(-5px);
 }
 
 .itemFlex {
   cursor: pointer;
+  color: #333333;
+  margin: 5px;
 }
 
 .addressContainer {
-    padding: 20px;
+    padding: 30px;
     text-align: center;
-    color:#fff;
-    background-color: #c6c6c6;
+    color: #ffffff;
+    background-color: #333333;
 }
 
 .addressTitle {
@@ -46,10 +60,10 @@
 }
 
 .addressContent {
-  text-align: start;
+  text-align: center;
   margin: 20px;
   font-size: 1.1rem;
-  color: #fff;
+  color: #333333;
 }
 
 .addressCountry {
@@ -58,22 +72,36 @@
 }
 
 .socialContainer {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   text-align: center;
   width: 50%;
   margin: 20px auto;
   cursor: pointer;
 }
 
+.socialContainer img {
+  transition: transform 0.3s ease;
+}
+
+.socialContainer img:hover {
+  transform: scale(1.1);
+}
+
+.socialIcon {
+  margin: 20px 0;
+}
+
 .disclaimer {
   margin: 30px 20px;
   font-size: 0.8rem;
+  color: #cccccc;
 }
 
 @media(min-width: 768px) {
   .addressContainer {
-    width: 50%;
+    width: 70%;
     margin: auto;
   }
 
@@ -88,6 +116,19 @@
     text-align: center;
     margin: 20px;
     font-size: 1.1rem;
-    color: #474747;
+    color: #333333;
+  }
+
+  .footerContainer {
+    width: 75%;
+    height: auto;
+    margin: auto;
+  }
+
+  .imageFooter {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    border-radius: 0px;
   }
 }

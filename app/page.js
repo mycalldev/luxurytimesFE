@@ -112,7 +112,7 @@ export default async function Home() {
           </div>
       </section>
       
-      <section>
+      {/* <section>
         <div className={styles.imageCategoryContainer}>
           <Link href={"/Jewellery"} prefetch={true} className={styles.viewBTNContainer}>
             <Image
@@ -129,12 +129,12 @@ export default async function Home() {
             </div>
           </Link>
         </div>
-      </section>
+      </section> */}
 
       <div className={styles.spaceDesktop}></div>
             
       <Carousel />
-      {/* GUIDES SECTION */}
+      {/* GUIDES SECTION
       <section className={styles.guideHighlightGrid}>
        
           <h1 className={styles.titleGuides}>GUIDES</h1>
@@ -171,13 +171,13 @@ export default async function Home() {
           <Link href={'/landing/SkyDweller'} className={styles.linkBTN} prefetch={true}>
             <div className={styles.highlightsBTN}>Read More</div>
           </Link>
-      </section>
+      </section> 
 
       {/* BLOG SECTION */}
       <section>
          <h1 className={styles.titleBlogs}>BLOGS</h1>
          <Link href={'/blog'} prefetch={true}>
-            <Image src={'/blingToBullion.jpeg'} width={840} height={560} className={styles.imageBlogs} alt={'image of Sky-dweller'} quality={100} />
+            <Image src={'/rolex_book.jpg'} width={2303} height={1536} className={styles.imageBlogs} alt={'image of Sky-dweller'} quality={100} />
           </Link>
             <div className={styles.contentHighlightsContainer}>
               {/* <div className={styles.conenttitleHighlights}>Watches</div> */}
