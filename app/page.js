@@ -3,6 +3,7 @@ import Link from 'next/link'
 import styles from './page.module.css'
 import ReviewSwiper from './components/ReviewSwiper'
 import Carousel from './components/Carousel'
+
 async function getReview() {
   
   const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/reviews', {
