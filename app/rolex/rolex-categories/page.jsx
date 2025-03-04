@@ -181,7 +181,7 @@ export default function RolexCategories() {
           <Link href={'/rolex/rolex-categories/yachtmaster'} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/watches/rolex/yachtmaster/dull.jpg`}
+                      src={`/watches/rolex/yachtmaster/yachtmaster116680oysterwhite/116680yachtmaster1.JPG`}
                       width={1005}
                       height={1005}
                       alt='yacht master thumbnail'
@@ -194,6 +194,30 @@ export default function RolexCategories() {
             <div className={styles.modelTitle}>Yacht-Master</div>
           </div>
           <Link href={"/rolex/rolex-categories/yachtmaster"} prefetch={true} className={styles.linkBTN}>
+            <div className={styles.viewBTN}>
+              View
+            </div>
+          </Link>
+        </div>
+
+        {/* MILGAUS */}
+        <div className={styles.containerItem}>
+          <Link href={'/rolex/rolex-categories/milgaus/'} > 
+              <div className={styles.imageContainer}>
+                  <Image
+                      src={`/watches/rolex/milgaus/milgaus116400oysterblack/116400milgaus1.JPG`}
+                      width={1200}
+                      height={1200}
+                      alt='milgaus thumbnail'
+                      className={styles.imageCategory}
+                      quality={100}
+                  />
+              </div>
+          </Link>
+          <div className={styles.contentContainer}>
+            <div className={styles.modelTitle}>Milgaus</div>
+          </div>
+          <Link href={"/rolex/rolex-categories/milgaus/"} prefetch={true} className={styles.linkBTN}>
             <div className={styles.viewBTN}>
               View
             </div>
