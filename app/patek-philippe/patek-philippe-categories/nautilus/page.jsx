@@ -68,9 +68,7 @@ const watches = await getNautilus()
             <h2 className={styles.titleWatch}>{watch.title}</h2>
             <div className={styles.imageContainer}>
               <Image
-                src={`/watches/${watch.brandBackend}/${watch.modelBackend}/${watch.uniqueWatchID}/${watch.modelBackend}${
-                  index + 1
-                }.JPG`}
+                src={`/watches/${watch.brandBackend}/${watch.modelBackend}/${watch.uniqueWatchID}/${watch.modelBackend}1.JPG`}
                 width={840}
                 height={560}
                 alt={watch.title}
