@@ -71,8 +71,8 @@ const watches = await getDaytona()
             <div className={styles.imageContainer}>
               <Image
                 src={`/watches/${watch.brand}/${watch.model}/${watch.model}${watch.ref}${watch.strap}${watch.dial}/${watch.ref}${watch.model}1.JPG`}
-                width={840}
-                height={560}
+                width={1200}
+                height={1200}
                 alt={watch.title}
                 className={styles.imageWatch}
                 quality={100}
