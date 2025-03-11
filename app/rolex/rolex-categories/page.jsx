@@ -61,7 +61,7 @@ export default function RolexCategories() {
           <Link href={'/rolex/rolex-categories/submariner'} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/watches/rolex/submariner/submariner116610LNoysterblack/116610LNsubmariner1.JPG`}
+                      src={`/watches/rolex/submariner/submariner126610LNoysterblack/126610LNsubmariner1.JPG`}
                       width={1200}
                       height={1200}
                       alt='submariner thumbnail'
