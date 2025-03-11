@@ -61,9 +61,9 @@ export default function RolexCategories() {
           <Link href={'/rolex/rolex-categories/submariner'} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/watches/rolex/submariner/submariner116610LVoystergreen/116610LVsubmariner1.JPG`}
-                      width={840}
-                      height={560}
+                      src={`/watches/rolex/submariner/submariner116610LNoysterblack/116610LNsubmariner1.JPG`}
+                      width={1200}
+                      height={1200}
                       alt='submariner thumbnail'
                       className={styles.imageCategory}
                       quality={100}
@@ -182,8 +182,8 @@ export default function RolexCategories() {
               <div className={styles.imageContainer}>
                   <Image
                       src={`/watches/rolex/yachtmaster/yachtmaster116680oysterwhite/116680yachtmaster1.JPG`}
-                      width={1005}
-                      height={1005}
+                      width={1200}
+                      height={1200}
                       alt='yacht master thumbnail'
                       className={styles.imageCategory}
                       quality={100}
