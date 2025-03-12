@@ -47,7 +47,7 @@ const watches = await getYachtMaster()
           The Rolex Yacht-Master is a prestigious and highly regarded 
           luxury wristwatch collection designed for those with a passion 
           for sailing and maritime pursuits. Known for its elegant and sporty design, 
-          the Yacht-Master series offersexceptional craftsmanship 
+          the Yacht-Master series offers exceptional craftsmanship 
           and precision that Rolex is renowned for.
           </p>
           
