@@ -1,8 +1,13 @@
 import React from 'react'
 import Image from 'next/image';
-import Head from 'next/head';
 import Link from 'next/link';
 import styles from './introBlog.module.css';
+
+// Define metadata for the blog page
+export const metadata = {
+  title: 'The Time Keeper - Luxury Times Blog',
+  description: 'Read about luxury watches and the renowned trusted dealer at Luxury Times Ltd.',
+};
 
 export default function introBlog() {
   return (
@@ -24,11 +29,11 @@ export default function introBlog() {
     </div>
 
     <div className={styles.intro}>
-    The CEO of Luxury Times Ltd: Rob Diamond, based in the heart of Canary Wharf is a long time Jewellery and Watch expert. First dipping his toes in the water and becoming a Gemologist in his early 20’s, travelling across all parts of the globe to attain such knowledge and eminent qualification.
+    The CEO of Luxury Times Ltd: Rob Diamond, based in the heart of Canary Wharf is a long time Jewellery and Watch expert. First dipping his toes in the water and becoming a Gemologist in his early 20's, travelling across all parts of the globe to attain such knowledge and eminent qualification.
     </div>
 
     <div className={styles.intro}>
-    Rob, now in his early 50’s has acquired a wealth of knowledge in the Gemology field and over time naturally gravitated into the world of watches. Having a penchant for Rolex, he is renowned for consulting and working with a high-end market and has a catalogue and connection for almost any Rolex model. 
+    Rob, now in his early 50's has acquired a wealth of knowledge in the Gemology field and over time naturally gravitated into the world of watches. Having a penchant for Rolex, he is renowned for consulting and working with a high-end market and has a catalogue and connection for almost any Rolex model. 
     </div>
 
     <div className={styles.intro}>
@@ -36,7 +41,7 @@ export default function introBlog() {
     </div>
 
     <div className={styles.quote}>
-    “I’m not here for the short term or to make a quick buck, I’m here for the long run and to ensure a legacy of trust and quality that is associated with my name”.
+    "I'm not here for the short term or to make a quick buck, I'm here for the long run and to ensure a legacy of trust and quality that is associated with my name"
     </div>
 
     <div className={styles.introBlogWatch}>
@@ -45,15 +50,15 @@ export default function introBlog() {
 
     
     <div className={styles.intro}>
-    This is certainly true from the outside looking in. If one was to visit Rob Diamond’s office you can immediately feel a sense of prestige and credibility given its specific location and attention to the finer details.
+    This is certainly true from the outside looking in. If one was to visit Rob Diamond's office you can immediately feel a sense of prestige and credibility given its specific location and attention to the finer details.
     </div>
 
     <div className={styles.intro}>
-    It is worthy to note that Rob Diamond’s collection ranges from Rolex watches that are ‘hot off the press’ models to renowned vintage models. He brings to light some of the many reasons behind the designs of the Rolex models and their allining intrigue. As a teaser, Rob informs me of why the Submariner model comprises a unidirectional bezel (only rotates one way) and the specific direction of said rotation.
+    It is worthy to note that Rob Diamond's collection ranges from Rolex watches that are 'hot off the press' models to renowned vintage models. He brings to light some of the many reasons behind the designs of the Rolex models and their allining intrigue. As a teaser, Rob informs me of why the Submariner model comprises a unidirectional bezel (only rotates one way) and the specific direction of said rotation.
     </div>
 
     <div className={styles.quote}>
-    “Rolex are the masters of mechanical engineering and have accomplished the means by demonstrating this through artistic design”
+    "Rolex are the masters of mechanical engineering and have accomplished the means by demonstrating this through artistic design"
     </div>
 
     <div className={styles.vintageCropped}>
@@ -61,7 +66,7 @@ export default function introBlog() {
     </div>
 
     <div className={styles.intro}>
-    The Submariner model’s bezel only rotates anti-clockwise and this is a safety feature for using the bezel to set a time limit during a diving session. Rob goes on to say that there are a myriad of features and specific design configurations that all serve a unique purpose. He notes that the SkyDweller model is the most complex of them all and would be a fitting time piece for ‘James Bond’.
+    The Submariner model's bezel only rotates anti-clockwise and this is a safety feature for using the bezel to set a time limit during a diving session. Rob goes on to say that there are a myriad of features and specific design configurations that all serve a unique purpose. He notes that the SkyDweller model is the most complex of them all and would be a fitting time piece for 'James Bond'.
     </div>
 
     <div className={styles.skydwellerFlowers}>
@@ -73,7 +78,7 @@ export default function introBlog() {
     </div>
 
     <div className={styles.intro}>
-    “Rolex are here to stay and there is good reason as to the why investors across the globe have stocked up on their collection” 
+    "Rolex are here to stay and there is good reason as to the why investors across the globe have stocked up on their collection" 
     </div>
 
     <div className={styles.intro}>
