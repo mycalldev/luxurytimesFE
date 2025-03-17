@@ -2,16 +2,13 @@
 
 import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useAuth } from '../../../contexts/AuthContext';
-import { supabase } from '../../../lib/supabase';
+import { getSupabase } from '../../../app/lib/supabase';
 import styles from './blogs.module.css';
 
 // Component that uses searchParams and needs to be wrapped in Suspense
 function BlogsContent() {
-  const { user, loading, isAuthenticated } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const hasTimestamp = searchParams.has('t');
   const [isLoading, setIsLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
   const [error, setError] = useState(null);
@@ -30,34 +27,18 @@ function BlogsContent() {
     metaKeywords: '',
     author: '',
     publishDate: new Date().toISOString().split('T')[0],
-    readTime: '2 minute read',
+    readTime: '2',
     featuredImage: '',
     status: 'draft'
   });
   const [expandedBlog, setExpandedBlog] = useState(null);
-  const [schemaError, setSchemaError] = useState(null);
+  // Get the Supabase client instance
+  const supabase = getSupabase();
 
   useEffect(() => {
-    console.log('Blogs page mounted, auth state:', { loading, isAuthenticated, user });
-    console.log('Has timestamp parameter:', hasTimestamp);
-    
-    // If we have a timestamp parameter, we can assume we came from an authenticated route
-    if (hasTimestamp) {
-      setIsLoading(false);
-      fetchBlogs();
-      checkDatabaseSchema();
-      return;
-    }
-    
-    // Otherwise, check authentication status
-    if (!loading && !isAuthenticated) {
-      router.push('/admin/login');
-      return;
-    }
-
+    console.log('Blogs page mounted');
     fetchBlogs();
-    checkDatabaseSchema();
-  }, [loading, isAuthenticated, router, hasTimestamp]);
+  }, []);
 
   const fetchBlogs = async () => {
     setIsLoading(true);
@@ -107,45 +88,19 @@ function BlogsContent() {
     setError(null);
 
     try {
-      // Create a simplified blog data object with only essential fields
-      // This should work even if some columns are missing in the database
+      // Create a blog data object that matches our schema
       const blogData = {
-        title: formData.title, // Required field
-        status: formData.status || 'draft' // Required field with default
+        title: formData.title,
+        subtitle: formData.subtitle || null,
+        meta_title: formData.metaTitle || null,
+        meta_description: formData.metaDescription || null,
+        meta_keywords: formData.metaKeywords || null,
+        author: formData.author || null,
+        publish_date: formData.publishDate || null,
+        featured_image: formData.featuredImage || null,
+        read_time: parseInt(formData.readTime) || null,
+        status: formData.status || 'draft'
       };
-      
-      // Add optional fields that should work in most cases
-      if (formData.subtitle) blogData.subtitle = formData.subtitle;
-      if (formData.author) blogData.author = formData.author;
-      
-      // Try to add the metadata fields, but don't let them break the submission
-      try {
-        // Add these conditionally with full error handling
-        if (formData.metaTitle) blogData.meta_title = formData.metaTitle;
-        if (formData.metaDescription) blogData.meta_description = formData.metaDescription;
-        if (formData.publishDate) blogData.publish_date = formData.publishDate;
-        if (formData.readTime) blogData.read_time = formData.readTime;
-        if (formData.featuredImage) blogData.featured_image = formData.featuredImage;
-        
-        // Specifically handle meta_keywords with extra caution
-        if (formData.metaKeywords) {
-          // Try to add it, but if this fails, the rest of the form will still work
-          try {
-            blogData.meta_keywords = formData.metaKeywords;
-          } catch (metaKeywordsErr) {
-            console.warn('Could not set meta_keywords field:', metaKeywordsErr);
-            // Continue without meta_keywords
-          }
-        }
-      } catch (metadataErr) {
-        console.warn('Error setting some metadata fields:', metadataErr);
-        // Continue with basic fields only
-      }
-      
-      // Add user_id if available
-      if (user?.id) {
-        blogData.user_id = user.id;
-      }
       
       console.log('Preparing to save blog data:', blogData);
       
@@ -168,7 +123,7 @@ function BlogsContent() {
         console.log('Blog updated successfully:', data);
         result = data;
       } else {
-        // Create new blog metadata entry
+        // Create new blog entry
         console.log('Creating new blog entry');
         
         const { data, error } = await supabase
@@ -178,19 +133,9 @@ function BlogsContent() {
           
         if (error) {
           console.error('Error inserting blog:', error);
-          
-          // Special handling for column errors
-          if (error.message && error.message.includes('column')) {
-            const columnMatch = error.message.match(/column ["'](.+?)["']/);
-            if (columnMatch && columnMatch[1]) {
-              throw new Error(`Database column error with: ${columnMatch[1]}. Please check your database schema.`);
-            }
-          }
-          
           throw new Error(`Failed to insert blog: ${error.message || error}`);
         }
         
-        console.log('Blog created successfully:', data);
         result = data;
       }
       
@@ -206,7 +151,7 @@ function BlogsContent() {
         metaKeywords: '',
         author: '',
         publishDate: new Date().toISOString().split('T')[0],
-        readTime: '2 minute read',
+        readTime: '2',
         featuredImage: '',
         status: 'draft'
       });
@@ -215,7 +160,7 @@ function BlogsContent() {
       setShowForm(false);
     } catch (err) {
       console.error('Error saving blog:', err);
-      setError(err.message || 'Failed to save blog metadata. Check console for details.');
+      setError(err.message || 'Failed to save blog. Check console for details.');
     } finally {
       setIsLoading(false);
     }
@@ -234,7 +179,7 @@ function BlogsContent() {
       metaKeywords: blog.meta_keywords || '',
       author: blog.author || '',
       publishDate: blog.publish_date || new Date().toISOString().split('T')[0],
-      readTime: blog.read_time || '2 minute read',
+      readTime: blog.read_time ? blog.read_time.toString() : '2',
       featuredImage: blog.featured_image || '',
       status: blog.status || 'draft'
     });
@@ -243,7 +188,7 @@ function BlogsContent() {
   };
 
   const handleDelete = async (id) => {
-    if (!window.confirm('Are you sure you want to delete this blog metadata entry?')) return;
+    if (!window.confirm('Are you sure you want to delete this blog?')) return;
     
     setIsLoading(true);
     try {
@@ -258,133 +203,18 @@ function BlogsContent() {
       await fetchBlogs();
     } catch (err) {
       console.error('Error deleting blog:', err);
-      setError(err.message || 'Failed to delete blog metadata');
+      setError(err.message || 'Failed to delete blog');
     } finally {
       setIsLoading(false);
     }
   };
 
-  // Add a function to toggle metadata details
+  // Toggle metadata details
   const toggleMetadataDetails = (blogId) => {
     setExpandedBlog(expandedBlog === blogId ? null : blogId);
   };
 
-  // Add this improved function to check database schema
-  const checkDatabaseSchema = async () => {
-    try {
-      console.log('Performing comprehensive database schema check...');
-      
-      // First, check if table exists by trying to select from it
-      const { data: tableData, error: tableError } = await supabase
-        .from('blogs')
-        .select('*')
-        .limit(1);
-        
-      if (tableError) {
-        console.error('Error checking blogs table:', tableError);
-        setError(`Database error: ${tableError.message}. The blogs table may not exist.`);
-        return;
-      }
-      
-      let columns = [];
-      
-      if (tableData && tableData.length > 0) {
-        columns = Object.keys(tableData[0]);
-        console.log('Blogs table exists with columns:', columns);
-        
-        // Check for missing required columns
-        const requiredColumns = ['id', 'title', 'status', 'created_at', 'updated_at'];
-        const missingRequired = requiredColumns.filter(col => !columns.includes(col));
-        
-        if (missingRequired.length > 0) {
-          console.error('Missing required columns:', missingRequired);
-          setError(`Missing required columns: ${missingRequired.join(', ')}`);
-        }
-        
-        // Check specifically for meta fields
-        const metaColumns = ['meta_title', 'meta_description', 'meta_keywords'];
-        const missingMeta = metaColumns.filter(col => !columns.includes(col));
-        
-        if (missingMeta.length > 0) {
-          console.warn('Missing metadata columns:', missingMeta);
-          setError(`Missing metadata columns: ${missingMeta.join(', ')}. Some features may not work correctly.`);
-        }
-      } else {
-        console.log('No blog rows found. Creating a test row to check schema...');
-        
-        // Try to insert a minimal test record
-        const testData = { 
-          title: 'Test Blog', 
-          status: 'draft'
-        };
-        
-        const { data: insertData, error: insertError } = await supabase
-          .from('blogs')
-          .insert([testData])
-          .select();
-          
-        if (insertError) {
-          console.error('Error creating test record:', insertError);
-          setError(`Cannot verify database schema: ${insertError.message}`);
-        } else if (insertData && insertData.length > 0) {
-          columns = Object.keys(insertData[0]);
-          console.log('Test row created. Schema appears to be:', columns);
-          
-          // Delete test row
-          await supabase.from('blogs').delete().eq('id', insertData[0].id);
-          
-          // Check for meta_keywords column specifically
-          if (!columns.includes('meta_keywords')) {
-            console.error('meta_keywords column is missing!');
-            setError('The meta_keywords column is missing from the database!');
-          }
-        }
-      }
-      
-      return columns;
-    } catch (err) {
-      console.error('Error in schema check:', err);
-      setError(`Schema check failed: ${err.message}`);
-    }
-  };
-  
-  // Add function to attempt fixing the schema
-  const attemptSchemaFix = async () => {
-    setIsLoading(true);
-    setError(null);
-    
-    try {
-      console.log('Attempting to fix database schema...');
-      
-      // Try to add missing meta columns using SQL directly
-      const { error } = await supabase.rpc('add_missing_columns');
-      
-      if (error) {
-        console.error('Error running schema fix:', error);
-        setError(`Schema fix failed: ${error.message}. You may need to add columns manually.`);
-        
-        // Show manual SQL instructions
-        console.log('To manually fix the schema, run this SQL in the Supabase SQL Editor:');
-        console.log(`
-          ALTER TABLE blogs ADD COLUMN IF NOT EXISTS meta_title TEXT;
-          ALTER TABLE blogs ADD COLUMN IF NOT EXISTS meta_description TEXT;
-          ALTER TABLE blogs ADD COLUMN IF NOT EXISTS meta_keywords TEXT;
-        `);
-      } else {
-        console.log('Schema fix attempted successfully');
-        // Recheck schema
-        await checkDatabaseSchema();
-        setError('Schema fix attempted. Please reload the page to verify.');
-      }
-    } catch (err) {
-      console.error('Error fixing schema:', err);
-      setError(`Schema fix failed: ${err.message}`);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  if (isLoading) {
+  if (isLoading && blogs.length === 0) {
     return (
       <div className={styles.loadingContainer}>
         <div className={styles.loadingSpinner}></div>
@@ -408,7 +238,7 @@ function BlogsContent() {
               metaKeywords: '',
               author: '',
               publishDate: new Date().toISOString().split('T')[0],
-              readTime: '2 minute read',
+              readTime: '2',
               featuredImage: '',
               status: 'draft'
             });
@@ -416,7 +246,7 @@ function BlogsContent() {
           }} 
           className={styles.addButton}
         >
-          {showForm ? 'Cancel' : 'Add New Blog Entry'}
+          {showForm ? 'Cancel' : 'Add New Blog'}
         </button>
       </header>
 
@@ -439,52 +269,18 @@ function BlogsContent() {
       {error && (
         <div className={styles.errorMessage}>
           <strong>Error:</strong> {error}
-          <div className={styles.errorActions}>
-            {error.includes('column') && (
-              <button 
-                onClick={() => {
-                  // Show SQL instructions in the console
-                  console.log('To fix the schema, run this SQL in the Supabase SQL Editor:');
-                  console.log(`
-                    -- Add missing columns to the blogs table
-                    ALTER TABLE blogs ADD COLUMN IF NOT EXISTS meta_title TEXT;
-                    ALTER TABLE blogs ADD COLUMN IF NOT EXISTS meta_description TEXT;
-                    ALTER TABLE blogs ADD COLUMN IF NOT EXISTS meta_keywords TEXT;
-                    
-                    -- Verify columns were added
-                    SELECT column_name, data_type 
-                    FROM information_schema.columns 
-                    WHERE table_name = 'blogs'
-                    ORDER BY ordinal_position;
-                  `);
-                  
-                  // Show confirmation dialog
-                  if (window.confirm(
-                    'To fix this issue, you need to add the missing columns to your database.\n\n' +
-                    'SQL instructions have been printed in the browser console.\n\n' + 
-                    'Would you like to reload the page after running the SQL?'
-                  )) {
-                    window.location.reload();
-                  }
-                }}
-                className={styles.fixSchemaButton}
-              >
-                Fix Schema
-              </button>
-            )}
-            <button 
-              onClick={() => setError(null)} 
-              className={styles.errorCloseButton}
-            >
-              ×
-            </button>
-          </div>
+          <button 
+            onClick={() => setError(null)} 
+            className={styles.errorCloseButton}
+          >
+            ×
+          </button>
         </div>
       )}
 
       {showForm && (
         <div className={styles.formCard}>
-          <h2 className={styles.formTitle}>{currentBlog ? 'Edit Blog Metadata' : 'Add New Blog Metadata'}</h2>
+          <h2 className={styles.formTitle}>{currentBlog ? 'Edit Blog' : 'Add New Blog'}</h2>
           <form onSubmit={handleSubmit} className={styles.blogForm}>
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
@@ -572,15 +368,16 @@ function BlogsContent() {
               </div>
               
               <div className={styles.formGroup}>
-                <label htmlFor="readTime" className={styles.formLabel}>Read Time</label>
+                <label htmlFor="readTime" className={styles.formLabel}>Read Time (minutes)</label>
                 <input
                   id="readTime"
-                  type="text"
+                  type="number"
                   name="readTime"
                   value={formData.readTime}
                   onChange={handleInputChange}
                   className={styles.formInput}
-                  placeholder="2 minute read"
+                  placeholder="2"
+                  min="1"
                 />
               </div>
             </div>
@@ -614,7 +411,7 @@ function BlogsContent() {
             </div>
             
             <div className={styles.formGroup}>
-              <label htmlFor="featuredImage" className={styles.formLabel}>Featured Image Path</label>
+              <label htmlFor="featuredImage" className={styles.formLabel}>Featured Image URL</label>
               <input
                 id="featuredImage"
                 type="text"
@@ -631,7 +428,7 @@ function BlogsContent() {
               className={styles.submitButton}
               disabled={isLoading}
             >
-              {isLoading ? 'Saving...' : (currentBlog ? 'Update Metadata' : 'Save Metadata')}
+              {isLoading ? 'Saving...' : (currentBlog ? 'Update Blog' : 'Save Blog')}
             </button>
           </form>
         </div>
@@ -642,7 +439,7 @@ function BlogsContent() {
         
         {blogs.length === 0 ? (
           <div className={styles.emptyState}>
-            No blog entries found. Add your first blog metadata above.
+            No blog entries found. Add your first blog above.
           </div>
         ) : (
           <div className={styles.blogsTable}>
@@ -660,14 +457,12 @@ function BlogsContent() {
                   <div className={styles.tableCell}>
                     <p className={styles.blogTitle}>{blog.title}</p>
                     <p className={styles.blogSubtitle}>{blog.subtitle}</p>
-                    {blog.meta_title && (
-                      <button 
-                        onClick={() => toggleMetadataDetails(blog.id)} 
-                        className={styles.metaToggle}
-                      >
-                        {expandedBlog === blog.id ? 'Hide Metadata' : 'Show Metadata'}
-                      </button>
-                    )}
+                    <button 
+                      onClick={() => toggleMetadataDetails(blog.id)} 
+                      className={styles.metaToggle}
+                    >
+                      {expandedBlog === blog.id ? 'Hide Details' : 'Show Details'}
+                    </button>
                   </div>
                   <div className={styles.tableCell}>{blog.author || 'N/A'}</div>
                   <div className={styles.tableCell}>
@@ -712,7 +507,7 @@ function BlogsContent() {
                     </div>
                     <div className={styles.metaItem}>
                       <span className={styles.metaLabel}>Read Time:</span>
-                      <span className={styles.metaValue}>{blog.read_time || 'Not set'}</span>
+                      <span className={styles.metaValue}>{blog.read_time ? `${blog.read_time} minutes` : 'Not set'}</span>
                     </div>
                     <div className={styles.metaItem}>
                       <span className={styles.metaLabel}>Featured Image:</span>

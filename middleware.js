@@ -1,90 +1,85 @@
 import { NextResponse } from 'next/server';
-import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs';
+import { verify } from 'jsonwebtoken';
 
-export async function middleware(req) {
-  console.log('Middleware running for path:', req.nextUrl.pathname);
+// Secret key for JWT verification
+const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
+
+// Paths that should be protected (require authentication)
+const protectedPaths = [
+  '/admin',
+  '/dashboard'
+];
+
+// Paths that are publicly accessible
+const publicPaths = [
+  '/login',
+  '/register',
+  '/',
+  '/api/admin/createAdmin',  // Allow access to create the first admin
+  '/admin/signup',           // Allow access to admin signup page
+  '/admin/blogs'             // Allow access to blog management without authentication
+];
+
+export async function middleware(request) {
+  const { pathname } = request.nextUrl;
   
-  const res = NextResponse.next();
-  const supabase = createMiddlewareClient({ req, res });
+  // Check if the path is protected
+  const isProtectedPath = protectedPaths.some(path => 
+    pathname.startsWith(path)
+  );
   
-  // Pages that don't require authentication checks - always allow access
-  const publicAdminPages = ['/admin/setup', '/admin/login', '/admin/test', '/admin/auth-test', '/admin/blogs'];
+  // Check if the path is public
+  const isPublicPath = publicPaths.some(path => 
+    pathname === path || pathname.startsWith(path)
+  );
   
-  // Check if any admin page has a timestamp parameter
-  // This is used to bypass normal checks when navigating between pages
-  const hasTimestampParam = req.nextUrl.searchParams.has('t');
-  
-  if (req.nextUrl.pathname.startsWith('/admin/') && hasTimestampParam) {
-    console.log('Admin page accessed with timestamp, bypassing checks:', req.nextUrl.pathname);
-    return res;
+  // If it's a public path, allow the request
+  if (isPublicPath) {
+    return NextResponse.next();
   }
   
-  // If accessing a public admin page, allow access without redirects
-  if (publicAdminPages.includes(req.nextUrl.pathname)) {
-    console.log('Accessing public admin page, allowing access');
-    return res;
+  // If it's not a protected path, allow the request
+  if (!isProtectedPath) {
+    return NextResponse.next();
+  }
+  
+  // Get the token from the cookies
+  const authToken = request.cookies.get('authToken')?.value;
+  
+  // If there's no token, redirect to login
+  if (!authToken) {
+    return NextResponse.redirect(new URL('/admin/signup', request.url));
   }
   
   try {
-    // Check if the user is authenticated
-    const { data: { session } } = await supabase.auth.getSession();
-    console.log('Session check complete. Session details:', { 
-      exists: !!session, 
-      userId: session?.user?.id,
-      email: session?.user?.email,
-      expiresAt: session?.expires_at 
-    });
+    // Verify the token
+    const decoded = verify(authToken, JWT_SECRET);
     
-    // Look for auth cookie as a backup check
-    const hasSbAccessToken = req.cookies.get('sb-access-token');
-    const hasSbRefreshToken = req.cookies.get('sb-refresh-token');
-    const hasLegacyToken = req.cookies.get('supabase-auth-token');
-    
-    console.log('Auth cookies:', { 
-      'sb-access-token': !!hasSbAccessToken,
-      'sb-refresh-token': !!hasSbRefreshToken,
-      'supabase-auth-token': !!hasLegacyToken
-    });
-    
-    // Use either the session or cookie to determine authentication
-    const isAuthenticated = !!session || !!hasSbAccessToken || !!hasSbRefreshToken || !!hasLegacyToken;
-    
-    // If the user is not authenticated and trying to access protected admin routes, redirect to login
-    if (!isAuthenticated && req.nextUrl.pathname.startsWith('/admin')) {
-      console.log('Not authenticated, redirecting to login');
-      const redirectUrl = new URL('/admin/login', req.url);
-      return NextResponse.redirect(redirectUrl);
+    // Check for admin paths that require admin role
+    if (pathname.startsWith('/admin') && decoded.role !== 'ADMIN') {
+      // If trying to access admin paths without admin role, redirect to dashboard
+      return NextResponse.redirect(new URL('/dashboard', request.url));
     }
     
-    // If authenticated but accessing login page, redirect to admin dashboard
-    if (isAuthenticated && req.nextUrl.pathname === '/admin/login') {
-      console.log('Already authenticated, redirecting to dashboard');
-      const redirectUrl = new URL('/admin/dashboard', req.url);
-      return NextResponse.redirect(redirectUrl);
-    }
-    
-    // If we get here and the path starts with /admin, the user is authenticated
-    // So we allow access to all admin routes including /admin/blogs
-    if (req.nextUrl.pathname.startsWith('/admin')) {
-      console.log('User is authenticated, allowing access to', req.nextUrl.pathname);
-      return res;
-    }
-    
-    return res;
+    // If everything is fine, allow the request
+    return NextResponse.next();
   } catch (error) {
-    console.error('Error in middleware:', error);
-    
-    // If there's an error checking the session, still allow access to public pages
-    if (publicAdminPages.includes(req.nextUrl.pathname)) {
-      return res;
-    }
-    
-    // For other pages, redirect to login to be safe
-    const redirectUrl = new URL('/admin/login', req.url);
-    return NextResponse.redirect(redirectUrl);
+    // If token is invalid or expired, redirect to login
+    return NextResponse.redirect(new URL('/admin/signup', request.url));
   }
 }
 
+// Configure the middleware to run on specific paths
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: [
+    /*
+     * Match all request paths except:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * - images (static images folder)
+     * - public files (like robots.txt)
+     */
+    '/((?!_next/static|_next/image|favicon.ico|images|.*\\.png$|.*\\.jpg$|.*\\.svg$).*)',
+  ],
 }; 

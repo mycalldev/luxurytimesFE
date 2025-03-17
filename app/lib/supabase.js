@@ -3,12 +3,35 @@ import { createClient } from '@supabase/supabase-js';
 // Initialize the Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error('Missing Supabase environment variables');
 }
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Singleton implementation to prevent multiple instances
+let supabaseInstance = null;
+let supabaseAdminInstance = null;
+
+// Get the Supabase client instance (creates it only once)
+export const getSupabase = () => {
+  if (!supabaseInstance) {
+    supabaseInstance = createClient(supabaseUrl, supabaseAnonKey);
+  }
+  return supabaseInstance;
+};
+
+// Get the Supabase admin client instance (creates it only once)
+export const getSupabaseAdmin = () => {
+  if (!supabaseAdminInstance && supabaseServiceKey) {
+    supabaseAdminInstance = createClient(supabaseUrl, supabaseServiceKey);
+  }
+  return supabaseAdminInstance;
+};
+
+// For backwards compatibility with existing code
+export const supabase = getSupabase();
+export const supabaseAdmin = supabaseServiceKey ? getSupabaseAdmin() : null;
 
 // Authentication helper functions
 export const signIn = async (email, password) => {

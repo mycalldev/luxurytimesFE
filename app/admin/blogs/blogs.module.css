@@ -1,454 +1,539 @@
 .blogsContainer {
-  min-height: 100vh;
-  padding: 2rem;
-  background-color: #f5f5f5;
-}
-
-.blogsHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.blogsTitle {
-  color: #0f2c52;
-  font-size: 1.8rem;
-  margin: 0;
-}
-
-.addButton {
-  background-color: #0f2c52;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.addButton:hover {
-  background-color: #0a1f3a;
-}
-
-.errorMessage {
-  background-color: #f8d7da;
-  color: #721c24;
-  padding: 0.8rem;
-  border-radius: 4px;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  position: relative;
-}
-
-.errorActions {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.fixSchemaButton {
-  background-color: #0f2c52;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.8rem;
-  cursor: pointer;
-  margin-right: 0.5rem;
-}
-
-.fixSchemaButton:hover {
-  background-color: #0a1f3a;
-}
-
-.errorCloseButton {
-  background: none;
-  border: none;
-  color: #721c24;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-}
-
-.formCard {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.formTitle {
-  color: #0f2c52;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-}
-
-.blogForm {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.formRow {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.formGroup {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.formLabel {
-  font-weight: 500;
-  color: #333;
-}
-
-.formInput, .formTextarea, .formSelect {
-  padding: 0.8rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.3s ease;
-}
-
-.formInput:focus, .formTextarea:focus, .formSelect:focus {
-  outline: none;
-  border-color: #0f2c52;
-  box-shadow: 0 0 0 2px rgba(15, 44, 82, 0.1);
-}
-
-.formTextarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
-.formHelp {
-  font-size: 0.8rem;
-  color: #666;
-  margin-top: 0.25rem;
-}
-
-.submitButton {
-  padding: 1rem;
-  background-color: #0f2c52;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 1rem;
-  align-self: flex-end;
-  min-width: 150px;
-}
-
-.submitButton:hover {
-  background-color: #0a1f3a;
-}
-
-.submitButton:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
-
-.sectionTitle {
-  color: #0f2c52;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-}
-
-.emptyState {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
-  text-align: center;
-  color: #666;
-}
-
-/* Stats Dashboard */
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.statCard {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.statTitle {
-  color: #666;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.statValue {
-  color: #0f2c52;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-/* Table View */
-.blogsTable {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-}
-
-.tableHeader {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-  background-color: #f0f4f8;
-  padding: 1rem;
-  font-weight: 600;
-  color: #0f2c52;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.tableRow {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-  padding: 1rem;
-  border-bottom: 1px solid #e0e0e0;
-  align-items: center;
-}
-
-.tableRow:last-child {
-  border-bottom: none;
-}
-
-.tableCell {
-  padding: 0 0.5rem;
-}
-
-.blogTitle {
-  margin: 0 0 0.25rem 0;
-  font-weight: 600;
-  color: #0f2c52;
-}
-
-.blogSubtitle {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.blogMeta {
-  margin: 0.25rem 0 0 0;
-  font-size: 0.8rem;
-  color: #0f2c52;
-  font-style: italic;
-}
-
-.metaToggle {
-  background: none;
-  border: none;
-  color: #0f2c52;
-  font-size: 0.8rem;
-  text-decoration: underline;
-  cursor: pointer;
-  padding: 0.25rem 0;
-  margin-top: 0.25rem;
-}
-
-.metaToggle:hover {
-  color: #0a1f3a;
-}
-
-.metadataDetails {
-  background-color: #f0f4f8;
-  padding: 1rem;
-  margin: -0.5rem 1rem 1rem 1rem;
-  border-radius: 0 0 8px 8px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 0.75rem 1.5rem;
-}
-
-.metaItem {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.metaLabel {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #0f2c52;
-}
-
-.metaValue {
-  font-size: 0.9rem;
-  color: #333;
-  word-break: break-word;
-}
-
-.statusBadge {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.statusPublished {
-  background-color: #d4edda;
-  color: #155724;
-}
-
-.statusDraft {
-  background-color: #f8f9fa;
-  color: #6c757d;
-}
-
-.blogActions {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.editButton, .deleteButton {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.editButton {
-  background-color: #0f2c52;
-  color: white;
-}
-
-.editButton:hover {
-  background-color: #0a1f3a;
-}
-
-.deleteButton {
-  background-color: #dc3545;
-  color: white;
-}
-
-.deleteButton:hover {
-  background-color: #c82333;
-}
-
-.loadingContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f5f5f5;
-}
-
-.loadingSpinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid rgba(15, 44, 82, 0.1);
-  border-radius: 50%;
-  border-top-color: #0f2c52;
-  animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-}
-
-@media (max-width: 768px) {
-  .formRow {
+  
+  .blogsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .blogsTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #212529;
+    margin: 0;
+  }
+  
+  .addButton {
+    background-color: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(67, 97, 238, 0.3);
+  }
+  
+  .addButton:hover {
+    background-color: #3a56d4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(67, 97, 238, 0.4);
+  }
+  
+  .addButton:active {
+    transform: translateY(0);
+  }
+  
+  .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .statCard {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
     flex-direction: column;
-    gap: 1rem;
+    border-top: 5px solid #4361ee;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .statCard:nth-child(1) {
+    border-top-color: #4361ee;
+  }
+  
+  .statCard:nth-child(2) {
+    border-top-color: #38b000;
+  }
+  
+  .statCard:nth-child(3) {
+    border-top-color: #ff9f1c;
+  }
+  
+  .statCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .statTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #6c757d;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .statValue {
+    font-size: 36px;
+    font-weight: 700;
+    color: #212529;
+    margin: 0;
+  }
+  
+  .statCard::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(67, 97, 238, 0.05);
+    border-radius: 50%;
+    transform: translate(20%, 20%);
+  }
+  
+  .statCard:nth-child(1)::after {
+    background-color: rgba(67, 97, 238, 0.05);
+  }
+  
+  .statCard:nth-child(2)::after {
+    background-color: rgba(56, 176, 0, 0.05);
+  }
+  
+  .statCard:nth-child(3)::after {
+    background-color: rgba(255, 159, 28, 0.05);
+  }
+  
+  .errorMessage {
+    background-color: #fff5f5;
+    border: 1px solid #fc8181;
+    color: #c53030;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .errorCloseButton {
+    background: none;
+    border: none;
+    color: #c53030;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 8px;
+  }
+  
+  .formCard {
+    background-color: white;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 32px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .formCard:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+  
+  .formTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #212529;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .blogForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+  }
+  
+  .formLabel {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #495057;
+  }
+  
+  .formInput, .formSelect {
+    padding: 10px 14px;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    background-color: #fafafa;
+  }
+  
+  .formInput:focus, .formSelect:focus {
+    outline: none;
+    border-color: #4361ee;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+  }
+  
+  .formHelp {
+    font-size: 12px;
+    color: #6c757d;
+    margin-top: 6px;
   }
   
   .submitButton {
-    align-self: center;
-    width: 100%;
+    background-color: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+    margin-top: 12px;
+    box-shadow: 0 2px 5px rgba(67, 97, 238, 0.3);
   }
   
-  .tableHeader, .tableRow {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+  .submitButton:hover {
+    background-color: #3a56d4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(67, 97, 238, 0.4);
+  }
+  
+  .submitButton:disabled {
+    background-color: #a5b4fc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .blogsList {
+    background-color: white;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .sectionTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #212529;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .emptyState {
+    text-align: center;
+    padding: 60px 0;
+    color: #6c757d;
+    font-size: 16px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px dashed #dee2e6;
+  }
+  
+  .blogsTable {
+    width: 100%;
+    border-collapse: collapse;
   }
   
   .tableHeader {
-    display: none;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    padding: 14px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 12px;
+    border: 1px solid #e9ecef;
   }
   
   .tableRow {
-    padding: 1.5rem 1rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    padding: 14px 20px;
+    border-bottom: 1px solid #e9ecef;
+    align-items: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  .tableRow:hover {
+    background-color: #f8f9fa;
   }
   
   .tableCell {
-    padding: 0.5rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
-  .tableCell:nth-child(1)::before {
-    content: "Title";
-    display: block;
+  .blogTitle {
     font-weight: 600;
-    color: #0f2c52;
-    margin-bottom: 0.25rem;
+    margin-bottom: 4px;
+    color: #212529;
   }
   
-  .tableCell:nth-child(2)::before {
-    content: "Author";
-    display: block;
-    font-weight: 600;
-    color: #0f2c52;
-    margin-bottom: 0.25rem;
+  .blogSubtitle {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 8px;
   }
   
-  .tableCell:nth-child(3)::before {
-    content: "Status";
-    display: block;
-    font-weight: 600;
-    color: #0f2c52;
-    margin-bottom: 0.25rem;
+  .metaToggle {
+    background: none;
+    border: none;
+    color: #4361ee;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    font-weight: 500;
   }
   
-  .tableCell:nth-child(4)::before {
-    content: "Publish Date";
-    display: block;
-    font-weight: 600;
-    color: #0f2c52;
-    margin-bottom: 0.25rem;
+  .metaToggle:hover {
+    color: #3a56d4;
   }
   
-  .tableCell:nth-child(5)::before {
-    content: "Actions";
-    display: block;
-    font-weight: 600;
-    color: #0f2c52;
-    margin-bottom: 0.25rem;
+  .statusBadge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
-} 
+  
+  .statusPublished {
+    background-color: #d8f3dc;
+    color: #087f5b;
+  }
+  
+  .statusDraft {
+    background-color: #e9ecef;
+    color: #495057;
+  }
+  
+  .blogActions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .editButton, .deleteButton {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
+  }
+  
+  .editButton {
+    background-color: #e9ecef;
+    color: #495057;
+  }
+  
+  .editButton:hover {
+    background-color: #dee2e6;
+    transform: translateY(-1px);
+  }
+  
+  .deleteButton {
+    background-color: #fff5f5;
+    color: #e53e3e;
+  }
+  
+  .deleteButton:hover {
+    background-color: #fed7d7;
+    transform: translateY(-1px);
+  }
+  
+  .metadataDetails {
+    grid-column: 1 / -1;
+    background-color: #f8f9fa;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    border: 1px solid #e9ecef;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .metaItem {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+  
+  .metaLabel {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6c757d;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .metaValue {
+    font-size: 14px;
+    word-break: break-word;
+    color: #212529;
+  }
+  
+  .loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+  }
+  
+  .loadingSpinner {
+    border: 4px solid rgba(67, 97, 238, 0.1);
+    border-left: 4px solid #4361ee;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @media (max-width: 992px) {
+    .blogsContainer {
+      padding: 20px;
+    }
+    
+    .statsGrid {
+      gap: 16px;
+    }
+    
+    .formCard, .blogsList {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .blogsHeader {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    
+    .addButton {
+      align-self: flex-start;
+    }
+    
+    .formRow {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    
+    .statCard {
+      padding: 20px;
+    }
+    
+    .tableHeader, .tableRow {
+      grid-template-columns: 2fr 1fr 1fr;
+      font-size: 14px;
+    }
+    
+    .tableHeader div:nth-child(2),
+    .tableRow div:nth-child(2) {
+      display: none;
+    }
+    
+    .tableHeader div:nth-child(4),
+    .tableRow div:nth-child(4) {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .blogsContainer {
+      padding: 16px;
+    }
+    
+    .statsGrid {
+      grid-template-columns: 1fr;
+    }
+    
+    .formCard, .blogsList {
+      padding: 16px;
+    }
+    
+    .tableHeader, .tableRow {
+      grid-template-columns: 2fr 1fr;
+      padding: 12px 16px;
+    }
+    
+    .tableHeader div:nth-child(3),
+    .tableRow div:nth-child(3) {
+      display: none;
+    }
+    
+    .blogActions {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .editButton, .deleteButton {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .blogsTitle {
+      font-size: 24px;
+    }
+  } 
