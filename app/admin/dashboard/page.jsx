@@ -3,6 +3,8 @@
 import { Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import { getSupabase } from '../../../app/lib/supabase';
 
 import styles from './dashboard.module.css';
 
@@ -12,6 +14,45 @@ import styles from './dashboard.module.css';
 function DashboardContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [stats, setStats] = useState({
+    rolexWatches: 0,
+    patekPhilippe: 0,
+    audemars: 0,
+    adminUsers: 1
+  });
+  const [isLoading, setIsLoading] = useState(true);
+  
+  useEffect(() => {
+    async function fetchStats() {
+      try {
+        setIsLoading(true);
+        const supabase = getSupabase();
+        
+        // Fetch count of Rolex watches
+        const { count, error: rolexError } = await supabase
+          .from('rolex_watch')
+          .select('*', { count: 'exact', head: true });
+          
+        if (rolexError) throw rolexError;
+        
+        setStats(prev => ({
+          ...prev,
+          rolexWatches: count || 0
+        }));
+      } catch (error) {
+        console.error('Error fetching dashboard stats:', error);
+        // Set default values in case of error
+        setStats(prev => ({
+          ...prev,
+          rolexWatches: 0
+        }));
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    
+    fetchStats();
+  }, []);
  
   return (
     <div className={styles.dashboardContainer}>
@@ -33,11 +74,11 @@ function DashboardContent() {
                 Dashboard
               </Link>
             </li>
-            {/* <li className={styles.navItem}>
+            <li className={styles.navItem}>
               <Link href="/admin/watches" className={styles.navLink}>
                 Watches
               </Link>
-            </li> */}
+            </li>
             <li className={styles.navItem}>
               <Link href="/admin/blogs" className={styles.navLink}>
                 Blogs
@@ -68,19 +109,19 @@ function DashboardContent() {
           <div className={styles.statsGrid}>
             <div className={styles.statCard}>
               <h3 className={styles.statTitle}>Rolex Watches</h3>
-              <p className={styles.statValue}>66</p>
+              <p className={styles.statValue}>{isLoading ? '...' : stats.rolexWatches}</p>
             </div>
             <div className={styles.statCard}>
               <h3 className={styles.statTitle}>Patek Philippe</h3>
-              <p className={styles.statValue}>4</p>
+              <p className={styles.statValue}>{stats.patekPhilippe}</p>
             </div>
             <div className={styles.statCard}>
               <h3 className={styles.statTitle}>Audemars Piguet</h3>
-              <p className={styles.statValue}>1</p>
+              <p className={styles.statValue}>{stats.audemars}</p>
             </div>
             <div className={styles.statCard}>
               <h3 className={styles.statTitle}>Admin Users</h3>
-              <p className={styles.statValue}>1</p>
+              <p className={styles.statValue}>{stats.adminUsers}</p>
             </div>
           </div>
         </main>

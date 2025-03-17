@@ -1,0 +1,873 @@
+.watchesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.backNavigation {
+  margin-bottom: 24px;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  color: #0f766e;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  color: #0d9488;
+  transform: translateX(-4px);
+}
+
+.backIcon {
+  margin-right: 8px;
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.backButton:hover .backIcon {
+  transform: translateX(-2px);
+}
+
+.watchesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.watchesTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #212529;
+  margin: 0;
+}
+
+.addButton {
+  background-color: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(15, 118, 110, 0.3);
+}
+
+.addButton:hover {
+  background-color: #0d9488;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(15, 118, 110, 0.4);
+}
+
+.addButton:active {
+  transform: translateY(0);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.statCard {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border-top: 5px solid #0f766e;
+  position: relative;
+  overflow: hidden;
+}
+
+.statCard:nth-child(1) {
+  border-top-color: #0f766e; /* Teal */
+}
+
+.statCard:nth-child(2) {
+  border-top-color: #0e7490; /* Cyan */
+}
+
+.statCard:nth-child(3) {
+  border-top-color: #0369a1; /* Blue */
+}
+
+.statCard:nth-child(4) {
+  border-top-color: #b45309; /* Amber */
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.statTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6c757d;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statValue {
+  font-size: 36px;
+  font-weight: 700;
+  color: #212529;
+  margin: 0;
+}
+
+.statCard::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(15, 118, 110, 0.05);
+  border-radius: 50%;
+  transform: translate(20%, 20%);
+}
+
+.errorMessage {
+  background-color: #fff5f5;
+  border: 1px solid #fc8181;
+  color: #c53030;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.errorCloseButton {
+  background: none;
+  border: none;
+  color: #c53030;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+.formCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 32px;
+  transition: box-shadow 0.3s ease;
+}
+
+.formCard:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.formTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #212529;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.watchForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formSection {
+  padding: 16px;
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #0f766e;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+}
+
+.formLabel {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #495057;
+}
+
+.formInput, .formSelect, .formTextarea {
+  padding: 10px 14px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background-color: #fafafa;
+}
+
+.formTextarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.formInput:focus, .formSelect:focus, .formTextarea:focus {
+  outline: none;
+  border-color: #0f766e;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+}
+
+.formHelp {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 6px;
+}
+
+.submitButton {
+  background-color: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+  margin-top: 12px;
+  box-shadow: 0 2px 5px rgba(15, 118, 110, 0.3);
+}
+
+.submitButton:hover {
+  background-color: #0d9488;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(15, 118, 110, 0.4);
+}
+
+.submitButton:disabled {
+  background-color: #99f6e4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.cancelButton {
+  background-color: #e9ecef;
+  color: #495057;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 12px;
+}
+
+.cancelButton:hover {
+  background-color: #dee2e6;
+}
+
+.buttonGroup {
+  display: flex;
+  margin-top: 20px;
+}
+
+.watchesList {
+  background-color: white;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #212529;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 0;
+  color: #6c757d;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px dashed #dee2e6;
+}
+
+.watchesTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 16px;
+  padding: 14px 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 12px;
+  border: 1px solid #e9ecef;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #e9ecef;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.tableRow:hover {
+  background-color: #f8f9fa;
+}
+
+.tableCell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.watchImage {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 12px;
+}
+
+.watchTitle {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #212529;
+}
+
+.watchInfo {
+  display: flex;
+  align-items: center;
+}
+
+.watchDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.watchRef {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 4px;
+}
+
+.detailsToggle {
+  background: none;
+  border: none;
+  color: #0f766e;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.detailsToggle:hover {
+  color: #0d9488;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statusAvailable {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.statusSold {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.statusUnavailable {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.watchPrice {
+  font-weight: 600;
+  color: #212529;
+}
+
+.watchActions {
+  display: flex;
+  gap: 8px;
+}
+
+.editButton, .deleteButton, .viewButton {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.viewButton {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.viewButton:hover {
+  background-color: #bae6fd;
+  transform: translateY(-1px);
+}
+
+.editButton {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.editButton:hover {
+  background-color: #dee2e6;
+  transform: translateY(-1px);
+}
+
+.deleteButton {
+  background-color: #fff5f5;
+  color: #e53e3e;
+}
+
+.deleteButton:hover {
+  background-color: #fed7d7;
+  transform: translateY(-1px);
+}
+
+.metadataDetails {
+  grid-column: 1 / -1;
+  background-color: #f8f9fa;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  border: 1px solid #e9ecef;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.metaLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6c757d;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metaValue {
+  font-size: 14px;
+  word-break: break-word;
+  color: #212529;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.loadingSpinner {
+  border: 4px solid rgba(15, 118, 110, 0.1);
+  border-left: 4px solid #0f766e;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.filtersSection {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.filtersTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #212529;
+}
+
+.filtersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.filterButton {
+  background-color: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 16px;
+}
+
+.filterButton:hover {
+  background-color: #0d9488;
+}
+
+.clearFiltersButton {
+  background-color: #e9ecef;
+  color: #495057;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 12px;
+}
+
+.clearFiltersButton:hover {
+  background-color: #dee2e6;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.pageButton {
+  padding: 8px 14px;
+  margin: 0 4px;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pageButton:hover {
+  background-color: #f8f9fa;
+}
+
+.activePageButton {
+  background-color: #0f766e;
+  color: white;
+  border-color: #0f766e;
+}
+
+.activePageButton:hover {
+  background-color: #0d9488;
+}
+
+@media (max-width: 992px) {
+  .watchesContainer {
+    padding: 20px;
+  }
+  
+  .statsGrid {
+    gap: 16px;
+  }
+  
+  .formCard, .watchesList {
+    padding: 20px;
+  }
+  
+  .tableHeader, .tableRow {
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  }
+  
+  .tableHeader div:nth-child(6),
+  .tableRow div:nth-child(6) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .watchesHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .addButton {
+    align-self: flex-start;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .statCard {
+    padding: 20px;
+  }
+  
+  .tableHeader, .tableRow {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+  
+  .tableHeader div:nth-child(2),
+  .tableRow div:nth-child(2),
+  .tableHeader div:nth-child(3),
+  .tableRow div:nth-child(3),
+  .tableHeader div:nth-child(6),
+  .tableRow div:nth-child(6) {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .watchesContainer {
+    padding: 16px;
+  }
+  
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .formCard, .watchesList {
+    padding: 16px;
+  }
+  
+  .tableHeader, .tableRow {
+    grid-template-columns: 1fr 1fr;
+    padding: 12px 16px;
+  }
+  
+  .tableHeader div:nth-child(4),
+  .tableRow div:nth-child(4),
+  .tableHeader div:nth-child(6),
+  .tableRow div:nth-child(6) {
+    display: none;
+  }
+  
+  .watchActions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .editButton, .deleteButton, .viewButton {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .watchesTitle {
+    font-size: 24px;
+  }
+}
+
+.headerButtons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.importButton {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(108, 99, 255, 0.3);
+}
+
+.importButton:hover {
+  background-color: #5a52d5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(108, 99, 255, 0.4);
+}
+
+.importButton:active {
+  transform: translateY(0);
+}
+
+.jsonImportContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.jsonImportInstructions {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 8px;
+}
+
+.jsonTextarea {
+  width: 100%;
+  min-height: 300px;
+  padding: 16px;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  background-color: #f8f9fa;
+  resize: vertical;
+}
+
+.jsonTextarea:focus {
+  outline: none;
+  border-color: #6c63ff;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+}
+
+.jsonImportActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.importJsonButton {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(108, 99, 255, 0.3);
+}
+
+.importJsonButton:hover {
+  background-color: #5a52d5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(108, 99, 255, 0.4);
+}
+
+.importJsonButton:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .headerButtons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .importButton, .addButton {
+    width: 100%;
+  }
+  
+  .jsonTextarea {
+    min-height: 200px;
+  }
+  
+  .jsonImportActions {
+    flex-direction: column;
+  }
+  
+  .importJsonButton, .cancelButton {
+    width: 100%;
+  }
+}
+
+.thumbnailContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watchThumbnail {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.watchThumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} 
