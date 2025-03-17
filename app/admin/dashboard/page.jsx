@@ -2,6 +2,7 @@
 
 import { Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
 import styles from './dashboard.module.css';
 
@@ -28,29 +29,29 @@ function DashboardContent() {
         <nav className={styles.sidebar}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <a href="/admin/dashboard" className={`${styles.navLink} ${styles.active}`}>
+              <Link href="/admin/dashboard" className={`${styles.navLink} ${styles.active}`}>
                 Dashboard
-              </a>
+              </Link>
             </li>
             {/* <li className={styles.navItem}>
-              <a href={`/admin/watches?t=${Date.now()}`} className={styles.navLink}>
+              <Link href="/admin/watches" className={styles.navLink}>
                 Watches
-              </a>
+              </Link>
             </li> */}
             <li className={styles.navItem}>
-              <a href={`/admin/blogs?t=${Date.now()}`} className={styles.navLink}>
+              <Link href="/admin/blogs" className={styles.navLink}>
                 Blogs
-              </a>
+              </Link>
             </li>
             {/* <li className={styles.navItem}>
-              <a href={`/admin/users?t=${Date.now()}`} className={styles.navLink}>
+              <Link href="/admin/users" className={styles.navLink}>
                 Admin Users
-              </a>
+              </Link>
             </li> */}
             {/* <li className={styles.navItem}>
-              <a href={`/admin/settings?t=${Date.now()}`} className={styles.navLink}>
+              <Link href="/admin/settings" className={styles.navLink}>
                 Settings
-              </a>
+              </Link>
             </li> */}
           </ul>
         </nav>

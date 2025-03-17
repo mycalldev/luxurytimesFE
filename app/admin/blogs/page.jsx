@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import { getSupabase } from '../../../app/lib/supabase';
 import styles from './blogs.module.css';
 
@@ -225,6 +226,12 @@ function BlogsContent() {
 
   return (
     <div className={styles.blogsContainer}>
+      <nav className={styles.backNavigation}>
+        <Link href="/admin/dashboard" className={styles.backButton}>
+          <span className={styles.backIcon}>←</span> Back to Dashboard
+        </Link>
+      </nav>
+      
       <header className={styles.blogsHeader}>
         <h1 className={styles.blogsTitle}>Blog Management Dashboard</h1>
         <button 
