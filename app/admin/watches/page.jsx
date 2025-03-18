@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { getSupabase } from '../../../app/lib/supabase';
 import styles from './watches.module.css';
+import ContactForm from '../../components/ContactForm';
 
 // Component that uses searchParams and needs to be wrapped in Suspense
 function WatchesContent() {
@@ -1209,6 +1210,12 @@ export default function AdminWatches() {
       </div>
     }>
       <WatchesContent />
+      {/* <div className={styles.contactFormContainer}>
+        <ContactForm 
+          contactTitle="Contact Watch Specialist" 
+          contactDescription="Need help with watch inventory or have questions about a specific timepiece? Our specialists are here to assist you."
+        />
+      </div> */}
     </Suspense>
   );
 } 

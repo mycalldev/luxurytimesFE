@@ -1,0 +1,164 @@
+/* Contact Form Styles */
+.contactSection {
+  margin: 4rem 0;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contactTitle {
+  color: #0f2c52;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+}
+
+.contactDescription {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+.contactForm {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.formWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.formInput, .formTextarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.formInput:focus, .formTextarea:focus {
+  outline: none;
+  border-color: #0f2c52;
+  box-shadow: 0 0 0 2px rgba(15, 44, 82, 0.1);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.formSubmitBtn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: #0f2c52;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.formSubmitBtn:hover {
+  background-color: #0a1f3a;
+}
+
+.formSubmitBtn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.formMessage {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 500;
+  width: 100%;
+  max-width: 600px;
+}
+
+.formSuccess {
+  background-color: #e7f5ea;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.formError {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 1.5rem 1rem;
+    margin: 3rem 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 6px;
+  }
+  
+  .contactTitle {
+    font-size: 1.8rem;
+  }
+  
+  .contactDescription {
+    padding: 0 0.5rem;
+  }
+  
+  .contactForm {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .formInput, .formTextarea {
+    font-size: 16px; /* Prevents zoom on mobile */
+  }
+  
+  .formGroup {
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
+  
+  .formSubmitBtn {
+    padding: 0.8rem;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+  }
+  
+  .formWrapper {
+    padding: 0;
+    width: 100%;
+  }
+} 
