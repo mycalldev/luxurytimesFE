@@ -37,9 +37,9 @@ export default function RolexCategories() {
           <Link href={'/rolex/rolex-categories/datejust'} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/watches/rolex/datejust/datejust126331jubileewimbledon/126331datejust1.JPG`}
-                      width={840}
-                      height={560}
+                      src={`/watches/rolex/datejust/datejust126334oysterazzurro/126334datejust1.JPG`}
+                      width={1200}
+                      height={1200}
                       alt='datejust thumbnail'
                       className={styles.imageCategory}
                       quality={100}
@@ -86,8 +86,8 @@ export default function RolexCategories() {
               <div className={styles.imageContainer}>
                   <Image
                       src={`/watches/rolex/gmtmasterii/gmtmasterii126710BLNRoysterblack/126710BLNRgmtmasterii1.JPG`}
-                      width={840}
-                      height={560}
+                      width={1200}
+                      height={1200}
                       alt='gmt-master ii thumbnail'
                       className={styles.imageCategory}
                       quality={100}
@@ -109,9 +109,9 @@ export default function RolexCategories() {
           <Link href={'/rolex/rolex-categories/skydweller'} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/watches/rolex/skydweller/skydweller326933oysterchampagne/326933skydweller1.JPG`}
-                      width={840}
-                      height={560}
+                      src={`/watches/rolex/skydweller/skydweller336935oysterblue/336935skydweller1.JPG`}
+                      width={1200}
+                      height={1200}
                       alt='skydweller thumbnail'
                       className={styles.imageCategory}
                       quality={100}
@@ -133,9 +133,9 @@ export default function RolexCategories() {
           <Link href={'/rolex/rolex-categories/daytona'} className={styles.linkBTNCategory} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/watches/rolex/daytona/daytona116500LNoysterpanda/116500LNdaytona1.JPG`}
-                      width={840}
-                      height={560}
+                      src={`/watches/rolex/daytona/daytona126509oysterblack/126509daytona1.JPG`}
+                      width={1200}
+                      height={1200}
                       alt='daytona thumbnail'
                       className={styles.imageCategory}
                       quality={100}
@@ -157,9 +157,9 @@ export default function RolexCategories() {
           <Link href={'/rolex/rolex-categories/daydate'} > 
               <div className={styles.imageContainer}>
                   <Image
-                      src={`/watches/rolex/daydate/daydate228349RBRpresidentialolive/228349RBRdaydate1.JPG`}
-                      width={840}
-                      height={560}
+                      src={`/watches/rolex/daydate/daydate228236presidentialolive/228236daydate1.JPG`}
+                      width={1200}
+                      height={1200}
                       alt='daydate thumbnail'
                       className={styles.imageCategory}
                       quality={100}
