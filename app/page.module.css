@@ -40,49 +40,35 @@
 .contactBTNContainerMobile {
   display: grid;
   justify-content: center;
-}
-
-.contactBTN {
-  margin: 30px 10px 10px 10px;
-  padding: 7px 50px;
-  font-size: 1.1rem;
+  margin: 1.2rem auto;
+  padding: 1rem 2rem; /* Use rem for padding to scale with font size */
+  font-size: 1.1rem; /* Base font size */
   font-weight: 500;
   text-align: center;
-  max-width: 200px;
-  border-radius: 22px;
-  background: #333333;
+  width: 60%; /* Use percentage for max-width to adapt to different screen sizes */
+  border-radius: 11px;
+  background: #0f2c52;
   color: #fff;
+  box-sizing: border-box; /* Ensure padding is included in width calculations */
 }
+
 
 .contactBTNContainerDesktop {
   display: none;
 }
 
 .viewDetailsBTN{
-  margin: 10px auto 50px auto;
-  padding: 10px 30px;
-  max-width: 150px;
-  border: solid 2px #333333;
-  border-radius: 22px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #fff;
-  background-color: #333333;
-  letter-spacing: 3px;
-  text-align: center;
-  cursor: pointer;
-}
-.whatsAppBTN {
-  display: block;
-  margin: 20px 10px 10px 10px;
-  padding: 7px 40px;
-  font-size: 1.1rem;
+  margin: 1rem auto;
+  padding: 1rem 3rem; /* Use rem for padding to scale with font size */
+  font-size: 1.1rem; /* Base font size */
   font-weight: 500;
   text-align: center;
-  max-width: 200px;
-  border-radius: 22px;
-  background: #333333;
+  width: 60%; /* Use percentage for max-width to adapt to different screen sizes */
+  border-radius: 11px;
+  background: #0f2c52;
+  border: solid 3px #999;
   color: #fff;
+  box-sizing: border-box; /* Ensure padding is included in width calculations */
 }
 
 .viewBTNContainer {
@@ -204,15 +190,16 @@
 }
 
 .highlightsBTN {
-  margin: 0px auto 20px auto;
-  padding: 10px;
-  font-size: 1.3rem;
+  margin: 30px 10px 10px 10px;
+  padding: 1rem 1rem; /* Use rem for padding to scale with font size */
+  font-size: 1.1rem; /* Base font size */
   font-weight: 500;
   text-align: center;
-  max-width: 200px;
+  max-width: 80%; /* Use percentage for max-width to adapt to different screen sizes */
   border-radius: 22px;
   background: #333333;
   color: #fff;
+  box-sizing: border-box; /* Ensure padding is included in width calculations */
 }
 
 /* BLOG SECTION */
@@ -282,8 +269,19 @@
   }
 
   .contactBTNContainerDesktop {
-    margin-top: 40px;
+    padding: 1rem 3rem;
     display: block;
+    width: 50%;
+    margin: 3rem auto;
+    border: solid 2px #333333;
+    border-radius: 22px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #333333;
+    letter-spacing: 3px;
+    text-align: center;
+    cursor: pointer;
   }
 
   .contactBTNContainerMobile {
@@ -295,17 +293,6 @@
     text-align: center;
     font-size: 1.5rem;
     font-weight: 700;
-  }
-
-  .contactBTN {
-    width: 50%;
-    margin: 10px auto 30px auto;
-    font-size: 1.3rem;
-    font-weight: 300;
-  }
-
-  .whatsAppBTN {
-    display: none;
   }
 
   .blogsBTN {

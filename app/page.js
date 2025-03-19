@@ -6,10 +6,11 @@ import Carousel from './components/Carousel'
 
 // Define metadata for the page using Next.js Metadata API
 export const metadata = {
-  title: 'Your Page Title',
+  title: 'Luxury Times - Exclusive Luxury Watches',
+  description: 'Discover premium luxury watches at Luxury Times. Authorized dealer for Rolex, Patek Philippe, and Audemars Piguet.',
   openGraph: {
-    title: 'Your Page Title',
-    description: 'Luxury Times Watch Dealership.',
+    title: 'Luxury Times - Exclusive Luxury Watches',
+    description: 'Discover premium luxury watches at Luxury Times. Authorized dealer for Rolex, Patek Philippe, and Audemars Piguet.',
     images: [
       {
         url: '/favicon.ico',
@@ -65,16 +66,16 @@ export default async function Home() {
       {/* MOBILE CONTACT */}
       <div className={styles.contactBTNContainerMobile}>
         <Link href="tel:07718269994" className={styles.linkBTN}>
-            <div className={styles.contactBTN}>CONTACT</div>
+            <div>CONTACT</div>
         </Link>
-        <div className={styles.whatsAppBTN}>
+        </div>
+      <div className={styles.contactBTNContainerMobile}>
         <Link
           href={"https://wa.me/447718269994?text=Hi%20Luxury%20Times...."} 
           className={styles.linkBTN}
         >
-          WHATSAPP
+          <div>WHATSAPP</div>
         </Link>
-      </div>
       </div>
 
       {/* CONTACT DESKTOP */}
@@ -174,9 +175,11 @@ export default async function Home() {
             <div className={styles.contentSubTitleHighlights}>Sky Dweller</div>
             <div className={styles.paragraphHighlights1}>Introducing the Rolex Sky-Dweller! Where elegance meets precsion.... With its iconic design, dual time zones, and....</div>
           </div> 
+      <div className={styles.contactBTNContainerMobile}>
           <Link href={'/landing/SkyDweller'} className={styles.linkBTN} prefetch={true}>
-            <div className={styles.highlightsBTN}>Read More</div>
+            <div>Read More</div>
           </Link>
+          </div>
       </section> 
 
       {/* BLOG SECTION */}
@@ -190,9 +193,11 @@ export default async function Home() {
               <div className={styles.contentSubTitleHighlights}>Time Investment</div>
               <div className={styles.paragraphHighlights1}>Investing in time.... Investing in your future! The Watch world has geneated a ton of interest in recent times and for good....</div>
             </div> 
+      <div className={styles.contactBTNContainerMobile}>
           <Link href={'/blog'} className={styles.linkBTN} prefetch={true}>
-            <div className={styles.blogsBTN}>Read More</div>
+            <div>Read More</div>
           </Link>
+          </div>
       </section>
       </div>
 
