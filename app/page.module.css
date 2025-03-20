@@ -17,25 +17,6 @@
   display: none;
 }
 
-.tagLine {
-  width: 80%;
-  margin: 20px auto 0 auto;
-  text-align: center;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #333333;
-  line-height: 1.3;
-}
-
-.tagLine2 {
-  width: 80%;
-  margin: 20px auto;
-  text-align: center;
-  font-size: 1.3rem;
-  color: #333333;
-  line-height: 1.3;
-}
-
 .containerFeature {
   background-color: #f9f9f9;
   padding-bottom: 20px;

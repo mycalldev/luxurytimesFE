@@ -84,6 +84,11 @@ function DashboardContent() {
                 Blogs
               </Link>
             </li>
+            <li className={styles.navItem}>
+              <Link href="/admin/contacts" className={styles.navLink}>
+                Contact Submissions
+              </Link>
+            </li>
             {/* <li className={styles.navItem}>
               <Link href="/admin/users" className={styles.navLink}>
                 Admin Users

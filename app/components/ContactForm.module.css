@@ -1,10 +1,11 @@
 /* Contact Form Styles */
-.contactSection {
+.contactContainer {
   margin: 4rem 0;
   padding: 2rem;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 .contactTitle {
@@ -27,28 +28,24 @@
   max-width: 600px;
   margin: 0 auto;
   width: 100%;
-}
-
-.formWrapper {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1.5rem;
 }
 
 .formGroup {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   width: 100%;
 }
 
-.formLabel {
+.label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
   color: #333;
 }
 
-.formInput, .formTextarea {
+.input, .textarea {
   width: 100%;
   padding: 0.8rem;
   border: 1px solid #ddd;
@@ -60,18 +57,18 @@
   box-sizing: border-box;
 }
 
-.formInput:focus, .formTextarea:focus {
+.input:focus, .textarea:focus {
   outline: none;
   border-color: #0f2c52;
   box-shadow: 0 0 0 2px rgba(15, 44, 82, 0.1);
 }
 
-.formTextarea {
+.textarea {
   resize: vertical;
   min-height: 120px;
 }
 
-.formSubmitBtn {
+.submitButton {
   display: block;
   width: 100%;
   padding: 1rem;
@@ -85,13 +82,14 @@
   transition: background-color 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 0.5rem;
 }
 
-.formSubmitBtn:hover {
+.submitButton:hover {
   background-color: #0a1f3a;
 }
 
-.formSubmitBtn:disabled {
+.submitButton:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
@@ -106,13 +104,13 @@
   max-width: 600px;
 }
 
-.formSuccess {
+.successMessage {
   background-color: #e7f5ea;
   border: 1px solid #c3e6cb;
   color: #155724;
 }
 
-.formError {
+.errorMessage {
   background-color: #f8d7da;
   border: 1px solid #f5c6cb;
   color: #721c24;
@@ -120,7 +118,7 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .contactSection {
+  .contactContainer {
     padding: 1.5rem 1rem;
     margin: 3rem 0;
     width: 100%;
@@ -141,24 +139,18 @@
     padding: 0;
   }
   
-  .formInput, .formTextarea {
+  .input, .textarea {
     font-size: 16px; /* Prevents zoom on mobile */
   }
   
   .formGroup {
     width: 100%;
-    margin-bottom: 1.2rem;
   }
   
-  .formSubmitBtn {
+  .submitButton {
     padding: 0.8rem;
     width: 100%;
     max-width: 100%;
     font-size: 1rem;
-  }
-  
-  .formWrapper {
-    padding: 0;
-    width: 100%;
   }
 } 
