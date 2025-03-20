@@ -28,18 +28,20 @@ export default function Footer() {
 
         <div className={styles.addressContainer}>
           <div className={styles.containerFlex}>
-            <Link href={'/FAQs'} className={styles.linkBTN}>
-              <div className={styles.itemFlex}>FAQs</div>
-            </Link>
-            <Link href={'/terms-and-conditions'} className={styles.linkBTN}>
-              <div className={styles.itemFlex}>T&Cs</div>
-            </Link>
-            <Link href={'/review'} className={styles.linkBTN}>
-              <div className={styles.itemFlex}>REVIEWS</div>
-            </Link>
-            <Link href={'/return'} className={styles.linkBTN}>
-              <div className={styles.itemFlex}>RETURN</div>
-            </Link>
+            
+              <Link href={'/FAQs'} className={styles.linkBTN}>
+                <div className={styles.itemFlex}>FAQs</div>
+              </Link>
+              <Link href={'/terms-and-conditions'} className={styles.linkBTN}>
+                <div className={styles.itemFlex}>T&Cs</div>
+              </Link>
+              <Link href={'/review'} className={styles.linkBTN}>
+                <div className={styles.itemFlex}>REVIEWS</div>
+              </Link>
+              <Link href={'/return'} className={styles.linkBTN}>
+                <div className={styles.itemFlex}>RETURN</div>
+              </Link>
+            
             <div className={styles.addressContent}>25 Cabot Square, Canary Wharf, London, UK, E14 4QZ</div>
             <div className={styles.addressContent}>100 Hatton Garden, London, UK, EC1N 8NX</div>
           </div>

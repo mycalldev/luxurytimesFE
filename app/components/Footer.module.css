@@ -35,7 +35,7 @@
 
 .itemFlex {
   cursor: pointer;
-  color: #333333;
+  color: #666;
   margin: 5px;
 }
 
@@ -43,7 +43,7 @@
     padding: 30px;
     text-align: center;
     color: #ffffff;
-    background-color: #333333;
+    background-color: #f9f9f9;
 }
 
 .addressTitle {
@@ -63,7 +63,7 @@
   text-align: center;
   margin: 20px;
   font-size: 1.1rem;
-  color: #333333;
+  color: #666;
 }
 
 .addressCountry {

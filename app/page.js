@@ -41,6 +41,7 @@ export default async function Home() {
   return (
     <>
       <main className={styles.main}>
+      <section className={styles.containerFeature}>
 
     {/* HERO SECTION */}
       {/* MOBILE HERO */}
@@ -62,7 +63,6 @@ export default async function Home() {
         alt={'hero image'}
         quality={100}
       />
-
       {/* MOBILE CONTACT */}
       <div className={styles.contactBTNContainerMobile}>
         <Link href="tel:07718269994" className={styles.linkBTN}>
@@ -77,12 +77,12 @@ export default async function Home() {
           <div>WHATSAPP</div>
         </Link>
       </div>
-
       {/* CONTACT DESKTOP */}
       <div className={styles.contactBTNContainerDesktop}>
         <div className={styles.titleContactDesktop}>CONTACT</div>
             <div className={styles.contactBTN}>07718 269 994</div>
       </div>
+
 
       
       {/* CATEGORY SECTION */}
@@ -118,6 +118,8 @@ export default async function Home() {
             </Link>
           </div>
       </section>
+</section>
+
       
       {/* <section>
         <div className={styles.imageCategoryContainer}>
