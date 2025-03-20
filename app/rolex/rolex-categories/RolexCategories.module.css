@@ -42,32 +42,34 @@
 }
 
 .contactBTNContainerMobile {
-    display: grid;
-    justify-content: center;
+  display: grid;
+  justify-content: center;
+  margin: 1.2rem auto;
+  padding: 1rem 2rem; /* Use rem for padding to scale with font size */
+  font-size: 1.1rem; /* Base font size */
+  font-weight: 500;
+  text-align: center;
+  width: 60%; /* Use percentage for max-width to adapt to different screen sizes */
+  border-radius: 4px;
+  background: #36454F;
+  color: #fff;
+  box-sizing: border-box; /* Ensure padding is included in width calculations */
 }
 
-.contactBTN {
-    margin: 0px 10px 30px 10px;
-    padding: 7px 40px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-align: center;
-    max-width: 200px;
-    border-radius: 22px;
-    background: #91c0dc;
-    color: #fff;
-}
 
 .viewBTN {
-    margin: 0px 10px 30px 10px;
-    padding: 7px 15px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-align: center;
-    max-width: 200px;
-    border-radius: 22px;
-    background: #91c0dc;
-    color: #fff;
+    display: grid;
+  justify-content: center;
+  margin: 1.2rem auto;
+  padding: 1rem 2rem; /* Use rem for padding to scale with font size */
+  font-size: 1.1rem; /* Base font size */
+  font-weight: 500;
+  text-align: center;
+  width: 60%; /* Use percentage for max-width to adapt to different screen sizes */
+  border-radius: 4px;
+  background: #36454F;
+  color: #fff;
+  box-sizing: border-box; /* Ensure padding is included in width calculations */
   }
 
 .containerGrid {
@@ -107,14 +109,25 @@
     }
 
     .contactBTNContainerDesktop {
-        display: block;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        margin: 1rem auto;
+        padding: 1.3rem 1rem 1rem 1rem; /* Use rem for padding to scale with font size */
+        font-size: 1.1rem; /* Base font size */
+        font-weight: 500;
+        text-align: center;
+        width: 30%; /* Use percentage for max-width to adapt to different screen sizes */
+        border-radius: 4px;
+        background: #36454F;
+        color: #fff;
+        box-sizing: border-box; /* Ensure padding is included in width calculations */
     }
 
     .contactBTN {
-        width: 50%;
-        margin: 10px auto 30px auto;
+        width: 100%;
         font-size: 1.3rem;
-        font-weight: 600;
+        font-weight: 300;
     }
 
     .viewBTN {

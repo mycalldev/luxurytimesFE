@@ -21,14 +21,14 @@ export default function RolexCategories() {
       {/* MOBILE CONTACT */}
       <div className={styles.contactBTNContainerMobile}>
         <Link href="tel:07718269994" className={styles.linkBTN} >
-            <div className={styles.contactBTN}>CONTACT</div>
+            <div>CONTACT</div>
         </Link>
       </div>
 
       {/* CONTACT DESKTOP */}
       <div className={styles.contactBTNContainerDesktop}>
         <div className={styles.titleContactDesktop}>CONTACT</div>
-            <div className={styles.contactBTN}>07718 269 994</div>
+        <div className={styles.contactBTN}>07718 269 994</div>
       </div>
       
       <div className={styles.containerGrid}>
