@@ -65,13 +65,13 @@ export default async function Home() {
       />
       {/* MOBILE CONTACT */}
       <div className={styles.contactBTNContainerMobile}>
-        <Link href="tel:07718269994" className={styles.linkBTN}>
+        <Link href="tel:07714611699" className={styles.linkBTN}>
             <div>CONTACT</div>
         </Link>
         </div>
       <div className={styles.contactBTNContainerMobile}>
         <Link
-          href={"https://wa.me/447718269994?text=Hi%20Luxury%20Times...."} 
+          href={"https://wa.me/447714611699?text=Hi%20Luxury%20Times...."} 
           className={styles.linkBTN}
         >
           <div>WHATSAPP</div>
@@ -80,7 +80,7 @@ export default async function Home() {
       {/* CONTACT DESKTOP */}
       <div className={styles.contactBTNContainerDesktop}>
         <div className={styles.titleContactDesktop}>CONTACT</div>
-            <div className={styles.contactBTN}>07718 269 994</div>
+            <div className={styles.contactBTN}>07714 611 699</div>
       </div>
 
 
