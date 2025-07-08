@@ -27,14 +27,14 @@ export default function Sell() {
             </div>
 
             <div className={styles.contactBTNContainer}> 
-                <Link href="tel:07718269994" className={styles.linkBTN}>CONTACT</Link>
+                <Link href="tel:07714611699" className={styles.linkBTN}>CONTACT</Link>
             </div>
 
-            <div className={styles.contactBTNDesktop}>07718 269 994</div>
+            <div className={styles.contactBTNDesktop}>07714 611 699</div>
 
             <div className={styles.whatsappBtn}>
                 <Link
-                href={"https://wa.me/447718269994?text=Hi%20Luxury%20Times...."} 
+                href={"https://wa.me/447714611699?text=Hi%20Luxury%20Times...."} 
                 className={styles.linkBTN}
                 >
                  WHATSAPP
