@@ -28,11 +28,11 @@ export default async function FAQs() {
         </Link>
         <h1 className={styles.titleMain}>FAQs</h1>
         <div className={styles.viewDetailsBTNMobile}>
-            <Link href="tel:07718269994" className={styles.linkBTN}>CONTACT</Link>
+            <Link href="tel:07714611699" className={styles.linkBTN}>CONTACT</Link>
           </div>
           <div className={styles.viewDetailsBTNDesktop}>
             <h3 className={styles.contactReview}>CONTACT</h3>
-            <div>07976 753 254</div>
+            <div>07714 611 699</div>
           </div>
           <h3 className={styles.welcomeTag}>Welcome To Our Frequently Asked Questions Page</h3>
           <p className={styles.faqIntro}>
