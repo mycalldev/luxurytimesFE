@@ -82,11 +82,6 @@ export default function Navbar() {
                     <li className={styles.listItem}>Guides</li>
                   </div>
                 </Link>
-                <Link href={'/blog'} className={styles.linkBTN} prefetch={true}>
-                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-                    <li className={styles.listItem}>Blogs</li>
-                  </div>
-                </Link>
                 <Link href={'/contact'} className={styles.linkBTN} prefetch={true}>
                   <div className={styles.listItemContainer} onClick={() => handleToggle()}>
                     <li className={styles.listItem}>Contact</li>
@@ -134,11 +129,6 @@ export default function Navbar() {
                   <Link href={'/guide'} className={styles.linkBTN}>
                     <div className={styles.listItemContainer}>
                       <li className={styles.listItem}>Guides</li>
-                    </div>
-                  </Link>
-                  <Link href={'/blog'} className={styles.linkBTN}>
-                    <div className={styles.listItemContainer}>
-                      <li className={styles.listItem}>Blogs</li>
                     </div>
                   </Link>
                   <Link href={'/contact'} className={styles.linkBTN}>
