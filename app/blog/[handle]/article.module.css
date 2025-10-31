@@ -1,0 +1,96 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  .backLink {
+    display: inline-block;
+    color: #666;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+  }
+  
+  .backLink:hover {
+    color: #000;
+  }
+  
+  .article {
+    background: #fff;
+  }
+  
+  .heroImage {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .articleHeader {
+    margin-bottom: 40px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 1.2;
+  }
+  
+  .meta {
+    font-size: 0.95rem;
+    color: #666;
+  }
+  
+  .content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+  }
+  
+  .content p {
+    margin-bottom: 20px;
+  }
+  
+  .content h2 {
+    font-size: 1.8rem;
+    margin: 40px 0 20px;
+    font-weight: 500;
+  }
+  
+  .content h3 {
+    font-size: 1.4rem;
+    margin: 30px 0 15px;
+    font-weight: 500;
+  }
+  
+  .content img {
+    max-width: 100%;
+    height: auto;
+    margin: 30px 0;
+  }
+  
+  .content a {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .tag {
+    background-color: #f0f0f0;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: #666;
+  }
