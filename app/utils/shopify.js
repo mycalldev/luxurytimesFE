@@ -29,6 +29,210 @@ async function ShopifyData(query) {
   }
 }
 
+// Get all products from a specific collection
+export async function getProductsByCollection(collectionHandle, first = 20) {
+  const query = `
+    {
+      collection(handle: "${collectionHandle}") {
+        title
+        handle
+        description
+        products(first: ${first}) {
+          edges {
+            node {
+              id
+              title
+              handle
+              description
+              priceRange {
+                minVariantPrice {
+                  amount
+                  currencyCode
+                }
+                maxVariantPrice {
+                  amount
+                  currencyCode
+                }
+              }
+              images(first: 5) {
+                edges {
+                  node {
+                    url
+                    altText
+                  }
+                }
+              }
+              variants(first: 10) {
+                edges {
+                  node {
+                    id
+                    title
+                    priceV2 {
+                      amount
+                      currencyCode
+                    }
+                    availableForSale
+                    selectedOptions {
+                      name
+                      value
+                    }
+                  }
+                }
+              }
+              tags
+              vendor
+              productType
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const response = await ShopifyData(query);
+  return {
+    collection: response.data?.collection,
+    products: response.data?.collection?.products.edges || []
+  };
+}
+
+// Get all products from multiple collections
+export async function getAllProducts(first = 50) {
+  const query = `
+    {
+      products(first: ${first}, sortKey: CREATED_AT, reverse: true) {
+        edges {
+          node {
+            id
+            title
+            handle
+            description
+            priceRange {
+              minVariantPrice {
+                amount
+                currencyCode
+              }
+              maxVariantPrice {
+                amount
+                currencyCode
+              }
+            }
+            images(first: 5) {
+              edges {
+                node {
+                  url
+                  altText
+                }
+              }
+            }
+            collections(first: 5) {
+              edges {
+                node {
+                  title
+                  handle
+                }
+              }
+            }
+            tags
+            vendor
+            productType
+          }
+        }
+      }
+    }
+  `;
+
+  const response = await ShopifyData(query);
+  return response.data?.products.edges || [];
+}
+
+// Get single product by handle
+export async function getProduct(productHandle) {
+  const query = `
+    {
+      product(handle: "${productHandle}") {
+        id
+        title
+        handle
+        description
+        descriptionHtml
+        priceRange {
+          minVariantPrice {
+            amount
+            currencyCode
+          }
+          maxVariantPrice {
+            amount
+            currencyCode
+          }
+        }
+        images(first: 10) {
+          edges {
+            node {
+              url
+              altText
+            }
+          }
+        }
+        variants(first: 25) {
+          edges {
+            node {
+              id
+              title
+              priceV2 {
+                amount
+                currencyCode
+              }
+              availableForSale
+              selectedOptions {
+                name
+                value
+              }
+              image {
+                url
+                altText
+              }
+            }
+          }
+        }
+        tags
+        vendor
+        productType
+        collections(first: 5) {
+          edges {
+            node {
+              title
+              handle
+            }
+          }
+        }
+        seo {
+          title
+          description
+        }
+      }
+    }
+  `;
+
+  const response = await ShopifyData(query);
+  return response.data?.product;
+}
+
+// Get products from all three watch collections
+export async function getAllWatchCollections() {
+  const collections = ['rolex', 'audemars-piguet', 'patek-philippe'];
+  
+  const results = await Promise.all(
+    collections.map(handle => getProductsByCollection(handle))
+  );
+
+  return {
+    rolex: results[0],
+    audemarsPiguet: results[1],
+    patekPhilippe: results[2]
+  };
+}
+
 
 // Get all blog articles
 export async function getAllArticles(blogHandle = "News") {
