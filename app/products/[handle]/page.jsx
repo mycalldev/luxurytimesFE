@@ -92,6 +92,35 @@ export default async function ProductPage({ params }) {
             </div>
           )}
 
+          <div className={styles.whatsIncluded}>
+            <ul className={styles.includesList}>
+              <li className={styles.includesItem}>
+                <span className={styles.checkmark}>✓</span>
+                <span>Full Set & Swing Tags</span>
+              </li>
+              <li className={styles.includesItem}>
+                <span className={styles.checkmark}>✓</span>
+                <span>Original Box & Papers</span>
+              </li>
+              <li className={styles.includesItem}>
+                <span className={styles.checkmark}>✓</span>
+                <span>Warranty Card</span>
+              </li>
+              <li className={styles.includesItem}>
+                <span className={styles.checkmark}>✓</span>
+                <span>Manufacturer's Booklet & Manual</span>
+              </li>
+              <li className={styles.includesItem}>
+                <span className={styles.checkmark}>✓</span>
+                <span>Certificate of Authenticity</span>
+              </li>
+              <li className={styles.includesItem}>
+                <span className={styles.checkmark}>✓</span>
+                <span>12 Month Warranty</span>
+              </li>
+            </ul>
+          </div>
+
           <div className={styles.contactSection}>
             <h3>Interested in this watch?</h3>
             <Link href="/contact" className={styles.contactBtn}>
