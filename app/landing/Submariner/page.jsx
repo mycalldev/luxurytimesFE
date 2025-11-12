@@ -4,6 +4,7 @@ import React from 'react'
 import Link from "next/link";
 import Image from "next/image";
 import styles from '../Landing.module.css'
+import Button from '../../components/Button'
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
@@ -78,15 +79,12 @@ export default function Submariner() {
       Free Expert Advice
     </h2>
     <div className={styles.contactBTN}>
-          <Link href="tel:07718269994" className={styles.linkBTN}>CONTACT</Link>
+      <Button href="tel:07718269994">CONTACT</Button>
     </div>
     <div className={styles.contactBTN}>
-    <Link
-          href={"https://wa.me/447718269994?text=Hi%20Luxury%20Times...."} 
-          className={styles.linkBTN}
-        >
-          WHATSAPP
-        </Link>
+      <Button href="https://wa.me/447718269994?text=Hi%20Luxury%20Times....">
+        WHATSAPP
+      </Button>
     </div>
       
 
@@ -110,12 +108,9 @@ export default function Submariner() {
       70 Hours Power Reserve
     </h2>
     <div className={styles.contactBTNenquire}>
-    <Link
-      href={"https://wa.me/447718269994?text=Hi%20Luxury%20Times...."} 
-      className={styles.linkBTN}
-    >
-      ENQUIRE TODAY
-    </Link>
+      <Button href="https://wa.me/447718269994?text=Hi%20Luxury%20Times....">
+        ENQUIRE TODAY
+      </Button>
     </div>
 
       <Image
@@ -132,8 +127,8 @@ export default function Submariner() {
       </h2>
 
       <div className={styles.contactBTN}>
-          <Link href="tel:07718269994" className={styles.linkBTN}>CONTACT</Link>
-     </div>
+        <Button href="tel:07718269994">CONTACT</Button>
+      </div>
 
       <div className={styles.content}>
       The Rolex Submariner 126610LN is a distinguished model in the Rolex Submariner line, 
@@ -168,7 +163,7 @@ export default function Submariner() {
       </div>
      
       <div className={styles.expertBTN}>
-          <Link href="tel:07718269994" className={styles.linkBTN}>EXPERT ADVICE</Link>
+        <Button href="tel:07718269994">EXPERT ADVICE</Button>
       </div>
     
     </section>

@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './BuyingRolex.module.css'
+import Button from '../components/Button'
 
 export default function BuyingRolex() {
   return (
@@ -116,11 +117,11 @@ export default function BuyingRolex() {
     
     <div className={styles.contactBTNContainer}>
         <Image src={"/call.png"} width={25} height={25} alt={'phone icon'} quality={100} /> 
-        <Link href="tel:07714611699" className={styles.linkBTN}>Contact</Link>
+        <Button href="tel:07714611699">Contact</Button>
     </div>
     {/* CTA  */}
     <div className={styles.contactBTN}>
-      <Link href="tel:07714611699" className={styles.linkBTN}>CONTACT</Link>
+      <Button href="tel:07714611699">CONTACT</Button>
     </div>
       <div className={styles.contactBTNDesktop}>
         <h3 className={styles.contactReview}>CONTACT</h3>

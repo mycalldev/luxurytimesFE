@@ -1,6 +1,7 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { getProduct } from '../../utils/shopify';
+import ImageGallery from './ImageGallery';
+import FeaturedProducts from './FeaturedProducts';
 import styles from './product.module.css';
 
 export async function generateMetadata({ params }) {
@@ -49,19 +50,7 @@ export default async function ProductPage({ params }) {
 
       <div className={styles.productLayout}>
         <div className={styles.imageGallery}>
-          {images.map(({ node: image }, index) => (
-            <div key={index} className={styles.imageWrapper}>
-              <Image
-                src={image.url}
-                alt={image.altText || product.title}
-                width={800}
-                height={800}
-                className={styles.productImage}
-                quality={100}
-                priority={index === 0}
-              />
-            </div>
-          ))}
+          <ImageGallery images={images} productTitle={product.title} />
         </div>
 
         <div className={styles.productInfo}>
@@ -111,6 +100,11 @@ export default async function ProductPage({ params }) {
           </div>
         </div>
       </div>
+
+      <FeaturedProducts 
+        currentProductHandle={product.handle}
+        collections={product.collections.edges}
+      />
     </main>
   );
 }

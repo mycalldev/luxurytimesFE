@@ -1,141 +1,362 @@
-.displayNone {
-  display: none;
+/* ==========================================
+   HEADER BASE STYLES
+   ========================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.linkBTN {
-  text-decoration: none;
-  color: #fff;
+/* ==========================================
+   MOBILE NAVIGATION
+   ========================================== */
+
+.mobileNav {
+  display: block;
 }
 
-.navDesktopGrid {
-  display: none;
-}
-
-.containerGrid {
-  width: 100%;
+.mobileContainer {
   display: grid;
-  grid-template-columns: 15% 50% 15%;
-  justify-content: space-around;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  background: #fff;
-  padding: 10px 0px;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: #ffffff;
 }
 
-.imageBurger {
-  margin-left: 15px;
+.menuButton {
+  background: none;
+  border: none;
+  padding: 0.5rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
 }
 
-.undreline {
+.menuButton:hover {
+  transform: scale(1.1);
+}
+
+.menuButton:active {
+  transform: scale(0.95);
+}
+
+.hamburgerIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.brandLink {
   text-decoration: none;
-}
-
-.titleMain {
   text-align: center;
-  text-decoration: none;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #323232;
-  cursor: pointer;
 }
 
-.titleMainDesktop {
+.brandTitle {
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.brandLink:hover .brandTitle {
+  color: #333333;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.logo {
+  width: 100%;
+  max-width: 70px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logoLink:hover .logo {
+  transform: scale(1.05);
+}
+
+/* Mobile Menu Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Menu Sidebar */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 85%;
+  max-width: 400px;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.mobileMenuOpen {
+  transform: translateX(0);
+}
+
+.mobileMenuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.mobileMenuList li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobileMenuLink {
+  display: block;
+  padding: 1.25rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.mobileMenuLink::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 0;
+  background-color: #1a1a1a;
+  transition: height 0.2s ease;
+}
+
+.mobileMenuLink:hover,
+.mobileMenuLink:active {
+  background-color: #f8f8f8;
+  color: #000000;
+  padding-left: 2.5rem;
+}
+
+.mobileMenuLink:hover::before {
+  height: 60%;
+}
+
+.closeMenuButton {
+  margin: 2rem auto 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #1a1a1a;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: calc(100% - 4rem);
+}
+
+.closeMenuButton:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.closeMenuButton:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   DESKTOP NAVIGATION
+   ========================================== */
+
+.desktopNav {
   display: none;
 }
 
-.title {
-  text-decoration: none;
+.brandTitleDesktop {
+  display: none;
 }
 
-.logoIcon {
-  cursor: pointer;
+.desktopNavContainer {
+  display: none;
 }
 
-.navbarLogo {
-  width: 100%;
-  height: auto;
-  margin-right: 10px;
-}
+/* ==========================================
+   TABLET & DESKTOP STYLES (768px+)
+   ========================================== */
 
-.navOpen {
-  padding: 90px 20px 20px 0px;
-  width: 100vw;
-  background: #eee;
-}
-
-.unorderedList {
-  list-style-type: none;
-  width: 100%;
-  height: 100%;
-}
-
-.listItemContainer {
-  margin: 0px 20px;
-  cursor: pointer;
-}
-
-.listItem {
-  padding: 15px 10px 15px 10px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #323232;
-}
-
-.closeMenu {
-  margin: 40px auto 30px auto;
-  text-align: center;
-  font-size: 1.3rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-@media(min-width: 768px) {
-
-  .navContainer {
-    padding: 0;
-  }
-
-  .titleMainDesktop {
-    display: block;
-    margin: 30px auto 30px auto;
-    font-size: 2rem;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 700;
-    color: rgb(57, 57, 57);
-    cursor: pointer;
-  }
-
-  .containerGrid {
+@media (min-width: 768px) {
+  .mobileNav {
     display: none;
   }
 
-  .navContainerGrid {
-    background: #eee;
-  }
-
-  .navDesktopGrid {
-    margin: 0 10px;
-    display: grid;
-    grid-template-columns: 12% 14% 14% 12% 12% 12% 12% 12%;
-    justify-items: center;
-    align-items: center;
-  } 
-
-  .unordredListDesktop {
+  .desktopNav {
     display: block;
   }
 
-  .listItem {
-    margin: 11px 0 11px 0;
-    font-size: 1.1rem;
+  .brandLink {
+    display: block;
+  }
+
+  .brandTitleDesktop {
+    display: block;
+    margin: 2rem auto 1.5rem;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
     font-weight: 700;
-    list-style-type: none;
+    color: #1a1a1a;
+    text-align: center;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+
+  .brandLink:hover .brandTitleDesktop {
+    color: #333333;
+  }
+
+  .desktopNavContainer {
+    display: block;
+    background: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 2px solid #d0d0d0;
+  }
+
+  .desktopMenuList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.5rem, 2vw, 2rem);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .desktopMenuList li {
+    position: relative;
+  }
+
+  .desktopMenuLink {
+    display: block;
+    padding: 1rem 1.25rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .desktopMenuLink::after {
+    content: '';
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 80%;
+    height: 2px;
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease;
+  }
+
+  .desktopMenuLink:hover {
+    color: #000000;
+  }
+
+  .desktopMenuLink:hover::after {
+    transform: translateX(-50%) scaleX(1);
   }
 }
 
-@media(min-width: 1024px) {
-  .listItem {
-    font-size: 1.3rem;
+/* ==========================================
+   LARGE DESKTOP STYLES (1024px+)
+   ========================================== */
+
+@media (min-width: 1024px) {
+  .brandTitleDesktop {
+    font-size: 2.5rem;
+    margin: 2.5rem auto 2rem;
+  }
+
+  .desktopMenuLink {
+    font-size: 1.25rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .desktopMenuList {
+    gap: 2.5rem;
+  }
+}
+
+/* ==========================================
+   EXTRA LARGE DESKTOP STYLES (1440px+)
+   ========================================== */
+
+@media (min-width: 1440px) {
+  .desktopNavContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY & FOCUS STATES
+   ========================================== */
+
+.menuButton:focus-visible,
+.closeMenuButton:focus-visible,
+.mobileMenuLink:focus-visible,
+.desktopMenuLink:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   REDUCED MOTION SUPPORT
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .mobileMenu,
+  .overlay,
+  .menuButton,
+  .logo,
+  .brandTitle,
+  .brandTitleDesktop,
+  .mobileMenuLink,
+  .desktopMenuLink,
+  .closeMenuButton {
+    transition: none;
+    animation: none;
   }
 }

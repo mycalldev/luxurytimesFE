@@ -4,6 +4,7 @@ import React from 'react'
 import Link from "next/link";
 import Image from "next/image";
 import styles from '../Landing.module.css'
+import Button from '../../components/Button'
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
@@ -87,15 +88,12 @@ export default function SkyDweller() {
       Free Expert Advice
     </h2>
     <div className={styles.contactBTN}>
-          <Link href="tel:07718269994" className={styles.linkBTN}>CONTACT</Link>
+      <Button href="tel:07718269994">CONTACT</Button>
     </div>
     <div className={styles.contactBTN}>
-    <Link
-          href={"https://wa.me/447718269994?text=Hi%20Luxury%20Times...."} 
-          className={styles.linkBTN}
-        >
-          WHATSAPP
-        </Link>
+      <Button href="https://wa.me/447718269994?text=Hi%20Luxury%20Times....">
+        WHATSAPP
+      </Button>
     </div>
       <div className={styles.contactBTNDesktop}>
         <h3 className={styles.contactReview}>CONTACT</h3>
@@ -131,8 +129,8 @@ export default function SkyDweller() {
       </h2>
 
       <div className={styles.contactBTN}>
-          <Link href="tel:07718269994" className={styles.linkBTN}>CONTACT</Link>
-     </div>
+        <Button href="tel:07718269994">CONTACT</Button>
+      </div>
 
       <div className={styles.content}>
         One of the many standout features of the Sky-Dweller is its dual time
@@ -167,7 +165,7 @@ export default function SkyDweller() {
       </div>
      
       <div className={styles.expertBTN}>
-          <Link href="tel:07718269994" className={styles.linkBTN}>EXPERT ADVICE</Link>
+        <Button href="tel:07718269994">EXPERT ADVICE</Button>
       </div>
     
     </section>

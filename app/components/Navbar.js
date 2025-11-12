@@ -1,144 +1,133 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Navbar.module.css'
 
+// Navigation links configuration
+const navLinks = [
+  { href: '/rolex/rolex-categories', label: 'Rolex', prefetch: true },
+  { href: '/patek-philippe/patek-philippe-categories', label: 'Patek Philippe', prefetch: true },
+  { href: '/audemars-piguet/audemars-piguet-categories', label: 'Audemars Piguet', prefetch: true },
+  // { href: '/Jewellery', label: 'Jewellery', prefetch: true },
+  { href: '/sell', label: 'Sell', prefetch: true },
+  { href: '/guide', label: 'Guides', prefetch: false },
+  { href: '/contact', label: 'Contact', prefetch: false },
+]
+
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const [toggle, setToggle] = useState(false)
-
-  const handleToggle = () => {
-      setToggle(!toggle)
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
   }
 
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
+
   return (
-    <main >
-      <div className={styles.navContainer}>
-        <div className={styles.containerGrid}>
+    <header className={styles.header}>
+      {/* Mobile Navigation */}
+      <div className={styles.mobileNav}>
+        <div className={styles.mobileContainer}>
+          <button 
+            onClick={toggleMenu}
+            className={styles.menuButton}
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            <Image
+              src={'/hamburger.png'}
+              width={32}
+              height={32}
+              className={styles.hamburgerIcon}
+              alt="Menu"
+              quality={100}
+            />
+          </button>
           
-            <div onClick={() => handleToggle()}>
-              <Image
-                src={'/hamburger.png'}
-                width={32}
-                height={32}
-                className={styles.imageBurger}
-                alt={'menu bar'}
-                quality={100}
-              />
-            </div>
-          
-          <div>
-            <Link href="/#" className={styles.undreline}>
-              <div className={styles.titleMain}>LUXURY TIMES LTD</div>
-            </Link>
-          </div>
-
-          <div className={styles.logoIcon}>
-            <Link href="tel:07718269994">
-              <Image
-                src={'/logo_it.png'}
-                width={125}
-                height={125}
-                className={styles.navbarLogo}
-                alt={'contact button'}
-                quality={100}
-              />
-            </Link>
-          </div>
-        </div>
-      </div>
-      {toggle ? 
-            <nav className={styles.navOpen}>
-              <ul className={styles.unorderedList}>
-                <Link href={'/rolex/rolex-categories'} className={styles.linkBTN} prefetch={true}>
-                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-                    <li className={styles.listItem}>Rolex</li>
-                  </div>
-                </Link>
-                <Link href={'/patek-philippe/patek-philippe-categories'} className={styles.linkBTN} prefetch={true}>
-                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-                    <li className={styles.listItem}>Patek Philippe</li>
-                  </div>
-                </Link>
-                <Link href={'/audemars-piguet/audemars-piguet-categories'} className={styles.linkBTN} prefetch={true}>
-                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-                    <li className={styles.listItem}>Audemars Piguet</li>
-                  </div>
-                </Link>
-                <Link href={'/Jewellery'} className={styles.linkBTN} prefetch={true}>
-                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-                    <li className={styles.listItem}>Jewellery</li>
-                  </div>
-                </Link>
-                <Link href={'/sell'} className={styles.linkBTN} prefetch={true}>
-                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-                    <li className={styles.listItem}>Sell</li>
-                  </div>
-                </Link>
-                <Link href={'/guide'} className={styles.linkBTN} prefetch={true}>
-                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-                    <li className={styles.listItem}>Guides</li>
-                  </div>
-                </Link>
-                <Link href={'/contact'} className={styles.linkBTN} prefetch={true}>
-                  <div className={styles.listItemContainer} onClick={() => handleToggle()}>
-                    <li className={styles.listItem}>Contact</li>
-                  </div>
-                </Link>
-              </ul>
-            <div className={styles.closeMenu} onClick={() => handleToggle()}>Close Menu</div>
-          </nav> 
-            : 
-          <div></div>
-          }
-
-
-          {/* DESKTOP NAV */}
-          <Link href="/#" className={styles.undreline}>
-            <div className={styles.titleMainDesktop}>LUXURY TIMES LTD</div>
+          <Link href="/" className={styles.brandLink}>
+            <h1 className={styles.brandTitle}>LUXURY TIMES LTD</h1>
           </Link>
-            <nav className={styles.navContainerGrid}>
-              <ul className={styles.navDesktopGrid}>
-                <Link href={'/rolex/rolex-categories'} className={styles.linkBTN} prefetch={true}>
-                    <div className={styles.listItemContainer}>
-                      <li className={styles.listItem}>Rolex</li>
-                    </div>
+
+          <Link href="tel:07718269994" className={styles.logoLink}>
+            <Image
+              src={'/logo_it.png'}
+              width={125}
+              height={125}
+              className={styles.logo}
+              alt="Luxury Times Logo"
+              quality={100}
+            />
+          </Link>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        {isMenuOpen && (
+          <div className={styles.overlay} onClick={closeMenu} />
+        )}
+
+        {/* Mobile Menu */}
+        <nav className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`}>
+          <ul className={styles.mobileMenuList}>
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link 
+                  href={link.href} 
+                  className={styles.mobileMenuLink}
+                  prefetch={link.prefetch}
+                  onClick={closeMenu}
+                >
+                  {link.label}
                 </Link>
-                <Link href={'/patek-philippe/patek-philippe-categories'} className={styles.linkBTN}>
-                    <div className={styles.listItemContainer}>
-                      <li className={styles.listItem}>Patek Philippe</li>
-                    </div>
-                  </Link>
-                  <Link href={'/audemars-piguet/audemars-piguet-categories'} className={styles.linkBTN}>
-                    <div className={styles.listItemContainer}>
-                      <li className={styles.listItem}>Audemars Piguet</li>
-                    </div>
-                  </Link>
-                  <Link href={'/Jewellery'} className={styles.linkBTN}>
-                    <div className={styles.listItemContainer}>
-                      <li className={styles.listItem}>Jewellery</li>
-                    </div>
-                  </Link>
-                  <Link href={'/sell'} className={styles.linkBTN} prefetch={true}>
-                    <div className={styles.listItemContainer}>
-                      <li className={styles.listItem}>Sell</li>
-                    </div>
-                  </Link>
-                  <Link href={'/guide'} className={styles.linkBTN}>
-                    <div className={styles.listItemContainer}>
-                      <li className={styles.listItem}>Guides</li>
-                    </div>
-                  </Link>
-                  <Link href={'/contact'} className={styles.linkBTN}>
-                    <div className={styles.listItemContainer}>
-                      <li className={styles.listItem}>Contact</li>
-                    </div>
-                  </Link>
-              </ul>
-            </nav>
-      
-    </main>
+              </li>
+            ))}
+          </ul>
+          <button 
+            className={styles.closeMenuButton} 
+            onClick={closeMenu}
+            aria-label="Close menu"
+          >
+            Close Menu
+          </button>
+        </nav>
+      </div>
+
+      {/* Desktop Navigation */}
+      <div className={styles.desktopNav}>
+        <Link href="/" className={styles.brandLink}>
+          <h1 className={styles.brandTitleDesktop}>LUXURY TIMES LTD</h1>
+        </Link>
+        <nav className={styles.desktopNavContainer}>
+          <ul className={styles.desktopMenuList}>
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link 
+                  href={link.href} 
+                  className={styles.desktopMenuLink}
+                  prefetch={link.prefetch}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './sell.module.css'
+import Button from '../components/Button'
 
 export default function Sell() {
   return (
@@ -27,18 +28,15 @@ export default function Sell() {
             </div>
 
             <div className={styles.contactBTNContainer}> 
-                <Link href="tel:07714611699" className={styles.linkBTN}>CONTACT</Link>
+                <Button href="tel:07714611699">CONTACT</Button>
             </div>
 
             <div className={styles.contactBTNDesktop}>07714 611 699</div>
 
             <div className={styles.whatsappBtn}>
-                <Link
-                href={"https://wa.me/447714611699?text=Hi%20Luxury%20Times...."} 
-                className={styles.linkBTN}
-                >
-                 WHATSAPP
-                </Link>
+                <Button href="https://wa.me/447714611699?text=Hi%20Luxury%20Times....">
+                  WHATSAPP
+                </Button>
             </div>
 
             <div className={styles.contentNumberGrid}>

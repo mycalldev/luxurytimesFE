@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from './Contact.module.css'
+import Button from '../components/Button'
 
 export default function Contact() {
   return (
@@ -20,15 +21,12 @@ export default function Contact() {
 
       {/* BTN */}
       <div className={styles.heroBtn}>
-        <Link href="tel:07714611699" className={styles.linkBTN}>CALL NOW</Link>
+        <Button href="tel:07714611699">CALL NOW</Button>
       </div>
       <div className={styles.heroBtn}>
-        <Link
-          href={"https://wa.me/447714611699?text=Hi%20Luxury%20Times...."} 
-          className={styles.linkBTN}
-        >
+        <Button href="https://wa.me/447714611699?text=Hi%20Luxury%20Times....">
           WHATSAPP
-        </Link>
+        </Button>
       </div>
       <div className={styles.heroBtnDesktop}>07714 611 699</div>
     </div>

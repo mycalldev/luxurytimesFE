@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getAllProducts } from '../utils/shopify';
 import styles from './products.module.css';
+import Button from '../components/Button';
 
 export async function generateMetadata() {
   return {
@@ -29,30 +30,30 @@ export default async function ProductsPage({ searchParams }) {
         <h1 className={styles.title}>LUXURY WATCHES</h1>
         
         <div className={styles.filterButtons}>
-          <Link 
+          <Button 
             href="/products" 
-            className={!collection ? styles.activeFilter : styles.filterBtn}
+            variant={!collection ? 'active' : 'primary'}
           >
             All Watches
-          </Link>
-          <Link 
+          </Button>
+          <Button 
             href="/products?collection=rolex" 
-            className={collection === 'rolex' ? styles.activeFilter : styles.filterBtn}
+            variant={collection === 'rolex' ? 'active' : 'primary'}
           >
             Rolex
-          </Link>
-          <Link 
+          </Button>
+          <Button 
             href="/products?collection=audemars-piguet" 
-            className={collection === 'audemars-piguet' ? styles.activeFilter : styles.filterBtn}
+            variant={collection === 'audemars-piguet' ? 'active' : 'primary'}
           >
             Audemars Piguet
-          </Link>
-          <Link 
+          </Button>
+          <Button 
             href="/products?collection=patek-philippe" 
-            className={collection === 'patek-philippe' ? styles.activeFilter : styles.filterBtn}
+            variant={collection === 'patek-philippe' ? 'active' : 'primary'}
           >
             Patek Philippe
-          </Link>
+          </Button>
         </div>
       </div>
 

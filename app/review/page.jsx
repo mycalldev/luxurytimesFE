@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Reviews.module.css'
+import Button from '../components/Button'
 
 async function getReviews() {
     
@@ -29,7 +30,7 @@ export default async function Reviews() {
         </Link>
           <h1 className={styles.titleMain}>REVIEWS</h1>
           <div className={styles.viewDetailsBTNMobile}>
-            <Link href="tel:07714611699" className={styles.linkBTN}>CONTACT</Link>
+            <Button href="tel:07714611699">CONTACT</Button>
           </div>
           <div className={styles.viewDetailsBTNDesktop}>
             <h3 className={styles.contactReview}>CONTACT</h3>

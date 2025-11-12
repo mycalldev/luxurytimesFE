@@ -1,6 +1,7 @@
 
 import styles from './FAQs.module.css'
 import Link from 'next/link'
+import Button from '../components/Button'
 
 async function getFAQs() {
     
@@ -28,7 +29,7 @@ export default async function FAQs() {
         </Link>
         <h1 className={styles.titleMain}>FAQs</h1>
         <div className={styles.viewDetailsBTNMobile}>
-            <Link href="tel:07714611699" className={styles.linkBTN}>CONTACT</Link>
+            <Button href="tel:07714611699">CONTACT</Button>
           </div>
           <div className={styles.viewDetailsBTNDesktop}>
             <h3 className={styles.contactReview}>CONTACT</h3>
