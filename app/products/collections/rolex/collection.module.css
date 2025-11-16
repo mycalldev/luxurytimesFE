@@ -104,6 +104,99 @@
     color: #666;
     padding: 60px 20px;
   }
+
+  /* Filter Section Styles */
+  .filterSection {
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+  }
+
+  .filterHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .filterTitle {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+
+  .clearButton {
+    background-color: transparent;
+    border: 1px solid #666;
+    color: #666;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+  }
+
+  .clearButton:hover {
+    background-color: #666;
+    color: white;
+  }
+
+  .filterOptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .filterButton {
+    background-color: white;
+    border: 1.5px solid #d0d0d0;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  .filterButton:hover {
+    border-color: #1a1a1a;
+    background-color: #f0f0f0;
+  }
+
+  .filterButtonActive {
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+    color: white;
+  }
+
+  .filterButtonActive:hover {
+    background-color: #333;
+    border-color: #333;
+  }
+
+  .resultsInfo {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .activeFilters {
+    color: #1a1a1a;
+    font-weight: 500;
+  }
   
   @media (max-width: 768px) {
     .title {
@@ -113,5 +206,32 @@
     .productsGrid {
       grid-template-columns: 1fr;
       gap: 30px;
+    }
+
+    .filterSection {
+      padding: 20px;
+    }
+
+    .filterTitle {
+      font-size: 1.2rem;
+    }
+
+    .filterHeader {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .clearButton {
+      width: 100%;
+    }
+
+    .filterButton {
+      font-size: 0.85rem;
+      padding: 8px 16px;
+    }
+
+    .resultsInfo {
+      font-size: 0.9rem;
+      padding: 12px 15px;
     }
   }
