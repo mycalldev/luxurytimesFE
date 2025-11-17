@@ -205,7 +205,7 @@ export default async function Jewellery() {
         </div>
 
       </div>  
-      <ReviewSwiper review={review}/>
+      {/* <ReviewSwiper review={review}/> */}
 
      
     </div>

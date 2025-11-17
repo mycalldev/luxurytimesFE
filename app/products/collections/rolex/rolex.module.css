@@ -1,0 +1,44 @@
+/* Hero Section Styles */
+.heroSection {
+  position: relative;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.heroImageContainer {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .heroImageContainer {
+    height: 450px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .heroSection {
+    margin-bottom: 40px;
+  }
+
+  .heroImageContainer {
+    height: 300px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .heroImageContainer {
+    height: 250px;
+  }
+}
+
