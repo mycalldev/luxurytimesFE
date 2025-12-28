@@ -7,10 +7,8 @@ import styles from './Navbar.module.css'
 
 // Navigation links configuration
 const navLinks = [
-  { href: '/rolex/rolex-categories', label: 'Rolex', prefetch: true },
-  { href: '/patek-philippe/patek-philippe-categories', label: 'Patek Philippe', prefetch: true },
-  { href: '/audemars-piguet/audemars-piguet-categories', label: 'Audemars Piguet', prefetch: true },
-  // { href: '/Jewellery', label: 'Jewellery', prefetch: true },
+  { href: '/products/collections/rolex', label: 'Rolex', prefetch: true },
+  { href: '/products/collections/patek-philippe', label: 'Patek Philippe', prefetch: true },
   { href: '/sell', label: 'Sell', prefetch: true },
   { href: '/guide', label: 'Guides', prefetch: false },
   { href: '/contact', label: 'Contact', prefetch: false },

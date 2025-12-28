@@ -61,7 +61,7 @@ export default async function Home() {
           <BrandCard 
             image="/Rolex_thumb.JPG"
             title="Rolex"
-            href="/rolex/rolex-categories"
+            href="/products/collections/rolex"
             width={3272.5}
             height={2181.5}
             altText="Rolex watches collection"
@@ -70,7 +70,7 @@ export default async function Home() {
           <BrandCard 
             image="/PP_thumb.JPG"
             title="Patek Philippe"
-            href="/patek-philippe/patek-philippe-categories"
+            href="/products/collections/patek-philippe"
             width={3272.5}
             height={2181.5}
             altText="Patek Philippe watches collection"
