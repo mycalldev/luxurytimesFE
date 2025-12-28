@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './page.module.css'
-import ReviewSwiper from './components/ReviewSwiper'
-import Carousel from './components/Carousel'
 import BrandCard from './components/BrandCard'
 import Button from './components/Button'
 
@@ -24,22 +22,9 @@ export const metadata = {
   },
 };
 
-async function getReview() {
-  
-  const res = await fetch('https://www.luxurytimesltd-be.co.uk/api/reviews', {
-  
-      next: {
-          revalidate: 30,
-      }
-  })
-  const data = await res.json()
-  return data
-
-}
 
 export default async function Home() {
-
-  const review = await getReview();
+  
   return (
     <>
       <main className={styles.main}>
@@ -66,15 +51,10 @@ export default async function Home() {
         quality={100}
       />
       
-        <Button href="tel:07714611699">
-          CONTACT
-        </Button>
+      <Button href="tel:07714611699">
+        CONTACT
+      </Button>
       
-      {/* CONTACT DESKTOP */}
-      <div className={styles.contactBTNContainerDesktop}>
-        <div className={styles.titleContactDesktop}>CONTACT</div>
-            <div className={styles.contactBTN}>07714 611 699</div>
-      </div>
 
       {/* CATEGORY SECTION */}
       <section className={styles.categoryContainerGrid}>
@@ -96,14 +76,6 @@ export default async function Home() {
             altText="Patek Philippe watches collection"
           />
 
-          <BrandCard 
-            image="/category/APiguet.JPG"
-            title="Audemars Piguet"
-            href="/audemars-piguet/audemars-piguet-categories"
-            width={840}
-            height={560}
-            altText="Audemars Piguet watches collection"
-          />
       </section>
       </section>
 
@@ -167,27 +139,8 @@ export default async function Home() {
         </Button>
     
       </section>
-
-      {/* <ReviewSwiper review={review}/> */}
     </main>
     </>
   )
 }
-  {/* <section>
-        <div className={styles.imageCategoryContainer}>
-          <Link href={"/Jewellery"} prefetch={true} className={styles.viewBTNContainer}>
-            <Image
-              src={`/jewellery/rings/image_hero_rings.png`}
-              width={1456}
-              height={816}
-              alt={'hero image of rings'}
-              className={styles.imageCategoryJewellery}
-              quality={100}
-            />
-            <div className={styles.titleCategoryWatch}>Jewellery Collection</div>
-            <div className={styles.viewDetailsBTN}>
-                <h4>View</h4>
-            </div>
-          </Link>
-        </div>
-      </section> */}
+  

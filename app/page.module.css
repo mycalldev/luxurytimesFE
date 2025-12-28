@@ -408,7 +408,7 @@
 
   .categoryContainerGrid {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 50% 50%;
     width: 100%;
     /* margin: 60px auto; */
     gap: 30px;
