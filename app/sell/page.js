@@ -23,19 +23,13 @@ export default function Sell() {
           </div>
         </Link>
         <div className={styles.container}>
-            <div className={styles.titleMain}>
-               The 3 Easy Steps to Selling Your Watch....
-            </div>
-
+            
             <Button href="tel:07714611699" desktopText="07714611699">
               CONTACT US
             </Button>
 
-
-            <div className={styles.whatsappBtn}>
-                <Button href="https://wa.me/447714611699?text=Hi%20Luxury%20Times....">
-                  WHATSAPP
-                </Button>
+            <div className={styles.titleMain}>
+               The 3 Easy Steps to Selling Your Watch....
             </div>
 
             <div className={styles.contentNumberGrid}>

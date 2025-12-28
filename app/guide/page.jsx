@@ -115,19 +115,9 @@ export default function BuyingRolex() {
         </div>
 
     
-    <div className={styles.contactBTNContainer}>
-        <Image src={"/call.png"} width={25} height={25} alt={'phone icon'} quality={100} /> 
-        <Button href="tel:07714611699">Contact</Button>
+        <Button href="tel:07714611699" desktopText="07714611699">
+        CONTACT
+      </Button>
     </div>
-    {/* CTA  */}
-    <div className={styles.contactBTN}>
-      <Button href="tel:07714611699">CONTACT</Button>
-    </div>
-      <div className={styles.contactBTNDesktop}>
-        <h3 className={styles.contactReview}>CONTACT</h3>
-        <div>07714 611 699</div>
-      </div>
-    </div>
-    
   )
 }

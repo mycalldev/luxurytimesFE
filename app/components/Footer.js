@@ -24,17 +24,7 @@ export default function Footer() {
                 className={styles.socialIcon}
               />
             </Link>
-            {/* 
-            <Link href={'https://www.youtube.com/@LuxuryTimesLondon'} aria-label="Visit our YouTube">
-              <Image 
-                src={'/youtube.png'} 
-                width={40} 
-                height={40} 
-                quality={100} 
-                alt='Youtube icon' 
-                className={styles.socialIcon}
-              />
-            </Link> */}
+            
           </div>
         </div>
 
