@@ -51,7 +51,7 @@ export default async function Home() {
         quality={100}
       />
       
-      <Button href="tel:07714611699">
+      <Button href="tel:07714611699" desktopText="07714611699">
         CONTACT
       </Button>
       

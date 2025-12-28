@@ -10,7 +10,8 @@ export default function Button({
   className = '',
   prefetch = false,
   target,
-  disabled = false
+  disabled = false,
+  desktopText
 }) {
   const buttonClasses = `${styles.filterBtn} ${variant === 'active' ? styles.activeFilter : ''} ${className}`
   
@@ -23,7 +24,14 @@ export default function Button({
         prefetch={prefetch}
         target={target}
       >
-        {children}
+        {desktopText ? (
+          <>
+            <span className={styles.mobileText}>{children}</span>
+            <span className={styles.desktopText}>{desktopText}</span>
+          </>
+        ) : (
+          children
+        )}
       </Link>
     )
   }
@@ -36,7 +44,14 @@ export default function Button({
       className={buttonClasses}
       disabled={disabled}
     >
-      {children}
+      {desktopText ? (
+        <>
+          <span className={styles.mobileText}>{children}</span>
+          <span className={styles.desktopText}>{desktopText}</span>
+        </>
+      ) : (
+        children
+      )}
     </button>
   )
 }
