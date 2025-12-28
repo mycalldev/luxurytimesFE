@@ -42,12 +42,12 @@ export default async function ProductsPage({ searchParams }) {
           >
             Rolex
           </Button>
-          <Button 
+          {/* <Button 
             href="/products?collection=audemars-piguet" 
             variant={collection === 'audemars-piguet' ? 'active' : 'primary'}
           >
             Audemars Piguet
-          </Button>
+          </Button> */}
           <Button 
             href="/products?collection=patek-philippe" 
             variant={collection === 'patek-philippe' ? 'active' : 'primary'}
