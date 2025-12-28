@@ -208,6 +208,18 @@
   display: none;
 }
 
+.desktopHeaderContainer {
+  display: none;
+}
+
+.desktopLogoLink {
+  display: none;
+}
+
+.desktopLogo {
+  display: none;
+}
+
 .desktopNavContainer {
   display: none;
 }
@@ -225,17 +237,45 @@
     display: block;
   }
 
+  .desktopHeaderContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem 1.25rem 1rem;
+  }
+
+  .desktopLogoLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .desktopLogoLink:hover {
+    transform: scale(1.05);
+  }
+
+  .desktopLogo {
+    display: block;
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+  }
+
   .brandLink {
     display: block;
   }
 
   .brandTitleDesktop {
     display: block;
-    margin: 2rem auto 1.5rem;
+    margin: 0;
     font-size: clamp(1.75rem, 3vw, 2.25rem);
     font-weight: 700;
     color: #1a1a1a;
-    text-align: center;
+    text-align: left;
     letter-spacing: 1px;
     transition: color 0.3s ease;
   }
@@ -304,9 +344,17 @@
    ========================================== */
 
 @media (min-width: 1024px) {
+  .desktopLogo {
+    max-width: 125px;
+  }
+
+  .desktopHeaderContainer {
+    gap: 2rem;
+  }
+
   .brandTitleDesktop {
     font-size: 2.5rem;
-    margin: 2.5rem auto 2rem;
+    margin: 0;
   }
 
   .desktopMenuLink {
@@ -351,6 +399,7 @@
   .overlay,
   .menuButton,
   .logo,
+  .desktopLogo,
   .brandTitle,
   .brandTitleDesktop,
   .mobileMenuLink,

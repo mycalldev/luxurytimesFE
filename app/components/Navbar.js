@@ -107,9 +107,21 @@ export default function Navbar() {
 
       {/* Desktop Navigation */}
       <div className={styles.desktopNav}>
-        <Link href="/" className={styles.brandLink}>
-          <h1 className={styles.brandTitleDesktop}>LUXURY TIMES LTD</h1>
-        </Link>
+        <div className={styles.desktopHeaderContainer}>
+          <Link href="tel:07718269994" className={styles.desktopLogoLink}>
+            <Image
+              src={'/logo_it.png'}
+              width={125}
+              height={125}
+              className={styles.desktopLogo}
+              alt="Luxury Times Logo"
+              quality={100}
+            />
+          </Link>
+          <Link href="/" className={styles.brandLink}>
+            <h1 className={styles.brandTitleDesktop}>LUXURY TIMES LTD</h1>
+          </Link>
+        </div>
         <nav className={styles.desktopNavContainer}>
           <ul className={styles.desktopMenuList}>
             {navLinks.map((link) => (
