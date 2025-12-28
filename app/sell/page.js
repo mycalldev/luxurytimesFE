@@ -27,11 +27,10 @@ export default function Sell() {
                The 3 Easy Steps to Selling Your Watch....
             </div>
 
-            <div className={styles.contactBTNContainer}> 
-                <Button href="tel:07714611699">CONTACT</Button>
-            </div>
+            <Button href="tel:07714611699" desktopText="07714611699">
+              CONTACT US
+            </Button>
 
-            <div className={styles.contactBTNDesktop}>07714 611 699</div>
 
             <div className={styles.whatsappBtn}>
                 <Button href="https://wa.me/447714611699?text=Hi%20Luxury%20Times....">

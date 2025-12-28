@@ -129,7 +129,6 @@ export default async function Home() {
             <Image src={'/highlight.JPG'} width={840} height={560} className={styles.imageHighlights} alt={'image of Sky-dweller'} quality={100} />
           </Link>
           <div className={styles.contentHighlightsContainer}>
-            {/* <div className={styles.conenttitleHighlights}>Rolex</div> */}
             <div className={styles.contentSubTitleHighlights}>Sky Dweller</div>
             <div className={styles.paragraphHighlights1}>Introducing the Rolex Sky-Dweller! Where elegance meets precsion.... With its iconic design, dual time zones, and....</div>
           </div> 
