@@ -1,135 +1,340 @@
-.linkBTN {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #fff;
+/* ==========================================
+   CONTAINER & LAYOUT
+   ========================================== */
+
+.containerFAQs {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #fafafa, #ffffff);
+  padding: 2rem 1.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.backLinkBTN {
-    color: #000;
-    text-decoration: none;
+/* ==========================================
+   HEADER SECTION
+   ========================================== */
+
+.headerSection {
+  margin-bottom: 3rem;
 }
 
-.backNav {
-    margin: 20px 30px;
-    font-size: 1.1rem;
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.backLink:hover {
+  color: #333333;
+}
+
+.backArrow {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.backLink:hover .backArrow {
+  transform: translateX(-4px);
 }
 
 .titleMain {
-    margin: 20px;
-    text-align: center;
-    font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  color: #1a1a1a;
+  margin: 0 0 2rem 0;
+  letter-spacing: 0.5px;
 }
 
-.viewDetailsBTNMobile {
-    margin: 10px auto 50px auto;
-    padding: 10px 30px;
-    max-width: 150px;
-    border: solid 2px #91c0dc;
-    border-radius: 22px;
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: #fff;
-    background-color: #91c0dc;
-    letter-spacing: 3px;
-    text-align: center;
-    cursor: pointer;
+/* ==========================================
+   CONTACT SECTION
+   ========================================== */
+
+.contactSection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
 }
 
-.viewDetailsBTNDesktop {
+.contactMobile {
+  display: block;
+}
+
+.contactDesktop {
+  display: none;
+}
+
+.contactTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+
+.phoneNumber {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.phoneNumber:hover {
+  color: #333333;
+}
+
+/* ==========================================
+   INTRO SECTION
+   ========================================== */
+
+.introSection {
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.introText {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #333333;
+  text-align: center;
+  margin: 0;
+}
+
+/* ==========================================
+   FILTER SECTION
+   ========================================== */
+
+.filterSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filterButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  border: 2px solid #d0d0d0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filterButton:hover {
+  border-color: #1a1a1a;
+  background-color: #f8f8f8;
+}
+
+.activeFilter {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-color: #1a1a1a;
+}
+
+.activeFilter:hover {
+  background-color: #333333;
+  border-color: #333333;
+}
+
+/* ==========================================
+   FAQS GRID
+   ========================================== */
+
+.faqsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* ==========================================
+   FAQ CARD
+   ========================================== */
+
+.faqCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.faqCard:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.faqHeader {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.faqCategory {
+  display: inline-block;
+  padding: 0.375rem 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.faqQuestion {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+}
+
+.faqAnswer {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333333;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ==========================================
+   TABLET STYLES (768px+)
+   ========================================== */
+
+@media (min-width: 768px) {
+  .containerFAQs {
+    padding: 3rem 2rem;
+  }
+
+  .contactMobile {
     display: none;
-}
+  }
 
-.welcomeTag {
+  .contactDesktop {
+    display: block;
     text-align: center;
-    margin: 20px;
-    font-size: 1.3rem;
-    color: #323232;
+  }
+
+  .introText {
+    font-size: 1.125rem;
+  }
+
+  .faqsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .faqCard {
+    padding: 2rem;
+  }
+
+  .faqQuestion {
+    font-size: 1.375rem;
+  }
+
+  .faqAnswer {
+    font-size: 1.0625rem;
+  }
 }
 
-.faqIntro {
-    width: 70%;
-    margin: 20px auto;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.5;
+/* ==========================================
+   DESKTOP STYLES (1024px+)
+   ========================================== */
+
+@media (min-width: 1024px) {
+  .containerFAQs {
+    padding: 4rem 3rem;
+  }
+
+  .titleMain {
+    margin-bottom: 3rem;
+  }
+
+  .introSection {
+    margin-bottom: 3rem;
+  }
+
+  .filterSection {
+    margin-bottom: 4rem;
+  }
+
+  .faqsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .faqCard {
+    padding: 2.5rem;
+  }
 }
 
-.faqsContainer {
-    margin: 40px 30px;
-    padding: 20px 30px;
-    font-size: 1.1rem;
-    background: #eeeeee;
+/* ==========================================
+   LARGE DESKTOP STYLES (1440px+)
+   ========================================== */
+
+@media (min-width: 1440px) {
+  .containerFAQs {
+    padding: 5rem 4rem;
+  }
+
+  .faqsGrid {
+    gap: 3rem;
+  }
+
+  .faqCard {
+    padding: 3rem;
+  }
 }
 
-.questionGrid {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    justify-content: space-between;
-    align-items: center;
+/* ==========================================
+   ACCESSIBILITY & FOCUS STATES
+   ========================================== */
+
+.backLink:focus-visible,
+.phoneNumber:focus-visible,
+.filterButton:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
-.titleQuestion {
-    margin-right: 10px;
-    font-weight: 700;
-}
+/* ==========================================
+   REDUCED MOTION SUPPORT
+   ========================================== */
 
-.question {
- margin: 10px;
-}
+@media (prefers-reduced-motion: reduce) {
+  .faqCard,
+  .backLink,
+  .backArrow,
+  .filterButton {
+    transition: none;
+  }
 
-.titleAnswer {
-    margin-right: 10px;
-    font-weight: 700;
-}
+  .faqCard:hover {
+    transform: none;
+  }
 
-.answer {
-    margin: 10px;
-    line-height: 1.5;
-}
-
-@media(min-width: 768px) {
-
-    .backNav {
-        margin: 100px;
-        font-size: 1.5rem;
-    }
-    .viewDetailsBTNMobile {
-        display: none;
-    }
-
-    .viewDetailsBTNDesktop {
-        display: block;
-        margin: 10px auto 50px auto;
-        padding: 10px 30px;
-        max-width: 250px;
-        border: solid 2px #91c0dc;
-        border-radius: 22px;
-        font-size: 1.3rem;
-        font-weight: 500;
-        color: #fff;
-        background-color: #91c0dc;
-        letter-spacing: 3px;
-        text-align: center;
-        cursor: pointer;
-    }
-
-    .faqsContainer {
-        width: 60%;
-        margin: 30px auto;
-        padding: 40px;
-    }
-
-    .welcomeTag {
-        text-align: center;
-        margin: 20px;
-        font-size: 1.7rem;
-    }
-
-    .faqIntro {
-        width: 65%;
-        margin: 20px auto 40px auto;
-        font-size: 1.3rem;
-        line-height: 1.5;
-    }
+  .backLink:hover .backArrow {
+    transform: none;
+  }
 }
