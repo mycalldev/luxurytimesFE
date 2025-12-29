@@ -1,164 +1,298 @@
-.linkBTN {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #fff;
+/* ==========================================
+   CONTAINER & LAYOUT
+   ========================================== */
+
+.containerReview {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #fafafa, #ffffff);
+  padding: 2rem 1.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.backLinkBTN {
-    color: #000;
-    text-decoration: none;
+/* ==========================================
+   HEADER SECTION
+   ========================================== */
+
+.headerSection {
+  margin-bottom: 3rem;
 }
 
-.backNav {
-    margin: 20px 30px;
-    font-size: 1.1rem;
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
 }
 
-.viewDetailsBTNMobile {
-    margin: 10px auto 50px auto;
-    padding: 10px 30px;
-    max-width: 150px;
-    border: solid 2px #91c0dc;
-    border-radius: 22px;
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: #fff;
-    background-color: #91c0dc;
-    letter-spacing: 3px;
-    text-align: center;
-    cursor: pointer;
+.backLink:hover {
+  color: #333333;
 }
 
-.viewDetailsBTNDesktop {
-    display: none;
+.backArrow {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.backLink:hover .backArrow {
+  transform: translateX(-4px);
 }
 
 .titleMain {
-    margin: 20px;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-align: center;
-    color: #323232;
-}
-
-.titleReviews {
-  font-size: 1.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   text-align: center;
-  color: #323232;
+  color: #1a1a1a;
+  margin: 0 0 2rem 0;
+  letter-spacing: 0.5px;
 }
 
-.containerMain {
-    margin: 40px 30px;
-    padding: 20px 30px;
-    background: #eeeeee;
+/* ==========================================
+   CONTACT SECTION
+   ========================================== */
+
+.contactSection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
 }
 
-.ratingMainContainer {
-    display: flex;
-    align-items: center;
+.contactMobile {
+  display: block;
 }
 
-
-.imageStar {
- margin: 0 5px;
+.contactDesktop {
+  display: none;
 }
 
-.ratingGrid {
-    margin: 20px 40px;
-    display: grid;
-    max-width: 300px;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-}
-
-.rating {
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.containerGrid {
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-
-.nameKey {
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.nameValue {
-    font-size: 1.1rem;
-}
-
-.dateKey {
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.dateValue {
-    font-size: 1.1rem;
-}
-
-
-.review {
-    margin: 20px 0;
-    font-size: 1.1rem;
-    line-height: 1.5;
-}
-
-.titleReviews {
-  margin: 20px auto -10px auto;
-  font-size: 1.5rem;
-  font-weight: 700;
+.contactTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
   text-align: center;
-  color: #323232;
 }
 
-@media(min-width: 768px) {
+.phoneNumber {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  transition: color 0.3s ease;
+}
 
-    .backNav {
-        margin: 100px;
-        font-size: 1.5rem;
-    }
+.phoneNumber:hover {
+  color: #333333;
+}
 
-    .viewDetailsBTNMobile {
-        display: none;
-    }
+/* ==========================================
+   REVIEWS GRID
+   ========================================== */
 
-    .viewDetailsBTNDesktop {
-        display: block;
-        margin: 10px auto 50px auto;
-        padding: 10px 30px;
-        max-width: 250px;
-        border: solid 2px #91c0dc;
-        border-radius: 22px;
-        font-size: 1.3rem;
-        font-weight: 500;
-        color: #fff;
-        background-color: #91c0dc;
-        letter-spacing: 3px;
-        text-align: center;
-        cursor: pointer;
-    }
-    .containerReview {
-        margin-bottom: 100px;
-    }
-    .containerMain {
-        width: 60%;
-        margin: 30px auto;
-        padding: 40px;
-    }
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
 
-    .titleMain {
-        margin-top: 40px;
-        font-size: 2rem;
-    }
+/* ==========================================
+   REVIEW CARD
+   ========================================== */
 
-    .titleReviews {
-        font-size: 2rem;
-    }
+.reviewCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.reviewCard:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.reviewHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.reviewerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reviewerName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.reviewDate {
+  font-size: 0.9rem;
+  color: #666666;
+  font-weight: 400;
+}
+
+.ratingSection {
+  display: flex;
+  align-items: center;
+}
+
+.starsContainer {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
+}
+
+.starFilled {
+  opacity: 1;
+}
+
+.reviewText {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333333;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ==========================================
+   TABLET STYLES (768px+)
+   ========================================== */
+
+@media (min-width: 768px) {
+  .containerReview {
+    padding: 3rem 2rem;
+  }
+
+  .contactMobile {
+    display: none;
+  }
+
+  .contactDesktop {
+    display: block;
+    text-align: center;
+  }
+
+  .reviewsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .reviewCard {
+    padding: 2rem;
+  }
+
+  .reviewHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .reviewerName {
+    font-size: 1.375rem;
+  }
+
+  .reviewText {
+    font-size: 1.0625rem;
+  }
+}
+
+/* ==========================================
+   DESKTOP STYLES (1024px+)
+   ========================================== */
+
+@media (min-width: 1024px) {
+  .containerReview {
+    padding: 4rem 3rem;
+  }
+
+  .titleMain {
+    margin-bottom: 3rem;
+  }
+
+  .reviewsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .reviewCard {
+    padding: 2.5rem;
+  }
+
+  .star {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* ==========================================
+   LARGE DESKTOP STYLES (1440px+)
+   ========================================== */
+
+@media (min-width: 1440px) {
+  .containerReview {
+    padding: 5rem 4rem;
+  }
+
+  .reviewsGrid {
+    gap: 3rem;
+  }
+
+  .reviewCard {
+    padding: 3rem;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY & FOCUS STATES
+   ========================================== */
+
+.backLink:focus-visible,
+.phoneNumber:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ==========================================
+   REDUCED MOTION SUPPORT
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .reviewCard,
+  .backLink,
+  .backArrow,
+  .star {
+    transition: none;
+  }
+
+  .reviewCard:hover {
+    transform: none;
+  }
 }

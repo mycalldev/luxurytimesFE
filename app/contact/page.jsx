@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Contact.module.css'
 import Button from '../components/Button'
+import ContactForm from '../components/ContactForm'
 
 export default function Contact() {
   return (
@@ -17,6 +18,8 @@ export default function Contact() {
         Please feel free to reach out to us using the contact information below, 
         and we'll get back to you as soon as possible.
       </div>
+
+      <ContactForm />
 
       <Button href="tel:07714611699" desktopText="07714611699">
         CONTACT
