@@ -24,6 +24,14 @@
     margin: auto;
 }
 
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
 .contactBTNContainer {
     display: block;
     margin: 40px auto;
@@ -128,6 +136,10 @@
     .container {
         width: 60%;
         margin: auto;
+    }
+
+    .buttonWrapper {
+        margin: 40px 0;
     }
 
     .contentNumer {
