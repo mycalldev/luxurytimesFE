@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Link from "next/link";
 import Image from "next/image";
 import styles from '../Landing.module.css'
 import Button from '../../components/Button'
@@ -35,25 +34,13 @@ export default function SkyDweller() {
           />
         </div>
 
-        {/* <Link href={'/'} className={styles.backLinkBTN}>
-          <div className={styles.backNav}>
-              {'< Home'}
-          </div>
-        </Link>      */}
+        
         <div className={styles.contentMainHeroContainer}>
-        {/* <div className={styles.headlineContentMain}>
-          Discover Time Mastery
-        </div> */}
-        {/* <div className={styles.headlineContentSub}>
-          Unleashing The Extrodinary
-        </div> */}
+       
       </div>
     </section>
-    <h2 className={styles.titleContent}>
-        SALE OF THE MONTH
-      </h2>
+   
     <section>
-      {/* <div className={styles.titleSkyDweller}>Rolex Sky-Dweller</div> */}
       <div className={styles.ref}>Reference: 326934</div>
 
       {/* SWIPER SECTION */}
@@ -87,19 +74,10 @@ export default function SkyDweller() {
     <h2 className={styles.titleContent}>
       Free Expert Advice
     </h2>
-    <div className={styles.contactBTN}>
-      <Button href="tel:07718269994">CONTACT</Button>
-    </div>
-    <div className={styles.contactBTN}>
-      <Button href="https://wa.me/447718269994?text=Hi%20Luxury%20Times....">
-        WHATSAPP
-      </Button>
-    </div>
-      <div className={styles.contactBTNDesktop}>
-        <h3 className={styles.contactReview}>CONTACT</h3>
-        <div>07718 269 994</div>
-      </div>
-
+    <Button href="tel:07714611699" desktopText="07714611699">
+        CONTACT
+    </Button>
+     
     <section>
       <h2 className={styles.titleContent}>
         Sophistication of the Sky-Dweller
@@ -128,9 +106,9 @@ export default function SkyDweller() {
         Quality Service and Best Price of the Month
       </h2>
 
-      <div className={styles.contactBTN}>
-        <Button href="tel:07718269994">CONTACT</Button>
-      </div>
+      <Button href="tel:07714611699" desktopText="07714611699">
+        CONTACT
+      </Button>
 
       <div className={styles.content}>
         One of the many standout features of the Sky-Dweller is its dual time
@@ -164,13 +142,11 @@ export default function SkyDweller() {
         <Image src={'/star.png'} width={32} height={32} className={styles.imageStar} alt='image of star' quality={100} />
       </div>
      
-      <div className={styles.expertBTN}>
-        <Button href="tel:07718269994">EXPERT ADVICE</Button>
-      </div>
+      <Button href="tel:07714611699" desktopText="07714611699">
+        CONTACT
+      </Button>
     
     </section>
-
-    
   </div>
   )
 }
