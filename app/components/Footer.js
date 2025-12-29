@@ -33,7 +33,6 @@ export default function Footer() {
           <h4 className={styles.footerHeading}>Quick Links</h4>
           <nav className={styles.footerLinks}>
             <Link href={'/products'} className={styles.linkBTN}>Shop Watches</Link>
-            <Link href={'/jewellery'} className={styles.linkBTN}>Jewellery</Link>
             <Link href={'/sell'} className={styles.linkBTN}>Sell Your Watch</Link>
             <Link href={'/blog'} className={styles.linkBTN}>Blog</Link>
             <Link href={'/contact'} className={styles.linkBTN}>Contact Us</Link>
