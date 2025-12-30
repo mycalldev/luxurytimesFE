@@ -3,6 +3,7 @@ import Link from 'next/link'
 import styles from './page.module.css'
 import BrandCard from './components/BrandCard'
 import Button from './components/Button'
+import BlogFeature from './components/BlogFeature'
 
 // Define metadata for the page using Next.js Metadata API
 export const metadata = {
@@ -103,6 +104,9 @@ export default async function Home() {
           </ul>
         </div>
       </section>
+
+      {/* BLOG FEATURE SECTION */}
+      <BlogFeature limit={3} />
 
       {/* BLOG SECTION */}
       <section>
