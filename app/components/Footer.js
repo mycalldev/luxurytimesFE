@@ -15,7 +15,7 @@ export default function Footer() {
             Your trusted destination for authentic luxury timepieces and fine jewellery.
           </p>
           <div className={styles.socialContainer}>
-            <Link href={'https://www.instagram.com/_luxurytimes_/'} aria-label="Visit our Instagram">
+            <Link href={'https://www.instagram.com/luxurytimeslondon/'} aria-label="Visit our Instagram">
               <Image 
                 src={'/social.png'} 
                 width={40} 
