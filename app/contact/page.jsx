@@ -17,9 +17,6 @@ export default function Contact() {
           </p>
           <ContactForm />
           <div className={styles.buttonWrapper}>
-          <Button href="tel:07714611699" desktopText="07714611699">
-            CONTACT
-          </Button>
         </div>
         </div>
       </div>
