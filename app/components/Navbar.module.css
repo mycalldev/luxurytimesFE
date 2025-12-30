@@ -244,8 +244,7 @@
     justify-content: space-between;
     gap: 2rem;
     padding: 0.75rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
+    width: 100%;
   }
 
   .desktopHeaderLeft {
@@ -335,6 +334,7 @@
     background: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
     border-top: 1px solid #e0e0e0;
     border-bottom: 2px solid #d0d0d0;
+    width: 100%;
   }
 
   .desktopMenuList {
@@ -343,7 +343,7 @@
     align-items: center;
     gap: clamp(0.5rem, 2vw, 2rem);
     list-style: none;
-    padding: 0;
+    padding: 0 2rem;
     margin: 0;
     flex-wrap: wrap;
   }
@@ -435,9 +435,12 @@
    ========================================== */
 
 @media (min-width: 1440px) {
-  .desktopNavContainer {
-    max-width: 1400px;
-    margin: 0 auto;
+  .desktopHeaderContainer {
+    padding: 0.875rem 4rem;
+  }
+
+  .desktopMenuList {
+    padding: 0 4rem;
   }
 }
 
