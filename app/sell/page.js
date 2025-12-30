@@ -25,11 +25,6 @@ export default function Sell() {
             <p className={styles.heroSubtitle}>
               Get the best value for your watch with our expert evaluation and transparent pricing
             </p>
-            <div className={styles.heroButton}>
-              <Button href="tel:07714611699" desktopText="07714 611 699">
-                Get Your Free Valuation
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -44,7 +39,6 @@ export default function Sell() {
 
       {/* Main Content Container */}
       <div className={styles.container}>
-          <ContactForm />
 
         {/* Process Section */}
         <section className={styles.processSection}>
@@ -88,6 +82,8 @@ export default function Sell() {
             </div>
           </div>
         </section>
+          <ContactForm />
+
 
         {/* Image Section */}
         <section className={styles.imageSection}>
