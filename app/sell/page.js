@@ -82,7 +82,7 @@ export default function Sell() {
             </div>
           </div>
         </section>
-          <ContactForm />
+        <ContactForm />
 
 
         {/* Image Section */}
