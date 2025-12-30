@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from '../components/Button'
+import WishlistIcon from '../components/WishlistIcon'
 import styles from './products.module.css'
 
 export default function ProductsClient({ products, collection: collectionFilter }) {
@@ -160,6 +161,9 @@ export default function ProductsClient({ products, collection: collectionFilter 
                       className={styles.productImage}
                       quality={90}
                     />
+                    <div className={styles.wishlistIconOverlay}>
+                      <WishlistIcon product={product} />
+                    </div>
                   </div>
                 )}
                 

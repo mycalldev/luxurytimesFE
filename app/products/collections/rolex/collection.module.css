@@ -50,6 +50,13 @@
     overflow: hidden;
     background-color: #f8f8f8;
   }
+
+  .wishlistIconOverlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+  }
   
   .productImage {
     width: 100%;

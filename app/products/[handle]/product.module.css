@@ -43,13 +43,26 @@
     margin-bottom: 10px;
   }
   
+  .titleRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 20px;
+  }
+
   .title {
     font-size: 2.5rem;
     font-weight: 300;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin: 0;
     color: #1a1a1a;
     line-height: 1.2;
+    flex: 1;
+  }
+
+  .wishlistIcon {
+    flex-shrink: 0;
   }
   
   .price {
@@ -223,6 +236,12 @@
       position: static;
     }
   
+    .titleRow {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
     .title {
       font-size: 2rem;
     }

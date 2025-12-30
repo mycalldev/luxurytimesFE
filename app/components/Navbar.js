@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Navbar.module.css'
+import WishlistBadge from './WishlistBadge'
 
 // Navigation links configuration
 const navLinks = [
@@ -64,6 +65,7 @@ export default function Navbar() {
           </Link>
 
           <div className={styles.mobileRightSection}>
+            <WishlistBadge />
             <Link href="tel:07714611699" className={styles.contactIconLink} aria-label="Call us">
               <Image
                 src={'/phone_icon.png'}
@@ -107,6 +109,15 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link 
+                href="/wishlist" 
+                className={styles.mobileMenuLink}
+                onClick={closeMenu}
+              >
+                Wishlist
+              </Link>
+            </li>
           </ul>
           <button 
             className={styles.closeMenuButton} 
@@ -137,6 +148,7 @@ export default function Navbar() {
             </Link>
           </div>
           <div className={styles.desktopHeaderRight}>
+            <WishlistBadge />
             <a href="mailto:info@luxurytimesltd.co.uk" className={styles.contactInfo}>
               <svg className={styles.contactIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -170,6 +182,14 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link 
+                href="/wishlist" 
+                className={styles.desktopMenuLink}
+              >
+                Wishlist
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

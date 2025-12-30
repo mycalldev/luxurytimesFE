@@ -1,0 +1,344 @@
+/* ==========================================
+   CONTAINER & LAYOUT
+   ========================================== */
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #fafafa, #ffffff);
+  padding: 2rem 1.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   HEADER SECTION
+   ========================================== */
+
+.header {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.backLink:hover {
+  color: #333333;
+}
+
+.backArrow {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.backLink:hover .backArrow {
+  transform: translateX(-4px);
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  color: #1a1a1a;
+  margin: 0 0 2rem 0;
+  letter-spacing: 0.5px;
+}
+
+.clearAllButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: 1px solid #666;
+  color: #666;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.clearAllButton:hover {
+  background: #666;
+  color: white;
+}
+
+/* ==========================================
+   EMPTY STATE
+   ========================================== */
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.emptyIcon {
+  color: #d0d0d0;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+.emptyTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.emptyDescription {
+  font-size: 1.125rem;
+  color: #575757;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   SUMMARY
+   ========================================== */
+
+.summary {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+.summaryText {
+  font-size: 1rem;
+  color: #575757;
+  margin: 0;
+}
+
+/* ==========================================
+   WISHLIST GRID
+   ========================================== */
+
+.wishlistGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* ==========================================
+   WISHLIST CARD
+   ========================================== */
+
+.wishlistCard {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.wishlistCard:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.wishlistCard:hover .productImage {
+  transform: scale(1.05);
+}
+
+.wishlistIconOverlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+.cardContent {
+  padding: 1.75rem;
+}
+
+.vendor {
+  font-size: 0.85rem;
+  color: #666;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.productTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.cardActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ==========================================
+   CTA SECTION
+   ========================================== */
+
+.ctaSection {
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(to bottom, #f8f8f8, #ffffff);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.ctaDescription {
+  font-size: 1.125rem;
+  color: #575757;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1.125rem;
+  color: #575757;
+}
+
+/* ==========================================
+   TABLET STYLES (768px+)
+   ========================================== */
+
+@media (min-width: 768px) {
+  .container {
+    padding: 3rem 2rem;
+  }
+
+  .wishlistGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .cardActions {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .cardActions button,
+  .cardActions a {
+    flex: 1;
+  }
+}
+
+/* ==========================================
+   DESKTOP STYLES (1024px+)
+   ========================================== */
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 4rem 3rem;
+  }
+
+  .wishlistGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .cardContent {
+    padding: 2rem;
+  }
+}
+
+/* ==========================================
+   LARGE DESKTOP STYLES (1440px+)
+   ========================================== */
+
+@media (min-width: 1440px) {
+  .container {
+    padding: 5rem 4rem;
+  }
+
+  .wishlistGrid {
+    gap: 3.5rem;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY & FOCUS STATES
+   ========================================== */
+
+.backLink:focus-visible,
+.clearAllButton:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ==========================================
+   REDUCED MOTION SUPPORT
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .wishlistCard,
+  .productImage,
+  .backArrow {
+    transition: none;
+  }
+
+  .wishlistCard:hover {
+    transform: none;
+  }
+
+  .wishlistCard:hover .productImage {
+    transform: none;
+  }
+}
+

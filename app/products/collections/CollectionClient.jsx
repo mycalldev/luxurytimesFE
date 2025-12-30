@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import WishlistIcon from '../../components/WishlistIcon';
 import styles from './rolex/collection.module.css';
 
 export default function CollectionClient({ products, collection }) {
@@ -130,6 +131,9 @@ export default function CollectionClient({ products, collection }) {
                       className={styles.productImage}
                       quality={90}
                     />
+                    <div className={styles.wishlistIconOverlay}>
+                      <WishlistIcon product={product} />
+                    </div>
                   </div>
                 )}
                 

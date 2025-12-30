@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getProduct } from '../../utils/shopify';
 import ImageGallery from './ImageGallery';
 import FeaturedProducts from './FeaturedProducts';
+import WishlistIcon from '../../components/WishlistIcon';
 import styles from './product.module.css';
 
 export async function generateMetadata({ params }) {
@@ -52,7 +53,10 @@ export default async function ProductPage({ params }) {
 
         <div className={styles.productInfo}>
           <div className={styles.vendor}>{product.vendor}</div>
-          <h1 className={styles.title}>{product.title}</h1>
+          <div className={styles.titleRow}>
+            <h1 className={styles.title}>{product.title}</h1>
+            <WishlistIcon product={product} className={styles.wishlistIcon} />
+          </div>
           
           <div className={styles.price}>
             {new Intl.NumberFormat('en-GB', {
