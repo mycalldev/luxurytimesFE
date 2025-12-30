@@ -63,16 +63,28 @@ export default function Navbar() {
             <h1 className={styles.brandTitle}>LUXURY TIMES LTD</h1>
           </Link>
 
-          <Link href="tel:07718269994" className={styles.logoLink}>
-            <Image
-              src={'/logo_it.png'}
-              width={125}
-              height={125}
-              className={styles.logo}
-              alt="Luxury Times Logo"
-              quality={100}
-            />
-          </Link>
+          <div className={styles.mobileRightSection}>
+            <Link href="tel:07714611699" className={styles.contactIconLink} aria-label="Call us">
+              <Image
+                src={'/phone_icon.png'}
+                width={24}
+                height={24}
+                className={styles.mobileContactIcon}
+                alt="Call"
+                quality={100}
+              />
+            </Link>
+            <Link href="/" className={styles.logoLink}>
+              <Image
+                src={'/logo_it.png'}
+                width={125}
+                height={125}
+                className={styles.logo}
+                alt="Luxury Times Logo"
+                quality={100}
+              />
+            </Link>
+          </div>
         </div>
 
         {/* Mobile Menu Overlay */}
