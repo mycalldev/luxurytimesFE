@@ -90,7 +90,7 @@ export default function CookieConsent() {
             <div className={styles.content}>
               <h3 className={styles.title}>Cookie Preferences</h3>
               <p className={styles.description}>
-                We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. 
+                Luxury Times uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. 
                 By clicking &quot;Accept All&quot;, you consent to our use of cookies. You can also customize your preferences 
                 or reject non-essential cookies. Learn more in our{' '}
                 <Link href="/terms-and-conditions" className={styles.link}>
