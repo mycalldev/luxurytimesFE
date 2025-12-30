@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import BrandCard from './components/BrandCard'
 import Button from './components/Button'
 import BlogFeature from './components/BlogFeature'
+import ContactForm from './components/ContactForm'
 
 // Define metadata for the page using Next.js Metadata API
 export const metadata = {
@@ -102,57 +103,6 @@ export default async function Home() {
       {/* BLOG FEATURE SECTION */}
       <BlogFeature limit={2} />
 
-      {/* BLOG SECTION */}
-      <section className={styles.highlightsGridSection}>
-        <div className={styles.highlightsGrid}>
-          {/* BLOG FEATURE CARD */}
-          <div className={styles.highlightCard}>
-            <Link href={'/blog'} prefetch={true}>
-              <Image
-                src={'/rolex_book.jpg'}
-                width={2303}
-                height={1536}
-                className={styles.imageBlogs}
-                alt={'image of Sky-dweller'}
-                quality={100}
-              />
-            </Link>
-            <div className={styles.contentHighlightsContainer}>
-              <div className={styles.contentSubTitleHighlights}>Time Investment</div>
-              <div className={styles.paragraphHighlights1}>
-                Investing in time.... Investing in your future! The Watch world has geneated a ton of interest in recent times and for good....
-              </div>
-            </div>
-            <Button href="/blog" prefetch={true}>
-              Read More
-            </Button>
-          </div>
-
-          {/* HIGHLIGHT SECTION CARD */}
-          <div className={styles.highlightCard}>
-            <h1 className={styles.titleHighlights}>HIGHLIGHTS</h1>
-            <Link href={'/landing/SkyDweller'} prefetch={true}>
-              <Image
-                src={'/highlight.JPG'}
-                width={840}
-                height={560}
-                className={styles.imageHighlights}
-                alt={'image of Sky-dweller'}
-                quality={100}
-              />
-            </Link>
-            <div className={styles.contentHighlightsContainer}>
-              <div className={styles.contentSubTitleHighlights}>Sky Dweller</div>
-              <div className={styles.paragraphHighlights1}>
-                Introducing the Rolex Sky-Dweller! Where elegance meets precsion.... With its iconic design, dual time zones, and....
-              </div>
-            </div>
-            <Button href="/landing/SkyDweller" prefetch={true}>
-              Read More
-            </Button>
-          </div>
-        </div>
-      </section>
       <ContactForm />
     </main>
     </>
