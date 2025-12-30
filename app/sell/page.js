@@ -44,40 +44,7 @@ export default function Sell() {
 
       {/* Main Content Container */}
       <div className={styles.container}>
-        {/* Value Proposition Section */}
-        <section className={styles.valueSection}>
-          <h2 className={styles.sectionTitle}>Why Choose Luxury Times?</h2>
-          <div className={styles.valueGrid}>
-            <div className={styles.valueCard}>
-              <div className={styles.valueIcon}>✓</div>
-              <h3 className={styles.valueTitle}>Expert Authentication</h3>
-              <p className={styles.valueDescription}>
-                Our certified horologists authenticate every timepiece using industry-leading standards and advanced verification techniques.
-              </p>
-            </div>
-            <div className={styles.valueCard}>
-              <div className={styles.valueIcon}>£</div>
-              <h3 className={styles.valueTitle}>Competitive Pricing</h3>
-              <p className={styles.valueDescription}>
-                We offer market-leading valuations based on real-time auction data and current market trends, ensuring you receive fair value.
-              </p>
-            </div>
-            <div className={styles.valueCard}>
-              <div className={styles.valueIcon}>⚡</div>
-              <h3 className={styles.valueTitle}>Fast Transactions</h3>
-              <p className={styles.valueDescription}>
-                From initial consultation to payment, we streamline the entire process for a seamless, efficient experience.
-              </p>
-            </div>
-            <div className={styles.valueCard}>
-              <div className={styles.valueIcon}>🔒</div>
-              <h3 className={styles.valueTitle}>Secure & Insured</h3>
-              <p className={styles.valueDescription}>
-                Your timepiece is fully insured throughout the entire process, with secure handling and professional care guaranteed.
-              </p>
-            </div>
-          </div>
-        </section>
+          <ContactForm />
 
         {/* Process Section */}
         <section className={styles.processSection}>
@@ -201,7 +168,6 @@ export default function Sell() {
             Get started today with a free, no-obligation valuation from our expert team.
           </p>
          
-          <ContactForm />
         </section>
       </div>
     </main>
