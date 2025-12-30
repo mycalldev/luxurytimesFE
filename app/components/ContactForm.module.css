@@ -1,0 +1,280 @@
+/* ==========================================
+   FORM CONTAINER
+   ========================================== */
+
+.formContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0rem;
+}
+
+/* ==========================================
+   CONTACT FORM
+   ========================================== */
+
+.contactForm {
+  background: #ffffff;
+  border-radius: 2px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.contactForm:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================
+   FORM GROUPS
+   ========================================== */
+
+.formGroup {
+  margin-bottom: 1.75rem;
+}
+
+.formGroup:last-of-type {
+  margin-bottom: 2rem;
+}
+
+/* ==========================================
+   LABELS
+   ========================================== */
+
+.label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.3px;
+}
+
+.required {
+  color: #d32f2f;
+  margin-left: 2px;
+}
+
+/* ==========================================
+   INPUTS & TEXTAREA
+   ========================================== */
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #1a1a1a;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.inputError {
+  border-color: #d32f2f;
+  background-color: #fff5f5;
+}
+
+.inputError:focus {
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+/* ==========================================
+   ERROR MESSAGES
+   ========================================== */
+
+.errorMessage {
+  display: block;
+  font-size: 0.875rem;
+  color: #d32f2f;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* ==========================================
+   STATUS MESSAGES
+   ========================================== */
+
+.statusMessage {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+  animation: slideDown 0.3s ease;
+}
+
+.statusSuccess {
+  background-color: #f0f9f4;
+  color: #1e7e34;
+  border: 1px solid #c3e6cb;
+}
+
+.statusError {
+  background-color: #fff5f5;
+  color: #d32f2f;
+  border: 1px solid #fecaca;
+}
+
+/* ==========================================
+   BUTTON CONTAINER
+   ========================================== */
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.submitButton {
+  min-width: 200px;
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   TABLET STYLES (768px+)
+   ========================================== */
+
+@media (min-width: 768px) {
+  .formContainer {
+    padding: 3rem 2rem;
+  }
+
+  .contactForm {
+    padding: 2.5rem;
+  }
+
+  .formGroup {
+    margin-bottom: 2rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 1rem 1.25rem;
+    font-size: 1.0625rem;
+  }
+
+  .textarea {
+    min-height: 150px;
+  }
+}
+
+/* ==========================================
+   DESKTOP STYLES (1024px+)
+   ========================================== */
+
+@media (min-width: 1024px) {
+  .formContainer {
+    padding: 4rem 3rem;
+  }
+
+  .contactForm {
+    padding: 3rem;
+  }
+
+  .formGroup {
+    margin-bottom: 2.25rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 1.125rem 1.5rem;
+  }
+}
+
+/* ==========================================
+   LARGE DESKTOP STYLES (1440px+)
+   ========================================== */
+
+@media (min-width: 1440px) {
+  .formContainer {
+    padding: 5rem 4rem;
+  }
+
+  .contactForm {
+    padding: 3.5rem;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY & FOCUS STATES
+   ========================================== */
+
+.input:focus-visible,
+.textarea:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 2px;
+}
+
+.inputError:focus-visible {
+  outline-color: #d32f2f;
+}
+
+/* ==========================================
+   REDUCED MOTION SUPPORT
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .contactForm,
+  .input,
+  .textarea,
+  .statusMessage {
+    transition: none;
+  }
+
+  .contactForm:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  @keyframes slideDown {
+    from,
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+

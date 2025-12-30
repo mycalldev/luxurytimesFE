@@ -27,30 +27,27 @@
     margin: 20px 0;
 }
 
-.titleMain {
+.formSection {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.formTitle {
     text-align: center;
-    margin: 40px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    color: #323232;
+    color: #1a1a1a;
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.5px;
 }
 
-.contentExtra {
-    margin: 20px 0;
-    text-align: start;
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: #575757;
-    line-height: 1.3;
-}
-
-.contentExtraThick {
-    margin: 20px 0;
+.formDescription {
     text-align: center;
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 1rem;
     color: #575757;
-    line-height: 1.3;
+    margin: 0 0 2.5rem 0;
+    line-height: 1.5;
 }
 
 @media(min-width: 768px) {
@@ -82,6 +79,21 @@
         width: 50%;
         margin: 40px auto;
         font-size: 1.3rem;
+    }
+
+    .formSection {
+        margin-top: 80px;
+        padding-top: 60px;
+    }
+
+    .formTitle {
+        font-size: 2.2rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .formDescription {
+        font-size: 1.125rem;
+        margin-bottom: 3rem;
     }
 }
   
