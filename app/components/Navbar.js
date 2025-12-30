@@ -60,7 +60,7 @@ export default function Navbar() {
           </button>
           
           <Link href="/" className={styles.brandLink}>
-            <h1 className={styles.brandTitle}>LUXURY TIMES LTD</h1>
+            <h1 className={styles.brandTitle}>LUXURY TIMES</h1>
           </Link>
 
           <div className={styles.mobileRightSection}>
@@ -133,7 +133,7 @@ export default function Navbar() {
               />
             </Link>
             <Link href="/" className={styles.brandLink}>
-              <h1 className={styles.brandTitleDesktop}>LUXURY TIMES LTD</h1>
+              <h1 className={styles.brandTitleDesktop}>LUXURY TIMES</h1>
             </Link>
           </div>
           <div className={styles.desktopHeaderRight}>
