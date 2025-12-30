@@ -58,7 +58,7 @@ export default async function Home() {
         <div className={styles.exploreContainer}>
           <h2 className={styles.exploreTitle}>Explore Our Complete Collection</h2>
           <p className={styles.exploreDescription}>
-            Discover our full range of luxury timepieces from the world's most prestigious watchmakers
+            Discover our full range of Luxury Timepieces
           </p>
           <div className={styles.exploreButton}>
             <Button href="/products" prefetch={true}>
