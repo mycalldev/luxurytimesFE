@@ -137,6 +137,40 @@
   margin-block-end: 0.5rem;
 }
 
+/* EXPLORE ALL WATCHES CTA SECTION */
+.exploreSection {
+  width: 100%;
+  padding: 3rem 1.25rem;
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
+}
+
+.exploreContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.exploreTitle {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.5px;
+}
+
+.exploreDescription {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #575757;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.exploreButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* CATEGORY SECTION */
 .titleBrands {
   margin: 60px auto 20px auto;
@@ -559,6 +593,18 @@
     padding: 0 20px;
   }
 
+  .exploreSection {
+    padding: 4rem 2rem;
+  }
+
+  .exploreTitle {
+    margin-bottom: 1.25rem;
+  }
+
+  .exploreDescription {
+    margin-bottom: 2.5rem;
+  }
+
   .blogHighlightGrid {
     gap: 60px;
   }
@@ -572,6 +618,10 @@
   .paragraphGuides {
     margin: 20px auto;
     max-width: 70%;
+  }
+
+  .exploreSection {
+    padding: 5rem 3rem;
   }
 
 }

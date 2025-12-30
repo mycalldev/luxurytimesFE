@@ -81,6 +81,21 @@ export default async function Home() {
       </section>
       </section>
 
+      {/* Explore All Watches CTA */}
+      <section className={styles.exploreSection}>
+        <div className={styles.exploreContainer}>
+          <h2 className={styles.exploreTitle}>Explore Our Complete Collection</h2>
+          <p className={styles.exploreDescription}>
+            Discover our full range of luxury timepieces from the world's most prestigious watchmakers
+          </p>
+          <div className={styles.exploreButton}>
+            <Button href="/products" prefetch={true}>
+              Explore All Watches
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <div className={styles.spaceDesktop}></div>
 
       <section className={styles.showcaseContainer}>
