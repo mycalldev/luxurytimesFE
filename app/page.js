@@ -102,6 +102,7 @@ export default async function Home() {
 
       {/* BLOG FEATURE SECTION */}
       <BlogFeature limit={2} />
+      
 
       <ContactForm />
     </main>

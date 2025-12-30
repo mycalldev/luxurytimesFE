@@ -241,9 +241,27 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    padding: 1.5rem 1.25rem 1rem;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0.75rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .desktopHeaderLeft {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  .desktopHeaderRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    flex-shrink: 0;
   }
 
   .desktopLogoLink {
@@ -260,28 +278,56 @@
 
   .desktopLogo {
     display: block;
-    width: 100%;
-    max-width: 100px;
-    height: auto;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
   }
 
   .brandLink {
     display: block;
+    text-decoration: none;
   }
 
   .brandTitleDesktop {
     display: block;
     margin: 0;
-    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-size: 1.25rem;
     font-weight: 700;
     color: #1a1a1a;
     text-align: left;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     transition: color 0.3s ease;
+    white-space: nowrap;
   }
 
   .brandLink:hover .brandTitleDesktop {
     color: #333333;
+  }
+
+  .contactInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+  }
+
+  .contactInfo:hover {
+    color: #333333;
+  }
+
+  .contactIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  .contactText {
+    white-space: nowrap;
+    font-weight: 500;
   }
 
   .desktopNavContainer {
@@ -344,17 +390,34 @@
    ========================================== */
 
 @media (min-width: 1024px) {
-  .desktopLogo {
-    max-width: 125px;
+  .desktopHeaderContainer {
+    padding: 0.875rem 3rem;
   }
 
-  .desktopHeaderContainer {
-    gap: 2rem;
+  .desktopHeaderLeft {
+    gap: 1.25rem;
+  }
+
+  .desktopHeaderRight {
+    gap: 2.5rem;
+  }
+
+  .desktopLogo {
+    width: 70px;
+    height: 70px;
   }
 
   .brandTitleDesktop {
-    font-size: 2.5rem;
-    margin: 0;
+    font-size: 1.375rem;
+  }
+
+  .contactInfo {
+    font-size: 1rem;
+  }
+
+  .contactIcon {
+    width: 22px;
+    height: 22px;
   }
 
   .desktopMenuLink {
