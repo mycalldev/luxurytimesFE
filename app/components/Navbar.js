@@ -10,7 +10,7 @@ const navLinks = [
   { href: '/products/collections/rolex', label: 'Rolex', prefetch: true },
   { href: '/products/collections/patek-philippe', label: 'Patek Philippe', prefetch: true },
   { href: '/sell', label: 'Sell', prefetch: true },
-  { href: '/guide', label: 'Guides', prefetch: false },
+  { href: '/blog', label: 'Blog', prefetch: false },
   { href: '/review', label: 'Reviews', prefetch: false },
   { href: '/contact', label: 'Contact', prefetch: false },
 ]

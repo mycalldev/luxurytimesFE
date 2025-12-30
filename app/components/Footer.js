@@ -48,7 +48,6 @@ export default function Footer() {
             <Link href={'/terms-and-conditions'} className={styles.linkBTN}>Terms & Conditions</Link>
             <Link href={'/review'} className={styles.linkBTN}>Reviews</Link>
             <Link href={'/return'} className={styles.linkBTN}>Returns Policy</Link>
-            <Link href={'/guide'} className={styles.linkBTN}>Buying Guide</Link>
             <CookieSettingsButton className={styles.linkBTN} />
           </nav>
         </div>
