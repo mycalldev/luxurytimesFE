@@ -95,12 +95,6 @@ export default async function Home() {
             <li className={styles.keyPoint}>
               <strong>Expert Guidance:</strong> From buying to selling, receive tailored guidance every step of the way—no question is too small!
             </li>
-            <li className={styles.keyPoint}>
-              <strong>Competitive Pricing:</strong> Transparent, fair prices on all watches and jewellery. No hidden fees.
-            </li>
-            <li className={styles.keyPoint}>
-              <strong>Fast, Secure Transactions:</strong> Convenient contact options and a safe, seamless buying or selling process.
-            </li>
           </ul>
         </div>
       </section>
