@@ -78,9 +78,20 @@ export default function Breadcrumb({ items, showHome = true }) {
     breadcrumbItems.push({ href: '/', label: 'Home' })
   }
 
+  // Check if this is a product detail page (not a collection page)
+  // Product detail pages are: /products/[handle] where handle is not "collections"
+  const isProductDetailPage = pathSegments.length === 2 && 
+    pathSegments[0] === 'products' && 
+    pathSegments[1] !== 'collections'
+
   // Build breadcrumb items from path segments
   let currentPath = ''
   pathSegments.forEach((segment, index) => {
+    // Skip the "products" segment for product detail pages
+    if (isProductDetailPage && segment === 'products') {
+      return
+    }
+
     currentPath += `/${segment}`
     const isLast = index === pathSegments.length - 1
     
