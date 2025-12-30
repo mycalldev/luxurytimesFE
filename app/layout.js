@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CookieConsent from './components/CookieConsent'
 import ConditionalGTM from './components/ConditionalGTM'
+import Breadcrumb from './components/Breadcrumb'
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] })
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={roboto.className}>
         <Navbar />
+        <Breadcrumb />
         {children}
         <Footer />
         <CookieConsent />

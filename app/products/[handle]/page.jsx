@@ -44,9 +44,6 @@ export default async function ProductPage({ params }) {
 
   return (
     <main className={styles.container}>
-      <Link href="/products" className={styles.backLink}>
-        ← Back to Products
-      </Link>
 
       <div className={styles.productLayout}>
         <div className={styles.imageGallery}>

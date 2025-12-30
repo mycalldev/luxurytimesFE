@@ -7,11 +7,6 @@ import ContactForm from '../components/ContactForm'
 export default function Contact() {
   return (
     <main>
-      <Link href={'/'} className={styles.backLinkBTN}>
-        <div className={styles.backNav}>
-          {'< Home'}
-        </div>
-      </Link>
       
       <div className={styles.container}>
 
