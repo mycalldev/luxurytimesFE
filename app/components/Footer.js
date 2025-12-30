@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Footer.module.css'
+import CookieSettingsButton from './CookieSettingsButton'
 
 export default function Footer() {
   return (
@@ -48,6 +49,7 @@ export default function Footer() {
             <Link href={'/review'} className={styles.linkBTN}>Reviews</Link>
             <Link href={'/return'} className={styles.linkBTN}>Returns Policy</Link>
             <Link href={'/guide'} className={styles.linkBTN}>Buying Guide</Link>
+            <CookieSettingsButton className={styles.linkBTN} />
           </nav>
         </div>
 

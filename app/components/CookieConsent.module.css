@@ -1,0 +1,265 @@
+.overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.banner {
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  animation: slideUp 0.3s ease-in-out;
+}
+
+.content {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #323232;
+  margin: 0 0 12px 0;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #575757;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.link {
+  color: #91c0dc;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #6ba3c4;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.buttonAccept {
+  background: #36454F !important;
+  color: #ffffff !important;
+  border: 1px solid #36454F !important;
+}
+
+.buttonAccept:hover {
+  background: #2a353d !important;
+  border-color: #2a353d !important;
+  color: #ffffff !important;
+}
+
+.buttonReject {
+  background: #f5f5f5 !important;
+  color: #323232 !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.buttonReject:hover {
+  background: #e8e8e8 !important;
+  border-color: #e0e0e0 !important;
+  color: #323232 !important;
+}
+
+.buttonCustomize {
+  background: #91c0dc !important;
+  color: #ffffff !important;
+  border: 1px solid #91c0dc !important;
+}
+
+.buttonCustomize:hover {
+  background: #6ba3c4 !important;
+  border-color: #6ba3c4 !important;
+  color: #ffffff !important;
+}
+
+.customizePanel {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.categoryList {
+  margin: 20px 0;
+}
+
+.categoryItem {
+  padding: 16px;
+  margin-bottom: 16px;
+  background: #f9f9f9;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.categoryTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #323232;
+  margin: 0;
+}
+
+.categoryStatus {
+  font-size: 0.85rem;
+  color: #575757;
+  font-weight: 500;
+}
+
+.categoryDescription {
+  font-size: 0.9rem;
+  color: #575757;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 26px;
+}
+
+.toggleSlider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.toggle input:checked + .toggleSlider {
+  background-color: #91c0dc;
+}
+
+.toggle input:checked + .toggleSlider:before {
+  transform: translateX(24px);
+}
+
+.customizeButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  align-items: stretch;
+}
+
+.buttonCancel {
+  background: #f5f5f5 !important;
+  color: #323232 !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.buttonCancel:hover {
+  background: #e8e8e8 !important;
+  border-color: #e0e0e0 !important;
+  color: #323232 !important;
+}
+
+.buttonSave {
+  background: #36454F !important;
+  color: #ffffff !important;
+  border: 1px solid #36454F !important;
+}
+
+.buttonSave:hover {
+  background: #2a353d !important;
+  border-color: #2a353d !important;
+  color: #ffffff !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .banner {
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .customizeButtons {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner {
+    max-width: 700px;
+  }
+}
+

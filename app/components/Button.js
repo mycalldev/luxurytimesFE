@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import styles from './Button.module.css'
 
@@ -11,7 +13,8 @@ export default function Button({
   prefetch = false,
   target,
   disabled = false,
-  desktopText
+  desktopText,
+  ...props
 }) {
   const buttonClasses = `${styles.filterBtn} ${variant === 'active' ? styles.activeFilter : ''} ${className}`
   
@@ -43,6 +46,7 @@ export default function Button({
       onClick={onClick}
       className={buttonClasses}
       disabled={disabled}
+      {...props}
     >
       {desktopText ? (
         <>

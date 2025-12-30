@@ -2,7 +2,8 @@ import './globals.css'
 import { Roboto } from 'next/font/google'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import { GoogleTagManager } from '@next/third-parties/google' 
+import CookieConsent from './components/CookieConsent'
+import ConditionalGTM from './components/ConditionalGTM'
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] })
 
@@ -19,7 +20,8 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
-        <GoogleTagManager gtmId="GTM-WLHSGJ8C" />
+        <CookieConsent />
+        <ConditionalGTM gtmId="GTM-WLHSGJ8C" />
       </body>
     </html>
   )
