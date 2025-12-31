@@ -84,18 +84,37 @@ export default function Breadcrumb({ items, showHome = true }) {
     pathSegments[0] === 'products' && 
     pathSegments[1] !== 'collections'
 
+  // Check if this is a collection page: /products/collections/[modelname]
+  const isCollectionPage = pathSegments.length === 3 && 
+    pathSegments[0] === 'products' && 
+    pathSegments[1] === 'collections'
+
   // Build breadcrumb items from path segments
   let currentPath = ''
+  let displayPath = '' // Path for display (skips collections segment)
   pathSegments.forEach((segment, index) => {
-    // Skip the "products" segment for product detail pages
+    const isLast = index === pathSegments.length - 1
+    
+    // Build the actual path (for href)
+    currentPath += `/${segment}`
+    
+    // Skip the "products" segment for product detail pages in display
     if (isProductDetailPage && segment === 'products') {
       return
     }
 
-    currentPath += `/${segment}`
-    const isLast = index === pathSegments.length - 1
+    // Skip the "collections" segment for collection pages in display
+    if (isCollectionPage && segment === 'collections') {
+      return
+    }
+
+    // Build display path (for label lookup, but we'll use actual path for href)
+    if (!(isProductDetailPage && segment === 'products') && 
+        !(isCollectionPage && segment === 'collections')) {
+      displayPath += `/${segment}`
+    }
     
-    // Use custom label if available, otherwise use routeLabels, otherwise format the segment
+    // Use custom label from full path if available, otherwise use routeLabels, otherwise format the segment
     let label = customLabels[currentPath] || routeLabels[segment]
     
     // If no custom label, format the segment
@@ -113,6 +132,12 @@ export default function Breadcrumb({ items, showHome = true }) {
             return word.charAt(0).toUpperCase() + word.slice(1)
           })
           .join(' ')
+      } else if (isCollectionPage && index === 2) {
+        // For collection names, format nicely
+        label = segment
+          .split('-')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ')
       } else {
         // Regular segment formatting
         label = segment
@@ -122,8 +147,14 @@ export default function Breadcrumb({ items, showHome = true }) {
       }
     }
 
+    // For collection pages, use /products as href for the "Products" breadcrumb
+    let href = currentPath
+    if (isCollectionPage && segment === 'products') {
+      href = '/products'
+    }
+
     breadcrumbItems.push({
-      href: currentPath,
+      href: href,
       label: label,
       isLast: isLast
     })
