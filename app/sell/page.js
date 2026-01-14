@@ -75,8 +75,8 @@ export default function Sell() {
               <div className={styles.stepContent}>
                 <h3 className={styles.stepTitle}>Final Offer & Payment</h3>
                 <p className={styles.stepDescription}>
-                  Receive a competitive, transparent offer. Upon acceptance, we&apos;ll complete authentication verification 
-                  and issue immediate payment via your preferred method—bank transfer, cheque, or cash.
+                  Receive a competitive, transparent offer. Upon acceptance, we&apos;ll complete authentication
+                  and issue immediate payment.
                 </p>
               </div>
             </div>
