@@ -113,10 +113,6 @@ export default async function ProductPage({ params }) {
               </li>
               <li className={styles.includesItem}>
                 <span className={styles.checkmark}>✓</span>
-                <span>Certificate of Authenticity</span>
-              </li>
-              <li className={styles.includesItem}>
-                <span className={styles.checkmark}>✓</span>
                 <span>12 Month Warranty</span>
               </li>
             </ul>
