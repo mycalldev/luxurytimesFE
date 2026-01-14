@@ -77,7 +77,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Luxury Times. All rights reserved.
           </p>
           <p className={styles.disclaimer}>
-            We are independent dealers. All watches are genuine and authenticated from trusted suppliers.
+            We are independent dealers. All watches are genuine and authenticated via our in-house experts.
           </p>
         </div>
       </div>
