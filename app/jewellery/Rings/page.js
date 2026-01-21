@@ -283,14 +283,6 @@ export default function rings() {
         </div>
         </div>
 
-        {/* <div className={styles.contactBTN}>
-          <Link
-          href={"https://wa.me/447976753254?text=Hi%20Luxury%20Times...."} 
-          className={styles.linkBTN}
-          >
-            WHATSAPP
-          </Link>
-        </div> */}
       </section>
 
     </div>
