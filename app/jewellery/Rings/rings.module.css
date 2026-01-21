@@ -1,0 +1,163 @@
+.linkBTN {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.backLinkBTN {
+    color: #000;
+    text-decoration: none;
+}
+
+.backNav {
+    margin: 20px 30px;
+    font-size: 1.1rem;
+}
+
+.contactDetailsBTNMobile {
+    margin: 20px auto 20px auto;
+    padding: 10px 30px;
+    max-width: 150px;
+    border: solid 2px #91c0dc;
+    border-radius: 22px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #91c0dc;
+    letter-spacing: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.contactBTNDesktop {
+    display: none;
+}
+
+.titleMain {
+    margin: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.titleRing {
+    margin: 50px 10px -20px 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 300;
+    z-index: 1000;
+    position: relative;
+}
+
+.catDescription {
+    width: 70%;
+    margin: 20px auto 30px auto;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.mainContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+
+.imageRing {
+    width: 100%;
+    height: auto;
+} 
+
+.imageRingHeroMobile {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.imageRingHeroDesktop {
+    display: none;
+}
+
+.labelText {
+    font-size: 1.3rem;
+}
+
+.selectSizeContainer {
+    text-align: center;
+}
+  
+.selectSize {
+    margin: 10px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 2px;
+    font-size: 1.3rem;
+}
+
+@media(min-width: 768px) {
+
+    .containerMain {
+        /* padding: 100px; */
+    }
+
+    .backNav {
+        font-size: 1.5rem;
+        margin: 20px 30px;
+    }
+
+    .contactDetailsBTNMobile {
+        display: none;
+    }
+
+    .contactBTNDesktop {
+        display: block;
+        margin: 10px auto 50px auto;
+        padding: 10px 30px;
+        max-width: 250px;
+        border: solid 2px #91c0dc;
+        border-radius: 22px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #fff;
+        background-color: #91c0dc;
+        letter-spacing: 3px;
+        text-align: center;
+    }
+
+    .imageRingHeroMobile {
+        display: none;
+    }
+
+    .imageRingHeroDesktop {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .labelText {
+        font-size: 1.5rem;
+    }
+
+    .titleRing {
+        font-size: 1.3rem;
+    }
+
+    .catDescription {
+        width: 80%;
+        margin: 20px auto 50px auto;
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    .mainContainer {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        justify-content: center;
+        width: 60%;
+        margin: auto;
+    }
+}
