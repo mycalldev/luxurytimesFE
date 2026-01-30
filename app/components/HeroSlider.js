@@ -7,11 +7,8 @@ import styles from './HeroSlider.module.css'
 /**
  * HeroSlider Component
  * 
- 
- * 
  * A reusable image slider component that automatically slides images to the left
- * every 3 seconds. Supports touch/swipe gestures and accepts an array of images.
- * Supports separate images for mobile and desktop views.
+ * every 3 seconds. Supports separate images for mobile and desktop views.
  * 
  * @param {Array} images - Array of image objects with properties:
  *   - src: string (mobile image path)
@@ -29,64 +26,39 @@ export default function HeroSlider({
 }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const [touchStart, setTouchStart] = useState(null)
-  const [touchEnd, setTouchEnd] = useState(null)
-
-  // Minimum swipe distance (in pixels)
-  const minSwipeDistance = 50
 
   /**
    * Moves to the next slide
    */
   const nextSlide = useCallback(() => {
     setIsTransitioning(true)
-    setCurrentIndex((prevIndex) => 
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    )
+    setCurrentIndex((prevIndex) => {
+      // If we're at the last real image, move to the cloned first image
+      if (prevIndex === images.length - 1) {
+        return images.length // This is the cloned first image
+      }
+      return prevIndex + 1
+    })
   }, [images.length])
 
   /**
-   * Moves to the previous slide
+   * Handle seamless loop: when we reach the cloned first image, 
+   * wait for transition to complete, then instantly jump back to the real first image
    */
-  const prevSlide = useCallback(() => {
-    setIsTransitioning(true)
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    )
-  }, [images.length])
-
-  /**
-   * Handles touch start for swipe detection
-   */
-  const onTouchStart = (e) => {
-    setTouchEnd(null)
-    setTouchStart(e.targetTouches[0].clientX)
-  }
-
-  /**
-   * Handles touch move for swipe detection
-   */
-  const onTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX)
-  }
-
-  /**
-   * Handles touch end and determines swipe direction
-   */
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
-    
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > minSwipeDistance
-    const isRightSwipe = distance < -minSwipeDistance
-
-    if (isLeftSwipe) {
-      nextSlide()
+  useEffect(() => {
+    if (currentIndex === images.length && images.length > 0) {
+      // We've reached the cloned first image
+      // Wait for the transition to complete (500ms), then instantly jump to real first
+      const jumpTimer = setTimeout(() => {
+        setIsTransitioning(false)
+        // Small delay to ensure transition is disabled
+        setTimeout(() => {
+          setCurrentIndex(0)
+        }, 10)
+      }, 500) // Match CSS transition duration
+      return () => clearTimeout(jumpTimer)
     }
-    if (isRightSwipe) {
-      prevSlide()
-    }
-  }
+  }, [currentIndex, images.length])
 
   /**
    * Auto-advance slides every slideInterval milliseconds
@@ -105,26 +77,26 @@ export default function HeroSlider({
    * Reset transition state after animation completes
    */
   useEffect(() => {
-    if (isTransitioning) {
+    if (isTransitioning && currentIndex !== images.length) {
       const timer = setTimeout(() => {
         setIsTransitioning(false)
       }, 500) // Match CSS transition duration
       return () => clearTimeout(timer)
     }
-  }, [isTransitioning])
+  }, [isTransitioning, currentIndex, images.length])
 
   // Don't render if no images provided
   if (!images || images.length === 0) {
     return null
   }
 
+  // Create extended images array with cloned first image at the end for seamless loop
+  const extendedImages = images.length > 0 
+    ? [...images, images[0]] // Clone first image at the end
+    : []
+
   return (
-    <div 
-      className={styles.sliderContainer}
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
-    >
+    <div className={styles.sliderContainer}>
       <div 
         className={styles.sliderTrack}
         style={{
@@ -132,7 +104,7 @@ export default function HeroSlider({
           transition: isTransitioning ? 'transform 0.5s ease-in-out' : 'none'
         }}
       >
-        {images.map((image, index) => (
+        {extendedImages.map((image, index) => (
           <div key={index} className={styles.slide}>
             {/* Mobile Image */}
             <Image
@@ -159,25 +131,6 @@ export default function HeroSlider({
           </div>
         ))}
       </div>
-
-      {/* Slide indicators (dots) */}
-      {images.length > 1 && (
-        <div className={styles.indicators}>
-          {images.map((_, index) => (
-            <button
-              key={index}
-              className={`${styles.indicator} ${
-                index === currentIndex ? styles.indicatorActive : ''
-              }`}
-              onClick={() => {
-                setIsTransitioning(true)
-                setCurrentIndex(index)
-              }}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-      )}
     </div>
   )
 }
