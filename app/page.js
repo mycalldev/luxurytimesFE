@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import Link from 'next/link'
+
 import styles from './page.module.css'
 import BrandCard from './components/BrandCard'
 import Button from './components/Button'
@@ -86,11 +85,11 @@ export default async function Home() {
       {/* CATEGORY SECTION */}
       <section className={styles.categoryContainerGrid}>
           <BrandCard 
-            image="/Rolex_thumb.JPG"
+            image="/Rolex_thumb.jpg"
             title="Rolex"
             href="/products/collections/rolex"
-            width={3272.5}
-            height={2181.5}
+            width={640}
+            height={428}
             altText="Rolex watches collection"
           />
 
