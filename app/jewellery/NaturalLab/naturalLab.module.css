@@ -1,0 +1,87 @@
+.linkBTN {
+    text-decoration: none;
+    color: #fff;
+}
+
+.backLinkBTN {
+    color: #000;
+    text-decoration: none;
+}
+
+.backNav {
+    margin: 20px 30px;
+    font-size: 1.1rem;
+}
+
+.heroBtnDesktop {
+    display: none;
+}
+
+.heroBtn {
+    margin: 40px auto;
+    padding: 10px;
+    max-width: 200px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 22px;
+    background: #91c0dc;
+    cursor: pointer;
+}
+
+.imageHeroMobile {
+    width: 100%;
+    height: auto;
+}
+
+.titleSub {
+    text-align: start;
+    font-size: 1.5rem;
+    margin: 40px 40px 20px 40px;
+}
+
+.tagline {
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.content {
+    width: 80%;
+    margin: 20px auto;
+    text-align: start;
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+.contentBottom {
+    width: 80%;
+    margin: 20px auto 40px auto;
+    text-align: start;
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+.orderedList {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.unorderedList {
+    margin: 20px;
+    font-size: 1rem;
+}
+
+.unorderedList span {
+    font-weight: 600;
+}
+
+.itemList {
+    font-size: 1.5rem;
+}
+
+.titleList {
+    font-size: 1.5rem;
+    text-align: start;
+}
+
