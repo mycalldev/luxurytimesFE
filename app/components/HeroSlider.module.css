@@ -1,0 +1,104 @@
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+.sliderTrack {
+  display: flex;
+  width: 100%;
+  will-change: transform;
+}
+
+.slide {
+  min-width: 100%;
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.slideImageMobile {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.slideImageDesktop {
+  width: 100%;
+  height: auto;
+  display: none;
+  object-fit: cover;
+}
+
+/* Slide indicators (dots) */
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+  padding: 6px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(4px);
+}
+
+.indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.indicator:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.2);
+}
+
+.indicatorActive {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .slideImageMobile {
+    display: none;
+  }
+
+  .slideImageDesktop {
+    display: block;
+  }
+
+  .indicators {
+    bottom: 15px;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Accessibility: Hide indicators when reduced motion is preferred */
+@media (prefers-reduced-motion: reduce) {
+  .sliderTrack {
+    transition: none;
+  }
+
+  .indicator {
+    transition: none;
+  }
+}
+

@@ -5,6 +5,7 @@ import BrandCard from './components/BrandCard'
 import Button from './components/Button'
 import BlogFeature from './components/BlogFeature'
 import ContactForm from './components/ContactForm'
+import HeroSlider from './components/HeroSlider'
 
 // Define metadata for the page using Next.js Metadata API
 export const metadata = {
@@ -33,24 +34,37 @@ export default async function Home() {
       <section className={styles.containerFeature}>
 
     {/* HERO SECTION */}
-      {/* MOBILE HERO */}
-      <Image
-        className={styles.heroImageMobile}
-        src={'/output.jpg'}
-        width={2000}
-        height={1333}
-        alt={'hero image'}
-        quality={100}
-      />
-
-      {/* DESKTOP HERO */}
-      <Image
-        className={styles.heroImageDesktop}
-        src={'/output.jpg'}
-        width={2000}
-        height={1333}
-        alt={'hero image'}
-        quality={100}
+      <HeroSlider
+        images={[
+          {
+            src: '/AP_hero.jpg',
+            srcDesktop: '/AP_hero_Desktop.jpg',
+            alt: 'Audemars Piguet luxury watch',
+            width: 2000,
+            height: 1333,
+            widthDesktop: 2000,
+            heightDesktop: 1000
+          },
+          {
+            src: '/PP_hero.jpg',
+            srcDesktop: '/PP_hero_Desktop.jpg',
+            alt: 'Patek Philippe luxury watch',
+            width: 2000,
+            height: 1333,
+            widthDesktop: 2000,
+            heightDesktop: 1000
+          },
+          {
+            src: '/Rolex_hero.jpg',
+            srcDesktop: '/Rolex_hero_Desktop.jpg',
+            alt: 'Rolex luxury watch',
+            width: 2000,
+            height: 1333,
+            widthDesktop: 2000,
+            heightDesktop: 1000
+          },
+        ]}
+        slideInterval={3000}
       />
       
       {/* Explore All Watches CTA */}

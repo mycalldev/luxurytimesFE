@@ -8,15 +8,6 @@
   text-decoration: none; 
 }
 
-.heroImageMobile {
-  width: 100%;
-  height: auto;
-}
-
-.heroImageDesktop {
-  display: none;
-}
-
 .containerFeature {
   background-color: #f9f9f9;
   padding-bottom: 20px;
@@ -402,16 +393,6 @@
     border-radius: 22px;
     background: #36454F;
     color: #fff;
-  }
-
-  .heroImageMobile {
-    display: none
-  }
-
-  .heroImageDesktop {
-    display: block;
-    width: 100%;
-    height: auto;
   }
 
   .tagLine {
