@@ -36,9 +36,9 @@ export default async function Home() {
       {/* MOBILE HERO */}
       <Image
         className={styles.heroImageMobile}
-        src={'/home-page-hero-mobile.JPG'}
-        width={2304}
-        height={1536}
+        src={'/output.jpg'}
+        width={2000}
+        height={1333}
         alt={'hero image'}
         quality={100}
       />
@@ -46,9 +46,9 @@ export default async function Home() {
       {/* DESKTOP HERO */}
       <Image
         className={styles.heroImageDesktop}
-        src={'/home-page-hero-desktop.jpeg'}
-        width={2304}
-        height={644}
+        src={'/output.jpg'}
+        width={2000}
+        height={1333}
         alt={'hero image'}
         quality={100}
       />
