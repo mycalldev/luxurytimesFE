@@ -35,13 +35,13 @@
 }
 
 .link {
-  color: #91c0dc;
+  color: #333333;
   text-decoration: underline;
   transition: color 0.2s;
 }
 
 .link:hover {
-  color: #6ba3c4;
+  color: #222222;
 }
 
 .buttons {
@@ -76,14 +76,14 @@
 }
 
 .buttonCustomize {
-  background: #91c0dc !important;
+  background: #333333 !important;
   color: #ffffff !important;
-  border: 1px solid #91c0dc !important;
+  border: 1px solid #333333 !important;
 }
 
 .buttonCustomize:hover {
-  background: #6ba3c4 !important;
-  border-color: #6ba3c4 !important;
+  background: #222222 !important;
+  border-color: #222222 !important;
   color: #ffffff !important;
 }
 
@@ -170,7 +170,7 @@
 }
 
 .toggle input:checked + .toggleSlider {
-  background-color: #91c0dc;
+  background-color: #333333;
 }
 
 .toggle input:checked + .toggleSlider:before {

@@ -27,8 +27,8 @@ export default function FeaturedProducts({ products }) {
         {/* Header */}
         <div className={styles.header}>
           <div className={styles.headerText}>
-            <span className={styles.subtitle}>Curated Selection</span>
-            <h2 className={styles.title}>Featured Timepieces</h2>
+            <span className={styles.subtitle}>Hand-Picked</span>
+            <h2 className={styles.title}>Our Finest Pieces</h2>
           </div>
           <div className={styles.headerCta}>
             <Link href="/products" className={styles.viewAllLink}>
