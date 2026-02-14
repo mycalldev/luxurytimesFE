@@ -5,6 +5,8 @@ import Button from './components/Button'
 import BlogFeature from './components/BlogFeature'
 import ContactForm from './components/ContactForm'
 import HeroSlider from './components/HeroSlider'
+import FeaturedProducts from './components/FeaturedProducts'
+import { getFeaturedProducts } from './utils/shopify'
 
 // Define metadata for the page using Next.js Metadata API
 export const metadata = {
@@ -26,7 +28,8 @@ export const metadata = {
 
 
 export default async function Home() {
-  
+  const featuredProducts = await getFeaturedProducts()
+
   return (
     <>
       <main className={styles.main}>
@@ -80,7 +83,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      
+
+      {/* FEATURED PRODUCTS SECTION */}
+      <FeaturedProducts products={featuredProducts} />
 
       {/* CATEGORY SECTION */}
       <section className={styles.categoryContainerGrid}>

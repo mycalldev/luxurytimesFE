@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from '../components/Button'
@@ -9,28 +9,48 @@ import styles from './products.module.css'
 
 export default function ProductsClient({ products, collection: collectionFilter }) {
   const [selectedModels, setSelectedModels] = useState([])
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const dropdownRef = useRef(null)
 
-  // Filter by collection if specified
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setDropdownOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  // Filter by collection if specified, then sort featured products first
   const filteredByCollection = useMemo(() => {
-    if (!collectionFilter) {
-      return products
+    let filtered = products
+
+    if (collectionFilter) {
+      filtered = filtered.filter(({ node: product }) => 
+        product.collections.edges.some(({ node: col }) => 
+          col.handle === collectionFilter
+        )
+      )
     }
     
-    return products.filter(({ node: product }) => 
-      product.collections.edges.some(({ node: col }) => 
-        col.handle === collectionFilter
-      )
-    )
+    // Sort products with the 'feature' tag to the top
+    return [...filtered].sort((a, b) => {
+      const aFeatured = a.node.tags?.includes('feature') ? 1 : 0
+      const bFeatured = b.node.tags?.includes('feature') ? 1 : 0
+      return bFeatured - aFeatured
+    })
   }, [products, collectionFilter])
 
-  // Extract unique watch models from product tags
+  // Extract unique watch models from product tags (exclude internal tags)
   const availableModels = useMemo(() => {
     const modelTags = new Set()
     
     filteredByCollection.forEach(({ node: product }) => {
       if (product.tags && Array.isArray(product.tags)) {
         product.tags.forEach(tag => {
-          if (tag && tag.trim()) {
+          if (tag && tag.trim() && tag.trim().toLowerCase() !== 'feature') {
             modelTags.add(tag.trim())
           }
         })
@@ -101,34 +121,80 @@ export default function ProductsClient({ products, collection: collectionFilter 
         </div>
       </div>
 
-      {/* Filter Section */}
+      {/* Filter Section - Dropdown */}
       {availableModels.length > 0 && (
-        <div className={styles.filterSection}>
-          <div className={styles.filterHeader}>
-            <h2 className={styles.filterTitle}>Filter by Watch Model</h2>
-            {selectedModels.length > 0 && (
-              <button 
-                onClick={clearFilters}
-                className={styles.clearButton}
-              >
-                Clear All ({selectedModels.length})
-              </button>
-            )}
-          </div>
-          
-          <div className={styles.filterOptions}>
-            {availableModels.map(model => (
+        <div className={styles.filterSection} ref={dropdownRef}>
+          <button
+            className={styles.dropdownTrigger}
+            onClick={() => setDropdownOpen(prev => !prev)}
+            aria-expanded={dropdownOpen}
+            aria-haspopup="listbox"
+          >
+            <div className={styles.dropdownTriggerContent}>
+              <svg className={styles.filterIcon} width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M1.5 3.75H16.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M4.5 9H13.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M7 14.25H11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              <span>
+                {selectedModels.length === 0
+                  ? 'Filter by Watch Model'
+                  : `${selectedModels.length} Model${selectedModels.length > 1 ? 's' : ''} Selected`}
+              </span>
+            </div>
+            <svg
+              className={`${styles.chevronIcon} ${dropdownOpen ? styles.chevronOpen : ''}`}
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
+          {dropdownOpen && (
+            <div className={styles.dropdownMenu} role="listbox" aria-multiselectable="true">
+              {selectedModels.length > 0 && (
+                <button
+                  onClick={clearFilters}
+                  className={styles.clearButton}
+                >
+                  Clear All ({selectedModels.length})
+                </button>
+              )}
+              <div className={styles.dropdownOptions}>
+                {availableModels.map(model => (
+                  <button
+                    key={model}
+                    role="option"
+                    aria-selected={selectedModels.includes(model)}
+                    onClick={() => toggleModel(model)}
+                    className={`${styles.dropdownOption} ${
+                      selectedModels.includes(model) ? styles.dropdownOptionActive : ''
+                    }`}
+                  >
+                    <span className={styles.optionCheckbox}>
+                      {selectedModels.includes(model) && (
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                          <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      )}
+                    </span>
+                    <span>{model}</span>
+                  </button>
+                ))}
+              </div>
               <button
-                key={model}
-                onClick={() => toggleModel(model)}
-                className={`${styles.filterButton} ${
-                  selectedModels.includes(model) ? styles.filterButtonActive : ''
-                }`}
+                className={styles.applyButton}
+                onClick={() => setDropdownOpen(false)}
               >
-                {model}
+                {selectedModels.length === 0
+                  ? 'Close'
+                  : `Show Results (${selectedModels.length})`}
               </button>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       )}
 

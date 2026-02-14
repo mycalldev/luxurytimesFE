@@ -198,6 +198,14 @@ export async function getProduct(productHandle) {
         tags
         vendor
         productType
+        year: metafield(namespace: "custom", key: "year") {
+          value
+          type
+        }
+        condition: metafield(namespace: "custom", key: "condition") {
+          value
+          type
+        }
         collections(first: 5) {
           edges {
             node {
@@ -233,6 +241,47 @@ export async function getAllWatchCollections() {
   };
 }
 
+
+// Get featured products (tagged with 'feature' in Shopify)
+export async function getFeaturedProducts(first = 10) {
+  const query = `
+    {
+      products(first: ${first}, query: "tag:feature", sortKey: CREATED_AT, reverse: true) {
+        edges {
+          node {
+            id
+            title
+            handle
+            priceRange {
+              minVariantPrice {
+                amount
+                currencyCode
+              }
+              maxVariantPrice {
+                amount
+                currencyCode
+              }
+            }
+            images(first: 2) {
+              edges {
+                node {
+                  url
+                  altText
+                }
+              }
+            }
+            tags
+            vendor
+            productType
+          }
+        }
+      }
+    }
+  `;
+
+  const response = await ShopifyData(query);
+  return response.data?.products?.edges || [];
+}
 
 // Get all blog articles
 export async function getAllArticles(blogHandle = "News") {

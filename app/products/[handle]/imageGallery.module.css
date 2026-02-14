@@ -49,8 +49,7 @@
   max-width: 100%;
   aspect-ratio: 1;
   overflow: hidden;
-  background-color: #f8f8f8;
-  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
 }
 
 .mainImage {

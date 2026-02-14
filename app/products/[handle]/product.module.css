@@ -74,6 +74,43 @@
     border-bottom: 1px solid #e0e0e0;
   }
   
+  /* ============================================
+     PRODUCT DETAILS CARD (Year & Condition)
+     ============================================ */
+
+  .detailsCard {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 0;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+
+  .detailItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .detailItem:last-child {
+    border-bottom: none;
+  }
+
+  .detailLabel {
+    font-size: 0.95rem;
+    color: #333;
+  }
+
+  .detailValue {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-left: auto;
+    letter-spacing: 0.3px;
+  }
+
   .description {
     font-size: 1rem;
     line-height: 1.8;
@@ -250,6 +287,14 @@
       font-size: 1.5rem;
     }
 
+    .detailsCard {
+      margin-bottom: 25px;
+    }
+
+    .detailItem {
+      padding: 12px 18px;
+    }
+
     .whatsIncluded {
       padding: 20px;
       margin-top: 25px;
@@ -273,6 +318,19 @@
   }
 
   @media (max-width: 480px) {
+    .detailsCard {
+      margin-bottom: 20px;
+    }
+
+    .detailItem {
+      padding: 12px 15px;
+    }
+
+    .detailLabel,
+    .detailValue {
+      font-size: 0.9rem;
+    }
+
     .whatsIncluded {
       padding: 15px;
       margin-top: 20px;

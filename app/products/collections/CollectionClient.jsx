@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import WishlistIcon from '../../components/WishlistIcon';
@@ -8,17 +8,37 @@ import styles from './rolex/collection.module.css';
 
 export default function CollectionClient({ products, collection }) {
   const [selectedModels, setSelectedModels] = useState([]);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
-  // Extract unique watch models from product tags
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Sort products with 'feature' tag first
+  const sortedProducts = useMemo(() => {
+    return [...products].sort((a, b) => {
+      const aFeatured = a.node.tags?.includes('feature') ? 1 : 0;
+      const bFeatured = b.node.tags?.includes('feature') ? 1 : 0;
+      return bFeatured - aFeatured;
+    });
+  }, [products]);
+
+  // Extract unique watch models from product tags (exclude internal tags)
   const availableModels = useMemo(() => {
     const modelTags = new Set();
     
-    products.forEach(({ node: product }) => {
+    sortedProducts.forEach(({ node: product }) => {
       if (product.tags && Array.isArray(product.tags)) {
         product.tags.forEach(tag => {
-          // Add all tags as potential models
-          // You can customize this logic to filter specific tag patterns
-          if (tag && tag.trim()) {
+          if (tag && tag.trim() && tag.trim().toLowerCase() !== 'feature') {
             modelTags.add(tag.trim());
           }
         });
@@ -26,15 +46,15 @@ export default function CollectionClient({ products, collection }) {
     });
     
     return Array.from(modelTags).sort();
-  }, [products]);
+  }, [sortedProducts]);
 
   // Filter products based on selected models
   const filteredProducts = useMemo(() => {
     if (selectedModels.length === 0) {
-      return products;
+      return sortedProducts;
     }
     
-    return products.filter(({ node: product }) => {
+    return sortedProducts.filter(({ node: product }) => {
       if (!product.tags || !Array.isArray(product.tags)) {
         return false;
       }
@@ -44,7 +64,7 @@ export default function CollectionClient({ products, collection }) {
         product.tags.includes(model)
       );
     });
-  }, [products, selectedModels]);
+  }, [sortedProducts, selectedModels]);
 
   // Toggle model selection
   const toggleModel = (model) => {
@@ -71,40 +91,86 @@ export default function CollectionClient({ products, collection }) {
         )}
       </div>
 
-      {/* Filter Section */}
+      {/* Filter Section - Dropdown */}
       {availableModels.length > 0 && (
-        <div className={styles.filterSection}>
-          <div className={styles.filterHeader}>
-            <h2 className={styles.filterTitle}>Filter by Watch Model</h2>
-            {selectedModels.length > 0 && (
-              <button 
-                onClick={clearFilters}
-                className={styles.clearButton}
-              >
-                Clear All ({selectedModels.length})
-              </button>
-            )}
-          </div>
-          
-          <div className={styles.filterOptions}>
-            {availableModels.map(model => (
+        <div className={styles.filterSection} ref={dropdownRef}>
+          <button
+            className={styles.dropdownTrigger}
+            onClick={() => setDropdownOpen(prev => !prev)}
+            aria-expanded={dropdownOpen}
+            aria-haspopup="listbox"
+          >
+            <div className={styles.dropdownTriggerContent}>
+              <svg className={styles.filterIcon} width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M1.5 3.75H16.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M4.5 9H13.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M7 14.25H11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              <span>
+                {selectedModels.length === 0
+                  ? 'Filter by Watch Model'
+                  : `${selectedModels.length} Model${selectedModels.length > 1 ? 's' : ''} Selected`}
+              </span>
+            </div>
+            <svg
+              className={`${styles.chevronIcon} ${dropdownOpen ? styles.chevronOpen : ''}`}
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
+          {dropdownOpen && (
+            <div className={styles.dropdownMenu} role="listbox" aria-multiselectable="true">
+              {selectedModels.length > 0 && (
+                <button
+                  onClick={clearFilters}
+                  className={styles.clearButton}
+                >
+                  Clear All ({selectedModels.length})
+                </button>
+              )}
+              <div className={styles.dropdownOptions}>
+                {availableModels.map(model => (
+                  <button
+                    key={model}
+                    role="option"
+                    aria-selected={selectedModels.includes(model)}
+                    onClick={() => toggleModel(model)}
+                    className={`${styles.dropdownOption} ${
+                      selectedModels.includes(model) ? styles.dropdownOptionActive : ''
+                    }`}
+                  >
+                    <span className={styles.optionCheckbox}>
+                      {selectedModels.includes(model) && (
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                          <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      )}
+                    </span>
+                    <span>{model}</span>
+                  </button>
+                ))}
+              </div>
               <button
-                key={model}
-                onClick={() => toggleModel(model)}
-                className={`${styles.filterButton} ${
-                  selectedModels.includes(model) ? styles.filterButtonActive : ''
-                }`}
+                className={styles.applyButton}
+                onClick={() => setDropdownOpen(false)}
               >
-                {model}
+                {selectedModels.length === 0
+                  ? 'Close'
+                  : `Show Results (${selectedModels.length})`}
               </button>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       )}
 
       {/* Results count */}
       <div className={styles.resultsInfo}>
-        Showing {filteredProducts.length} of {products.length} watches
+        Showing {filteredProducts.length} of {sortedProducts.length} watches
         {selectedModels.length > 0 && (
           <span className={styles.activeFilters}>
             {' '}• Filtered by: {selectedModels.join(', ')}

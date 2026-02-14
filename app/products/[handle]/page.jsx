@@ -66,6 +66,27 @@ export default async function ProductPage({ params }) {
             }).format(price.amount)}
           </div>
 
+          {(product.year?.value || product.condition?.value) && (
+            <div className={styles.detailsCard}>
+              {product.year?.value && (
+                <div className={styles.detailItem}>
+                  <span className={styles.checkmark}>✓</span>
+                  <span className={styles.detailLabel}>Year</span>
+                  <span className={styles.detailValue}>{product.year.value}</span>
+                </div>
+              )}
+              {product.condition?.value && (
+                <div className={styles.detailItem}>
+                  <span className={styles.checkmark}>✓</span>
+                  <span className={styles.detailLabel}>Condition</span>
+                  <span className={styles.detailValue}>
+                    {product.condition.value.replace(/[\[\]"]/g, '')}
+                  </span>
+                </div>
+              )}
+            </div>
+          )}
+
           <div 
             className={styles.description}
             dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
@@ -81,14 +102,6 @@ export default async function ProductPage({ params }) {
                     {variant.availableForSale ? 'Available' : 'Sold Out'}
                   </span>
                 </div>
-              ))}
-            </div>
-          )}
-
-          {product.tags.length > 0 && (
-            <div className={styles.tags}>
-              {product.tags.map((tag, index) => (
-                <span key={index} className={styles.tag}>{tag}</span>
               ))}
             </div>
           )}
