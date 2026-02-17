@@ -58,6 +58,7 @@ export default function FeaturedProducts({ products }) {
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={24}
             slidesPerView={1.2}
+            centeredSlides={true}
             navigation={{
               prevEl: prevRef.current,
               nextEl: nextRef.current,
@@ -79,14 +80,17 @@ export default function FeaturedProducts({ products }) {
               480: {
                 slidesPerView: 2,
                 spaceBetween: 20,
+                centeredSlides: false,
               },
               768: {
                 slidesPerView: 3,
                 spaceBetween: 24,
+                centeredSlides: false,
               },
               1200: {
                 slidesPerView: 4,
                 spaceBetween: 28,
+                centeredSlides: false,
               },
             }}
             className={styles.swiper}
