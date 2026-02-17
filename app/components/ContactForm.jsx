@@ -1,10 +1,11 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef, useCallback } from 'react'
 import Button from './Button'
 import styles from './ContactForm.module.css'
 
 export default function ContactForm() {
+  const formRef = useRef(null)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,7 +23,6 @@ export default function ContactForm() {
       ...prev,
       [name]: value,
     }))
-    // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,
@@ -30,6 +30,22 @@ export default function ContactForm() {
       }))
     }
   }
+
+  // Sync React state with actual DOM values to catch browser autofill
+  // that may not trigger onChange events
+  const syncFormState = useCallback(() => {
+    if (!formRef.current) return null
+    const inputs = formRef.current.elements
+    const synced = {
+      name: inputs.name?.value || '',
+      email: inputs.email?.value || '',
+      phone: inputs.phone?.value || '',
+      subject: inputs.subject?.value || '',
+      message: inputs.message?.value || '',
+    }
+    setFormData(synced)
+    return synced
+  }, [])
 
   const validateForm = () => {
     const newErrors = {}
@@ -65,6 +81,9 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    // Sync with DOM values first to capture any browser autofill
+    const currentData = syncFormState() || formData
+
     if (!validateForm()) {
       return
     }
@@ -78,7 +97,7 @@ export default function ContactForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(currentData),
       })
 
       const data = await response.json()
@@ -114,7 +133,7 @@ export default function ContactForm() {
 
   return (
     <div className={styles.formContainer}>
-      <form onSubmit={handleSubmit} className={styles.contactForm} noValidate>
+      <form ref={formRef} onSubmit={handleSubmit} className={styles.contactForm} autoComplete="on" noValidate>
         <div className={styles.formGroup}>
           <label htmlFor="name" className={styles.label}>
             Full Name <span className={styles.required}>*</span>
@@ -123,6 +142,7 @@ export default function ContactForm() {
             type="text"
             id="name"
             name="name"
+            autoComplete="name"
             value={formData.name}
             onChange={handleChange}
             className={`${styles.input} ${errors.name ? styles.inputError : ''}`}
@@ -146,6 +166,7 @@ export default function ContactForm() {
             type="email"
             id="email"
             name="email"
+            autoComplete="email"
             value={formData.email}
             onChange={handleChange}
             className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
@@ -169,6 +190,7 @@ export default function ContactForm() {
             type="tel"
             id="phone"
             name="phone"
+            autoComplete="tel"
             value={formData.phone}
             onChange={handleChange}
             className={`${styles.input} ${errors.phone ? styles.inputError : ''}`}
@@ -192,6 +214,7 @@ export default function ContactForm() {
             type="text"
             id="subject"
             name="subject"
+            autoComplete="off"
             value={formData.subject}
             onChange={handleChange}
             className={`${styles.input} ${errors.subject ? styles.inputError : ''}`}
