@@ -297,6 +297,107 @@
   color: #fff;
 }
 
+/* ============================================
+   CREDIBILITY SECTION
+   ============================================ */
+
+.credibilitySection {
+  width: 100%;
+  padding: 3rem 1.25rem;
+  background-color: #ffffff;
+}
+
+.credibilityContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.credibilitySubtitle {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #999;
+  margin: 0 0 2.5rem 0;
+}
+
+.credibilityLogos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.credibilityItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  max-width: 280px;
+}
+
+.credibilityLogoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.credibilityLogo {
+  width: auto;
+  height: 100%;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+.credibilityLabel {
+  font-size: 0.8rem;
+  color: #777;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.credibilityDivider {
+  width: 1px;
+  height: 60px;
+  background-color: #e0e0e0;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .credibilitySection {
+    padding: 2.5rem 1rem;
+  }
+
+  .credibilitySubtitle {
+    margin-bottom: 2rem;
+  }
+
+  .credibilityLogos {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .credibilityDivider {
+    width: 60px;
+    height: 1px;
+  }
+
+  .credibilityItem {
+    max-width: 100%;
+  }
+
+  .credibilityLogoWrapper {
+    height: 70px;
+  }
+
+  .credibilityLogo {
+    max-height: 60px;
+  }
+}
+
 /* NOT FOUND */
 .headerNotFound {
   margin: 60px 20px 20px 20px;

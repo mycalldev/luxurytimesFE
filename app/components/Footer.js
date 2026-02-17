@@ -79,6 +79,9 @@ export default function Footer() {
           <p className={styles.disclaimer}>
             We are independent dealers. All watches are genuine and authenticated via our in-house experts.
           </p>
+          <p className={styles.companyDetails}>
+            VAT No: 457606667 | Company No: 15300276
+          </p>
         </div>
       </div>
     </footer>

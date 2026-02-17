@@ -155,6 +155,13 @@
   font-style: italic;
 }
 
+.companyDetails {
+  font-size: 0.8rem;
+  color: #777777;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
 /* Tablet Styles */
 @media (min-width: 768px) {
   .footerContent {

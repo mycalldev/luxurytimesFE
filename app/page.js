@@ -1,4 +1,5 @@
 
+import Image from 'next/image'
 import styles from './page.module.css'
 import BrandCard from './components/BrandCard'
 import Button from './components/Button'
@@ -86,7 +87,6 @@ export default async function Home() {
 
       {/* FEATURED PRODUCTS SECTION */}
       <FeaturedProducts products={featuredProducts} />
-
       {/* CATEGORY SECTION */}
       <section className={styles.categoryContainerGrid}>
           <BrandCard 
@@ -108,27 +108,60 @@ export default async function Home() {
           />
 
       </section>
-      </section>
 
-      <div className={styles.spaceDesktop}></div>
-
-      <section className={styles.showcaseContainer}>
-        <div className={styles.keyPointsSection}>
-          <h2 className={styles.keyPointsHeading}>Experience The Luxury Times Difference</h2>
-          <ul className={styles.keyPointsList}>
-            <li className={styles.keyPoint}>
-              <strong>Family Run, Trusted Service:</strong> Over 25 years of experience in luxury timepieces, offering honest advice and personal attention.
-            </li>
-            <li className={styles.keyPoint}>
-              <strong>Quality Assured:</strong> Every watch is meticulously inspected for authenticity, provenance, and condition.
-            </li>
-            <li className={styles.keyPoint}>
-              <strong>Expert Guidance:</strong> From buying to selling, receive tailored guidance every step of the way—no question is too small!
-            </li>
-          </ul>
+      {/* CREDIBILITY SECTION */}
+      <section className={styles.credibilitySection}>
+        <div className={styles.credibilityContainer}>
+          <p className={styles.credibilitySubtitle}>Trusted & Accredited</p>
+          <div className={styles.credibilityLogos}>
+            <div className={styles.credibilityItem}>
+              <div className={styles.credibilityLogoWrapper}>
+                <Image
+                  src="/fga.png"
+                  alt="Fellow of the Gemmological Association of Great Britain"
+                  width={200}
+                  height={100}
+                  className={styles.credibilityLogo}
+                  quality={100}
+                />
+              </div>
+              <span className={styles.credibilityLabel}>FGA - Gemmological Association</span>
+            </div>
+            <div className={styles.credibilityDivider} />
+            <div className={styles.credibilityItem}>
+              <div className={styles.credibilityLogoWrapper}>
+                <Image
+                  src="/bourse_logo.jpg"
+                  alt="London Diamond Bourse Member"
+                  width={200}
+                  height={100}
+                  className={styles.credibilityLogo}
+                  quality={100}
+                />
+              </div>
+              <span className={styles.credibilityLabel}>London Diamond Bourse</span>
+            </div>
+            <div className={styles.credibilityDivider} />
+            <div className={styles.credibilityItem}>
+              <div className={styles.credibilityLogoWrapper}>
+                <Image
+                  src="/NAJ.png"
+                  alt="National Association of Jewellers Member"
+                  width={200}
+                  height={100}
+                  className={styles.credibilityLogo}
+                  quality={100}
+                />
+              </div>
+              <span className={styles.credibilityLabel}>National Association of Jewellers</span>
+            </div>
+          </div>
         </div>
       </section>
 
+      </section>
+
+      <div className={styles.spaceDesktop}></div>
       {/* BLOG FEATURE SECTION */}
       <BlogFeature limit={2} />
       
