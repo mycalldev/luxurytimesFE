@@ -147,20 +147,36 @@ export default function Navbar() {
               <h1 className={styles.brandTitleDesktop}>LUXURY TIMES</h1>
             </Link>
           </div>
+          <nav className={styles.desktopNavCenter}>
+            <ul className={styles.desktopMenuList}>
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className={styles.desktopMenuLink}
+                    prefetch={link.prefetch}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link 
+                  href="/wishlist" 
+                  className={styles.desktopMenuLink}
+                >
+                  Wishlist
+                </Link>
+              </li>
+            </ul>
+          </nav>
           <div className={styles.desktopHeaderRight}>
             <WishlistBadge />
-            <a href="mailto:info@luxurytimesltd.co.uk" className={styles.contactInfo}>
-              <svg className={styles.contactIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className={styles.contactText}>info@luxurytimesltd.co.uk</span>
-            </a>
             <a href="tel:07714611699" className={styles.contactInfo}>
               <Image
                 src={'/phone_icon.png'}
-                width={20}
-                height={20}
+                width={18}
+                height={18}
                 className={styles.contactIcon}
                 alt="Phone"
                 quality={100}
@@ -169,29 +185,6 @@ export default function Navbar() {
             </a>
           </div>
         </div>
-        <nav className={styles.desktopNavContainer}>
-          <ul className={styles.desktopMenuList}>
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link 
-                  href={link.href} 
-                  className={styles.desktopMenuLink}
-                  prefetch={link.prefetch}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-            <li>
-              <Link 
-                href="/wishlist" 
-                className={styles.desktopMenuLink}
-              >
-                Wishlist
-              </Link>
-            </li>
-          </ul>
-        </nav>
       </div>
     </header>
   )

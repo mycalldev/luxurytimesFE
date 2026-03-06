@@ -58,8 +58,8 @@ export default async function Home() {
             heightDesktop: 1000
           },
           {
-            src: '/Rolex_hero.jpg',
-            srcDesktop: '/Rolex_hero_Desktop.jpg',
+            src: '/rolex_hero.jpg',
+            srcDesktop: '/rolex_hero_desktop.jpg',
             alt: 'Rolex luxury watch',
             width: 2000,
             height: 1333,
