@@ -66,6 +66,15 @@ export default async function Home() {
             widthDesktop: 2000,
             heightDesktop: 1000
           },
+          {
+            src: '/richard_hero.jpg',
+            srcDesktop: '/richard_hero_desktop.jpg',
+            alt: 'Richard Mille luxury watch',
+            width: 2000,
+            height: 1333,
+            widthDesktop: 2000,
+            heightDesktop: 1000
+          }
         ]}
         slideInterval={3000}
       />
