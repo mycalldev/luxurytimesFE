@@ -66,16 +66,6 @@ export default function Navbar() {
 
           <div className={styles.mobileRightSection}>
             <WishlistBadge />
-            <Link href="tel:07714611699" className={styles.contactIconLink} aria-label="Call us">
-              <Image
-                src={'/phone_icon.png'}
-                width={24}
-                height={24}
-                className={styles.mobileContactIcon}
-                alt="Call"
-                quality={100}
-              />
-            </Link>
             <Link href="/" className={styles.logoLink}>
               <Image
                 src={'/logo_it.png'}

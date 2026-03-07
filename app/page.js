@@ -111,7 +111,7 @@ export default async function Home() {
             image="/Cat_Section/patek_philippe_cat_edit.jpg"
             title="Patek Philippe"
             href="/products/collections/patek-philippe"
-            width={1144}
+            width={1137}
             height={850}
             altText="Patek Philippe watches collection"
           />
