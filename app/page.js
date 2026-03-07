@@ -99,20 +99,20 @@ export default async function Home() {
       {/* CATEGORY SECTION */}
       <section className={styles.categoryContainerGrid}>
           <BrandCard 
-            image="/Cat_Section/rolex_cat.jpg"
+            image="/Cat_Section/rolex_cat_edit.jpg"
             title="Rolex"
             href="/products/collections/rolex"
-            width={1150}
-            height={1150}
+            width={1144}
+            height={850}
             altText="Rolex watches collection"
           />
 
           <BrandCard 
-            image="/Cat_Section/patek_philippe_cat.jpg"
+            image="/Cat_Section/patek_philippe_cat_edit.jpg"
             title="Patek Philippe"
             href="/products/collections/patek-philippe"
-            width={1150}
-            height={1150}
+            width={1144}
+            height={850}
             altText="Patek Philippe watches collection"
           />
 

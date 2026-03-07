@@ -26,9 +26,6 @@ export default function BrandCard({
             <h2 className={styles.brandTitle}>{title}</h2>
           </div>
         </div>
-        {/* <div className={styles.ctaButton}>
-          <span>View Collection</span>
-        </div> */}
       </Link>
     </div>
   )
