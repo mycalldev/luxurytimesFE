@@ -172,7 +172,7 @@ export default async function Home() {
 
       <div className={styles.spaceDesktop}></div>
       {/* BLOG FEATURE SECTION */}
-      <BlogFeature limit={2} />
+      <BlogFeature limit={3} />
       
 
       <ContactForm />
