@@ -1,15 +1,19 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Navbar.module.css'
 import WishlistBadge from './WishlistBadge'
 
-// Navigation links configuration
-const navLinks = [
+const watchLinks = [
   { href: '/products/collections/rolex', label: 'Rolex', prefetch: true },
   { href: '/products/collections/patek-philippe', label: 'Patek Philippe', prefetch: true },
+  { href: '/products/collections/audemars-piguet', label: 'Audemars Piguet', prefetch: true },
+  { href: '/products/collections/richard-mille', label: 'Richard Mille', prefetch: true },
+]
+
+const navLinks = [
   { href: '/sell', label: 'Sell', prefetch: true },
   { href: '/blog', label: 'Blog', prefetch: false },
   { href: '/review', label: 'Reviews', prefetch: false },
@@ -18,6 +22,8 @@ const navLinks = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const dropdownRef = useRef(null)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -27,7 +33,10 @@ export default function Navbar() {
     setIsMenuOpen(false)
   }
 
-  // Prevent body scroll when mobile menu is open
+  const closeDropdown = () => {
+    setIsDropdownOpen(false)
+  }
+
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden'
@@ -38,6 +47,16 @@ export default function Navbar() {
       document.body.style.overflow = 'unset'
     }
   }, [isMenuOpen])
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsDropdownOpen(false)
+      }
+    }
+    document.addEventListener('click', handleClickOutside)
+    return () => document.removeEventListener('click', handleClickOutside)
+  }, [])
 
   return (
     <header className={styles.header}>
@@ -87,6 +106,18 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <nav className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`}>
           <ul className={styles.mobileMenuList}>
+            {watchLinks.map((link) => (
+              <li key={link.href}>
+                <Link 
+                  href={link.href} 
+                  className={styles.mobileMenuLink}
+                  prefetch={link.prefetch}
+                  onClick={closeMenu}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link 
@@ -139,6 +170,43 @@ export default function Navbar() {
           </div>
           <nav className={styles.desktopNavCenter}>
             <ul className={styles.desktopMenuList}>
+              <li className={styles.dropdownWrapper} ref={dropdownRef}>
+                <span
+                  className={styles.desktopMenuLink}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setIsDropdownOpen(!isDropdownOpen) }}}
+                >
+                  Watches
+                  <svg
+                    className={`${styles.dropdownArrow} ${isDropdownOpen ? styles.dropdownArrowOpen : ''}`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+                <ul className={`${styles.dropdownMenu} ${isDropdownOpen ? styles.dropdownMenuOpen : ''}`}>
+                  {watchLinks.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className={styles.dropdownLink}
+                        prefetch={link.prefetch}
+                        onClick={closeDropdown}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link 

@@ -22,12 +22,18 @@ export default function CollectionClient({ products, collection }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Sort products with 'feature' tag first
+  // Sort products by custom sort_order metafield (ascending).
+  // Products without a sort_order fall to the end.
+  // Tie-break: feature-tagged first, then alphabetical by title.
   const sortedProducts = useMemo(() => {
     return [...products].sort((a, b) => {
-      const aFeatured = a.node.tags?.includes('feature') ? 1 : 0;
-      const bFeatured = b.node.tags?.includes('feature') ? 1 : 0;
-      return bFeatured - aFeatured;
+      const aOrder = a.node.sortOrder?.value != null ? parseInt(a.node.sortOrder.value, 10) : Infinity;
+      const bOrder = b.node.sortOrder?.value != null ? parseInt(b.node.sortOrder.value, 10) : Infinity;
+      if (aOrder !== bOrder) return aOrder - bOrder;
+      const aFeat = a.node.tags?.includes('feature') ? 0 : 1;
+      const bFeat = b.node.tags?.includes('feature') ? 0 : 1;
+      if (aFeat !== bFeat) return aFeat - bFeat;
+      return a.node.title.localeCompare(b.node.title);
     });
   }, [products]);
 

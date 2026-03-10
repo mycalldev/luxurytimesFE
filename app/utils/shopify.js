@@ -82,6 +82,9 @@ export async function getProductsByCollection(collectionHandle, first = 20) {
               tags
               vendor
               productType
+              sortOrder: metafield(namespace: "custom", key: "sort_order") {
+                value
+              }
             }
           }
         }
@@ -136,6 +139,9 @@ export async function getAllProducts(first = 50) {
             tags
             vendor
             productType
+            sortOrder: metafield(namespace: "custom", key: "sort_order") {
+              value
+            }
           }
         }
       }

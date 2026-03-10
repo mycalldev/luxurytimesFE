@@ -413,6 +413,76 @@
   .desktopMenuLink:hover::after {
     transform: translateX(-50%) scaleX(1);
   }
+
+  /* Watches Dropdown */
+  .dropdownWrapper {
+    position: relative;
+  }
+
+  .dropdownWrapper > .desktopMenuLink {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .dropdownArrow {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+  }
+
+  .dropdownArrowOpen {
+    transform: rotate(180deg);
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index: 100;
+  }
+
+  .dropdownMenuOpen {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .dropdownMenu li {
+    position: relative;
+  }
+
+  .dropdownLink {
+    display: block;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  .dropdownLink:hover {
+    background-color: #f8f8f8;
+    color: #000000;
+    padding-left: 1.5rem;
+  }
 }
 
 /* ==========================================
@@ -458,6 +528,10 @@
   .desktopMenuList {
     gap: clamp(0.5rem, 1.5vw, 1.5rem);
   }
+
+  .dropdownLink {
+    font-size: 0.85rem;
+  }
 }
 
 /* ==========================================
@@ -490,6 +564,15 @@
   .contactInfo {
     font-size: 0.9rem;
   }
+
+  .dropdownLink {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .dropdownMenu {
+    min-width: 220px;
+  }
 }
 
 /* ==========================================
@@ -499,7 +582,8 @@
 .menuButton:focus-visible,
 .closeMenuButton:focus-visible,
 .mobileMenuLink:focus-visible,
-.desktopMenuLink:focus-visible {
+.desktopMenuLink:focus-visible,
+.dropdownLink:focus-visible {
   outline: 2px solid #1a1a1a;
   outline-offset: 2px;
 }
@@ -518,7 +602,10 @@
   .brandTitleDesktop,
   .mobileMenuLink,
   .desktopMenuLink,
-  .closeMenuButton {
+  .closeMenuButton,
+  .dropdownMenu,
+  .dropdownArrow,
+  .dropdownLink {
     transition: none;
     animation: none;
   }

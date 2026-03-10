@@ -23,23 +23,51 @@ export default function ProductsClient({ products, collection: collectionFilter 
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  // Filter by collection if specified, then sort featured products first
+  const BRAND_PRIORITY = {
+    'rolex': 1,
+    'patek-philippe': 2,
+    'audemars-piguet': 3,
+    'richard-mille': 4,
+  }
+
+  const getBrandPriority = (product) => {
+    const handles = product.collections?.edges?.map(({ node }) => node.handle) ?? []
+    for (const handle of handles) {
+      if (BRAND_PRIORITY[handle] != null) return BRAND_PRIORITY[handle]
+    }
+    return 99
+  }
+
+  // Filter by collection if specified, then sort by:
+  // 1. Brand priority (Rolex → Patek Philippe → Audemars Piguet → Richard Mille)
+  // 2. sort_order metafield ascending within each brand (products without one fall to end)
+  // 3. Feature tag (featured first as tie-breaker)
+  // 4. Alphabetical by title
   const filteredByCollection = useMemo(() => {
     let filtered = products
 
     if (collectionFilter) {
-      filtered = filtered.filter(({ node: product }) => 
-        product.collections.edges.some(({ node: col }) => 
+      filtered = filtered.filter(({ node: product }) =>
+        product.collections.edges.some(({ node: col }) =>
           col.handle === collectionFilter
         )
       )
     }
-    
-    // Sort products with the 'feature' tag to the top
+
     return [...filtered].sort((a, b) => {
-      const aFeatured = a.node.tags?.includes('feature') ? 1 : 0
-      const bFeatured = b.node.tags?.includes('feature') ? 1 : 0
-      return bFeatured - aFeatured
+      const aBrand = getBrandPriority(a.node)
+      const bBrand = getBrandPriority(b.node)
+      if (aBrand !== bBrand) return aBrand - bBrand
+
+      const aOrder = a.node.sortOrder?.value != null ? parseInt(a.node.sortOrder.value, 10) : Infinity
+      const bOrder = b.node.sortOrder?.value != null ? parseInt(b.node.sortOrder.value, 10) : Infinity
+      if (aOrder !== bOrder) return aOrder - bOrder
+
+      const aFeat = a.node.tags?.includes('feature') ? 0 : 1
+      const bFeat = b.node.tags?.includes('feature') ? 0 : 1
+      if (aFeat !== bFeat) return aFeat - bFeat
+
+      return a.node.title.localeCompare(b.node.title)
     })
   }, [products, collectionFilter])
 
