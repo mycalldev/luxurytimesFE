@@ -119,7 +119,7 @@ export default async function Home() {
           <BrandCard 
             image="/Category_Images/AP_edit.jpg"
             title="Audeamrs Piguet"
-            href="/products/collections/rolex"
+            href="/products/collections/audemars-piguet"
             width={1133}
             height={788}
             altText="Rolex watches collection"
@@ -127,7 +127,7 @@ export default async function Home() {
           <BrandCard 
             image="/Category_Images/RICHARD_edit.jpg"
             title="Richard Mille"
-            href="/products/collections/rolex"
+            href="/products/collections/richard-mille"
             width={1133}
             height={788}
             altText="Rolex watches collection"
