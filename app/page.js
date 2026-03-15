@@ -12,10 +12,10 @@ import { getFeaturedProducts } from './utils/shopify'
 // Define metadata for the page using Next.js Metadata API
 export const metadata = {
   title: 'Luxury Times - Exclusive Luxury Watches',
-  description: 'Discover premium luxury watches at Luxury Times. Authorized dealer for Rolex, Patek Philippe, and Audemars Piguet.',
+  description: 'Discover premium luxury watches at Luxury Times. Rolex, Patek Philippe, and Audemars Piguet.',
   openGraph: {
     title: 'Luxury Times - Exclusive Luxury Watches',
-    description: 'Discover premium luxury watches at Luxury Times. Authorized dealer for Rolex, Patek Philippe, and Audemars Piguet.',
+    description: 'Discover premium luxury watches at Luxury Times. Rolex, Patek Philippe, and Audemars Piguet.',
     images: [
       {
         url: '/favicon.ico',
