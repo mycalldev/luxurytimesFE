@@ -13,7 +13,7 @@ export const metadata = {
   title: 'Luxury Times Ltd',
   description: 'Discover premium luxury watches and fine jewellery - Rolex, Patek Philippe & Audemars Piguet',
   verification: {
-    google: <meta name="google-site-verification" content="3EtCpdg61XcRZkS6YrJjTI14hZLUUAGPhZgsOtf54_8" />
+    google: "3EtCpdg61XcRZkS6YrJjTI14hZLUUAGPhZgsOtf54_8",
   },
 }
 
