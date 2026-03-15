@@ -118,7 +118,7 @@ export default async function Home() {
 
           <BrandCard 
             image="/Category_Images/AP_edit.jpg"
-            title="Audeamrs Piguet"
+            title="Audemars Piguet"
             href="/products/collections/audemars-piguet"
             width={1133}
             height={788}
