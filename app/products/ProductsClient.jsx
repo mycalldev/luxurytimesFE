@@ -146,6 +146,18 @@ export default function ProductsClient({ products, collection: collectionFilter 
           >
             Patek Philippe
           </Button>
+          <Button 
+            href="/products?collection=audemars-piguet" 
+            variant={collectionFilter === 'audemars-piguet' ? 'active' : 'primary'}
+          >
+            Audemars Piguet
+          </Button>
+          <Button 
+            href="/products?collection=richard-mille" 
+            variant={collectionFilter === 'richard-mille' ? 'active' : 'primary'}
+          >
+            Richard Mille
+          </Button>
         </div>
       </div>
 
