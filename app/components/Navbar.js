@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Navbar.module.css'
 import WishlistBadge from './WishlistBadge'
+import SearchBar from './SearchBar'
 
 const watchLinks = [
   { href: '/products/collections/rolex', label: 'Rolex', prefetch: true },
@@ -84,6 +85,7 @@ export default function Navbar() {
           </Link>
 
           <div className={styles.mobileRightSection}>
+            <SearchBar />
             <WishlistBadge />
             <Link href="/" className={styles.logoLink}>
               <Image
@@ -229,6 +231,7 @@ export default function Navbar() {
             </ul>
           </nav>
           <div className={styles.desktopHeaderRight}>
+            <SearchBar />
             <WishlistBadge />
             <a href="tel:07714611699" className={styles.contactInfo}>
               <svg

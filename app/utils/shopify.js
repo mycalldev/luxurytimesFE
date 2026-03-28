@@ -361,4 +361,42 @@ export async function getArticle(blogHandle = "News", articleHandle) {
   return response.data.blog?.articleByHandle;
 }
 
+// Search products by query — matches against title, vendor, product type, and tags
+export async function searchProducts(searchQuery, first = 8) {
+  const sanitized = searchQuery.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
+
+  const query = `
+    {
+      products(first: ${first}, query: "${sanitized}") {
+        edges {
+          node {
+            id
+            title
+            handle
+            vendor
+            priceRange {
+              minVariantPrice {
+                amount
+                currencyCode
+              }
+            }
+            images(first: 1) {
+              edges {
+                node {
+                  url
+                  altText
+                }
+              }
+            }
+            tags
+          }
+        }
+      }
+    }
+  `
+
+  const response = await ShopifyData(query)
+  return response.data?.products?.edges || []
+}
+
 export default ShopifyData;

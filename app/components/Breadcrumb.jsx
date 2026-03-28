@@ -11,6 +11,7 @@ const routeLabels = {
   'rolex': 'Rolex',
   'patek-philippe': 'Patek Philippe',
   'audemars-piguet': 'Audemars Piguet',
+  'richard-mille': 'Richard Mille',
   'sell': 'Sell Your Watch',
   'blog': 'Blog',
   'contact': 'Contact',
@@ -27,6 +28,7 @@ const customLabels = {
   '/products/collections/rolex': 'Rolex Collection',
   '/products/collections/patek-philippe': 'Patek Philippe Collection',
   '/products/collections/audemars-piguet': 'Audemars Piguet Collection',
+  '/products/collections/richard-mille': 'Richard Mille Collection',
 }
 
 export default function Breadcrumb({ items, showHome = true }) {
@@ -34,26 +36,36 @@ export default function Breadcrumb({ items, showHome = true }) {
   
   // If custom items are provided, use them
   if (items && items.length > 0) {
+    // The last item with an href is the brand collection link
+    const lastLinkIndex = items.reduce((acc, item, i) => (item.href ? i : acc), -1)
     return (
       <nav className={styles.breadcrumb} aria-label="Breadcrumb">
         <ol className={styles.breadcrumbList}>
           {items.map((item, index) => {
             const isLast = index === items.length - 1
-            return (
-              <li key={index} className={styles.breadcrumbItem}>
-                {isLast ? (
+            const isCollection = index === lastLinkIndex
+            // Render as current-page text only if it's the last item AND has no href
+            if (isLast && !item.href) {
+              return (
+                <li key={index} className={styles.breadcrumbItem}>
                   <span className={styles.breadcrumbCurrent} aria-current="page">
                     {item.label}
                   </span>
-                ) : (
-                  <>
-                    <Link href={item.href} className={styles.breadcrumbLink}>
-                      {item.label}
-                    </Link>
-                    <span className={styles.separator} aria-hidden="true">
-                      /
-                    </span>
-                  </>
+                </li>
+              )
+            }
+            return (
+              <li key={index} className={styles.breadcrumbItem}>
+                <Link
+                  href={item.href}
+                  className={isCollection ? styles.breadcrumbCollection : styles.breadcrumbLink}
+                >
+                  {item.label}
+                </Link>
+                {!isLast && (
+                  <span className={styles.separator} aria-hidden="true">
+                    /
+                  </span>
                 )}
               </li>
             )
@@ -71,18 +83,21 @@ export default function Breadcrumb({ items, showHome = true }) {
     return null
   }
 
+  // Product detail pages render their own brand-aware breadcrumb inline
+  const isProductDetailPage = pathSegments.length === 2 &&
+    pathSegments[0] === 'products' &&
+    pathSegments[1] !== 'collections'
+
+  if (isProductDetailPage) {
+    return null
+  }
+
   const breadcrumbItems = []
 
   // Add Home if showHome is true
   if (showHome) {
     breadcrumbItems.push({ href: '/', label: 'Home' })
   }
-
-  // Check if this is a product detail page (not a collection page)
-  // Product detail pages are: /products/[handle] where handle is not "collections"
-  const isProductDetailPage = pathSegments.length === 2 && 
-    pathSegments[0] === 'products' && 
-    pathSegments[1] !== 'collections'
 
   // Check if this is a collection page: /products/collections/[modelname]
   const isCollectionPage = pathSegments.length === 3 && 

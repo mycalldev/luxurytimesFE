@@ -67,6 +67,33 @@
 }
 
 /* ==========================================
+   COLLECTION LINK — subtle brand emphasis
+   ========================================== */
+
+.breadcrumbCollection {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  white-space: nowrap;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.breadcrumbCollection:hover {
+  color: #555;
+  border-color: #555;
+}
+
+.breadcrumbCollection:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ==========================================
    TABLET STYLES (768px+)
    ========================================== */
 
@@ -80,7 +107,8 @@
   }
 
   .breadcrumbLink,
-  .breadcrumbCurrent {
+  .breadcrumbCurrent,
+  .breadcrumbCollection {
     font-size: 0.9375rem;
   }
 
@@ -100,7 +128,8 @@
   }
 
   .breadcrumbLink,
-  .breadcrumbCurrent {
+  .breadcrumbCurrent,
+  .breadcrumbCollection {
     font-size: 1rem;
   }
 }

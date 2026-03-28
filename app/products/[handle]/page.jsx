@@ -3,7 +3,15 @@ import { getProduct } from '../../utils/shopify';
 import ImageGallery from './ImageGallery';
 import FeaturedProducts from './FeaturedProducts';
 import WishlistIcon from '../../components/WishlistIcon';
+import Breadcrumb from '../../components/Breadcrumb';
 import styles from './product.module.css';
+
+const BRAND_COLLECTIONS = {
+  'rolex':           { label: 'Rolex Collection',           href: '/products/collections/rolex' },
+  'patek-philippe':  { label: 'Patek Philippe Collection',  href: '/products/collections/patek-philippe' },
+  'audemars-piguet': { label: 'Audemars Piguet Collection', href: '/products/collections/audemars-piguet' },
+  'richard-mille':   { label: 'Richard Mille Collection',   href: '/products/collections/richard-mille' },
+}
 
 export async function generateMetadata({ params }) {
   const product = await getProduct(params.handle);
@@ -43,7 +51,20 @@ export default async function ProductPage({ params }) {
   const price = product.priceRange.minVariantPrice;
   const images = product.images.edges;
 
+  // Determine which brand collection this product belongs to
+  const brandCollection = product.collections.edges
+    .map(({ node }) => BRAND_COLLECTIONS[node.handle])
+    .find(Boolean)
+
+  const breadcrumbItems = [
+    { href: '/', label: 'Home' },
+    { href: '/products', label: 'All Watches' },
+    ...(brandCollection ? [brandCollection] : []),
+  ]
+
   return (
+    <>
+    <Breadcrumb items={breadcrumbItems} />
     <main className={styles.container}>
 
       <div className={styles.productLayout}>
@@ -145,5 +166,6 @@ export default async function ProductPage({ params }) {
         collections={product.collections.edges}
       />
     </main>
+    </>
   );
 }
