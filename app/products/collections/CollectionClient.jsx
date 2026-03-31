@@ -37,18 +37,18 @@ export default function CollectionClient({ products, collection }) {
     });
   }, [products]);
 
-  // Extract unique watch models from product tags (exclude internal tags)
+  const MODEL_PREFIX = 'model:';
+
+  // Extract unique watch models from tags prefixed with "model:"
   const availableModels = useMemo(() => {
     const modelTags = new Set();
     
     sortedProducts.forEach(({ node: product }) => {
-      if (product.tags && Array.isArray(product.tags)) {
-        product.tags.forEach(tag => {
-          if (tag && tag.trim() && tag.trim().toLowerCase() !== 'feature') {
-            modelTags.add(tag.trim());
-          }
-        });
-      }
+      product.tags?.forEach(tag => {
+        if (tag.startsWith(MODEL_PREFIX)) {
+          modelTags.add(tag.slice(MODEL_PREFIX.length).trim());
+        }
+      });
     });
     
     return Array.from(modelTags).sort();
@@ -64,10 +64,8 @@ export default function CollectionClient({ products, collection }) {
       if (!product.tags || !Array.isArray(product.tags)) {
         return false;
       }
-      
-      // Check if product has any of the selected models
-      return selectedModels.some(model => 
-        product.tags.includes(model)
+      return selectedModels.some(model =>
+        product.tags.includes(`${MODEL_PREFIX}${model}`)
       );
     });
   }, [sortedProducts, selectedModels]);
