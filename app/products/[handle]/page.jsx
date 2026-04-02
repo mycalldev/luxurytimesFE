@@ -4,6 +4,7 @@ import ImageGallery from './ImageGallery';
 import FeaturedProducts from './FeaturedProducts';
 import WishlistIcon from '../../components/WishlistIcon';
 import Breadcrumb from '../../components/Breadcrumb';
+import EnquiryForm from '../../components/EnquiryForm';
 import styles from './product.module.css';
 
 const BRAND_COLLECTIONS = {
@@ -50,6 +51,12 @@ export default async function ProductPage({ params }) {
 
   const price = product.priceRange.minVariantPrice;
   const images = product.images.edges;
+
+  const formattedPrice = new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: price.currencyCode,
+    minimumFractionDigits: 0,
+  }).format(price.amount);
 
   // Determine which brand collection this product belongs to
   const brandCollection = product.collections.edges
@@ -152,12 +159,10 @@ export default async function ProductPage({ params }) {
             </ul>
           </div>
 
-          <div className={styles.contactSection}>
-            <h3>Interested in this watch?</h3>
-            <Link href="/contact" className={styles.contactBtn}>
-              Contact Us
-            </Link>
-          </div>
+          <EnquiryForm
+            productTitle={product.title}
+            productPrice={formattedPrice}
+          />
         </div>
       </div>
 
