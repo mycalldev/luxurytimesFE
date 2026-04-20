@@ -17,10 +17,10 @@ export default function ShareButton({ handle, title }) {
     return `${base}?${params.toString()}`
   }
 
-  const fireGAEvent = () => {
+  const fireGAEvent = (method) => {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'share', {
-        method: 'product_page_cta',
+        method,
         content_type: 'product',
         item_id: handle,
       })
@@ -33,7 +33,7 @@ export default function ShareButton({ handle, title }) {
     if (navigator.share) {
       try {
         await navigator.share({ title, url })
-        fireGAEvent()
+        fireGAEvent('native_share')
       } catch (err) {
         // User cancelled — do nothing
       }
@@ -43,7 +43,7 @@ export default function ShareButton({ handle, title }) {
     // Clipboard fallback for desktop
     try {
       await navigator.clipboard.writeText(url)
-      fireGAEvent()
+      fireGAEvent('clipboard_copy')
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch {
