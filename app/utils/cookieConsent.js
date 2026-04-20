@@ -1,7 +1,8 @@
 // Cookie consent utility functions
 
 const COOKIE_CONSENT_KEY = 'luxury-times-cookie-consent';
-const COOKIE_EXPIRY_DAYS = 365;
+const COOKIE_EXPIRY_DAYS = 1;
+const CONSENT_EXPIRY_MS = 24 * 60 * 60 * 1000; // 24 hours
 
 export const COOKIE_CATEGORIES = {
   ESSENTIAL: 'essential',
@@ -12,11 +13,19 @@ export const COOKIE_CATEGORIES = {
 // Get consent from localStorage
 export function getCookieConsent() {
   if (typeof window === 'undefined') return null;
-  
+
   try {
     const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
     if (consent) {
-      return JSON.parse(consent);
+      const parsed = JSON.parse(consent);
+      if (parsed.timestamp) {
+        const age = Date.now() - new Date(parsed.timestamp).getTime();
+        if (age > CONSENT_EXPIRY_MS) {
+          localStorage.removeItem(COOKIE_CONSENT_KEY);
+          return null;
+        }
+      }
+      return parsed;
     }
   } catch (error) {
     console.error('Error reading cookie consent:', error);

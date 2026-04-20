@@ -3,7 +3,7 @@ import { Roboto } from 'next/font/google'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CookieConsent from './components/CookieConsent'
-import ConditionalGTM from './components/ConditionalGTM'
+import ConditionalGA from './components/ConditionalGA'
 import Breadcrumb from './components/Breadcrumb'
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] })
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <CookieConsent />
-        <ConditionalGTM gtmId="GTM-WLHSGJ8C" />
+        <ConditionalGA gaId="G-SCQ0GFX7DY" />
       </body>
     </html>
   )
