@@ -64,6 +64,26 @@
   .wishlistIcon {
     flex-shrink: 0;
   }
+
+  .shareButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    padding: 8px 14px;
+    background: none;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .shareButton:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
   
   .price {
     font-size: 2rem;

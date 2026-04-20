@@ -5,6 +5,7 @@ import FeaturedProducts from './FeaturedProducts';
 import WishlistIcon from '../../components/WishlistIcon';
 import Breadcrumb from '../../components/Breadcrumb';
 import EnquiryForm from '../../components/EnquiryForm';
+import ShareButton from './ShareButton';
 import styles from './product.module.css';
 
 const BRAND_COLLECTIONS = {
@@ -84,6 +85,7 @@ export default async function ProductPage({ params }) {
           <div className={styles.titleRow}>
             <h1 className={styles.title}>{product.title}</h1>
             <WishlistIcon product={product} className={styles.wishlistIcon} />
+            <ShareButton handle={product.handle} title={product.title} />
           </div>
           
           <div className={styles.price}>
