@@ -102,33 +102,32 @@ export default function ContactForm() {
 
       const data = await response.json()
 
-      if (response.ok) {
-        setSubmitStatus({
-          type: 'success',
-          message: 'Thank you for your message! We\'ll get back to you as soon as possible.',
-        })
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: '',
-        })
-      } else {
-        setSubmitStatus({
-          type: 'error',
-          message: data.error || 'Something went wrong. Please try again later.',
-        })
-      }
-    } catch (error) {
-      setSubmitStatus({
-        type: 'error',
-        message: 'Failed to send message. Please try again later.',
+  if (response.ok) {
+    if (window.gtag) {
+      window.gtag('event', 'form_submit', {
+        event_category: 'Contact',
+        event_label: currentData.subject,
       })
-    } finally {
-      setIsSubmitting(false)
     }
+  setSubmitStatus({
+    type: 'success',
+    message: 'Thank you for contacting Luxury Times. A member of our team will be in touch with you shortly.',
+  })
+  setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+  } else {
+  setSubmitStatus({
+    type: 'error',
+    message: data.error || 'Something went wrong. Please try again later.',
+  })
+  }
+  } catch (error) {
+    setSubmitStatus({
+      type: 'error',
+      message: 'Failed to send message. Please try again later.',
+    })
+  } finally {
+    setIsSubmitting(false)
+  }
   }
 
   return (
