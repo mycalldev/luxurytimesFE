@@ -9,7 +9,7 @@ export async function generateMetadata() {
 }
 
 export default async function ProductsPage({ searchParams }) {
-  const products = await getAllProducts(50);
+  const products = await getAllProducts(100);
   const collection = searchParams.collection;
 
   return <ProductsClient products={products} collection={collection} />;
