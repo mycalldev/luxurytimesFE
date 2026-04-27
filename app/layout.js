@@ -1,5 +1,6 @@
 import './globals.css'
 import { Roboto } from 'next/font/google'
+import Script from 'next/script'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CookieConsent from './components/CookieConsent'
@@ -27,6 +28,11 @@ export default function RootLayout({ children }) {
         <Footer />
         <CookieConsent />
         <ConditionalGA gaId="G-SCQ0GFX7DY" />
+        <Script
+          src="https://widget.superchat.de/snippet.js?applicationKey=WCenpRbmV689dw5Zr2XqQZ4AYj"
+          strategy="afterInteractive"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </body>
     </html>
   )
