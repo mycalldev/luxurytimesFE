@@ -138,10 +138,18 @@ export default async function ProductPage({ params }) {
 
           <div className={styles.whatsIncluded}>
             <ul className={styles.includesList}>
-              <li className={styles.includesItem}>
-                <span className={styles.checkmark}>✓</span>
-                <span>Full Set & Swing Tags</span>
-              </li>
+              {product.greenSwingTag?.value === 'true' && (
+                <li className={styles.includesItem}>
+                  <span className={styles.checkmark}>✓</span>
+                  <span>Green Swing Tag</span>
+                </li>
+              )}
+              {product.whiteSwingTag?.value === 'true' && (
+                <li className={styles.includesItem}>
+                  <span className={styles.checkmark}>✓</span>
+                  <span>White Swing Tag</span>
+                </li>
+              )}
               <li className={styles.includesItem}>
                 <span className={styles.checkmark}>✓</span>
                 <span>Original Box & Papers</span>

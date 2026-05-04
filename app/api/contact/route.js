@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server'
-import { Resend } from 'resend'
 
 export async function POST(request) {
   try {
@@ -116,58 +115,101 @@ Submitted: ${new Date().toISOString()}`
       // or send to an alternative service
     }
 
-    // Send email notification via Resend
+    // Track Klaviyo event — triggers internal notification Flow in Klaviyo dashboard
     try {
-      const resend = new Resend(process.env.RESEND_API_KEY)
-
-      await resend.emails.send({
-        from: 'Luxury Times Website <noreply@luxurytimesltd.co.uk>',
-        to: 'info@luxurytimesltd.co.uk',
-        replyTo: email,
-        subject: `New Enquiry: ${subject}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e0e0e0;">
-            <h2 style="color: #1a1a1a; margin-bottom: 24px; border-bottom: 2px solid #1a1a1a; padding-bottom: 12px;">
-              New Contact Form Submission
-            </h2>
-
-            <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
-              <tr>
-                <td style="padding: 10px 0; color: #666; font-size: 14px; width: 120px; vertical-align: top;">Name</td>
-                <td style="padding: 10px 0; color: #1a1a1a; font-weight: 600; font-size: 14px;">${name}</td>
-              </tr>
-              <tr style="border-top: 1px solid #f0f0f0;">
-                <td style="padding: 10px 0; color: #666; font-size: 14px; vertical-align: top;">Email</td>
-                <td style="padding: 10px 0; color: #1a1a1a; font-weight: 600; font-size: 14px;">
-                  <a href="mailto:${email}" style="color: #1a1a1a;">${email}</a>
-                </td>
-              </tr>
-              <tr style="border-top: 1px solid #f0f0f0;">
-                <td style="padding: 10px 0; color: #666; font-size: 14px; vertical-align: top;">Phone</td>
-                <td style="padding: 10px 0; color: #1a1a1a; font-weight: 600; font-size: 14px;">
-                  <a href="tel:${phone}" style="color: #1a1a1a;">${phone}</a>
-                </td>
-              </tr>
-              <tr style="border-top: 1px solid #f0f0f0;">
-                <td style="padding: 10px 0; color: #666; font-size: 14px; vertical-align: top;">Subject</td>
-                <td style="padding: 10px 0; color: #1a1a1a; font-weight: 600; font-size: 14px;">${subject}</td>
-              </tr>
-              <tr style="border-top: 1px solid #f0f0f0;">
-                <td style="padding: 10px 0; color: #666; font-size: 14px; vertical-align: top;">Message</td>
-                <td style="padding: 10px 0; color: #1a1a1a; font-size: 14px; line-height: 1.6;">${message.replace(/\n/g, '<br/>')}</td>
-              </tr>
-            </table>
-
-            <p style="color: #999; font-size: 12px; margin: 0; border-top: 1px solid #f0f0f0; padding-top: 16px;">
-              Submitted: ${new Date().toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' })}
-              &nbsp;·&nbsp; Reply directly to this email to respond to ${name}.
-            </p>
-          </div>
-        `,
+      const klaviyoEventRes = await fetch('https://a.klaviyo.com/api/events/', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Klaviyo-API-Key ${process.env.KLAVIYO_PRIVATE_KEY}`,
+          'Content-Type': 'application/json',
+          'revision': '2024-10-15',
+        },
+        body: JSON.stringify({
+          data: {
+            type: 'event',
+            attributes: {
+              metric: {
+                data: {
+                  type: 'metric',
+                  attributes: { name: 'Form Submitted' },
+                },
+              },
+              profile: {
+                data: {
+                  type: 'profile',
+                  attributes: {
+                    email,
+                    first_name: firstName,
+                    last_name: lastName,
+                    phone_number: phone,
+                  },
+                },
+              },
+              properties: {
+                'Form Type': 'Contact Form',
+                Name: name,
+                Email: email,
+                Phone: phone,
+                Subject: subject,
+                Message: message,
+                'Submitted At': new Date().toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' }),
+              },
+            },
+          },
+        }),
       })
-    } catch (emailError) {
-      // Email failure is non-fatal — Shopify submission already succeeded
-      console.error('Resend email error:', emailError)
+      if (!klaviyoEventRes.ok) {
+        const errBody = await klaviyoEventRes.text()
+        console.error('Klaviyo event failed:', klaviyoEventRes.status, errBody)
+      }
+    } catch (klaviyoEventError) {
+      console.error('Klaviyo event error:', klaviyoEventError)
+    }
+
+    // Subscribe to Klaviyo list
+    try {
+      await fetch('https://a.klaviyo.com/api/profile-subscription-bulk-create-jobs/', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Klaviyo-API-Key ${process.env.KLAVIYO_PRIVATE_KEY}`,
+          'Content-Type': 'application/json',
+          'revision': '2024-10-15',
+        },
+        body: JSON.stringify({
+          data: {
+            type: 'profile-subscription-bulk-create-job',
+            attributes: {
+              profiles: {
+                data: [
+                  {
+                    type: 'profile',
+                    attributes: {
+                      email,
+                      first_name: firstName,
+                      last_name: lastName,
+                      phone_number: phone,
+                      properties: {
+                        Source: 'Contact Form',
+                        Subject: subject,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+            relationships: {
+              list: {
+                data: {
+                  type: 'list',
+                  id: process.env.KLAVIYO_LIST_ID,
+                },
+              },
+            },
+          },
+        }),
+      })
+    } catch (klaviyoError) {
+      console.error('Klaviyo error:', klaviyoError)
     }
 
     return NextResponse.json(

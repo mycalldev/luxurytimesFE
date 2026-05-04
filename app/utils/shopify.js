@@ -212,6 +212,14 @@ export async function getProduct(productHandle) {
           value
           type
         }
+        greenSwingTag: metafield(namespace: "custom", key: "green_swing_tag") {
+          value
+          type
+        }
+        whiteSwingTag: metafield(namespace: "custom", key: "white_swing_tag") {
+          value
+          type
+        }
         collections(first: 5) {
           edges {
             node {

@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server'
-import { Resend } from 'resend'
 
 export async function POST(request) {
   try {
@@ -21,71 +20,114 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Invalid email format' }, { status: 400 })
     }
 
-    if (!process.env.RESEND_API_KEY) {
-      console.error('Missing RESEND_API_KEY')
-      return NextResponse.json({ error: 'Server configuration error' }, { status: 500 })
+    const nameParts = name.trim().split(' ')
+    const firstName = nameParts[0] || ''
+    const lastName = nameParts.slice(1).join(' ') || ''
+
+    // Track Klaviyo event — triggers internal notification Flow in Klaviyo dashboard
+    try {
+      const klaviyoEventRes = await fetch('https://a.klaviyo.com/api/events/', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Klaviyo-API-Key ${process.env.KLAVIYO_PRIVATE_KEY}`,
+          'Content-Type': 'application/json',
+          'revision': '2024-10-15',
+        },
+        body: JSON.stringify({
+          data: {
+            type: 'event',
+            attributes: {
+              metric: {
+                data: {
+                  type: 'metric',
+                  attributes: { name: 'Form Submitted' },
+                },
+              },
+              profile: {
+                data: {
+                  type: 'profile',
+                  attributes: {
+                    email,
+                    first_name: firstName,
+                    last_name: lastName,
+                    phone_number: phone,
+                  },
+                },
+              },
+              properties: {
+                'Form Type': 'Product Enquiry',
+                Name: name,
+                Email: email,
+                Phone: phone,
+                'Contact Preference': contactPreference === 'phone' ? 'Phone' : 'Email',
+                Product: productTitle,
+                Price: productPrice,
+                Message: message || '',
+                'Submitted At': new Date().toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' }),
+              },
+            },
+          },
+        }),
+      })
+      if (!klaviyoEventRes.ok) {
+        const errBody = await klaviyoEventRes.text()
+        console.error('Klaviyo event failed:', klaviyoEventRes.status, errBody)
+      }
+    } catch (klaviyoEventError) {
+      console.error('Klaviyo event error:', klaviyoEventError)
     }
 
-    const preferenceLabel = contactPreference === 'phone' ? '📞 Phone' : '✉️ Email'
-    const submittedAt = new Date().toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' })
+    // Subscribe to Klaviyo list
+    try {
+      const nameParts = name.trim().split(' ')
+      const firstName = nameParts[0] || ''
+      const lastName = nameParts.slice(1).join(' ') || ''
 
-    const resend = new Resend(process.env.RESEND_API_KEY)
-
-    await resend.emails.send({
-      from: 'Luxury Times Website <noreply@luxurytimesltd.co.uk>',
-      to: 'info@luxurytimesltd.co.uk',
-      replyTo: email,
-      subject: `Watch Enquiry — ${productTitle}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e0e0e0;">
-          <h2 style="color: #1a1a1a; margin: 0 0 24px; border-bottom: 2px solid #1a1a1a; padding-bottom: 12px; font-size: 20px; font-weight: 600;">
-            Watch Enquiry
-          </h2>
-
-          <!-- Watch Details -->
-          <div style="background-color: #1a1a1a; padding: 20px; margin-bottom: 24px;">
-            <p style="margin: 0 0 4px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5);">Watch</p>
-            <p style="margin: 0 0 16px; font-size: 16px; font-weight: 600; color: #ffffff;">${productTitle}</p>
-            <p style="margin: 0 0 4px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5);">Price</p>
-            <p style="margin: 0; font-size: 16px; font-weight: 600; color: #ffffff;">${productPrice}</p>
-          </div>
-
-          <!-- Customer Details -->
-          <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
-            <tr>
-              <td style="padding: 10px 0; color: #888; font-size: 13px; width: 160px; border-bottom: 1px solid #f0f0f0; vertical-align: top;">Name</td>
-              <td style="padding: 10px 0; color: #1a1a1a; font-weight: 600; font-size: 13px; border-bottom: 1px solid #f0f0f0;">${name}</td>
-            </tr>
-            <tr>
-              <td style="padding: 10px 0; color: #888; font-size: 13px; border-bottom: 1px solid #f0f0f0; vertical-align: top;">Email</td>
-              <td style="padding: 10px 0; color: #1a1a1a; font-weight: 600; font-size: 13px; border-bottom: 1px solid #f0f0f0;">
-                <a href="mailto:${email}" style="color: #1a1a1a;">${email}</a>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 10px 0; color: #888; font-size: 13px; border-bottom: 1px solid #f0f0f0; vertical-align: top;">Phone</td>
-              <td style="padding: 10px 0; color: #1a1a1a; font-weight: 600; font-size: 13px; border-bottom: 1px solid #f0f0f0;">
-                <a href="tel:${phone}" style="color: #1a1a1a;">${phone}</a>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 10px 0; color: #888; font-size: 13px; border-bottom: 1px solid #f0f0f0; vertical-align: top;">Prefers contact by</td>
-              <td style="padding: 10px 0; color: #1a1a1a; font-weight: 600; font-size: 13px; border-bottom: 1px solid #f0f0f0;">${preferenceLabel}</td>
-            </tr>
-            ${message ? `
-            <tr>
-              <td style="padding: 10px 0; color: #888; font-size: 13px; vertical-align: top;">Message</td>
-              <td style="padding: 10px 0; color: #1a1a1a; font-size: 13px; line-height: 1.6;">${message.replace(/\n/g, '<br/>')}</td>
-            </tr>
-            ` : ''}
-          </table>
-
-          <p style="color: #bbb; font-size: 11px; margin: 0; border-top: 1px solid #f0f0f0; padding-top: 16px;">
-            Submitted: ${submittedAt} &nbsp;·&nbsp; Reply directly to this email to respond to ${name}.
-          </p>
-        </div>
-      `,
-    })
+      await fetch('https://a.klaviyo.com/api/profile-subscription-bulk-create-jobs/', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Klaviyo-API-Key ${process.env.KLAVIYO_PRIVATE_KEY}`,
+          'Content-Type': 'application/json',
+          'revision': '2024-10-15',
+        },
+        body: JSON.stringify({
+          data: {
+            type: 'profile-subscription-bulk-create-job',
+            attributes: {
+              profiles: {
+                data: [
+                  {
+                    type: 'profile',
+                    attributes: {
+                      email,
+                      first_name: firstName,
+                      last_name: lastName,
+                      phone_number: phone,
+                      properties: {
+                        Source: 'Product Enquiry',
+                        'Enquired Product': productTitle,
+                        'Enquired Price': productPrice,
+                        'Contact Preference': contactPreference,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+            relationships: {
+              list: {
+                data: {
+                  type: 'list',
+                  id: process.env.KLAVIYO_LIST_ID,
+                },
+              },
+            },
+          },
+        }),
+      })
+    } catch (klaviyoError) {
+      console.error('Klaviyo error:', klaviyoError)
+    }
 
     return NextResponse.json({ success: true }, { status: 200 })
   } catch (error) {
