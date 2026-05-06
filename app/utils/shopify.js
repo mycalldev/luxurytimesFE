@@ -370,7 +370,7 @@ export async function getArticle(blogHandle = "News", articleHandle) {
 }
 
 // Search products by query — matches against title, vendor, product type, and tags
-export async function searchProducts(searchQuery, first = 8) {
+export async function searchProducts(searchQuery, first = 60) {
   const sanitized = searchQuery.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
 
   const query = `
