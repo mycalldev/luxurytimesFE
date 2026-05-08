@@ -11,6 +11,8 @@ export default function ProductsClient({ products, collection: collectionFilter 
   const [selectedModels, setSelectedModels] = useState([])
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const dropdownRef = useRef(null)
+  const productsGridRef = useRef(null)
+  const isInitialMount = useRef(true)
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -23,12 +25,17 @@ export default function ProductsClient({ products, collection: collectionFilter 
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  // Reset model selection when the brand collection changes — selected models
-  // from a previous collection won't exist in the new one and would otherwise
-  // leave the dropdown trigger out of sync with the (empty) ticked options.
+  // When the brand collection changes via user navigation, reset the model
+  // dropdown and scroll to the products grid. Skipped on initial mount so a
+  // user landing directly on /products?collection=rolex isn't auto-scrolled.
   useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false
+      return
+    }
     setSelectedModels([])
     setDropdownOpen(false)
+    productsGridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }, [collectionFilter])
 
   const BRAND_PRIORITY = {
@@ -36,6 +43,13 @@ export default function ProductsClient({ products, collection: collectionFilter 
     'patek-philippe': 2,
     'audemars-piguet': 3,
     'richard-mille': 4,
+  }
+
+  const BRAND_NAMES = {
+    'rolex': 'Rolex',
+    'patek-philippe': 'Patek Philippe',
+    'audemars-piguet': 'Audemars Piguet',
+    'richard-mille': 'Richard Mille',
   }
 
   const getBrandPriority = (product) => {
@@ -249,18 +263,20 @@ export default function ProductsClient({ products, collection: collectionFilter 
         </div>
       )}
 
-      {/* Results count */}
-      <div className={styles.resultsInfo}>
-        Showing {filteredProducts.length} of {filteredByCollection.length} watches
-        {selectedModels.length > 0 && (
-          <span className={styles.activeFilters}>
-            {' '}• Filtered by: {selectedModels.join(', ')}
-          </span>
-        )}
-      </div>
+      {/* Results count — hidden when the selected brand has no stock at all */}
+      {!(collectionFilter && filteredByCollection.length === 0) && (
+        <div className={styles.resultsInfo}>
+          Showing {filteredProducts.length} of {filteredByCollection.length} watches
+          {selectedModels.length > 0 && (
+            <span className={styles.activeFilters}>
+              {' '}• Filtered by: {selectedModels.join(', ')}
+            </span>
+          )}
+        </div>
+      )}
 
       {/* Products Grid */}
-      <div className={styles.productsGrid}>
+      <div ref={productsGridRef} className={styles.productsGrid}>
         {filteredProducts.map(({ node: product }) => {
           const firstImage = product.images.edges[0]?.node
           const price = product.priceRange.minVariantPrice
@@ -304,10 +320,19 @@ export default function ProductsClient({ products, collection: collectionFilter 
         })}
       </div>
       
-      {filteredProducts.length === 0 && (
+      {collectionFilter && filteredByCollection.length === 0 ? (
+        <div className={styles.comingSoon}>
+          <p className={styles.comingSoonLabel}>Coming Soon</p>
+          <h2 className={styles.comingSoonBrand}>{BRAND_NAMES[collectionFilter] || collectionFilter}</h2>
+          <p className={styles.comingSoonText}>
+            Our {BRAND_NAMES[collectionFilter] || collectionFilter} collection is currently being curated.
+            Please check back soon, or explore our other brands above.
+          </p>
+        </div>
+      ) : filteredProducts.length === 0 && (
         <p className={styles.noProducts}>
-          {selectedModels.length > 0 
-            ? 'No products match the selected filters.' 
+          {selectedModels.length > 0
+            ? 'No products match the selected filters.'
             : 'No products available.'}
         </p>
       )}
