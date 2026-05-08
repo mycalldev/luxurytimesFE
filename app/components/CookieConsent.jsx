@@ -101,13 +101,6 @@ export default function CookieConsent() {
             </div>
             <div className={styles.buttons}>
               <Button
-                onClick={handleRejectAll}
-                className={styles.buttonReject}
-                aria-label="Reject all non-essential cookies"
-              >
-                Reject All
-              </Button>
-              <Button
                 onClick={handleCustomize}
                 className={styles.buttonCustomize}
                 aria-label="Customize cookie preferences"
@@ -188,6 +181,13 @@ export default function CookieConsent() {
                 className={styles.buttonCancel}
               >
                 Cancel
+              </Button>
+              <Button
+                onClick={handleRejectAll}
+                className={styles.buttonReject}
+                aria-label="Reject all non-essential cookies"
+              >
+                Reject All
               </Button>
               <Button
                 onClick={handleSavePreferences}

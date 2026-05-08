@@ -39,19 +39,24 @@ export default function CollectionClient({ products, collection }) {
 
   const MODEL_PREFIX = 'model:';
 
-  // Extract unique watch models from tags prefixed with "model:"
+  // Extract unique watch models from tags prefixed with "model:" — only
+  // surface models that have at least one matching product.
   const availableModels = useMemo(() => {
-    const modelTags = new Set();
-    
+    const modelCounts = new Map();
+
     sortedProducts.forEach(({ node: product }) => {
       product.tags?.forEach(tag => {
         if (tag.startsWith(MODEL_PREFIX)) {
-          modelTags.add(tag.slice(MODEL_PREFIX.length).trim());
+          const model = tag.slice(MODEL_PREFIX.length).trim();
+          modelCounts.set(model, (modelCounts.get(model) || 0) + 1);
         }
       });
     });
-    
-    return Array.from(modelTags).sort();
+
+    return Array.from(modelCounts.entries())
+      .filter(([, count]) => count > 0)
+      .map(([model]) => model)
+      .sort();
   }, [sortedProducts]);
 
   // Filter products based on selected models
@@ -165,7 +170,7 @@ export default function CollectionClient({ products, collection }) {
               >
                 {selectedModels.length === 0
                   ? 'Close'
-                  : `Show Results (${selectedModels.length})`}
+                  : `Show Results (${filteredProducts.length})`}
               </button>
             </div>
           )}

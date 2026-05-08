@@ -99,6 +99,12 @@ export default function EnquiryForm({ productTitle, productPrice }) {
       const data = await response.json()
 
       if (response.ok) {
+        if (window.gtag) {
+          window.gtag('event', 'form_submit', {
+            event_category: 'Product Enquiry',
+            event_label: productTitle,
+          })
+        }
         setSubmitStatus({
           type: 'success',
           message: "Thank you for your enquiry. We'll be in touch shortly.",
