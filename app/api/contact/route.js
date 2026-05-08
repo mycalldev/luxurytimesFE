@@ -121,7 +121,7 @@ Submitted: ${new Date().toISOString()}`
     })
 
     try {
-      const internalResult = await resend.emails.send({
+      await resend.emails.send({
         from: 'Luxury Times Website <noreply@luxurytimesltd.co.uk>',
         to: 'website@luxurytimesltd.co.uk',
         replyTo: email,
@@ -219,14 +219,13 @@ Submitted: ${new Date().toISOString()}`
 </body>
 </html>`,
       })
-      console.log('[contact] internal email →', JSON.stringify(internalResult))
     } catch (resendError) {
-      console.error('[contact] internal email threw:', resendError)
+      console.error('Resend error:', resendError)
     }
 
     // Send automated acknowledgement to the customer
     try {
-      const autoReplyResult = await resend.emails.send({
+      await resend.emails.send({
         from: 'Luxury Times Ltd <noreply@luxurytimesltd.co.uk>',
         to: email,
         replyTo: 'website@luxurytimesltd.co.uk',
@@ -321,7 +320,7 @@ Submitted: ${new Date().toISOString()}`
           <tr>
             <td style="background-color:#111111;padding:20px 40px;border-top:1px solid #2a2a2a;">
               <p style="margin:0 0 6px;font-size:11px;color:#555555;line-height:1.6;">
-                This is an automated confirmation. Please do not reply directly to this email.
+                This is an automated confirmation. You are welcome to reply to this email if you have any further information to share.
               </p>
               <p style="margin:0;font-size:11px;color:#555555;line-height:1.6;">
                 <a href="https://www.luxurytimesltd.co.uk" style="color:#555555;text-decoration:none;">luxurytimesltd.co.uk</a>
@@ -336,9 +335,8 @@ Submitted: ${new Date().toISOString()}`
 </body>
 </html>`,
       })
-      console.log('[contact] auto-reply →', JSON.stringify(autoReplyResult), 'to:', email)
     } catch (autoReplyError) {
-      console.error('[contact] auto-reply threw:', autoReplyError)
+      console.error('Resend auto-reply error:', autoReplyError)
     }
 
     return NextResponse.json(
