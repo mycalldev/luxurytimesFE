@@ -4,6 +4,7 @@ import { useState, useMemo, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import WishlistIcon from '../../components/WishlistIcon';
+import { isPOA } from '../../utils/shopify';
 import styles from './rolex/collection.module.css';
 
 export default function CollectionClient({ products, collection }) {
@@ -216,11 +217,13 @@ export default function CollectionClient({ products, collection }) {
                   <h2 className={styles.productTitle}>{product.title}</h2>
                   
                   <div className={styles.price}>
-                    {new Intl.NumberFormat('en-GB', {
-                      style: 'currency',
-                      currency: price.currencyCode,
-                      minimumFractionDigits: 0
-                    }).format(price.amount)}
+                    {isPOA(product)
+                      ? 'POA'
+                      : new Intl.NumberFormat('en-GB', {
+                          style: 'currency',
+                          currency: price.currencyCode,
+                          minimumFractionDigits: 0,
+                        }).format(price.amount)}
                   </div>
                   
                   <div className={styles.viewBtn}>View Details</div>

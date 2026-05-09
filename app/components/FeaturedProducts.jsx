@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper'
 import WishlistIcon from './WishlistIcon'
 import Button from './Button'
+import { isPOA } from '../utils/shopify'
 import styles from './FeaturedProducts.module.css'
 
 import 'swiper/css'
@@ -127,11 +128,13 @@ export default function FeaturedProducts({ products }) {
                       <span className={styles.vendor}>{product.vendor}</span>
                       <h3 className={styles.productTitle}>{product.title}</h3>
                       <span className={styles.price}>
-                        {new Intl.NumberFormat('en-GB', {
-                          style: 'currency',
-                          currency: price.currencyCode,
-                          minimumFractionDigits: 0,
-                        }).format(price.amount)}
+                        {isPOA(product)
+                          ? 'POA'
+                          : new Intl.NumberFormat('en-GB', {
+                              style: 'currency',
+                              currency: price.currencyCode,
+                              minimumFractionDigits: 0,
+                            }).format(price.amount)}
                       </span>
                     </div>
                   </Link>

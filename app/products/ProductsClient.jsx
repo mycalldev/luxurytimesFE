@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Button from '../components/Button'
 import WishlistIcon from '../components/WishlistIcon'
+import { isPOA } from '../utils/shopify'
 import styles from './products.module.css'
 
 export default function ProductsClient({ products, collection: collectionFilter }) {
@@ -305,11 +306,13 @@ export default function ProductsClient({ products, collection: collectionFilter 
                   <h2 className={styles.productTitle}>{product.title}</h2>
                   
                   <div className={styles.price}>
-                    {new Intl.NumberFormat('en-GB', {
-                      style: 'currency',
-                      currency: price.currencyCode,
-                      minimumFractionDigits: 0
-                    }).format(price.amount)}
+                    {isPOA(product)
+                      ? 'POA'
+                      : new Intl.NumberFormat('en-GB', {
+                          style: 'currency',
+                          currency: price.currencyCode,
+                          minimumFractionDigits: 0,
+                        }).format(price.amount)}
                   </div>
                   
                   <div className={styles.viewBtn}>View Details</div>

@@ -38,6 +38,7 @@ export function addToWishlist(product) {
       vendor: product.vendor,
       price: product.priceRange?.minVariantPrice?.amount || null,
       currencyCode: product.priceRange?.minVariantPrice?.currencyCode || 'GBP',
+      poa: product.poa?.value === 'true',
       image: product.images?.edges?.[0]?.node?.url || null,
       imageAlt: product.images?.edges?.[0]?.node?.altText || product.title,
       addedAt: new Date().toISOString(),

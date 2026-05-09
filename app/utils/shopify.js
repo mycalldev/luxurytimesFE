@@ -1,6 +1,12 @@
 const domain = process.env.SHOPIFY_STORE_DOMAIN;
 const storefrontAccessToken = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
+// Whether a product has the custom.poa boolean metafield set to true.
+// Shopify returns boolean metafields as the string "true" / "false".
+export function isPOA(product) {
+  return product?.poa?.value === 'true';
+}
+
 async function ShopifyData(query) {
   const URL = `https://${domain}/api/2024-10/graphql.json`;
 
@@ -85,6 +91,9 @@ export async function getProductsByCollection(collectionHandle, first = 20) {
               sortOrder: metafield(namespace: "custom", key: "sort_order") {
                 value
               }
+              poa: metafield(namespace: "custom", key: "poa") {
+                value
+              }
             }
           }
         }
@@ -140,6 +149,9 @@ export async function getAllProducts(first = 50) {
             vendor
             productType
             sortOrder: metafield(namespace: "custom", key: "sort_order") {
+              value
+            }
+            poa: metafield(namespace: "custom", key: "poa") {
               value
             }
           }
@@ -220,6 +232,9 @@ export async function getProduct(productHandle) {
           value
           type
         }
+        poa: metafield(namespace: "custom", key: "poa") {
+          value
+        }
         collections(first: 5) {
           edges {
             node {
@@ -287,6 +302,9 @@ export async function getFeaturedProducts(first = 10) {
             tags
             vendor
             productType
+            poa: metafield(namespace: "custom", key: "poa") {
+              value
+            }
           }
         }
       }
@@ -397,6 +415,9 @@ export async function searchProducts(searchQuery, first = 60) {
               }
             }
             tags
+            poa: metafield(namespace: "custom", key: "poa") {
+              value
+            }
           }
         }
       }

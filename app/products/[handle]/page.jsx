@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getProduct } from '../../utils/shopify';
+import { getProduct, isPOA } from '../../utils/shopify';
 import ImageGallery from './ImageGallery';
 import FeaturedProducts from './FeaturedProducts';
 import WishlistIcon from '../../components/WishlistIcon';
@@ -52,12 +52,15 @@ export default async function ProductPage({ params }) {
 
   const price = product.priceRange.minVariantPrice;
   const images = product.images.edges;
+  const productIsPOA = isPOA(product);
 
-  const formattedPrice = new Intl.NumberFormat('en-GB', {
-    style: 'currency',
-    currency: price.currencyCode,
-    minimumFractionDigits: 0,
-  }).format(price.amount);
+  const formattedPrice = productIsPOA
+    ? 'POA'
+    : new Intl.NumberFormat('en-GB', {
+        style: 'currency',
+        currency: price.currencyCode,
+        minimumFractionDigits: 0,
+      }).format(price.amount);
 
   // Determine which brand collection this product belongs to
   const brandCollection = product.collections.edges
@@ -89,11 +92,7 @@ export default async function ProductPage({ params }) {
           </div>
           
           <div className={styles.price}>
-            {new Intl.NumberFormat('en-GB', {
-              style: 'currency',
-              currency: price.currencyCode,
-              minimumFractionDigits: 0
-            }).format(price.amount)}
+            {formattedPrice}
           </div>
 
           {(product.year?.value || product.condition?.value) && (

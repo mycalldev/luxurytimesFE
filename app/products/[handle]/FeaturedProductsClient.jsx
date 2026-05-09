@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import WishlistIcon from '../../components/WishlistIcon'
+import { isPOA } from '../../utils/shopify'
 import styles from './featuredProducts.module.css'
 
 export default function FeaturedProductsClient({ products, collectionTitle, collectionHandle }) {
@@ -56,11 +57,13 @@ export default function FeaturedProductsClient({ products, collectionTitle, coll
                 <div className={styles.vendor}>{product.vendor}</div>
                 <h3 className={styles.productTitle}>{product.title}</h3>
                 <div className={styles.price}>
-                  {new Intl.NumberFormat('en-GB', {
-                    style: 'currency',
-                    currency: price.currencyCode,
-                    minimumFractionDigits: 0
-                  }).format(price.amount)}
+                  {isPOA(product)
+                    ? 'POA'
+                    : new Intl.NumberFormat('en-GB', {
+                        style: 'currency',
+                        currency: price.currencyCode,
+                        minimumFractionDigits: 0,
+                      }).format(price.amount)}
                 </div>
               </div>
             </Link>

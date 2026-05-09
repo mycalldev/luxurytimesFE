@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { isPOA } from '../utils/shopify'
 import styles from './SearchBar.module.css'
 
 export default function SearchBar() {
@@ -173,11 +174,13 @@ export default function SearchBar() {
                               <span className={styles.resultVendor}>{product.vendor}</span>
                               <span className={styles.resultTitle}>{product.title}</span>
                               <span className={styles.resultPrice}>
-                                {new Intl.NumberFormat('en-GB', {
-                                  style: 'currency',
-                                  currency: price.currencyCode,
-                                  minimumFractionDigits: 0,
-                                }).format(price.amount)}
+                                {isPOA(product)
+                                  ? 'POA'
+                                  : new Intl.NumberFormat('en-GB', {
+                                      style: 'currency',
+                                      currency: price.currencyCode,
+                                      minimumFractionDigits: 0,
+                                    }).format(price.amount)}
                               </span>
                             </div>
 

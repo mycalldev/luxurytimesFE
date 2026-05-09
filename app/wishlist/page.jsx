@@ -142,14 +142,18 @@ export default function WishlistPage() {
                     <div className={styles.vendor}>{item.vendor}</div>
                     <h2 className={styles.productTitle}>{item.title}</h2>
                     
-                    {item.price && (
-                      <div className={styles.price}>
-                        {new Intl.NumberFormat('en-GB', {
-                          style: 'currency',
-                          currency: item.currencyCode,
-                          minimumFractionDigits: 0
-                        }).format(item.price)}
-                      </div>
+                    {item.poa ? (
+                      <div className={styles.price}>POA</div>
+                    ) : (
+                      item.price && (
+                        <div className={styles.price}>
+                          {new Intl.NumberFormat('en-GB', {
+                            style: 'currency',
+                            currency: item.currencyCode,
+                            minimumFractionDigits: 0
+                          }).format(item.price)}
+                        </div>
+                      )
                     )}
                     
                     <div className={styles.cardActions}>
