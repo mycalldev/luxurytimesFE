@@ -1,11 +1,11 @@
 import './globals.css'
 import { Roboto } from 'next/font/google'
-import Script from 'next/script'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CookieConsent from './components/CookieConsent'
 import ConditionalGA from './components/ConditionalGA'
 import Breadcrumb from './components/Breadcrumb'
+import LiveChat from './components/LiveChat'
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] })
 
@@ -28,11 +28,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <CookieConsent />
         <ConditionalGA gaId="G-SCQ0GFX7DY" />
-        <Script
-          src="https://widget.superchat.de/snippet.js?applicationKey=WCenpRbmV689dw5Zr2XqQZ4AYj"
-          strategy="afterInteractive"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
+        <LiveChat />
       </body>
     </html>
   )
