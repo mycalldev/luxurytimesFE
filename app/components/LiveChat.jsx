@@ -7,10 +7,22 @@ import styles from './LiveChat.module.css'
 
 const SOCKET_URL = 'wss://chat.luxurytimesltd.co.uk'
 const SESSION_STORAGE_KEY = 'lt_chat_session_id'
+const MESSAGES_STORAGE_KEY = 'lt_chat_messages'
+const MAX_PERSISTED_MESSAGES = 100
 
 export default function LiveChat() {
   const [isOpen, setIsOpen] = useState(false)
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState(() => {
+    if (typeof window === 'undefined') return []
+    try {
+      const stored = window.localStorage.getItem(MESSAGES_STORAGE_KEY)
+      if (stored) {
+        const parsed = JSON.parse(stored)
+        if (Array.isArray(parsed)) return parsed
+      }
+    } catch {}
+    return []
+  })
   const [input, setInput] = useState('')
   const [status, setStatus] = useState('connecting')
   const [showTeaser, setShowTeaser] = useState(false)
@@ -18,7 +30,7 @@ export default function LiveChat() {
   const sessionIdRef = useRef(null)
   const messagesEndRef = useRef(null)
   const inputRef = useRef(null)
-  const welcomeShownRef = useRef(false)
+  const welcomeShownRef = useRef(messages.length > 0)
   const teaserDismissedRef = useRef(false)
 
   useEffect(() => {
@@ -96,6 +108,19 @@ export default function LiveChat() {
       ])
     }
   }, [isOpen])
+
+  useEffect(() => {
+    try {
+      if (messages.length === 0) {
+        localStorage.removeItem(MESSAGES_STORAGE_KEY)
+      } else {
+        localStorage.setItem(
+          MESSAGES_STORAGE_KEY,
+          JSON.stringify(messages.slice(-MAX_PERSISTED_MESSAGES))
+        )
+      }
+    } catch {}
+  }, [messages])
 
   const toggle = () => {
     if (showTeaser) {
