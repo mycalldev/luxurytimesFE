@@ -13,11 +13,13 @@ export default function LiveChat() {
   const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
   const [status, setStatus] = useState('connecting')
+  const [showTeaser, setShowTeaser] = useState(false)
   const socketRef = useRef(null)
   const sessionIdRef = useRef(null)
   const messagesEndRef = useRef(null)
   const inputRef = useRef(null)
   const welcomeShownRef = useRef(false)
+  const teaserDismissedRef = useRef(false)
 
   useEffect(() => {
     let sessionId = localStorage.getItem(SESSION_STORAGE_KEY)
@@ -76,6 +78,12 @@ export default function LiveChat() {
   }, [isOpen])
 
   useEffect(() => {
+    if (teaserDismissedRef.current) return
+    const t = setTimeout(() => setShowTeaser(true), 1500)
+    return () => clearTimeout(t)
+  }, [])
+
+  useEffect(() => {
     if (isOpen && !welcomeShownRef.current) {
       welcomeShownRef.current = true
       setMessages((prev) => [
@@ -89,7 +97,25 @@ export default function LiveChat() {
     }
   }, [isOpen])
 
-  const toggle = () => setIsOpen((v) => !v)
+  const toggle = () => {
+    if (showTeaser) {
+      teaserDismissedRef.current = true
+      setShowTeaser(false)
+    }
+    setIsOpen((v) => !v)
+  }
+
+  const dismissTeaser = (e) => {
+    e.stopPropagation()
+    teaserDismissedRef.current = true
+    setShowTeaser(false)
+  }
+
+  const openFromTeaser = () => {
+    teaserDismissedRef.current = true
+    setShowTeaser(false)
+    setIsOpen(true)
+  }
 
   const sendMessage = (e) => {
     e.preventDefault()
@@ -118,6 +144,35 @@ export default function LiveChat() {
 
   return (
     <>
+      {showTeaser && !isOpen && (
+        <div
+          className={styles.teaser}
+          role="button"
+          tabIndex={0}
+          onClick={openFromTeaser}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault()
+              openFromTeaser()
+            }
+          }}
+        >
+          <span className={styles.teaserText}>
+            Hi there! Need help finding the perfect timepiece? Chat with us.
+          </span>
+          <button
+            type="button"
+            className={styles.teaserClose}
+            onClick={dismissTeaser}
+            aria-label="Dismiss"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
+      )}
+
       <button
         type="button"
         className={`${styles.bubble} ${isOpen ? styles.bubbleOpen : ''}`}
@@ -133,8 +188,8 @@ export default function LiveChat() {
           <Image
             src="/logo_it.png"
             alt=""
-            width={60}
-            height={60}
+            width={72}
+            height={72}
             className={styles.bubbleLogo}
             priority
           />

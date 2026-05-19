@@ -1,9 +1,84 @@
+.teaser {
+  position: fixed;
+  bottom: 56px;
+  right: 128px;
+  max-width: 260px;
+  padding: 12px 36px 12px 14px;
+  background: #fff;
+  color: #111;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  font-size: 15px;
+  line-height: 1.45;
+  cursor: pointer;
+  z-index: 9998;
+  animation: ltTeaserIn 0.35s ease-out;
+}
+
+.teaser::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  bottom: 16px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  transform: rotate(45deg);
+  box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.teaser:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.teaser:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 2px;
+}
+
+.teaserText {
+  display: block;
+  font-weight: 500;
+}
+
+.teaserClose {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.teaserClose:hover {
+  color: #111;
+  background: #f0f0f0;
+}
+
+@keyframes ltTeaserIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .bubble {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 60px;
-  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   background: transparent;
   color: #fff;
@@ -42,11 +117,11 @@
 
 .window {
   position: fixed;
-  bottom: 100px;
-  right: 24px;
-  width: 360px;
-  height: 520px;
-  max-height: calc(100vh - 120px);
+  bottom: 128px;
+  right: 40px;
+  width: 420px;
+  height: 600px;
+  max-height: calc(100vh - 160px);
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
@@ -225,6 +300,20 @@
     right: 16px;
     width: 56px;
     height: 56px;
+  }
+
+  .teaser {
+    right: 16px;
+    bottom: 88px;
+    max-width: calc(100vw - 32px);
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .teaser::after {
+    right: 28px;
+    bottom: -5px;
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.04);
   }
 
   .window {
