@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation'
 import Navbar from './Navbar'
 
-const HIDDEN_PATHS = ['/landing/daytona']
+const HIDDEN_PATHS = ['/landing/daytona', '/daytona2']
 
 export default function ConditionalNavbar() {
   const pathname = usePathname()
