@@ -1,6 +1,6 @@
 import './globals.css'
 import { Roboto } from 'next/font/google'
-import Navbar from './components/Navbar'
+import ConditionalNavbar from './components/ConditionalNavbar'
 import Footer from './components/Footer'
 import CookieConsent from './components/CookieConsent'
 import ConditionalGA from './components/ConditionalGA'
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Navbar />
+        <ConditionalNavbar />
         <Breadcrumb />
         {children}
         <Footer />

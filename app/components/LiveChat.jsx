@@ -10,6 +10,14 @@ const SESSION_STORAGE_KEY = 'lt_chat_session_id'
 const MESSAGES_STORAGE_KEY = 'lt_chat_messages'
 const MAX_PERSISTED_MESSAGES = 100
 
+function trackEvent(name, params = {}) {
+  if (typeof window === 'undefined') return
+  if (typeof window.gtag !== 'function') return
+  try {
+    window.gtag('event', name, params)
+  } catch {}
+}
+
 export default function LiveChat() {
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState(() => {
@@ -35,7 +43,9 @@ export default function LiveChat() {
 
   useEffect(() => {
     let sessionId = localStorage.getItem(SESSION_STORAGE_KEY)
+    let isNewSession = false
     if (!sessionId) {
+      isNewSession = true
       sessionId =
         typeof crypto !== 'undefined' && crypto.randomUUID
           ? crypto.randomUUID()
@@ -43,6 +53,10 @@ export default function LiveChat() {
       localStorage.setItem(SESSION_STORAGE_KEY, sessionId)
     }
     sessionIdRef.current = sessionId
+
+    if (isNewSession) {
+      trackEvent('chat_session_started', { chat_session_id: sessionId })
+    }
 
     const socket = io(SOCKET_URL, {
       transports: ['websocket'],
@@ -123,11 +137,16 @@ export default function LiveChat() {
   }, [messages])
 
   const toggle = () => {
+    const next = !isOpen
     if (showTeaser) {
       teaserDismissedRef.current = true
       setShowTeaser(false)
     }
-    setIsOpen((v) => !v)
+    setIsOpen(next)
+    trackEvent(next ? 'chat_open' : 'chat_close', {
+      chat_session_id: sessionIdRef.current,
+      ...(next ? { source: 'bubble' } : {}),
+    })
   }
 
   const dismissTeaser = (e) => {
@@ -140,6 +159,10 @@ export default function LiveChat() {
     teaserDismissedRef.current = true
     setShowTeaser(false)
     setIsOpen(true)
+    trackEvent('chat_open', {
+      chat_session_id: sessionIdRef.current,
+      source: 'teaser',
+    })
   }
 
   const sendMessage = (e) => {
@@ -155,6 +178,7 @@ export default function LiveChat() {
     socketRef.current.emit('message', payload)
     setMessages((prev) => [...prev, { ...payload, timestamp: Date.now() }])
     setInput('')
+    trackEvent('chat_message_sent', { chat_session_id: sessionIdRef.current })
   }
 
   const formatTime = (ts) =>
