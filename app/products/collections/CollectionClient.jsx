@@ -1,18 +1,15 @@
 'use client';
 
 import { useState, useMemo, useRef, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import WishlistIcon from '../../components/WishlistIcon';
 import { isPOA } from '../../utils/shopify';
 import styles from './rolex/collection.module.css';
 
-export default function CollectionClient({ products, collection }) {
-  const searchParams = useSearchParams();
-  const initialModelParam = searchParams?.get('model');
+export default function CollectionClient({ products, collection, initialModel }) {
   const [selectedModels, setSelectedModels] = useState(
-    initialModelParam ? [initialModelParam] : []
+    initialModel ? [initialModel] : []
   );
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);

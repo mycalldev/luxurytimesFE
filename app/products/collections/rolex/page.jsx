@@ -8,8 +8,9 @@ export async function generateMetadata() {
   };
 }
 
-export default async function RolexCollectionPage() {
+export default async function RolexCollectionPage({ searchParams }) {
   const { collection, products } = await getProductsByCollection('rolex', 50);
+  const initialModel = searchParams?.model;
 
-  return <RolexClient products={products} collection={collection} />;
+  return <RolexClient products={products} collection={collection} initialModel={initialModel} />;
 }

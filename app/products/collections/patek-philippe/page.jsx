@@ -8,8 +8,9 @@ export async function generateMetadata() {
   };
 }
 
-export default async function PatekPhilippeCollectionPage() {
+export default async function PatekPhilippeCollectionPage({ searchParams }) {
   const { collection, products } = await getProductsByCollection('patek-philippe', 50);
+  const initialModel = searchParams?.model;
 
-  return <CollectionClient products={products} collection={collection} />;
+  return <CollectionClient products={products} collection={collection} initialModel={initialModel} />;
 }

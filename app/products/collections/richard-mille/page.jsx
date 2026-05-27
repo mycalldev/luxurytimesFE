@@ -10,8 +10,9 @@ export async function generateMetadata() {
   };
 }
 
-export default async function RichardMilleCollectionPage() {
+export default async function RichardMilleCollectionPage({ searchParams }) {
   const { collection, products } = await getProductsByCollection('richard-mille', 50);
+  const initialModel = searchParams?.model;
 
   if (!products || products.length === 0) {
     return (
@@ -30,5 +31,5 @@ export default async function RichardMilleCollectionPage() {
     );
   }
 
-  return <CollectionClient products={products} collection={collection} />;
+  return <CollectionClient products={products} collection={collection} initialModel={initialModel} />;
 }

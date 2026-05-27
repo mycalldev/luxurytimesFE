@@ -8,8 +8,9 @@ export async function generateMetadata() {
   };
 }
 
-export default async function AudemarsPiguetCollectionPage() {
+export default async function AudemarsPiguetCollectionPage({ searchParams }) {
   const { collection, products } = await getProductsByCollection('audemars-piguet', 50);
+  const initialModel = searchParams?.model;
 
-  return <CollectionClient products={products} collection={collection} />;
+  return <CollectionClient products={products} collection={collection} initialModel={initialModel} />;
 }
