@@ -8,7 +8,8 @@ export async function generateMetadata() {
   };
 }
 
-export default async function RolexCollectionPage({ searchParams }) {
+export default async function RolexCollectionPage(props) {
+  const searchParams = await props.searchParams;
   const { collection, products } = await getProductsByCollection('rolex', 50);
   const initialModel = searchParams?.model;
 

@@ -15,9 +15,10 @@ const BRAND_COLLECTIONS = {
   'richard-mille':   { label: 'Richard Mille Collection',   href: '/products/collections/richard-mille' },
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   const product = await getProduct(params.handle);
-  
+
   if (!product) {
     return {
       title: 'Product Not Found',
@@ -38,7 +39,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function ProductPage({ params }) {
+export default async function ProductPage(props) {
+  const params = await props.params;
   const product = await getProduct(params.handle);
 
   if (!product) {
@@ -75,111 +77,111 @@ export default async function ProductPage({ params }) {
 
   return (
     <>
-    <Breadcrumb items={breadcrumbItems} />
-    <main className={styles.container}>
+      <Breadcrumb items={breadcrumbItems} />
+      <main className={styles.container}>
 
-      <div className={styles.productLayout}>
-        <div className={styles.imageGallery}>
-          <ImageGallery images={images} productTitle={product.title} />
-        </div>
-
-        <div className={styles.productInfo}>
-          <div className={styles.vendor}>{product.vendor}</div>
-          <div className={styles.titleRow}>
-            <h1 className={styles.title}>{product.title}</h1>
-            <WishlistIcon product={product} className={styles.wishlistIcon} />
-            <ShareButton handle={product.handle} title={product.title} />
-          </div>
-          
-          <div className={styles.price}>
-            {formattedPrice}
+        <div className={styles.productLayout}>
+          <div className={styles.imageGallery}>
+            <ImageGallery images={images} productTitle={product.title} />
           </div>
 
-          {(product.year?.value || product.condition?.value) && (
-            <div className={styles.detailsCard}>
-              {product.year?.value && (
-                <div className={styles.detailItem}>
-                  <span className={styles.checkmark}>✓</span>
-                  <span className={styles.detailLabel}>Year</span>
-                  <span className={styles.detailValue}>{product.year.value}</span>
-                </div>
-              )}
-              {product.condition?.value && (
-                <div className={styles.detailItem}>
-                  <span className={styles.checkmark}>✓</span>
-                  <span className={styles.detailLabel}>Condition</span>
-                  <span className={styles.detailValue}>
-                    {product.condition.value.replace(/[\[\]"]/g, '')}
-                  </span>
-                </div>
-              )}
+          <div className={styles.productInfo}>
+            <div className={styles.vendor}>{product.vendor}</div>
+            <div className={styles.titleRow}>
+              <h1 className={styles.title}>{product.title}</h1>
+              <WishlistIcon product={product} className={styles.wishlistIcon} />
+              <ShareButton handle={product.handle} title={product.title} />
             </div>
-          )}
-
-          <div 
-            className={styles.description}
-            dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-          />
-
-          {product.variants.edges.length > 1 && (
-            <div className={styles.variants}>
-              <h3>Available Options:</h3>
-              {product.variants.edges.map(({ node: variant }) => (
-                <div key={variant.id} className={styles.variant}>
-                  <span>{variant.title}</span>
-                  <span className={variant.availableForSale ? styles.available : styles.unavailable}>
-                    {variant.availableForSale ? 'Available' : 'Sold Out'}
-                  </span>
-                </div>
-              ))}
+            
+            <div className={styles.price}>
+              {formattedPrice}
             </div>
-          )}
 
-          <div className={styles.whatsIncluded}>
-            <ul className={styles.includesList}>
-              {product.greenSwingTag?.value === 'true' && (
+            {(product.year?.value || product.condition?.value) && (
+              <div className={styles.detailsCard}>
+                {product.year?.value && (
+                  <div className={styles.detailItem}>
+                    <span className={styles.checkmark}>✓</span>
+                    <span className={styles.detailLabel}>Year</span>
+                    <span className={styles.detailValue}>{product.year.value}</span>
+                  </div>
+                )}
+                {product.condition?.value && (
+                  <div className={styles.detailItem}>
+                    <span className={styles.checkmark}>✓</span>
+                    <span className={styles.detailLabel}>Condition</span>
+                    <span className={styles.detailValue}>
+                      {product.condition.value.replace(/[\[\]"]/g, '')}
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
+
+            <div 
+              className={styles.description}
+              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+            />
+
+            {product.variants.edges.length > 1 && (
+              <div className={styles.variants}>
+                <h3>Available Options:</h3>
+                {product.variants.edges.map(({ node: variant }) => (
+                  <div key={variant.id} className={styles.variant}>
+                    <span>{variant.title}</span>
+                    <span className={variant.availableForSale ? styles.available : styles.unavailable}>
+                      {variant.availableForSale ? 'Available' : 'Sold Out'}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className={styles.whatsIncluded}>
+              <ul className={styles.includesList}>
+                {product.greenSwingTag?.value === 'true' && (
+                  <li className={styles.includesItem}>
+                    <span className={styles.checkmark}>✓</span>
+                    <span>Green Swing Tag</span>
+                  </li>
+                )}
+                {product.whiteSwingTag?.value === 'true' && (
+                  <li className={styles.includesItem}>
+                    <span className={styles.checkmark}>✓</span>
+                    <span>White Swing Tag</span>
+                  </li>
+                )}
                 <li className={styles.includesItem}>
                   <span className={styles.checkmark}>✓</span>
-                  <span>Green Swing Tag</span>
+                  <span>Original Box & Papers</span>
                 </li>
-              )}
-              {product.whiteSwingTag?.value === 'true' && (
                 <li className={styles.includesItem}>
                   <span className={styles.checkmark}>✓</span>
-                  <span>White Swing Tag</span>
+                  <span>Warranty Card</span>
                 </li>
-              )}
-              <li className={styles.includesItem}>
-                <span className={styles.checkmark}>✓</span>
-                <span>Original Box & Papers</span>
-              </li>
-              <li className={styles.includesItem}>
-                <span className={styles.checkmark}>✓</span>
-                <span>Warranty Card</span>
-              </li>
-              <li className={styles.includesItem}>
-                <span className={styles.checkmark}>✓</span>
-                <span>Manufacturer's Booklet & Manual</span>
-              </li>
-              <li className={styles.includesItem}>
-                <span className={styles.checkmark}>✓</span>
-                <span>12 Month Warranty</span>
-              </li>
-            </ul>
+                <li className={styles.includesItem}>
+                  <span className={styles.checkmark}>✓</span>
+                  <span>Manufacturer's Booklet & Manual</span>
+                </li>
+                <li className={styles.includesItem}>
+                  <span className={styles.checkmark}>✓</span>
+                  <span>12 Month Warranty</span>
+                </li>
+              </ul>
+            </div>
+
+            <EnquiryForm
+              productTitle={product.title}
+              productPrice={formattedPrice}
+            />
           </div>
-
-          <EnquiryForm
-            productTitle={product.title}
-            productPrice={formattedPrice}
-          />
         </div>
-      </div>
 
-      <FeaturedProducts 
-        currentProductHandle={product.handle}
-        collections={product.collections.edges}
-      />
-    </main>
+        <FeaturedProducts 
+          currentProductHandle={product.handle}
+          collections={product.collections.edges}
+        />
+      </main>
     </>
   );
 }

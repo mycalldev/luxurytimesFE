@@ -8,7 +8,8 @@ export async function generateMetadata() {
   };
 }
 
-export default async function ProductsPage({ searchParams }) {
+export default async function ProductsPage(props) {
+  const searchParams = await props.searchParams;
   const products = await getAllProducts(100);
   const collection = searchParams.collection;
 
