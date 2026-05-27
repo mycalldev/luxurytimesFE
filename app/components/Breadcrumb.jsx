@@ -77,9 +77,15 @@ export default function Breadcrumb({ items, showHome = true }) {
 
   // Auto-generate breadcrumbs from pathname
   const pathSegments = pathname.split('/').filter(Boolean)
-  
+
   // Don't show breadcrumb on home page
   if (pathname === '/' || pathSegments.length === 0) {
+    return null
+  }
+
+  // Standalone landing pages render their own header
+  const STANDALONE_LANDING_PATHS = ['/daytona-116520']
+  if (STANDALONE_LANDING_PATHS.includes(pathname)) {
     return null
   }
 

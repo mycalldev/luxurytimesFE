@@ -139,7 +139,7 @@ export default function EnquiryForm({ productTitle, productPrice }) {
   }
 
   return (
-    <div className={styles.enquirySection}>
+    <div id="enquiry" className={styles.enquirySection}>
       <h3 className={styles.sectionTitle}>Interested in this watch?</h3>
 
       {/* Watch summary */}
