@@ -10,7 +10,8 @@ export async function generateMetadata() {
   };
 }
 
-export default async function RichardMilleCollectionPage({ searchParams }) {
+export default async function RichardMilleCollectionPage(props) {
+  const searchParams = await props.searchParams;
   const { collection, products } = await getProductsByCollection('richard-mille', 50);
   const initialModel = searchParams?.model;
 

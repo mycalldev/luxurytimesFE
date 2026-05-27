@@ -8,7 +8,8 @@ export async function generateMetadata() {
   };
 }
 
-export default async function AudemarsPiguetCollectionPage({ searchParams }) {
+export default async function AudemarsPiguetCollectionPage(props) {
+  const searchParams = await props.searchParams;
   const { collection, products } = await getProductsByCollection('audemars-piguet', 50);
   const initialModel = searchParams?.model;
 

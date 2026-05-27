@@ -4,9 +4,10 @@ import { getArticle } from '../../utils/shopify';
 import styles from './article.module.css';
 
 // Generate metadata for SEO
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   const article = await getArticle('News', params.handle);
-  
+
   if (!article) {
     return {
       title: 'Article Not Found',
@@ -26,8 +27,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function ArticlePage({ params }) {
-  const article = await getArticle('News', params.handle); 
+export default async function ArticlePage(props) {
+  const params = await props.params;
+  const article = await getArticle('News', params.handle);
 
   if (!article) {
     return (
