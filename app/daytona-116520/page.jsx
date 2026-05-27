@@ -1,5 +1,6 @@
 import { Cormorant_Garamond } from 'next/font/google'
 import styles from './daytona116520.module.css'
+import CtaLink from './CtaLink'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -93,15 +94,17 @@ export default function Daytona3Page() {
           </h1>
           <p className={styles.heroTagline}>Every detail. Pure purpose.</p>
           <p className={styles.heroSub}>Rolex Daytona 116520 White Dial.</p>
-          <a
+          <CtaLink
             href={DAYTONA_PDP}
+            ctaLabel="view_watch"
+            ctaLocation="hero"
             className={styles.heroCta}
             rel="noopener noreferrer"
             target="_blank"
           >
             View watch
             <span className={styles.arrow} aria-hidden="true">→</span>
-          </a>
+          </CtaLink>
         </div>
       </section>
 
@@ -146,15 +149,17 @@ export default function Daytona3Page() {
           ))}
         </div>
         <div className={styles.featuresCta}>
-          <a
+          <CtaLink
             href={DAYTONA_PDP}
+            ctaLabel="view_watch"
+            ctaLocation="features"
             className={styles.textCta}
             rel="noopener noreferrer"
             target="_blank"
           >
             View watch
             <span className={styles.arrow} aria-hidden="true">→</span>
-          </a>
+          </CtaLink>
         </div>
       </section>
 
@@ -209,10 +214,15 @@ export default function Daytona3Page() {
             A modern classic. The final engraved steel bezel Daytona before the ceramic era.
             Timeless design. Enduring value.
           </p>
-          <a href={DAYTONA_COLLECTION} className={styles.textCta}>
+          <CtaLink
+            href={DAYTONA_COLLECTION}
+            ctaLabel="explore_collection"
+            ctaLocation="collection"
+            className={styles.textCta}
+          >
             Explore the collection
             <span className={styles.arrow} aria-hidden="true">→</span>
-          </a>
+          </CtaLink>
 
           <article className={styles.productCard}>
             <div className={styles.productFigure}>
@@ -251,13 +261,23 @@ export default function Daytona3Page() {
             watch, study the provenance, and experience the reference in person.
           </p>
           <div className={styles.pvButtons}>
-            <a href={`${DAYTONA_PDP}#enquiry`} className={`${styles.btn} ${styles.btnGold}`}>
+            <CtaLink
+              href={`${DAYTONA_PDP}#enquiry`}
+              ctaLabel="book_a_viewing"
+              ctaLocation="private_viewing"
+              className={`${styles.btn} ${styles.btnGold}`}
+            >
               Book a viewing
               <span className={styles.arrow} aria-hidden="true">→</span>
-            </a>
-            <a href="tel:+447999297359" className={`${styles.btn} ${styles.btnGhost}`}>
+            </CtaLink>
+            <CtaLink
+              href="tel:+447999297359"
+              ctaLabel="call_specialist"
+              ctaLocation="private_viewing"
+              className={`${styles.btn} ${styles.btnGhost}`}
+            >
               Call the specialist
-            </a>
+            </CtaLink>
           </div>
         </div>
       </section>
