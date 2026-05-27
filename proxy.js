@@ -20,7 +20,7 @@ const publicPaths = [
   '/admin/blogs'             // Allow access to blog management without authentication
 ];
 
-export async function middleware(request) {
+export async function proxy(request) {
   const { pathname } = request.nextUrl;
   
   // Check if the path is protected
