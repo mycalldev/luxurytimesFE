@@ -74,18 +74,10 @@ export default async function ArticlePage({ params }) {
           </div>
         </div>
 
-        <div 
+        <div
           className={styles.content}
           dangerouslySetInnerHTML={{ __html: article.contentHtml }}
         />
-
-        {article.tags && article.tags.length > 0 && (
-          <div className={styles.tags}>
-            {article.tags.map((tag, index) => (
-              <span key={index} className={styles.tag}>{tag}</span>
-            ))}
-          </div>
-        )}
       </article>
     </main>
   );

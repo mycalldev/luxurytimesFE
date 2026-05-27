@@ -338,7 +338,6 @@ export async function getAllArticles(blogHandle = "News") {
               author {
                 name
               }
-              tags
             }
           }
         }
@@ -373,7 +372,6 @@ export async function getArticle(blogHandle = "News", articleHandle) {
           author {
             name
           }
-          tags
           seo {
             title
             description
