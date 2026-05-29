@@ -13,7 +13,32 @@ const cormorant = Cormorant_Garamond({
 export const metadata = {
   title: 'Iconic Dial · Rolex Daytona 116520 · Luxury Times',
   description:
-    'The Rolex Daytona 116520 White Dial. Every detail. Pure purpose. Authenticated by our in-house specialists in Mayfair and Hatton Garden.',
+    'Explore the Rolex Daytona 116520 White Dial, the final pre-ceramic steel Daytona.',
+  alternates: {
+    canonical: '/daytona-116520',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_GB',
+    url: '/daytona-116520',
+    siteName: 'Luxury Times',
+    title: 'Iconic Dial · Rolex Daytona 116520 · Luxury Times',
+    description:
+      'Explore the Rolex Daytona 116520 White Dial, the final pre-ceramic steel Daytona.',
+    images: [
+      {
+        url: '/landing/daytona/featured-116520-white-dial.png',
+        alt: 'Rolex Daytona 116520 White Dial',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Iconic Dial · Rolex Daytona 116520 · Luxury Times',
+    description:
+      'Explore the Rolex Daytona 116520 White Dial, the final pre-ceramic steel Daytona.',
+    images: ['/landing/daytona/featured-116520-white-dial.png'],
+  },
 }
 
 const DAYTONA_PDP =
@@ -40,7 +65,7 @@ const features = [
   {
     imgMobile: '/landing/daytona/mobile%20watch_right_final.webp',
     imgDesktop: '/landing/daytona/full_watch_matched.webp',
-    alt: 'Rolex Daytona 116520 full watch view',
+    alt: 'Rolex Daytona 116520 with engraved steel bezel — the final pre-ceramic generation',
     title: 'ICONIC DIAL',
     body: 'The classic engraved steel bezel — the final generation before ceramic.',
   },
@@ -54,14 +79,14 @@ const features = [
   {
     imgMobile: '/landing/daytona/mobile%20BRACELET-2%202.webp',
     imgDesktop: '/landing/daytona/BRACELET%20Close%20up%20.webp',
-    alt: 'Close-up of the Rolex Oyster bracelet',
+    alt: 'Close-up of the Rolex Daytona 116520 Oyster bracelet',
     title: 'OYSTER BRACELET',
     body: 'Engineered for comfort and durability. Traditional Oyster clasp and Easylink extension.',
   },
   {
     imgMobile: '/landing/daytona/mobile%20crown%20.webp',
     imgDesktop: '/landing/daytona/Crow%20nClose%20up%20.webp',
-    alt: 'Close-up of the Rolex screw-down crown',
+    alt: 'Close-up of the Rolex Daytona 116520 screw-down crown',
     title: 'TIMELESS PRESENCE',
     body: 'A balance of strength and refinement. Engineered to last for generations.',
   },
@@ -186,7 +211,7 @@ export default function Daytona3Page() {
           <div className={styles.whyFigure}>
             <img
               src={IMG.whyCollectors}
-              alt="Lifestyle image of the Rolex Daytona on wrist"
+              alt="Rolex Daytona 116520 White Dial worn on the wrist"
             />
           </div>
           <div className={styles.whyCopy}>
@@ -228,7 +253,7 @@ export default function Daytona3Page() {
             <div className={styles.productFigure}>
               <img
                 src={IMG.product}
-                alt="Rolex Daytona 116520 White Dial product image"
+                alt="Rolex Daytona 116520 White Dial"
               />
             </div>
             <div className={styles.productBody}>

@@ -4,7 +4,7 @@ import ConditionalNavbar from './components/ConditionalNavbar'
 import Footer from './components/Footer'
 import CookieConsent from './components/CookieConsent'
 import ConditionalGA from './components/ConditionalGA'
-import Breadcrumb from './components/Breadcrumb'
+import ClientBreadcrumb from './components/ClientBreadcrumb'
 import LiveChat from './components/LiveChat'
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] })
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={roboto.className}>
         <ConditionalNavbar />
-        <Breadcrumb />
+        <ClientBreadcrumb />
         {children}
         <Footer />
         <CookieConsent />
