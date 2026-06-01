@@ -50,10 +50,10 @@ const ROLEX_COLLECTION = 'https://luxurytimesltd.co.uk/products/collections/role
 const DAYTONA_COLLECTION = '/products/collections/rolex?model=Daytona'
 
 const IMG = {
-  hero: '/landing/daytona/landing%20page-2%203.webp',
-  heroMobile: '/landing/daytona/hero_mobile.webp',
-  product: '/landing/daytona/featured-116520-white-dial.png',
-  whyCollectors: '/landing/daytona/watch-wrist.webp',
+  hero: '/landing/daytona/rolex-daytona-116520-desktop.webp',
+  heroMobile: '/landing/daytona/rolex-daytona-116520-mobile.webp',
+  product: '/landing/daytona/rolex-daytona-116520-white-dial.png',
+  whyCollectors: '/landing/daytona/rolex-daytona-116520-wrist.webp',
   accredGia: '/landing/daytona/accred-gia.png',
   accredGema: '/landing/daytona/accred-gema.png',
   accredLdb: '/landing/daytona/accred-ldb.jpg',
@@ -67,29 +67,29 @@ const trustItems = [
 
 const features = [
   {
-    imgMobile: '/landing/daytona/mobile%20watch_right_final.webp',
-    imgDesktop: '/landing/daytona/full_watch_matched.webp',
+    imgMobile: '/landing/daytona/rolex-daytona-116520-watch-right-mobile.webp',
+    imgDesktop: '/landing/daytona/rolex-daytona-116520-watch-desktop.webp',
     alt: 'Rolex Daytona 116520 with engraved steel bezel — the final pre-ceramic generation',
     title: 'ICONIC DIAL',
     body: 'The classic engraved steel bezel — the final generation before ceramic.',
   },
   {
-    imgMobile: '/landing/daytona/mobile%20watch_left_final.webp',
-    imgDesktop: '/landing/daytona/crown_side_matched.webp',
+    imgMobile: '/landing/daytona/rolex-daytona-116520-watch-left-mobile.webp',
+    imgDesktop: '/landing/daytona/rolex-daytona-116520-crown-side-desktop.webp',
     alt: 'Side profile of the Rolex Daytona 116520 white dial',
     title: 'WHITE DIAL',
     body: 'Screw-down pushers framed by the engraved steel bezel.',
   },
   {
-    imgMobile: '/landing/daytona/mobile%20BRACELET-2%202.webp',
-    imgDesktop: '/landing/daytona/BRACELET%20Close%20up%20.webp',
+    imgMobile: '/landing/daytona/rolex-daytona-116520-bracelet-mobile.webp',
+    imgDesktop: '/landing/daytona/rolex-daytona-116520-bracelet-desktop.webp',
     alt: 'Close-up of the Rolex Daytona 116520 Oyster bracelet',
     title: 'OYSTER BRACELET',
     body: 'Engineered for comfort and durability. Traditional Oyster clasp and Easylink extension.',
   },
   {
-    imgMobile: '/landing/daytona/mobile%20crown%20.webp',
-    imgDesktop: '/landing/daytona/Crow%20nClose%20up%20.webp',
+    imgMobile: '/landing/daytona/rolex-daytona-116520-crown-mobile.webp',
+    imgDesktop: '/landing/daytona/rolex-daytona-116520-crown.webp',
     alt: 'Close-up of the Rolex Daytona 116520 screw-down crown',
     title: 'TIMELESS PRESENCE',
     body: 'A balance of strength and refinement. Engineered to last for generations.',
