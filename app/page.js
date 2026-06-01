@@ -7,6 +7,7 @@ import BlogFeature from './components/BlogFeature'
 import ContactForm from './components/ContactForm'
 import HeroSlider from './components/HeroSlider'
 import FeaturedProducts from './components/FeaturedProducts'
+import GoogleReviews from './components/GoogleReviews'
 import { getFeaturedProducts } from './utils/shopify'
 
 // Define metadata for the page using Next.js Metadata API
@@ -186,6 +187,9 @@ export default async function Home() {
       </section>
 
       </section>
+
+      {/* GOOGLE REVIEWS SECTION */}
+      <GoogleReviews />
 
       <div className={styles.spaceDesktop}></div>
       {/* BLOG FEATURE SECTION */}

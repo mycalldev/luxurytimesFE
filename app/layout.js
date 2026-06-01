@@ -4,6 +4,7 @@ import ConditionalNavbar from './components/ConditionalNavbar'
 import Footer from './components/Footer'
 import CookieConsent from './components/CookieConsent'
 import ConditionalGA from './components/ConditionalGA'
+import ConditionalGTM from './components/ConditionalGTM'
 import ClientBreadcrumb from './components/ClientBreadcrumb'
 import LiveChat from './components/LiveChat'
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <CookieConsent />
         <ConditionalGA gaId="G-SCQ0GFX7DY" />
+        <ConditionalGTM gtmId="GTM-W6DL3CRZ" />
         <LiveChat />
       </body>
     </html>
