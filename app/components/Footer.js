@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
-        {/* Company Info Section */}
+        {/* Company Info */}
         <div className={styles.footerSection}>
           <h3 className={styles.footerHeading}>Luxury Times</h3>
           <p className={styles.footerDescription}>
@@ -16,20 +16,19 @@ export default function Footer() {
           </p>
           <div className={styles.socialContainer}>
             <Link href={'https://www.instagram.com/luxurytimeslondon/'} aria-label="Visit our Instagram">
-              <Image 
-                src={'/social.png'} 
-                width={40} 
-                height={40} 
-                quality={100} 
-                alt='Instagram icon' 
+              <Image
+                src={'/social.png'}
+                width={40}
+                height={40}
+                quality={100}
+                alt='Instagram icon'
                 className={styles.socialIcon}
               />
             </Link>
-            
           </div>
         </div>
 
-        {/* Quick Links Section */}
+        {/* Quick Links */}
         <div className={styles.footerSection}>
           <h4 className={styles.footerHeading}>Quick Links</h4>
           <nav className={styles.footerLinks}>
@@ -40,19 +39,42 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* Customer Service Section */}
+        {/* Customer Service */}
         <div className={styles.footerSection}>
           <h4 className={styles.footerHeading}>Customer Service</h4>
           <nav className={styles.footerLinks}>
             <Link href={'/FAQs'} className={styles.linkBTN}>FAQs</Link>
-            <Link href={'/terms-and-conditions'} className={styles.linkBTN}>Terms & Conditions</Link>
             <Link href={'/review'} className={styles.linkBTN}>Reviews</Link>
             <Link href={'/return'} className={styles.linkBTN}>Returns Policy</Link>
+            <Link href={'/terms-and-conditions'} className={styles.linkBTN}>Terms & Conditions</Link>
             <CookieSettingsButton className={styles.linkBTN} />
           </nav>
         </div>
 
-        {/* Contact Information Section */}
+        {/* Policies */}
+        <div className={styles.footerSection}>
+          <h4 className={styles.footerHeading}>Policies</h4>
+          <nav className={styles.footerLinks}>
+            <Link href={'/privacy-policy'} className={styles.linkBTN}>Privacy Policy</Link>
+            <Link href={'/warranty-policy'} className={styles.linkBTN}>Warranty Policy</Link>
+            <Link href={'/shipping-policy'} className={styles.linkBTN}>Shipping Policy</Link>
+            <Link href={'/deposit-policy'} className={styles.linkBTN}>Deposit Policy</Link>
+            <Link href={'/authenticity-guarantee'} className={styles.linkBTN}>Authenticity Guarantee</Link>
+            <Link href={'/high-value-online-purchasing'} className={styles.linkBTN}>High Value Online Purchasing</Link>
+          </nav>
+        </div>
+
+        {/* Compliance */}
+        <div className={styles.footerSection}>
+          <h4 className={styles.footerHeading}>Compliance</h4>
+          <nav className={styles.footerLinks}>
+            <Link href={'/kyc-fraud-prevention'} className={styles.linkBTN}>KYC & Fraud Prevention</Link>
+            <Link href={'/anti-money-laundering'} className={styles.linkBTN}>Anti-Money Laundering</Link>
+            <Link href={'/sanctions-policy'} className={styles.linkBTN}>Sanctions Policy</Link>
+          </nav>
+        </div>
+
+        {/* Visit Us */}
         <div className={styles.footerSection}>
           <h4 className={styles.footerHeading}>Visit Us</h4>
           <div className={styles.contactInfo}>

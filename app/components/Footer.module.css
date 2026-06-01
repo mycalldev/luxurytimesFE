@@ -185,8 +185,8 @@
 /* Desktop Styles */
 @media (min-width: 1024px) {
   .footerContent {
-    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-    gap: 60px;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1.2fr;
+    gap: 40px;
     padding: 80px 60px 60px;
   }
 
@@ -213,3 +213,4 @@
     padding: 90px 80px 70px;
   }
 }
+
