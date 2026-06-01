@@ -8,8 +8,7 @@ export default function SpeakToTeamBtn() {
 
     window.dataLayer = window.dataLayer || []
     window.dataLayer.push({
-      event: 'daytona_cta_click',
-      cta_label: 'speak_to_team',
+      event: 'speak_to_the_team',
       cta_location: 'reviews',
       landing_page: 'daytona-116520',
     })

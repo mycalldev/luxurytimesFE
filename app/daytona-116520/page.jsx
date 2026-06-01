@@ -30,7 +30,7 @@ export const metadata = {
       'Explore the Rolex Daytona 116520 White Dial, the final pre-ceramic steel Daytona.',
     images: [
       {
-        url: '/landing/daytona/featured-116520-white-dial.png',
+        url: '/landing/daytona/rolex-daytona-116520-white-dial.png',
         alt: 'Rolex Daytona 116520 White Dial',
       },
     ],
@@ -40,8 +40,114 @@ export const metadata = {
     title: 'Iconic Dial · Rolex Daytona 116520 · Luxury Times',
     description:
       'Explore the Rolex Daytona 116520 White Dial, the final pre-ceramic steel Daytona.',
-    images: ['/landing/daytona/featured-116520-white-dial.png'],
+    images: ['/landing/daytona/rolex-daytona-116520-white-dial.png'],
   },
+}
+
+const BASE_URL = 'https://luxurytimesltd.co.uk'
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Product',
+      '@id': `${BASE_URL}/daytona-116520#product`,
+      'name': 'Rolex Daytona 116520 White Dial',
+      'description': 'The Rolex Daytona 116520 White Dial is the final pre-ceramic steel Daytona. Powered by the in-house calibre 4130 chronograph movement, featuring an engraved steel tachymeter bezel, screw-down pushers, classic white dial, and Oyster bracelet with Easylink extension. Authenticated and available for private viewing at our Mayfair showroom.',
+      'brand': {
+        '@type': 'Brand',
+        'name': 'Rolex',
+      },
+      'model': 'Daytona 116520',
+      'mpn': '116520',
+      'sku': 'ROL-116520-WD',
+      'category': 'Pre-Owned Luxury Watches',
+      'image': [
+        `${BASE_URL}/landing/daytona/rolex-daytona-116520-white-dial.png`,
+        `${BASE_URL}/landing/daytona/rolex-daytona-116520-desktop.webp`,
+        `${BASE_URL}/landing/daytona/rolex-daytona-116520-wrist.webp`,
+        `${BASE_URL}/landing/daytona/rolex-daytona-116520-bracelet-desktop.webp`,
+        `${BASE_URL}/landing/daytona/rolex-daytona-116520-crown.webp`,
+        `${BASE_URL}/landing/daytona/rolex-daytona-116520-crown-side-desktop.webp`,
+      ],
+      'itemCondition': 'https://schema.org/UsedCondition',
+      'additionalProperty': [
+        { '@type': 'PropertyValue', 'name': 'Reference Number', 'value': '116520' },
+        { '@type': 'PropertyValue', 'name': 'Movement', 'value': 'Rolex Calibre 4130 Automatic Chronograph' },
+        { '@type': 'PropertyValue', 'name': 'Case Material', 'value': 'Stainless Steel (Oystersteel)' },
+        { '@type': 'PropertyValue', 'name': 'Case Diameter', 'value': '40mm' },
+        { '@type': 'PropertyValue', 'name': 'Dial Colour', 'value': 'White' },
+        { '@type': 'PropertyValue', 'name': 'Bezel', 'value': 'Engraved Steel Tachymeter' },
+        { '@type': 'PropertyValue', 'name': 'Bracelet', 'value': 'Oyster with Easylink Extension' },
+        { '@type': 'PropertyValue', 'name': 'Water Resistance', 'value': '100 metres / 330 feet' },
+        { '@type': 'PropertyValue', 'name': 'Production Period', 'value': '2000–2016' },
+        { '@type': 'PropertyValue', 'name': 'Generation', 'value': 'Pre-Ceramic (Final Generation)' },
+      ],
+      'offers': {
+        '@type': 'Offer',
+        'url': `${BASE_URL}/products/rolex-daytona-pre-ceramic-panda-chronograph-ref-116520`,
+        'priceCurrency': 'GBP',
+        'availability': 'https://schema.org/InStock',
+        'itemCondition': 'https://schema.org/UsedCondition',
+        'seller': {
+          '@type': 'Organization',
+          'name': 'Luxury Times',
+          'url': BASE_URL,
+        },
+      },
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}#organization`,
+      'name': 'Luxury Times',
+      'url': BASE_URL,
+      'logo': `${BASE_URL}/logo_it.png`,
+      'description': 'Independent luxury watch dealer specialising in pre-owned Rolex, Patek Philippe, Audemars Piguet and Richard Mille. GIA accredited. Based in Mayfair and Hatton Garden, London.',
+      'telephone': '+447999297359',
+      'email': 'info@luxurytimesltd.co.uk',
+      'address': [
+        {
+          '@type': 'PostalAddress',
+          'name': 'Mayfair Showroom',
+          'streetAddress': "15 St George's House, Hanover Square",
+          'addressLocality': 'London',
+          'postalCode': 'W1S 1HS',
+          'addressCountry': 'GB',
+        },
+        {
+          '@type': 'PostalAddress',
+          'name': 'Hatton Garden',
+          'streetAddress': '100 Hatton Garden',
+          'addressLocality': 'London',
+          'postalCode': 'EC1N 8NX',
+          'addressCountry': 'GB',
+        },
+      ],
+      'sameAs': ['https://www.instagram.com/luxurytimeslondon/'],
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${BASE_URL}/daytona-116520#webpage`,
+      'url': `${BASE_URL}/daytona-116520`,
+      'name': 'Rolex Daytona 116520 White Dial | Luxury Times',
+      'description': 'Explore the Rolex Daytona 116520 White Dial — the final pre-ceramic steel Daytona. Authenticated and in stock. Available for private viewing at our Mayfair showroom.',
+      'inLanguage': 'en-GB',
+      'isPartOf': {
+        '@type': 'WebSite',
+        'url': BASE_URL,
+        'name': 'Luxury Times',
+      },
+      'about': { '@id': `${BASE_URL}/daytona-116520#product` },
+      'breadcrumb': {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': BASE_URL },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Rolex Collection', 'item': `${BASE_URL}/products/collections/rolex` },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Rolex Daytona 116520', 'item': `${BASE_URL}/daytona-116520` },
+        ],
+      },
+    },
+  ],
 }
 
 const DAYTONA_PDP =
@@ -104,6 +210,11 @@ const accreditations = [
 
 export default function Daytona3Page() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
     <div className={`${styles.page} ${cormorant.variable}`}>
       <header className={styles.topHeading}>
         <span className={styles.topHeadingText}>Luxury Times Mayfair</span>
@@ -323,5 +434,6 @@ export default function Daytona3Page() {
         </div>
       </section>
     </div>
+    </>
   )
 }
