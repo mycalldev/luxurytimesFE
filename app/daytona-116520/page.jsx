@@ -71,6 +71,13 @@ const schema = {
         `${BASE_URL}/landing/daytona/rolex-daytona-116520-crown-side-desktop.webp`,
       ],
       'itemCondition': 'https://schema.org/UsedCondition',
+      'aggregateRating': {
+        '@type': 'AggregateRating',
+        'ratingValue': '5',
+        'reviewCount': '39',
+        'bestRating': '5',
+        'worstRating': '1',
+      },
       'additionalProperty': [
         { '@type': 'PropertyValue', 'name': 'Reference Number', 'value': '116520' },
         { '@type': 'PropertyValue', 'name': 'Movement', 'value': 'Rolex Calibre 4130 Automatic Chronograph' },
@@ -87,6 +94,8 @@ const schema = {
         '@type': 'Offer',
         'url': `${BASE_URL}/products/rolex-daytona-pre-ceramic-panda-chronograph-ref-116520`,
         'priceCurrency': 'GBP',
+        'price': '0',
+        'description': 'Price on Application — contact Luxury Times for details.',
         'availability': 'https://schema.org/InStock',
         'itemCondition': 'https://schema.org/UsedCondition',
         'seller': {
