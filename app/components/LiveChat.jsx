@@ -110,6 +110,20 @@ export default function LiveChat() {
   }, [])
 
   useEffect(() => {
+    const handler = () => {
+      teaserDismissedRef.current = true
+      setShowTeaser(false)
+      setIsOpen(true)
+      trackEvent('chat_open', {
+        chat_session_id: sessionIdRef.current,
+        source: 'speak_to_team_cta',
+      })
+    }
+    window.addEventListener('openLiveChat', handler)
+    return () => window.removeEventListener('openLiveChat', handler)
+  }, [])
+
+  useEffect(() => {
     if (isOpen && !welcomeShownRef.current) {
       welcomeShownRef.current = true
       setMessages((prev) => [

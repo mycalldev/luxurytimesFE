@@ -1,6 +1,9 @@
 import { Cormorant_Garamond } from 'next/font/google'
 import styles from './daytona116520.module.css'
 import CtaLink from './CtaLink'
+import GoogleReviews from '../components/GoogleReviews'
+import CallSpecialistBtn from './CallSpecialistBtn'
+import SpeakToTeamBtn from './SpeakToTeamBtn'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -203,6 +206,20 @@ export default function Daytona3Page() {
         </div>
       </section>
 
+      <section className={styles.reviews}>
+        <div className={styles.reviewsInner}>
+          <div className={styles.eyebrow}>
+            <span className={styles.eyebrowRule} aria-hidden="true" />
+            <span>What Our Clients Say</span>
+          </div>
+          <h2 className={styles.h2}>
+            Trusted by <em>Collectors.</em>
+          </h2>
+          <GoogleReviews />
+          <SpeakToTeamBtn />
+        </div>
+      </section>
+
       <section className={styles.whyCollectors}>
         <div className={styles.whyInner}>
           <div className={styles.eyebrow}>
@@ -301,14 +318,7 @@ export default function Daytona3Page() {
               Book a viewing
               <span className={styles.arrow} aria-hidden="true">→</span>
             </CtaLink>
-            <CtaLink
-              href="tel:+447999297359"
-              ctaLabel="call_specialist"
-              ctaLocation="private_viewing"
-              className={`${styles.btn} ${styles.btnGhost}`}
-            >
-              Call the specialist
-            </CtaLink>
+            <CallSpecialistBtn />
           </div>
         </div>
       </section>

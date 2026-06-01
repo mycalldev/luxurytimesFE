@@ -106,6 +106,14 @@
   color: #fff;
 }
 
+.btnRevealed {
+  border-color: var(--gold);
+  color: var(--gold);
+  letter-spacing: 1.5px;
+  cursor: default;
+  pointer-events: none;
+}
+
 .btn:hover .arrow,
 .textCta:hover .arrow,
 .productCta:hover .arrow,
@@ -608,6 +616,33 @@
   max-width: 320px;
 }
 
+/* ---------- Reviews ---------- */
+.reviews {
+  background: var(--surface-card);
+  padding: 56px 24px;
+  border-top: 1px solid var(--rule);
+}
+
+.reviewsInner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.reviewsInner > :global(.elfsight-app-4f73375a-e589-435a-a794-4600de891411) {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.speakBtn {
+  align-self: center;
+  margin-top: 40px;
+  min-width: 260px;
+}
+
 /* ============================================================
    Tablet & up
    ============================================================ */
@@ -662,6 +697,10 @@
 
   .accredLogos {
     gap: 56px;
+  }
+
+  .reviews {
+    padding: 80px 48px;
   }
 
   .whyCollectors {
@@ -764,6 +803,10 @@
   }
 
   .accreditation {
+    padding: 96px 72px;
+  }
+
+  .reviews {
     padding: 96px 72px;
   }
 
