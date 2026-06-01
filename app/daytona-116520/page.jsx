@@ -48,6 +48,7 @@ const DAYTONA_COLLECTION = '/products/collections/rolex?model=Daytona'
 
 const IMG = {
   hero: '/landing/daytona/landing%20page-2%203.webp',
+  heroMobile: '/landing/daytona/hero_mobile.webp',
   product: '/landing/daytona/featured-116520-white-dial.png',
   whyCollectors: '/landing/daytona/watch-wrist.webp',
   accredGia: '/landing/daytona/accred-gia.png',
@@ -106,11 +107,14 @@ export default function Daytona3Page() {
       </header>
 
       <section className={styles.hero}>
-        <img
-          src={IMG.hero}
-          alt="Rolex Daytona 116520 worn in a Mayfair street setting"
-          className={styles.heroImg}
-        />
+        <picture>
+          <source media="(min-width: 720px)" srcSet={IMG.hero} />
+          <img
+            src={IMG.heroMobile}
+            alt="Rolex Daytona 116520 worn in a Mayfair street setting"
+            className={styles.heroImg}
+          />
+        </picture>
         <div className={styles.heroOverlay}>
           <h1 className={styles.heroTitle}>
             Iconic
@@ -259,15 +263,17 @@ export default function Daytona3Page() {
             <div className={styles.productBody}>
               <span className={styles.productTag}>Rolex Daytona</span>
               <h3 className={styles.productTitle}>116520 White Dial</h3>
-              <a
+              <CtaLink
                 href={DAYTONA_PDP}
+                ctaLabel="view_details"
+                ctaLocation="product_card"
                 className={styles.productCta}
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 View details
                 <span className={styles.arrow} aria-hidden="true">→</span>
-              </a>
+              </CtaLink>
             </div>
           </article>
         </div>

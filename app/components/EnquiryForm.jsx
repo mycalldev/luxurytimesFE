@@ -105,6 +105,12 @@ export default function EnquiryForm({ productTitle, productPrice }) {
             event_label: productTitle,
           })
         }
+        window.dataLayer = window.dataLayer || []
+        window.dataLayer.push({
+          event: 'product_enquiry_submit',
+          product_title: productTitle,
+          product_price: productPrice,
+        })
         setSubmitStatus({
           type: 'success',
           message: "Thank you for your enquiry. We'll be in touch shortly.",

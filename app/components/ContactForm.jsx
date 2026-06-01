@@ -109,6 +109,11 @@ export default function ContactForm() {
         event_label: currentData.subject,
       })
     }
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'contact_form_submit',
+      subject: currentData.subject,
+    })
   setSubmitStatus({
     type: 'success',
     message: 'Thank you for contacting Luxury Times. A member of our team will be in touch with you shortly.',
