@@ -535,6 +535,14 @@
   color: var(--ink);
 }
 
+.productPrice {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.3px;
+}
+
 .productCta {
   font-family: inherit;
   font-size: 11px;

@@ -1,5 +1,5 @@
 import { Cormorant_Garamond } from 'next/font/google'
-import { YouTubeEmbed } from '@next/third-parties/google'
+import VideoEmbed from './VideoEmbed'
 import styles from './daytona116520.module.css'
 import CtaLink from './CtaLink'
 import GoogleReviews from '../components/GoogleReviews'
@@ -95,8 +95,8 @@ const schema = {
         '@type': 'Offer',
         'url': `${BASE_URL}/products/rolex-daytona-pre-ceramic-panda-chronograph-ref-116520`,
         'priceCurrency': 'GBP',
-        'price': '0',
-        'description': 'Price on Application — contact Luxury Times for details.',
+        'price': '20995',
+        'description': 'Rolex Daytona 116520 White Dial — pre-owned, authenticated.',
         'availability': 'https://schema.org/InStock',
         'itemCondition': 'https://schema.org/UsedCondition',
         'seller': {
@@ -185,8 +185,8 @@ const features = [
     imgMobile: '/landing/daytona/rolex-daytona-116520-watch-right-mobile.webp',
     imgDesktop: '/landing/daytona/rolex-daytona-116520-watch-desktop.webp',
     alt: 'Rolex Daytona 116520 with engraved steel bezel — the final pre-ceramic generation',
-    title: 'ICONIC DIAL',
-    body: 'The classic engraved steel bezel — the final generation before ceramic.',
+    title: 'PRE-CERAMIC BEZEL',
+    body: 'The engraved stainless steel tachymeter bezel measures speed against elapsed time — the defining signature of the 116520 and the final generation before Rolex transitioned to ceramic.',
   },
   {
     imgMobile: '/landing/daytona/rolex-daytona-116520-watch-left-mobile.webp',
@@ -367,10 +367,6 @@ export default function Daytona3Page() {
 
       <section className={styles.collection}>
         <div className={styles.collectionInner}>
-          <div className={styles.eyebrow}>
-            <span className={styles.eyebrowRule} aria-hidden="true" />
-            <span>Our Iconic Collection</span>
-          </div>
           <h2 className={styles.h2}>
             Rolex Daytona
             <br />
@@ -400,6 +396,7 @@ export default function Daytona3Page() {
             <div className={styles.productBody}>
               <span className={styles.productTag}>Rolex Daytona</span>
               <h3 className={styles.productTitle}>116520 White Dial</h3>
+              <span className={styles.productPrice}>£20,995</span>
               <CtaLink
                 href={DAYTONA_PDP}
                 ctaLabel="view_details"
@@ -426,7 +423,7 @@ export default function Daytona3Page() {
             The Reference <em>Up Close.</em>
           </h2>
           <div className={styles.videoWrapper}>
-            <YouTubeEmbed videoid="a8IcI7MVY6U" playlabel="Rolex Daytona 116520 White Dial" />
+            <VideoEmbed videoid="a8IcI7MVY6U" playlabel="Rolex Daytona 116520 White Dial" />
           </div>
         </div>
       </section>
