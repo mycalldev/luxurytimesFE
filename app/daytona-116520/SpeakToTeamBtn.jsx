@@ -18,7 +18,7 @@ export default function SpeakToTeamBtn() {
     <button
       type="button"
       onClick={handleClick}
-      className={`${styles.btn} ${styles.btnGold} ${styles.speakBtn}`}
+      className={`${styles.btn} ${styles.btnNavy} ${styles.speakBtn}`}
     >
       Speak to the Team
       <span className={styles.arrow} aria-hidden="true">→</span>

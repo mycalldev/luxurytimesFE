@@ -95,6 +95,15 @@
   background: #95805f;
 }
 
+.btnNavy {
+  background: #252a30;
+  color: #fff;
+}
+
+.btnNavy:hover {
+  background: #181c21;
+}
+
 .btnGhost {
   background: transparent;
   color: var(--ink);

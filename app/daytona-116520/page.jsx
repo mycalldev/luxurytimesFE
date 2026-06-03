@@ -193,7 +193,7 @@ const features = [
     imgDesktop: '/landing/daytona/rolex-daytona-116520-crown-side-desktop.webp',
     alt: 'Side profile of the Rolex Daytona 116520 white dial',
     title: 'WHITE DIAL',
-    body: 'Screw-down pushers framed by the engraved steel bezel.',
+    body: 'The white dial delivers exceptional legibility — contrasting black subsidiary registers and precisely applied indices that define the classic Panda configuration.',
   },
   {
     imgMobile: '/landing/daytona/rolex-daytona-116520-bracelet-mobile.webp',
@@ -207,7 +207,7 @@ const features = [
     imgDesktop: '/landing/daytona/rolex-daytona-116520-crown.webp',
     alt: 'Close-up of the Rolex Daytona 116520 screw-down crown',
     title: 'TIMELESS PRESENCE',
-    body: 'A balance of strength and refinement. Engineered to last for generations.',
+    body: 'Screw-down pushers framed by the engraved steel bezel. A balance of strength and refinement. Engineered to last for generations.',
   },
 ]
 
@@ -445,7 +445,7 @@ export default function Daytona3Page() {
               href={`${DAYTONA_PDP}#enquiry`}
               ctaLabel="book_a_viewing"
               ctaLocation="private_viewing"
-              className={`${styles.btn} ${styles.btnGold}`}
+              className={`${styles.btn} ${styles.btnNavy}`}
             >
               Book a viewing
               <span className={styles.arrow} aria-hidden="true">→</span>
