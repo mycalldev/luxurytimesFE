@@ -616,6 +616,46 @@
   max-width: 320px;
 }
 
+/* ---------- Video ---------- */
+.videoSection {
+  background: var(--ink-deep);
+  padding: 56px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.videoInner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.videoInner .eyebrow {
+  color: var(--gold-soft);
+}
+
+.videoInner .eyebrowRule {
+  background: var(--gold-soft);
+}
+
+.videoInner .h2 {
+  color: #fff;
+}
+
+.videoWrapper {
+  width: 100%;
+  margin-top: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.videoWrapper > * {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 /* ---------- Reviews ---------- */
 .reviews {
   background: var(--surface-card);
@@ -700,6 +740,10 @@
   }
 
   .reviews {
+    padding: 80px 48px;
+  }
+
+  .videoSection {
     padding: 80px 48px;
   }
 
@@ -820,6 +864,10 @@
 
   .collectionInner {
     gap: 80px;
+  }
+
+  .videoSection {
+    padding: 96px 72px;
   }
 
   .privateViewing {

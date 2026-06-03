@@ -1,4 +1,5 @@
 import { Cormorant_Garamond } from 'next/font/google'
+import { YouTubeEmbed } from '@next/third-parties/google'
 import styles from './daytona116520.module.css'
 import CtaLink from './CtaLink'
 import GoogleReviews from '../components/GoogleReviews'
@@ -161,7 +162,6 @@ const schema = {
 
 const DAYTONA_PDP =
   'https://luxurytimesltd.co.uk/products/rolex-daytona-pre-ceramic-panda-chronograph-ref-116520'
-const ROLEX_COLLECTION = 'https://luxurytimesltd.co.uk/products/collections/rolex'
 const DAYTONA_COLLECTION = '/products/collections/rolex?model=Daytona'
 
 const IMG = {
@@ -413,6 +413,21 @@ export default function Daytona3Page() {
               </CtaLink>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section className={styles.videoSection}>
+        <div className={styles.videoInner}>
+          <div className={styles.eyebrow}>
+            <span className={styles.eyebrowRule} aria-hidden="true" />
+            <span>Watch in Detail</span>
+          </div>
+          <h2 className={styles.h2}>
+            The Reference <em>Up Close.</em>
+          </h2>
+          <div className={styles.videoWrapper}>
+            <YouTubeEmbed videoid="a8IcI7MVY6U" playlabel="Rolex Daytona 116520 White Dial" />
+          </div>
         </div>
       </section>
 
