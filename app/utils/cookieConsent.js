@@ -1,8 +1,8 @@
 // Cookie consent utility functions
 
 const COOKIE_CONSENT_KEY = 'luxury-times-cookie-consent';
-const COOKIE_EXPIRY_DAYS = 1;
-const CONSENT_EXPIRY_MS = 24 * 60 * 60 * 1000; // 24 hours
+const COOKIE_EXPIRY_DAYS = 180;
+const CONSENT_EXPIRY_MS = 180 * 24 * 60 * 60 * 1000; // 180 days
 
 export const COOKIE_CATEGORIES = {
   ESSENTIAL: 'essential',

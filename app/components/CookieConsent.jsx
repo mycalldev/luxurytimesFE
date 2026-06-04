@@ -13,6 +13,16 @@ import {
   COOKIE_CATEGORIES,
 } from '../utils/cookieConsent'
 
+function pushConsentUpdate({ analytics, marketing }) {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return
+  window.gtag('consent', 'update', {
+    analytics_storage: analytics ? 'granted' : 'denied',
+    ad_storage: marketing ? 'granted' : 'denied',
+    ad_user_data: marketing ? 'granted' : 'denied',
+    ad_personalization: marketing ? 'granted' : 'denied',
+  })
+}
+
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false)
   const [showCustomize, setShowCustomize] = useState(false)
@@ -22,22 +32,30 @@ export default function CookieConsent() {
   })
 
   useEffect(() => {
-    // Check if consent has been given
     if (!hasConsentBeenGiven()) {
-      // Small delay to ensure smooth animation
       setTimeout(() => setShowBanner(true), 100)
+    } else {
+      // Returning user — restore their consent signals so GTM tags can fire
+      const consent = getCookieConsent()
+      if (consent) {
+        pushConsentUpdate({
+          analytics: consent[COOKIE_CATEGORIES.ANALYTICS],
+          marketing: consent[COOKIE_CATEGORIES.MARKETING],
+        })
+      }
     }
   }, [])
 
   const handleAcceptAll = () => {
     acceptAllCookies()
+    pushConsentUpdate({ analytics: true, marketing: true })
     setShowBanner(false)
-    // Trigger a custom event so other components can react
     window.dispatchEvent(new CustomEvent('cookieConsentUpdated'))
   }
 
   const handleRejectAll = () => {
     rejectAllCookies()
+    pushConsentUpdate({ analytics: false, marketing: false })
     setShowBanner(false)
     window.dispatchEvent(new CustomEvent('cookieConsentUpdated'))
   }
@@ -48,6 +66,10 @@ export default function CookieConsent() {
 
   const handleSavePreferences = () => {
     saveCustomConsent(preferences)
+    pushConsentUpdate({
+      analytics: preferences[COOKIE_CATEGORIES.ANALYTICS],
+      marketing: preferences[COOKIE_CATEGORIES.MARKETING],
+    })
     setShowBanner(false)
     setShowCustomize(false)
     window.dispatchEvent(new CustomEvent('cookieConsentUpdated'))
