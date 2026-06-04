@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Cormorant_Garamond } from 'next/font/google'
 import VideoEmbed from './VideoEmbed'
 import styles from './daytona116520.module.css'
@@ -230,14 +231,22 @@ export default function Daytona3Page() {
       </header>
 
       <section className={styles.hero}>
-        <picture>
-          <source media="(min-width: 720px)" srcSet={IMG.hero} />
-          <img
-            src={IMG.heroMobile}
-            alt="Rolex Daytona 116520 worn in a Mayfair street setting"
-            className={styles.heroImg}
-          />
-        </picture>
+        <Image
+          src={IMG.heroMobile}
+          alt="Rolex Daytona 116520 worn in a Mayfair street setting"
+          fill
+          priority
+          className={`${styles.heroImg} ${styles.imgMobile}`}
+          sizes="(min-width: 720px) 1px, 100vw"
+        />
+        <Image
+          src={IMG.hero}
+          alt="Rolex Daytona 116520 worn in a Mayfair street setting"
+          fill
+          priority
+          className={`${styles.heroImg} ${styles.imgDesktop}`}
+          sizes="(max-width: 719px) 1px, 100vw"
+        />
         <div className={styles.heroOverlay}>
           <h1 className={styles.heroTitle}>
             Iconic
@@ -290,10 +299,20 @@ export default function Daytona3Page() {
           {features.map((f) => (
             <article key={f.title} className={styles.featureCard}>
               <div className={styles.featureFigure}>
-                <picture>
-                  <source media="(min-width: 720px)" srcSet={f.imgDesktop} />
-                  <img src={f.imgMobile} alt={f.alt} />
-                </picture>
+                <Image
+                  src={f.imgMobile}
+                  alt={f.alt}
+                  fill
+                  className={styles.imgMobile}
+                  sizes="(min-width: 720px) 1px, 100vw"
+                />
+                <Image
+                  src={f.imgDesktop}
+                  alt={f.alt}
+                  fill
+                  className={styles.imgDesktop}
+                  sizes="(max-width: 719px) 1px, (min-width: 1100px) 275px, calc(50vw - 64px)"
+                />
               </div>
               <h3 className={styles.featureTitle}>{f.title}</h3>
               <p className={styles.featureBody}>{f.body}</p>
@@ -320,7 +339,7 @@ export default function Daytona3Page() {
         <div className={styles.accredLogos}>
           {accreditations.map((a) => (
             <div key={a.alt} className={styles.accredItem}>
-              <img src={a.src} alt={a.alt} />
+              <Image src={a.src} alt={a.alt} width={180} height={80} style={{ width: 'auto', height: 'auto' }} />
             </div>
           ))}
         </div>
@@ -350,9 +369,11 @@ export default function Daytona3Page() {
             Iconic in <em>Every Detail.</em>
           </h2>
           <div className={styles.whyFigure}>
-            <img
+            <Image
               src={IMG.whyCollectors}
               alt="Rolex Daytona 116520 White Dial worn on the wrist"
+              fill
+              sizes="(min-width: 1100px) 1036px, (min-width: 720px) calc(100vw - 96px), calc(100vw - 48px)"
             />
           </div>
           <div className={styles.whyCopy}>
@@ -388,9 +409,11 @@ export default function Daytona3Page() {
 
           <article className={styles.productCard}>
             <div className={styles.productFigure}>
-              <img
+              <Image
                 src={IMG.product}
                 alt="Rolex Daytona 116520 White Dial"
+                fill
+                sizes="(min-width: 720px) 380px, calc(100vw - 48px)"
               />
             </div>
             <div className={styles.productBody}>
