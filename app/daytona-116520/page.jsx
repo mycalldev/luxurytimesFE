@@ -48,6 +48,19 @@ export const metadata = {
 
 const BASE_URL = 'https://luxurytimesltd.co.uk'
 
+const specs = [
+  { name: 'Reference', value: '116520' },
+  { name: 'Movement', value: 'Rolex Calibre 4130 Automatic Chronograph' },
+  { name: 'Case Material', value: 'Stainless Steel (Oystersteel)' },
+  { name: 'Case Diameter', value: '40mm' },
+  { name: 'Dial', value: 'White' },
+  { name: 'Bezel', value: 'Engraved Steel Tachymeter' },
+  { name: 'Bracelet', value: 'Oyster with Easylink Extension' },
+  { name: 'Water Resistance', value: '100m / 330ft' },
+  { name: 'Production', value: '2000–2016' },
+  { name: 'Generation', value: 'Pre-Ceramic (Final Generation)' },
+]
+
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -80,18 +93,11 @@ const schema = {
         'bestRating': '5',
         'worstRating': '1',
       },
-      'additionalProperty': [
-        { '@type': 'PropertyValue', 'name': 'Reference Number', 'value': '116520' },
-        { '@type': 'PropertyValue', 'name': 'Movement', 'value': 'Rolex Calibre 4130 Automatic Chronograph' },
-        { '@type': 'PropertyValue', 'name': 'Case Material', 'value': 'Stainless Steel (Oystersteel)' },
-        { '@type': 'PropertyValue', 'name': 'Case Diameter', 'value': '40mm' },
-        { '@type': 'PropertyValue', 'name': 'Dial Colour', 'value': 'White' },
-        { '@type': 'PropertyValue', 'name': 'Bezel', 'value': 'Engraved Steel Tachymeter' },
-        { '@type': 'PropertyValue', 'name': 'Bracelet', 'value': 'Oyster with Easylink Extension' },
-        { '@type': 'PropertyValue', 'name': 'Water Resistance', 'value': '100 metres / 330 feet' },
-        { '@type': 'PropertyValue', 'name': 'Production Period', 'value': '2000–2016' },
-        { '@type': 'PropertyValue', 'name': 'Generation', 'value': 'Pre-Ceramic (Final Generation)' },
-      ],
+      'additionalProperty': specs.map((s) => ({
+        '@type': 'PropertyValue',
+        'name': s.name,
+        'value': s.value,
+      })),
       'offers': {
         '@type': 'Offer',
         'url': `${BASE_URL}/products/rolex-daytona-pre-ceramic-panda-chronograph-ref-116520`,
@@ -393,10 +399,16 @@ export default function Daytona3Page() {
             <br />
             <em>Pre-Ceramic 116520.</em>
           </h2>
-          <p className={styles.collectionBody}>
-            A modern classic. The final engraved steel bezel Daytona before the ceramic era.
-            Timeless design. Enduring value.
-          </p>
+          <dl className={styles.specsList}>
+            {specs.map((spec) => (
+              <div key={spec.name} className={styles.specRow}>
+                <dt className={styles.specLabel}>{spec.name}</dt>
+                <dd className={styles.specValue}>{spec.value}</dd>
+              </div>
+            ))}
+          </dl>
+
+
           <CtaLink
             href={DAYTONA_COLLECTION}
             ctaLabel="explore_collection"

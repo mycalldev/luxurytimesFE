@@ -486,6 +486,47 @@
   align-items: flex-start;
 }
 
+/* Mobile: h2 → image → specs → CTA */
+.collectionInner > .h2 { order: 1; }
+.collectionInner > .productCard { order: 2; }
+.collectionInner > .specsList { order: 3; }
+.collectionInner > .textCta { order: 4; }
+
+/* ---------- Specifications ---------- */
+.specsList {
+  width: 100%;
+  margin: 24px 0 32px;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.specLabel {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.specValue {
+  font-size: 13px;
+  color: var(--ink);
+  text-align: right;
+  margin: 0;
+  line-height: 1.5;
+}
+
 .collectionBody {
   font-size: 14px;
   line-height: 1.7;
@@ -798,9 +839,17 @@
     align-items: start;
   }
 
+  .collectionInner > .h2,
+  .collectionInner > .productCard,
+  .collectionInner > .specsList,
+  .collectionInner > .textCta {
+    order: 0;
+  }
+
   .collectionInner > .eyebrow,
   .collectionInner > .h2,
   .collectionInner > .collectionBody,
+  .collectionInner > .specsList,
   .collectionInner > .textCta {
     grid-column: 1;
   }
