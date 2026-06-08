@@ -6,6 +6,7 @@ import WishlistIcon from '../../components/WishlistIcon';
 import Breadcrumb from '../../components/Breadcrumb';
 import EnquiryForm from '../../components/EnquiryForm';
 import ShareButton from './ShareButton';
+import ScrollReset from './ScrollReset';
 import styles from './product.module.css';
 
 const BRAND_COLLECTIONS = {
@@ -77,6 +78,7 @@ export default async function ProductPage(props) {
 
   return (
     <>
+      <ScrollReset />
       <Breadcrumb items={breadcrumbItems} />
       <main className={styles.container}>
 
