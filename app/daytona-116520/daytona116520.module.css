@@ -9,6 +9,7 @@
   --surface: #f4f5f2;
   --surface-card: #ffffff;
   --rule: #d1ccc4;
+  --serif: var(--font-cormorant);
   --mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
 
   width: 100%;
