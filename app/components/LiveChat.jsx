@@ -258,6 +258,7 @@ export default function LiveChat() {
             width={72}
             height={72}
             className={styles.bubbleLogo}
+            loading="eager"
           />
         )}
       </button>
