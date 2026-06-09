@@ -1,6 +1,6 @@
 import './globals.css'
 import Script from 'next/script'
-import { Roboto, Cormorant_Garamond } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import { GoogleTagManager } from '@next/third-parties/google'
 import ConditionalNavbar from './components/ConditionalNavbar'
 import Footer from './components/Footer'
@@ -10,14 +10,6 @@ import ClientBreadcrumb from './components/ClientBreadcrumb'
 import LiveChat from './components/LiveChat'
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] })
-
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  display: 'swap',
-  variable: '--font-cormorant',
-})
 
 
 export const metadata = {
@@ -50,7 +42,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${roboto.className} ${cormorant.variable}`}>
+      <body className={roboto.className}>
         <GoogleTagManager gtmId="GTM-W6DL3CRZ" />
         <ConditionalNavbar />
         <ClientBreadcrumb />

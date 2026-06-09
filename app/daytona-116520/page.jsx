@@ -1,10 +1,19 @@
 import Image from 'next/image'
+import { Cormorant_Garamond } from 'next/font/google'
 import styles from './daytona116520.module.css'
 import CtaLink from './CtaLink'
 import GoogleReviews from '../components/GoogleReviews'
 import CallSpecialistBtn from './CallSpecialistBtn'
 import SpeakToTeamBtn from './SpeakToTeamBtn'
 import VideoEmbedWrapper from './VideoEmbedWrapper'
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--serif',
+})
 
 export const metadata = {
   title: 'Iconic Dial · Rolex Daytona 116520 · Luxury Times',
@@ -222,7 +231,7 @@ export default function Daytona3Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-    <div className={styles.page}>
+    <div className={`${styles.page} ${cormorant.variable}`}>
       <header className={styles.topHeading}>
         <span className={styles.topHeadingText}>Luxury Times Mayfair</span>
       </header>
