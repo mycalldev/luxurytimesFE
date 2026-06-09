@@ -106,7 +106,7 @@ export default function LiveChat() {
 
   useEffect(() => {
     if (teaserDismissedRef.current) return
-    const t = setTimeout(() => setShowTeaser(true), 4000)
+    const t = setTimeout(() => setShowTeaser(true), 1500)
     return () => clearTimeout(t)
   }, [])
 
