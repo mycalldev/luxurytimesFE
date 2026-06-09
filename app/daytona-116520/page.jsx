@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import VideoEmbed from './VideoEmbed'
 import styles from './daytona116520.module.css'
 import CtaLink from './CtaLink'
 import GoogleReviews from '../components/GoogleReviews'
 import CallSpecialistBtn from './CallSpecialistBtn'
 import SpeakToTeamBtn from './SpeakToTeamBtn'
+import VideoEmbedWrapper from './VideoEmbedWrapper'
 
 export const metadata = {
   title: 'Iconic Dial · Rolex Daytona 116520 · Luxury Times',
@@ -449,7 +449,7 @@ export default function Daytona3Page() {
             The Reference <em>Up Close.</em>
           </h2>
           <div className={styles.videoWrapper}>
-            <VideoEmbed videoid="a8IcI7MVY6U" playlabel="Rolex Daytona 116520 White Dial" />
+            <VideoEmbedWrapper videoid="a8IcI7MVY6U" playlabel="Rolex Daytona 116520 White Dial" />
           </div>
         </div>
       </section>
