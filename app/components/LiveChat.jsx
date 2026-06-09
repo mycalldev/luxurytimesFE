@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { io } from 'socket.io-client'
 import styles from './LiveChat.module.css'
 
 const SOCKET_URL = 'wss://chat.luxurytimesltd.co.uk'
@@ -41,6 +40,7 @@ export default function LiveChat() {
   const welcomeShownRef = useRef(messages.length > 0)
   const teaserDismissedRef = useRef(false)
 
+  // Session ID setup only — socket connection is deferred until the chat is opened
   useEffect(() => {
     let sessionId = localStorage.getItem(SESSION_STORAGE_KEY)
     let isNewSession = false
@@ -57,7 +57,13 @@ export default function LiveChat() {
     if (isNewSession) {
       trackEvent('chat_session_started', { chat_session_id: sessionId })
     }
+  }, [])
 
+  // Dynamically imports socket.io-client and connects only on first chat open
+  const connectSocket = async () => {
+    if (socketRef.current) return
+    const { io } = await import('socket.io-client')
+    if (socketRef.current) return // guard against concurrent calls
     const socket = io(SOCKET_URL, {
       transports: ['websocket'],
       reconnection: true,
@@ -69,7 +75,7 @@ export default function LiveChat() {
 
     socket.on('connect', () => {
       setStatus('connected')
-      socket.emit('join_session', sessionId)
+      socket.emit('join_session', sessionIdRef.current)
     })
 
     socket.on('disconnect', () => setStatus('reconnecting'))
@@ -86,12 +92,7 @@ export default function LiveChat() {
         },
       ])
     })
-
-    return () => {
-      socket.disconnect()
-      socketRef.current = null
-    }
-  }, [])
+  }
 
   useEffect(() => {
     if (isOpen) {
@@ -105,7 +106,7 @@ export default function LiveChat() {
 
   useEffect(() => {
     if (teaserDismissedRef.current) return
-    const t = setTimeout(() => setShowTeaser(true), 1500)
+    const t = setTimeout(() => setShowTeaser(true), 4000)
     return () => clearTimeout(t)
   }, [])
 
@@ -113,6 +114,7 @@ export default function LiveChat() {
     const handler = () => {
       teaserDismissedRef.current = true
       setShowTeaser(false)
+      connectSocket()
       setIsOpen(true)
       trackEvent('chat_open', {
         chat_session_id: sessionIdRef.current,
@@ -156,6 +158,7 @@ export default function LiveChat() {
       teaserDismissedRef.current = true
       setShowTeaser(false)
     }
+    if (next) connectSocket()
     setIsOpen(next)
     trackEvent(next ? 'chat_open' : 'chat_close', {
       chat_session_id: sessionIdRef.current,
@@ -172,6 +175,7 @@ export default function LiveChat() {
   const openFromTeaser = () => {
     teaserDismissedRef.current = true
     setShowTeaser(false)
+    connectSocket()
     setIsOpen(true)
     trackEvent('chat_open', {
       chat_session_id: sessionIdRef.current,
