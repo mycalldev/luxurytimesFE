@@ -4,6 +4,7 @@ import styles from '../styles/LegalPage.module.css';
 export const metadata = {
   title: 'Deposit Policy | Luxury Times',
   description: 'Understand how deposits work at Luxury Times when reserving or sourcing a luxury timepiece.',
+  alternates: { canonical: '/deposit-policy' },
 };
 
 export default function DepositPolicy() {

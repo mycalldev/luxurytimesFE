@@ -5,6 +5,7 @@ export async function generateMetadata() {
   return {
     title: 'Rolex Watches - Luxury Times',
     description: 'Browse our collection of authentic Rolex watches.',
+    alternates: { canonical: '/products/collections/rolex' },
   };
 }
 

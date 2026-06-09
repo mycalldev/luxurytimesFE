@@ -8,6 +8,7 @@ export async function generateMetadata() {
   return {
     title: 'Blog - Luxury Times',
     description: 'Read our latest articles about luxury watches, market trends, and expert insights.',
+    alternates: { canonical: '/blog' },
   };
 }
 

@@ -5,6 +5,7 @@ export async function generateMetadata() {
   return {
     title: 'Patek Philippe Watches - Luxury Times',
     description: 'Browse our collection of authentic Patek Philippe watches.',
+    alternates: { canonical: '/products/collections/patek-philippe' },
   };
 }
 

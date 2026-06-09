@@ -5,6 +5,13 @@ import styles from './sell.module.css'
 import Button from '../components/Button'
 import ContactForm from '../components/ContactForm'
 
+
+export const metadata = {
+  title: 'Sell Your Watch | Luxury Times',
+  description: 'Sell your pre-owned Rolex, Patek Philippe or Audemars Piguet with Luxury Times. Fast valuations, trusted service.',
+  alternates: { canonical: '/sell' },
+};
+
 export default function Sell() {
   return (
     <main className={styles.main}>

@@ -4,6 +4,7 @@ import styles from '../styles/LegalPage.module.css';
 export const metadata = {
   title: 'Privacy Policy | Luxury Times',
   description: 'How Luxury Times collects, uses and protects your personal information.',
+  alternates: { canonical: '/privacy-policy' },
 };
 
 export default function PrivacyPolicy() {

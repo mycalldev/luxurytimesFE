@@ -4,6 +4,13 @@ import styles from './Contact.module.css'
 import Button from '../components/Button'
 import ContactForm from '../components/ContactForm'
 
+
+export const metadata = {
+  title: 'Contact Us | Luxury Times',
+  description: 'Get in touch with the Luxury Times team. Visit our Mayfair or Hatton Garden showroom, or send us a message.',
+  alternates: { canonical: '/contact' },
+};
+
 export default function Contact() {
   return (
     <main>

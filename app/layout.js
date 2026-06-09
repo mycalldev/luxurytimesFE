@@ -15,7 +15,7 @@ const roboto = Roboto({ weight: '400', subsets: ['latin'] })
 export const metadata = {
   metadataBase: new URL('https://luxurytimesltd.co.uk'),
   title: 'Luxury Times Ltd',
-  description: 'Discover premium luxury watches and fine jewellery - Rolex, Patek Philippe & Audemars Piguet',
+  description: 'Discover premium luxury watches - Rolex, Patek Philippe & Audemars Piguet',
   verification: {
     google: "3EtCpdg61XcRZkS6YrJjTI14hZLUUAGPhZgsOtf54_8",
   },

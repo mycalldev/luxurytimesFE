@@ -4,6 +4,7 @@ import styles from '../styles/LegalPage.module.css';
 export const metadata = {
   title: 'High Value Online Purchasing Policy | Luxury Times',
   description: 'How Luxury Times ensures a secure and professional experience when purchasing high-value luxury watches online.',
+  alternates: { canonical: '/high-value-online-purchasing' },
 };
 
 export default function HighValueOnlinePurchasing() {

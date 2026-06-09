@@ -4,6 +4,7 @@ import styles from '../styles/LegalPage.module.css';
 export const metadata = {
   title: 'Anti-Money Laundering Policy | Luxury Times',
   description: "Luxury Times' commitment to conducting business in accordance with anti-money laundering regulations.",
+  alternates: { canonical: '/anti-money-laundering' },
 };
 
 export default function AntiMoneyLaundering() {

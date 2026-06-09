@@ -4,6 +4,7 @@ import styles from '../styles/LegalPage.module.css';
 export const metadata = {
   title: 'Warranty Policy | Luxury Times',
   description: 'Details of the Luxury Times warranty and manufacturer warranty coverage for luxury timepieces.',
+  alternates: { canonical: '/warranty-policy' },
 };
 
 export default function WarrantyPolicy() {

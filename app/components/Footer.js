@@ -12,7 +12,7 @@ export default function Footer() {
         <div className={styles.footerSection}>
           <h3 className={styles.footerHeading}>Luxury Times</h3>
           <p className={styles.footerDescription}>
-            Your trusted destination for authentic luxury timepieces and fine jewellery.
+            Your trusted destination for authentic luxury timepieces.
           </p>
           <div className={styles.socialContainer}>
             <Link href={'https://www.instagram.com/luxurytimeslondon/'} aria-label="Visit our Instagram">

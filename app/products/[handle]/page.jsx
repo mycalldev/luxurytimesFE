@@ -31,6 +31,7 @@ export async function generateMetadata(props) {
   return {
     title: product.seo?.title || `${product.title} - Luxury Times`,
     description: product.seo?.description || product.description,
+    alternates: { canonical: `/products/${params.handle}` },
     openGraph: {
       title: product.title,
       description: product.description,

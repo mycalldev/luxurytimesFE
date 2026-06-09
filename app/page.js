@@ -14,6 +14,7 @@ import { getFeaturedProducts } from './utils/shopify'
 export const metadata = {
   title: 'Luxury Times - Exclusive Luxury Watches',
   description: 'Discover premium luxury watches at Luxury Times. Rolex, Patek Philippe, and Audemars Piguet.',
+  alternates: { canonical: '/' },
   openGraph: {
     title: 'Luxury Times - Exclusive Luxury Watches',
     description: 'Discover premium luxury watches at Luxury Times. Rolex, Patek Philippe, and Audemars Piguet.',

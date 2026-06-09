@@ -4,6 +4,7 @@ import styles from '../styles/LegalPage.module.css';
 export const metadata = {
   title: 'Returns Policy | Luxury Times',
   description: 'Luxury Times returns policy for pre-owned luxury timepieces.',
+  alternates: { canonical: '/return' },
 };
 
 export default function Return() {

@@ -5,6 +5,7 @@ export async function generateMetadata() {
   return {
     title: 'Audemars Piguet Watches - Luxury Times',
     description: 'Browse our collection of authentic Audemars Piguet watches.',
+    alternates: { canonical: '/products/collections/audemars-piguet' },
   };
 }
 

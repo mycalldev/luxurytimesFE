@@ -3,6 +3,13 @@ import styles from './TermsAndConditions.module.css';
 
 
 
+
+export const metadata = {
+  title: 'Terms & Conditions | Luxury Times',
+  description: 'The terms and conditions governing purchases and services at Luxury Times.',
+  alternates: { canonical: '/terms-and-conditions' },
+};
+
 export default function TermsAndConditions() {
 
   return (

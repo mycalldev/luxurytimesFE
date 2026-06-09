@@ -150,6 +150,13 @@ function renderStars(rating) {
   )
 }
 
+
+export const metadata = {
+  title: 'Client Reviews | Luxury Times',
+  description: 'Read reviews from Luxury Times clients. Trusted by collectors across the UK and worldwide.',
+  alternates: { canonical: '/review' },
+};
+
 export default function Reviews() {
   return (
     <main className={styles.containerReview}>

@@ -5,6 +5,7 @@ export async function generateMetadata() {
   return {
     title: 'Luxury Watches - Rolex, Audemars Piguet, Patek Philippe',
     description: 'Browse our collection of luxury watches from the world\'s finest watchmakers.',
+    alternates: { canonical: '/products' },
   };
 }
 

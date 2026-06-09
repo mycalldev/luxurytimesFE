@@ -4,6 +4,7 @@ import styles from '../styles/LegalPage.module.css';
 export const metadata = {
   title: 'Shipping Policy | Luxury Times',
   description: 'How Luxury Times securely packages and ships luxury watches to clients worldwide.',
+  alternates: { canonical: '/shipping-policy' },
 };
 
 export default function ShippingPolicy() {

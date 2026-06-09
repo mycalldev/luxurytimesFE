@@ -4,6 +4,7 @@ import styles from '../styles/LegalPage.module.css';
 export const metadata = {
   title: 'Authenticity Guarantee | Luxury Times',
   description: 'Learn how Luxury Times guarantees the authenticity of every luxury timepiece we sell.',
+  alternates: { canonical: '/authenticity-guarantee' },
 };
 
 export default function AuthenticityGuarantee() {

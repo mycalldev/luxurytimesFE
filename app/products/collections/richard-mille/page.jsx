@@ -7,6 +7,7 @@ export async function generateMetadata() {
   return {
     title: 'Richard Mille Watches - Luxury Times',
     description: 'Browse our collection of authentic Richard Mille watches.',
+    alternates: { canonical: '/products/collections/richard-mille' },
   };
 }
 

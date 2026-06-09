@@ -4,6 +4,7 @@ import styles from '../styles/LegalPage.module.css';
 export const metadata = {
   title: 'KYC & Fraud Prevention Policy | Luxury Times',
   description: 'How Luxury Times verifies client identity and prevents fraud to protect clients and the business.',
+  alternates: { canonical: '/kyc-fraud-prevention' },
 };
 
 export default function KycFraudPrevention() {

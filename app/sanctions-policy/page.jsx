@@ -4,6 +4,7 @@ import styles from '../styles/LegalPage.module.css';
 export const metadata = {
   title: 'Sanctions Policy | Luxury Times',
   description: "Luxury Times' compliance with applicable sanctions laws and regulations.",
+  alternates: { canonical: '/sanctions-policy' },
 };
 
 export default function SanctionsPolicy() {
