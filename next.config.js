@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  experimental: {
-    optimizeCss: true,
-  },
   images: {
     qualities: [75, 80, 85, 90, 100],
     remotePatterns: [
