@@ -7,6 +7,7 @@ import Breadcrumb from '../../components/Breadcrumb';
 import EnquiryForm from '../../components/EnquiryForm';
 import ShareButton from './ShareButton';
 import ScrollReset from './ScrollReset';
+import ProductSpecifications from './ProductSpecifications';
 import styles from './product.module.css';
 
 const BRAND_COLLECTIONS = {
@@ -173,6 +174,8 @@ export default async function ProductPage(props) {
               </ul>
             </div>
 
+            <ProductSpecifications product={product} />
+
             <EnquiryForm
               productTitle={product.title}
               productPrice={formattedPrice}
@@ -180,7 +183,7 @@ export default async function ProductPage(props) {
           </div>
         </div>
 
-        <FeaturedProducts 
+        <FeaturedProducts
           currentProductHandle={product.handle}
           collections={product.collections.edges}
         />
