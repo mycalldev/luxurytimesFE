@@ -4,7 +4,7 @@ import styles from './product.module.css'
 
 export default function SpeakToTeamBtn({ productTitle }) {
   const handleClick = () => {
-    window.dispatchEvent(new CustomEvent('openLiveChat'))
+    window.dispatchEvent(new CustomEvent('openLiveChat', { detail: { productTitle } }))
 
     window.dataLayer = window.dataLayer || []
     window.dataLayer.push({
