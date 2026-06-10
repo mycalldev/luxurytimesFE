@@ -8,6 +8,7 @@ import EnquiryForm from '../../components/EnquiryForm';
 import ShareButton from './ShareButton';
 import ScrollReset from './ScrollReset';
 import ProductSpecifications from './ProductSpecifications';
+import SpeakToTeamBtn from './SpeakToTeamBtn';
 import styles from './product.module.css';
 
 const BRAND_COLLECTIONS = {
@@ -100,6 +101,8 @@ export default async function ProductPage(props) {
             <div className={styles.price}>
               {formattedPrice}
             </div>
+
+            <SpeakToTeamBtn productTitle={product.title} />
 
             {(product.year?.value || product.condition?.value) && (
               <div className={styles.detailsCard}>
