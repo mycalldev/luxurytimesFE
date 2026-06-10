@@ -111,11 +111,14 @@ export default function LiveChat() {
   }, [])
 
   useEffect(() => {
-    const handler = () => {
+    const handler = (e) => {
       teaserDismissedRef.current = true
       setShowTeaser(false)
       connectSocket()
       setIsOpen(true)
+      if (e.detail?.productTitle) {
+        setInput(`Hi, I'm interested in the ${e.detail.productTitle}`)
+      }
       trackEvent('chat_open', {
         chat_session_id: sessionIdRef.current,
         source: 'speak_to_team_cta',

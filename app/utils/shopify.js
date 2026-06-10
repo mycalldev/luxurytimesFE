@@ -235,6 +235,45 @@ export async function getProduct(productHandle) {
         poa: metafield(namespace: "custom", key: "poa") {
           value
         }
+        reference: metafield(namespace: "watch_spec", key: "reference") {
+          value
+        }
+        model: metafield(namespace: "watch_spec", key: "model") {
+          value
+        }
+        dial: metafield(namespace: "watch_spec", key: "dial") {
+          value
+        }
+        caseMaterial: metafield(namespace: "watch_spec", key: "case_material") {
+          value
+        }
+        caseSize: metafield(namespace: "watch_spec", key: "case_size") {
+          value
+        }
+        bezel: metafield(namespace: "watch_spec", key: "bezel") {
+          value
+        }
+        crystal: metafield(namespace: "watch_spec", key: "crystal") {
+          value
+        }
+        movement: metafield(namespace: "watch_spec", key: "movement") {
+          value
+        }
+        powerReserve: metafield(namespace: "watch_spec", key: "power_reserve") {
+          value
+        }
+        functions: metafield(namespace: "watch_spec", key: "functions") {
+          value
+        }
+        bracelet: metafield(namespace: "watch_spec", key: "bracelet") {
+          value
+        }
+        clasp: metafield(namespace: "watch_spec", key: "clasp") {
+          value
+        }
+        waterResistance: metafield(namespace: "watch_spec", key: "water_resistance") {
+          value
+        }
         collections(first: 5) {
           edges {
             node {
