@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Script from 'next/script';
 import { getProduct, isPOA } from '../../utils/shopify';
 import ImageGallery from './ImageGallery';
 import FeaturedProducts from './FeaturedProducts';
@@ -9,6 +10,7 @@ import ShareButton from './ShareButton';
 import ScrollReset from './ScrollReset';
 import ProductSpecifications from './ProductSpecifications';
 import SpeakToTeamBtn from './SpeakToTeamBtn';
+import CredibilityBar from '../../components/CredibilityBar';
 import styles from './product.module.css';
 
 const BRAND_COLLECTIONS = {
@@ -88,6 +90,19 @@ export default async function ProductPage(props) {
         <div className={styles.productLayout}>
           <div className={styles.imageGallery}>
             <ImageGallery images={images} productTitle={product.title} />
+            <div className={styles.desktopOnly}>
+              <CredibilityBar bordered={false} />
+            </div>
+            <div className={`${styles.reviewsWidget} ${styles.desktopOnly}`}>
+              <Script
+                src="https://elfsightcdn.com/platform.js"
+                strategy="lazyOnload"
+              />
+              <div
+                className="elfsight-app-3cdc3d51-1a1c-45ef-9439-764920914d6e"
+                data-elfsight-app-lazy
+              />
+            </div>
           </div>
 
           <div className={styles.productInfo}>
@@ -125,10 +140,21 @@ export default async function ProductPage(props) {
               </div>
             )}
 
-            <div 
+            <div
               className={styles.description}
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />
+
+            <div className={`${styles.reviewsWidget} ${styles.mobileOnly}`}>
+              <div
+                className="elfsight-app-3cdc3d51-1a1c-45ef-9439-764920914d6e"
+                data-elfsight-app-lazy
+              />
+            </div>
+
+            <div className={styles.mobileOnly}>
+              <CredibilityBar bordered={false} />
+            </div>
 
             {product.variants.edges.length > 1 && (
               <div className={styles.variants}>

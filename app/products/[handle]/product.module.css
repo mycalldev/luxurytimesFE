@@ -34,6 +34,28 @@
     top: 100px;
     height: fit-content;
   }
+
+  .reviewsWidget {
+    margin-top: 32px;
+  }
+
+  .desktopOnly {
+    display: block;
+  }
+
+  .mobileOnly {
+    display: none;
+  }
+
+  @media (max-width: 968px) {
+    .desktopOnly {
+      display: none;
+    }
+
+    .mobileOnly {
+      display: block;
+    }
+  }
   
   .vendor {
     font-size: 0.9rem;

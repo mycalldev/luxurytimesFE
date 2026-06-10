@@ -8,6 +8,7 @@ import ContactForm from './components/ContactForm'
 import HeroSlider from './components/HeroSlider'
 import FeaturedProducts from './components/FeaturedProducts'
 import GoogleReviews from './components/GoogleReviews'
+import CredibilityBar from './components/CredibilityBar'
 import { getFeaturedProducts } from './utils/shopify'
 
 // Define metadata for the page using Next.js Metadata API
@@ -140,50 +141,7 @@ export default async function Home() {
       {/* CREDIBILITY SECTION */}
       <section className={styles.credibilitySection}>
         <div className={styles.credibilityContainer}>
-          <p className={styles.credibilitySubtitle}>Trusted & Accredited</p>
-          <div className={styles.credibilityLogos}>
-            <div className={styles.credibilityItem}>
-              <div className={styles.credibilityLogoWrapper}>
-                <Image
-                  src="/fga.png"
-                  alt="Fellow of the Gemmological Association of Great Britain"
-                  width={200}
-                  height={100}
-                  className={styles.credibilityLogo}
-                  quality={100}
-                />
-              </div>
-              <span className={styles.credibilityLabel}>FGA - Gemmological Association</span>
-            </div>
-            <div className={styles.credibilityDivider} />
-            <div className={styles.credibilityItem}>
-              <div className={styles.credibilityLogoWrapper}>
-                <Image
-                  src="/bourse_logo.jpg"
-                  alt="London Diamond Bourse Member"
-                  width={200}
-                  height={100}
-                  className={styles.credibilityLogo}
-                  quality={100}
-                />
-              </div>
-              <span className={styles.credibilityLabel}>London Diamond Bourse</span>
-            </div>
-            <div className={styles.credibilityDivider} />
-            <div className={styles.credibilityItem}>
-              <div className={styles.credibilityLogoWrapper}>
-                <Image
-                  src="/NAJ.png"
-                  alt="National Association of Jewellers Member"
-                  width={200}
-                  height={100}
-                  className={styles.credibilityLogo}
-                  quality={100}
-                />
-              </div>
-              <span className={styles.credibilityLabel}>National Association of Jewellers</span>
-            </div>
-          </div>
+          <CredibilityBar bordered={false} />
         </div>
       </section>
 
