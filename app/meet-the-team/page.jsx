@@ -77,7 +77,8 @@ export default function MeetTheTeamPage() {
                 alt={member.name}
                 fill
                 className={`${styles.image} ${member.invert ? styles.inverted : ''}`}
-                sizes="220px"
+                sizes="(max-width: 600px) 160px, 200px"
+                quality={90}
               />
             </div>
             <p className={styles.name}>{member.name}</p>
