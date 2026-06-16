@@ -8,16 +8,17 @@ import Breadcrumb from '../../components/Breadcrumb';
 import EnquiryForm from '../../components/EnquiryForm';
 import ShareButton from './ShareButton';
 import ScrollReset from './ScrollReset';
+import BackButton from './BackButton';
 import ProductSpecifications from './ProductSpecifications';
 import SpeakToTeamBtn from './SpeakToTeamBtn';
 import CredibilityBar from '../../components/CredibilityBar';
 import styles from './product.module.css';
 
 const BRAND_COLLECTIONS = {
-  'rolex':           { label: 'Rolex Collection',           href: '/products/collections/rolex' },
-  'patek-philippe':  { label: 'Patek Philippe Collection',  href: '/products/collections/patek-philippe' },
-  'audemars-piguet': { label: 'Audemars Piguet Collection', href: '/products/collections/audemars-piguet' },
-  'richard-mille':   { label: 'Richard Mille Collection',   href: '/products/collections/richard-mille' },
+  'rolex':           { label: 'Rolex Collection',           href: '/products?collection=rolex' },
+  'patek-philippe':  { label: 'Patek Philippe Collection',  href: '/products?collection=patek-philippe' },
+  'audemars-piguet': { label: 'Audemars Piguet Collection', href: '/products?collection=audemars-piguet' },
+  'richard-mille':   { label: 'Richard Mille Collection',   href: '/products?collection=richard-mille' },
 }
 
 export async function generateMetadata(props) {
@@ -86,6 +87,7 @@ export default async function ProductPage(props) {
       <ScrollReset />
       <Breadcrumb items={breadcrumbItems} />
       <main className={styles.container}>
+        <BackButton />
 
         <div className={styles.productLayout}>
           <div className={styles.imageGallery}>

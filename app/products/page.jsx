@@ -12,7 +12,12 @@ export async function generateMetadata() {
 export default async function ProductsPage(props) {
   const searchParams = await props.searchParams;
   const products = await getAllProducts(100);
-  const collection = searchParams.collection;
+  const initialCollections = searchParams.collection
+    ? searchParams.collection.split(',').filter(Boolean)
+    : [];
+  const initialModels = searchParams.models
+    ? searchParams.models.split(',').filter(Boolean)
+    : [];
 
-  return <ProductsClient products={products} collection={collection} />;
+  return <ProductsClient products={products} initialCollections={initialCollections} initialModels={initialModels} />;
 }

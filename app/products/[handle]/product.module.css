@@ -11,8 +11,25 @@
     margin-bottom: 30px;
     transition: color 0.3s ease;
   }
-  
+
   .backLink:hover {
+    color: #1a1a1a;
+  }
+
+  .backButton {
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #666;
+    font-size: 0.875rem;
+    font-family: inherit;
+    margin-bottom: 24px;
+    transition: color 0.2s ease;
+  }
+
+  .backButton:hover {
     color: #1a1a1a;
   }
   

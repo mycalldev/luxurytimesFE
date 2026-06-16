@@ -159,7 +159,7 @@ const schema = {
         '@type': 'BreadcrumbList',
         'itemListElement': [
           { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': BASE_URL },
-          { '@type': 'ListItem', 'position': 2, 'name': 'Rolex Collection', 'item': `${BASE_URL}/products/collections/rolex` },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Rolex Collection', 'item': `${BASE_URL}/products?collection=rolex` },
           { '@type': 'ListItem', 'position': 3, 'name': 'Rolex Daytona 116520', 'item': `${BASE_URL}/daytona-116520` },
         ],
       },
@@ -169,7 +169,7 @@ const schema = {
 
 const DAYTONA_PDP =
   'https://luxurytimesltd.co.uk/products/rolex-daytona-pre-ceramic-panda-chronograph-ref-116520'
-const DAYTONA_COLLECTION = '/products/collections/rolex?model=Daytona'
+const DAYTONA_COLLECTION = '/products?collection=rolex&models=Daytona'
 
 const IMG = {
   hero: '/landing/daytona/rolex-daytona-116520-desktop.webp',

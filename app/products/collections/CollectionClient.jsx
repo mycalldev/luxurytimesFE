@@ -12,7 +12,9 @@ export default function CollectionClient({ products, collection, initialModel })
     initialModel ? [initialModel] : []
   );
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [canScrollDown, setCanScrollDown] = useState(false);
   const dropdownRef = useRef(null);
+  const modelOptionsRef = useRef(null);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -24,6 +26,22 @@ export default function CollectionClient({ products, collection, initialModel })
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  // Check whether the model options list can scroll further down
+  useEffect(() => {
+    if (!dropdownOpen) return;
+    requestAnimationFrame(() => {
+      const el = modelOptionsRef.current;
+      if (!el) return;
+      setCanScrollDown(el.scrollHeight > el.clientHeight);
+    });
+  }, [dropdownOpen]);
+
+  const handleModelOptionsScroll = () => {
+    const el = modelOptionsRef.current;
+    if (!el) return;
+    setCanScrollDown(el.scrollTop + el.clientHeight < el.scrollHeight - 4);
+  };
 
   // Sort products by custom sort_order metafield (ascending).
   // Products without a sort_order fall to the end.
@@ -145,27 +163,40 @@ export default function CollectionClient({ products, collection, initialModel })
                   Clear All ({selectedModels.length})
                 </button>
               )}
-              <div className={styles.dropdownOptions}>
-                {availableModels.map(model => (
-                  <button
-                    key={model}
-                    role="option"
-                    aria-selected={selectedModels.includes(model)}
-                    onClick={() => toggleModel(model)}
-                    className={`${styles.dropdownOption} ${
-                      selectedModels.includes(model) ? styles.dropdownOptionActive : ''
-                    }`}
-                  >
-                    <span className={styles.optionCheckbox}>
-                      {selectedModels.includes(model) && (
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                          <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      )}
-                    </span>
-                    <span>{model}</span>
-                  </button>
-                ))}
+              <div className={styles.dropdownOptionsWrapper}>
+                <div
+                  className={styles.dropdownOptions}
+                  ref={modelOptionsRef}
+                  onScroll={handleModelOptionsScroll}
+                >
+                  {availableModels.map(model => (
+                    <button
+                      key={model}
+                      role="option"
+                      aria-selected={selectedModels.includes(model)}
+                      onClick={() => toggleModel(model)}
+                      className={`${styles.dropdownOption} ${
+                        selectedModels.includes(model) ? styles.dropdownOptionActive : ''
+                      }`}
+                    >
+                      <span className={styles.optionCheckbox}>
+                        {selectedModels.includes(model) && (
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                      </span>
+                      <span>{model}</span>
+                    </button>
+                  ))}
+                </div>
+                {canScrollDown && (
+                  <div className={styles.scrollIndicator} aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M4 6L8 10L12 6" stroke="#888" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                )}
               </div>
               <button
                 className={styles.applyButton}

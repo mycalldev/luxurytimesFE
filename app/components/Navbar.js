@@ -8,10 +8,10 @@ import WishlistBadge from './WishlistBadge'
 import SearchBar from './SearchBar'
 
 const watchLinks = [
-  { href: '/products/collections/rolex', label: 'Rolex', prefetch: true },
-  { href: '/products/collections/patek-philippe', label: 'Patek Philippe', prefetch: true },
-  { href: '/products/collections/audemars-piguet', label: 'Audemars Piguet', prefetch: true },
-  { href: '/products/collections/richard-mille', label: 'Richard Mille', prefetch: true },
+  { href: '/products?collection=rolex', label: 'Rolex', prefetch: true },
+  { href: '/products?collection=patek-philippe', label: 'Patek Philippe', prefetch: true },
+  { href: '/products?collection=audemars-piguet', label: 'Audemars Piguet', prefetch: true },
+  { href: '/products?collection=richard-mille', label: 'Richard Mille', prefetch: true },
 ]
 
 const navLinks = [

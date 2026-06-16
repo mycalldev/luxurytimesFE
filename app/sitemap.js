@@ -11,12 +11,8 @@ const STATIC_ROUTES = [
   { path: '/review',         changeFrequency: 'monthly', priority: 0.6 },
   { path: '/FAQs',           changeFrequency: 'yearly',  priority: 0.5 },
 
-  // Products & collections
-  { path: '/products',                              changeFrequency: 'daily',   priority: 0.9 },
-  { path: '/products/collections/rolex',            changeFrequency: 'daily',   priority: 0.8 },
-  { path: '/products/collections/patek-philippe',   changeFrequency: 'daily',   priority: 0.8 },
-  { path: '/products/collections/audemars-piguet',  changeFrequency: 'daily',   priority: 0.8 },
-  { path: '/products/collections/richard-mille',    changeFrequency: 'weekly',  priority: 0.7 },
+  // Products
+  { path: '/products', changeFrequency: 'daily', priority: 0.9 },
 
   // Blog index
   { path: '/blog', changeFrequency: 'weekly', priority: 0.6 },

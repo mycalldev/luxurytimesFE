@@ -101,39 +101,39 @@ export default async function Home() {
       <FeaturedProducts products={featuredProducts} />
       {/* CATEGORY SECTION */}
       <section className={styles.categoryContainerGrid}>
-          <BrandCard 
+          <BrandCard
             image="/Category_Images/ROLEX_edit.jpg"
             title="Rolex"
-            href="/products/collections/rolex"
+            href="/products?collection=rolex"
             width={1133}
             height={788}
             altText="Rolex watches collection"
           />
 
-          <BrandCard 
+          <BrandCard
             image="/Category_Images/PATEK_edit.jpg"
             title="Patek Philippe"
-            href="/products/collections/patek-philippe"
+            href="/products?collection=patek-philippe"
             width={1133}
             height={788}
             altText="Patek Philippe watches collection"
           />
 
-          <BrandCard 
+          <BrandCard
             image="/Category_Images/AP_edit.jpg"
             title="Audemars Piguet"
-            href="/products/collections/audemars-piguet"
+            href="/products?collection=audemars-piguet"
             width={1133}
             height={788}
-            altText="Rolex watches collection"
+            altText="Audemars Piguet watches collection"
           />
-          <BrandCard 
+          <BrandCard
             image="/Category_Images/RICHARD_edit.jpg"
             title="Richard Mille"
-            href="/products/collections/richard-mille"
+            href="/products?collection=richard-mille"
             width={1133}
             height={788}
-            altText="Rolex watches collection"
+            altText="Richard Mille watches collection"
           />
 
       </section>

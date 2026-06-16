@@ -8,16 +8,36 @@ import WishlistIcon from '../components/WishlistIcon'
 import { isPOA } from '../utils/shopify'
 import styles from './products.module.css'
 
-export default function ProductsClient({ products, collection: collectionFilter }) {
-  const [selectedModels, setSelectedModels] = useState([])
-  const [dropdownOpen, setDropdownOpen] = useState(false)
-  const dropdownRef = useRef(null)
-  const productsGridRef = useRef(null)
-  const isInitialMount = useRef(true)
+const BRANDS = [
+  { handle: 'rolex',           label: 'Rolex' },
+  { handle: 'patek-philippe',  label: 'Patek Philippe' },
+  { handle: 'audemars-piguet', label: 'Audemars Piguet' },
+  { handle: 'richard-mille',   label: 'Richard Mille' },
+]
 
-  // Close dropdown when clicking outside
+const BRAND_PRIORITY = { 'rolex': 1, 'patek-philippe': 2, 'audemars-piguet': 3, 'richard-mille': 4 }
+const BRAND_NAMES    = { 'rolex': 'Rolex', 'patek-philippe': 'Patek Philippe', 'audemars-piguet': 'Audemars Piguet', 'richard-mille': 'Richard Mille' }
+
+export default function ProductsClient({ products, initialCollections = [], initialModels = [] }) {
+  const [selectedCollections, setSelectedCollections] = useState(initialCollections)
+  const [selectedModels, setSelectedModels]           = useState(initialModels)
+  const [brandDropdownOpen, setBrandDropdownOpen]     = useState(false)
+  const [dropdownOpen, setDropdownOpen]               = useState(false)
+  const [canScrollDown, setCanScrollDown]             = useState(false)
+
+  const brandDropdownRef  = useRef(null)
+  const dropdownRef       = useRef(null)
+  const modelOptionsRef   = useRef(null)
+  const productsGridRef   = useRef(null)
+  const isFirstBrandSync  = useRef(true)
+  const isFirstModelSync  = useRef(true)
+
+  // Close dropdowns when clicking outside
   useEffect(() => {
     function handleClickOutside(e) {
+      if (brandDropdownRef.current && !brandDropdownRef.current.contains(e.target)) {
+        setBrandDropdownOpen(false)
+      }
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setDropdownOpen(false)
       }
@@ -26,31 +46,57 @@ export default function ProductsClient({ products, collection: collectionFilter 
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  // When the brand collection changes via user navigation, reset the model
-  // dropdown and scroll to the products grid. Skipped on initial mount so a
-  // user landing directly on /products?collection=rolex isn't auto-scrolled.
+  // Sync selected brands to URL
   useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false
-      return
+    if (isFirstBrandSync.current) { isFirstBrandSync.current = false; return }
+    const params = new URLSearchParams(window.location.search)
+    if (selectedCollections.length > 0) {
+      params.set('collection', selectedCollections.join(','))
+    } else {
+      params.delete('collection')
     }
-    setSelectedModels([])
-    setDropdownOpen(false)
-    productsGridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }, [collectionFilter])
+    // Clear model param too if models were also reset
+    if (selectedModels.length === 0) params.delete('models')
+    window.history.replaceState(null, '', `?${params.toString()}`)
+  }, [selectedCollections])
 
-  const BRAND_PRIORITY = {
-    'rolex': 1,
-    'patek-philippe': 2,
-    'audemars-piguet': 3,
-    'richard-mille': 4,
-  }
+  // Sync selected models to URL
+  useEffect(() => {
+    if (isFirstModelSync.current) { isFirstModelSync.current = false; return }
+    const params = new URLSearchParams(window.location.search)
+    if (selectedModels.length > 0) {
+      params.set('models', selectedModels.join(','))
+    } else {
+      params.delete('models')
+    }
+    window.history.replaceState(null, '', `?${params.toString()}`)
+  }, [selectedModels])
 
-  const BRAND_NAMES = {
-    'rolex': 'Rolex',
-    'patek-philippe': 'Patek Philippe',
-    'audemars-piguet': 'Audemars Piguet',
-    'richard-mille': 'Richard Mille',
+  // Restore scroll position when returning from a product page
+  useEffect(() => {
+    const savedY = sessionStorage.getItem('productsScrollY')
+    if (!savedY) return
+    sessionStorage.removeItem('productsScrollY')
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: parseInt(savedY, 10), behavior: 'instant' })
+    })
+  }, [])
+
+  // Check whether the model options list can scroll further down.
+  // Reads the DOM after paint so the list height is settled.
+  useEffect(() => {
+    if (!dropdownOpen) return
+    requestAnimationFrame(() => {
+      const el = modelOptionsRef.current
+      if (!el) return
+      setCanScrollDown(el.scrollHeight > el.clientHeight)
+    })
+  }, [dropdownOpen])
+
+  const handleModelOptionsScroll = () => {
+    const el = modelOptionsRef.current
+    if (!el) return
+    setCanScrollDown(el.scrollTop + el.clientHeight < el.scrollHeight - 4)
   }
 
   const getBrandPriority = (product) => {
@@ -61,18 +107,14 @@ export default function ProductsClient({ products, collection: collectionFilter 
     return 99
   }
 
-  // Filter by collection if specified, then sort by:
-  // 1. Brand priority (Rolex → Patek Philippe → Audemars Piguet → Richard Mille)
-  // 2. sort_order metafield ascending within each brand (products without one fall to end)
-  // 3. Feature tag (featured first as tie-breaker)
-  // 4. Alphabetical by title
+  // Filter by selected brands (OR logic), then sort
   const filteredByCollection = useMemo(() => {
     let filtered = products
 
-    if (collectionFilter) {
+    if (selectedCollections.length > 0) {
       filtered = filtered.filter(({ node: product }) =>
         product.collections.edges.some(({ node: col }) =>
-          col.handle === collectionFilter
+          selectedCollections.includes(col.handle)
         )
       )
     }
@@ -92,15 +134,12 @@ export default function ProductsClient({ products, collection: collectionFilter 
 
       return a.node.title.localeCompare(b.node.title)
     })
-  }, [products, collectionFilter])
+  }, [products, selectedCollections])
 
   const MODEL_PREFIX = 'model:'
 
-  // Extract unique watch models from tags prefixed with "model:" — only
-  // surface models that have at least one matching product.
   const availableModels = useMemo(() => {
     const modelCounts = new Map()
-
     filteredByCollection.forEach(({ node: product }) => {
       product.tags?.forEach(tag => {
         if (tag.startsWith(MODEL_PREFIX)) {
@@ -109,85 +148,152 @@ export default function ProductsClient({ products, collection: collectionFilter 
         }
       })
     })
-
     return Array.from(modelCounts.entries())
       .filter(([, count]) => count > 0)
       .map(([model]) => model)
       .sort()
   }, [filteredByCollection])
 
-  // Filter products based on selected models
   const filteredProducts = useMemo(() => {
-    if (selectedModels.length === 0) {
-      return filteredByCollection
-    }
-    
+    if (selectedModels.length === 0) return filteredByCollection
     return filteredByCollection.filter(({ node: product }) => {
-      if (!product.tags || !Array.isArray(product.tags)) {
-        return false
-      }
-      return selectedModels.some(model =>
-        product.tags.includes(`${MODEL_PREFIX}${model}`)
-      )
+      if (!product.tags || !Array.isArray(product.tags)) return false
+      return selectedModels.some(model => product.tags.includes(`${MODEL_PREFIX}${model}`))
     })
   }, [filteredByCollection, selectedModels])
 
-  // Toggle model selection
-  const toggleModel = (model) => {
-    setSelectedModels(prev => {
-      if (prev.includes(model)) {
-        return prev.filter(m => m !== model)
-      } else {
-        return [...prev, model]
-      }
-    })
-  }
-
-  // Clear all filters
-  const clearFilters = () => {
+  const toggleCollection = (handle) => {
+    setSelectedCollections(prev =>
+      prev.includes(handle) ? prev.filter(h => h !== handle) : [...prev, handle]
+    )
     setSelectedModels([])
   }
+
+  const clearCollections = () => {
+    setSelectedCollections([])
+    setSelectedModels([])
+  }
+
+  const toggleModel = (model) => {
+    setSelectedModels(prev =>
+      prev.includes(model) ? prev.filter(m => m !== model) : [...prev, model]
+    )
+  }
+
+  const clearModels = () => setSelectedModels([])
+
+  const saveBackUrl = () => {
+    const params = new URLSearchParams()
+    if (selectedCollections.length > 0) params.set('collection', selectedCollections.join(','))
+    if (selectedModels.length > 0) params.set('models', selectedModels.join(','))
+    const qs = params.toString()
+    sessionStorage.setItem('productsBackUrl', `/products${qs ? `?${qs}` : ''}`)
+    sessionStorage.setItem('productsScrollY', String(window.scrollY))
+  }
+
+  const brandTriggerLabel = selectedCollections.length === 0
+    ? 'All Watches'
+    : selectedCollections.length === 1
+      ? BRAND_NAMES[selectedCollections[0]]
+      : `${selectedCollections.length} Brands Selected`
 
   return (
     <main className={styles.container}>
       <div className={styles.header}>
         <h1 className={styles.title}>LUXURY WATCHES</h1>
-        
+
+        {/* Mobile brand multi-select dropdown */}
+        <div className={styles.mobileBrandFilter} ref={brandDropdownRef}>
+          <button
+            className={styles.dropdownTrigger}
+            onClick={() => setBrandDropdownOpen(prev => !prev)}
+            aria-expanded={brandDropdownOpen}
+            aria-haspopup="listbox"
+          >
+            <div className={styles.dropdownTriggerContent}>
+              <svg className={styles.filterIcon} width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M1.5 3.75H16.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M4.5 9H13.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M7 14.25H11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              <span>{brandTriggerLabel}</span>
+            </div>
+            <svg
+              className={`${styles.chevronIcon} ${brandDropdownOpen ? styles.chevronOpen : ''}`}
+              width="16" height="16" viewBox="0 0 16 16" fill="none"
+            >
+              <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
+          {brandDropdownOpen && (
+            <div className={styles.dropdownMenu} role="listbox" aria-multiselectable="true">
+              <div className={styles.dropdownOptions}>
+                <button
+                  role="option"
+                  aria-selected={selectedCollections.length === 0}
+                  onClick={clearCollections}
+                  className={`${styles.dropdownOption} ${selectedCollections.length === 0 ? styles.dropdownOptionActive : ''}`}
+                >
+                  <span className={styles.optionCheckbox}>
+                    {selectedCollections.length === 0 && (
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </span>
+                  <span>All Watches</span>
+                </button>
+                {BRANDS.map(({ handle, label }) => (
+                  <button
+                    key={handle}
+                    role="option"
+                    aria-selected={selectedCollections.includes(handle)}
+                    onClick={() => toggleCollection(handle)}
+                    className={`${styles.dropdownOption} ${selectedCollections.includes(handle) ? styles.dropdownOptionActive : ''}`}
+                  >
+                    <span className={styles.optionCheckbox}>
+                      {selectedCollections.includes(handle) && (
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                          <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      )}
+                    </span>
+                    <span>{label}</span>
+                  </button>
+                ))}
+              </div>
+              <button
+                className={styles.applyButton}
+                onClick={() => setBrandDropdownOpen(false)}
+              >
+                {selectedCollections.length === 0 ? 'Close' : `Show Results (${filteredByCollection.length})`}
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Desktop brand toggle buttons */}
         <div className={styles.filterButtons}>
-          <Button 
-            href="/products" 
-            variant={!collectionFilter ? 'active' : 'primary'}
+          <Button
+            variant={selectedCollections.length === 0 ? 'active' : 'primary'}
+            onClick={clearCollections}
           >
             All Watches
           </Button>
-          <Button 
-            href="/products?collection=rolex" 
-            variant={collectionFilter === 'rolex' ? 'active' : 'primary'}
-          >
-            Rolex
-          </Button>
-          <Button 
-            href="/products?collection=patek-philippe" 
-            variant={collectionFilter === 'patek-philippe' ? 'active' : 'primary'}
-          >
-            Patek Philippe
-          </Button>
-          <Button 
-            href="/products?collection=audemars-piguet" 
-            variant={collectionFilter === 'audemars-piguet' ? 'active' : 'primary'}
-          >
-            Audemars Piguet
-          </Button>
-          <Button 
-            href="/products?collection=richard-mille" 
-            variant={collectionFilter === 'richard-mille' ? 'active' : 'primary'}
-          >
-            Richard Mille
-          </Button>
+          {BRANDS.map(({ handle, label }) => (
+            <Button
+              key={handle}
+              variant={selectedCollections.includes(handle) ? 'active' : 'primary'}
+              onClick={() => toggleCollection(handle)}
+            >
+              {label}
+            </Button>
+          ))}
         </div>
       </div>
 
-      {/* Filter Section - Dropdown */}
+      {/* Model filter dropdown */}
       {availableModels.length > 0 && (
         <div className={styles.filterSection} ref={dropdownRef}>
           <button
@@ -210,10 +316,7 @@ export default function ProductsClient({ products, collection: collectionFilter 
             </div>
             <svg
               className={`${styles.chevronIcon} ${dropdownOpen ? styles.chevronOpen : ''}`}
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
+              width="16" height="16" viewBox="0 0 16 16" fill="none"
             >
               <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -222,50 +325,56 @@ export default function ProductsClient({ products, collection: collectionFilter 
           {dropdownOpen && (
             <div className={styles.dropdownMenu} role="listbox" aria-multiselectable="true">
               {selectedModels.length > 0 && (
-                <button
-                  onClick={clearFilters}
-                  className={styles.clearButton}
-                >
+                <button onClick={clearModels} className={styles.clearButton}>
                   Clear All ({selectedModels.length})
                 </button>
               )}
-              <div className={styles.dropdownOptions}>
-                {availableModels.map(model => (
-                  <button
-                    key={model}
-                    role="option"
-                    aria-selected={selectedModels.includes(model)}
-                    onClick={() => toggleModel(model)}
-                    className={`${styles.dropdownOption} ${
-                      selectedModels.includes(model) ? styles.dropdownOptionActive : ''
-                    }`}
-                  >
-                    <span className={styles.optionCheckbox}>
-                      {selectedModels.includes(model) && (
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                          <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      )}
-                    </span>
-                    <span>{model}</span>
-                  </button>
-                ))}
+              <div className={styles.dropdownOptionsWrapper}>
+                <div
+                  className={styles.dropdownOptions}
+                  ref={modelOptionsRef}
+                  onScroll={handleModelOptionsScroll}
+                >
+                  {availableModels.map(model => (
+                    <button
+                      key={model}
+                      role="option"
+                      aria-selected={selectedModels.includes(model)}
+                      onClick={() => toggleModel(model)}
+                      className={`${styles.dropdownOption} ${selectedModels.includes(model) ? styles.dropdownOptionActive : ''}`}
+                    >
+                      <span className={styles.optionCheckbox}>
+                        {selectedModels.includes(model) && (
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                      </span>
+                      <span>{model}</span>
+                    </button>
+                  ))}
+                </div>
+                {canScrollDown && (
+                  <div className={styles.scrollIndicator} aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M4 6L8 10L12 6" stroke="#888" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                )}
               </div>
               <button
                 className={styles.applyButton}
                 onClick={() => setDropdownOpen(false)}
               >
-                {selectedModels.length === 0
-                  ? 'Close'
-                  : `Show Results (${filteredProducts.length})`}
+                {selectedModels.length === 0 ? 'Close' : `Show Results (${filteredProducts.length})`}
               </button>
             </div>
           )}
         </div>
       )}
 
-      {/* Results count — hidden when the selected brand has no stock at all */}
-      {!(collectionFilter && filteredByCollection.length === 0) && (
+      {/* Results count — hidden when exactly one brand is selected with no stock */}
+      {!(selectedCollections.length === 1 && filteredByCollection.length === 0) && (
         <div className={styles.resultsInfo}>
           Showing {filteredProducts.length} of {filteredByCollection.length} watches
           {selectedModels.length > 0 && (
@@ -281,10 +390,10 @@ export default function ProductsClient({ products, collection: collectionFilter 
         {filteredProducts.map(({ node: product }) => {
           const firstImage = product.images.edges[0]?.node
           const price = product.priceRange.minVariantPrice
-          
+
           return (
             <article key={product.id} className={styles.productCard}>
-              <Link href={`/products/${product.handle}`}>
+              <Link href={`/products/${product.handle}`} onClick={saveBackUrl}>
                 {firstImage && (
                   <div className={styles.imageContainer}>
                     <Image
@@ -300,11 +409,9 @@ export default function ProductsClient({ products, collection: collectionFilter 
                     </div>
                   </div>
                 )}
-                
                 <div className={styles.productContent}>
                   <div className={styles.vendor}>{product.vendor}</div>
                   <h2 className={styles.productTitle}>{product.title}</h2>
-                  
                   <div className={styles.price}>
                     {isPOA(product)
                       ? 'POA'
@@ -314,7 +421,6 @@ export default function ProductsClient({ products, collection: collectionFilter 
                           minimumFractionDigits: 0,
                         }).format(price.amount)}
                   </div>
-                  
                   <div className={styles.viewBtn}>View Details</div>
                 </div>
               </Link>
@@ -322,13 +428,13 @@ export default function ProductsClient({ products, collection: collectionFilter 
           )
         })}
       </div>
-      
-      {collectionFilter && filteredByCollection.length === 0 ? (
+
+      {selectedCollections.length === 1 && filteredByCollection.length === 0 ? (
         <div className={styles.comingSoon}>
           <p className={styles.comingSoonLabel}>Coming Soon</p>
-          <h2 className={styles.comingSoonBrand}>{BRAND_NAMES[collectionFilter] || collectionFilter}</h2>
+          <h2 className={styles.comingSoonBrand}>{BRAND_NAMES[selectedCollections[0]] || selectedCollections[0]}</h2>
           <p className={styles.comingSoonText}>
-            Our {BRAND_NAMES[collectionFilter] || collectionFilter} collection is currently being curated.
+            Our {BRAND_NAMES[selectedCollections[0]] || selectedCollections[0]} collection is currently being curated.
             Please check back soon, or explore our other brands above.
           </p>
         </div>
@@ -342,4 +448,3 @@ export default function ProductsClient({ products, collection: collectionFilter 
     </main>
   )
 }
-
