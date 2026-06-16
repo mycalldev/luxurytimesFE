@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Script from 'next/script';
-import { getProduct, isPOA } from '../../utils/shopify';
+import { getProduct, getAllProductHandles, isPOA } from '../../utils/shopify';
 import ImageGallery from './ImageGallery';
 import FeaturedProducts from './FeaturedProducts';
 import WishlistIcon from '../../components/WishlistIcon';
@@ -19,6 +19,14 @@ const BRAND_COLLECTIONS = {
   'patek-philippe':  { label: 'Patek Philippe Collection',  href: '/products?collection=patek-philippe' },
   'audemars-piguet': { label: 'Audemars Piguet Collection', href: '/products?collection=audemars-piguet' },
   'richard-mille':   { label: 'Richard Mille Collection',   href: '/products?collection=richard-mille' },
+}
+
+// Pre-render every product page at build time, then refresh in the background.
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const handles = await getAllProductHandles();
+  return handles.map((handle) => ({ handle }));
 }
 
 export async function generateMetadata(props) {

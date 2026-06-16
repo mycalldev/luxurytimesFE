@@ -294,6 +294,41 @@ export async function getProduct(productHandle) {
   return response.data?.product;
 }
 
+// Get every product handle (paginated) — used for static generation
+export async function getAllProductHandles() {
+  const handles = [];
+  let cursor = null;
+  let hasNextPage = true;
+
+  while (hasNextPage) {
+    const query = `
+      {
+        products(first: 250${cursor ? `, after: "${cursor}"` : ''}) {
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+          edges {
+            node {
+              handle
+            }
+          }
+        }
+      }
+    `;
+
+    const response = await ShopifyData(query);
+    const products = response.data?.products;
+    if (!products) break;
+
+    handles.push(...products.edges.map(({ node }) => node.handle));
+    hasNextPage = products.pageInfo.hasNextPage;
+    cursor = products.pageInfo.endCursor;
+  }
+
+  return handles;
+}
+
 // Get products from all three watch collections
 export async function getAllWatchCollections() {
   const collections = ['rolex', 'audemars-piguet', 'patek-philippe'];

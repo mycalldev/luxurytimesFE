@@ -44,7 +44,8 @@ export default function ImageGallery({ images, productTitle }) {
           width={1000}
           height={1000}
           className={styles.mainImage}
-          quality={100}
+          sizes="(max-width: 968px) 100vw, 600px"
+          quality={80}
           priority
         />
       </div>
