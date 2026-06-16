@@ -94,6 +94,34 @@
 }
 
 /* ==========================================
+   MOBILE OVERFLOW FIX (below 768px)
+   ========================================== */
+
+@media (max-width: 767px) {
+  .breadcrumbList {
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  .breadcrumbItem {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  /* Keep nav links (Home, Blog, etc.) from shrinking away */
+  .breadcrumbItem:not(:last-child) {
+    flex-shrink: 0;
+  }
+
+  /* Truncate the current page title if it's too long */
+  .breadcrumbCurrent {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+}
+
+/* ==========================================
    TABLET STYLES (768px+)
    ========================================== */
 
