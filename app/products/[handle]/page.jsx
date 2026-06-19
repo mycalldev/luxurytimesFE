@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Script from 'next/script';
 import { getProduct, getAllProductHandles, isPOA } from '../../utils/shopify';
 import ImageGallery from './ImageGallery';
+import ProductReviews from './ProductReviews';
 import FeaturedProducts from './FeaturedProducts';
 import WishlistIcon from '../../components/WishlistIcon';
 import Breadcrumb from '../../components/Breadcrumb';
@@ -103,16 +103,7 @@ export default async function ProductPage(props) {
             <div className={styles.desktopOnly}>
               <CredibilityBar bordered={false} />
             </div>
-            <div className={`${styles.reviewsWidget} ${styles.desktopOnly}`}>
-              <Script
-                src="https://elfsightcdn.com/platform.js"
-                strategy="lazyOnload"
-              />
-              <div
-                className="elfsight-app-3cdc3d51-1a1c-45ef-9439-764920914d6e"
-                data-elfsight-app-lazy
-              />
-            </div>
+            <ProductReviews className={`${styles.reviewsWidget} ${styles.desktopOnly}`} />
           </div>
 
           <div className={styles.productInfo}>
@@ -155,12 +146,7 @@ export default async function ProductPage(props) {
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />
 
-            <div className={`${styles.reviewsWidget} ${styles.mobileOnly}`}>
-              <div
-                className="elfsight-app-3cdc3d51-1a1c-45ef-9439-764920914d6e"
-                data-elfsight-app-lazy
-              />
-            </div>
+            <ProductReviews className={`${styles.reviewsWidget} ${styles.mobileOnly}`} />
 
             <div className={styles.mobileOnly}>
               <CredibilityBar bordered={false} />

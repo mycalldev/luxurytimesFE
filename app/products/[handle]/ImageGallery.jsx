@@ -31,7 +31,9 @@ export default function ImageGallery({ images, productTitle }) {
               width={150}
               height={150}
               className={styles.thumbnailImage}
+              sizes="150px"
               quality={80}
+              loading={index === 0 ? 'eager' : 'lazy'}
             />
           </button>
         ))}
