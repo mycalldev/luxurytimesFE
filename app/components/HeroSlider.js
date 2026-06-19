@@ -115,6 +115,7 @@ export default function HeroSlider({
               className={styles.slideImageMobile}
               quality={100}
               priority={index === 0}
+              loading={index === 0 ? 'eager' : 'lazy'}
             />
             {/* Desktop Image */}
             {image.srcDesktop && (
@@ -126,6 +127,7 @@ export default function HeroSlider({
                 className={styles.slideImageDesktop}
                 quality={100}
                 priority={index === 0}
+                loading={index === 0 ? 'eager' : 'lazy'}
               />
             )}
           </div>

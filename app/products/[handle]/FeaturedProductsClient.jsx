@@ -16,7 +16,7 @@ export default function FeaturedProductsClient({ products, collectionTitle, coll
       <div className={styles.header}>
         <h2 className={styles.title}>More from {collectionTitle}</h2>
         {collectionHandle && (
-          <Link href={`/products/collections/${collectionHandle}`} className={styles.viewAll}>
+          <Link href={`/products?collection=${collectionHandle}`} className={styles.viewAll}>
             View All →
           </Link>
         )}

@@ -1,3 +1,5 @@
+import { cache } from 'react';
+
 const domain = process.env.SHOPIFY_STORE_DOMAIN;
 const storefrontAccessToken = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
@@ -164,8 +166,9 @@ export async function getAllProducts(first = 50) {
   return response.data?.products.edges || [];
 }
 
-// Get single product by handle
-export async function getProduct(productHandle) {
+// Get single product by handle — wrapped in cache() so generateMetadata and the page
+// component share one fetch result per request instead of making two identical calls.
+export const getProduct = cache(async function getProduct(productHandle) {
   const query = `
     {
       product(handle: "${productHandle}") {
@@ -292,7 +295,7 @@ export async function getProduct(productHandle) {
 
   const response = await ShopifyData(query);
   return response.data?.product;
-}
+});
 
 // Get every product handle (paginated) — used for static generation
 export async function getAllProductHandles() {
@@ -420,10 +423,7 @@ export async function getAllArticles(blogHandle = "News") {
   `;
 
   const response = await ShopifyData(query);
-  response.data?.blog?.articles?.edges?.forEach(({ node: article }) => {
-  
-  });
-  return response.data.blog?.articles.edges || [];
+  return response.data?.blog?.articles?.edges || [];
 }
 
 // Get single article by handle

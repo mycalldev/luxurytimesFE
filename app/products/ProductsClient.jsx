@@ -72,6 +72,20 @@ export default function ProductsClient({ products, initialCollections = [], init
     window.history.replaceState(null, '', `?${params.toString()}`)
   }, [selectedModels])
 
+  // Re-sync filter state when the URL changes via navigation (e.g. clicking a
+  // brand in the navbar "Watches" dropdown while already on /products). useState
+  // only seeds the first mount, so a client-side navigation that reuses this
+  // already-mounted component would otherwise keep the previous filter applied.
+  // Comparing joined keys means this only fires on real navigations, not on the
+  // in-page replaceState writes above (those don't change these props).
+  const initialCollectionsKey = initialCollections.join(',')
+  const initialModelsKey = initialModels.join(',')
+  useEffect(() => {
+    setSelectedCollections(initialCollections)
+    setSelectedModels(initialModels)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialCollectionsKey, initialModelsKey])
+
   // Restore scroll position when returning from a product page
   useEffect(() => {
     const savedY = sessionStorage.getItem('productsScrollY')
