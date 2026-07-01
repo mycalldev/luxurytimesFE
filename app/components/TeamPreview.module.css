@@ -1,0 +1,106 @@
+.section {
+  width: 100%;
+  padding: 4rem 1.25rem 5rem;
+  background: linear-gradient(to bottom, #fafafa, #ffffff);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.5px;
+}
+
+.description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #575757;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f5f5f5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member:hover .imageWrapper {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.image {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-top: 16px;
+  letter-spacing: 0.3px;
+}
+
+.role {
+  font-size: 0.8rem;
+  color: #8a7a5a;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.25rem 1rem;
+  }
+
+  .imageWrapper {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 360px) {
+  .imageWrapper {
+    width: 130px;
+    height: 130px;
+  }
+}

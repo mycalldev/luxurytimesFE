@@ -9,6 +9,7 @@ import HeroSlider from './components/HeroSlider'
 import FeaturedProducts from './components/FeaturedProducts'
 import GoogleReviews from './components/GoogleReviews'
 import CredibilityBar from './components/CredibilityBar'
+import TeamPreview from './components/TeamPreview'
 import { getFeaturedProducts } from './utils/shopify'
 
 // Define metadata for the page using Next.js Metadata API
@@ -156,6 +157,9 @@ export default async function Home() {
       
 
       <ContactForm />
+
+      {/* MEET THE TEAM SECTION */}
+      <TeamPreview />
     </main>
     </>
   )
