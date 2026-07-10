@@ -29,21 +29,21 @@ export const TEAM = [
     ],
   },
   {
-    name: 'Hamza',
-    image: '/meet_the_team/Hamza.webp',
-    role: 'Sales Coordinator',
-    bio: [
-      'Hamza joined the business in 2025 and works closely alongside Ciaran, supporting client enquiries and sales opportunities. Through dedication and self-motivation, he has rapidly developed his product knowledge and understanding of the luxury watch market.',
-      'Hamza has proved to be an excellent addition to the team, regularly creating sales through his own initiative and proactive approach. He continues to build his expertise while providing a professional and efficient service to clients.',
-    ],
-  },
-  {
     name: 'Alexa',
     image: '/meet_the_team/ALexa.webp',
     role: 'Client Services & Operations',
     bio: [
       'Alexa has been part of the business for 18 months and plays a key role in supporting the team across a wide range of responsibilities. From greeting clients and processing information to assisting with social media photography, she helps ensure the business runs smoothly day to day.',
       'With a background in singing, acting, and theatre, Alexa brings confidence, professionalism, and excellent people skills to the role. She is currently studying towards professional valuation qualifications and is developing her knowledge under the guidance of senior team members.',
+    ],
+  },
+  {
+    name: 'Hamza',
+    image: '/meet_the_team/Hamza.webp',
+    role: 'Sales Coordinator',
+    bio: [
+      'Hamza joined the business in 2025 and works closely alongside Ciaran, supporting client enquiries and sales opportunities. Through dedication and self-motivation, he has rapidly developed his product knowledge and understanding of the luxury watch market.',
+      'Hamza has proved to be an excellent addition to the team, regularly creating sales through his own initiative and proactive approach. He continues to build his expertise while providing a professional and efficient service to clients.',
     ],
   },
   {
