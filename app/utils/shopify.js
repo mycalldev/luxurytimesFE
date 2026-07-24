@@ -9,6 +9,13 @@ export function isPOA(product) {
   return product?.poa?.value === 'true';
 }
 
+// How long a cached Shopify response stays fresh before it's eligible to be
+// rebuilt on the next request. Defaults to 24h. Because pages are also
+// invalidated on demand via the Shopify webhook -> /api/revalidate route
+// (revalidateTag('shopify')), this timer is just a safety net, not the primary
+// refresh mechanism — so keep it long to minimise ISR writes.
+const SHOPIFY_REVALIDATE_SECONDS = Number(process.env.SHOPIFY_REVALIDATE_SECONDS) || 86400;
+
 async function ShopifyData(query) {
   const URL = `https://${domain}/api/2024-10/graphql.json`;
 
@@ -26,7 +33,7 @@ async function ShopifyData(query) {
   try {
     const data = await fetch(URL, {
       ...options,
-      next: { revalidate: 60 } 
+      next: { revalidate: SHOPIFY_REVALIDATE_SECONDS, tags: ['shopify'] }
     }).then((response) => {
       return response.json();
     });

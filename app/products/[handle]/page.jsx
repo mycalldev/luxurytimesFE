@@ -21,8 +21,10 @@ const BRAND_COLLECTIONS = {
   'richard-mille':   { label: 'Richard Mille Collection',   href: '/products?collection=richard-mille' },
 }
 
-// Pre-render every product page at build time, then refresh in the background.
-export const revalidate = 3600;
+// Pre-render every product page at build time. Pages are refreshed on demand
+// when Shopify sends a product webhook (-> /api/revalidate -> revalidateTag).
+// This long timer is only a fallback so it doesn't drive up ISR writes.
+export const revalidate = 86400;
 
 export async function generateStaticParams() {
   const handles = await getAllProductHandles();
