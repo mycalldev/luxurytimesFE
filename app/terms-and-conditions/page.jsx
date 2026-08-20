@@ -34,7 +34,7 @@ export default function TermsAndConditions() {
           <h3 className={styles.listItem}>Pricing and Payment:</h3>
           <li className={styles.listItem}>All prices listed on Luxury Times Ltd website are in Pound Sterling and are subject to change without notice. We accept payment by credit card, PayPal, or wire transfer. Payment must be made in full at the time of purchase.</li>
           <h3 className={styles.listItem}>Shipping and Delivery:</h3>
-          <li className={styles.listItem}>Luxury Times Ltd offer shipping worldwide for all orders. Delivery times may vary depending on the destination, and we cannot be held responsible for any customs fees or taxes imposed by the recipient's country.
+          <li className={styles.listItem}>Luxury Times Ltd offer shipping worldwide for all orders. Delivery times may vary depending on the destination, and we cannot be held responsible for any customs fees or taxes imposed by the recipient&apos;s country.
                                            Returns and Refunds:</li>
           <li className={styles.listItem}>Luxury Times Ltd offer a 14-day return policy for non-faulty items. If you are not satisfied with your purchase, you may return the item for a full refund, excluding shipping costs. The item must be in its original condition, with all the accessories and packaging, and not worn or altered in any way. If you receive a faulty item, please contact Luxury Times Ltd immediately. We will assess the issue and determine the best course of action, Luxury Times Ltd may include a full refund or replacement item.</li>
           <h3 className={styles.listItem}>Warranty:</h3>

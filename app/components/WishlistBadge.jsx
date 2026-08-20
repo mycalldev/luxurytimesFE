@@ -1,27 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useSyncExternalStore } from 'react'
 import Link from 'next/link'
-import { getWishlistCount } from '../utils/wishlist'
+import { getWishlistCount, subscribeToWishlist } from '../utils/wishlist'
 import styles from './WishlistBadge.module.css'
 
 export default function WishlistBadge() {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    // Get initial count
-    setCount(getWishlistCount())
-
-    // Listen for wishlist updates
-    const handleWishlistUpdate = () => {
-      setCount(getWishlistCount())
-    }
-
-    window.addEventListener('wishlistUpdated', handleWishlistUpdate)
-    return () => {
-      window.removeEventListener('wishlistUpdated', handleWishlistUpdate)
-    }
-  }, [])
+  const count = useSyncExternalStore(subscribeToWishlist, getWishlistCount, () => 0)
 
   if (count === 0) return null
 

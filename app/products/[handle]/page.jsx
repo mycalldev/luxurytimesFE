@@ -192,7 +192,7 @@ export default async function ProductPage(props) {
                 </li>
                 <li className={styles.includesItem}>
                   <span className={styles.checkmark}>✓</span>
-                  <span>Manufacturer's Booklet & Manual</span>
+                  <span>Manufacturer&apos;s Booklet & Manual</span>
                 </li>
                 <li className={styles.includesItem}>
                   <span className={styles.checkmark}>✓</span>

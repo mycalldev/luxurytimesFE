@@ -131,7 +131,7 @@ export default function FAQsClient() {
       <div className={styles.introSection}>
         <p className={styles.introText}>
           Have questions about Rolex, Patek Philippe, or luxury watches in general?
-          You're in the right place! Our comprehensive FAQ section covers the most common
+          You&apos;re in the right place! Our comprehensive FAQ section covers the most common
           questions about authentication, valuation, purchasing, and caring for your luxury timepiece.
         </p>
       </div>

@@ -1,27 +1,16 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { addToWishlist, removeFromWishlist, isInWishlist } from '../utils/wishlist'
+import { useState, useSyncExternalStore } from 'react'
+import { addToWishlist, removeFromWishlist, isInWishlist, subscribeToWishlist } from '../utils/wishlist'
 import styles from './WishlistIcon.module.css'
 
 export default function WishlistIcon({ product, className = '' }) {
-  const [inWishlist, setInWishlist] = useState(false)
+  const inWishlist = useSyncExternalStore(
+    subscribeToWishlist,
+    () => isInWishlist(product.handle),
+    () => false
+  )
   const [isAnimating, setIsAnimating] = useState(false)
-
-  useEffect(() => {
-    // Check initial state
-    setInWishlist(isInWishlist(product.handle))
-
-    // Listen for wishlist updates
-    const handleWishlistUpdate = () => {
-      setInWishlist(isInWishlist(product.handle))
-    }
-
-    window.addEventListener('wishlistUpdated', handleWishlistUpdate)
-    return () => {
-      window.removeEventListener('wishlistUpdated', handleWishlistUpdate)
-    }
-  }, [product.handle])
 
   const handleToggle = (e) => {
     e.preventDefault()

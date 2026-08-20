@@ -49,7 +49,7 @@ export default function DepositPolicy() {
           <p className={styles.sectionBody}>
             Where Luxury Times is requested to source, acquire or secure a watch specifically on behalf
             of a client, deposits will generally be non-refundable. This is because Luxury Times may
-            incur costs, commitments or obligations in acquiring the watch on the client's behalf.
+            incur costs, commitments or obligations in acquiring the watch on the client&apos;s behalf.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export default function DepositPolicy() {
           <h2 className={styles.sectionTitle}>Contact Us</h2>
           <div className={styles.contactBlock}>
             <strong>Luxury Times</strong>
-            <p>15 St George's House, Hanover Square, Mayfair, London W1S 1HS</p>
+            <p>15 St George&apos;s House, Hanover Square, Mayfair, London W1S 1HS</p>
             <p>London Diamond Bourse, 100 Hatton Garden, London EC1N 8NX</p>
             <p>Email: <a href="mailto:info@luxurytimesltd.co.uk">info@luxurytimesltd.co.uk</a></p>
           </div>

@@ -60,10 +60,7 @@ export default function FeaturedProducts({ products }) {
             spaceBetween={24}
             slidesPerView={1.2}
             centeredSlides={true}
-            navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-            }}
+            navigation={true}
             onBeforeInit={(swiper) => {
               swiper.params.navigation.prevEl = prevRef.current
               swiper.params.navigation.nextEl = nextRef.current

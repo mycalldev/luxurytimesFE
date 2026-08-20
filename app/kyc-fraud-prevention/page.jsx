@@ -27,7 +27,7 @@ export default function KycFraudPrevention() {
         <div className={styles.section}>
           <h2 className={styles.sectionTitle}>Identity Verification</h2>
           <p className={styles.sectionBody}>
-            In certain circumstances, Luxury Times may request documentation to verify a client's
+            In certain circumstances, Luxury Times may request documentation to verify a client&apos;s
             identity. This may include photographic identification, proof of address, verification of
             payment details and additional information reasonably required to complete a transaction.
           </p>
@@ -86,7 +86,7 @@ export default function KycFraudPrevention() {
           <h2 className={styles.sectionTitle}>Contact Us</h2>
           <div className={styles.contactBlock}>
             <strong>Luxury Times</strong>
-            <p>15 St George's House, Hanover Square, Mayfair, London W1S 1HS</p>
+            <p>15 St George&apos;s House, Hanover Square, Mayfair, London W1S 1HS</p>
             <p>London Diamond Bourse, 100 Hatton Garden, London EC1N 8NX</p>
             <p>Email: <a href="mailto:info@luxurytimesltd.co.uk">info@luxurytimesltd.co.uk</a></p>
           </div>

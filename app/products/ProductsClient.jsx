@@ -58,6 +58,10 @@ export default function ProductsClient({ products, initialCollections = [], init
     // Clear model param too if models were also reset
     if (selectedModels.length === 0) params.delete('models')
     window.history.replaceState(null, '', `?${params.toString()}`)
+    // Deliberately excludes selectedModels: this effect should only re-fire on
+    // collection changes (a separate effect below handles model-only changes),
+    // it just needs the latest models value when it does run.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCollections])
 
   // Sync selected models to URL
@@ -77,14 +81,17 @@ export default function ProductsClient({ products, initialCollections = [], init
   // only seeds the first mount, so a client-side navigation that reuses this
   // already-mounted component would otherwise keep the previous filter applied.
   // Comparing joined keys means this only fires on real navigations, not on the
-  // in-page replaceState writes above (those don't change these props).
+  // in-page replaceState writes above (those don't change these props). Adjusting
+  // state during render (rather than in an effect) avoids an extra render pass.
   const initialCollectionsKey = initialCollections.join(',')
   const initialModelsKey = initialModels.join(',')
-  useEffect(() => {
+  const propsKey = `${initialCollectionsKey}|${initialModelsKey}`
+  const [syncedPropsKey, setSyncedPropsKey] = useState(propsKey)
+  if (propsKey !== syncedPropsKey) {
+    setSyncedPropsKey(propsKey)
     setSelectedCollections(initialCollections)
     setSelectedModels(initialModels)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialCollectionsKey, initialModelsKey])
+  }
 
   // Restore scroll position when returning from a product page
   useEffect(() => {

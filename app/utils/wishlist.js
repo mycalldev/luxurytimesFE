@@ -87,8 +87,14 @@ export function isInWishlist(productHandle) {
 // Get wishlist count
 export function getWishlistCount() {
   if (typeof window === 'undefined') return 0
-  
+
   return getWishlist().length
+}
+
+// Subscribe to wishlist changes (for useSyncExternalStore)
+export function subscribeToWishlist(callback) {
+  window.addEventListener('wishlistUpdated', callback)
+  return () => window.removeEventListener('wishlistUpdated', callback)
 }
 
 // Clear entire wishlist

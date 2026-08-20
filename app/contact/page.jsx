@@ -20,7 +20,7 @@ export default function Contact() {
         <div className={styles.formSection}>
           <h2 className={styles.formTitle}> Get in Touch with Luxury Times</h2>
           <p className={styles.formDescription}>
-            Fill out the form below and we'll get back to you as soon as possible.
+            Fill out the form below and we&apos;ll get back to you as soon as possible.
           </p>
           <ContactForm />
           <div className={styles.buttonWrapper}>

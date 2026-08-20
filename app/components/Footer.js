@@ -80,7 +80,7 @@ export default function Footer() {
           <div className={styles.contactInfo}>
             <div className={styles.addressBlock}>
               <p className={styles.addressTitle}>Mayfair</p>
-              <p className={styles.addressText}>15 St George's House</p>
+              <p className={styles.addressText}>15 St George&apos;s House</p>
               <p className={styles.addressText}>Hanover Square London, W1S 1HS</p>
             </div>
             <div className={styles.addressBlock}>

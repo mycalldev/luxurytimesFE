@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import styles from './Carousel.module.css';
 
 export default function Carousel() {
@@ -29,10 +30,11 @@ export default function Carousel() {
         <div className={styles.carousel}>
             <div className={styles.imageWrapper}>
                 {images.map((image, index) => (
-                    <img
+                    <Image
                         key={index}
                         src={image.src}
                         alt={image.alt}
+                        fill
                         className={`${styles.image} ${index === currentIndex ? styles.fadeIn : ''}`}
                     />
                 ))}

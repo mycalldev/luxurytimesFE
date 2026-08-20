@@ -29,7 +29,7 @@ export default function WarrantyPolicy() {
           <h2 className={styles.sectionTitle}>Manufacturer Warranty</h2>
           <p className={styles.sectionBody}>
             Many watches offered by Luxury Times may still benefit from the balance of the original
-            manufacturer's warranty. Depending on the watch and its original date of purchase, this
+            manufacturer&apos;s warranty. Depending on the watch and its original date of purchase, this
             may include coverage provided by Rolex, Patek Philippe, Audemars Piguet or another
             manufacturer. Details of any remaining manufacturer warranty will be provided at the time
             of sale where applicable.
@@ -103,7 +103,7 @@ export default function WarrantyPolicy() {
           <h2 className={styles.sectionTitle}>Contact Us</h2>
           <div className={styles.contactBlock}>
             <strong>Luxury Times</strong>
-            <p>15 St George's House, Hanover Square, Mayfair, London W1S 1HS</p>
+            <p>15 St George&apos;s House, Hanover Square, Mayfair, London W1S 1HS</p>
             <p>London Diamond Bourse, 100 Hatton Garden, London EC1N 8NX</p>
             <p>Email: <a href="mailto:info@luxurytimesltd.co.uk">info@luxurytimesltd.co.uk</a></p>
           </div>

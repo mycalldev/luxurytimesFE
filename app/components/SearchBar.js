@@ -36,16 +36,28 @@ export default function SearchBar() {
     }
   }, [isOpen])
 
+  // Reset search state as soon as the query drops below the search
+  // threshold, so a stuck spinner or stale results can't linger while the
+  // debounce effect below is skipping this query. Done during render (not
+  // an effect) since it's adjusting state in response to a prop-like input.
+  const trimmed = query.trim()
+  const [lastResetQuery, setLastResetQuery] = useState(trimmed)
+  if (trimmed.length < 2 && trimmed !== lastResetQuery) {
+    setLastResetQuery(trimmed)
+    setResults([])
+    setIsLoading(false)
+    setHasSearched(false)
+  }
+
   // Debounced search — fires 300ms after the user stops typing
   useEffect(() => {
     const trimmed = query.trim()
-    if (trimmed.length < 2) {
-      setResults([])
-      setIsLoading(false)
-      setHasSearched(false)
-      return
-    }
+    if (trimmed.length < 2) return
 
+    // Flipping the loading flag synchronously here is the standard
+    // fetch-with-spinner pattern: it must be true for the whole 300ms
+    // debounce window below, not just once the request itself starts.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsLoading(true)
     setActiveIndex(-1)
 
@@ -121,6 +133,9 @@ export default function SearchBar() {
                 placeholder="Search by brand, model, reference..."
                 className={styles.searchInput}
                 aria-label="Search products"
+                role="combobox"
+                aria-haspopup="listbox"
+                aria-controls="search-results-listbox"
                 aria-expanded={results.length > 0}
                 aria-autocomplete="list"
                 autoComplete="off"
@@ -141,7 +156,7 @@ export default function SearchBar() {
                     <p className={styles.resultsCount}>
                       {results.length} result{results.length !== 1 ? 's' : ''} found
                     </p>
-                    <div className={styles.resultsList} role="listbox">
+                    <div id="search-results-listbox" className={styles.resultsList} role="listbox">
                       {results.map(({ node: product }, i) => {
                         const image = product.images.edges[0]?.node
                         const price = product.priceRange.minVariantPrice
