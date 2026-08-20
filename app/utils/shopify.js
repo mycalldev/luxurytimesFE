@@ -16,7 +16,13 @@ export function isPOA(product) {
 // refresh mechanism — so keep it long to minimise ISR writes.
 const SHOPIFY_REVALIDATE_SECONDS = Number(process.env.SHOPIFY_REVALIDATE_SECONDS) || 86400;
 
-async function ShopifyData(query) {
+// Shopify has no webhook topic for blog/article changes (checked the full
+// WebhookSubscriptionTopic enum — nothing for articles or blogs exists), so
+// blog fetches can't get the on-demand revalidateTag('shopify') refresh that
+// products get. A shorter timer is the only lever available for them.
+const BLOG_REVALIDATE_SECONDS = 3600;
+
+async function ShopifyData(query, revalidateSeconds = SHOPIFY_REVALIDATE_SECONDS) {
   const URL = `https://${domain}/api/2024-10/graphql.json`;
 
   const options = {
@@ -33,7 +39,7 @@ async function ShopifyData(query) {
   try {
     const data = await fetch(URL, {
       ...options,
-      next: { revalidate: SHOPIFY_REVALIDATE_SECONDS, tags: ['shopify'] }
+      next: { revalidate: revalidateSeconds, tags: ['shopify'] }
     }).then((response) => {
       return response.json();
     });
@@ -429,7 +435,7 @@ export async function getAllArticles(blogHandle = "News") {
     }
   `;
 
-  const response = await ShopifyData(query);
+  const response = await ShopifyData(query, BLOG_REVALIDATE_SECONDS);
   return response.data?.blog?.articles?.edges || [];
 }
 
@@ -462,7 +468,7 @@ export async function getArticle(blogHandle = "News", articleHandle) {
     }
   `;
 
-  const response = await ShopifyData(query);
+  const response = await ShopifyData(query, BLOG_REVALIDATE_SECONDS);
   return response.data.blog?.articleByHandle;
 }
 
